@@ -15,15 +15,16 @@ This declaration allows you to provide conditions to limit the execution of the 
 
 The following fields are used to configure the simple version of the component:
 
-| Name     | Description                         | Required |
-| -------- | ----------------------------------- | -------- |
-| `branch` | name of branch for build            | `false`  |
-| `event`  | name of event for build             | `false`  |
-| `path`   | path to workspace files for build   | `false`  |
-| `repo`   | name of repo for build              | `false`  |
-| `status` | name of status for build            | `false`  |
-| `tag`    | name of reference for build         | `false`  |
-| `target` | name of deployment target for build | `false`  |
+| Name      | Description                         | Required |
+| --------- | ----------------------------------- | -------- |
+| `branch`  | name of branch for build            | `false`  |
+| `comment` | pull request comment body           | `false`  |
+| `event`   | name of event for build             | `false`  |
+| `path`    | path to workspace files for build   | `false`  |
+| `repo`    | name of repo for build              | `false`  |
+| `status`  | name of status for build            | `false`  |
+| `tag`     | name of reference for build         | `false`  |
+| `target`  | name of deployment target for build | `false`  |
 
 #### Syntax
 
@@ -115,3 +116,69 @@ This pipeline will also limit the execution of the `build` step to:
 - builds without a branch of `master`
 - builds without an event of `push`
   {{% /alert %}}
+
+## Ruleset type Appendix  
+
+#### Branch
+
+This rule type limits the execution of a step to **matching build branches**. The below example will run a step if the build branch is `stage` or `master`:
+
+```yaml
+ruleset:
+  branch: [ stage, master ]
+```
+
+#### Event
+
+This rule type limits the execution of a step to **matching build events**. The below example will run a step if the build event is `push` or `pull_request`:
+
+```yaml
+ruleset:
+  event: [ push, pull_request ]
+```
+
+#### Status
+
+This rule type limits the execution of a step to **matching build statuses**. The below example will run a step if the build status is `failure` or `success`:
+
+```yaml
+ruleset:
+  status: [ failure, success ]
+```
+
+#### Tag
+
+This rule type limits the execution of a step to **matching build references**. The below example will run a step if the build ref is `dev/*` or `test/*`:
+
+```yaml
+ruleset:
+  tag: [ dev/*, test/* ]
+```
+
+#### Target
+
+This rule type limits the execution of a step to **matching build deployment targets**. The below example will run a step if the build target is `stage` or `production`:
+
+```yaml
+ruleset:
+  target: [ stage, production ]
+```
+
+#### Path
+
+This rule type limits the execution of a step to **matching files changed in a repository**. The below example will run a step if file `README.md`, any file of type `*.md` in the root directory or any file in the `test/*` directory has changed:
+
+```yaml
+ruleset:
+  path: [ README.md, "*.md", "test/*" ]
+```
+
+#### Comment
+
+This rule type limits the execution of a step to **matching a pull request comment**. This extends the ability to start new builds through interactions within a pull request. The below example will run a step if a "run build" comment is added to the bottom of a pull request.
+
+```yaml
+ruleset:
+  event: [ comment ]
+  comment: [ "run build" ]
+```
