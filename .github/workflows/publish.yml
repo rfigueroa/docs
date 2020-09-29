@@ -1,43 +1,46 @@
-name: CI
+# name of the action
+name: publish
 
+# trigger on push to master
 on:
   push:
     branches:
       - master
 
+# pipeline to execute
 jobs:
   build:
-
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     steps:
-    - name: Clone
-      uses: actions/checkout@v1
+    - name: clone
+      uses: actions/checkout@v2
+      with:
+        submodules: recursive
+        fetch-depth: 0
 
-    - name: Install Node
+    - name: node
       uses: actions/setup-node@v1
       with:
-        node-version: '10.x'
+        node-version: '12'
 
-    - name: Install Hugo
-      uses: peaceiris/actions-hugo@v2.2.2
+    - name: hugo
+      uses: peaceiris/actions-hugo@v2
       with:
-        hugo-version: '0.59.1'
+        hugo-version: '0.75.1'
         extended: true
 
-    - name: Install PostCSS and AutoPrefixer
-      run: |
-        npm install -D --save autoprefixer
-        npm install -D --save postcss-cli
-
-    - name: Build Hugo
-      run: git submodule update -f --init --recursive && hugo
+    - name: build
       env:
         HUGO_ENV: production
+      run: |
+        npm install -D --save autoprefixer
+        npm install -D --save postcss
+        npm install -D --save postcss-cli
+        hugo --minify
 
     - name: publish
-      uses: crazy-max/ghaction-github-pages@v1
+      uses: peaceiris/actions-gh-pages@v3
       with:
-        target_branch: gh-pages
-        build_dir: public
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_PAT }}
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_branch: gh-pages
+        publish_dir: ./public
