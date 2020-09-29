@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.75.1" />
+<meta name="generator" content="Hugo 0.59.1" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -24,10 +24,11 @@
 <meta property="og:description" content="Overview This plugin enables the ability to manage resources in Kubernetes in a Vela pipeline.
 Source Code: https://github.com/go-vela/vela-kubernetes
 Registry: https://hub.docker.com/r/target/vela-kubernetes
+This plugin supports environment (PARAMETER_*) and volume (/vela/parameters/*) configuration for setting parameters.
+The precedence order is take files then environment variables if both are set in a container.
  Usage Sample of applying Kubernetes files:
-steps:- name:kubernetesimage:target/vela-kubernetes:v0.1.0pull:trueparameters:action:applyfiles:[kubernetes/common, kubernetes/dev/deploy.yml ]Sample of pretending to apply Kubernetes files:
-steps: - name: kubernetes image: target/vela-kubernetes:v0.1.0 pull: true parameters: action: apply &#43; dry_run: true  files: [ kubernetes/common, kubernetes/dev/deploy.yml ] Sample of patching containers in Kubernetes files:
-steps:- name:kubernetesimage:target/vela-kubernetes:v0.1.0pull:trueparameters:action:patchfiles:[kubernetes/common, kubernetes/dev/deploy.yml ]containers:- name:sampleimage:alpine:latestSample of pretending to patch containers in Kubernetes files:" />
+steps:-name:kubernetesimage:target/vela-kubernetes:v0.1.0pull:trueparameters:action:applyfiles:[kubernetes/common,kubernetes/dev/deploy.yml] Sample of pretending to apply Kubernetes files:
+steps: - name: kubernetes image: target/vela-kubernetes:v0.1.0 pull: true parameters: action: apply &#43; dry_run: true  files: [ kubernetes/common, kubernetes/dev/deploy." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://go-vela.github.io/docs/plugins/pipeline/registry/kubernetes/" />
 <meta property="article:modified_time" content="2020-08-12T12:32:50-05:00" />
@@ -35,12 +36,15 @@ steps:- name:kubernetesimage:target/vela-kubernetes:v0.1.0pull:trueparameters:ac
 <meta itemprop="description" content="Overview This plugin enables the ability to manage resources in Kubernetes in a Vela pipeline.
 Source Code: https://github.com/go-vela/vela-kubernetes
 Registry: https://hub.docker.com/r/target/vela-kubernetes
+This plugin supports environment (PARAMETER_*) and volume (/vela/parameters/*) configuration for setting parameters.
+The precedence order is take files then environment variables if both are set in a container.
  Usage Sample of applying Kubernetes files:
-steps:- name:kubernetesimage:target/vela-kubernetes:v0.1.0pull:trueparameters:action:applyfiles:[kubernetes/common, kubernetes/dev/deploy.yml ]Sample of pretending to apply Kubernetes files:
-steps: - name: kubernetes image: target/vela-kubernetes:v0.1.0 pull: true parameters: action: apply &#43; dry_run: true  files: [ kubernetes/common, kubernetes/dev/deploy.yml ] Sample of patching containers in Kubernetes files:
-steps:- name:kubernetesimage:target/vela-kubernetes:v0.1.0pull:trueparameters:action:patchfiles:[kubernetes/common, kubernetes/dev/deploy.yml ]containers:- name:sampleimage:alpine:latestSample of pretending to patch containers in Kubernetes files:">
+steps:-name:kubernetesimage:target/vela-kubernetes:v0.1.0pull:trueparameters:action:applyfiles:[kubernetes/common,kubernetes/dev/deploy.yml] Sample of pretending to apply Kubernetes files:
+steps: - name: kubernetes image: target/vela-kubernetes:v0.1.0 pull: true parameters: action: apply &#43; dry_run: true  files: [ kubernetes/common, kubernetes/dev/deploy.">
+
+
 <meta itemprop="dateModified" content="2020-08-12T12:32:50-05:00" />
-<meta itemprop="wordCount" content="497">
+<meta itemprop="wordCount" content="559">
 
 
 
@@ -50,10 +54,11 @@ steps:- name:kubernetesimage:target/vela-kubernetes:v0.1.0pull:trueparameters:ac
 <meta name="twitter:description" content="Overview This plugin enables the ability to manage resources in Kubernetes in a Vela pipeline.
 Source Code: https://github.com/go-vela/vela-kubernetes
 Registry: https://hub.docker.com/r/target/vela-kubernetes
+This plugin supports environment (PARAMETER_*) and volume (/vela/parameters/*) configuration for setting parameters.
+The precedence order is take files then environment variables if both are set in a container.
  Usage Sample of applying Kubernetes files:
-steps:- name:kubernetesimage:target/vela-kubernetes:v0.1.0pull:trueparameters:action:applyfiles:[kubernetes/common, kubernetes/dev/deploy.yml ]Sample of pretending to apply Kubernetes files:
-steps: - name: kubernetes image: target/vela-kubernetes:v0.1.0 pull: true parameters: action: apply &#43; dry_run: true  files: [ kubernetes/common, kubernetes/dev/deploy.yml ] Sample of patching containers in Kubernetes files:
-steps:- name:kubernetesimage:target/vela-kubernetes:v0.1.0pull:trueparameters:action:patchfiles:[kubernetes/common, kubernetes/dev/deploy.yml ]containers:- name:sampleimage:alpine:latestSample of pretending to patch containers in Kubernetes files:"/>
+steps:-name:kubernetesimage:target/vela-kubernetes:v0.1.0pull:trueparameters:action:applyfiles:[kubernetes/common,kubernetes/dev/deploy.yml] Sample of pretending to apply Kubernetes files:
+steps: - name: kubernetes image: target/vela-kubernetes:v0.1.0 pull: true parameters: action: apply &#43; dry_run: true  files: [ kubernetes/common, kubernetes/dev/deploy."/>
 
 
 
@@ -61,8 +66,8 @@ steps:- name:kubernetesimage:target/vela-kubernetes:v0.1.0pull:trueparameters:ac
 
 
 
-<link rel="preload" href="/docs/scss/main.min.a9587066c0180698d994bba5dbdd49fa05ee0044b1678d06704a7a605676b1df.css" as="style">
-<link href="/docs/scss/main.min.a9587066c0180698d994bba5dbdd49fa05ee0044b1678d06704a7a605676b1df.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/docs/scss/main.min.70d8bad3cbfd44b25762dfb0cadb082e7e2c882cbc3cb7ff0b318df81507856d.css" as="style">
+<link href="/docs/scss/main.min.70d8bad3cbfd44b25762dfb0cadb082e7e2c882cbc3cb7ff0b318df81507856d.css" rel="stylesheet" integrity="">
 
 <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
@@ -77,7 +82,7 @@ steps:- name:kubernetesimage:target/vela-kubernetes:v0.1.0pull:trueparameters:ac
       
 <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
         <a class="navbar-brand" href="/docs/">
-		<span class="navbar-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1500"><title>vela-inverse</title><polygon points="1477.22 329.54 1338.11 219.91 1349.56 43.16 1202.3 141.58 1037.73 76.07 1085.84 246.54 972.68 382.81 1149.67 389.74 1244.3 539.46 1305.58 373.27 1477.22 329.54" style="fill:#9e6bae"/><path d="M1174.75 635.12 757.57 1357.69a3.47 3.47.0 01-6 0L125.38 273.13a3.48 3.48.0 013-5.22H925.24l39.14-47.13L950.19 170.5H128.39A100.9 100.9.0 0041 321.84L667.19 1406.4a100.88 100.88.0 00174.74.0l391.61-678.27z" style="fill:#34c6f4"/><polygon points="1087.64 497.29 1038.27 495.36 754.56 986.75 395.9 365.54 288.13 365.54 754.56 1173.42 1117.58 544.66 1087.64 497.29" style="fill:#fff"/></svg></span><span class="text-uppercase font-weight-bold">Vela</span>
+		<span class="navbar-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1500"><title>vela-inverse</title><polygon points="1477.22 329.54 1338.11 219.91 1349.56 43.16 1202.3 141.58 1037.73 76.07 1085.84 246.54 972.68 382.81 1149.67 389.74 1244.3 539.46 1305.58 373.27 1477.22 329.54" style="fill:#9e6bae"/><path d="M1174.75 635.12 757.57 1357.69a3.47 3.47.0 0 1-6 0L125.38 273.13a3.48 3.48.0 0 1 3-5.22H925.24l39.14-47.13L950.19 170.5H128.39A100.9 100.9.0 0 0 41 321.84L667.19 1406.4a100.88 100.88.0 0 0 174.74.0l391.61-678.27z" style="fill:#34c6f4"/><polygon points="1087.64 497.29 1038.27 495.36 754.56 986.75 395.9 365.54 288.13 365.54 754.56 1173.42 1117.58 544.66 1087.64 497.29" style="fill:#fff"/></svg></span><span class="text-uppercase font-weight-bold">Vela</span>
 	</a>
 	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
 		<ul class="navbar-nav mt-2 mt-lg-0">
@@ -374,14 +379,14 @@ steps:- name:kubernetesimage:target/vela-kubernetes:v0.1.0pull:trueparameters:ac
     <a  href="/docs/plugins/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Plugins</a>
   </li>
   <ul>
-    <li class="collapse show" id="docsplugins">
+    <li class="collapse show" id="docs-plugins">
       
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginsoverview" href="/docs/plugins/overview/">Overview</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-overview" href="/docs/plugins/overview/">Overview</a>
       
       
       
@@ -397,7 +402,7 @@ steps:- name:kubernetesimage:target/vela-kubernetes:v0.1.0pull:trueparameters:ac
     <a  href="/docs/plugins/pipeline/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Pipeline</a>
   </li>
   <ul>
-    <li class="collapse show" id="docspluginspipeline">
+    <li class="collapse show" id="docs-plugins-pipeline">
       
       
       
@@ -414,56 +419,56 @@ steps:- name:kubernetesimage:target/vela-kubernetes:v0.1.0pull:trueparameters:ac
     <a  href="/docs/plugins/pipeline/registry/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Registry</a>
   </li>
   <ul>
-    <li class="collapse show" id="docspluginspipelineregistry">
+    <li class="collapse show" id="docs-plugins-pipeline-registry">
       
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginspipelineregistryterraform" href="/docs/plugins/pipeline/registry/terraform/"></a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-pipeline-registry-terraform" href="/docs/plugins/pipeline/registry/terraform/"></a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginspipelineregistryartifactory" href="/docs/plugins/pipeline/registry/artifactory/">Artifactory</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-pipeline-registry-artifactory" href="/docs/plugins/pipeline/registry/artifactory/">Artifactory</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginspipelineregistrycaptains_log" href="/docs/plugins/pipeline/registry/captains_log/">Captain&#39;s Log</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-pipeline-registry-captains-log" href="/docs/plugins/pipeline/registry/captains_log/">Captain&#39;s Log</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginspipelineregistrydocker" href="/docs/plugins/pipeline/registry/docker/">Docker</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-pipeline-registry-docker" href="/docs/plugins/pipeline/registry/docker/">Docker</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginspipelineregistrydownstream" href="/docs/plugins/pipeline/registry/downstream/">Downstream</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-pipeline-registry-downstream" href="/docs/plugins/pipeline/registry/downstream/">Downstream</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginspipelineregistrygit" href="/docs/plugins/pipeline/registry/git/">Git</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-pipeline-registry-git" href="/docs/plugins/pipeline/registry/git/">Git</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docspluginspipelineregistrykubernetes" href="/docs/plugins/pipeline/registry/kubernetes/">Kubernetes</a>
+      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docs-plugins-pipeline-registry-kubernetes" href="/docs/plugins/pipeline/registry/kubernetes/">Kubernetes</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginspipelineregistrys3_cache" href="/docs/plugins/pipeline/registry/s3_cache/">S3 Cache</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-pipeline-registry-s3-cache" href="/docs/plugins/pipeline/registry/s3_cache/">S3 Cache</a>
       
       
     </li>
@@ -485,38 +490,38 @@ steps:- name:kubernetesimage:target/vela-kubernetes:v0.1.0pull:trueparameters:ac
     <a  href="/docs/plugins/pipeline/tutorials/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Tutorials</a>
   </li>
   <ul>
-    <li class="collapse " id="docspluginspipelinetutorials">
+    <li class="collapse " id="docs-plugins-pipeline-tutorials">
       
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginspipelinetutorialsbash" href="/docs/plugins/pipeline/tutorials/bash/">Bash</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-pipeline-tutorials-bash" href="/docs/plugins/pipeline/tutorials/bash/">Bash</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginspipelinetutorialsgo" href="/docs/plugins/pipeline/tutorials/go/">Go</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-pipeline-tutorials-go" href="/docs/plugins/pipeline/tutorials/go/">Go</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginspipelinetutorialsnode" href="/docs/plugins/pipeline/tutorials/node/">Node.js</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-pipeline-tutorials-node" href="/docs/plugins/pipeline/tutorials/node/">Node.js</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginspipelinetutorialspython" href="/docs/plugins/pipeline/tutorials/python/">Python</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-pipeline-tutorials-python" href="/docs/plugins/pipeline/tutorials/python/">Python</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginspipelinetutorialsruby" href="/docs/plugins/pipeline/tutorials/ruby/">Ruby</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-pipeline-tutorials-ruby" href="/docs/plugins/pipeline/tutorials/ruby/">Ruby</a>
       
       
     </li>
@@ -544,7 +549,7 @@ steps:- name:kubernetesimage:target/vela-kubernetes:v0.1.0pull:trueparameters:ac
     <a  href="/docs/plugins/secret/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Secret</a>
   </li>
   <ul>
-    <li class="collapse " id="docspluginssecret">
+    <li class="collapse " id="docs-plugins-secret">
       
       
       
@@ -561,14 +566,14 @@ steps:- name:kubernetesimage:target/vela-kubernetes:v0.1.0pull:trueparameters:ac
     <a  href="/docs/plugins/secret/registry/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Registry</a>
   </li>
   <ul>
-    <li class="collapse " id="docspluginssecretregistry">
+    <li class="collapse " id="docs-plugins-secret-registry">
       
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginssecretregistryvault" href="/docs/plugins/secret/registry/vault/">Vault</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-secret-registry-vault" href="/docs/plugins/secret/registry/vault/">Vault</a>
       
       
     </li>
@@ -590,7 +595,7 @@ steps:- name:kubernetesimage:target/vela-kubernetes:v0.1.0pull:trueparameters:ac
     <a  href="/docs/plugins/secret/tutorials/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Tutorials</a>
   </li>
   <ul>
-    <li class="collapse " id="docspluginssecrettutorials">
+    <li class="collapse " id="docs-plugins-secret-tutorials">
       
       
       
@@ -638,23 +643,29 @@ steps:- name:kubernetesimage:target/vela-kubernetes:v0.1.0pull:trueparameters:ac
 
 
 <nav id="TableOfContents">
-  <ul>
-    <li><a href="#overview">Overview</a></li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#secrets">Secrets</a>
-      <ul>
-        <li><a href="#internal">Internal</a></li>
-        <li><a href="#external">External</a></li>
-      </ul>
-    </li>
-    <li><a href="#parameters">Parameters</a>
-      <ul>
-        <li></li>
-      </ul>
-    </li>
-    <li><a href="#template">Template</a></li>
-    <li><a href="#troubleshooting">Troubleshooting</a></li>
-  </ul>
+<ul>
+<li>
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#usage">Usage</a></li>
+<li><a href="#secrets">Secrets</a>
+<ul>
+<li><a href="#internal">Internal</a></li>
+<li><a href="#external">External</a></li>
+</ul></li>
+<li><a href="#parameters">Parameters</a>
+<ul>
+<li>
+<ul>
+<li><a href="#apply">Apply</a></li>
+<li><a href="#patch">Patch</a></li>
+<li><a href="#status">Status</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#template">Template</a></li>
+<li><a href="#troubleshooting">Troubleshooting</a></li>
+</ul></li>
+</ul>
 </nav>
 
 
@@ -709,27 +720,38 @@ steps:- name:kubernetesimage:target/vela-kubernetes:v0.1.0pull:trueparameters:ac
 <div class="td-content">
 	<h1>Kubernetes</h1>
 	
-	<h2 id="overview">Overview</h2>
-<p>This plugin enables the ability to manage resources in <a href="https://kubernetes.io/">Kubernetes</a> in a Vela pipeline.</p>
-<p>Source Code: <a href="https://github.com/go-vela/vela-kubernetes">https://github.com/go-vela/vela-kubernetes</a></p>
-<p>Registry: <a href="https://hub.docker.com/r/target/vela-kubernetes">https://hub.docker.com/r/target/vela-kubernetes</a></p>
+	
+
+<h2 id="overview">Overview</h2>
+
+<p>This plugin enables the ability to manage resources in <a href="https://kubernetes.io/" target="_blank">Kubernetes</a> in a Vela pipeline.</p>
+
+<p>Source Code: <a href="https://github.com/go-vela/vela-kubernetes" target="_blank">https://github.com/go-vela/vela-kubernetes</a></p>
+
+<p>Registry: <a href="https://hub.docker.com/r/target/vela-kubernetes" target="_blank">https://hub.docker.com/r/target/vela-kubernetes</a></p>
+
 
 
 <div class="alert alert-tip" role="alert">
 
-<!-- raw HTML omitted -->
+<p>This plugin supports environment (<code>PARAMETER_*</code>) and volume (<code>/vela/parameters/*</code>) configuration for setting parameters.</p>
+
+<p>The precedence order is take files then environment variables if both are set in a container.</p>
+
 </div>
 
+
 <h2 id="usage">Usage</h2>
+
 <p>Sample of applying Kubernetes files:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">steps</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span>- <span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">kubernetes</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">image</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">target/vela-kubernetes:v0.1.0</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">pull</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#204a87;font-weight:bold">true</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">parameters</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">action</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">apply</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">files</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">[</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">kubernetes/common, kubernetes/dev/deploy.yml ]</span><span style="color:#f8f8f8;text-decoration:underline">
-</span></code></pre></div><p>Sample of pretending to apply Kubernetes files:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">steps<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span>-<span style="color:#f8f8f8;text-decoration:underline"> </span>name<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>kubernetes<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>image<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>target/vela-kubernetes<span style="color:#000;font-weight:bold">:</span>v0<span style="color:#0000cf;font-weight:bold">.1.0</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>pull<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#204a87;font-weight:bold">true</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>parameters<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span>action<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>apply<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span>files<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">[</span><span style="color:#f8f8f8;text-decoration:underline"> </span>kubernetes/common<span style="color:#000;font-weight:bold">,</span><span style="color:#f8f8f8;text-decoration:underline"> </span>kubernetes/dev/deploy.yml<span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">]</span></code></pre></div>
+<p>Sample of pretending to apply Kubernetes files:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: kubernetes
     image: target/vela-kubernetes:v0.1.0
@@ -738,18 +760,19 @@ steps:- name:kubernetesimage:target/vela-kubernetes:v0.1.0pull:trueparameters:ac
       action: apply
 <span style="color:#00a000">+     dry_run: true
 </span><span style="color:#00a000"></span>      files: [ kubernetes/common, kubernetes/dev/deploy.yml ]
-</code></pre></div><p>Sample of patching containers in Kubernetes files:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">steps</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span>- <span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">kubernetes</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">image</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">target/vela-kubernetes:v0.1.0</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">pull</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#204a87;font-weight:bold">true</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">parameters</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">action</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">patch</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">files</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">[</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">kubernetes/common, kubernetes/dev/deploy.yml ]</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">containers</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">        </span>- <span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">sample</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">          </span><span style="color:#204a87;font-weight:bold">image</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">alpine:latest</span><span style="color:#f8f8f8;text-decoration:underline">
-</span></code></pre></div><p>Sample of pretending to patch containers in Kubernetes files:</p>
+</code></pre></div>
+<p>Sample of patching containers in Kubernetes files:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">steps<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span>-<span style="color:#f8f8f8;text-decoration:underline"> </span>name<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>kubernetes<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>image<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>target/vela-kubernetes<span style="color:#000;font-weight:bold">:</span>v0<span style="color:#0000cf;font-weight:bold">.1.0</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>pull<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#204a87;font-weight:bold">true</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>parameters<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span>action<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>patch<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span>files<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">[</span><span style="color:#f8f8f8;text-decoration:underline"> </span>kubernetes/common<span style="color:#000;font-weight:bold">,</span><span style="color:#f8f8f8;text-decoration:underline"> </span>kubernetes/dev/deploy.yml<span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">]</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span>containers<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">        </span>-<span style="color:#f8f8f8;text-decoration:underline"> </span>name<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>sample<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">          </span>image<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>alpine<span style="color:#000;font-weight:bold">:</span>latest</code></pre></div>
+<p>Sample of pretending to patch containers in Kubernetes files:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: kubernetes
     image: target/vela-kubernetes:v0.1.0
@@ -761,24 +784,29 @@ steps:- name:kubernetesimage:target/vela-kubernetes:v0.1.0pull:trueparameters:ac
       containers:
         - name: sample
           image: alpine:latest
-</code></pre></div><p>Sample of watching the status of resources:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">steps</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span>- <span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">kubernetes</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">image</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">target/vela-kubernetes:v0.1.0</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">pull</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#204a87;font-weight:bold">true</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">parameters</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">action</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">status</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">statuses</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">[</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">sample ]</span><span style="color:#f8f8f8;text-decoration:underline">
-</span></code></pre></div><h2 id="secrets">Secrets</h2>
+</code></pre></div>
+<p>Sample of watching the status of resources:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">steps<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span>-<span style="color:#f8f8f8;text-decoration:underline"> </span>name<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>kubernetes<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>image<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>target/vela-kubernetes<span style="color:#000;font-weight:bold">:</span>v0<span style="color:#0000cf;font-weight:bold">.1.0</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>pull<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#204a87;font-weight:bold">true</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>parameters<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span>action<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>status<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span>statuses<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">[</span><span style="color:#f8f8f8;text-decoration:underline"> </span>sample<span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">]</span></code></pre></div>
+<h2 id="secrets">Secrets</h2>
+
 
 
 <div class="alert alert-warning" role="alert">
 
-<!-- raw HTML omitted -->
+Users should refrain from configuring sensitive information in their pipeline in plain text.
 </div>
 
+
 <h3 id="internal">Internal</h3>
+
 <p>The plugin accepts the following <code>parameters</code> for authentication:</p>
+
 <table>
 <thead>
 <tr>
@@ -786,6 +814,7 @@ steps:- name:kubernetesimage:target/vela-kubernetes:v0.1.0pull:trueparameters:ac
 <th>Environment Variable Configuration</th>
 </tr>
 </thead>
+
 <tbody>
 <tr>
 <td><code>config</code></td>
@@ -793,6 +822,7 @@ steps:- name:kubernetesimage:target/vela-kubernetes:v0.1.0pull:trueparameters:ac
 </tr>
 </tbody>
 </table>
+
 <p>Users can use <a href="/docs/concepts/pipeline/secrets/">Vela secrets</a> to substitute these sensitive values at runtime:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: kubernetes
@@ -808,13 +838,21 @@ steps:- name:kubernetesimage:target/vela-kubernetes:v0.1.0pull:trueparameters:ac
 </span><span style="color:#a40000">-     kind: Config
 </span></code></pre></div>
 
+
 <div class="alert alert-info" role="alert">
 
-<!-- raw HTML omitted -->
+This example will add the <code>secrets</code> to the <code>kubernetes</code> step as environment variables:</p>
+
+<ul>
+<li><code>KUBE_CONFIG</code>=<value></li>
+</ul>
 </div>
 
+
 <h3 id="external">External</h3>
+
 <p>The plugin accepts the following files for authentication:</p>
+
 <table>
 <thead>
 <tr>
@@ -822,6 +860,7 @@ steps:- name:kubernetesimage:target/vela-kubernetes:v0.1.0pull:trueparameters:ac
 <th>Volume Configuration</th>
 </tr>
 </thead>
+
 <tbody>
 <tr>
 <td><code>config</code></td>
@@ -829,6 +868,7 @@ steps:- name:kubernetesimage:target/vela-kubernetes:v0.1.0pull:trueparameters:ac
 </tr>
 </tbody>
 </table>
+
 <p>Users can use <a href="/docs/concepts/pipeline/secrets/">Vela external secrets</a> to substitute these sensitive values at runtime:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: kubernetes
@@ -843,13 +883,17 @@ steps:- name:kubernetesimage:target/vela-kubernetes:v0.1.0pull:trueparameters:ac
 </span><span style="color:#a40000">-     kind: Config
 </span></code></pre></div>
 
+
 <div class="alert alert-info" role="alert">
 
-<!-- raw HTML omitted -->
+This example will read the secrets values in the volume stored at <code>/vela/secrets/</code>:
 </div>
 
+
 <h2 id="parameters">Parameters</h2>
+
 <p>The following parameters are used to configure the image:</p>
+
 <table>
 <thead>
 <tr>
@@ -859,6 +903,7 @@ steps:- name:kubernetesimage:target/vela-kubernetes:v0.1.0pull:trueparameters:ac
 <th>Default</th>
 </tr>
 </thead>
+
 <tbody>
 <tr>
 <td><code>action</code></td>
@@ -866,36 +911,42 @@ steps:- name:kubernetesimage:target/vela-kubernetes:v0.1.0pull:trueparameters:ac
 <td><code>true</code></td>
 <td><code>N/A</code></td>
 </tr>
+
 <tr>
 <td><code>cluster</code></td>
 <td>Kubernetes cluster from the configuration file</td>
 <td><code>false</code></td>
 <td><code>N/A</code></td>
 </tr>
+
 <tr>
 <td><code>context</code></td>
 <td>Kubernetes context from the configuration file</td>
 <td><code>false</code></td>
 <td><code>N/A</code></td>
 </tr>
+
 <tr>
 <td><code>file</code></td>
 <td>configuration file for communication with Kubernetes</td>
 <td><code>true</code></td>
 <td><code>N/A</code></td>
 </tr>
+
 <tr>
 <td><code>log_level</code></td>
 <td>set the log level for the plugin</td>
 <td><code>true</code></td>
 <td><code>info</code></td>
 </tr>
+
 <tr>
 <td><code>namespace</code></td>
 <td>Kubernetes namespace from the configuration file</td>
 <td><code>false</code></td>
 <td><code>N/A</code></td>
 </tr>
+
 <tr>
 <td><code>path</code></td>
 <td>path to Kubernetes configuration file</td>
@@ -904,8 +955,11 @@ steps:- name:kubernetesimage:target/vela-kubernetes:v0.1.0pull:trueparameters:ac
 </tr>
 </tbody>
 </table>
+
 <h4 id="apply">Apply</h4>
+
 <p>The following parameters are used to configure the <code>apply</code> action:</p>
+
 <table>
 <thead>
 <tr>
@@ -915,6 +969,7 @@ steps:- name:kubernetesimage:target/vela-kubernetes:v0.1.0pull:trueparameters:ac
 <th>Default</th>
 </tr>
 </thead>
+
 <tbody>
 <tr>
 <td><code>dry_run</code></td>
@@ -922,12 +977,14 @@ steps:- name:kubernetesimage:target/vela-kubernetes:v0.1.0pull:trueparameters:ac
 <td><code>false</code></td>
 <td><code>false</code></td>
 </tr>
+
 <tr>
 <td><code>files</code></td>
 <td>list of Kubernetes files or directories to apply</td>
 <td><code>true</code></td>
 <td><code>N/A</code></td>
 </tr>
+
 <tr>
 <td><code>output</code></td>
 <td>set the output for the apply</td>
@@ -936,8 +993,11 @@ steps:- name:kubernetesimage:target/vela-kubernetes:v0.1.0pull:trueparameters:ac
 </tr>
 </tbody>
 </table>
+
 <h4 id="patch">Patch</h4>
+
 <p>The following parameters are used to configure the <code>patch</code> action:</p>
+
 <table>
 <thead>
 <tr>
@@ -947,6 +1007,7 @@ steps:- name:kubernetesimage:target/vela-kubernetes:v0.1.0pull:trueparameters:ac
 <th>Default</th>
 </tr>
 </thead>
+
 <tbody>
 <tr>
 <td><code>containers</code></td>
@@ -954,18 +1015,21 @@ steps:- name:kubernetesimage:target/vela-kubernetes:v0.1.0pull:trueparameters:ac
 <td><code>true</code></td>
 <td><code>N/A</code></td>
 </tr>
+
 <tr>
 <td><code>dry_run</code></td>
 <td>enables pretending to perform the patch</td>
 <td><code>false</code></td>
 <td><code>false</code></td>
 </tr>
+
 <tr>
 <td><code>files</code></td>
 <td>list of Kubernetes files or directories to patch</td>
 <td><code>true</code></td>
 <td><code>N/A</code></td>
 </tr>
+
 <tr>
 <td><code>output</code></td>
 <td>set the output for the patch</td>
@@ -974,8 +1038,11 @@ steps:- name:kubernetesimage:target/vela-kubernetes:v0.1.0pull:trueparameters:ac
 </tr>
 </tbody>
 </table>
+
 <h4 id="status">Status</h4>
+
 <p>The following parameters are used to configure the <code>status</code> action:</p>
+
 <table>
 <thead>
 <tr>
@@ -985,6 +1052,7 @@ steps:- name:kubernetesimage:target/vela-kubernetes:v0.1.0pull:trueparameters:ac
 <th>Default</th>
 </tr>
 </thead>
+
 <tbody>
 <tr>
 <td><code>statuses</code></td>
@@ -992,12 +1060,14 @@ steps:- name:kubernetesimage:target/vela-kubernetes:v0.1.0pull:trueparameters:ac
 <td><code>true</code></td>
 <td><code>N/A</code></td>
 </tr>
+
 <tr>
 <td><code>timeout</code></td>
 <td>total time allowed to watch Kubernetes resources</td>
 <td><code>true</code></td>
 <td><code>5m</code></td>
 </tr>
+
 <tr>
 <td><code>watch</code></td>
 <td>enables watching until the resource completes</td>
@@ -1006,9 +1076,13 @@ steps:- name:kubernetesimage:target/vela-kubernetes:v0.1.0pull:trueparameters:ac
 </tr>
 </tbody>
 </table>
+
 <h2 id="template">Template</h2>
+
 <p>COMING SOON!</p>
+
 <h2 id="troubleshooting">Troubleshooting</h2>
+
 <p>You can start troubleshooting this plugin by tuning the level of logs being displayed:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: kubernetes
@@ -1018,7 +1092,9 @@ steps:- name:kubernetesimage:target/vela-kubernetes:v0.1.0pull:trueparameters:ac
       action: apply
       files: [ kubernetes/common, kubernetes/dev/deploy.yml ]
 <span style="color:#00a000">+     log_level: trace
-</span></code></pre></div><p>Below are a list of common problems and how to solve them:</p>
+</span></code></pre></div>
+<p>Below are a list of common problems and how to solve them:</p>
+
 <p>COMING SOON!</p>
 
 	

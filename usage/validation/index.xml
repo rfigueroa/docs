@@ -22,8 +22,9 @@
       <description>
         
         
-        &lt;p&gt;The schema gets published and updated via &lt;a href=&#34;https://github.com/go-vela/types&#34;&gt;https://github.com/go-vela/types&lt;/a&gt; where it ends up as a release artifact. The latest schema is available for download from &lt;a href=&#34;https://github.com/go-vela/types/releases/latest/download/schema.json&#34;&gt;https://github.com/go-vela/types/releases/latest/download/schema.json&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;In addition, the schema has been added to the JSON Schema Store project at &lt;a href=&#34;https://www.schemastore.org/&#34;&gt;https://www.schemastore.org/&lt;/a&gt; which provides direct support for various editors (see &amp;ldquo;Supporting editors&amp;rdquo; section at &lt;a href=&#34;https://www.schemastore.org/json/&#34;&gt;https://www.schemastore.org/json/&lt;/a&gt;).&lt;/p&gt;
+        &lt;p&gt;The schema gets published and updated via &lt;a href=&#34;https://github.com/go-vela/types&#34; target=&#34;_blank&#34;&gt;https://github.com/go-vela/types&lt;/a&gt; where it ends up as a release artifact. The latest schema is available for download from &lt;a href=&#34;https://github.com/go-vela/types/releases/latest/download/schema.json&#34; target=&#34;_blank&#34;&gt;https://github.com/go-vela/types/releases/latest/download/schema.json&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;In addition, the schema has been added to the JSON Schema Store project at &lt;a href=&#34;https://www.schemastore.org/&#34; target=&#34;_blank&#34;&gt;https://www.schemastore.org/&lt;/a&gt; which provides direct support for various editors (see &amp;ldquo;Supporting editors&amp;rdquo; section at &lt;a href=&#34;https://www.schemastore.org/json/&#34; target=&#34;_blank&#34;&gt;https://www.schemastore.org/json/&lt;/a&gt;).&lt;/p&gt;
 
       </description>
     </item>
