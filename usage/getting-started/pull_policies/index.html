@@ -25,14 +25,14 @@
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://go-vela.github.io/docs/usage/getting-started/pull_policies/" />
-<meta property="article:modified_time" content="2020-09-29T19:01:25-05:00" />
+<meta property="article:modified_time" content="2020-09-30T08:54:35-05:00" />
 <meta itemprop="name" content="Pull Policies">
 <meta itemprop="description" content="Learn how to control pulling images in your pipeline.
 ">
 
 
-<meta itemprop="dateModified" content="2020-09-29T19:01:25-05:00" />
-<meta itemprop="wordCount" content="149">
+<meta itemprop="dateModified" content="2020-09-30T08:54:35-05:00" />
+<meta itemprop="wordCount" content="176">
 
 
 
@@ -669,43 +669,52 @@
 <ul>
 <li><a href="/docs/concepts/pipeline/steps/pull/">Pull</a></li>
 </ul></li>
-
-<li><p><a href="/docs/concepts/pipeline/secrets/">Secrets</a></p>
+<li><a href="/docs/concepts/pipeline/secrets/">Secrets</a>
 
 <ul>
-<li><p><a href="/docs/concepts/pipeline/steps/origin/">Origin</a></p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">version: &#34;1&#34;
-services:
-<span style="color:#a40000">- name: redis
-</span><span style="color:#a40000"></span>image: redis:latest
-<span style="color:#00a000">+   pull: always
-</span><span style="color:#00a000"></span>
-steps:
-<span style="color:#a40000">- name: check status
-</span><span style="color:#a40000"></span>image: alpine:latest
-<span style="color:#00a000">+   pull: not_present
-</span><span style="color:#00a000"></span>commands:
-# you can use bash commands in-line to set or override variables
-<span style="color:#a40000">- export EXAMPLE=&#34;Hello World From Vela Team&#34;
-</span><span style="color:#a40000">- echo ${EXAMPLE}
-</span><span style="color:#a40000"></span>
-secrets:
-<span style="color:#a40000">- origin:
-</span><span style="color:#a40000"></span>name: private vault
-image: target/secret-vault:latest
-<span style="color:#00a000">+     pull: on_start
-</span><span style="color:#00a000"></span>secrets: [ vault_token ]
-parameters:
-addr: vault.example.com
-auth_method: token
-username: octocat
-items:
-  - source: secret/docker
-    path: docker
-</code></pre></div></li>
+<li><a href="/docs/concepts/pipeline/steps/origin/">Origin</a></li>
 </ul></li>
 </ul>
 
+
+
+<div class="alert alert-primary" role="alert">
+<h4 class="alert-heading">Note:</h4>
+<p>Please be warned that the <code>pull</code> declaration is <strong>not required</strong>.</p>
+
+<p>If you do not provide the <code>pull</code> declaration, a default value of <code>not_present</code> will be used.</p>
+
+</div>
+
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">version: &#34;1&#34;
+services:
+  - name: redis
+    image: redis:latest
+<span style="color:#00a000">+   pull: always
+</span><span style="color:#00a000"></span>
+steps:
+  - name: check status
+    image: alpine:latest
+<span style="color:#00a000">+   pull: not_present
+</span><span style="color:#00a000"></span>    commands:
+      # you can use bash commands in-line to set or override variables
+      - export EXAMPLE=&#34;Hello World From Vela Team&#34;
+      - echo ${EXAMPLE}
+
+secrets:
+  - origin:
+      name: private vault
+      image: target/secret-vault:latest
+<span style="color:#00a000">+     pull: on_start
+</span><span style="color:#00a000"></span>      secrets: [ vault_token ]
+      parameters:
+        addr: vault.example.com
+        auth_method: token
+        username: octocat
+        items:
+          - source: secret/docker
+            path: docker
+</code></pre></div>
 
 
 <div class="alert alert-info" role="alert">
@@ -722,7 +731,7 @@ This pipeline will:</p>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified September 29, 2020: <a  href="https://github.com/go-vela/docs/commit/f8a9753efeb6c503bf482e7ed4bda8eff94b408f">feat: add content for pull policies (#171) (f8a9753)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified September 30, 2020: <a  href="https://github.com/go-vela/docs/commit/4019f110a5d0789ce4b0f52403c584c3b7ba4f3d">enhance: add note on default pull policy (#172) (4019f11)</a>
 </div>
 </div>
 

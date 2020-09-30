@@ -25,13 +25,13 @@
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://go-vela.github.io/docs/usage/getting-started/environment/" />
-<meta property="article:modified_time" content="2020-09-29T19:01:25-05:00" />
+<meta property="article:modified_time" content="2020-09-30T08:54:35-05:00" />
 <meta itemprop="name" content="Using the Environment">
 <meta itemprop="description" content="Learn about how to leverage the environment within your builds.
 ">
 
 
-<meta itemprop="dateModified" content="2020-09-29T19:01:25-05:00" />
+<meta itemprop="dateModified" content="2020-09-30T08:54:35-05:00" />
 <meta itemprop="wordCount" content="168">
 
 
@@ -704,7 +704,7 @@ steps:
   - name: check status
     image: redis:latest
 <span style="color:#00a000">+   environment:
-</span><span style="color:#00a000">+     EXAMPLE: Hello, World!    
+</span><span style="color:#00a000">+     EXAMPLE: Hello, World!
 </span><span style="color:#00a000"></span>    commands:
       # you can use bash commands in-line to set or override variables
       - export EXAMPLE=&#34;Hello World From Vela Team&#34;
@@ -715,7 +715,7 @@ secrets:
       name: private vault
       image: target/secret-vault:latest
 <span style="color:#00a000">+     environment:
-</span><span style="color:#00a000">+       EXAMPLE: Hello, World!       
+</span><span style="color:#00a000">+       EXAMPLE: Hello, World!
 </span><span style="color:#00a000"></span>      secrets: [ vault_token ]
       parameters:
         addr: vault.example.com
@@ -723,11 +723,11 @@ secrets:
         username: octocat
         items:
           - source: secret/docker
-            path: docker      
+            path: docker
 </code></pre></div>
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified September 29, 2020: <a  href="https://github.com/go-vela/docs/commit/f8a9753efeb6c503bf482e7ed4bda8eff94b408f">feat: add content for pull policies (#171) (f8a9753)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified September 30, 2020: <a  href="https://github.com/go-vela/docs/commit/4019f110a5d0789ce4b0f52403c584c3b7ba4f3d">enhance: add note on default pull policy (#172) (4019f11)</a>
 </div>
 </div>
 
