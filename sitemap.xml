@@ -103,6 +103,11 @@
   </url>
   
   <url>
+    <loc>https://go-vela.github.io/docs/usage/getting-started/start_build/</loc>
+    <lastmod>2020-09-29T19:01:25-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://go-vela.github.io/docs/api/authentication/</loc>
     <lastmod>2020-01-20T10:33:03-06:00</lastmod>
   </url>
@@ -118,23 +123,23 @@
   </url>
   
   <url>
-    <loc>https://go-vela.github.io/docs/usage/getting-started/start_build/</loc>
-    <lastmod>2019-11-17T22:46:06-06:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://go-vela.github.io/docs/usage/getting-started/skipping_build/</loc>
-    <lastmod>2020-08-12T17:47:07+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://go-vela.github.io/docs/usage/getting-started/workspace/</loc>
-    <lastmod>2020-08-12T17:47:07+00:00</lastmod>
+    <lastmod>2020-09-29T19:01:25-05:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/usage/getting-started/environment/</loc>
-    <lastmod>2020-08-20T18:38:37-05:00</lastmod>
+    <lastmod>2020-09-29T19:01:25-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://go-vela.github.io/docs/usage/getting-started/workspace/</loc>
+    <lastmod>2020-09-29T19:01:25-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://go-vela.github.io/docs/usage/getting-started/pull_policies/</loc>
+    <lastmod>2020-09-29T19:01:25-05:00</lastmod>
   </url>
   
   <url>
@@ -724,12 +729,12 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/concepts/pipeline/services/pull/</loc>
-    <lastmod>2020-03-18T18:00:35+00:00</lastmod>
+    <lastmod>2020-09-29T19:01:25-05:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/concepts/pipeline/steps/pull/</loc>
-    <lastmod>2020-03-18T18:00:35+00:00</lastmod>
+    <lastmod>2020-09-29T19:01:25-05:00</lastmod>
   </url>
   
   <url>

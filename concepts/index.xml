@@ -2792,18 +2792,53 @@ This pipeline will execute the &lt;code&gt;test&lt;/code&gt; step first, then ru
 
 &lt;p&gt;The &lt;code&gt;pull&lt;/code&gt; component is a part of a &lt;a href=&#34;https://go-vela.github.io/docs/docs/concepts/pipeline/services/&#34;&gt;service&lt;/a&gt; for Vela.&lt;/p&gt;
 
-&lt;p&gt;This declaration allows you to automatically upgrade to the latest version of the &lt;a href=&#34;https://go-vela.github.io/docs/docs/concepts/pipeline/services/image/&#34;&gt;image&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This declaration allows you to control how and when Vela will attempt to pull the &lt;a href=&#34;https://go-vela.github.io/docs/docs/concepts/pipeline/services/image/&#34;&gt;image&lt;/a&gt; provided for the service.&lt;/p&gt;
 
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 
-&lt;p&gt;Vela will always attempt to pull from its existing cache for images.&lt;/p&gt;
+&lt;p&gt;This component has a default value of &lt;code&gt;not_present&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;We recommend using the &lt;code&gt;pull&lt;/code&gt; declaration whenever possible.&lt;/p&gt;
+&lt;p&gt;This means Vela will always attempt to pull from its existing cache for images.&lt;/p&gt;
 
 &lt;/div&gt;
 
+
+&lt;h2 id=&#34;options&#34;&gt;Options&lt;/h2&gt;
+
+&lt;p&gt;The following options are available to configure the component:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;always&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;attempt to pull the image even if it exists in the local cache&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;never&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;assumes the image already exists in the local cache&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;not_present&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;only pull the image if it does not exist in the local cache&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;on_start&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;waits to pull the image until right before starting the container&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 
 &lt;h2 id=&#34;syntax&#34;&gt;Syntax&lt;/h2&gt;
 
@@ -2816,12 +2851,13 @@ metadata:
 services:
   - name: postgres
     image: postgres:12
-&lt;span style=&#34;color:#00a000&#34;&gt;+    pull: true
+&lt;span style=&#34;color:#00a000&#34;&gt;+   pull: not_present
 &lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;
 steps:
   - name: test
     image: golang
-    environment:
+&lt;span style=&#34;color:#00a000&#34;&gt;+   pull: always
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;    environment:
       DATABASE_DRIVER: postgres
       DATABASE_CONFIG: &amp;#39;postgres://postgres@postgres:5432/postgres?sslmode=disable&amp;#39;
     commands:
@@ -2851,18 +2887,53 @@ This pipeline will start the &lt;code&gt;postgres&lt;/code&gt; service first, th
 
 &lt;p&gt;The &lt;code&gt;pull&lt;/code&gt; component is a part of a &lt;a href=&#34;https://go-vela.github.io/docs/docs/concepts/pipeline/steps/&#34;&gt;step&lt;/a&gt; for Vela.&lt;/p&gt;
 
-&lt;p&gt;This declaration allows you to automatically upgrade to the latest version of the &lt;a href=&#34;https://go-vela.github.io/docs/docs/concepts/pipeline/steps/image/&#34;&gt;image&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This declaration allows you to control how and when Vela will attempt to pull the &lt;a href=&#34;https://go-vela.github.io/docs/docs/concepts/pipeline/steps/image/&#34;&gt;image&lt;/a&gt; provided for the step.&lt;/p&gt;
 
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 
-&lt;p&gt;Vela will always attempt to pull from its existing cache for images.&lt;/p&gt;
+&lt;p&gt;This component has a default value of &lt;code&gt;not_present&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;We recommend using the &lt;code&gt;pull&lt;/code&gt; declaration whenever possible.&lt;/p&gt;
+&lt;p&gt;This means Vela will always attempt to pull from its existing cache for images.&lt;/p&gt;
 
 &lt;/div&gt;
 
+
+&lt;h2 id=&#34;options&#34;&gt;Options&lt;/h2&gt;
+
+&lt;p&gt;The following options are available to configure the component:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;always&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;attempt to pull the image even if it exists in the local cache&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;never&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;assumes the image already exists in the local cache&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;not_present&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;only pull the image if it does not exist in the local cache&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;on_start&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;waits to pull the image until right before starting the container&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 
 &lt;h2 id=&#34;syntax&#34;&gt;Syntax&lt;/h2&gt;
 
@@ -2875,13 +2946,13 @@ metadata:
 steps:
   - name: test
     image: golang
-&lt;span style=&#34;color:#00a000&#34;&gt;+    pull: true
+&lt;span style=&#34;color:#00a000&#34;&gt;+   pull: always
 &lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;    commands:
       - go test ./...
 
   - name: build
     image: golang
-&lt;span style=&#34;color:#00a000&#34;&gt;+    pull: true
+&lt;span style=&#34;color:#00a000&#34;&gt;+   pull: not_present
 &lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;    commands:
       - go build
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;

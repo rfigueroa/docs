@@ -25,14 +25,14 @@
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://go-vela.github.io/docs/concepts/pipeline/steps/pull/" />
-<meta property="article:modified_time" content="2020-03-18T18:00:35+00:00" />
+<meta property="article:modified_time" content="2020-09-29T19:01:25-05:00" />
 <meta itemprop="name" content="Pull">
 <meta itemprop="description" content="This section contains information on the pull component for a step.
 ">
 
 
-<meta itemprop="dateModified" content="2020-03-18T18:00:35&#43;00:00" />
-<meta itemprop="wordCount" content="101">
+<meta itemprop="dateModified" content="2020-09-29T19:01:25-05:00" />
+<meta itemprop="wordCount" content="171">
 
 
 
@@ -1004,18 +1004,53 @@
 
 <p>The <code>pull</code> component is a part of a <a href="/docs/concepts/pipeline/steps/">step</a> for Vela.</p>
 
-<p>This declaration allows you to automatically upgrade to the latest version of the <a href="/docs/concepts/pipeline/steps/image/">image</a>.</p>
+<p>This declaration allows you to control how and when Vela will attempt to pull the <a href="/docs/concepts/pipeline/steps/image/">image</a> provided for the step.</p>
 
 
 
 <div class="alert alert-info" role="alert">
 
-<p>Vela will always attempt to pull from its existing cache for images.</p>
+<p>This component has a default value of <code>not_present</code>.</p>
 
-<p>We recommend using the <code>pull</code> declaration whenever possible.</p>
+<p>This means Vela will always attempt to pull from its existing cache for images.</p>
 
 </div>
 
+
+<h2 id="options">Options</h2>
+
+<p>The following options are available to configure the component:</p>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>always</code></td>
+<td>attempt to pull the image even if it exists in the local cache</td>
+</tr>
+
+<tr>
+<td><code>never</code></td>
+<td>assumes the image already exists in the local cache</td>
+</tr>
+
+<tr>
+<td><code>not_present</code></td>
+<td>only pull the image if it does not exist in the local cache</td>
+</tr>
+
+<tr>
+<td><code>on_start</code></td>
+<td>waits to pull the image until right before starting the container</td>
+</tr>
+</tbody>
+</table>
 
 <h2 id="syntax">Syntax</h2>
 
@@ -1028,13 +1063,13 @@ metadata:
 steps:
   - name: test
     image: golang
-<span style="color:#00a000">+    pull: true
+<span style="color:#00a000">+   pull: always
 </span><span style="color:#00a000"></span>    commands:
       - go test ./...
 
   - name: build
     image: golang
-<span style="color:#00a000">+    pull: true
+<span style="color:#00a000">+   pull: not_present
 </span><span style="color:#00a000"></span>    commands:
       - go build
 </code></pre></div>
@@ -1048,7 +1083,7 @@ This pipeline will execute the <code>test</code> step first, then run the <code>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified March 18, 2020: <a  href="https://github.com/go-vela/docs/commit/cc14823d88c5e1a3ec3c7ca859b4f5a26de29587">docs: fix links (part 2) (#114) (cc14823)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified September 29, 2020: <a  href="https://github.com/go-vela/docs/commit/f8a9753efeb6c503bf482e7ed4bda8eff94b408f">feat: add content for pull policies (#171) (f8a9753)</a>
 </div>
 </div>
 

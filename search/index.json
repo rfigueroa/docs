@@ -109,6 +109,13 @@
     },
 
     {
+    "url": "https://go-vela.github.io/docs/usage/getting-started/start_build/",
+    "display": "Usage/Getting started/Start build",
+    "title": "Start a Build",
+    "content": "if you&rsquo;ve followed the documentation for enabling repo writing pipeline, all that should be left to push your pipeline repo. build does not trigger when change repo, check webhook response see there an error. "
+    },
+
+    {
     "url": "https://go-vela.github.io/docs/api/authentication/",
     "display": "Docs/Api/Authentication",
     "title": "Authentication",
@@ -130,17 +137,17 @@
     },
 
     {
-    "url": "https://go-vela.github.io/docs/usage/getting-started/start_build/",
-    "display": "Usage/Getting started/Start build",
-    "title": "Start a Build",
-    "content": "if you&rsquo;ve followed the documentation for enabling repo writing pipeline, all that should be left to push your pipeline repo. build does not trigger when change repo, check webhook response see there an error. "
-    },
-
-    {
     "url": "https://go-vela.github.io/docs/usage/getting-started/skipping_build/",
     "display": "Usage/Getting started/Skipping build",
     "title": "Skipping a Build",
     "content": "to prevent vela from running build for commit, add one of the following your commit title message: [skip ci] [ci skip] vela] [vela ***no_ci*** note: you can use upper lower case. will receive payload source control provider return 200 response with reason why was not triggered. "
+    },
+
+    {
+    "url": "https://go-vela.github.io/docs/usage/getting-started/environment/",
+    "display": "Usage/Getting started/Environment",
+    "title": "Using the Environment",
+    "content": "vela provides the ability to define environment variables scoped individual steps, services secrets. pleas note design be unique per container. does inject variety of default values from build, repo user information. defaults: steps usage following pipeline concepts are being used below: secrets origin note: please warned that ${variable} expressions subject pre-processing. if you do not want pre-processor evaluate your expression it must escaped. version: &#34;1&#34; services: name: redis environment: example: hello, world! image: redis:latest steps: check status commands: can use bash commands in-line set override export example=&#34;hello world team&#34; echo ${example} secrets: origin: private vault target/secret-vault:latest vault_token parameters: addr: vault.example.com auth_method: token username: octocat items: source: secret/docker path: docker "
     },
 
     {
@@ -151,10 +158,10 @@
     },
 
     {
-    "url": "https://go-vela.github.io/docs/usage/getting-started/environment/",
-    "display": "Usage/Getting started/Environment",
-    "title": "Using the Environment",
-    "content": "vela provides the ability to define environment variables scoped individual steps, services secrets. pleas note design be unique per container. does inject variety of default values from build, repo user information. defaults: steps usage following pipeline concepts are being used below: secrets origin note: please warned that ${variable} expressions subject pre-processing. if you do not want pre-processor evaluate your expression it must escaped. version: &#34;1&#34; services: name: redis environment: example: hello, world! image: redis:latest steps: check status commands: can use bash commands in-line set override export example=&#34;hello world team&#34; echo ${example} secrets: origin: private vault target/secret-vault:latest vault_token parameters: addr: vault.example.com auth_method: token username: octocat items: source: secret/docker path: docker "
+    "url": "https://go-vela.github.io/docs/usage/getting-started/pull_policies/",
+    "display": "Usage/Getting started/Pull policies",
+    "title": "Pull Policies",
+    "content": "vela provides the ability to define how when images for secrets, steps, services will be retrieved at runtime. usage following pipeline concepts are being used below: pull steps secrets origin version: &#34;1&#34; services: name: redis image: redis:latest pull: always steps: check status alpine:latest not_present commands: you can use bash commands in-line set override variables export example=&#34;hello world from team&#34; echo ${example} secrets: origin: private vault target/secret-vault:latest on_start vault_token parameters: addr: vault.example.com auth_method: token username: octocat items: source: secret/docker path: docker will: attempt image, even if it exists locally only image doesn&rsquo;t already exist wait until right before starting container "
     },
 
     {
@@ -826,14 +833,14 @@
     "url": "https://go-vela.github.io/docs/concepts/pipeline/services/pull/",
     "display": "Pipeline/Services/Pull",
     "title": "Pull",
-    "content": "the pull component part of service for vela. declaration allows you to automatically upgrade latest version image. vela will always attempt from its existing cache images. we recommend using whenever possible. syntax following an example valid component: version: &#34;1&#34; metadata: template: false services: name: postgres image: postgres:12 pull: true steps: test golang environment: database_driver: database_config: &#39;postgres://postgres@postgres:5432/postgres?sslmode=disable&#39; commands: go ./... pipeline start first, then run step. "
+    "content": "the pull component part of service for vela. declaration allows you to control how when vela will attempt image provided service. has default value not_present. means always from its existing cache images. options following are available configure component: name description even if it exists local never assumes already not_present only does not exist on_start waits until right before starting container syntax an example valid version: &#34;1&#34; metadata: template: false services: name: postgres image: postgres:12 pull: steps: test golang environment: database_driver: database_config: &#39;postgres://postgres@postgres:5432/postgres?sslmode=disable&#39; commands: go ./... pipeline start first, then run step. "
     },
 
     {
     "url": "https://go-vela.github.io/docs/concepts/pipeline/steps/pull/",
     "display": "Pipeline/Steps/Pull",
     "title": "Pull",
-    "content": "the pull component part of step for vela. declaration allows you to automatically upgrade latest version image. vela will always attempt from its existing cache images. we recommend using whenever possible. syntax following an example valid component: version: &#34;1&#34; metadata: template: false steps: name: test image: golang pull: true commands: go ./... build pipeline execute first, then run step. "
+    "content": "the pull component part of step for vela. declaration allows you to control how when vela will attempt image provided step. has default value not_present. means always from its existing cache images. options following are available configure component: name description even if it exists local never assumes already not_present only does not exist on_start waits until right before starting container syntax an example valid version: &#34;1&#34; metadata: template: false steps: name: test image: golang pull: commands: go ./... build pipeline execute first, then run "
     },
 
     {
