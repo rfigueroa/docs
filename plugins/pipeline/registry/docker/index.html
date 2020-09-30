@@ -27,11 +27,11 @@ Registry: https://hub.docker.com/r/target/vela-docker
 This plugin supports environment (PARAMETER_*) and volume (/vela/parameters/*) configuration for setting parameters.
 The precedence order is take files then environment variables if both are set in a container.
  Usage Sample of building and publishing an image:
-steps:-name:publish_hello-worldimage:target/vela-docker:v0.2.1pull:trueparameters:registry:index.docker.iorepo:index.docker.io/octocat/hello-world Sample of building an image without publishing:
+steps:-name:publish_hello-worldimage:target/vela-docker:v0.2.1pull:alwaysparameters:registry:index.docker.iorepo:index.docker.io/octocat/hello-world Sample of building an image without publishing:
 steps: - name: publish_hello-world image: target/vela-docker:v0." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://go-vela.github.io/docs/plugins/pipeline/registry/docker/" />
-<meta property="article:modified_time" content="2020-08-12T12:32:50-05:00" />
+<meta property="article:modified_time" content="2020-09-30T13:15:30-05:00" />
 <meta itemprop="name" content="Docker">
 <meta itemprop="description" content="Overview This plugin enables the ability to build and publish Docker images in a Vela pipeline.
 Source Code: https://github.com/go-vela/vela-docker
@@ -39,11 +39,11 @@ Registry: https://hub.docker.com/r/target/vela-docker
 This plugin supports environment (PARAMETER_*) and volume (/vela/parameters/*) configuration for setting parameters.
 The precedence order is take files then environment variables if both are set in a container.
  Usage Sample of building and publishing an image:
-steps:-name:publish_hello-worldimage:target/vela-docker:v0.2.1pull:trueparameters:registry:index.docker.iorepo:index.docker.io/octocat/hello-world Sample of building an image without publishing:
+steps:-name:publish_hello-worldimage:target/vela-docker:v0.2.1pull:alwaysparameters:registry:index.docker.iorepo:index.docker.io/octocat/hello-world Sample of building an image without publishing:
 steps: - name: publish_hello-world image: target/vela-docker:v0.">
 
 
-<meta itemprop="dateModified" content="2020-08-12T12:32:50-05:00" />
+<meta itemprop="dateModified" content="2020-09-30T13:15:30-05:00" />
 <meta itemprop="wordCount" content="619">
 
 
@@ -57,7 +57,7 @@ Registry: https://hub.docker.com/r/target/vela-docker
 This plugin supports environment (PARAMETER_*) and volume (/vela/parameters/*) configuration for setting parameters.
 The precedence order is take files then environment variables if both are set in a container.
  Usage Sample of building and publishing an image:
-steps:-name:publish_hello-worldimage:target/vela-docker:v0.2.1pull:trueparameters:registry:index.docker.iorepo:index.docker.io/octocat/hello-world Sample of building an image without publishing:
+steps:-name:publish_hello-worldimage:target/vela-docker:v0.2.1pull:alwaysparameters:registry:index.docker.iorepo:index.docker.io/octocat/hello-world Sample of building an image without publishing:
 steps: - name: publish_hello-world image: target/vela-docker:v0."/>
 
 
@@ -739,7 +739,7 @@ steps: - name: publish_hello-world image: target/vela-docker:v0."/>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">steps<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">  </span>-<span style="color:#f8f8f8;text-decoration:underline"> </span>name<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>publish_hello-world<span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">    </span>image<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>target/vela-docker<span style="color:#000;font-weight:bold">:</span>v0<span style="color:#0000cf;font-weight:bold">.2.1</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>pull<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#204a87;font-weight:bold">true</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>pull<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>always<span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">    </span>parameters<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">      </span>registry<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>index.docker.io<span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">      </span>repo<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>index.docker.io/octocat/hello-world</code></pre></div>
@@ -747,7 +747,7 @@ steps: - name: publish_hello-world image: target/vela-docker:v0."/>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: publish_hello-world
     image: target/vela-docker:v0.2.1
-    pull: true
+    pull: always
     parameters:
 <span style="color:#00a000">+     dry_run: true
 </span><span style="color:#00a000"></span>      registry: index.docker.io
@@ -757,7 +757,7 @@ steps: - name: publish_hello-world image: target/vela-docker:v0."/>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: publish_hello-world
     image: target/vela-docker:v0.2.1
-    pull: true
+    pull: always
     parameters:
       registry: index.docker.io
       repo: index.docker.io/octocat/hello-world
@@ -769,7 +769,7 @@ steps: - name: publish_hello-world image: target/vela-docker:v0."/>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: publish_hello-world
     image: target/vela-docker:v0.2.1
-    pull: true
+    pull: always
     parameters:
 <span style="color:#00a000">+     auto_tag: true
 </span><span style="color:#00a000"></span>      registry: index.docker.io
@@ -779,7 +779,7 @@ steps: - name: publish_hello-world image: target/vela-docker:v0."/>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: publish_hello-world
     image: target/vela-docker:v0.2.1
-    pull: true
+    pull: always
     parameters:
 <span style="color:#00a000">+     build_args:
 </span><span style="color:#00a000">+       - FOO=bar
@@ -790,7 +790,7 @@ steps: - name: publish_hello-world image: target/vela-docker:v0."/>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: publish_hello-world
     image: target/vela-docker:v0.2.1
-    pull: true
+    pull: always
     parameters:
 <span style="color:#00a000">+     cache: true
 </span><span style="color:#00a000">+     cache_repo: index.docker.io/octocat/hello-world
@@ -801,7 +801,7 @@ steps: - name: publish_hello-world image: target/vela-docker:v0."/>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: publish_hello-world
     image: target/vela-docker:v0.2.1
-    pull: true
+    pull: always
     parameters:
       registry: index.docker.io
       repo: index.docker.io/octocat/hello-world
@@ -848,7 +848,7 @@ Users should refrain from configuring sensitive information in their pipeline in
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: publish_hello-world
     image: target/vela-docker:v0.2.1
-    pull: true
+    pull: always
 <span style="color:#00a000">+   secrets: [ docker_username, docker_password ]
 </span><span style="color:#00a000"></span>    parameters:
       registry: index.docker.io
@@ -898,7 +898,7 @@ This example will add the <code>secrets</code> to the <code>publish_hello-world<
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: publish_hello-world
     image: target/vela-docker:v0.2.1
-    pull: true
+    pull: always
     parameters:
       registry: index.docker.io
       repo: index.docker.io/octocat/hello-world
@@ -1074,7 +1074,7 @@ Vela injects several variables, by default, that this plugin can load in automat
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: publish_hello-world
     image: target/vela-docker:v0.2.1
-    pull: true
+    pull: always
     parameters:
 <span style="color:#00a000">+     log_level: trace
 </span><span style="color:#00a000"></span>      registry: index.docker.io
@@ -1086,7 +1086,7 @@ Vela injects several variables, by default, that this plugin can load in automat
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified August 12, 2020: <a  href="https://github.com/go-vela/docs/commit/c768c8571505560c1c3b35535bacad3121625d9c">feat: add docs for external secrets (#156) (c768c85)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified September 30, 2020: <a  href="https://github.com/go-vela/docs/commit/8d56b7af5d28654b796f4508dc6145a739b95f13">chore: convert true to always pull policy (#173) (8d56b7a)</a>
 </div>
 </div>
 

@@ -27,11 +27,11 @@ Registry: https://hub.docker.com/r/target/vela-s3-cache
 This plugin supports environment (PARAMETER_*) and volume (/vela/parameters/*) configuration for setting parameters.
 The precedence order is take files then environment variables if both are set in a container.
  Usage Sample of restoring a cache:
-steps:-name:restore_cacheimage:target/vela-s3-cache:v0.2.0pull:trueparameters:action:restoreroot:mybucketserver:mybucket.s3-us-west-2.amazonaws.com Sample of rebuilding a cache:
-steps:-name:rebuild_cacheimage:target/vela-s3-cache:v0.2.0pull:trueparameters:action:rebuildroot:mybucketserver:mybucket.s3-us-west-2.amazonaws.commount:-.gradle Sample of flushing a cache:" />
+steps:-name:restore_cacheimage:target/vela-s3-cache:v0.2.0pull:alwaysparameters:action:restoreroot:mybucketserver:mybucket.s3-us-west-2.amazonaws.com Sample of rebuilding a cache:
+steps:-name:rebuild_cacheimage:target/vela-s3-cache:v0.2.0pull:alwaysparameters:action:rebuildroot:mybucketserver:mybucket.s3-us-west-2.amazonaws.commount:-.gradle Sample of flushing a cache:" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://go-vela.github.io/docs/plugins/pipeline/registry/s3_cache/" />
-<meta property="article:modified_time" content="2020-08-12T12:32:50-05:00" />
+<meta property="article:modified_time" content="2020-09-30T13:15:30-05:00" />
 <meta itemprop="name" content="S3 Cache">
 <meta itemprop="description" content="Overview This plugin enables you to cache build resources in an s3 compatible store for a Vela pipeline.
 Source Code: https://github.com/go-vela/vela-s3-cache
@@ -39,11 +39,11 @@ Registry: https://hub.docker.com/r/target/vela-s3-cache
 This plugin supports environment (PARAMETER_*) and volume (/vela/parameters/*) configuration for setting parameters.
 The precedence order is take files then environment variables if both are set in a container.
  Usage Sample of restoring a cache:
-steps:-name:restore_cacheimage:target/vela-s3-cache:v0.2.0pull:trueparameters:action:restoreroot:mybucketserver:mybucket.s3-us-west-2.amazonaws.com Sample of rebuilding a cache:
-steps:-name:rebuild_cacheimage:target/vela-s3-cache:v0.2.0pull:trueparameters:action:rebuildroot:mybucketserver:mybucket.s3-us-west-2.amazonaws.commount:-.gradle Sample of flushing a cache:">
+steps:-name:restore_cacheimage:target/vela-s3-cache:v0.2.0pull:alwaysparameters:action:restoreroot:mybucketserver:mybucket.s3-us-west-2.amazonaws.com Sample of rebuilding a cache:
+steps:-name:rebuild_cacheimage:target/vela-s3-cache:v0.2.0pull:alwaysparameters:action:rebuildroot:mybucketserver:mybucket.s3-us-west-2.amazonaws.commount:-.gradle Sample of flushing a cache:">
 
 
-<meta itemprop="dateModified" content="2020-08-12T12:32:50-05:00" />
+<meta itemprop="dateModified" content="2020-09-30T13:15:30-05:00" />
 <meta itemprop="wordCount" content="463">
 
 
@@ -57,8 +57,8 @@ Registry: https://hub.docker.com/r/target/vela-s3-cache
 This plugin supports environment (PARAMETER_*) and volume (/vela/parameters/*) configuration for setting parameters.
 The precedence order is take files then environment variables if both are set in a container.
  Usage Sample of restoring a cache:
-steps:-name:restore_cacheimage:target/vela-s3-cache:v0.2.0pull:trueparameters:action:restoreroot:mybucketserver:mybucket.s3-us-west-2.amazonaws.com Sample of rebuilding a cache:
-steps:-name:rebuild_cacheimage:target/vela-s3-cache:v0.2.0pull:trueparameters:action:rebuildroot:mybucketserver:mybucket.s3-us-west-2.amazonaws.commount:-.gradle Sample of flushing a cache:"/>
+steps:-name:restore_cacheimage:target/vela-s3-cache:v0.2.0pull:alwaysparameters:action:restoreroot:mybucketserver:mybucket.s3-us-west-2.amazonaws.com Sample of rebuilding a cache:
+steps:-name:rebuild_cacheimage:target/vela-s3-cache:v0.2.0pull:alwaysparameters:action:rebuildroot:mybucketserver:mybucket.s3-us-west-2.amazonaws.commount:-.gradle Sample of flushing a cache:"/>
 
 
 
@@ -748,7 +748,7 @@ steps:-name:rebuild_cacheimage:target/vela-s3-cache:v0.2.0pull:trueparameters:ac
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">steps<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">  </span>-<span style="color:#f8f8f8;text-decoration:underline"> </span>name<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>restore_cache<span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">    </span>image<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>target/vela-s3-cache<span style="color:#000;font-weight:bold">:</span>v0<span style="color:#0000cf;font-weight:bold">.2.0</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>pull<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#204a87;font-weight:bold">true</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>pull<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>always<span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">    </span>parameters<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">      </span>action<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>restore<span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">      </span>root<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>mybucket<span style="color:#f8f8f8;text-decoration:underline">
@@ -757,7 +757,7 @@ steps:-name:rebuild_cacheimage:target/vela-s3-cache:v0.2.0pull:trueparameters:ac
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">steps<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">  </span>-<span style="color:#f8f8f8;text-decoration:underline"> </span>name<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>rebuild_cache<span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">    </span>image<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>target/vela-s3-cache<span style="color:#000;font-weight:bold">:</span>v0<span style="color:#0000cf;font-weight:bold">.2.0</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>pull<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#204a87;font-weight:bold">true</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>pull<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>always<span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">    </span>parameters<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">      </span>action<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>rebuild<span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">      </span>root<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>mybucket<span style="color:#f8f8f8;text-decoration:underline">
@@ -768,7 +768,7 @@ steps:-name:rebuild_cacheimage:target/vela-s3-cache:v0.2.0pull:trueparameters:ac
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">steps<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">  </span>-<span style="color:#f8f8f8;text-decoration:underline"> </span>name<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>flushing_cache<span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">    </span>image<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>target/vela-s3-cache<span style="color:#000;font-weight:bold">:</span>v0<span style="color:#0000cf;font-weight:bold">.2.0</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>pull<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#204a87;font-weight:bold">true</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>pull<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>always<span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">    </span>parameters<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">      </span>action<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>flush<span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">      </span>root<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>mybucket<span style="color:#f8f8f8;text-decoration:underline">
@@ -817,7 +817,7 @@ Users should refrain from configuring sensitive information in their pipeline in
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: restore_cache
     image: target/vela-s3-cache:v0.2.0
-    pull: true
+    pull: always
 <span style="color:#00a000">+   secrets: [ cache_s3_access_key, cache_s3_secret_key ]
 </span><span style="color:#00a000"></span>    parameters:
       action: restore
@@ -873,7 +873,7 @@ This example will add the <code>secrets</code> to the <code>restore_cache</code>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: restore_cache
     image: target/vela-s3-cache:v0.2.0
-    pull: true
+    pull: always
     parameters:
       action: restore
       root: mybucket
@@ -1060,7 +1060,7 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: restore_cache
     image: target/vela-s3-cache:v0.2.0
-    pull: true
+    pull: always
     parameters:
       action: restore
 <span style="color:#00a000">+     log_level: trace
@@ -1073,7 +1073,7 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified August 12, 2020: <a  href="https://github.com/go-vela/docs/commit/c768c8571505560c1c3b35535bacad3121625d9c">feat: add docs for external secrets (#156) (c768c85)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified September 30, 2020: <a  href="https://github.com/go-vela/docs/commit/8d56b7af5d28654b796f4508dc6145a739b95f13">chore: convert true to always pull policy (#173) (8d56b7a)</a>
 </div>
 </div>
 

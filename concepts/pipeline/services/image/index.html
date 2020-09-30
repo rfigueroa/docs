@@ -25,13 +25,13 @@
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://go-vela.github.io/docs/concepts/pipeline/services/image/" />
-<meta property="article:modified_time" content="2020-03-18T18:00:35+00:00" />
+<meta property="article:modified_time" content="2020-09-30T13:15:30-05:00" />
 <meta itemprop="name" content="Image">
 <meta itemprop="description" content="This section contains information on the image component for a service.
 ">
 
 
-<meta itemprop="dateModified" content="2020-03-18T18:00:35&#43;00:00" />
+<meta itemprop="dateModified" content="2020-09-30T13:15:30-05:00" />
 <meta itemprop="wordCount" content="123">
 
 
@@ -1042,7 +1042,7 @@ metadata:
 services:
   - name: postgres
 <span style="color:#00a000">+    image: postgres:12
-</span><span style="color:#00a000"></span>    pull: true
+</span><span style="color:#00a000"></span>    pull: always
 
 steps:
   - name: test
@@ -1063,7 +1063,7 @@ This pipeline will start the <code>postgres</code> service first, then run the <
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified March 18, 2020: <a  href="https://github.com/go-vela/docs/commit/cc14823d88c5e1a3ec3c7ca859b4f5a26de29587">docs: fix links (part 2) (#114) (cc14823)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified September 30, 2020: <a  href="https://github.com/go-vela/docs/commit/8d56b7af5d28654b796f4508dc6145a739b95f13">chore: convert true to always pull policy (#173) (8d56b7a)</a>
 </div>
 </div>
 

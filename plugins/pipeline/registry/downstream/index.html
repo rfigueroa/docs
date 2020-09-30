@@ -29,7 +29,7 @@ The precedence order is take files then environment variables if both are set in
  Usage This plugin will only search up to the last 500 builds in your build history.  Sample of triggering a downstream build:" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://go-vela.github.io/docs/plugins/pipeline/registry/downstream/" />
-<meta property="article:modified_time" content="2020-08-12T12:32:50-05:00" />
+<meta property="article:modified_time" content="2020-09-30T13:15:30-05:00" />
 <meta itemprop="name" content="Downstream">
 <meta itemprop="description" content="Overview This plugin enables the ability to trigger builds for other repos for Vela in a pipeline.
 Source Code: https://github.com/go-vela/vela-downstream
@@ -39,7 +39,7 @@ The precedence order is take files then environment variables if both are set in
  Usage This plugin will only search up to the last 500 builds in your build history.  Sample of triggering a downstream build:">
 
 
-<meta itemprop="dateModified" content="2020-08-12T12:32:50-05:00" />
+<meta itemprop="dateModified" content="2020-09-30T13:15:30-05:00" />
 <meta itemprop="wordCount" content="422">
 
 
@@ -741,7 +741,7 @@ This plugin will only search up to the last 500 builds in your build history.
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">steps<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">  </span>-<span style="color:#f8f8f8;text-decoration:underline"> </span>name<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>trigger_hello-world<span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">    </span>image<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>target/vela-downstream<span style="color:#000;font-weight:bold">:</span>v0<span style="color:#0000cf;font-weight:bold">.2.0</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>pull<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#204a87;font-weight:bold">true</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>pull<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>always<span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">    </span>parameters<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">      </span>branch<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>master<span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">      </span>repos<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
@@ -752,7 +752,7 @@ This plugin will only search up to the last 500 builds in your build history.
 <span style="color:#00a000">+  - name: trigger_multiple
 </span><span style="color:#00a000"></span><span style="color:#a40000">-  - name: trigger_hello-world
 </span><span style="color:#a40000"></span>    image: target/vela-downstream:v0.2.0
-    pull: true
+    pull: always
     parameters:
       branch: master
       repos:
@@ -773,7 +773,7 @@ Use the @ symbol at the end of the org/repo to provide a unique branch per repo.
 <span style="color:#00a000">+  - name: trigger_multiple
 </span><span style="color:#00a000"></span><span style="color:#a40000">-  - name: trigger_hello-world
 </span><span style="color:#a40000"></span>    image: target/vela-downstream:v0.2.0
-    pull: true
+    pull: always
     parameters:
 <span style="color:#a40000">-      branch: master
 </span><span style="color:#a40000"></span>      repos:
@@ -817,7 +817,7 @@ Users should refrain from configuring sensitive information in their pipeline in
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: trigger_hello-world
     image: target/vela-downstream:v0.2.0
-    pull: true
+    pull: always
 <span style="color:#00a000">+   secrets: [ downstream_token ]
 </span><span style="color:#00a000"></span>    parameters:
       branch: master
@@ -862,7 +862,7 @@ This example will add the <code>secrets</code> to the <code>trigger_hello-world<
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: trigger_hello-world
     image: target/vela-downstream:v0.2.0
-    pull: true
+    pull: always
     parameters:
       branch: master
       repos:
@@ -940,7 +940,7 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: trigger_hello-world
     image: target/vela-downstream:v0.2.0
-    pull: true
+    pull: always
     parameters:
       branch: master
 <span style="color:#00a000">+     log_level: trace
@@ -954,7 +954,7 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified August 12, 2020: <a  href="https://github.com/go-vela/docs/commit/c768c8571505560c1c3b35535bacad3121625d9c">feat: add docs for external secrets (#156) (c768c85)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified September 30, 2020: <a  href="https://github.com/go-vela/docs/commit/8d56b7af5d28654b796f4508dc6145a739b95f13">chore: convert true to always pull policy (#173) (8d56b7a)</a>
 </div>
 </div>
 

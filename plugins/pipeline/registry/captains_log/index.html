@@ -25,23 +25,23 @@
 Source Code: https://github.com/target/captains-log
 Registry: https://hub.docker.com/r/target/captains-log
 Usage Basic Usage
-steps:-name:captains-logimage:target/captains-log:1pull:truesecrets:[GITHUB_TOKEN,SLACK_URL]parameters:github_owner:targetgithub_repo:captains-loggithub_tag_id:&#34;v([0-9]&#43;-release)$&#34;enterprise_host:https://git.myteam.comjira_team_domain:myteamnamespace Utilize &ldquo;teams&rdquo; organization:
-steps:-name:captains-logimage:target/captains-log:1pull:truesecrets:[GITHUB_TOKEN,SLACK_URL]parameters:github_owner:targetgithub_repo:captains-loggithub_tag_id:&#34;v([0-9]&#43;-release)$&#34;enterprise_host:https://git.myteam.comjira_team_domain:myteamnamespaceteams:-name:Team1color:&#34;#FFDC18&#34;emoji:&#34;✨&#34;mentions:&#34;&lt;@person1&gt; &lt;@person2&gt;&#34;issueTracking:jira:projects:-TEAM1-TEAM1SUBGROUP-name:Team2color:&#34;#F48642&#34;emoji:&#34;🔥&#34;mentions:&#34;&lt;@person3&gt;&#34;issueTracking:jira:projects:-TEAM2 Secrets Users should refrain from configuring sensitive information in their pipeline in plain text.  The plugin accepts the following parameters for authentication:
+steps:-name:captains-logimage:target/captains-log:1pull:alwayssecrets:[GITHUB_TOKEN,SLACK_URL]parameters:github_owner:targetgithub_repo:captains-loggithub_tag_id:&#34;v([0-9]&#43;-release)$&#34;enterprise_host:https://git.myteam.comjira_team_domain:myteamnamespace Utilize &ldquo;teams&rdquo; organization:
+steps:-name:captains-logimage:target/captains-log:1pull:alwayssecrets:[GITHUB_TOKEN,SLACK_URL]parameters:github_owner:targetgithub_repo:captains-loggithub_tag_id:&#34;v([0-9]&#43;-release)$&#34;enterprise_host:https://git.myteam.comjira_team_domain:myteamnamespaceteams:-name:Team1color:&#34;#FFDC18&#34;emoji:&#34;✨&#34;mentions:&#34;&lt;@person1&gt; &lt;@person2&gt;&#34;issueTracking:jira:projects:-TEAM1-TEAM1SUBGROUP-name:Team2color:&#34;#F48642&#34;emoji:&#34;🔥&#34;mentions:&#34;&lt;@person3&gt;&#34;issueTracking:jira:projects:-TEAM2 Secrets Users should refrain from configuring sensitive information in their pipeline in plain text.  The plugin accepts the following parameters for authentication:
    Parameter Environment Variable Configuration     github_token GITHUB_TOKEN   slack_token SLACK_URL   slack_url SLACK_TOKEN    Users can use Vela secrets to substitute these sensitive values at runtime:" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://go-vela.github.io/docs/plugins/pipeline/registry/captains_log/" />
-<meta property="article:modified_time" content="2020-08-04T23:37:38-05:00" />
+<meta property="article:modified_time" content="2020-09-30T13:15:30-05:00" />
 <meta itemprop="name" content="Captain&#39;s Log">
 <meta itemprop="description" content="Overview The Captain&rsquo;s Log plugin enables the ability to manage release logs through slack in a Vela pipeline.
 Source Code: https://github.com/target/captains-log
 Registry: https://hub.docker.com/r/target/captains-log
 Usage Basic Usage
-steps:-name:captains-logimage:target/captains-log:1pull:truesecrets:[GITHUB_TOKEN,SLACK_URL]parameters:github_owner:targetgithub_repo:captains-loggithub_tag_id:&#34;v([0-9]&#43;-release)$&#34;enterprise_host:https://git.myteam.comjira_team_domain:myteamnamespace Utilize &ldquo;teams&rdquo; organization:
-steps:-name:captains-logimage:target/captains-log:1pull:truesecrets:[GITHUB_TOKEN,SLACK_URL]parameters:github_owner:targetgithub_repo:captains-loggithub_tag_id:&#34;v([0-9]&#43;-release)$&#34;enterprise_host:https://git.myteam.comjira_team_domain:myteamnamespaceteams:-name:Team1color:&#34;#FFDC18&#34;emoji:&#34;✨&#34;mentions:&#34;&lt;@person1&gt; &lt;@person2&gt;&#34;issueTracking:jira:projects:-TEAM1-TEAM1SUBGROUP-name:Team2color:&#34;#F48642&#34;emoji:&#34;🔥&#34;mentions:&#34;&lt;@person3&gt;&#34;issueTracking:jira:projects:-TEAM2 Secrets Users should refrain from configuring sensitive information in their pipeline in plain text.  The plugin accepts the following parameters for authentication:
+steps:-name:captains-logimage:target/captains-log:1pull:alwayssecrets:[GITHUB_TOKEN,SLACK_URL]parameters:github_owner:targetgithub_repo:captains-loggithub_tag_id:&#34;v([0-9]&#43;-release)$&#34;enterprise_host:https://git.myteam.comjira_team_domain:myteamnamespace Utilize &ldquo;teams&rdquo; organization:
+steps:-name:captains-logimage:target/captains-log:1pull:alwayssecrets:[GITHUB_TOKEN,SLACK_URL]parameters:github_owner:targetgithub_repo:captains-loggithub_tag_id:&#34;v([0-9]&#43;-release)$&#34;enterprise_host:https://git.myteam.comjira_team_domain:myteamnamespaceteams:-name:Team1color:&#34;#FFDC18&#34;emoji:&#34;✨&#34;mentions:&#34;&lt;@person1&gt; &lt;@person2&gt;&#34;issueTracking:jira:projects:-TEAM1-TEAM1SUBGROUP-name:Team2color:&#34;#F48642&#34;emoji:&#34;🔥&#34;mentions:&#34;&lt;@person3&gt;&#34;issueTracking:jira:projects:-TEAM2 Secrets Users should refrain from configuring sensitive information in their pipeline in plain text.  The plugin accepts the following parameters for authentication:
    Parameter Environment Variable Configuration     github_token GITHUB_TOKEN   slack_token SLACK_URL   slack_url SLACK_TOKEN    Users can use Vela secrets to substitute these sensitive values at runtime:">
 
 
-<meta itemprop="dateModified" content="2020-08-04T23:37:38-05:00" />
+<meta itemprop="dateModified" content="2020-09-30T13:15:30-05:00" />
 <meta itemprop="wordCount" content="134">
 
 
@@ -53,8 +53,8 @@ steps:-name:captains-logimage:target/captains-log:1pull:truesecrets:[GITHUB_TOKE
 Source Code: https://github.com/target/captains-log
 Registry: https://hub.docker.com/r/target/captains-log
 Usage Basic Usage
-steps:-name:captains-logimage:target/captains-log:1pull:truesecrets:[GITHUB_TOKEN,SLACK_URL]parameters:github_owner:targetgithub_repo:captains-loggithub_tag_id:&#34;v([0-9]&#43;-release)$&#34;enterprise_host:https://git.myteam.comjira_team_domain:myteamnamespace Utilize &ldquo;teams&rdquo; organization:
-steps:-name:captains-logimage:target/captains-log:1pull:truesecrets:[GITHUB_TOKEN,SLACK_URL]parameters:github_owner:targetgithub_repo:captains-loggithub_tag_id:&#34;v([0-9]&#43;-release)$&#34;enterprise_host:https://git.myteam.comjira_team_domain:myteamnamespaceteams:-name:Team1color:&#34;#FFDC18&#34;emoji:&#34;✨&#34;mentions:&#34;&lt;@person1&gt; &lt;@person2&gt;&#34;issueTracking:jira:projects:-TEAM1-TEAM1SUBGROUP-name:Team2color:&#34;#F48642&#34;emoji:&#34;🔥&#34;mentions:&#34;&lt;@person3&gt;&#34;issueTracking:jira:projects:-TEAM2 Secrets Users should refrain from configuring sensitive information in their pipeline in plain text.  The plugin accepts the following parameters for authentication:
+steps:-name:captains-logimage:target/captains-log:1pull:alwayssecrets:[GITHUB_TOKEN,SLACK_URL]parameters:github_owner:targetgithub_repo:captains-loggithub_tag_id:&#34;v([0-9]&#43;-release)$&#34;enterprise_host:https://git.myteam.comjira_team_domain:myteamnamespace Utilize &ldquo;teams&rdquo; organization:
+steps:-name:captains-logimage:target/captains-log:1pull:alwayssecrets:[GITHUB_TOKEN,SLACK_URL]parameters:github_owner:targetgithub_repo:captains-loggithub_tag_id:&#34;v([0-9]&#43;-release)$&#34;enterprise_host:https://git.myteam.comjira_team_domain:myteamnamespaceteams:-name:Team1color:&#34;#FFDC18&#34;emoji:&#34;✨&#34;mentions:&#34;&lt;@person1&gt; &lt;@person2&gt;&#34;issueTracking:jira:projects:-TEAM1-TEAM1SUBGROUP-name:Team2color:&#34;#F48642&#34;emoji:&#34;🔥&#34;mentions:&#34;&lt;@person3&gt;&#34;issueTracking:jira:projects:-TEAM2 Secrets Users should refrain from configuring sensitive information in their pipeline in plain text.  The plugin accepts the following parameters for authentication:
    Parameter Environment Variable Configuration     github_token GITHUB_TOKEN   slack_token SLACK_URL   slack_url SLACK_TOKEN    Users can use Vela secrets to substitute these sensitive values at runtime:"/>
 
 
@@ -719,7 +719,7 @@ steps:-name:captains-logimage:target/captains-log:1pull:truesecrets:[GITHUB_TOKE
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">steps<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">  </span>-<span style="color:#f8f8f8;text-decoration:underline"> </span>name<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>captains-log<span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">    </span>image<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>target/captains-log<span style="color:#000;font-weight:bold">:</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>pull<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#204a87;font-weight:bold">true</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>pull<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>always<span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">    </span>secrets<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">[</span>GITHUB_TOKEN<span style="color:#000;font-weight:bold">,</span><span style="color:#f8f8f8;text-decoration:underline"> </span>SLACK_URL<span style="color:#000;font-weight:bold">]</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">    </span>parameters<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">      </span>github_owner<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>target<span style="color:#f8f8f8;text-decoration:underline">
@@ -731,7 +731,7 @@ steps:-name:captains-logimage:target/captains-log:1pull:truesecrets:[GITHUB_TOKE
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">steps<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">  </span>-<span style="color:#f8f8f8;text-decoration:underline"> </span>name<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>captains-log<span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">    </span>image<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>target/captains-log<span style="color:#000;font-weight:bold">:</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>pull<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#204a87;font-weight:bold">true</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>pull<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>always<span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">    </span>secrets<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">[</span>GITHUB_TOKEN<span style="color:#000;font-weight:bold">,</span><span style="color:#f8f8f8;text-decoration:underline"> </span>SLACK_URL<span style="color:#000;font-weight:bold">]</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">    </span>parameters<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">      </span>github_owner<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>target<span style="color:#f8f8f8;text-decoration:underline">
@@ -799,7 +799,7 @@ Users should refrain from configuring sensitive information in their pipeline in
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: captains-log
     image: target/captains-log:1
-    pull: true
+    pull: always
 <span style="color:#00a000">+   secrets: [ github_token, slack_url ]
 </span><span style="color:#00a000"></span>    parameters:
       github_owner: target
@@ -831,7 +831,7 @@ This example will add the <code>secrets</code> to the <code>captains-log</code> 
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified August 4, 2020: <a  href="https://github.com/go-vela/docs/commit/5a3ef168d4161a1361adb3470129dbbfca391cd6">refactor: prepare plugins for secrets (#152) (5a3ef16)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified September 30, 2020: <a  href="https://github.com/go-vela/docs/commit/8d56b7af5d28654b796f4508dc6145a739b95f13">chore: convert true to always pull policy (#173) (8d56b7a)</a>
 </div>
 </div>
 

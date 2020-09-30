@@ -25,13 +25,13 @@
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://go-vela.github.io/docs/usage/samples/mongo/" />
-<meta property="article:modified_time" content="2020-08-06T09:52:03-05:00" />
+<meta property="article:modified_time" content="2020-09-30T13:15:30-05:00" />
 <meta itemprop="name" content="Mongo">
 <meta itemprop="description" content="Sample Pipeline with Mongo
 ">
 
 
-<meta itemprop="dateModified" content="2020-08-06T09:52:03-05:00" />
+<meta itemprop="dateModified" content="2020-09-30T13:15:30-05:00" />
 <meta itemprop="wordCount" content="234">
 
 
@@ -693,12 +693,12 @@
 services:
   - name: mongo
     image: mongo:latest
-    pull: true
+    pull: always
 
 steps:
   - name: check status
     image: mongo:latest
-    pull: true
+    pull: always
     commands:
       # sleeping can help ensure the service adequate time to start
 <span style="color:#00a000">+      - sleep 15
@@ -746,7 +746,7 @@ steps:
 </code></pre></div>
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified August 6, 2020: <a  href="https://github.com/go-vela/docs/commit/cf0029fbd8ede2336fd6aa8ec3c58ffe698d0c0b">enhancement(usage): add new samples (#153) (cf0029f)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified September 30, 2020: <a  href="https://github.com/go-vela/docs/commit/8d56b7af5d28654b796f4508dc6145a739b95f13">chore: convert true to always pull policy (#173) (8d56b7a)</a>
 </div>
 </div>
 

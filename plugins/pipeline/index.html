@@ -660,7 +660,7 @@
 steps:
   - name: docker
     image: target/vela-docker
-    pull: true
+    pull: always
 <span style="color:#00a000">+   parameters:
 </span><span style="color:#00a000">+     registry: index.docker.io
 </span><span style="color:#00a000">+     repo: index.docker.io/octocat/hello-world
@@ -751,7 +751,7 @@ We recommend that all plugins be placed inside a <a href="https://hub.docker.com
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified August 12, 2020: <a  href="https://github.com/go-vela/docs/commit/c768c8571505560c1c3b35535bacad3121625d9c">feat: add docs for external secrets (#156) (c768c85)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified September 30, 2020: <a  href="https://github.com/go-vela/docs/commit/8d56b7af5d28654b796f4508dc6145a739b95f13">chore: convert true to always pull policy (#173) (8d56b7a)</a>
 </div>
 </div>
 

@@ -835,7 +835,7 @@ metadata:
 steps:
   - name: plugin
     image: target/vela-docker:v0.1.0
-    pull: true
+    pull: always
 &lt;span style=&#34;color:#00a000&#34;&gt;+    parameters:
 &lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+      registry: index.docker.io
 &lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+      repo: index.docker.io/octocat/hello-world

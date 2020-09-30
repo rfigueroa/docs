@@ -25,13 +25,13 @@
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://go-vela.github.io/docs/concepts/pipeline/steps/parameters/" />
-<meta property="article:modified_time" content="2020-03-18T18:00:35+00:00" />
+<meta property="article:modified_time" content="2020-09-30T13:15:30-05:00" />
 <meta itemprop="name" content="Parameters">
 <meta itemprop="description" content="This section contains information on the parameters component for a step.
 ">
 
 
-<meta itemprop="dateModified" content="2020-03-18T18:00:35&#43;00:00" />
+<meta itemprop="dateModified" content="2020-09-30T13:15:30-05:00" />
 <meta itemprop="wordCount" content="70">
 
 
@@ -1017,7 +1017,7 @@ metadata:
 steps:
   - name: plugin
     image: target/vela-docker:v0.1.0
-    pull: true
+    pull: always
 <span style="color:#00a000">+    parameters:
 </span><span style="color:#00a000">+      registry: index.docker.io
 </span><span style="color:#00a000">+      repo: index.docker.io/octocat/hello-world
@@ -1038,7 +1038,7 @@ This pipeline will add the following environment variables to the <code>plugin</
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified March 18, 2020: <a  href="https://github.com/go-vela/docs/commit/cc14823d88c5e1a3ec3c7ca859b4f5a26de29587">docs: fix links (part 2) (#114) (cc14823)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified September 30, 2020: <a  href="https://github.com/go-vela/docs/commit/8d56b7af5d28654b796f4508dc6145a739b95f13">chore: convert true to always pull policy (#173) (8d56b7a)</a>
 </div>
 </div>
 

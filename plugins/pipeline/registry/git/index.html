@@ -29,7 +29,7 @@ The precedence order is take files then environment variables if both are set in
  Usage This plugin is automatically injected into every pipeline for the source repository." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://go-vela.github.io/docs/plugins/pipeline/registry/git/" />
-<meta property="article:modified_time" content="2020-08-13T12:17:39+00:00" />
+<meta property="article:modified_time" content="2020-09-30T13:15:30-05:00" />
 <meta itemprop="name" content="Git">
 <meta itemprop="description" content="Overview This plugin is automatically injected into every pipeline for the source repository.  This plugin enables the ability to clone repositories in a Vela pipeline to the build workspace.
 Source Code: https://github.com/go-vela/vela-git
@@ -39,7 +39,7 @@ The precedence order is take files then environment variables if both are set in
  Usage This plugin is automatically injected into every pipeline for the source repository.">
 
 
-<meta itemprop="dateModified" content="2020-08-13T12:17:39&#43;00:00" />
+<meta itemprop="dateModified" content="2020-09-30T13:15:30-05:00" />
 <meta itemprop="wordCount" content="458">
 
 
@@ -749,7 +749,7 @@ This plugin is automatically injected into every pipeline for the source reposit
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">steps<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">  </span>-<span style="color:#f8f8f8;text-decoration:underline"> </span>name<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>clone_hello-world<span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">    </span>image<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>target/vela-git<span style="color:#000;font-weight:bold">:</span>v0<span style="color:#0000cf;font-weight:bold">.3.0</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>pull<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#204a87;font-weight:bold">true</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>pull<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>always<span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">    </span>parameters<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">      </span>path<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>hello-world<span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">      </span>ref<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>refs/heads/master<span style="color:#f8f8f8;text-decoration:underline">
@@ -759,7 +759,7 @@ This plugin is automatically injected into every pipeline for the source reposit
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: clone_hello-world
     image: target/vela-git:v0.3.0
-    pull: true
+    pull: always
     parameters:
       path: hello-world
       ref: refs/heads/master
@@ -771,7 +771,7 @@ This plugin is automatically injected into every pipeline for the source reposit
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: clone_hello-world
     image: target/vela-git:v0.3.0
-    pull: true
+    pull: always
     parameters:
       path: hello-world
       ref: refs/heads/master
@@ -818,7 +818,7 @@ Users should refrain from configuring sensitive information in their pipeline in
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: clone_hello-world
     image: target/vela-git:v0.3.0
-    pull: true
+    pull: always
 <span style="color:#00a000">+   secrets: [ git_username, git_password ]
 </span><span style="color:#00a000"></span>    parameters:
 <span style="color:#a40000">-     netrc_username: octocat
@@ -870,7 +870,7 @@ This example will add the <code>secrets</code> to the <code>clone_hello-world</c
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: clone_hello-world
     image: target/vela-git:v0.3.0
-    pull: true
+    pull: always
     parameters:
 <span style="color:#a40000">-     netrc_username: octocat
 </span><span style="color:#a40000">-     netrc_password: superSecretPassword
@@ -992,7 +992,7 @@ Vela injects several variables, by default, that this plugin can load in automat
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: clone_hello-world
     image: target/vela-git:v0.3.0
-    pull: true
+    pull: always
     parameters:
 <span style="color:#00a000">+     log_level: trace
 </span><span style="color:#00a000"></span>      path: hello-world
@@ -1006,7 +1006,7 @@ Vela injects several variables, by default, that this plugin can load in automat
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified August 13, 2020: <a  href="https://github.com/go-vela/docs/commit/d2b6ac3dfc4ec7dd34e053d4a0640d11f1801501">fix(workspace): correct references to workspace (#158) (d2b6ac3)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified September 30, 2020: <a  href="https://github.com/go-vela/docs/commit/8d56b7af5d28654b796f4508dc6145a739b95f13">chore: convert true to always pull policy (#173) (8d56b7a)</a>
 </div>
 </div>
 
