@@ -1785,6 +1785,72 @@ secrets:
     </item>
     
     <item>
+      <title>Usage: Building Docker Images</title>
+      <link>https://go-vela.github.io/docs/usage/getting-started/docker/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://go-vela.github.io/docs/usage/getting-started/docker/</guid>
+      <description>
+        
+        
+        
+
+&lt;p&gt;We assume you understand how to build and run Docker images. If you need assistance on how to get started with Docker; we recommend you see their documentation for &lt;a href=&#34;https://docs.docker.com/get-started/&#34; target=&#34;_blank&#34;&gt;getting set up&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Vela runs all workloads within Docker containers. Which essentially gives us two core different ways to build Docker images:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Without elevated daemon access&lt;/li&gt;
+&lt;li&gt;With elevated daemon access&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Both options have disadvantages and advantages, so we encourage all Vela administrators to weigh the pros/cons of how they want to build Docker images for their cluster.&lt;/p&gt;
+
+&lt;h2 id=&#34;without-elevated-daemon-access&#34;&gt;Without elevated daemon access&lt;/h2&gt;
+
+&lt;p&gt;Building an image without elevated access gives administrators the most secure pattern for not allowing any elevated access to the workers within the cluster. There are two plugin options for building those images:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/plugins/pipeline/registry/kaniko/&#34;&gt;vela-kaniko&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/plugins/pipeline/registry/makisu/&#34;&gt;vela-makisu&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We recommend customers read the &lt;a href=&#34;https://go-vela.github.io/docs/docs/usage/getting-started/docker/#additional-resources&#34;&gt;tool comparisons&lt;/a&gt; before picking a technology for building their images. In-depth examples for building with either utility are available within their respective plugin documentation pages. A simple example is provided below:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;version: &amp;#34;1&amp;#34;
+steps:
+&lt;span style=&#34;color:#00a000&#34;&gt;+ - name: build and publish with kaniko
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+   image: target/vela-kaniko:latest
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+   pull: always
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+   parameters:
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+     registry: index.docker.io
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+     repo: index.docker.io/octocat/hello-world
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color:#00a000&#34;&gt;+ - name: build and publish with makisu
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+   image: target/vela-makisu:latest
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+   pull: always
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+   parameters:
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+     registry: index.docker.io
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+     tag: index.docker.io/octocat/hello-world
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+     pushes: [ index.docker.io ]
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&#34;with-elevated-daemon-access&#34;&gt;With elevated daemon access&lt;/h2&gt;
+
+&lt;p&gt;COMING SOON!&lt;/p&gt;
+
+&lt;h2 id=&#34;additional-resources&#34;&gt;Additional Resources&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.jessfraz.com/post/building-container-images-securely-on-kubernetes/&#34; target=&#34;_blank&#34;&gt;Building Container Images Securely on Kubernetes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/opencontainers/runc/pull/1692&#34; target=&#34;_blank&#34;&gt;Why is building rootless so hard?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://eng.uber.com/makisu/&#34; target=&#34;_blank&#34;&gt;Introducing Makisu&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/GoogleContainerTools/kaniko#comparison-with-other-tools&#34; target=&#34;_blank&#34;&gt;Kaniko tools comparison&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/uber/makisu#comparison-with-similar-tools&#34; target=&#34;_blank&#34;&gt;Makisu tools comparison&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Usage: Understanding the Workspace</title>
       <link>https://go-vela.github.io/docs/usage/getting-started/workspace/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

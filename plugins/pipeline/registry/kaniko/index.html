@@ -20,45 +20,36 @@
 <link rel="icon" type="image/png" href="/docs/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/docs/favicons/android-192x192.png"sizes="192x192">
 
-<title>Kubernetes | Vela</title><meta property="og:title" content="Kubernetes" />
-<meta property="og:description" content="Overview This plugin enables the ability to manage resources in Kubernetes in a Vela pipeline.
-Source Code: https://github.com/go-vela/vela-kubernetes
-Registry: https://hub.docker.com/r/target/vela-kubernetes
-This plugin supports environment (PARAMETER_*) and volume (/vela/parameters/*) configuration for setting parameters.
-The precedence order is take files then environment variables if both are set in a container.
- Usage Sample of applying Kubernetes files:
-steps:-name:kubernetesimage:target/vela-kubernetes:v0.1.0pull:alwaysparameters:action:applyfiles:[kubernetes/common,kubernetes/dev/deploy.yml] Sample of pretending to apply Kubernetes files:
-steps: - name: kubernetes image: target/vela-kubernetes:v0.1.0 pull: always parameters: action: apply &#43; dry_run: true  files: [ kubernetes/common, kubernetes/dev/deploy." />
+<title>Kaniko | Vela</title><meta property="og:title" content="Kaniko" />
+<meta property="og:description" content="Overview This plugin uses Kaniko to provide the ability to build and publish Docker images in a Vela pipeline without elevated access on the workers.
+Source Code: https://github.com/go-vela/vela-kaniko
+Registry: https://hub.docker.com/r/target/vela-kaniko
+Usage  It is not recommended to use latest as the tag for the Docker image. Users should use a semantically versioned tag instead.   Sample of building and publishing an image:
+steps:-name:publish_hello-worldimage:target/vela-kaniko:latestpull:alwaysparameters:registry:index.docker.iorepo:index.docker.io/octocat/hello-world Sample of building an image without publishing:" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://go-vela.github.io/docs/plugins/pipeline/registry/kubernetes/" />
-<meta property="article:modified_time" content="2020-09-30T13:15:30-05:00" />
-<meta itemprop="name" content="Kubernetes">
-<meta itemprop="description" content="Overview This plugin enables the ability to manage resources in Kubernetes in a Vela pipeline.
-Source Code: https://github.com/go-vela/vela-kubernetes
-Registry: https://hub.docker.com/r/target/vela-kubernetes
-This plugin supports environment (PARAMETER_*) and volume (/vela/parameters/*) configuration for setting parameters.
-The precedence order is take files then environment variables if both are set in a container.
- Usage Sample of applying Kubernetes files:
-steps:-name:kubernetesimage:target/vela-kubernetes:v0.1.0pull:alwaysparameters:action:applyfiles:[kubernetes/common,kubernetes/dev/deploy.yml] Sample of pretending to apply Kubernetes files:
-steps: - name: kubernetes image: target/vela-kubernetes:v0.1.0 pull: always parameters: action: apply &#43; dry_run: true  files: [ kubernetes/common, kubernetes/dev/deploy.">
+<meta property="og:url" content="https://go-vela.github.io/docs/plugins/pipeline/registry/kaniko/" />
+<meta property="article:modified_time" content="2020-10-08T12:24:28-05:00" />
+<meta itemprop="name" content="Kaniko">
+<meta itemprop="description" content="Overview This plugin uses Kaniko to provide the ability to build and publish Docker images in a Vela pipeline without elevated access on the workers.
+Source Code: https://github.com/go-vela/vela-kaniko
+Registry: https://hub.docker.com/r/target/vela-kaniko
+Usage  It is not recommended to use latest as the tag for the Docker image. Users should use a semantically versioned tag instead.   Sample of building and publishing an image:
+steps:-name:publish_hello-worldimage:target/vela-kaniko:latestpull:alwaysparameters:registry:index.docker.iorepo:index.docker.io/octocat/hello-world Sample of building an image without publishing:">
 
 
-<meta itemprop="dateModified" content="2020-09-30T13:15:30-05:00" />
-<meta itemprop="wordCount" content="559">
+<meta itemprop="dateModified" content="2020-10-08T12:24:28-05:00" />
+<meta itemprop="wordCount" content="646">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Kubernetes"/>
-<meta name="twitter:description" content="Overview This plugin enables the ability to manage resources in Kubernetes in a Vela pipeline.
-Source Code: https://github.com/go-vela/vela-kubernetes
-Registry: https://hub.docker.com/r/target/vela-kubernetes
-This plugin supports environment (PARAMETER_*) and volume (/vela/parameters/*) configuration for setting parameters.
-The precedence order is take files then environment variables if both are set in a container.
- Usage Sample of applying Kubernetes files:
-steps:-name:kubernetesimage:target/vela-kubernetes:v0.1.0pull:alwaysparameters:action:applyfiles:[kubernetes/common,kubernetes/dev/deploy.yml] Sample of pretending to apply Kubernetes files:
-steps: - name: kubernetes image: target/vela-kubernetes:v0.1.0 pull: always parameters: action: apply &#43; dry_run: true  files: [ kubernetes/common, kubernetes/dev/deploy."/>
+<meta name="twitter:title" content="Kaniko"/>
+<meta name="twitter:description" content="Overview This plugin uses Kaniko to provide the ability to build and publish Docker images in a Vela pipeline without elevated access on the workers.
+Source Code: https://github.com/go-vela/vela-kaniko
+Registry: https://hub.docker.com/r/target/vela-kaniko
+Usage  It is not recommended to use latest as the tag for the Docker image. Users should use a semantically versioned tag instead.   Sample of building and publishing an image:
+steps:-name:publish_hello-worldimage:target/vela-kaniko:latestpull:alwaysparameters:registry:index.docker.iorepo:index.docker.io/octocat/hello-world Sample of building an image without publishing:"/>
 
 
 
@@ -75,7 +66,7 @@ steps: - name: kubernetes image: target/vela-kubernetes:v0.1.0 pull: always para
   crossorigin="anonymous"></script>
 
 
-    <title>Kubernetes | Vela</title>
+    <title>Kaniko | Vela</title>
   </head>
   <body class="td-page">
     <header>
@@ -462,13 +453,13 @@ steps: - name: kubernetes image: target/vela-kubernetes:v0.1.0 pull: always para
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-pipeline-registry-kaniko" href="/docs/plugins/pipeline/registry/kaniko/">Kaniko</a>
+      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docs-plugins-pipeline-registry-kaniko" href="/docs/plugins/pipeline/registry/kaniko/">Kaniko</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docs-plugins-pipeline-registry-kubernetes" href="/docs/plugins/pipeline/registry/kubernetes/">Kubernetes</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-pipeline-registry-kubernetes" href="/docs/plugins/pipeline/registry/kubernetes/">Kubernetes</a>
       
       
       
@@ -644,8 +635,8 @@ steps: - name: kubernetes image: target/vela-kubernetes:v0.1.0 pull: always para
 
 
 
-<a href="https://github.com/go-vela/docs/edit/master/content/plugins/pipeline/registry/kubernetes.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
-<a href="https://github.com/go-vela/docs/issues/new?title=Kubernetes" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+<a href="https://github.com/go-vela/docs/edit/master/content/plugins/pipeline/registry/kaniko.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+<a href="https://github.com/go-vela/docs/issues/new?title=Kaniko" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
 
 </div>
 
@@ -665,15 +656,7 @@ steps: - name: kubernetes image: target/vela-kubernetes:v0.1.0 pull: always para
 <li><a href="#internal">Internal</a></li>
 <li><a href="#external">External</a></li>
 </ul></li>
-<li><a href="#parameters">Parameters</a>
-<ul>
-<li>
-<ul>
-<li><a href="#apply">Apply</a></li>
-<li><a href="#patch">Patch</a></li>
-<li><a href="#status">Status</a></li>
-</ul></li>
-</ul></li>
+<li><a href="#parameters">Parameters</a></li>
 <li><a href="#template">Template</a></li>
 <li><a href="#troubleshooting">Troubleshooting</a></li>
 </ul></li>
@@ -722,7 +705,7 @@ steps: - name: kubernetes image: target/vela-kubernetes:v0.1.0 pull: always para
 
 
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="https://go-vela.github.io/docs/plugins/pipeline/registry/kubernetes/">Kubernetes</a>
+	<a href="https://go-vela.github.io/docs/plugins/pipeline/registry/kaniko/">Kaniko</a>
 </li>
 
 	</ol>
@@ -730,81 +713,104 @@ steps: - name: kubernetes image: target/vela-kubernetes:v0.1.0 pull: always para
 
             
 <div class="td-content">
-	<h1>Kubernetes</h1>
+	<h1>Kaniko</h1>
 	
 	
 
 <h2 id="overview">Overview</h2>
 
-<p>This plugin enables the ability to manage resources in <a href="https://kubernetes.io/" target="_blank">Kubernetes</a> in a Vela pipeline.</p>
+<p>This plugin uses <a href="https://github.com/GoogleContainerTools/kaniko" target="_blank">Kaniko</a> to provide the ability to build and publish <a href="https://www.docker.com/" target="_blank">Docker</a> images in a Vela pipeline without elevated access on the workers.</p>
 
-<p>Source Code: <a href="https://github.com/go-vela/vela-kubernetes" target="_blank">https://github.com/go-vela/vela-kubernetes</a></p>
+<p>Source Code: <a href="https://github.com/go-vela/vela-kaniko" target="_blank">https://github.com/go-vela/vela-kaniko</a></p>
 
-<p>Registry: <a href="https://hub.docker.com/r/target/vela-kubernetes" target="_blank">https://hub.docker.com/r/target/vela-kubernetes</a></p>
+<p>Registry: <a href="https://hub.docker.com/r/target/vela-kaniko" target="_blank">https://hub.docker.com/r/target/vela-kaniko</a></p>
+
+<h2 id="usage">Usage</h2>
 
 
 
 <div class="alert alert-tip" role="alert">
 
-<p>This plugin supports environment (<code>PARAMETER_*</code>) and volume (<code>/vela/parameters/*</code>) configuration for setting parameters.</p>
-
-<p>The precedence order is take files then environment variables if both are set in a container.</p>
-
+<ul>
+<li>It is not recommended to use <code>latest</code> as the tag for the Docker image. Users should use a semantically versioned tag instead.</li>
+</ul>
 </div>
 
 
-<h2 id="usage">Usage</h2>
-
-<p>Sample of applying Kubernetes files:</p>
+<p>Sample of building and publishing an image:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">steps<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span>-<span style="color:#f8f8f8;text-decoration:underline"> </span>name<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>kubernetes<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>image<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>target/vela-kubernetes<span style="color:#000;font-weight:bold">:</span>v0<span style="color:#0000cf;font-weight:bold">.1.0</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span>-<span style="color:#f8f8f8;text-decoration:underline"> </span>name<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>publish_hello-world<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>image<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>target/vela-kaniko<span style="color:#000;font-weight:bold">:</span>latest<span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">    </span>pull<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>always<span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">    </span>parameters<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span>action<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>apply<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span>files<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">[</span><span style="color:#f8f8f8;text-decoration:underline"> </span>kubernetes/common<span style="color:#000;font-weight:bold">,</span><span style="color:#f8f8f8;text-decoration:underline"> </span>kubernetes/dev/deploy.yml<span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">]</span></code></pre></div>
-<p>Sample of pretending to apply Kubernetes files:</p>
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span>registry<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>index.docker.io<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span>repo<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>index.docker.io/octocat/hello-world</code></pre></div>
+<p>Sample of building an image without publishing:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
-  - name: kubernetes
-    image: target/vela-kubernetes:v0.1.0
+  - name: publish_hello-world
+    image: target/vela-kaniko:latest
     pull: always
     parameters:
-      action: apply
 <span style="color:#00a000">+     dry_run: true
-</span><span style="color:#00a000"></span>      files: [ kubernetes/common, kubernetes/dev/deploy.yml ]
+</span><span style="color:#00a000"></span>      registry: index.docker.io
+      repo: index.docker.io/octocat/hello-world
 </code></pre></div>
-<p>Sample of patching containers in Kubernetes files:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">steps<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span>-<span style="color:#f8f8f8;text-decoration:underline"> </span>name<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>kubernetes<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>image<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>target/vela-kubernetes<span style="color:#000;font-weight:bold">:</span>v0<span style="color:#0000cf;font-weight:bold">.1.0</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>pull<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>always<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>parameters<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span>action<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>patch<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span>files<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">[</span><span style="color:#f8f8f8;text-decoration:underline"> </span>kubernetes/common<span style="color:#000;font-weight:bold">,</span><span style="color:#f8f8f8;text-decoration:underline"> </span>kubernetes/dev/deploy.yml<span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">]</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span>containers<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">        </span>-<span style="color:#f8f8f8;text-decoration:underline"> </span>name<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>sample<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">          </span>image<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>alpine<span style="color:#000;font-weight:bold">:</span>latest</code></pre></div>
-<p>Sample of pretending to patch containers in Kubernetes files:</p>
+<p>Sample of building and publishing an image with custom tags:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
-  - name: kubernetes
-    image: target/vela-kubernetes:v0.1.0
+  - name: publish_hello-world
+    image: target/vela-kaniko:latest
     pull: always
     parameters:
-      action: patch
-<span style="color:#00a000">+     dry_run: true
-</span><span style="color:#00a000"></span>      files: [ kubernetes/common, kubernetes/dev/deploy.yml ]
-      containers:
-        - name: sample
-          image: alpine:latest
+      registry: index.docker.io
+      repo: index.docker.io/octocat/hello-world
+<span style="color:#00a000">+     tags:
+</span><span style="color:#00a000">+       - latest
+</span><span style="color:#00a000">+       - foobar
+</span></code></pre></div>
+<p>Sample of building and publishing an image with automatic tags:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
+  - name: publish_hello-world
+    image: target/vela-kaniko:latest
+    pull: always
+    parameters:
+<span style="color:#00a000">+     auto_tag: true
+</span><span style="color:#00a000"></span>      registry: index.docker.io
+      repo: index.docker.io/octocat/hello-world
 </code></pre></div>
-<p>Sample of watching the status of resources:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">steps<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span>-<span style="color:#f8f8f8;text-decoration:underline"> </span>name<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>kubernetes<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>image<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>target/vela-kubernetes<span style="color:#000;font-weight:bold">:</span>v0<span style="color:#0000cf;font-weight:bold">.1.0</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>pull<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>always<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>parameters<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span>action<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>status<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span>statuses<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">[</span><span style="color:#f8f8f8;text-decoration:underline"> </span>sample<span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">]</span></code></pre></div>
+<p>Sample of building and publishing an image with build arguments:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
+  - name: publish_hello-world
+    image: target/vela-kaniko:latest
+    pull: always
+    parameters:
+<span style="color:#00a000">+     build_args:
+</span><span style="color:#00a000">+       - FOO=bar
+</span><span style="color:#00a000"></span>      registry: index.docker.io
+      repo: index.docker.io/octocat/hello-world
+</code></pre></div>
+<p>Sample of building and publishing an image with caching:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
+  - name: publish_hello-world
+    image: target/vela-kaniko:latest
+    pull: always
+    parameters:
+<span style="color:#00a000">+     cache: true
+</span><span style="color:#00a000">+     cache_repo: index.docker.io/octocat/hello-world
+</span><span style="color:#00a000"></span>      registry: index.docker.io
+      repo: index.docker.io/octocat/hello-world
+</code></pre></div>
+<p>Sample of building and publishing an image with custom labels:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
+  - name: publish_hello-world
+    image: target/vela-kaniko:latest
+    pull: always
+    parameters:
+      registry: index.docker.io
+      repo: index.docker.io/octocat/hello-world
+<span style="color:#00a000">+     labels:
+</span><span style="color:#00a000">+       - FOO=bar
+</span><span style="color:#00a000">+       - HELLO=world
+</span></code></pre></div>
 <h2 id="secrets">Secrets</h2>
 
 
@@ -829,34 +835,38 @@ Users should refrain from configuring sensitive information in their pipeline in
 
 <tbody>
 <tr>
-<td><code>config</code></td>
-<td><code>CONFIG_FILE</code>, <code>KUBE_CONFIG</code>, <code>PARAMETER_CONFIG</code></td>
+<td><code>password</code></td>
+<td><code>DOCKER_PASSWORD</code>, <code>REGISTRY_PASSWORD</code>, <code>PARAMETER_PASSWORD</code></td>
+</tr>
+
+<tr>
+<td><code>username</code></td>
+<td><code>DOCKER_USERNAME</code>, <code>REGISTRY_USERNAME</code>, <code>PARAMETER_USERNAME</code></td>
 </tr>
 </tbody>
 </table>
 
 <p>Users can use <a href="/docs/concepts/pipeline/secrets/">Vela secrets</a> to substitute these sensitive values at runtime:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
-  - name: kubernetes
-    image: target/vela-kubernetes:v0.1.0
+  - name: publish_hello-world
+    image: target/vela-kaniko:latest
     pull: always
-<span style="color:#00a000">+   secrets: [ kube_config ]
+<span style="color:#00a000">+   secrets: [ docker_username, docker_password ]
 </span><span style="color:#00a000"></span>    parameters:
-      action: apply
-      files: [ kubernetes/common, kubernetes/dev/deploy.yml ]
-<span style="color:#a40000">-     config: |
-</span><span style="color:#a40000">-     ---
-</span><span style="color:#a40000">-     apiVersion: v1
-</span><span style="color:#a40000">-     kind: Config
+      registry: index.docker.io
+      repo: index.docker.io/octocat/hello-world
+<span style="color:#a40000">-     username: octocat
+</span><span style="color:#a40000">-     password: superSecretPassword
 </span></code></pre></div>
 
 
 <div class="alert alert-info" role="alert">
 
-This example will add the <code>secrets</code> to the <code>kubernetes</code> step as environment variables:</p>
+This example will add the <code>secrets</code> to the <code>publish_hello-world</code> step as environment variables:</p>
 
 <ul>
-<li><code>KUBE_CONFIG</code>=<value></li>
+<li><code>DOCKER_USERNAME</code>=<value></li>
+<li><code>DOCKER_PASSWORD</code>=<value></li>
 </ul>
 </div>
 
@@ -875,24 +885,27 @@ This example will add the <code>secrets</code> to the <code>kubernetes</code> st
 
 <tbody>
 <tr>
-<td><code>config</code></td>
-<td><code>/vela/parameters/kubernetes/config/file</code>, <code>/vela/secrets/kubernetes/config/file</code></td>
+<td><code>password</code></td>
+<td><code>/vela/parameters/docker/registry/password</code>, <code>/vela/secrets/docker/registry/password</code>, <code>/vela/secrets/docker/password</code></td>
+</tr>
+
+<tr>
+<td><code>username</code></td>
+<td><code>/vela/parameters/docker/registry/username</code>, <code>/vela/secrets/docker/registry/username</code>, <code>/vela/secrets/docker/username</code></td>
 </tr>
 </tbody>
 </table>
 
 <p>Users can use <a href="/docs/concepts/pipeline/secrets/">Vela external secrets</a> to substitute these sensitive values at runtime:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
-  - name: kubernetes
-    image: target/vela-kubernetes:v0.1.0
+  - name: publish_hello-world
+    image: target/vela-kaniko:latest
     pull: always
     parameters:
-      action: apply
-      files: [ kubernetes/common, kubernetes/dev/deploy.yml ]
-<span style="color:#a40000">-     config: |
-</span><span style="color:#a40000">-     ---
-</span><span style="color:#a40000">-     apiVersion: v1
-</span><span style="color:#a40000">-     kind: Config
+      registry: index.docker.io
+      repo: index.docker.io/octocat/hello-world
+<span style="color:#a40000">-     username: octocat
+</span><span style="color:#a40000">-     password: superSecretPassword
 </span></code></pre></div>
 
 
@@ -903,6 +916,18 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 
 
 <h2 id="parameters">Parameters</h2>
+
+
+
+<div class="alert alert-info" role="alert">
+
+<ul>
+<li>Vela injects several variables, by default, that this plugin can load in automatically.</li>
+<li>the plugin supports reading all parameters via environment variables or files</li>
+<li>values set from a file take precedence over values set from the environment</li>
+</ul>
+</div>
+
 
 <p>The following parameters are used to configure the image:</p>
 
@@ -918,30 +943,65 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 
 <tbody>
 <tr>
-<td><code>action</code></td>
-<td>action to perform against Kubernetes</td>
-<td><code>true</code></td>
+<td><code>auto_tag</code></td>
+<td>enables tagging of image automatically</td>
+<td><code>false</code></td>
+<td><code>false</code></td>
+</tr>
+
+<tr>
+<td><code>build_args</code></td>
+<td>variables passed to image at build-time</td>
+<td><code>false</code></td>
 <td><code>N/A</code></td>
 </tr>
 
 <tr>
-<td><code>cluster</code></td>
-<td>Kubernetes cluster from the configuration file</td>
+<td><code>cache</code></td>
+<td>enable caching of image layers</td>
+<td><code>false</code></td>
+<td><code>false</code></td>
+</tr>
+
+<tr>
+<td><code>cache_repo</code></td>
+<td>specific repo to enable caching for</td>
 <td><code>false</code></td>
 <td><code>N/A</code></td>
 </tr>
 
 <tr>
 <td><code>context</code></td>
-<td>Kubernetes context from the configuration file</td>
-<td><code>false</code></td>
-<td><code>N/A</code></td>
+<td>path to context for building the image</td>
+<td><code>true</code></td>
+<td><code>.</code></td>
 </tr>
 
 <tr>
-<td><code>file</code></td>
-<td>configuration file for communication with Kubernetes</td>
+<td><code>dockerfile</code></td>
+<td>path to the file for building the image</td>
 <td><code>true</code></td>
+<td><code>Dockerfile</code></td>
+</tr>
+
+<tr>
+<td><code>dry_run</code></td>
+<td>enable building the image without publishing</td>
+<td><code>false</code></td>
+<td><code>false</code></td>
+</tr>
+
+<tr>
+<td><code>event</code></td>
+<td>event generated for build</td>
+<td><code>true</code></td>
+<td><strong>set by Vela</strong></td>
+</tr>
+
+<tr>
+<td><code>labels</code></td>
+<td>unique labels to add to the image</td>
+<td><code>false</code></td>
 <td><code>N/A</code></td>
 </tr>
 
@@ -953,138 +1013,59 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 </tr>
 
 <tr>
-<td><code>namespace</code></td>
-<td>Kubernetes namespace from the configuration file</td>
-<td><code>false</code></td>
+<td><code>password</code></td>
+<td>password for communication with the registry</td>
+<td><code>true</code></td>
 <td><code>N/A</code></td>
 </tr>
 
 <tr>
-<td><code>path</code></td>
-<td>path to Kubernetes configuration file</td>
+<td><code>registry</code></td>
+<td>name of the registry for the repository</td>
+<td><code>true</code></td>
+<td><code>index.docker.io</code></td>
+</tr>
+
+<tr>
+<td><code>repo</code></td>
+<td>name of the repository for the image</td>
+<td><code>true</code></td>
+<td><code>N/A</code></td>
+</tr>
+
+<tr>
+<td><code>sha</code></td>
+<td>SHA-1 hash generated for commit</td>
+<td><code>true</code></td>
+<td><strong>set by Vela</strong></td>
+</tr>
+
+<tr>
+<td><code>tag</code></td>
+<td>tag generated for build</td>
 <td><code>false</code></td>
 <td><strong>set by Vela</strong></td>
 </tr>
-</tbody>
-</table>
-
-<h4 id="apply">Apply</h4>
-
-<p>The following parameters are used to configure the <code>apply</code> action:</p>
-
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Description</th>
-<th>Required</th>
-<th>Default</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td><code>dry_run</code></td>
-<td>enables pretending to perform the apply</td>
-<td><code>false</code></td>
-<td><code>false</code></td>
-</tr>
 
 <tr>
-<td><code>files</code></td>
-<td>list of Kubernetes files or directories to apply</td>
+<td><code>tags</code></td>
+<td>unique tags of the image</td>
 <td><code>true</code></td>
+<td><code>latest</code></td>
+</tr>
+
+<tr>
+<td><code>target</code></td>
+<td>set the target build stage</td>
+<td><code>false</code></td>
 <td><code>N/A</code></td>
 </tr>
 
 <tr>
-<td><code>output</code></td>
-<td>set the output for the apply</td>
-<td><code>false</code></td>
-<td><code>N/A</code></td>
-</tr>
-</tbody>
-</table>
-
-<h4 id="patch">Patch</h4>
-
-<p>The following parameters are used to configure the <code>patch</code> action:</p>
-
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Description</th>
-<th>Required</th>
-<th>Default</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td><code>containers</code></td>
-<td>containers from the files to patch</td>
+<td><code>username</code></td>
+<td>user name for communication with the registry</td>
 <td><code>true</code></td>
 <td><code>N/A</code></td>
-</tr>
-
-<tr>
-<td><code>dry_run</code></td>
-<td>enables pretending to perform the patch</td>
-<td><code>false</code></td>
-<td><code>false</code></td>
-</tr>
-
-<tr>
-<td><code>files</code></td>
-<td>list of Kubernetes files or directories to patch</td>
-<td><code>true</code></td>
-<td><code>N/A</code></td>
-</tr>
-
-<tr>
-<td><code>output</code></td>
-<td>set the output for the patch</td>
-<td><code>false</code></td>
-<td><code>N/A</code></td>
-</tr>
-</tbody>
-</table>
-
-<h4 id="status">Status</h4>
-
-<p>The following parameters are used to configure the <code>status</code> action:</p>
-
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Description</th>
-<th>Required</th>
-<th>Default</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td><code>statuses</code></td>
-<td>list of Kubernetes resources to watch status on</td>
-<td><code>true</code></td>
-<td><code>N/A</code></td>
-</tr>
-
-<tr>
-<td><code>timeout</code></td>
-<td>total time allowed to watch Kubernetes resources</td>
-<td><code>true</code></td>
-<td><code>5m</code></td>
-</tr>
-
-<tr>
-<td><code>watch</code></td>
-<td>enables watching until the resource completes</td>
-<td><code>false</code></td>
-<td><code>true</code></td>
 </tr>
 </tbody>
 </table>
@@ -1097,21 +1078,21 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 
 <p>You can start troubleshooting this plugin by tuning the level of logs being displayed:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
-  - name: kubernetes
-    image: target/vela-kubernetes:v0.1.0
+  - name: publish_hello-world
+    image: target/vela-kaniko:latest
     pull: always
     parameters:
-      action: apply
-      files: [ kubernetes/common, kubernetes/dev/deploy.yml ]
 <span style="color:#00a000">+     log_level: trace
-</span></code></pre></div>
+</span><span style="color:#00a000"></span>      registry: index.docker.io
+      repo: index.docker.io/octocat/hello-world
+</code></pre></div>
 <p>Below are a list of common problems and how to solve them:</p>
 
 <p>COMING SOON!</p>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified September 30, 2020: <a  href="https://github.com/go-vela/docs/commit/8d56b7af5d28654b796f4508dc6145a739b95f13">chore: convert true to always pull policy (#173) (8d56b7a)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified October 8, 2020: <a  href="https://github.com/go-vela/docs/commit/b7b2978dcefdbef5bec9d4b4fc1ce769c4055292">enhancement: update how to build docker images (#174) (b7b2978)</a>
 </div>
 </div>
 

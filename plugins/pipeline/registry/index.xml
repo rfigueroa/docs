@@ -1429,371 +1429,45 @@ This example will add the &lt;code&gt;secrets&lt;/code&gt; to the &lt;code&gt;ca
 
 &lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 
-&lt;p&gt;This plugin enables the ability to build and publish &lt;a href=&#34;https://www.docker.com/&#34; target=&#34;_blank&#34;&gt;Docker&lt;/a&gt; images in a Vela pipeline.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+
+This plugin was originally used to build &lt;strong&gt;all&lt;/strong&gt; Docker images. The functionality of this plugin still exists within &lt;a href=&#34;https://go-vela.github.io/docs/docs/plugins/pipeline/registry/kaniko&#34;&gt;Kaniko&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;This plugin enables the ability to build and publish &lt;a href=&#34;https://www.docker.com/&#34; target=&#34;_blank&#34;&gt;Docker&lt;/a&gt; images in a Vela pipeline. Plugin requires the pipeline to run on a worker that provides the plugin elevated access.&lt;/p&gt;
 
 &lt;p&gt;Source Code: &lt;a href=&#34;https://github.com/go-vela/vela-docker&#34; target=&#34;_blank&#34;&gt;https://github.com/go-vela/vela-docker&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Registry: &lt;a href=&#34;https://hub.docker.com/r/target/vela-docker&#34; target=&#34;_blank&#34;&gt;https://hub.docker.com/r/target/vela-docker&lt;/a&gt;&lt;/p&gt;
 
-
-
-&lt;div class=&#34;alert alert-tip&#34; role=&#34;alert&#34;&gt;
-
-&lt;p&gt;This plugin supports environment (&lt;code&gt;PARAMETER_*&lt;/code&gt;) and volume (&lt;code&gt;/vela/parameters/*&lt;/code&gt;) configuration for setting parameters.&lt;/p&gt;
-
-&lt;p&gt;The precedence order is take files then environment variables if both are set in a container.&lt;/p&gt;
-
-&lt;/div&gt;
-
-
 &lt;h2 id=&#34;usage&#34;&gt;Usage&lt;/h2&gt;
 
-&lt;p&gt;Sample of building and publishing an image:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;steps&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;  &lt;/span&gt;-&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;name&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;publish_hello-world&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;image&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;target/vela-docker&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;v0&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;.2.1&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;pull&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;always&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;parameters&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;registry&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;index.docker.io&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;repo&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;index.docker.io/octocat/hello-world&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Sample of building an image without publishing:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
-  - name: publish_hello-world
-    image: target/vela-docker:v0.2.1
-    pull: always
-    parameters:
-&lt;span style=&#34;color:#00a000&#34;&gt;+     dry_run: true
-&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;      registry: index.docker.io
-      repo: index.docker.io/octocat/hello-world
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Sample of building and publishing an image with custom tags:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
-  - name: publish_hello-world
-    image: target/vela-docker:v0.2.1
-    pull: always
-    parameters:
-      registry: index.docker.io
-      repo: index.docker.io/octocat/hello-world
-&lt;span style=&#34;color:#00a000&#34;&gt;+     tags:
-&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+       - latest
-&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+       - foobar
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Sample of building and publishing an image with automatic tags:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
-  - name: publish_hello-world
-    image: target/vela-docker:v0.2.1
-    pull: always
-    parameters:
-&lt;span style=&#34;color:#00a000&#34;&gt;+     auto_tag: true
-&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;      registry: index.docker.io
-      repo: index.docker.io/octocat/hello-world
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Sample of building and publishing an image with build arguments:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
-  - name: publish_hello-world
-    image: target/vela-docker:v0.2.1
-    pull: always
-    parameters:
-&lt;span style=&#34;color:#00a000&#34;&gt;+     build_args:
-&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+       - FOO=bar
-&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;      registry: index.docker.io
-      repo: index.docker.io/octocat/hello-world
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Sample of building and publishing an image with caching:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
-  - name: publish_hello-world
-    image: target/vela-docker:v0.2.1
-    pull: always
-    parameters:
-&lt;span style=&#34;color:#00a000&#34;&gt;+     cache: true
-&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+     cache_repo: index.docker.io/octocat/hello-world
-&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;      registry: index.docker.io
-      repo: index.docker.io/octocat/hello-world
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Sample of building and publishing an image with custom labels:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
-  - name: publish_hello-world
-    image: target/vela-docker:v0.2.1
-    pull: always
-    parameters:
-      registry: index.docker.io
-      repo: index.docker.io/octocat/hello-world
-&lt;span style=&#34;color:#00a000&#34;&gt;+     labels:
-&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+       - FOO=bar
-&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+       - HELLO=world
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;COMING SOON!&lt;/p&gt;
+
 &lt;h2 id=&#34;secrets&#34;&gt;Secrets&lt;/h2&gt;
 
-
-
-&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
-
-Users should refrain from configuring sensitive information in their pipeline in plain text.
-&lt;/div&gt;
-
+&lt;p&gt;COMING SOON!&lt;/p&gt;
 
 &lt;h3 id=&#34;internal&#34;&gt;Internal&lt;/h3&gt;
 
-&lt;p&gt;The plugin accepts the following &lt;code&gt;parameters&lt;/code&gt; for authentication:&lt;/p&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Parameter&lt;/th&gt;
-&lt;th&gt;Environment Variable Configuration&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;password&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;DOCKER_PASSWORD&lt;/code&gt;, &lt;code&gt;REGISTRY_PASSWORD&lt;/code&gt;, &lt;code&gt;PARAMETER_PASSWORD&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;username&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;DOCKER_USERNAME&lt;/code&gt;, &lt;code&gt;REGISTRY_USERNAME&lt;/code&gt;, &lt;code&gt;PARAMETER_USERNAME&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;Users can use &lt;a href=&#34;https://go-vela.github.io/docs/docs/concepts/pipeline/secrets/&#34;&gt;Vela secrets&lt;/a&gt; to substitute these sensitive values at runtime:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
-  - name: publish_hello-world
-    image: target/vela-docker:v0.2.1
-    pull: always
-&lt;span style=&#34;color:#00a000&#34;&gt;+   secrets: [ docker_username, docker_password ]
-&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;    parameters:
-      registry: index.docker.io
-      repo: index.docker.io/octocat/hello-world
-&lt;span style=&#34;color:#a40000&#34;&gt;-     username: octocat
-&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;-     password: superSecretPassword
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-
-This example will add the &lt;code&gt;secrets&lt;/code&gt; to the &lt;code&gt;publish_hello-world&lt;/code&gt; step as environment variables:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;DOCKER_USERNAME&lt;/code&gt;=&lt;value&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;DOCKER_PASSWORD&lt;/code&gt;=&lt;value&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-
+&lt;p&gt;COMING SOON!&lt;/p&gt;
 
 &lt;h3 id=&#34;external&#34;&gt;External&lt;/h3&gt;
 
-&lt;p&gt;The plugin accepts the following files for authentication:&lt;/p&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Parameter&lt;/th&gt;
-&lt;th&gt;Volume Configuration&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;password&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;/vela/parameters/docker/registry/password&lt;/code&gt;, &lt;code&gt;/vela/secrets/docker/registry/password&lt;/code&gt;, &lt;code&gt;/vela/secrets/docker/password&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;username&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;/vela/parameters/docker/registry/username&lt;/code&gt;, &lt;code&gt;/vela/secrets/docker/registry/username&lt;/code&gt;, &lt;code&gt;/vela/secrets/docker/username&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;Users can use &lt;a href=&#34;https://go-vela.github.io/docs/docs/concepts/pipeline/secrets/&#34;&gt;Vela external secrets&lt;/a&gt; to substitute these sensitive values at runtime:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
-  - name: publish_hello-world
-    image: target/vela-docker:v0.2.1
-    pull: always
-    parameters:
-      registry: index.docker.io
-      repo: index.docker.io/octocat/hello-world
-&lt;span style=&#34;color:#a40000&#34;&gt;-     username: octocat
-&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;-     password: superSecretPassword
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-
-This example will read the secrets values in the volume stored at &lt;code&gt;/vela/secrets/&lt;/code&gt;:
-&lt;/div&gt;
-
+&lt;p&gt;COMING SOON!&lt;/p&gt;
 
 &lt;h2 id=&#34;parameters&#34;&gt;Parameters&lt;/h2&gt;
 
-
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-
-Vela injects several variables, by default, that this plugin can load in automatically.
-&lt;/div&gt;
-
-
-&lt;p&gt;The following parameters are used to configure the image:&lt;/p&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Name&lt;/th&gt;
-&lt;th&gt;Description&lt;/th&gt;
-&lt;th&gt;Required&lt;/th&gt;
-&lt;th&gt;Default&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;auto_tag&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;enables tagging of image automatically&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;build_args&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;variables passed to image at build-time&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;cache&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;enable caching of image layers&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;cache_repo&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;specific repo to enable caching for&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;context&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;path to context for building the image&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;.&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;dockerfile&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;path to the file for building the image&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;Dockerfile&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;dry_run&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;enable building the image without publishing&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;event&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;event generated for build&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;set by Vela&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;labels&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;unique labels to add to the image&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;log_level&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;set the log level for the plugin&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;info&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;password&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;password for communication with the registry&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;registry&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;name of the registry for the repository&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;index.docker.io&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;repo&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;name of the repository for the image&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;sha&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;SHA-1 hash generated for commit&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;set by Vela&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;tag&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;tag generated for build&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;set by Vela&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;tags&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;unique tags of the image&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;latest&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;target&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;set the target build stage&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;username&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;user name for communication with the registry&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
+&lt;p&gt;COMING SOON!&lt;/p&gt;
 
 &lt;h2 id=&#34;template&#34;&gt;Template&lt;/h2&gt;
 
 &lt;p&gt;COMING SOON!&lt;/p&gt;
 
 &lt;h2 id=&#34;troubleshooting&#34;&gt;Troubleshooting&lt;/h2&gt;
-
-&lt;p&gt;You can start troubleshooting this plugin by tuning the level of logs being displayed:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
-  - name: publish_hello-world
-    image: target/vela-docker:v0.2.1
-    pull: always
-    parameters:
-&lt;span style=&#34;color:#00a000&#34;&gt;+     log_level: trace
-&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;      registry: index.docker.io
-      repo: index.docker.io/octocat/hello-world
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Below are a list of common problems and how to solve them:&lt;/p&gt;
 
 &lt;p&gt;COMING SOON!&lt;/p&gt;
 
@@ -2369,6 +2043,393 @@ Vela injects several variables, by default, that this plugin can load in automat
     </item>
     
     <item>
+      <title>Plugins: Kaniko</title>
+      <link>https://go-vela.github.io/docs/plugins/pipeline/registry/kaniko/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://go-vela.github.io/docs/plugins/pipeline/registry/kaniko/</guid>
+      <description>
+        
+        
+        
+
+&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
+
+&lt;p&gt;This plugin uses &lt;a href=&#34;https://github.com/GoogleContainerTools/kaniko&#34; target=&#34;_blank&#34;&gt;Kaniko&lt;/a&gt; to provide the ability to build and publish &lt;a href=&#34;https://www.docker.com/&#34; target=&#34;_blank&#34;&gt;Docker&lt;/a&gt; images in a Vela pipeline without elevated access on the workers.&lt;/p&gt;
+
+&lt;p&gt;Source Code: &lt;a href=&#34;https://github.com/go-vela/vela-kaniko&#34; target=&#34;_blank&#34;&gt;https://github.com/go-vela/vela-kaniko&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Registry: &lt;a href=&#34;https://hub.docker.com/r/target/vela-kaniko&#34; target=&#34;_blank&#34;&gt;https://hub.docker.com/r/target/vela-kaniko&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;usage&#34;&gt;Usage&lt;/h2&gt;
+
+
+
+&lt;div class=&#34;alert alert-tip&#34; role=&#34;alert&#34;&gt;
+
+&lt;ul&gt;
+&lt;li&gt;It is not recommended to use &lt;code&gt;latest&lt;/code&gt; as the tag for the Docker image. Users should use a semantically versioned tag instead.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;Sample of building and publishing an image:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;steps&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;  &lt;/span&gt;-&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;name&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;publish_hello-world&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;image&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;target/vela-kaniko&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;latest&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;pull&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;always&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;parameters&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;registry&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;index.docker.io&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;repo&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;index.docker.io/octocat/hello-world&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Sample of building an image without publishing:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
+  - name: publish_hello-world
+    image: target/vela-kaniko:latest
+    pull: always
+    parameters:
+&lt;span style=&#34;color:#00a000&#34;&gt;+     dry_run: true
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;      registry: index.docker.io
+      repo: index.docker.io/octocat/hello-world
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Sample of building and publishing an image with custom tags:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
+  - name: publish_hello-world
+    image: target/vela-kaniko:latest
+    pull: always
+    parameters:
+      registry: index.docker.io
+      repo: index.docker.io/octocat/hello-world
+&lt;span style=&#34;color:#00a000&#34;&gt;+     tags:
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+       - latest
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+       - foobar
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Sample of building and publishing an image with automatic tags:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
+  - name: publish_hello-world
+    image: target/vela-kaniko:latest
+    pull: always
+    parameters:
+&lt;span style=&#34;color:#00a000&#34;&gt;+     auto_tag: true
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;      registry: index.docker.io
+      repo: index.docker.io/octocat/hello-world
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Sample of building and publishing an image with build arguments:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
+  - name: publish_hello-world
+    image: target/vela-kaniko:latest
+    pull: always
+    parameters:
+&lt;span style=&#34;color:#00a000&#34;&gt;+     build_args:
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+       - FOO=bar
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;      registry: index.docker.io
+      repo: index.docker.io/octocat/hello-world
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Sample of building and publishing an image with caching:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
+  - name: publish_hello-world
+    image: target/vela-kaniko:latest
+    pull: always
+    parameters:
+&lt;span style=&#34;color:#00a000&#34;&gt;+     cache: true
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+     cache_repo: index.docker.io/octocat/hello-world
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;      registry: index.docker.io
+      repo: index.docker.io/octocat/hello-world
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Sample of building and publishing an image with custom labels:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
+  - name: publish_hello-world
+    image: target/vela-kaniko:latest
+    pull: always
+    parameters:
+      registry: index.docker.io
+      repo: index.docker.io/octocat/hello-world
+&lt;span style=&#34;color:#00a000&#34;&gt;+     labels:
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+       - FOO=bar
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+       - HELLO=world
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&#34;secrets&#34;&gt;Secrets&lt;/h2&gt;
+
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+
+Users should refrain from configuring sensitive information in their pipeline in plain text.
+&lt;/div&gt;
+
+
+&lt;h3 id=&#34;internal&#34;&gt;Internal&lt;/h3&gt;
+
+&lt;p&gt;The plugin accepts the following &lt;code&gt;parameters&lt;/code&gt; for authentication:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Parameter&lt;/th&gt;
+&lt;th&gt;Environment Variable Configuration&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;password&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;DOCKER_PASSWORD&lt;/code&gt;, &lt;code&gt;REGISTRY_PASSWORD&lt;/code&gt;, &lt;code&gt;PARAMETER_PASSWORD&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;username&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;DOCKER_USERNAME&lt;/code&gt;, &lt;code&gt;REGISTRY_USERNAME&lt;/code&gt;, &lt;code&gt;PARAMETER_USERNAME&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Users can use &lt;a href=&#34;https://go-vela.github.io/docs/docs/concepts/pipeline/secrets/&#34;&gt;Vela secrets&lt;/a&gt; to substitute these sensitive values at runtime:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
+  - name: publish_hello-world
+    image: target/vela-kaniko:latest
+    pull: always
+&lt;span style=&#34;color:#00a000&#34;&gt;+   secrets: [ docker_username, docker_password ]
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;    parameters:
+      registry: index.docker.io
+      repo: index.docker.io/octocat/hello-world
+&lt;span style=&#34;color:#a40000&#34;&gt;-     username: octocat
+&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;-     password: superSecretPassword
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+This example will add the &lt;code&gt;secrets&lt;/code&gt; to the &lt;code&gt;publish_hello-world&lt;/code&gt; step as environment variables:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;DOCKER_USERNAME&lt;/code&gt;=&lt;value&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;DOCKER_PASSWORD&lt;/code&gt;=&lt;value&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+
+&lt;h3 id=&#34;external&#34;&gt;External&lt;/h3&gt;
+
+&lt;p&gt;The plugin accepts the following files for authentication:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Parameter&lt;/th&gt;
+&lt;th&gt;Volume Configuration&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;password&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;/vela/parameters/docker/registry/password&lt;/code&gt;, &lt;code&gt;/vela/secrets/docker/registry/password&lt;/code&gt;, &lt;code&gt;/vela/secrets/docker/password&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;username&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;/vela/parameters/docker/registry/username&lt;/code&gt;, &lt;code&gt;/vela/secrets/docker/registry/username&lt;/code&gt;, &lt;code&gt;/vela/secrets/docker/username&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Users can use &lt;a href=&#34;https://go-vela.github.io/docs/docs/concepts/pipeline/secrets/&#34;&gt;Vela external secrets&lt;/a&gt; to substitute these sensitive values at runtime:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
+  - name: publish_hello-world
+    image: target/vela-kaniko:latest
+    pull: always
+    parameters:
+      registry: index.docker.io
+      repo: index.docker.io/octocat/hello-world
+&lt;span style=&#34;color:#a40000&#34;&gt;-     username: octocat
+&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;-     password: superSecretPassword
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+This example will read the secrets values in the volume stored at &lt;code&gt;/vela/secrets/&lt;/code&gt;:
+&lt;/div&gt;
+
+
+&lt;h2 id=&#34;parameters&#34;&gt;Parameters&lt;/h2&gt;
+
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Vela injects several variables, by default, that this plugin can load in automatically.&lt;/li&gt;
+&lt;li&gt;the plugin supports reading all parameters via environment variables or files&lt;/li&gt;
+&lt;li&gt;values set from a file take precedence over values set from the environment&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;The following parameters are used to configure the image:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;th&gt;Required&lt;/th&gt;
+&lt;th&gt;Default&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;auto_tag&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;enables tagging of image automatically&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;build_args&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;variables passed to image at build-time&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;cache&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;enable caching of image layers&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;cache_repo&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;specific repo to enable caching for&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;context&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;path to context for building the image&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;.&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;dockerfile&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;path to the file for building the image&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Dockerfile&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;dry_run&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;enable building the image without publishing&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;event&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;event generated for build&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;set by Vela&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;labels&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;unique labels to add to the image&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;log_level&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;set the log level for the plugin&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;info&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;password&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;password for communication with the registry&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;registry&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;name of the registry for the repository&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;index.docker.io&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;repo&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;name of the repository for the image&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;sha&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;SHA-1 hash generated for commit&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;set by Vela&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;tag&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;tag generated for build&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;set by Vela&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;tags&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;unique tags of the image&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;latest&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;target&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;set the target build stage&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;username&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;user name for communication with the registry&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;template&#34;&gt;Template&lt;/h2&gt;
+
+&lt;p&gt;COMING SOON!&lt;/p&gt;
+
+&lt;h2 id=&#34;troubleshooting&#34;&gt;Troubleshooting&lt;/h2&gt;
+
+&lt;p&gt;You can start troubleshooting this plugin by tuning the level of logs being displayed:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
+  - name: publish_hello-world
+    image: target/vela-kaniko:latest
+    pull: always
+    parameters:
+&lt;span style=&#34;color:#00a000&#34;&gt;+     log_level: trace
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;      registry: index.docker.io
+      repo: index.docker.io/octocat/hello-world
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Below are a list of common problems and how to solve them:&lt;/p&gt;
+
+&lt;p&gt;COMING SOON!&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Plugins: Kubernetes</title>
       <link>https://go-vela.github.io/docs/plugins/pipeline/registry/kubernetes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -2750,6 +2811,425 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
       files: [ kubernetes/common, kubernetes/dev/deploy.yml ]
 &lt;span style=&#34;color:#00a000&#34;&gt;+     log_level: trace
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Below are a list of common problems and how to solve them:&lt;/p&gt;
+
+&lt;p&gt;COMING SOON!&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Plugins: Makisu</title>
+      <link>https://go-vela.github.io/docs/plugins/pipeline/registry/makisu/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://go-vela.github.io/docs/plugins/pipeline/registry/makisu/</guid>
+      <description>
+        
+        
+        
+
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+
+&lt;p&gt;This plugin uses &lt;a href=&#34;https://github.com/uber/makisu&#34; target=&#34;_blank&#34;&gt;Kaniko&lt;/a&gt; to provide the ability to build and publish &lt;a href=&#34;https://www.docker.com/&#34; target=&#34;_blank&#34;&gt;Docker&lt;/a&gt; images in a Vela pipeline without elevated access on the workers.&lt;/p&gt;
+
+&lt;p&gt;Source Code: &lt;a href=&#34;https://github.com/go-vela/vela-makisu&#34; target=&#34;_blank&#34;&gt;https://github.com/go-vela/vela-makisu&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Registry: &lt;a href=&#34;https://hub.docker.com/r/target/vela-makisu&#34; target=&#34;_blank&#34;&gt;https://hub.docker.com/r/target/vela-makisu&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;usage&#34;&gt;Usage&lt;/h2&gt;
+
+
+
+&lt;div class=&#34;alert alert-tip&#34; role=&#34;alert&#34;&gt;
+
+&lt;ul&gt;
+&lt;li&gt;It is not recommended to use &lt;code&gt;latest&lt;/code&gt; as the tag for the Docker image. Users should use a semantically versioned tag instead.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;Sample of building and publishing an image:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;steps&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;  &lt;/span&gt;-&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;name&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;publish_hello-world&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;image&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;target/vela-makisu&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;latest&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;pull&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;always&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;parameters&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;registry&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;index.docker.io&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;tag&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;index.docker.io/octocat/hello-world&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;pushes&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;index.docker.io&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Sample of building an image without publishing:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
+  - name: publish hello world
+    image: target/vela-makisu:latest
+    pull: always
+    parameters:
+&lt;span style=&#34;color:#a40000&#34;&gt;-     pushes: [ index.docker.io ]
+&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;&lt;/span&gt;      registry: index.docker.io
+      tag: index.docker.io/octocat/hello-world:latest
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Sample of building and publishing an image with custom tags:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
+  - name: publish hello world
+    image: target/vela-makisu:latest
+    pull: always
+    parameters:
+      registry: index.docker.io
+      tag: index.docker.io/octocat/hello-world:latest
+      pushes: [ index.docker.io ]
+&lt;span style=&#34;color:#00a000&#34;&gt;+     replicas:
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+       - index.docker.io/octocat/hello-world:1
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+       - index.docker.io/octocat/hello-world:foobar
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Sample of building and publishing an image with build arguments:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
+  - name: publish hello world
+    image: target/vela-makisu:latest
+    pull: always
+    parameters:
+&lt;span style=&#34;color:#00a000&#34;&gt;+     build_args:
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+       - FOO=bar
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;      registry: index.docker.io
+      tag: index.docker.io/octocat/hello-world
+      pushes: [ index.docker.io ]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Sample of building and publishing an image with redis caching:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
+  - name: publish_hello-world
+    image: target/vela-makisu:latest
+    pull: always
+    parameters:
+&lt;span style=&#34;color:#00a000&#34;&gt;+     redis_cache_options: 
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+       addr: redis.company.com
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+       password: superSecretPassword
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+       ttl: 7d
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;      registry: index.docker.io
+      repo: index.docker.io/octocat/hello-world
+      pushes: [ index.docker.io ]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&#34;secrets&#34;&gt;Secrets&lt;/h2&gt;
+
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+
+Users should refrain from configuring sensitive information in their pipeline in plain text.
+&lt;/div&gt;
+
+
+&lt;h3 id=&#34;internal&#34;&gt;Internal&lt;/h3&gt;
+
+&lt;p&gt;The plugin accepts the following &lt;code&gt;parameters&lt;/code&gt; for authentication:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Parameter&lt;/th&gt;
+&lt;th&gt;Environment Variable Configuration&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;password&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;DOCKER_PASSWORD&lt;/code&gt;, &lt;code&gt;REGISTRY_PASSWORD&lt;/code&gt;, &lt;code&gt;PARAMETER_PASSWORD&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;username&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;DOCKER_USERNAME&lt;/code&gt;, &lt;code&gt;REGISTRY_USERNAME&lt;/code&gt;, &lt;code&gt;PARAMETER_USERNAME&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Users can use &lt;a href=&#34;https://go-vela.github.io/docs/docs/concepts/pipeline/secrets/&#34;&gt;Vela secrets&lt;/a&gt; to substitute these sensitive values at runtime:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
+  - name: publish_hello-world
+    image: target/vela-makisu:latest
+    pull: always
+&lt;span style=&#34;color:#00a000&#34;&gt;+   secrets: [ docker_username, docker_password, redis_cache ]
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;    parameters:
+      registry: index.docker.io
+      repo: index.docker.io/octocat/hello-world
+      pushes: [ index.docker.io ]
+&lt;span style=&#34;color:#a40000&#34;&gt;-     redis_cache: 
+&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;-       addr: redis.company.com
+&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;-       password: superSecretPassword
+&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;-       ttl: 7d      
+&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;-     username: octocat
+&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;-     password: superSecretPassword
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+This example will add the &lt;code&gt;secrets&lt;/code&gt; to the &lt;code&gt;publish_hello-world&lt;/code&gt; step as environment variables:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;DOCKER_USERNAME&lt;/code&gt;=&lt;value&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;DOCKER_PASSWORD&lt;/code&gt;=&lt;value&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+
+&lt;h3 id=&#34;external&#34;&gt;External&lt;/h3&gt;
+
+&lt;p&gt;The plugin accepts the following files for authentication:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Parameter&lt;/th&gt;
+&lt;th&gt;Volume Configuration&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;password&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;/vela/parameters/makisu/registry/password&lt;/code&gt;, &lt;code&gt;/vela/secrets/makisu/registry/password&lt;/code&gt;, &lt;code&gt;/vela/secrets/makisu/password&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;username&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;/vela/parameters/makisu/registry/username&lt;/code&gt;, &lt;code&gt;/vela/secrets/makisu/registry/username&lt;/code&gt;, &lt;code&gt;/vela/secrets/makisu/username&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Users can use &lt;a href=&#34;https://go-vela.github.io/docs/docs/concepts/pipeline/secrets/&#34;&gt;Vela external secrets&lt;/a&gt; to substitute these sensitive values at runtime:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
+  - name: publish_hello-world
+    image: target/vela-makisu:latest
+    pull: always
+    parameters:
+      registry: index.docker.io
+      repo: index.docker.io/octocat/hello-world
+      pushes: [ index.docker.io ]
+&lt;span style=&#34;color:#a40000&#34;&gt;-     redis_cache: 
+&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;-       addr: redis.company.com
+&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;-       password: superSecretPassword
+&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;-       ttl: 7d      
+&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;-     username: octocat
+&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;-     password: superSecretPassword
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&#34;parameters&#34;&gt;Parameters&lt;/h2&gt;
+
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+&lt;ul&gt;
+&lt;li&gt;the plugin supports reading all parameters via environment variables or files&lt;/li&gt;
+&lt;li&gt;values set from a file take precedence over values set from the environment&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;The following parameters are used to configure the build and push process:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;th&gt;Required&lt;/th&gt;
+&lt;th&gt;Default&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;build_args&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;build time arguments for the Dockerfile&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;commit&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;commit info for #!COMMIT annotations&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;compression&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;compression on the tar file built - options: (no&lt;/td&gt;
+&lt;td&gt;speed&lt;/td&gt;
+&lt;td&gt;size&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;context&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;the context for the image to be built&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;.&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;deny_list&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;list of locations to be ignored within docker image&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;docker&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;configuration on the docker daemon&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;destination&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;the output of the tar file&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;file&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;a the absolute path to dockerfile&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;info&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;http_cache&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;custom http options caching&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;load&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;enables loading a docker image into the docker daemon post build&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;local_cache_ttl&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;a time to live for the local docker cache (default 168h0m0s)&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;modify_fs&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;makisu to modify files outside its internal storage directories&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;perserve_root&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;copying storage from root in the storage during and after build&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;pushes&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;registries to push the image to&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;redis_cache&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;custom redis server for caching&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;replicas&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;pushing image to alternative targets i.e. &lt;code&gt;&amp;lt;registry&amp;gt;/&amp;lt;repo&amp;gt;:&amp;lt;tag&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;storage&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;a directory for makisu to use for temp files and cached layers&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;tag&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;the tag for an image&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;storage&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;the target build stage to build&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;The following parameters are used to configure the registry:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;th&gt;Required&lt;/th&gt;
+&lt;th&gt;Default&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;mirror&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;name of the mirror registry to use&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;password&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;password for communication with the registry&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;registry&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;name of the registry for the repository&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;index.docker.io&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;repo&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;name of the repository for the image&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;username&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;user name for communication with the registry&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;template&#34;&gt;Template&lt;/h2&gt;
+
+&lt;p&gt;COMING SOON!&lt;/p&gt;
+
+&lt;h2 id=&#34;troubleshooting&#34;&gt;Troubleshooting&lt;/h2&gt;
+
 &lt;p&gt;Below are a list of common problems and how to solve them:&lt;/p&gt;
 
 &lt;p&gt;COMING SOON!&lt;/p&gt;
