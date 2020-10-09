@@ -12,8 +12,10 @@ Registry: https://hub.docker.com/r/target/vela-makisu
 
 ## Usage
 
-{{% alert color="tip" %}}
-* It is not recommended to use `latest` as the tag for the Docker image. Users should use a semantically versioned tag instead.
+{{% alert color="warning" %}}
+Users should refrain from using `latest` as the tag for the Docker image.
+
+It is recommended to use a semantically versioned tag instead.
 {{% /alert %}}
 
 Sample of building and publishing an image:
@@ -105,7 +107,7 @@ The plugin accepts the following `parameters` for authentication:
 | `password`  | `DOCKER_PASSWORD`, `REGISTRY_PASSWORD`, `PARAMETER_PASSWORD` |
 | `username`  | `DOCKER_USERNAME`, `REGISTRY_USERNAME`, `PARAMETER_USERNAME` |
 
-Users can use [Vela secrets](/docs/concepts/pipeline/secrets/) to substitute these sensitive values at runtime:
+Users can use [Vela internal secrets](/docs/concepts/pipeline/secrets/) to substitute these sensitive values at runtime:
 
 ```diff
 steps:
@@ -128,18 +130,18 @@ steps:
 {{% alert color="info" %}}
 This example will add the `secrets` to the `publish_hello-world` step as environment variables:
 
-- `DOCKER_USERNAME`=<value>
-- `DOCKER_PASSWORD`=<value>
+- `DOCKER_USERNAME=<value>`
+- `DOCKER_PASSWORD=<value>`
 {{% /alert %}}
 
 ### External
 
 The plugin accepts the following files for authentication:
 
-| Parameter   | Volume Configuration                           |
-| ----------- | ------------------------------------------------------------ |
-| `password`  | `/vela/parameters/makisu/registry/password`, `/vela/secrets/makisu/registry/password`, `/vela/secrets/makisu/password` |
-| `username`  | `/vela/parameters/makisu/registry/username`, `/vela/secrets/makisu/registry/username`, `/vela/secrets/makisu/username` |
+| Parameter  | Volume Configuration                                                                                                   |
+| ---------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `password` | `/vela/parameters/makisu/registry/password`, `/vela/secrets/makisu/registry/password`, `/vela/secrets/makisu/password` |
+| `username` | `/vela/parameters/makisu/registry/username`, `/vela/secrets/makisu/registry/username`, `/vela/secrets/makisu/username` |
 
 Users can use [Vela external secrets](/docs/concepts/pipeline/secrets/) to substitute these sensitive values at runtime:
 
@@ -163,8 +165,9 @@ steps:
 ## Parameters
 
 {{% alert color="info" %}}
-* the plugin supports reading all parameters via environment variables or files
-* values set from a file take precedence over values set from the environment
+The plugin supports reading all parameters vie environment variables or files.
+
+Any values set from a file take precedence over values set from the environment.
 {{% /alert %}}
 
 The following parameters are used to configure the build and push process:
