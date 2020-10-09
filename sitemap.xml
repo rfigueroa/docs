@@ -163,11 +163,6 @@
   </url>
   
   <url>
-    <loc>https://go-vela.github.io/docs/plugins/pipeline/registry/terraform/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://go-vela.github.io/docs/api/build/add/</loc>
     <lastmod>2020-03-18T13:55:50+00:00</lastmod>
   </url>
@@ -259,7 +254,7 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/plugins/pipeline/registry/artifactory/</loc>
-    <lastmod>2020-09-30T13:15:30-05:00</lastmod>
+    <lastmod>2020-10-09T08:34:18-05:00</lastmod>
   </url>
   
   <url>
@@ -374,12 +369,12 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/plugins/pipeline/registry/docker/</loc>
-    <lastmod>2020-10-08T12:24:28-05:00</lastmod>
+    <lastmod>2020-10-09T08:34:18-05:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/plugins/pipeline/registry/downstream/</loc>
-    <lastmod>2020-09-30T13:15:30-05:00</lastmod>
+    <lastmod>2020-10-09T08:34:18-05:00</lastmod>
   </url>
   
   <url>
@@ -539,7 +534,7 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/plugins/pipeline/registry/git/</loc>
-    <lastmod>2020-09-30T13:15:30-05:00</lastmod>
+    <lastmod>2020-10-09T08:34:18-05:00</lastmod>
   </url>
   
   <url>
@@ -594,7 +589,7 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/plugins/pipeline/registry/kaniko/</loc>
-    <lastmod>2020-10-08T12:24:28-05:00</lastmod>
+    <lastmod>2020-10-09T08:34:18-05:00</lastmod>
   </url>
   
   <url>
@@ -604,7 +599,7 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/plugins/pipeline/registry/kubernetes/</loc>
-    <lastmod>2020-09-30T13:15:30-05:00</lastmod>
+    <lastmod>2020-10-09T08:34:18-05:00</lastmod>
   </url>
   
   <url>
@@ -659,7 +654,7 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/plugins/pipeline/registry/makisu/</loc>
-    <lastmod>2020-10-08T12:24:28-05:00</lastmod>
+    <lastmod>2020-10-09T08:34:18-05:00</lastmod>
   </url>
   
   <url>
@@ -934,7 +929,7 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/plugins/pipeline/registry/s3_cache/</loc>
-    <lastmod>2020-09-30T13:15:30-05:00</lastmod>
+    <lastmod>2020-10-09T08:34:18-05:00</lastmod>
   </url>
   
   <url>
@@ -1103,6 +1098,11 @@
   </url>
   
   <url>
+    <loc>https://go-vela.github.io/docs/plugins/pipeline/registry/terraform/</loc>
+    <lastmod>2020-10-09T08:34:18-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://go-vela.github.io/docs/plugins/pipeline/tutorials/</loc>
     <lastmod>2020-08-04T23:37:38-05:00</lastmod>
   </url>
@@ -1239,7 +1239,7 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/plugins/secret/registry/vault/</loc>
-    <lastmod>2020-08-12T12:32:50-05:00</lastmod>
+    <lastmod>2020-10-09T08:34:18-05:00</lastmod>
   </url>
   
   <url>

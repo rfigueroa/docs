@@ -20,39 +20,45 @@
 <link rel="icon" type="image/png" href="/docs/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/docs/favicons/android-192x192.png"sizes="192x192">
 
-<title>Vela</title><meta property="og:title" content="" />
+<title>Terraform | Vela</title><meta property="og:title" content="Terraform" />
 <meta property="og:description" content="Description This plugin enables you to run Terraform against providers in a Vela pipeline.
 Source Code: https://github.com/go-vela/vela-terraform
 Registry: https://hub.docker.com/r/target/vela-terraform
-This plugin supports environment (PARAMETER_*) and volume (/vela/parameters/*) configuration for setting parameters.
-The precedence order is take files then environment variables if both are set in a container.
- Usage  By default Terraform runs in the current directory. Use directory: path/to/tf/files to point Terraform at a file or files. Terraform ships with a default version but you can download the specific version you need with version: x." />
+Usage Users should refrain from using latest as the tag for the Docker image.
+It is recommended to use a semantically versioned tag instead.
+ Sample of adding init options to Terraform configuration:
+steps:-name:applyimage:target/vela-terraform:latestpull:alwaysparameters:action:applyauto_approve:true# Required for versions of Terraform 0.12.xinit_options:get_plugins:true Sample of applying Terraform configuration:
+steps:-name:applyimage:target/vela-terraform:latestpull:alwaysparameters:action:applyauto_approve:true# Required for versions of Terraform 0." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://go-vela.github.io/docs/plugins/pipeline/registry/terraform/" />
-
-<meta itemprop="name" content="">
+<meta property="article:modified_time" content="2020-10-09T08:34:18-05:00" />
+<meta itemprop="name" content="Terraform">
 <meta itemprop="description" content="Description This plugin enables you to run Terraform against providers in a Vela pipeline.
 Source Code: https://github.com/go-vela/vela-terraform
 Registry: https://hub.docker.com/r/target/vela-terraform
-This plugin supports environment (PARAMETER_*) and volume (/vela/parameters/*) configuration for setting parameters.
-The precedence order is take files then environment variables if both are set in a container.
- Usage  By default Terraform runs in the current directory. Use directory: path/to/tf/files to point Terraform at a file or files. Terraform ships with a default version but you can download the specific version you need with version: x.">
+Usage Users should refrain from using latest as the tag for the Docker image.
+It is recommended to use a semantically versioned tag instead.
+ Sample of adding init options to Terraform configuration:
+steps:-name:applyimage:target/vela-terraform:latestpull:alwaysparameters:action:applyauto_approve:true# Required for versions of Terraform 0.12.xinit_options:get_plugins:true Sample of applying Terraform configuration:
+steps:-name:applyimage:target/vela-terraform:latestpull:alwaysparameters:action:applyauto_approve:true# Required for versions of Terraform 0.">
 
 
-
-<meta itemprop="wordCount" content="1064">
+<meta itemprop="dateModified" content="2020-10-09T08:34:18-05:00" />
+<meta itemprop="wordCount" content="1194">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content=""/>
+<meta name="twitter:title" content="Terraform"/>
 <meta name="twitter:description" content="Description This plugin enables you to run Terraform against providers in a Vela pipeline.
 Source Code: https://github.com/go-vela/vela-terraform
 Registry: https://hub.docker.com/r/target/vela-terraform
-This plugin supports environment (PARAMETER_*) and volume (/vela/parameters/*) configuration for setting parameters.
-The precedence order is take files then environment variables if both are set in a container.
- Usage  By default Terraform runs in the current directory. Use directory: path/to/tf/files to point Terraform at a file or files. Terraform ships with a default version but you can download the specific version you need with version: x."/>
+Usage Users should refrain from using latest as the tag for the Docker image.
+It is recommended to use a semantically versioned tag instead.
+ Sample of adding init options to Terraform configuration:
+steps:-name:applyimage:target/vela-terraform:latestpull:alwaysparameters:action:applyauto_approve:true# Required for versions of Terraform 0.12.xinit_options:get_plugins:true Sample of applying Terraform configuration:
+steps:-name:applyimage:target/vela-terraform:latestpull:alwaysparameters:action:applyauto_approve:true# Required for versions of Terraform 0."/>
 
 
 
@@ -69,7 +75,7 @@ The precedence order is take files then environment variables if both are set in
   crossorigin="anonymous"></script>
 
 
-    <title>Vela</title>
+    <title>Terraform | Vela</title>
   </head>
   <body class="td-page">
     <header>
@@ -420,12 +426,6 @@ The precedence order is take files then environment variables if both are set in
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docs-plugins-pipeline-registry-terraform" href="/docs/plugins/pipeline/registry/terraform/"></a>
-      
-      
-      
-      
-      
       <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-pipeline-registry-artifactory" href="/docs/plugins/pipeline/registry/artifactory/">Artifactory</a>
       
       
@@ -475,6 +475,12 @@ The precedence order is take files then environment variables if both are set in
       
       
       <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-pipeline-registry-s3-cache" href="/docs/plugins/pipeline/registry/s3_cache/">S3 Cache</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docs-plugins-pipeline-registry-terraform" href="/docs/plugins/pipeline/registry/terraform/">Terraform</a>
       
       
     </li>
@@ -639,7 +645,7 @@ The precedence order is take files then environment variables if both are set in
 
 
 <a href="https://github.com/go-vela/docs/edit/master/content/plugins/pipeline/registry/terraform.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
-<a href="https://github.com/go-vela/docs/issues/new?title=" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+<a href="https://github.com/go-vela/docs/issues/new?title=Terraform" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
 
 </div>
 
@@ -654,7 +660,11 @@ The precedence order is take files then environment variables if both are set in
 <ul>
 <li><a href="#description">Description</a></li>
 <li><a href="#usage">Usage</a></li>
-<li><a href="#secrets">Secrets</a></li>
+<li><a href="#secrets">Secrets</a>
+<ul>
+<li><a href="#internal">Internal</a></li>
+<li><a href="#external">External</a></li>
+</ul></li>
 <li><a href="#parameters">Parameters</a>
 <ul>
 <li>
@@ -714,7 +724,7 @@ The precedence order is take files then environment variables if both are set in
 
 
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="https://go-vela.github.io/docs/plugins/pipeline/registry/terraform/"></a>
+	<a href="https://go-vela.github.io/docs/plugins/pipeline/registry/terraform/">Terraform</a>
 </li>
 
 	</ol>
@@ -722,7 +732,7 @@ The precedence order is take files then environment variables if both are set in
 
             
 <div class="td-content">
-	<h1></h1>
+	<h1>Terraform</h1>
 	
 	
 
@@ -734,71 +744,66 @@ The precedence order is take files then environment variables if both are set in
 
 <p>Registry: <a href="https://hub.docker.com/r/target/vela-terraform" target="_blank">https://hub.docker.com/r/target/vela-terraform</a></p>
 
-
-
-<div class="alert alert-tip" role="alert">
-
-<p>This plugin supports environment (<code>PARAMETER_*</code>) and volume (<code>/vela/parameters/*</code>) configuration for setting parameters.</p>
-
-<p>The precedence order is take files then environment variables if both are set in a container.</p>
-
-</div>
-
-
 <h2 id="usage">Usage</h2>
 
 
 
-<div class="alert alert-note" role="alert">
+<div class="alert alert-warning" role="alert">
 
-<ol>
-<li>By default Terraform runs in the current directory. Use <code>directory: path/to/tf/files</code> to point Terraform at a file or files.</li>
-<li>Terraform ships with a default version but you can download the specific version you need with <code>version: x.x.x</code></li>
-</ol>
+<p>Users should refrain from using <code>latest</code> as the tag for the Docker image.</p>
+
+<p>It is recommended to use a semantically versioned tag instead.</p>
+
 </div>
 
 
 <p>Sample of adding init options to Terraform configuration:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">-<span style="color:#f8f8f8;text-decoration:underline"> </span>name<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>apply<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span>image<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>target/vela-terraform<span style="color:#000;font-weight:bold">:</span>v0<span style="color:#0000cf;font-weight:bold">.1.0</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span>pull<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>always<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span>parameters<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>action<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>apply<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>auto_approve<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#204a87;font-weight:bold">true</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#8f5902;font-style:italic"># Required for versions of Terraform 0.12.x</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>init_options<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span>get_plugins<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#204a87;font-weight:bold">true</span></code></pre></div>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">steps<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span>-<span style="color:#f8f8f8;text-decoration:underline"> </span>name<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>apply<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>image<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>target/vela-terraform<span style="color:#000;font-weight:bold">:</span>latest<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>pull<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>always<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>parameters<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span>action<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>apply<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span>auto_approve<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#204a87;font-weight:bold">true</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#8f5902;font-style:italic"># Required for versions of Terraform 0.12.x</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span>init_options<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">        </span>get_plugins<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#204a87;font-weight:bold">true</span></code></pre></div>
 <p>Sample of applying Terraform configuration:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">-<span style="color:#f8f8f8;text-decoration:underline"> </span>name<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>apply<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span>image<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>target/vela-terraform<span style="color:#000;font-weight:bold">:</span>v0<span style="color:#0000cf;font-weight:bold">.1.0</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span>pull<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>always<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span>parameters<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>action<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>apply<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>auto_approve<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#204a87;font-weight:bold">true</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#8f5902;font-style:italic"># Required for versions of Terraform 0.12.x</span></code></pre></div>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">steps<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span>-<span style="color:#f8f8f8;text-decoration:underline"> </span>name<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>apply<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>image<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>target/vela-terraform<span style="color:#000;font-weight:bold">:</span>latest<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>pull<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>always<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>parameters<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span>action<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>apply<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span>auto_approve<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#204a87;font-weight:bold">true</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#8f5902;font-style:italic"># Required for versions of Terraform 0.12.x</span></code></pre></div>
 <p>Sample of destroying Terraform configuration:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">-<span style="color:#f8f8f8;text-decoration:underline"> </span>name<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>destroy<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span>image<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>target/vela-terraform<span style="color:#000;font-weight:bold">:</span>v0<span style="color:#0000cf;font-weight:bold">.1.0</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span>pull<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>always<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span>parameters<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>action<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>destroy<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>auto_approve<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#204a87;font-weight:bold">true</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#8f5902;font-style:italic"># Required for versions of Terraform 0.12.x</span></code></pre></div>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">steps<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span>-<span style="color:#f8f8f8;text-decoration:underline"> </span>name<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>destroy<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>image<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>target/vela-terraform<span style="color:#000;font-weight:bold">:</span>latest<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>pull<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>always<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>parameters<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span>action<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>destroy<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span>auto_approve<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#204a87;font-weight:bold">true</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#8f5902;font-style:italic"># Required for versions of Terraform 0.12.x</span></code></pre></div>
 <p>Sample of formatting Terraform configuration files:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">-<span style="color:#f8f8f8;text-decoration:underline"> </span>name<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>fmt<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span>image<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>target/vela-terraform<span style="color:#000;font-weight:bold">:</span>v0<span style="color:#0000cf;font-weight:bold">.1.0</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span>pull<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>always<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span>parameters<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>action<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>fmt</code></pre></div>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">steps<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span>-<span style="color:#f8f8f8;text-decoration:underline"> </span>name<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>fmt<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>image<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>target/vela-terraform<span style="color:#000;font-weight:bold">:</span>latest<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>pull<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>always<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>parameters<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span>action<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>fmt</code></pre></div>
 <p>Sample of planning Terraform configuration:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">-<span style="color:#f8f8f8;text-decoration:underline"> </span>name<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>plan<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span>image<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>target/vela-terraform<span style="color:#000;font-weight:bold">:</span>v0<span style="color:#0000cf;font-weight:bold">.1.0</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span>pull<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>always<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span>parameters<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>action<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>plan</code></pre></div>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">steps<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span>-<span style="color:#f8f8f8;text-decoration:underline"> </span>name<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>plan<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>image<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>target/vela-terraform<span style="color:#000;font-weight:bold">:</span>latest<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>pull<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>always<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>parameters<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span>action<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>plan</code></pre></div>
 <p>Sample of validating Terraform configuration:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">-<span style="color:#f8f8f8;text-decoration:underline"> </span>name<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>validate<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span>image<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>target/vela-terraform<span style="color:#000;font-weight:bold">:</span>v0<span style="color:#0000cf;font-weight:bold">.1.0</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span>pull<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>always<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span>parameters<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>action<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>validate</code></pre></div>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">steps<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span>-<span style="color:#f8f8f8;text-decoration:underline"> </span>name<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>validate<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>image<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>target/vela-terraform<span style="color:#000;font-weight:bold">:</span>latest<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>pull<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>always<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>parameters<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span>action<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>validate</code></pre></div>
 <h2 id="secrets">Secrets</h2>
 
 
@@ -808,15 +813,115 @@ The precedence order is take files then environment variables if both are set in
 Users should refrain from configuring sensitive information in their pipeline in plain text.
 </div>
 
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff"><span style="color:#a40000">- name: apply
-</span><span style="color:#a40000"></span>  image: target/vela-terraform:v0.1.0
-  pull: always
-<span style="color:#00a000">+  secrets: [ github_token ]
-</span><span style="color:#00a000"></span>  parameters:
-    action: apply
-    auto_approve: true # Required for versions of Terraform 0.12.x
-</code></pre></div>
+
+<h3 id="internal">Internal</h3>
+
+<p>The plugin accepts the following <code>parameters</code> for authentication:</p>
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Environment Variable Configuration</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>netrc_password</code></td>
+<td><code>GIT_PASSWORD</code>, <code>PARAMETER_NETRC_PASSWORD</code>, <code>VELA_NETRC_PASSWORD</code></td>
+</tr>
+
+<tr>
+<td><code>netrc_username</code></td>
+<td><code>GIT_USERNAME</code>, <code>PARAMETER_NETRC_USERNAME</code>, <code>VELA_NETRC_USERNAME</code></td>
+</tr>
+</tbody>
+</table>
+
+<p>Users can use <a href="/docs/concepts/pipeline/secrets/">Vela internal secrets</a> to substitute sensitive values at runtime:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
+  - name: plan
+    image: target/vela-terraform:latest
+    pull: always
+<span style="color:#00a000">+   secrets: [ git_username, git_password ]
+</span><span style="color:#00a000"></span>    parameters:
+      action: plan
+<span style="color:#a40000">-     netrc_username: octocat
+</span><span style="color:#a40000">-     netrc_password: superSecretPassword
+</span></code></pre></div>
+
+
+<div class="alert alert-info" role="alert">
+
+This example will add the <code>secrets</code> to the <code>plan</code> step as environment variables:</p>
+
+<ul>
+<li><code>GIT_USERNAME=&lt;value&gt;</code></li>
+<li><code>GIT_PASSWORD=&lt;value&gt;</code></li>
+</ul>
+</div>
+
+
+<h3 id="external">External</h3>
+
+<p>The plugin accepts the following files for authentication:</p>
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Volume Configuration</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>netrc_password</code></td>
+<td><code>/vela/parameters/terraform/netrc/password</code>, <code>/vela/secrets/terraform/netrc/password</code></td>
+</tr>
+
+<tr>
+<td><code>netrc_username</code></td>
+<td><code>/vela/parameters/terraform/netrc/username</code>, <code>/vela/secrets/terraform/netrc/username</code></td>
+</tr>
+</tbody>
+</table>
+
+<p>Users can use <a href="/docs/concepts/pipeline/secrets/">Vela external secrets</a> to substitute these sensitive values at runtime:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
+  - name: plan
+    image: target/vela-terraform:latest
+    pull: always
+    parameters:
+      action: plan
+<span style="color:#a40000">-     netrc_username: octocat
+</span><span style="color:#a40000">-     netrc_password: superSecretPassword
+</span></code></pre></div>
+
+
+<div class="alert alert-info" role="alert">
+
+This example will read the secrets values in the volume stored at <code>/vela/secrets/</code>:
+</div>
+
+
 <h2 id="parameters">Parameters</h2>
+
+
+
+<div class="alert alert-info" role="alert">
+
+<p>The plugin supports reading all parameters vie environment variables or files.</p>
+
+<p>Any values set from a file take precedence over values set from the environment.</p>
+
+<p>By default, Terraform runs in the current directory - use <code>directory: path/to/tf/files</code> to point Terraform at a file or files.</p>
+
+<p>Terraform ships with a default version but you can download the specific version you need with <code>version: x.x.x</code></p>
+
+</div>
+
 
 <p>The following parameters are used to configure the image:</p>
 
@@ -1443,15 +1548,16 @@ We recommend reviewing Terraform&rsquo;s <a href="https://www.terraform.io/docs/
 
 
 <p>You can start troubleshooting this plugin by tuning the level of logs being displayed:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff"><span style="color:#a40000">- name: apply
-</span><span style="color:#a40000"></span>  image: target/vela-terraform:v0.1.0
-  pull: always
-  parameters:
-    action: apply
-    auto_approve: true # Required for versions of Terraform 0.12.x
-    init_options:
-      get_plugins: true
-<span style="color:#00a000">+   log_level: trace
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
+  - name: apply
+    image: target/vela-terraform:latest
+    pull: always
+    parameters:
+      action: apply
+      auto_approve: true # Required for versions of Terraform 0.12.x
+      init_options:
+        get_plugins: true
+<span style="color:#00a000">+     log_level: trace
 </span></code></pre></div>
 <p>Below are a list of common problems and how to solve them:</p>
 
@@ -1459,7 +1565,7 @@ We recommend reviewing Terraform&rsquo;s <a href="https://www.terraform.io/docs/
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified January 1, 0001: <a  href="https://github.com/go-vela/docs/commit/8d56b7af5d28654b796f4508dc6145a739b95f13">chore: convert true to always pull policy (#173) (8d56b7a)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified October 9, 2020: <a  href="https://github.com/go-vela/docs/commit/41d05b49562c5f26c25fc2f5a2d05123b1d5172d">chore: update image tags for consistency (#175) (41d05b4)</a>
 </div>
 </div>
 
