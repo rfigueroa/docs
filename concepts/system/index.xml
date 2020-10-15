@@ -721,7 +721,7 @@ The following list are some examples of secrets:&lt;/p&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;events&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;[]string&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;whitelist of events permitted to access the secret&lt;/td&gt;
+&lt;td&gt;list of events permitted to access the secret&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -733,7 +733,7 @@ The following list are some examples of secrets:&lt;/p&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;images&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;[]string&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;whitelist of images permitted to access the secret&lt;/td&gt;
+&lt;td&gt;list of images permitted to access the secret&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -1207,7 +1207,7 @@ This component is stored in the configured Vela backend in the &lt;code&gt;steps
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;favorites&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;[]string&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;whitelist of repos the user favorite in the UI&lt;/td&gt;
+&lt;td&gt;list of repos the user favorited in the UI&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
