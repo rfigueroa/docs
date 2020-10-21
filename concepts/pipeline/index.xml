@@ -637,7 +637,7 @@ This pipeline will execute the &lt;code&gt;test&lt;/code&gt; step first, then ru
 metadata:
   template: false
 
-&lt;span style=&#34;color:#00a000&#34;&gt;+templates
+&lt;span style=&#34;color:#00a000&#34;&gt;+templates:
 &lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+  - name: template
 &lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+    source: github.com/vela/atlas/cmd
 &lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+    type: github
