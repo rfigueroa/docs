@@ -831,23 +831,598 @@ This plugin was originally used to build &lt;strong&gt;all&lt;/strong&gt; Docker
 
 &lt;h2 id=&#34;usage&#34;&gt;Usage&lt;/h2&gt;
 
-&lt;p&gt;COMING SOON!&lt;/p&gt;
 
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+
+&lt;p&gt;Users should refrain from using &lt;code&gt;latest&lt;/code&gt; as the tag for the Docker image.&lt;/p&gt;
+
+&lt;p&gt;It is recommended to use a semantically versioned tag instead.&lt;/p&gt;
+
+&lt;/div&gt;
+
+
+&lt;p&gt;Sample of building and publishing an image:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;steps&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;  &lt;/span&gt;-&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;name&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;publish_hello-world&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;image&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;target/vela-docker&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;latest&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;pull&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;always&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;parameters&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;registry&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;index.docker.io&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;tags&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;index.docker.io/octocat/hello-world&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;latest&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Sample of building an image without publishing:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
+  - name: publish hello world
+    image: target/vela-docker:latest
+    pull: always
+    parameters:
+      registry: index.docker.io
+      tags: [ index.docker.io/octocat/hello-world:latest ]    
+&lt;span style=&#34;color:#00a000&#34;&gt;+     dry_run: true
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Sample of building and publishing an image with custom tags:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
+  - name: publish hello world
+    image: target/vela-docker:latest
+    pull: always
+    parameters:
+      registry: index.docker.io
+&lt;span style=&#34;color:#00a000&#34;&gt;+     tags: 
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+       - index.docker.io/octocat/hello-world:latest
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+       - index.docker.io/octocat/hello-world:1
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+       - index.docker.io/octocat/hello-world:foobar
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Sample of building and publishing an image with build arguments:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
+  - name: publish hello world
+    image: target/vela-docker:latest
+    pull: always
+    parameters:
+      registry: index.docker.io
+      tags: [ index.docker.io/octocat/hello-world ]    
+&lt;span style=&#34;color:#00a000&#34;&gt;+     build_args:
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+       - FOO=bar
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Sample of building and publishing an image with image caching:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
+  - name: publish_hello-world
+    image: target/vela-docker:latest
+    pull: always
+    parameters:
+      registry: index.docker.io
+      tags: [ index.docker.io/octocat/hello-world:latest ]    
+&lt;span style=&#34;color:#00a000&#34;&gt;+     cache_from: index.docker.io/octocat/hello-world
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Sample of building and publishing with custom daemon settings:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
+  - name: publish_hello-world
+    image: target/vela-docker:latest
+    pull: always
+    parameters:
+      registry: index.docker.io
+      tags: [ index.docker.io/octocat/hello-world:latest ]    
+&lt;span style=&#34;color:#00a000&#34;&gt;+     daemon: 
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+       registry_mirror: mirror.index.docker.io
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2 id=&#34;secrets&#34;&gt;Secrets&lt;/h2&gt;
 
-&lt;p&gt;COMING SOON!&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+
+Users should refrain from configuring sensitive information in their pipeline in plain text.
+&lt;/div&gt;
+
 
 &lt;h3 id=&#34;internal&#34;&gt;Internal&lt;/h3&gt;
 
-&lt;p&gt;COMING SOON!&lt;/p&gt;
+&lt;p&gt;The plugin accepts the following &lt;code&gt;parameters&lt;/code&gt; for authentication:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Parameter&lt;/th&gt;
+&lt;th&gt;Environment Variable Configuration&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;password&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;DOCKER_PASSWORD&lt;/code&gt;, &lt;code&gt;REGISTRY_PASSWORD&lt;/code&gt;, &lt;code&gt;PARAMETER_PASSWORD&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;username&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;DOCKER_USERNAME&lt;/code&gt;, &lt;code&gt;REGISTRY_USERNAME&lt;/code&gt;, &lt;code&gt;PARAMETER_USERNAME&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Users can use &lt;a href=&#34;https://go-vela.github.io/docs/docs/concepts/pipeline/secrets/&#34;&gt;Vela internal secrets&lt;/a&gt; to substitute these sensitive values at runtime:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
+  - name: publish_hello-world
+    image: target/vela-docker:latest
+    pull: always
+&lt;span style=&#34;color:#00a000&#34;&gt;+   secrets: [ docker_username, docker_password ]
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;    parameters:
+      registry: index.docker.io
+      tags: [ index.docker.io/octocat/hello-world:latest ] 
+&lt;span style=&#34;color:#a40000&#34;&gt;-     username: octocat
+&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;-     password: superSecretPassword
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+This example will add the &lt;code&gt;secrets&lt;/code&gt; to the &lt;code&gt;publish_hello-world&lt;/code&gt; step as environment variables:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;DOCKER_USERNAME=&amp;lt;value&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;DOCKER_PASSWORD=&amp;lt;value&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
 
 &lt;h3 id=&#34;external&#34;&gt;External&lt;/h3&gt;
 
-&lt;p&gt;COMING SOON!&lt;/p&gt;
+&lt;p&gt;The plugin accepts the following files for authentication:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Parameter&lt;/th&gt;
+&lt;th&gt;Volume Configuration&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;password&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;/vela/parameters/docker/registry/password&lt;/code&gt;, &lt;code&gt;/vela/secrets/docker/registry/password&lt;/code&gt;, &lt;code&gt;/vela/secrets/docker/password&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;username&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;/vela/parameters/docker/registry/username&lt;/code&gt;, &lt;code&gt;/vela/secrets/docker/registry/username&lt;/code&gt;, &lt;code&gt;/vela/secrets/docker/username&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Users can use &lt;a href=&#34;https://go-vela.github.io/docs/docs/concepts/pipeline/secrets/&#34;&gt;Vela external secrets&lt;/a&gt; to substitute these sensitive values at runtime:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
+  - name: publish_hello-world
+    image: target/vela-docker:latest
+    pull: always
+    parameters:
+      registry: index.docker.io
+      tags: [ index.docker.io/octocat/hello-world:latest ] 
+&lt;span style=&#34;color:#a40000&#34;&gt;-     username: octocat
+&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;-     password: superSecretPassword
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+This example will read the secrets values in the volume stored at &lt;code&gt;/vela/secrets/&lt;/code&gt;:
+&lt;/div&gt;
+
 
 &lt;h2 id=&#34;parameters&#34;&gt;Parameters&lt;/h2&gt;
 
-&lt;p&gt;COMING SOON!&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+&lt;ul&gt;
+&lt;li&gt;the plugin supports reading all parameters via environment variables or files&lt;/li&gt;
+&lt;li&gt;values set from a file take precedence over values set from the environment&lt;/li&gt;
+&lt;li&gt;by default &lt;a href=&#34;https://docs.docker.com/develop/develop-images/build_enhancements/&#34; target=&#34;_blank&#34;&gt;build kit&lt;/a&gt; is on, it can be turned off by setting &lt;code&gt;DOCKER_BUILDKIT=0&lt;/code&gt; in the environment&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;key.key&lt;/code&gt; syntax signifies a new yaml object within the definition.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+
+&lt;h3 id=&#34;registry&#34;&gt;Registry&lt;/h3&gt;
+
+&lt;p&gt;The following parameters are used to configure the image:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;th&gt;Required&lt;/th&gt;
+&lt;th&gt;Default&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;dry_run&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;enables building the image without publishing&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;registry&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Docker registry address to communicate with&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;index.docker.io&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;password&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;password for communication with the registry&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;username&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;user name for communication with the registry&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&#34;build-and-push&#34;&gt;Build and Push&lt;/h3&gt;
+
+&lt;p&gt;The following parameters are used to configure the image:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;th&gt;Required&lt;/th&gt;
+&lt;th&gt;Default&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;add_hosts&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;enables adding a custom host-to-IP mapping - format (host:ip)&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;build_args&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;enables setting build-time variables&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;cache_from&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;enables setting images to consider as cache sources&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;cgroup_parent&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;enables setting an optional parent cgroup for the container&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;compress&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;enables setting compression the build context using gzip&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;context&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;enables setting the build context&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;.&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;cpu.period&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;enables setting limits on the CPU CFS (Completely Fair Scheduler) period&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;cpu.quota&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;enables setting limit on the CPU CFS (Completely Fair Scheduler) quota&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;cpu.shares&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;enables setting CPU shares (relative weight)&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;cpu.set_cpus&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;enables setting CPUs in which to allow execution (0-3, 0,1)&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;cpu.set_mems&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;enables setting MEMs in which to allow execution (0-3, 0,1)&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;disable_content_trust&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;enables skipping image verification&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;file&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;enables setting the name of the Dockerfile&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;force_rm&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;enables setting always remove on intermediate containers&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;image_id_file&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;enables setting writing the image ID to the file&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;isolation&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;enables container isolation technology&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;labels&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;enables setting metadata for an image&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;memory&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;enables setting a memory limit&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;memory_swaps&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;enables setting a swap limit equal to memory plus swap: &amp;lsquo;-1&amp;rsquo; to enable unlimited swap&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;network&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;enables setting the networking mode for the RUN instructions during build&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;no_cache&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;enables setting not use cache when building the image&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;outputs&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;enables setting an output destination - format (type=local,dest=path)&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;platform&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;enables setting a platform if server is multi-platform capable&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;progress&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;enables setting type of progress output - options (auto&lt;/td&gt;
+&lt;td&gt;plain&lt;/td&gt;
+&lt;td&gt;tty)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;pull&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;enables always attempting to pull a newer version of the image&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;quiet&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;enables suppressing the build output and print image ID on success&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;remove&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;enables removing the intermediate containers after a successful build&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;secrets&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;enables setting a secret file to expose to the build - format (id=mysecret,src=https://go-vela.github.io/docs/local/secret)&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;security_opts&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;enables setting security options&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;shm_sizes&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;enables setting the size of /dev/shm&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;squash&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;enables setting squash newly built layers into a single new layer&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;ssh_components&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;enables setting an ssh agent socket or keys to expose to the build - format (default&lt;/td&gt;
+&lt;td&gt;&lt;id&gt;[=&lt;socket&gt;&lt;/td&gt;
+&lt;td&gt;&lt;key&gt;[,&lt;key&gt;]])&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;stream&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;enables streaming attaches to server to negotiate build context&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;tags&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;enables naming and optionally a tagging - format (name:tag)&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;target&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;enables setting the target build stage to build.&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;ulimits&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;enables setting ulimit options&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&#34;daemon&#34;&gt;Daemon&lt;/h3&gt;
+
+&lt;p&gt;The following parameters are used to configure the image:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;th&gt;Required&lt;/th&gt;
+&lt;th&gt;Default&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;bip&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;enables specifying a network bridge IP&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;dns.servers&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;enables setting the DNS server to use&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;dns.searches&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;enables setting the DNS search domains to use&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;experimental&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;enables experimental features&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;insecure_registries&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;enables insecure registry communication&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;ipv6&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;enables IPv6 networking&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;mtu&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;enables setting the containers network MTU&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;registry_mirrors&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;enables setting a preferred Docker registry mirror&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;storage.drivers&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;enables setting an alternate storage driver&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;storage.opts&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;enables setting options on the alternate storage driver&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 
 &lt;h2 id=&#34;template&#34;&gt;Template&lt;/h2&gt;
 
@@ -855,7 +1430,7 @@ This plugin was originally used to build &lt;strong&gt;all&lt;/strong&gt; Docker
 
 &lt;h2 id=&#34;troubleshooting&#34;&gt;Troubleshooting&lt;/h2&gt;
 
-&lt;p&gt;COMING SOON!&lt;/p&gt;
+&lt;p&gt;Below are a list of common problems and how to solve them:&lt;/p&gt;
 
       </description>
     </item>

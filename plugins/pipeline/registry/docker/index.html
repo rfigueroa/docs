@@ -24,27 +24,19 @@
 <meta property="og:description" content="Overview This plugin was originally used to build all Docker images. The functionality of this plugin still exists within Kaniko  This plugin enables the ability to build and publish Docker images in a Vela pipeline. Plugin requires the pipeline to run on a worker that provides the plugin elevated access.
 Source Code: https://github.com/go-vela/vela-docker
 Registry: https://hub.docker.com/r/target/vela-docker
-Usage COMING SOON!
-Secrets COMING SOON!
-Internal COMING SOON!
-External COMING SOON!
-Parameters COMING SOON!" />
+Usage Users should refrain from using latest as the tag for the Docker image." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://go-vela.github.io/docs/plugins/pipeline/registry/docker/" />
-<meta property="article:modified_time" content="2020-10-09T08:34:18-05:00" />
+<meta property="article:modified_time" content="2020-10-23T15:48:00-05:00" />
 <meta itemprop="name" content="Docker">
 <meta itemprop="description" content="Overview This plugin was originally used to build all Docker images. The functionality of this plugin still exists within Kaniko  This plugin enables the ability to build and publish Docker images in a Vela pipeline. Plugin requires the pipeline to run on a worker that provides the plugin elevated access.
 Source Code: https://github.com/go-vela/vela-docker
 Registry: https://hub.docker.com/r/target/vela-docker
-Usage COMING SOON!
-Secrets COMING SOON!
-Internal COMING SOON!
-External COMING SOON!
-Parameters COMING SOON!">
+Usage Users should refrain from using latest as the tag for the Docker image.">
 
 
-<meta itemprop="dateModified" content="2020-10-09T08:34:18-05:00" />
-<meta itemprop="wordCount" content="76">
+<meta itemprop="dateModified" content="2020-10-23T15:48:00-05:00" />
+<meta itemprop="wordCount" content="1044">
 
 
 
@@ -54,11 +46,7 @@ Parameters COMING SOON!">
 <meta name="twitter:description" content="Overview This plugin was originally used to build all Docker images. The functionality of this plugin still exists within Kaniko  This plugin enables the ability to build and publish Docker images in a Vela pipeline. Plugin requires the pipeline to run on a worker that provides the plugin elevated access.
 Source Code: https://github.com/go-vela/vela-docker
 Registry: https://hub.docker.com/r/target/vela-docker
-Usage COMING SOON!
-Secrets COMING SOON!
-Internal COMING SOON!
-External COMING SOON!
-Parameters COMING SOON!"/>
+Usage Users should refrain from using latest as the tag for the Docker image."/>
 
 
 
@@ -665,7 +653,12 @@ Parameters COMING SOON!"/>
 <li><a href="#internal">Internal</a></li>
 <li><a href="#external">External</a></li>
 </ul></li>
-<li><a href="#parameters">Parameters</a></li>
+<li><a href="#parameters">Parameters</a>
+<ul>
+<li><a href="#registry">Registry</a></li>
+<li><a href="#build-and-push">Build and Push</a></li>
+<li><a href="#daemon">Daemon</a></li>
+</ul></li>
 <li><a href="#template">Template</a></li>
 <li><a href="#troubleshooting">Troubleshooting</a></li>
 </ul></li>
@@ -744,23 +737,598 @@ This plugin was originally used to build <strong>all</strong> Docker images. The
 
 <h2 id="usage">Usage</h2>
 
-<p>COMING SOON!</p>
 
+
+<div class="alert alert-warning" role="alert">
+
+<p>Users should refrain from using <code>latest</code> as the tag for the Docker image.</p>
+
+<p>It is recommended to use a semantically versioned tag instead.</p>
+
+</div>
+
+
+<p>Sample of building and publishing an image:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">steps<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span>-<span style="color:#f8f8f8;text-decoration:underline"> </span>name<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>publish_hello-world<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>image<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>target/vela-docker<span style="color:#000;font-weight:bold">:</span>latest<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>pull<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>always<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>parameters<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span>registry<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>index.docker.io<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span>tags<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">[</span><span style="color:#f8f8f8;text-decoration:underline"> </span>index.docker.io/octocat/hello-world<span style="color:#000;font-weight:bold">:</span>latest<span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">]</span></code></pre></div>
+<p>Sample of building an image without publishing:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
+  - name: publish hello world
+    image: target/vela-docker:latest
+    pull: always
+    parameters:
+      registry: index.docker.io
+      tags: [ index.docker.io/octocat/hello-world:latest ]    
+<span style="color:#00a000">+     dry_run: true
+</span></code></pre></div>
+<p>Sample of building and publishing an image with custom tags:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
+  - name: publish hello world
+    image: target/vela-docker:latest
+    pull: always
+    parameters:
+      registry: index.docker.io
+<span style="color:#00a000">+     tags: 
+</span><span style="color:#00a000">+       - index.docker.io/octocat/hello-world:latest
+</span><span style="color:#00a000">+       - index.docker.io/octocat/hello-world:1
+</span><span style="color:#00a000">+       - index.docker.io/octocat/hello-world:foobar
+</span></code></pre></div>
+<p>Sample of building and publishing an image with build arguments:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
+  - name: publish hello world
+    image: target/vela-docker:latest
+    pull: always
+    parameters:
+      registry: index.docker.io
+      tags: [ index.docker.io/octocat/hello-world ]    
+<span style="color:#00a000">+     build_args:
+</span><span style="color:#00a000">+       - FOO=bar
+</span></code></pre></div>
+<p>Sample of building and publishing an image with image caching:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
+  - name: publish_hello-world
+    image: target/vela-docker:latest
+    pull: always
+    parameters:
+      registry: index.docker.io
+      tags: [ index.docker.io/octocat/hello-world:latest ]    
+<span style="color:#00a000">+     cache_from: index.docker.io/octocat/hello-world
+</span></code></pre></div>
+<p>Sample of building and publishing with custom daemon settings:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
+  - name: publish_hello-world
+    image: target/vela-docker:latest
+    pull: always
+    parameters:
+      registry: index.docker.io
+      tags: [ index.docker.io/octocat/hello-world:latest ]    
+<span style="color:#00a000">+     daemon: 
+</span><span style="color:#00a000">+       registry_mirror: mirror.index.docker.io
+</span></code></pre></div>
 <h2 id="secrets">Secrets</h2>
 
-<p>COMING SOON!</p>
+
+
+<div class="alert alert-warning" role="alert">
+
+Users should refrain from configuring sensitive information in their pipeline in plain text.
+</div>
+
 
 <h3 id="internal">Internal</h3>
 
-<p>COMING SOON!</p>
+<p>The plugin accepts the following <code>parameters</code> for authentication:</p>
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Environment Variable Configuration</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>password</code></td>
+<td><code>DOCKER_PASSWORD</code>, <code>REGISTRY_PASSWORD</code>, <code>PARAMETER_PASSWORD</code></td>
+</tr>
+
+<tr>
+<td><code>username</code></td>
+<td><code>DOCKER_USERNAME</code>, <code>REGISTRY_USERNAME</code>, <code>PARAMETER_USERNAME</code></td>
+</tr>
+</tbody>
+</table>
+
+<p>Users can use <a href="/docs/concepts/pipeline/secrets/">Vela internal secrets</a> to substitute these sensitive values at runtime:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
+  - name: publish_hello-world
+    image: target/vela-docker:latest
+    pull: always
+<span style="color:#00a000">+   secrets: [ docker_username, docker_password ]
+</span><span style="color:#00a000"></span>    parameters:
+      registry: index.docker.io
+      tags: [ index.docker.io/octocat/hello-world:latest ] 
+<span style="color:#a40000">-     username: octocat
+</span><span style="color:#a40000">-     password: superSecretPassword
+</span></code></pre></div>
+
+
+<div class="alert alert-info" role="alert">
+
+This example will add the <code>secrets</code> to the <code>publish_hello-world</code> step as environment variables:</p>
+
+<ul>
+<li><code>DOCKER_USERNAME=&lt;value&gt;</code></li>
+<li><code>DOCKER_PASSWORD=&lt;value&gt;</code></li>
+</ul>
+</div>
+
 
 <h3 id="external">External</h3>
 
-<p>COMING SOON!</p>
+<p>The plugin accepts the following files for authentication:</p>
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Volume Configuration</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>password</code></td>
+<td><code>/vela/parameters/docker/registry/password</code>, <code>/vela/secrets/docker/registry/password</code>, <code>/vela/secrets/docker/password</code></td>
+</tr>
+
+<tr>
+<td><code>username</code></td>
+<td><code>/vela/parameters/docker/registry/username</code>, <code>/vela/secrets/docker/registry/username</code>, <code>/vela/secrets/docker/username</code></td>
+</tr>
+</tbody>
+</table>
+
+<p>Users can use <a href="/docs/concepts/pipeline/secrets/">Vela external secrets</a> to substitute these sensitive values at runtime:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
+  - name: publish_hello-world
+    image: target/vela-docker:latest
+    pull: always
+    parameters:
+      registry: index.docker.io
+      tags: [ index.docker.io/octocat/hello-world:latest ] 
+<span style="color:#a40000">-     username: octocat
+</span><span style="color:#a40000">-     password: superSecretPassword
+</span></code></pre></div>
+
+
+<div class="alert alert-info" role="alert">
+
+This example will read the secrets values in the volume stored at <code>/vela/secrets/</code>:
+</div>
+
 
 <h2 id="parameters">Parameters</h2>
 
-<p>COMING SOON!</p>
+
+
+<div class="alert alert-info" role="alert">
+
+<ul>
+<li>the plugin supports reading all parameters via environment variables or files</li>
+<li>values set from a file take precedence over values set from the environment</li>
+<li>by default <a href="https://docs.docker.com/develop/develop-images/build_enhancements/" target="_blank">build kit</a> is on, it can be turned off by setting <code>DOCKER_BUILDKIT=0</code> in the environment</li>
+<li><code>key.key</code> syntax signifies a new yaml object within the definition.</li>
+</ul>
+</div>
+
+
+<h3 id="registry">Registry</h3>
+
+<p>The following parameters are used to configure the image:</p>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Required</th>
+<th>Default</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>dry_run</code></td>
+<td>enables building the image without publishing</td>
+<td><code>false</code></td>
+<td><code>false</code></td>
+</tr>
+
+<tr>
+<td><code>registry</code></td>
+<td>Docker registry address to communicate with</td>
+<td><code>true</code></td>
+<td><code>index.docker.io</code></td>
+</tr>
+
+<tr>
+<td><code>password</code></td>
+<td>password for communication with the registry</td>
+<td><code>true</code></td>
+<td>N/A</td>
+</tr>
+
+<tr>
+<td><code>username</code></td>
+<td>user name for communication with the registry</td>
+<td><code>true</code></td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="build-and-push">Build and Push</h3>
+
+<p>The following parameters are used to configure the image:</p>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Required</th>
+<th>Default</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>add_hosts</code></td>
+<td>enables adding a custom host-to-IP mapping - format (host:ip)</td>
+<td><code>false</code></td>
+<td>N/A</td>
+</tr>
+
+<tr>
+<td><code>build_args</code></td>
+<td>enables setting build-time variables</td>
+<td><code>false</code></td>
+<td>N/A</td>
+</tr>
+
+<tr>
+<td><code>cache_from</code></td>
+<td>enables setting images to consider as cache sources</td>
+<td><code>false</code></td>
+<td>N/A</td>
+</tr>
+
+<tr>
+<td><code>cgroup_parent</code></td>
+<td>enables setting an optional parent cgroup for the container</td>
+<td><code>false</code></td>
+<td>N/A</td>
+</tr>
+
+<tr>
+<td><code>compress</code></td>
+<td>enables setting compression the build context using gzip</td>
+<td><code>false</code></td>
+<td>N/A</td>
+</tr>
+
+<tr>
+<td><code>context</code></td>
+<td>enables setting the build context</td>
+<td><code>true</code></td>
+<td><code>.</code></td>
+</tr>
+
+<tr>
+<td><code>cpu.period</code></td>
+<td>enables setting limits on the CPU CFS (Completely Fair Scheduler) period</td>
+<td><code>false</code></td>
+<td>N/A</td>
+</tr>
+
+<tr>
+<td><code>cpu.quota</code></td>
+<td>enables setting limit on the CPU CFS (Completely Fair Scheduler) quota</td>
+<td><code>false</code></td>
+<td>N/A</td>
+</tr>
+
+<tr>
+<td><code>cpu.shares</code></td>
+<td>enables setting CPU shares (relative weight)</td>
+<td><code>false</code></td>
+<td>N/A</td>
+</tr>
+
+<tr>
+<td><code>cpu.set_cpus</code></td>
+<td>enables setting CPUs in which to allow execution (0-3, 0,1)</td>
+<td><code>false</code></td>
+<td>N/A</td>
+</tr>
+
+<tr>
+<td><code>cpu.set_mems</code></td>
+<td>enables setting MEMs in which to allow execution (0-3, 0,1)</td>
+<td><code>false</code></td>
+<td>N/A</td>
+</tr>
+
+<tr>
+<td><code>disable_content_trust</code></td>
+<td>enables skipping image verification</td>
+<td><code>false</code></td>
+<td>N/A</td>
+</tr>
+
+<tr>
+<td><code>file</code></td>
+<td>enables setting the name of the Dockerfile</td>
+<td><code>false</code></td>
+<td>N/A</td>
+</tr>
+
+<tr>
+<td><code>force_rm</code></td>
+<td>enables setting always remove on intermediate containers</td>
+<td><code>false</code></td>
+<td>N/A</td>
+</tr>
+
+<tr>
+<td><code>image_id_file</code></td>
+<td>enables setting writing the image ID to the file</td>
+<td><code>false</code></td>
+<td>N/A</td>
+</tr>
+
+<tr>
+<td><code>isolation</code></td>
+<td>enables container isolation technology</td>
+<td><code>false</code></td>
+<td>N/A</td>
+</tr>
+
+<tr>
+<td><code>labels</code></td>
+<td>enables setting metadata for an image</td>
+<td><code>false</code></td>
+<td>N/A</td>
+</tr>
+
+<tr>
+<td><code>memory</code></td>
+<td>enables setting a memory limit</td>
+<td><code>false</code></td>
+<td>N/A</td>
+</tr>
+
+<tr>
+<td><code>memory_swaps</code></td>
+<td>enables setting a swap limit equal to memory plus swap: &lsquo;-1&rsquo; to enable unlimited swap</td>
+<td><code>false</code></td>
+<td>N/A</td>
+</tr>
+
+<tr>
+<td><code>network</code></td>
+<td>enables setting the networking mode for the RUN instructions during build</td>
+<td><code>false</code></td>
+<td>N/A</td>
+</tr>
+
+<tr>
+<td><code>no_cache</code></td>
+<td>enables setting not use cache when building the image</td>
+<td><code>false</code></td>
+<td>N/A</td>
+</tr>
+
+<tr>
+<td><code>outputs</code></td>
+<td>enables setting an output destination - format (type=local,dest=path)</td>
+<td><code>false</code></td>
+<td>N/A</td>
+</tr>
+
+<tr>
+<td><code>platform</code></td>
+<td>enables setting a platform if server is multi-platform capable</td>
+<td><code>false</code></td>
+<td>N/A</td>
+</tr>
+
+<tr>
+<td><code>progress</code></td>
+<td>enables setting type of progress output - options (auto</td>
+<td>plain</td>
+<td>tty)</td>
+</tr>
+
+<tr>
+<td><code>pull</code></td>
+<td>enables always attempting to pull a newer version of the image</td>
+<td><code>false</code></td>
+<td>N/A</td>
+</tr>
+
+<tr>
+<td><code>quiet</code></td>
+<td>enables suppressing the build output and print image ID on success</td>
+<td><code>false</code></td>
+<td>N/A</td>
+</tr>
+
+<tr>
+<td><code>remove</code></td>
+<td>enables removing the intermediate containers after a successful build</td>
+<td><code>false</code></td>
+<td>N/A</td>
+</tr>
+
+<tr>
+<td><code>secrets</code></td>
+<td>enables setting a secret file to expose to the build - format (id=mysecret,src=/local/secret)</td>
+<td><code>false</code></td>
+<td>N/A</td>
+</tr>
+
+<tr>
+<td><code>security_opts</code></td>
+<td>enables setting security options</td>
+<td><code>false</code></td>
+<td>N/A</td>
+</tr>
+
+<tr>
+<td><code>shm_sizes</code></td>
+<td>enables setting the size of /dev/shm</td>
+<td><code>false</code></td>
+<td>N/A</td>
+</tr>
+
+<tr>
+<td><code>squash</code></td>
+<td>enables setting squash newly built layers into a single new layer</td>
+<td><code>false</code></td>
+<td>N/A</td>
+</tr>
+
+<tr>
+<td><code>ssh_components</code></td>
+<td>enables setting an ssh agent socket or keys to expose to the build - format (default</td>
+<td><id>[=<socket></td>
+<td><key>[,<key>]])</td>
+</tr>
+
+<tr>
+<td><code>stream</code></td>
+<td>enables streaming attaches to server to negotiate build context</td>
+<td><code>false</code></td>
+<td>N/A</td>
+</tr>
+
+<tr>
+<td><code>tags</code></td>
+<td>enables naming and optionally a tagging - format (name:tag)</td>
+<td><code>true</code></td>
+<td>N/A</td>
+</tr>
+
+<tr>
+<td><code>target</code></td>
+<td>enables setting the target build stage to build.</td>
+<td><code>false</code></td>
+<td>N/A</td>
+</tr>
+
+<tr>
+<td><code>ulimits</code></td>
+<td>enables setting ulimit options</td>
+<td><code>false</code></td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="daemon">Daemon</h3>
+
+<p>The following parameters are used to configure the image:</p>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Required</th>
+<th>Default</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>bip</code></td>
+<td>enables specifying a network bridge IP</td>
+<td><code>false</code></td>
+<td>N/A</td>
+</tr>
+
+<tr>
+<td><code>dns.servers</code></td>
+<td>enables setting the DNS server to use</td>
+<td><code>false</code></td>
+<td>N/A</td>
+</tr>
+
+<tr>
+<td><code>dns.searches</code></td>
+<td>enables setting the DNS search domains to use</td>
+<td><code>false</code></td>
+<td>N/A</td>
+</tr>
+
+<tr>
+<td><code>experimental</code></td>
+<td>enables experimental features</td>
+<td><code>false</code></td>
+<td>N/A</td>
+</tr>
+
+<tr>
+<td><code>insecure_registries</code></td>
+<td>enables insecure registry communication</td>
+<td><code>false</code></td>
+<td>N/A</td>
+</tr>
+
+<tr>
+<td><code>ipv6</code></td>
+<td>enables IPv6 networking</td>
+<td><code>false</code></td>
+<td>N/A</td>
+</tr>
+
+<tr>
+<td><code>mtu</code></td>
+<td>enables setting the containers network MTU</td>
+<td><code>false</code></td>
+<td>N/A</td>
+</tr>
+
+<tr>
+<td><code>registry_mirrors</code></td>
+<td>enables setting a preferred Docker registry mirror</td>
+<td><code>false</code></td>
+<td>N/A</td>
+</tr>
+
+<tr>
+<td><code>storage.drivers</code></td>
+<td>enables setting an alternate storage driver</td>
+<td><code>false</code></td>
+<td>N/A</td>
+</tr>
+
+<tr>
+<td><code>storage.opts</code></td>
+<td>enables setting options on the alternate storage driver</td>
+<td><code>false</code></td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
 
 <h2 id="template">Template</h2>
 
@@ -768,11 +1336,11 @@ This plugin was originally used to build <strong>all</strong> Docker images. The
 
 <h2 id="troubleshooting">Troubleshooting</h2>
 
-<p>COMING SOON!</p>
+<p>Below are a list of common problems and how to solve them:</p>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified October 9, 2020: <a  href="https://github.com/go-vela/docs/commit/41d05b49562c5f26c25fc2f5a2d05123b1d5172d">chore: update image tags for consistency (#175) (41d05b4)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified October 23, 2020: <a  href="https://github.com/go-vela/docs/commit/0db86a6111f073ca88d1e32bafc10c9fe97d589a">feat: add docker plugin docs (#177) (0db86a6)</a>
 </div>
 </div>
 

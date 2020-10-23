@@ -25,14 +25,14 @@
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://go-vela.github.io/docs/usage/getting-started/docker/" />
-<meta property="article:modified_time" content="2020-10-08T12:24:28-05:00" />
+<meta property="article:modified_time" content="2020-10-23T15:48:00-05:00" />
 <meta itemprop="name" content="Building Docker Images">
 <meta itemprop="description" content="Understanding the options for how to build a Dockerfile
 ">
 
 
-<meta itemprop="dateModified" content="2020-10-08T12:24:28-05:00" />
-<meta itemprop="wordCount" content="241">
+<meta itemprop="dateModified" content="2020-10-23T15:48:00-05:00" />
+<meta itemprop="wordCount" content="351">
 
 
 
@@ -709,7 +709,29 @@ steps:
 </span></code></pre></div>
 <h2 id="with-elevated-daemon-access">With elevated daemon access</h2>
 
-<p>COMING SOON!</p>
+<p>Building an image with elevated access is a allowed pattern as long as the administrators have set the required allow list of images on the worker. It&rsquo;s <em>important to work with your administrator</em> to understand stand which pattern you instances was deployed to support. The supported plugin for building those images:</p>
+
+<ul>
+<li><p><a href="/docs/plugins/pipeline/registry/docker/">vela-kaniko</a></p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">version: &#34;1&#34;
+steps:
+<span style="color:#00a000">+ - name: build and publish with Dockers build kit
+</span><span style="color:#00a000">+   image: target/vela-docker:latest
+</span><span style="color:#00a000">+   pull: always
+</span><span style="color:#00a000">+   parameters:
+</span><span style="color:#00a000">+     registry: index.docker.io
+</span><span style="color:#00a000">+     tags: [ index.docker.io/octocat/hello-world ]
+</span><span style="color:#00a000"></span>
+<span style="color:#00a000">+ - name: build and publish with Dockers without build kit
+</span><span style="color:#00a000">+   image: target/vela-docker:latest
+</span><span style="color:#00a000">+   environment:
+</span><span style="color:#00a000">+     DOCKER_BUILDKIT=0   
+</span><span style="color:#00a000">+   pull: always
+</span><span style="color:#00a000">+   parameters:
+</span><span style="color:#00a000">+     registry: index.docker.io
+</span><span style="color:#00a000">+     tags: [ index.docker.io/octocat/hello-world ]
+</span></code></pre></div></li>
+</ul>
 
 <h2 id="additional-resources">Additional Resources</h2>
 
@@ -723,7 +745,7 @@ steps:
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified October 8, 2020: <a  href="https://github.com/go-vela/docs/commit/b7b2978dcefdbef5bec9d4b4fc1ce769c4055292">enhancement: update how to build docker images (#174) (b7b2978)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified October 23, 2020: <a  href="https://github.com/go-vela/docs/commit/0db86a6111f073ca88d1e32bafc10c9fe97d589a">feat: add docker plugin docs (#177) (0db86a6)</a>
 </div>
 </div>
 
