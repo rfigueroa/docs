@@ -994,7 +994,7 @@
     "url": "https://go-vela.github.io/docs/cli/repo/repair/",
     "display": "Cli/Repo/Repair",
     "title": "Repair",
-    "content": "command vela repair &lt;parameters...&gt; &lt;arguments...&gt; for more information, you can run --help. parameters the following are used to configure command: name description environment variables org of organization repository vela_org, repo_org repo vela_repo, repo_name output format vela_output, repo_output also supports setting via configuration file: please review cli config documentation. permissions coming soon! sample section assumes have already installed setup cli. install cli, installation authentication request --org github --repo octocat response &#34;github/octocat&#34; repaired "
+    "content": "command vela repair repo &lt;parameters...&gt; &lt;arguments...&gt; for more information, you can run --help. parameters the following are used to configure command: name description environment variables org of organization repository vela_org, repo_org vela_repo, repo_name output format vela_output, repo_output also supports setting via configuration file: please review cli config documentation. permissions coming soon! sample section assumes have already installed setup cli. install cli, installation authentication request --org github --repo octocat response &#34;github/octocat&#34; repaired "
     },
 
     {

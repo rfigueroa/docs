@@ -508,14 +508,14 @@ For more information, you can run &lt;code&gt;vela remove repo --help&lt;/code&g
 
 &lt;h2 id=&#34;command&#34;&gt;Command&lt;/h2&gt;
 
-&lt;pre&gt;&lt;code&gt;$ vela repair &amp;lt;parameters...&amp;gt; &amp;lt;arguments...&amp;gt;
+&lt;pre&gt;&lt;code&gt;$ vela repair repo &amp;lt;parameters...&amp;gt; &amp;lt;arguments...&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 
-For more information, you can run &lt;code&gt;vela repair --help&lt;/code&gt;.
+For more information, you can run &lt;code&gt;vela repair repo --help&lt;/code&gt;.
 &lt;/div&gt;
 
 
@@ -590,7 +590,7 @@ For more information, you can run &lt;code&gt;vela repair --help&lt;/code&gt;.
 
 
 &lt;h4 id=&#34;request&#34;&gt;Request&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;vela repair --org github --repo octocat&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;vela repair repo --org github --repo octocat&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h4 id=&#34;response&#34;&gt;Response&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;repo &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;github/octocat&amp;#34;&lt;/span&gt; repaired&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
       </description>
