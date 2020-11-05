@@ -25,14 +25,14 @@
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://go-vela.github.io/docs/concepts/pipeline/steps/environment/" />
-<meta property="article:modified_time" content="2020-08-20T18:38:37-05:00" />
+<meta property="article:modified_time" content="2020-11-05T17:04:10+00:00" />
 <meta itemprop="name" content="Environment">
 <meta itemprop="description" content="This section contains information on the environment component for a step.
 ">
 
 
-<meta itemprop="dateModified" content="2020-08-20T18:38:37-05:00" />
-<meta itemprop="wordCount" content="702">
+<meta itemprop="dateModified" content="2020-11-05T17:04:10&#43;00:00" />
+<meta itemprop="wordCount" content="737">
 
 
 
@@ -1197,6 +1197,30 @@ This pipeline will execute the <code>test</code> step first, then run the <code>
 </tr>
 
 <tr>
+<td><code>VELA_BUILD_SOURCE</code></td>
+<td><code>https://github.com/octocat/hello-world/commit/7fd1a...</code></td>
+<td>push event: url to the commit sha</td>
+</tr>
+
+<tr>
+<td></td>
+<td><code>https://github.com/octocat/hello-world/pulls/7</code></td>
+<td>pull request event: url to the the pull request</td>
+</tr>
+
+<tr>
+<td></td>
+<td><code>https://api.github.com/repos/octocat/hello-world/deployments/1234567</code></td>
+<td>deployment event: url to the the deployment</td>
+</tr>
+
+<tr>
+<td></td>
+<td><code>https://github.com/octocat/hello-world/issues/1</code></td>
+<td>comment event: url to the the issue</td>
+</tr>
+
+<tr>
 <td><code>VELA_BUILD_STARTED</code></td>
 <td><code>1556730001</code></td>
 <td>unix timestamp representing build start time</td>
@@ -1586,7 +1610,7 @@ The following table includes variables only available during the <strong>tag</st
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified August 20, 2020: <a  href="https://github.com/go-vela/docs/commit/b82882c83af5bc6fd1c0afd7e9494e440f1773fc">enhancement(env): add usage example plus add all default vars (#162) (b82882c)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified November 5, 2020: <a  href="https://github.com/go-vela/docs/commit/5e71b330cbaa357f7349fbdbcc33978aeb0221a5">fix: add missing VELA_BUILD_SOURCE info (#181) (5e71b33)</a>
 </div>
 </div>
 

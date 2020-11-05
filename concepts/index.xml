@@ -1495,6 +1495,30 @@ This pipeline will execute the &lt;code&gt;test&lt;/code&gt; step first, then ru
 &lt;/tr&gt;
 
 &lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_BUILD_SOURCE&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;https://github.com/octocat/hello-world/commit/7fd1a...&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;push event: url to the commit sha&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;https://github.com/octocat/hello-world/pulls/7&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;pull request event: url to the the pull request&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;https://api.github.com/repos/octocat/hello-world/deployments/1234567&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;deployment event: url to the the deployment&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;https://github.com/octocat/hello-world/issues/1&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;comment event: url to the the issue&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
 &lt;td&gt;&lt;code&gt;VELA_BUILD_STARTED&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;1556730001&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;unix timestamp representing build start time&lt;/td&gt;
