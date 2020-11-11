@@ -718,11 +718,6 @@
   </url>
   
   <url>
-    <loc>https://go-vela.github.io/docs/concepts/plugin/</loc>
-    <lastmod>2020-02-03T14:46:54-06:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://go-vela.github.io/docs/plugins/</loc>
     <lastmod>2020-02-03T14:46:54-06:00</lastmod>
   </url>
@@ -1085,11 +1080,6 @@
   <url>
     <loc>https://go-vela.github.io/docs/concepts/pipeline/templates/</loc>
     <lastmod>2020-10-21T15:38:24-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://go-vela.github.io/docs/concepts/template/</loc>
-    <lastmod>2020-02-03T14:46:54-06:00</lastmod>
   </url>
   
   <url>

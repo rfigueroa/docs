@@ -823,13 +823,6 @@
     },
 
     {
-    "url": "https://go-vela.github.io/docs/concepts/plugin/",
-    "display": "Docs/Concepts/Plugin",
-    "title": "Plugin",
-    "content": "coming soon! "
-    },
-
-    {
     "url": "https://go-vela.github.io/docs/concepts/pipeline/services/ports/",
     "display": "Pipeline/Services/Ports",
     "title": "Ports",
@@ -1156,13 +1149,6 @@
     "display": "Pipeline/Steps/Template",
     "title": "Template",
     "content": "the template component part of step for vela. declaration allows you to provide name expand pipeline. fields following are used configure component: description required unique identifier pipeline true vars variables injected into false syntax an example valid version: &#34;1&#34; metadata: template: templates name: source: github.com/vela/atlas/cmd type: github steps: test vars: cmd: go ./... build will execute first, then run step. "
-    },
-
-    {
-    "url": "https://go-vela.github.io/docs/concepts/template/",
-    "display": "Docs/Concepts/Template",
-    "title": "Template",
-    "content": "coming soon! "
     },
 
     {
