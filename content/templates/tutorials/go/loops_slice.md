@@ -2,7 +2,7 @@
 title: "Loops with Slices"
 linkTitle: "Loops with Slices"
 description: >
-  Learn how to write a Vela template with loops and slices.
+  Example Go template with loops and slices.
 ---
 
 {{% alert color="note" %}}

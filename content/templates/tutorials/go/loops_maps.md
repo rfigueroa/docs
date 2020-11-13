@@ -2,7 +2,7 @@
 title: "Loops with Maps"
 linkTitle: "Loops with Maps"
 description: >
-  Learn how to write a Vela template with loops and maps.
+  Example Go template with loops and maps.
 ---
 
 {{% alert color="note" %}}

@@ -1,8 +1,8 @@
 ---
-title: "Conditionals"
-linkTitle: "Conditionals"
+title: "Multiline"
+linkTitle: "Multiline"
 description: >
-  Learn how to write a Vela template with conditionals.
+  Example Go template with multiline strings.
 ---
 
 {{% alert color="note" %}}
@@ -13,22 +13,19 @@ If you're new to YAML we also recommend reviewing the [YAML 1.2 spec](https://ya
 
 ## Overview
 
-From [Go template Conditional](https://golang.org/pkg/text/template/#hdr-Actions):
+From [YAML Spec Scalars](https://yaml.org/spec/1.2/spec.html):
 
-```text
-{{if pipeline}}
-  T1
-{{end}}
+* `|` - In Scalar literals, newlines are preserved
+
+```yaml
+# Below YAML was taken from spec literal example
+--- |
+  \//||\/||
+  // ||  ||__
 ```
 
-> If the value of the pipeline is empty, no output is generated;
-> otherwise, T1 is executed. The empty values are false, 0, any
-> nil pointer or interface value, and any array, slice, map, or
-> string of length zero.
-> Dot is unaffected.
-
 {{% alert color="tip" %}}
-For information on if/else statements see [conditional docs](https://golang.org/pkg/text/template/#hdr-Actions)
+For information on more types of scalars read the [spec information](https://yaml.org/spec/1.2/spec.html#id2760844)
 {{% /alert %}}
 
 ## Sample
@@ -39,30 +36,20 @@ Let's take a look at using a conditional with a variable in a template:
 metadata:
   template: true
 
-{{$br := .branch}}
-
 steps:
 
-  - name: test
-    commands:
-      - go test ./...
-    image: {{ .image }}
-    {{ .pull_policy }}
-    ruleset:
-      event: [ push, pull_request ]
-
-  # if branch equals master add this step to the final pipeline
-  {{ if (eq $br "master") }}
+  {{ .test }}
 
   - name: build
     commands:
       - go build
-    image: {{ .image }}
-    {{ .pull_policy }}
+    environment:
+      CGO_ENABLED: '0'
+      GOOS: linux
+    image: golang:latest
+    pull: always
     ruleset:
       event: [ push, pull_request ]
-
-  {{ end }}
 ```
 
 The caller of this template could look like:
@@ -79,9 +66,14 @@ steps:
     template:  
       name: golang
       vars:
-        image: golang:latest
-        pull_policy: "pull: always"
-        branch: master
+        test: |
+          - name: test
+              commands:
+                - go test ./...
+              image: golang:latest
+              pull: always
+              ruleset:
+               event: [ push, pull_request ]
 ```
 
 Which means the compiled pipeline for execution on a worker is:
