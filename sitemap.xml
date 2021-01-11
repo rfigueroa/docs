@@ -254,7 +254,7 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/plugins/pipeline/registry/artifactory/</loc>
-    <lastmod>2020-10-09T08:34:18-05:00</lastmod>
+    <lastmod>2021-01-11T10:01:41-06:00</lastmod>
   </url>
   
   <url>
@@ -369,12 +369,12 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/plugins/pipeline/registry/docker/</loc>
-    <lastmod>2020-10-23T15:48:00-05:00</lastmod>
+    <lastmod>2021-01-11T10:01:41-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/plugins/pipeline/registry/downstream/</loc>
-    <lastmod>2020-10-09T08:34:18-05:00</lastmod>
+    <lastmod>2021-01-11T10:01:41-06:00</lastmod>
   </url>
   
   <url>
@@ -534,7 +534,7 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/plugins/pipeline/registry/git/</loc>
-    <lastmod>2020-10-09T08:34:18-05:00</lastmod>
+    <lastmod>2021-01-11T10:01:41-06:00</lastmod>
   </url>
   
   <url>
@@ -589,7 +589,7 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/plugins/pipeline/registry/kaniko/</loc>
-    <lastmod>2020-10-09T08:34:18-05:00</lastmod>
+    <lastmod>2021-01-11T10:01:41-06:00</lastmod>
   </url>
   
   <url>
@@ -599,7 +599,7 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/plugins/pipeline/registry/kubernetes/</loc>
-    <lastmod>2020-10-09T08:34:18-05:00</lastmod>
+    <lastmod>2021-01-11T10:01:41-06:00</lastmod>
   </url>
   
   <url>
@@ -654,7 +654,7 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/plugins/pipeline/registry/makisu/</loc>
-    <lastmod>2020-10-09T08:34:18-05:00</lastmod>
+    <lastmod>2021-01-11T10:01:41-06:00</lastmod>
   </url>
   
   <url>
@@ -924,7 +924,7 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/plugins/pipeline/registry/s3_cache/</loc>
-    <lastmod>2020-10-09T08:34:18-05:00</lastmod>
+    <lastmod>2021-01-11T10:01:41-06:00</lastmod>
   </url>
   
   <url>
@@ -1089,7 +1089,7 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/plugins/pipeline/registry/terraform/</loc>
-    <lastmod>2020-10-09T08:34:18-05:00</lastmod>
+    <lastmod>2021-01-11T10:01:41-06:00</lastmod>
   </url>
   
   <url>

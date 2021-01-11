@@ -21,32 +21,41 @@
 <link rel="icon" type="image/png" href="/docs/favicons/android-192x192.png"sizes="192x192">
 
 <title>Docker | Vela</title><meta property="og:title" content="Docker" />
-<meta property="og:description" content="Overview This plugin was originally used to build all Docker images. The functionality of this plugin still exists within Kaniko  This plugin enables the ability to build and publish Docker images in a Vela pipeline. Plugin requires the pipeline to run on a worker that provides the plugin elevated access.
+<meta property="og:description" content="Description This plugin enables you to build and publish Docker images in a Vela pipeline.
 Source Code: https://github.com/go-vela/vela-docker
 Registry: https://hub.docker.com/r/target/vela-docker
-Usage Users should refrain from using latest as the tag for the Docker image." />
+Usage NOTE: It is not recommended to use latest as the tag for the Docker image. Users should use a semantically versioned tag instead.
+Sample of building and publishing an image:
+steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparameters:registry:index.docker.iotags:[index.docker.io/octocat/hello-world:latest] Sample of building an image without publishing:
+steps: - name: publish hello world image: target/vela-docker:latest pull: always parameters: registry: index." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://go-vela.github.io/docs/plugins/pipeline/registry/docker/" />
-<meta property="article:modified_time" content="2020-10-23T15:48:00-05:00" />
+<meta property="article:modified_time" content="2021-01-11T10:01:41-06:00" />
 <meta itemprop="name" content="Docker">
-<meta itemprop="description" content="Overview This plugin was originally used to build all Docker images. The functionality of this plugin still exists within Kaniko  This plugin enables the ability to build and publish Docker images in a Vela pipeline. Plugin requires the pipeline to run on a worker that provides the plugin elevated access.
+<meta itemprop="description" content="Description This plugin enables you to build and publish Docker images in a Vela pipeline.
 Source Code: https://github.com/go-vela/vela-docker
 Registry: https://hub.docker.com/r/target/vela-docker
-Usage Users should refrain from using latest as the tag for the Docker image.">
+Usage NOTE: It is not recommended to use latest as the tag for the Docker image. Users should use a semantically versioned tag instead.
+Sample of building and publishing an image:
+steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparameters:registry:index.docker.iotags:[index.docker.io/octocat/hello-world:latest] Sample of building an image without publishing:
+steps: - name: publish hello world image: target/vela-docker:latest pull: always parameters: registry: index.">
 
 
-<meta itemprop="dateModified" content="2020-10-23T15:48:00-05:00" />
-<meta itemprop="wordCount" content="1044">
+<meta itemprop="dateModified" content="2021-01-11T10:01:41-06:00" />
+<meta itemprop="wordCount" content="906">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Docker"/>
-<meta name="twitter:description" content="Overview This plugin was originally used to build all Docker images. The functionality of this plugin still exists within Kaniko  This plugin enables the ability to build and publish Docker images in a Vela pipeline. Plugin requires the pipeline to run on a worker that provides the plugin elevated access.
+<meta name="twitter:description" content="Description This plugin enables you to build and publish Docker images in a Vela pipeline.
 Source Code: https://github.com/go-vela/vela-docker
 Registry: https://hub.docker.com/r/target/vela-docker
-Usage Users should refrain from using latest as the tag for the Docker image."/>
+Usage NOTE: It is not recommended to use latest as the tag for the Docker image. Users should use a semantically versioned tag instead.
+Sample of building and publishing an image:
+steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparameters:registry:index.docker.iotags:[index.docker.io/octocat/hello-world:latest] Sample of building an image without publishing:
+steps: - name: publish hello world image: target/vela-docker:latest pull: always parameters: registry: index."/>
 
 
 
@@ -642,31 +651,6 @@ Usage Users should refrain from using latest as the tag for the Docker image."/>
 
 
 
-<nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#overview">Overview</a></li>
-<li><a href="#usage">Usage</a></li>
-<li><a href="#secrets">Secrets</a>
-<ul>
-<li><a href="#internal">Internal</a></li>
-<li><a href="#external">External</a></li>
-</ul></li>
-<li><a href="#parameters">Parameters</a>
-<ul>
-<li><a href="#registry">Registry</a></li>
-<li><a href="#build-and-push">Build and Push</a></li>
-<li><a href="#daemon">Daemon</a></li>
-</ul></li>
-<li><a href="#template">Template</a></li>
-<li><a href="#troubleshooting">Troubleshooting</a></li>
-</ul></li>
-</ul>
-</nav>
-
-
-
           </div>
           <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
             <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
@@ -717,19 +701,9 @@ Usage Users should refrain from using latest as the tag for the Docker image."/>
 <div class="td-content">
 	<h1>Docker</h1>
 	
-	
+	<h2 id="description">Description</h2>
 
-<h2 id="overview">Overview</h2>
-
-
-
-<div class="alert alert-warning" role="alert">
-
-This plugin was originally used to build <strong>all</strong> Docker images. The functionality of this plugin still exists within <a href="/docs/plugins/pipeline/registry/kaniko">Kaniko</a>
-</div>
-
-
-<p>This plugin enables the ability to build and publish <a href="https://www.docker.com/" target="_blank">Docker</a> images in a Vela pipeline. Plugin requires the pipeline to run on a worker that provides the plugin elevated access.</p>
+<p>This plugin enables you to build and publish <a href="https://www.docker.com/" target="_blank">Docker</a> images in a Vela pipeline.</p>
 
 <p>Source Code: <a href="https://github.com/go-vela/vela-docker" target="_blank">https://github.com/go-vela/vela-docker</a></p>
 
@@ -737,16 +711,7 @@ This plugin was originally used to build <strong>all</strong> Docker images. The
 
 <h2 id="usage">Usage</h2>
 
-
-
-<div class="alert alert-warning" role="alert">
-
-<p>Users should refrain from using <code>latest</code> as the tag for the Docker image.</p>
-
-<p>It is recommended to use a semantically versioned tag instead.</p>
-
-</div>
-
+<p><strong>NOTE: It is not recommended to use <code>latest</code> as the tag for the Docker image. Users should use a semantically versioned tag instead.</strong></p>
 
 <p>Sample of building and publishing an image:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">steps<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
@@ -812,40 +777,9 @@ This plugin was originally used to build <strong>all</strong> Docker images. The
 </span></code></pre></div>
 <h2 id="secrets">Secrets</h2>
 
+<p><strong>NOTE: Users should refrain from configuring sensitive information in your pipeline in plain text.</strong></p>
 
-
-<div class="alert alert-warning" role="alert">
-
-Users should refrain from configuring sensitive information in their pipeline in plain text.
-</div>
-
-
-<h3 id="internal">Internal</h3>
-
-<p>The plugin accepts the following <code>parameters</code> for authentication:</p>
-
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Environment Variable Configuration</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td><code>password</code></td>
-<td><code>DOCKER_PASSWORD</code>, <code>REGISTRY_PASSWORD</code>, <code>PARAMETER_PASSWORD</code></td>
-</tr>
-
-<tr>
-<td><code>username</code></td>
-<td><code>DOCKER_USERNAME</code>, <code>REGISTRY_USERNAME</code>, <code>PARAMETER_USERNAME</code></td>
-</tr>
-</tbody>
-</table>
-
-<p>Users can use <a href="/docs/concepts/pipeline/secrets/">Vela internal secrets</a> to substitute these sensitive values at runtime:</p>
+<p>You can use Vela secrets to substitute sensitive values at runtime:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: publish_hello-world
     image: target/vela-docker:latest
@@ -857,68 +791,9 @@ Users should refrain from configuring sensitive information in their pipeline in
 <span style="color:#a40000">-     username: octocat
 </span><span style="color:#a40000">-     password: superSecretPassword
 </span></code></pre></div>
-
-
-<div class="alert alert-info" role="alert">
-
-This example will add the <code>secrets</code> to the <code>publish_hello-world</code> step as environment variables:</p>
-
-<ul>
-<li><code>DOCKER_USERNAME=&lt;value&gt;</code></li>
-<li><code>DOCKER_PASSWORD=&lt;value&gt;</code></li>
-</ul>
-</div>
-
-
-<h3 id="external">External</h3>
-
-<p>The plugin accepts the following files for authentication:</p>
-
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Volume Configuration</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td><code>password</code></td>
-<td><code>/vela/parameters/docker/registry/password</code>, <code>/vela/secrets/docker/registry/password</code>, <code>/vela/secrets/docker/password</code></td>
-</tr>
-
-<tr>
-<td><code>username</code></td>
-<td><code>/vela/parameters/docker/registry/username</code>, <code>/vela/secrets/docker/registry/username</code>, <code>/vela/secrets/docker/username</code></td>
-</tr>
-</tbody>
-</table>
-
-<p>Users can use <a href="/docs/concepts/pipeline/secrets/">Vela external secrets</a> to substitute these sensitive values at runtime:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
-  - name: publish_hello-world
-    image: target/vela-docker:latest
-    pull: always
-    parameters:
-      registry: index.docker.io
-      tags: [ index.docker.io/octocat/hello-world:latest ] 
-<span style="color:#a40000">-     username: octocat
-</span><span style="color:#a40000">-     password: superSecretPassword
-</span></code></pre></div>
-
-
-<div class="alert alert-info" role="alert">
-
-This example will read the secrets values in the volume stored at <code>/vela/secrets/</code>:
-</div>
-
-
 <h2 id="parameters">Parameters</h2>
 
-
-
-<div class="alert alert-info" role="alert">
+<p><strong>NOTE:</strong></p>
 
 <ul>
 <li>the plugin supports reading all parameters via environment variables or files</li>
@@ -926,8 +801,6 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <li>by default <a href="https://docs.docker.com/develop/develop-images/build_enhancements/" target="_blank">build kit</a> is on, it can be turned off by setting <code>DOCKER_BUILDKIT=0</code> in the environment</li>
 <li><code>key.key</code> syntax signifies a new yaml object within the definition.</li>
 </ul>
-</div>
-
 
 <h3 id="registry">Registry</h3>
 
@@ -1340,7 +1213,7 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified October 23, 2020: <a  href="https://github.com/go-vela/docs/commit/0db86a6111f073ca88d1e32bafc10c9fe97d589a">feat: add docker plugin docs (#177) (0db86a6)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified January 11, 2021: <a  href="https://github.com/go-vela/docs/commit/0f1f3118545c45703ea36be53a78318921aaaf93">feat(plugins): source docs from repos (#190) (0f1f311)</a>
 </div>
 </div>
 

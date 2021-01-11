@@ -24,27 +24,29 @@
 <meta property="og:description" content="Description This plugin enables you to run Terraform against providers in a Vela pipeline.
 Source Code: https://github.com/go-vela/vela-terraform
 Registry: https://hub.docker.com/r/target/vela-terraform
-Usage Users should refrain from using latest as the tag for the Docker image.
+Usage  NOTE:
+Users should refrain from using latest as the tag for the Docker image.
 It is recommended to use a semantically versioned tag instead.
- Sample of adding init options to Terraform configuration:
-steps:-name:applyimage:target/vela-terraform:latestpull:alwaysparameters:action:applyauto_approve:true# Required for versions of Terraform 0.12.xinit_options:get_plugins:true Sample of applying Terraform configuration:
+ Sample of adding installing terraform version:
+steps:-name:applyimage:target/vela-terraform:latestpull:alwaysparameters:action:applyauto_approve:true# Required for versions of Terraform 0.12.xversion:0.11.7 Sample of adding init options to Terraform configuration:
 steps:-name:applyimage:target/vela-terraform:latestpull:alwaysparameters:action:applyauto_approve:true# Required for versions of Terraform 0." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://go-vela.github.io/docs/plugins/pipeline/registry/terraform/" />
-<meta property="article:modified_time" content="2020-10-09T08:34:18-05:00" />
+<meta property="article:modified_time" content="2021-01-11T10:01:41-06:00" />
 <meta itemprop="name" content="Terraform">
 <meta itemprop="description" content="Description This plugin enables you to run Terraform against providers in a Vela pipeline.
 Source Code: https://github.com/go-vela/vela-terraform
 Registry: https://hub.docker.com/r/target/vela-terraform
-Usage Users should refrain from using latest as the tag for the Docker image.
+Usage  NOTE:
+Users should refrain from using latest as the tag for the Docker image.
 It is recommended to use a semantically versioned tag instead.
- Sample of adding init options to Terraform configuration:
-steps:-name:applyimage:target/vela-terraform:latestpull:alwaysparameters:action:applyauto_approve:true# Required for versions of Terraform 0.12.xinit_options:get_plugins:true Sample of applying Terraform configuration:
+ Sample of adding installing terraform version:
+steps:-name:applyimage:target/vela-terraform:latestpull:alwaysparameters:action:applyauto_approve:true# Required for versions of Terraform 0.12.xversion:0.11.7 Sample of adding init options to Terraform configuration:
 steps:-name:applyimage:target/vela-terraform:latestpull:alwaysparameters:action:applyauto_approve:true# Required for versions of Terraform 0.">
 
 
-<meta itemprop="dateModified" content="2020-10-09T08:34:18-05:00" />
-<meta itemprop="wordCount" content="1194">
+<meta itemprop="dateModified" content="2021-01-11T10:01:41-06:00" />
+<meta itemprop="wordCount" content="1373">
 
 
 
@@ -54,10 +56,11 @@ steps:-name:applyimage:target/vela-terraform:latestpull:alwaysparameters:action:
 <meta name="twitter:description" content="Description This plugin enables you to run Terraform against providers in a Vela pipeline.
 Source Code: https://github.com/go-vela/vela-terraform
 Registry: https://hub.docker.com/r/target/vela-terraform
-Usage Users should refrain from using latest as the tag for the Docker image.
+Usage  NOTE:
+Users should refrain from using latest as the tag for the Docker image.
 It is recommended to use a semantically versioned tag instead.
- Sample of adding init options to Terraform configuration:
-steps:-name:applyimage:target/vela-terraform:latestpull:alwaysparameters:action:applyauto_approve:true# Required for versions of Terraform 0.12.xinit_options:get_plugins:true Sample of applying Terraform configuration:
+ Sample of adding installing terraform version:
+steps:-name:applyimage:target/vela-terraform:latestpull:alwaysparameters:action:applyauto_approve:true# Required for versions of Terraform 0.12.xversion:0.11.7 Sample of adding init options to Terraform configuration:
 steps:-name:applyimage:target/vela-terraform:latestpull:alwaysparameters:action:applyauto_approve:true# Required for versions of Terraform 0."/>
 
 
@@ -654,36 +657,6 @@ steps:-name:applyimage:target/vela-terraform:latestpull:alwaysparameters:action:
 
 
 
-<nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#description">Description</a></li>
-<li><a href="#usage">Usage</a></li>
-<li><a href="#secrets">Secrets</a>
-<ul>
-<li><a href="#internal">Internal</a></li>
-<li><a href="#external">External</a></li>
-</ul></li>
-<li><a href="#parameters">Parameters</a>
-<ul>
-<li>
-<ul>
-<li><a href="#apply">Apply</a></li>
-<li><a href="#destroy">Destroy</a></li>
-<li><a href="#format">Format</a></li>
-<li><a href="#plan">Plan</a></li>
-<li><a href="#validate">Validate</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#template">Template</a></li>
-<li><a href="#troubleshooting">Troubleshooting</a></li>
-</ul></li>
-</ul>
-</nav>
-
-
-
           </div>
           <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
             <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
@@ -734,9 +707,7 @@ steps:-name:applyimage:target/vela-terraform:latestpull:alwaysparameters:action:
 <div class="td-content">
 	<h1>Terraform</h1>
 	
-	
-
-<h2 id="description">Description</h2>
+	<h2 id="description">Description</h2>
 
 <p>This plugin enables you to run <a href="https://www.terraform.io/" target="_blank">Terraform</a> against <a href="https://www.terraform.io/docs/providers/index.html" target="_blank">providers</a> in a Vela pipeline.</p>
 
@@ -746,17 +717,23 @@ steps:-name:applyimage:target/vela-terraform:latestpull:alwaysparameters:action:
 
 <h2 id="usage">Usage</h2>
 
+<blockquote>
+<p><strong>NOTE:</strong></p>
 
-
-<div class="alert alert-warning" role="alert">
-
-<p>Users should refrain from using <code>latest</code> as the tag for the Docker image.</p>
+<p>Users should refrain from using latest as the tag for the Docker image.</p>
 
 <p>It is recommended to use a semantically versioned tag instead.</p>
+</blockquote>
 
-</div>
-
-
+<p>Sample of adding installing terraform version:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">steps<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span>-<span style="color:#f8f8f8;text-decoration:underline"> </span>name<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>apply<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>image<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>target/vela-terraform<span style="color:#000;font-weight:bold">:</span>latest<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>pull<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>always<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>parameters<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span>action<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>apply<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span>auto_approve<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#204a87;font-weight:bold">true</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#8f5902;font-style:italic"># Required for versions of Terraform 0.12.x</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span>version<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#0000cf;font-weight:bold">0.11.7</span></code></pre></div>
 <p>Sample of adding init options to Terraform configuration:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">steps<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">  </span>-<span style="color:#f8f8f8;text-decoration:underline"> </span>name<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>apply<span style="color:#f8f8f8;text-decoration:underline">
@@ -806,62 +783,32 @@ steps:-name:applyimage:target/vela-terraform:latestpull:alwaysparameters:action:
 </span><span style="color:#f8f8f8;text-decoration:underline">      </span>action<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>validate</code></pre></div>
 <h2 id="secrets">Secrets</h2>
 
-
-
-<div class="alert alert-warning" role="alert">
-
-Users should refrain from configuring sensitive information in their pipeline in plain text.
-</div>
-
+<blockquote>
+<p><strong>NOTE:</strong> Users should refrain from configuring sensitive information in your pipeline in plain text.</p>
+</blockquote>
 
 <h3 id="internal">Internal</h3>
 
-<p>The plugin accepts the following <code>parameters</code> for authentication:</p>
-
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Environment Variable Configuration</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td><code>netrc_password</code></td>
-<td><code>GIT_PASSWORD</code>, <code>PARAMETER_NETRC_PASSWORD</code>, <code>VELA_NETRC_PASSWORD</code></td>
-</tr>
-
-<tr>
-<td><code>netrc_username</code></td>
-<td><code>GIT_USERNAME</code>, <code>PARAMETER_NETRC_USERNAME</code>, <code>VELA_NETRC_USERNAME</code></td>
-</tr>
-</tbody>
-</table>
-
-<p>Users can use <a href="/docs/concepts/pipeline/secrets/">Vela internal secrets</a> to substitute sensitive values at runtime:</p>
+<p>Users can use <a href="https://go-vela.github.io/docs/concepts/pipeline/secrets/" target="_blank">Vela internal secrets</a> to substitute these sensitive values at runtime:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
-  - name: plan
+  - name: apply
     image: target/vela-terraform:latest
     pull: always
-<span style="color:#00a000">+   secrets: [ git_username, git_password ]
+<span style="color:#00a000">+   secrets: [ terraform_username, terraform_password ]
 </span><span style="color:#00a000"></span>    parameters:
-      action: plan
-<span style="color:#a40000">-     netrc_username: octocat
-</span><span style="color:#a40000">-     netrc_password: superSecretPassword
+      action: apply
+      auto_approve: true # Required for versions of Terraform 0.12.x
+<span style="color:#a40000">-     username: octocat
+</span><span style="color:#a40000">-     password: superSecretPassword
 </span></code></pre></div>
+<blockquote>
+<p>This example will add the secrets to the <code>apply</code> step as environment variables:</p>
 
-
-<div class="alert alert-info" role="alert">
-
-This example will add the <code>secrets</code> to the <code>plan</code> step as environment variables:</p>
-
-<ul>
-<li><code>GIT_USERNAME=&lt;value&gt;</code></li>
-<li><code>GIT_PASSWORD=&lt;value&gt;</code></li>
+<p><ul>
+<li><code>TERRAFORM_USERNAME=&lt;value&gt;</code></li>
+<li><code>TERRAFORM_PASSWORD=&lt;value&gt;</code></li>
 </ul>
-</div>
-
+</blockquote></p>
 
 <h3 id="external">External</h3>
 
@@ -877,51 +824,43 @@ This example will add the <code>secrets</code> to the <code>plan</code> step as 
 
 <tbody>
 <tr>
-<td><code>netrc_password</code></td>
-<td><code>/vela/parameters/terraform/netrc/password</code>, <code>/vela/secrets/terraform/netrc/password</code></td>
+<td><code>password</code></td>
+<td><code>/vela/parameters/terraform/password</code>, <code>/vela/secrets/terraform/password</code></td>
 </tr>
 
 <tr>
-<td><code>netrc_username</code></td>
-<td><code>/vela/parameters/terraform/netrc/username</code>, <code>/vela/secrets/terraform/netrc/username</code></td>
+<td><code>username</code></td>
+<td><code>/vela/parameters/terraform/username</code>, <code>/vela/secrets/terraform/username</code></td>
 </tr>
 </tbody>
 </table>
 
-<p>Users can use <a href="/docs/concepts/pipeline/secrets/">Vela external secrets</a> to substitute these sensitive values at runtime:</p>
+<p>Users can use <a href="https://go-vela.github.io/docs/concepts/pipeline/secrets/origin/" target="_blank">Vela external secrets</a> to substitute these sensitive values at runtime:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
-  - name: plan
+  - name: apply
     image: target/vela-terraform:latest
     pull: always
     parameters:
-      action: plan
-<span style="color:#a40000">-     netrc_username: octocat
-</span><span style="color:#a40000">-     netrc_password: superSecretPassword
+      action: apply
+      auto_approve: true # Required for versions of Terraform 0.12.x
+<span style="color:#a40000">-     username: octocat
+</span><span style="color:#a40000">-     password: superSecretPassword
 </span></code></pre></div>
-
-
-<div class="alert alert-info" role="alert">
-
-This example will read the secrets values in the volume stored at <code>/vela/secrets/</code>:
-</div>
-
+<blockquote>
+<p>This example will read the secret values in the volume stored at <code>/vela/secrets/</code></p>
+</blockquote>
 
 <h2 id="parameters">Parameters</h2>
 
+<blockquote>
+<p><strong>NOTE:</strong></p>
 
-
-<div class="alert alert-info" role="alert">
-
-<p>The plugin supports reading all parameters vie environment variables or files.</p>
+<p>The plugin supports reading all parameters via environment variables or files.</p>
 
 <p>Any values set from a file take precedence over values set from the environment.</p>
 
-<p>By default, Terraform runs in the current directory - use <code>directory: path/to/tf/files</code> to point Terraform at a file or files.</p>
-
-<p>Terraform ships with a default version but you can download the specific version you need with <code>version: x.x.x</code></p>
-
-</div>
-
+<p>Terraform commands will be invoked in the current directory by default.</p>
+</blockquote>
 
 <p>The following parameters are used to configure the image:</p>
 
@@ -932,6 +871,7 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <th>Description</th>
 <th>Required</th>
 <th>Default</th>
+<th>Environment Variables</th>
 </tr>
 </thead>
 
@@ -941,13 +881,7 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <td>action to perform with Terraform</td>
 <td><code>true</code></td>
 <td><code>N/A</code></td>
-</tr>
-
-<tr>
-<td><code>directory</code></td>
-<td>the directory for action to be performed on</td>
-<td><code>false</code></td>
-<td><code>N/A</code></td>
+<td><code>PARAMETER_ACTION</code><br><code>TERRAFORM_ACTION</code></td>
 </tr>
 
 <tr>
@@ -955,6 +889,7 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <td>options to use for Terraform init operation</td>
 <td><code>false</code></td>
 <td><code>N/A</code></td>
+<td><code>PARAMETER_INIT_OPTIONS</code><br><code>TERRAFORM_INIT_OPTIONS</code></td>
 </tr>
 
 <tr>
@@ -962,13 +897,39 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <td>set the log level for the plugin</td>
 <td><code>true</code></td>
 <td><code>info</code></td>
+<td><code>PARAMETER_LOG_LEVEL</code><br><code>TERRAFORM_LOG_LEVEL</code></td>
+</tr>
+
+<tr>
+<td><code>machine</code></td>
+<td>netrc machine name to communicate with</td>
+<td><code>true</code></td>
+<td><code>github.com</code></td>
+<td><code>PARAMETER_MACHINE</code><br><code>TERRAFORM_MACHINE</code><br><code>VELA_NETRC_MACHINE</code></td>
+</tr>
+
+<tr>
+<td><code>password</code></td>
+<td>netrc password for authentication</td>
+<td><code>true</code></td>
+<td><strong>set by Vela</strong></td>
+<td><code>PARAMETER_PASSWORD</code><br><code>TERRAFORM_PASSWORD</code><br><code>VELA_NETRC_PASSWORD</code></td>
+</tr>
+
+<tr>
+<td><code>username</code></td>
+<td>netrc user name for authentication</td>
+<td><code>true</code></td>
+<td><strong>set by Vela</strong></td>
+<td><code>PARAMETER_USERNAME</code><br><code>TERRAFORM_USERNAME</code><br><code>VELA_NETRC_USERNAME</code></td>
 </tr>
 
 <tr>
 <td><code>version</code></td>
 <td>set the Terraform CLI version</td>
 <td><code>true</code></td>
-<td><code>info</code></td>
+<td><code>0.12.26</code></td>
+<td><code>PARAMETER_VERSION</code><br><code>TERRAFORM_VERSION</code></td>
 </tr>
 </tbody>
 </table>
@@ -1090,13 +1051,7 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 
 <p>The following parameters are used to configure the <code>apply</code> action:</p>
 
-
-
-<div class="alert alert-warning" role="alert">
-
-This action uses the Terraform CLI command defaults if not explicitly set.
-</div>
-
+<p><em>Command uses Terraform CLI command defaults if not overridden in config.</em></p>
 
 <table>
 <thead>
@@ -1105,36 +1060,41 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 <th>Description</th>
 <th>Required</th>
 <th>Default</th>
+<th>Environment Variables</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
 <td><code>auto_approve</code></td>
-<td>skip interactive approval of running command</td>
+<td>skip interactive approval of applying resources</td>
 <td><code>false</code></td>
-<td><code>N/A</code></td>
+<td><code>false</code></td>
+<td><code>PARAMETER_AUTO_APPROVE</code><br><code>TERRAFORM_AUTO_APPROVE</code></td>
 </tr>
 
 <tr>
-<td><code>back_up</code></td>
+<td><code>backup</code></td>
 <td>path to backup the existing state file</td>
 <td><code>false</code></td>
 <td><code>N/A</code></td>
+<td><code>PARAMETER_BACKUP</code><br><code>TERRAFORM_BACKUP</code></td>
 </tr>
 
 <tr>
 <td><code>directory</code></td>
-<td>the directory for action to be performed on</td>
+<td>the directory containing Terraform files to apply</td>
 <td><code>false</code></td>
-<td><code>N/A</code></td>
+<td><code>.</code></td>
+<td><code>PARAMETER_DIRECTORY</code><br><code>TERRAFORM_DIRECTORY</code></td>
 </tr>
 
 <tr>
 <td><code>lock</code></td>
 <td>lock the state file when locking is supported</td>
 <td><code>false</code></td>
-<td><code>N/A</code></td>
+<td><code>false</code></td>
+<td><code>PARAMETER_LOCK</code><br><code>TERRAFORM_LOCK</code></td>
 </tr>
 
 <tr>
@@ -1142,13 +1102,15 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 <td>duration to retry a state lock</td>
 <td><code>false</code></td>
 <td><code>N/A</code></td>
+<td><code>PARAMETER_LOCK_TIMEOUT</code><br><code>TERRAFORM_LOCK_TIMEOUT</code></td>
 </tr>
 
 <tr>
 <td><code>no_color</code></td>
 <td>disables colors in output</td>
 <td><code>false</code></td>
-<td><code>N/A</code></td>
+<td><code>false</code></td>
+<td><code>PARAMETER_NO_COLOR</code><br><code>TERRAFORM_NO_COLOR</code></td>
 </tr>
 
 <tr>
@@ -1156,13 +1118,15 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 <td>number of concurrent operations as Terraform walks its graph</td>
 <td><code>false</code></td>
 <td><code>N/A</code></td>
+<td><code>PARAMETER_PARALLELISM</code><br><code>TERRAFORM_PARALLELISM</code></td>
 </tr>
 
 <tr>
 <td><code>refresh</code></td>
 <td>update state prior to checking for differences</td>
 <td><code>false</code></td>
-<td><code>N/A</code></td>
+<td><code>false</code></td>
+<td><code>PARAMETER_REFRESH</code><br><code>TERRAFORM_REFRESH</code></td>
 </tr>
 
 <tr>
@@ -1170,6 +1134,7 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 <td>path to read and save state</td>
 <td><code>false</code></td>
 <td><code>N/A</code></td>
+<td><code>PARAMETER_STATE</code><br><code>TERRAFORM_STATE</code></td>
 </tr>
 
 <tr>
@@ -1177,6 +1142,7 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 <td>path to write updated state file</td>
 <td><code>false</code></td>
 <td><code>N/A</code></td>
+<td><code>PARAMETER_STATE_OUT</code><br><code>TERRAFORM_STATE_OUT</code></td>
 </tr>
 
 <tr>
@@ -1184,6 +1150,7 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 <td>resource to target</td>
 <td><code>false</code></td>
 <td><code>N/A</code></td>
+<td><code>PARAMETER_TARGET</code><br><code>TERRAFORM_TARGET</code></td>
 </tr>
 
 <tr>
@@ -1191,6 +1158,7 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 <td>a map of variables to pass to the Terraform (<code>&lt;key&gt;=&lt;value&gt;</code>)</td>
 <td><code>false</code></td>
 <td><code>N/A</code></td>
+<td><code>PARAMETER_VARS</code><br><code>TERRAFORM_VARS</code></td>
 </tr>
 
 <tr>
@@ -1198,6 +1166,7 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 <td>a list of var files to use</td>
 <td><code>false</code></td>
 <td><code>N/A</code></td>
+<td><code>PARAMETER_VAR_FILES</code><br><code>TERRAFORM_VAR_FILES</code></td>
 </tr>
 </tbody>
 </table>
@@ -1206,13 +1175,7 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 
 <p>The following parameters are used to configure the <code>destroy</code> action:</p>
 
-
-
-<div class="alert alert-warning" role="alert">
-
-This action uses the Terraform CLI command defaults if not explicitly set.
-</div>
-
+<p><em>Command uses Terraform CLI command defaults if not overridden in config.</em></p>
 
 <table>
 <thead>
@@ -1221,29 +1184,41 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 <th>Description</th>
 <th>Required</th>
 <th>Default</th>
+<th>Environment Variables</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
 <td><code>auto_approve</code></td>
-<td>skip interactive approval of running command</td>
+<td>skip interactive approval of destroying resources</td>
 <td><code>false</code></td>
-<td><code>N/A</code></td>
+<td><code>false</code></td>
+<td><code>PARAMETER_AUTO_APPROVE</code><br><code>TERRAFORM_AUTO_APPROVE</code></td>
 </tr>
 
 <tr>
-<td><code>back_up</code></td>
+<td><code>backup</code></td>
 <td>path to backup the existing state file</td>
 <td><code>false</code></td>
 <td><code>N/A</code></td>
+<td><code>PARAMETER_BACKUP</code><br><code>TERRAFORM_BACKUP</code></td>
+</tr>
+
+<tr>
+<td><code>directory</code></td>
+<td>the directory containing Terraform files to destroy</td>
+<td><code>false</code></td>
+<td><code>.</code></td>
+<td><code>PARAMETER_DIRECTORY</code><br><code>TERRAFORM_DIRECTORY</code></td>
 </tr>
 
 <tr>
 <td><code>lock</code></td>
 <td>lock the state file when locking is supported</td>
 <td><code>false</code></td>
-<td><code>N/A</code></td>
+<td><code>false</code></td>
+<td><code>PARAMETER_LOCK</code><br><code>TERRAFORM_LOCK</code></td>
 </tr>
 
 <tr>
@@ -1251,13 +1226,15 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 <td>duration to retry a state lock</td>
 <td><code>false</code></td>
 <td><code>N/A</code></td>
+<td><code>PARAMETER_LOCK_TIMEOUT</code><br><code>TERRAFORM_LOCK_TIMEOUT</code></td>
 </tr>
 
 <tr>
 <td><code>no_color</code></td>
 <td>disables colors in output</td>
 <td><code>false</code></td>
-<td><code>N/A</code></td>
+<td><code>false</code></td>
+<td><code>PARAMETER_NO_COLOR</code><br><code>TERRAFORM_NO_COLOR</code></td>
 </tr>
 
 <tr>
@@ -1265,13 +1242,15 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 <td>number of concurrent operations as Terraform walks its graph</td>
 <td><code>false</code></td>
 <td><code>N/A</code></td>
+<td><code>PARAMETER_PARALLELISM</code><br><code>TERRAFORM_PARALLELISM</code></td>
 </tr>
 
 <tr>
 <td><code>refresh</code></td>
 <td>update state prior to checking for differences</td>
 <td><code>false</code></td>
-<td><code>N/A</code></td>
+<td><code>false</code></td>
+<td><code>PARAMETER_REFRESH</code><br><code>TERRAFORM_REFRESH</code></td>
 </tr>
 
 <tr>
@@ -1279,6 +1258,7 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 <td>path to read and save state</td>
 <td><code>false</code></td>
 <td><code>N/A</code></td>
+<td><code>PARAMETER_STATE</code><br><code>TERRAFORM_STATE</code></td>
 </tr>
 
 <tr>
@@ -1286,6 +1266,7 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 <td>path to write updated state file</td>
 <td><code>false</code></td>
 <td><code>N/A</code></td>
+<td><code>PARAMETER_STATE_OUT</code><br><code>TERRAFORM_STATE_OUT</code></td>
 </tr>
 
 <tr>
@@ -1293,6 +1274,7 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 <td>resource to target</td>
 <td><code>false</code></td>
 <td><code>N/A</code></td>
+<td><code>PARAMETER_TARGET</code><br><code>TERRAFORM_TARGET</code></td>
 </tr>
 
 <tr>
@@ -1300,6 +1282,7 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 <td>a map of variables to pass to the Terraform (<code>&lt;key&gt;=&lt;value&gt;</code>)</td>
 <td><code>false</code></td>
 <td><code>N/A</code></td>
+<td><code>PARAMETER_VARS</code><br><code>TERRAFORM_VARS</code></td>
 </tr>
 
 <tr>
@@ -1307,6 +1290,7 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 <td>a list of var files to use</td>
 <td><code>false</code></td>
 <td><code>N/A</code></td>
+<td><code>PARAMETER_VAR_FILES</code><br><code>TERRAFORM_VAR_FILES</code></td>
 </tr>
 </tbody>
 </table>
@@ -1315,13 +1299,7 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 
 <p>The following parameters are used to configure the <code>fmt</code> action:</p>
 
-
-
-<div class="alert alert-warning" role="alert">
-
-This action uses the Terraform CLI command defaults if not explicitly set.
-</div>
-
+<p><em>Command uses Terraform CLI command defaults if not overridden in config.</em></p>
 
 <table>
 <thead>
@@ -1330,6 +1308,7 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 <th>Description</th>
 <th>Required</th>
 <th>Default</th>
+<th>Environment Variables</th>
 </tr>
 </thead>
 
@@ -1338,28 +1317,40 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 <td><code>check</code></td>
 <td>validate if the input is formatted</td>
 <td><code>false</code></td>
-<td><code>N/A</code></td>
+<td><code>false</code></td>
+<td><code>PARAMETER_CHECK</code><br><code>TERRAFORM_CHECK</code></td>
 </tr>
 
 <tr>
 <td><code>diff</code></td>
 <td>diffs of formatting changes</td>
 <td><code>false</code></td>
-<td><code>N/A</code></td>
+<td><code>false</code></td>
+<td><code>PARAMETER_DIFF</code><br><code>TERRAFORM_DIFF</code></td>
+</tr>
+
+<tr>
+<td><code>directory</code></td>
+<td>the directory containing Terraform files to format</td>
+<td><code>false</code></td>
+<td><code>.</code></td>
+<td><code>PARAMETER_DIRECTORY</code><br><code>TERRAFORM_DIRECTORY</code></td>
 </tr>
 
 <tr>
 <td><code>list</code></td>
 <td>list files whose formatting differs</td>
 <td><code>false</code></td>
-<td><code>N/A</code></td>
+<td><code>false</code></td>
+<td><code>PARAMETER_LIST</code><br><code>TERRAFORM_LIST</code></td>
 </tr>
 
 <tr>
 <td><code>write</code></td>
 <td>write result to source file instead of STDOUT</td>
 <td><code>false</code></td>
-<td><code>N/A</code></td>
+<td><code>false</code></td>
+<td><code>PARAMETER_WRITE</code><br><code>TERRAFORM_WRITE</code></td>
 </tr>
 </tbody>
 </table>
@@ -1368,13 +1359,7 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 
 <p>The following parameters are used to configure the <code>plan</code> action:</p>
 
-
-
-<div class="alert alert-warning" role="alert">
-
-This action uses the Terraform CLI command defaults if not explicitly set.
-</div>
-
+<p><em>Command uses Terraform CLI command defaults if not overridden in config.</em></p>
 
 <table>
 <thead>
@@ -1383,6 +1368,7 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 <th>Description</th>
 <th>Required</th>
 <th>Default</th>
+<th>Environment Variables</th>
 </tr>
 </thead>
 
@@ -1391,21 +1377,40 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 <td><code>destroy</code></td>
 <td>destroy all resources managed by the given configuration and state</td>
 <td><code>false</code></td>
-<td><code>N/A</code></td>
+<td><code>false</code></td>
+<td><code>PARAMETER_DESTROY</code><br><code>TERRAFORM_DESTROY</code></td>
 </tr>
 
 <tr>
 <td><code>detailed_exit_code</code></td>
 <td>return detailed exit codes when the command exits</td>
 <td><code>false</code></td>
-<td><code>N/A</code></td>
+<td><code>false</code></td>
+<td><code>PARAMETER_DETAILED_EXIT_CODE</code><br><code>TERRAFORM_DETAILED_EXIT_CODE</code></td>
+</tr>
+
+<tr>
+<td><code>directory</code></td>
+<td>the directory containing Terraform files to plan</td>
+<td><code>false</code></td>
+<td><code>.</code></td>
+<td><code>PARAMETER_DIRECTORY</code><br><code>TERRAFORM_DIRECTORY</code></td>
+</tr>
+
+<tr>
+<td><code>input</code></td>
+<td>ask for input for variables if not directly set</td>
+<td><code>false</code></td>
+<td><code>false</code></td>
+<td><code>PARAMETER_INPUT</code><br><code>TERRAFORM_INPUT</code></td>
 </tr>
 
 <tr>
 <td><code>lock</code></td>
 <td>lock the state file when locking is supported</td>
 <td><code>false</code></td>
-<td><code>N/A</code></td>
+<td><code>false</code></td>
+<td><code>PARAMETER_LOCK</code><br><code>TERRAFORM_LOCK</code></td>
 </tr>
 
 <tr>
@@ -1413,6 +1418,7 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 <td>duration to retry a state lock</td>
 <td><code>false</code></td>
 <td><code>N/A</code></td>
+<td><code>PARAMETER_LOCK_TIMEOUT</code><br><code>TERRAFORM_LOCK_TIMEOUT</code></td>
 </tr>
 
 <tr>
@@ -1420,13 +1426,15 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 <td>specifies the depth of modules to show in the output</td>
 <td><code>false</code></td>
 <td><code>N/A</code></td>
+<td><code>PARAMETER_MODULE_DEPTH</code><br><code>TERRAFORM_MODULE_DEPTH</code></td>
 </tr>
 
 <tr>
 <td><code>no_color</code></td>
 <td>disables colors in output</td>
 <td><code>false</code></td>
-<td><code>N/A</code></td>
+<td><code>false</code></td>
+<td><code>PARAMETER_NO_COLOR</code><br><code>TERRAFORM_NO_COLOR</code></td>
 </tr>
 
 <tr>
@@ -1434,13 +1442,15 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 <td>number of concurrent operations as Terraform walks its graph</td>
 <td><code>false</code></td>
 <td><code>N/A</code></td>
+<td><code>PARAMETER_PARALLELISM</code><br><code>TERRAFORM_PARALLELISM</code></td>
 </tr>
 
 <tr>
 <td><code>refresh</code></td>
 <td>update state prior to checking for differences</td>
 <td><code>false</code></td>
-<td><code>N/A</code></td>
+<td><code>false</code></td>
+<td><code>PARAMETER_REFRESH</code><br><code>TERRAFORM_REFRESH</code></td>
 </tr>
 
 <tr>
@@ -1448,13 +1458,7 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 <td>path to read and save state</td>
 <td><code>false</code></td>
 <td><code>N/A</code></td>
-</tr>
-
-<tr>
-<td><code>state_out</code></td>
-<td>path to write updated state file</td>
-<td><code>false</code></td>
-<td><code>N/A</code></td>
+<td><code>PARAMETER_STATE</code><br><code>TERRAFORM_STATE</code></td>
 </tr>
 
 <tr>
@@ -1462,6 +1466,7 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 <td>resource to target</td>
 <td><code>false</code></td>
 <td><code>N/A</code></td>
+<td><code>PARAMETER_TARGET</code><br><code>TERRAFORM_TARGET</code></td>
 </tr>
 
 <tr>
@@ -1469,6 +1474,7 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 <td>a map of variables to pass to the Terraform (<code>&lt;key&gt;=&lt;value&gt;</code>)</td>
 <td><code>false</code></td>
 <td><code>N/A</code></td>
+<td><code>PARAMETER_VARS</code><br><code>TERRAFORM_VARS</code></td>
 </tr>
 
 <tr>
@@ -1476,6 +1482,7 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 <td>a list of var files to use</td>
 <td><code>false</code></td>
 <td><code>N/A</code></td>
+<td><code>PARAMETER_VAR_FILES</code><br><code>TERRAFORM_VAR_FILES</code></td>
 </tr>
 </tbody>
 </table>
@@ -1484,13 +1491,7 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 
 <p>The following parameters are used to configure the <code>validate</code> action:</p>
 
-
-
-<div class="alert alert-warning" role="alert">
-
-This action uses the Terraform CLI command defaults if not explicitly set.
-</div>
-
+<p><em>Command uses Terraform CLI command defaults if not overridden in config.</em></p>
 
 <table>
 <thead>
@@ -1499,6 +1500,7 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 <th>Description</th>
 <th>Required</th>
 <th>Default</th>
+<th>Environment Variables</th>
 </tr>
 </thead>
 
@@ -1507,14 +1509,24 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 <td><code>check_variables</code></td>
 <td>command will check whether all required variables have been specified</td>
 <td><code>false</code></td>
-<td><code>N/A</code></td>
+<td><code>false</code></td>
+<td><code>PARAMETER_CHECK_VARIABLES</code><br><code>TERRAFORM_CHECK_VARIABLES</code></td>
+</tr>
+
+<tr>
+<td><code>directory</code></td>
+<td>the directory containing Terraform files to validate</td>
+<td><code>false</code></td>
+<td><code>.</code></td>
+<td><code>PARAMETER_DIRECTORY</code><br><code>TERRAFORM_DIRECTORY</code></td>
 </tr>
 
 <tr>
 <td><code>no_color</code></td>
 <td>disables colors in output</td>
 <td><code>false</code></td>
-<td><code>N/A</code></td>
+<td><code>false</code></td>
+<td><code>PARAMETER_NO_COLOR</code><br><code>TERRAFORM_NO_COLOR</code></td>
 </tr>
 
 <tr>
@@ -1522,6 +1534,7 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 <td>a map of variables to pass to the Terraform (<code>&lt;key&gt;=&lt;value&gt;</code>)</td>
 <td><code>false</code></td>
 <td><code>N/A</code></td>
+<td><code>PARAMETER_VARS</code><br><code>TERRAFORM_VARS</code></td>
 </tr>
 
 <tr>
@@ -1529,6 +1542,7 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 <td>a list of var files to use</td>
 <td><code>false</code></td>
 <td><code>N/A</code></td>
+<td><code>PARAMETER_VAR_FILES</code><br><code>TERRAFORM_VAR_FILES</code></td>
 </tr>
 </tbody>
 </table>
@@ -1539,14 +1553,6 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 
 <h2 id="troubleshooting">Troubleshooting</h2>
 
-
-
-<div class="alert alert-warning" role="alert">
-
-We recommend reviewing Terraform&rsquo;s <a href="https://www.terraform.io/docs/internals/debugging.html" target="_blank">debugging guide</a> before troubleshooting further.
-</div>
-
-
 <p>You can start troubleshooting this plugin by tuning the level of logs being displayed:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: apply
@@ -1554,18 +1560,25 @@ We recommend reviewing Terraform&rsquo;s <a href="https://www.terraform.io/docs/
     pull: always
     parameters:
       action: apply
-      auto_approve: true # Required for versions of Terraform 0.12.x
-      init_options:
-        get_plugins: true
+      auto_approve: true
 <span style="color:#00a000">+     log_level: trace
 </span></code></pre></div>
+<p>You can also instruct the Terraform CLI to output verbose logging:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
+  - name: apply
+    image: target/vela-terraform:latest
+    pull: always
+<span style="color:#00a000">+   environment:
+</span><span style="color:#00a000">+     TF_LOG: TRACE
+</span><span style="color:#00a000"></span>    parameters:
+      action: apply
+      auto_approve: true
+</code></pre></div>
 <p>Below are a list of common problems and how to solve them:</p>
 
-<p>COMING SOON!</p>
-
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified October 9, 2020: <a  href="https://github.com/go-vela/docs/commit/41d05b49562c5f26c25fc2f5a2d05123b1d5172d">chore: update image tags for consistency (#175) (41d05b4)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified January 11, 2021: <a  href="https://github.com/go-vela/docs/commit/0f1f3118545c45703ea36be53a78318921aaaf93">feat(plugins): source docs from repos (#190) (0f1f311)</a>
 </div>
 </div>
 

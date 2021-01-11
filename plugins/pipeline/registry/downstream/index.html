@@ -21,44 +21,47 @@
 <link rel="icon" type="image/png" href="/docs/favicons/android-192x192.png"sizes="192x192">
 
 <title>Downstream | Vela</title><meta property="og:title" content="Downstream" />
-<meta property="og:description" content="Overview This plugin enables the ability to trigger builds for other repos for Vela in a pipeline.
+<meta property="og:description" content="Description This plugin enables you to trigger builds for other repos for Vela in a pipeline.
 Source Code: https://github.com/go-vela/vela-downstream
 Registry: https://hub.docker.com/r/target/vela-downstream
-Usage Users should refrain from using latest as the tag for the Docker image.
+Usage  NOTE:
+Users should refrain from using latest as the tag for the Docker image.
 It is recommended to use a semantically versioned tag instead.
  Sample of triggering a downstream build:
 steps:-name:trigger_hello-worldimage:target/vela-downstream:latestpull:alwaysparameters:branch:masterrepos:-octocat/hello-worldserver:https://vela-server.localhost Sample of triggering a downstream build for multiple repos:
-steps: &#43; - name: trigger_multiple - - name: trigger_hello-world  image: target/vela-downstream:latest pull: always parameters: branch: master repos: - octocat/hello-world &#43; - go-vela/hello-world  server: https://vela-server." />
+steps: - name: trigger_multiple image: target/vela-downstream:latest pull: always parameters: branch: master repos: - octocat/hello-world &#43; - go-vela/hello-world  server: https://vela-server." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://go-vela.github.io/docs/plugins/pipeline/registry/downstream/" />
-<meta property="article:modified_time" content="2020-10-09T08:34:18-05:00" />
+<meta property="article:modified_time" content="2021-01-11T10:01:41-06:00" />
 <meta itemprop="name" content="Downstream">
-<meta itemprop="description" content="Overview This plugin enables the ability to trigger builds for other repos for Vela in a pipeline.
+<meta itemprop="description" content="Description This plugin enables you to trigger builds for other repos for Vela in a pipeline.
 Source Code: https://github.com/go-vela/vela-downstream
 Registry: https://hub.docker.com/r/target/vela-downstream
-Usage Users should refrain from using latest as the tag for the Docker image.
+Usage  NOTE:
+Users should refrain from using latest as the tag for the Docker image.
 It is recommended to use a semantically versioned tag instead.
  Sample of triggering a downstream build:
 steps:-name:trigger_hello-worldimage:target/vela-downstream:latestpull:alwaysparameters:branch:masterrepos:-octocat/hello-worldserver:https://vela-server.localhost Sample of triggering a downstream build for multiple repos:
-steps: &#43; - name: trigger_multiple - - name: trigger_hello-world  image: target/vela-downstream:latest pull: always parameters: branch: master repos: - octocat/hello-world &#43; - go-vela/hello-world  server: https://vela-server.">
+steps: - name: trigger_multiple image: target/vela-downstream:latest pull: always parameters: branch: master repos: - octocat/hello-world &#43; - go-vela/hello-world  server: https://vela-server.">
 
 
-<meta itemprop="dateModified" content="2020-10-09T08:34:18-05:00" />
-<meta itemprop="wordCount" content="428">
+<meta itemprop="dateModified" content="2021-01-11T10:01:41-06:00" />
+<meta itemprop="wordCount" content="414">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Downstream"/>
-<meta name="twitter:description" content="Overview This plugin enables the ability to trigger builds for other repos for Vela in a pipeline.
+<meta name="twitter:description" content="Description This plugin enables you to trigger builds for other repos for Vela in a pipeline.
 Source Code: https://github.com/go-vela/vela-downstream
 Registry: https://hub.docker.com/r/target/vela-downstream
-Usage Users should refrain from using latest as the tag for the Docker image.
+Usage  NOTE:
+Users should refrain from using latest as the tag for the Docker image.
 It is recommended to use a semantically versioned tag instead.
  Sample of triggering a downstream build:
 steps:-name:trigger_hello-worldimage:target/vela-downstream:latestpull:alwaysparameters:branch:masterrepos:-octocat/hello-worldserver:https://vela-server.localhost Sample of triggering a downstream build for multiple repos:
-steps: &#43; - name: trigger_multiple - - name: trigger_hello-world  image: target/vela-downstream:latest pull: always parameters: branch: master repos: - octocat/hello-world &#43; - go-vela/hello-world  server: https://vela-server."/>
+steps: - name: trigger_multiple image: target/vela-downstream:latest pull: always parameters: branch: master repos: - octocat/hello-world &#43; - go-vela/hello-world  server: https://vela-server."/>
 
 
 
@@ -654,26 +657,6 @@ steps: &#43; - name: trigger_multiple - - name: trigger_hello-world  image: targ
 
 
 
-<nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#overview">Overview</a></li>
-<li><a href="#usage">Usage</a></li>
-<li><a href="#secrets">Secrets</a>
-<ul>
-<li><a href="#internal">Internal</a></li>
-<li><a href="#external">External</a></li>
-</ul></li>
-<li><a href="#parameters">Parameters</a></li>
-<li><a href="#template">Template</a></li>
-<li><a href="#troubleshooting">Troubleshooting</a></li>
-</ul></li>
-</ul>
-</nav>
-
-
-
           </div>
           <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
             <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
@@ -724,11 +707,9 @@ steps: &#43; - name: trigger_multiple - - name: trigger_hello-world  image: targ
 <div class="td-content">
 	<h1>Downstream</h1>
 	
-	
+	<h2 id="description">Description</h2>
 
-<h2 id="overview">Overview</h2>
-
-<p>This plugin enables the ability to trigger builds for other repos for <a href="https://go-vela.github.io/docs/" target="_blank">Vela</a> in a pipeline.</p>
+<p>This plugin enables you to trigger builds for other repos for <a href="https://go-vela.github.io/docs/" target="_blank">Vela</a> in a pipeline.</p>
 
 <p>Source Code: <a href="https://github.com/go-vela/vela-downstream" target="_blank">https://github.com/go-vela/vela-downstream</a></p>
 
@@ -736,16 +717,13 @@ steps: &#43; - name: trigger_multiple - - name: trigger_hello-world  image: targ
 
 <h2 id="usage">Usage</h2>
 
+<blockquote>
+<p><strong>NOTE:</strong></p>
 
-
-<div class="alert alert-warning" role="alert">
-
-<p>Users should refrain from using <code>latest</code> as the tag for the Docker image.</p>
+<p>Users should refrain from using latest as the tag for the Docker image.</p>
 
 <p>It is recommended to use a semantically versioned tag instead.</p>
-
-</div>
-
+</blockquote>
 
 <p>Sample of triggering a downstream build:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">steps<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
@@ -759,9 +737,8 @@ steps: &#43; - name: trigger_multiple - - name: trigger_hello-world  image: targ
 </span><span style="color:#f8f8f8;text-decoration:underline">      </span>server<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>https<span style="color:#000;font-weight:bold">:</span>//vela-server.localhost</code></pre></div>
 <p>Sample of triggering a downstream build for multiple repos:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
-<span style="color:#00a000">+ - name: trigger_multiple
-</span><span style="color:#00a000"></span><span style="color:#a40000">- - name: trigger_hello-world
-</span><span style="color:#a40000"></span>    image: target/vela-downstream:latest
+  - name: trigger_multiple
+    image: target/vela-downstream:latest
     pull: always
     parameters:
       branch: master
@@ -772,17 +749,12 @@ steps: &#43; - name: trigger_multiple - - name: trigger_hello-world  image: targ
 </code></pre></div>
 <p>Sample of triggering a downstream build for multiple repos with different branches:</p>
 
-
-
-<div class="alert alert-info" role="alert">
-
-Use the @ symbol at the end of the org/repo to provide a unique branch per repo.
-</div>
-
+<blockquote>
+<p><strong>NOTE:</strong> Use the @ symbol at the end of the org/repo to provide a unique branch per repo.</p>
+</blockquote>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
-<span style="color:#00a000">+ - name: trigger_multiple
-</span><span style="color:#00a000"></span><span style="color:#a40000">- - name: trigger_hello-world
-</span><span style="color:#a40000"></span>    image: target/vela-downstream:latest
+  - name: trigger_multiple
+    image: target/vela-downstream:latest
     pull: always
     parameters:
 <span style="color:#a40000">-     branch: master
@@ -795,35 +767,13 @@ Use the @ symbol at the end of the org/repo to provide a unique branch per repo.
 </code></pre></div>
 <h2 id="secrets">Secrets</h2>
 
-
-
-<div class="alert alert-warning" role="alert">
-
-Users should refrain from configuring sensitive information in their pipeline in plain text.
-</div>
-
+<blockquote>
+<p><strong>NOTE:</strong> Users should refrain from configuring sensitive information in your pipeline in plain text.</p>
+</blockquote>
 
 <h3 id="internal">Internal</h3>
 
-<p>The plugin accepts the following <code>parameters</code> for authentication:</p>
-
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Environment Variable Configuration</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td><code>token</code></td>
-<td><code>CONFIG_TOKEN</code>, <code>DOWNSTREAM_TOKEN</code>, <code>PARAMETER_TOKEN</code>, <code>VELA_TOKEN</code></td>
-</tr>
-</tbody>
-</table>
-
-<p>Users can use <a href="/docs/concepts/pipeline/secrets/">Vela internal secrets</a> to substitute these sensitive values at runtime:</p>
+<p>Users can use <a href="https://go-vela.github.io/docs/concepts/pipeline/secrets/" target="_blank">Vela internal secrets</a> to substitute these sensitive values at runtime:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: trigger_hello-world
     image: target/vela-downstream:latest
@@ -836,17 +786,13 @@ Users should refrain from configuring sensitive information in their pipeline in
       server: https://vela-server.localhost
 <span style="color:#a40000">-     token: superSecretVelaToken
 </span></code></pre></div>
+<blockquote>
+<p>This example will add the secret to the <code>trigger_hello-world</code> step as environment variables:</p>
 
-
-<div class="alert alert-info" role="alert">
-
-This example will add the <code>secrets</code> to the <code>trigger_hello-world</code> step as environment variables:</p>
-
-<ul>
+<p><ul>
 <li><code>DOWNSTREAM_TOKEN=&lt;value&gt;</code></li>
 </ul>
-</div>
-
+</blockquote></p>
 
 <h3 id="external">External</h3>
 
@@ -863,12 +809,12 @@ This example will add the <code>secrets</code> to the <code>trigger_hello-world<
 <tbody>
 <tr>
 <td><code>token</code></td>
-<td><code>/vela/parameters/downstream/config/token</code>, <code>/vela/secrets/downstream/config/token</code></td>
+<td><code>/vela/parameters/downstream/token</code>, <code>/vela/secrets/downstream/token</code></td>
 </tr>
 </tbody>
 </table>
 
-<p>Users can use <a href="/docs/concepts/pipeline/secrets/">Vela external secrets</a> to substitute these sensitive values at runtime:</p>
+<p>Users can use <a href="https://go-vela.github.io/docs/concepts/pipeline/secrets/origin/" target="_blank">Vela external secrets</a> to substitute these sensitive values at runtime:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: trigger_hello-world
     image: target/vela-downstream:latest
@@ -880,26 +826,19 @@ This example will add the <code>secrets</code> to the <code>trigger_hello-world<
       server: https://vela-server.localhost
 <span style="color:#a40000">-     token: superSecretVelaToken
 </span></code></pre></div>
-
-
-<div class="alert alert-info" role="alert">
-
-This example will read the secrets values in the volume stored at <code>/vela/secrets/</code>:
-</div>
-
+<blockquote>
+<p>This example will read the secret value in the volume stored at <code>/vela/secrets/</code></p>
+</blockquote>
 
 <h2 id="parameters">Parameters</h2>
 
+<blockquote>
+<p><strong>NOTE:</strong></p>
 
-
-<div class="alert alert-info" role="alert">
-
-<p>The plugin supports reading all parameters vie environment variables or files.</p>
+<p>The plugin supports reading all parameters via environment variables or files.</p>
 
 <p>Any values set from a file take precedence over values set from the environment.</p>
-
-</div>
-
+</blockquote>
 
 <p>The following parameters are used to configure the image:</p>
 
@@ -910,6 +849,7 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <th>Description</th>
 <th>Required</th>
 <th>Default</th>
+<th>Environment Variables</th>
 </tr>
 </thead>
 
@@ -919,6 +859,7 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <td>default branch to trigger a build on</td>
 <td><code>true</code></td>
 <td><code>master</code></td>
+<td><code>PARAMETER_BRANCH</code><br><code>DOWNSTREAM_BRANCH</code></td>
 </tr>
 
 <tr>
@@ -926,6 +867,7 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <td>set the log level for the plugin</td>
 <td><code>true</code></td>
 <td><code>info</code></td>
+<td><code>PARAMETER_LOG_LEVEL</code><br><code>DOWNSTREAM_LOG_LEVEL</code></td>
 </tr>
 
 <tr>
@@ -933,6 +875,7 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <td>list of <org>/<repo> names to trigger a build on</td>
 <td><code>true</code></td>
 <td><code>N/A</code></td>
+<td><code>PARAMETER_REPOS</code><br><code>DOWNSTREAM_REPOS</code></td>
 </tr>
 
 <tr>
@@ -940,6 +883,7 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <td>Vela server to communicate with</td>
 <td><code>true</code></td>
 <td><code>N/A</code></td>
+<td><code>PARAMETER_SERVER</code><br><code>DOWNSTREAM_SERVER</code></td>
 </tr>
 
 <tr>
@@ -947,6 +891,7 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <td>token for communication with Vela</td>
 <td><code>true</code></td>
 <td><code>N/A</code></td>
+<td><code>PARAMETER_TOKEN</code><br><code>DOWNSTREAM_TOKEN</code></td>
 </tr>
 </tbody>
 </table>
@@ -971,11 +916,9 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 </code></pre></div>
 <p>Below are a list of common problems and how to solve them:</p>
 
-<p>COMING SOON!</p>
-
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified October 9, 2020: <a  href="https://github.com/go-vela/docs/commit/41d05b49562c5f26c25fc2f5a2d05123b1d5172d">chore: update image tags for consistency (#175) (41d05b4)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified January 11, 2021: <a  href="https://github.com/go-vela/docs/commit/0f1f3118545c45703ea36be53a78318921aaaf93">feat(plugins): source docs from repos (#190) (0f1f311)</a>
 </div>
 </div>
 

@@ -21,38 +21,44 @@
 <link rel="icon" type="image/png" href="/docs/favicons/android-192x192.png"sizes="192x192">
 
 <title>Git | Vela</title><meta property="og:title" content="Git" />
-<meta property="og:description" content="Overview This plugin is automatically injected into every pipeline for the source repository.  This plugin enables the ability to clone repositories in a Vela pipeline to the build workspace.
+<meta property="og:description" content="Description  NOTE: This plugin is automatically injected into your pipeline for the source repository.
+ This plugin enables you to clone repositories in a Vela pipeline to your build workspace.
 Source Code: https://github.com/go-vela/vela-git
 Registry: https://hub.docker.com/r/target/vela-git
-Usage Users should refrain from using latest as the tag for the Docker image.
+Usage  NOTE:
+Users should refrain from using latest as the tag for the Docker image.
 It is recommended to use a semantically versioned tag instead.
  Sample of cloning a repository:
 steps:-name:clone_hello-worldimage:target/vela-git:latestpull:alwaysparameters:path:hello-worldref:refs/heads/masterremote:https://github.com/octocat/hello-world.gitsha:7fd1a60b01f91b314f59955a4e4d4e80d8edf11d Sample of cloning a repository with submodules:" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://go-vela.github.io/docs/plugins/pipeline/registry/git/" />
-<meta property="article:modified_time" content="2020-10-09T08:34:18-05:00" />
+<meta property="article:modified_time" content="2021-01-11T10:01:41-06:00" />
 <meta itemprop="name" content="Git">
-<meta itemprop="description" content="Overview This plugin is automatically injected into every pipeline for the source repository.  This plugin enables the ability to clone repositories in a Vela pipeline to the build workspace.
+<meta itemprop="description" content="Description  NOTE: This plugin is automatically injected into your pipeline for the source repository.
+ This plugin enables you to clone repositories in a Vela pipeline to your build workspace.
 Source Code: https://github.com/go-vela/vela-git
 Registry: https://hub.docker.com/r/target/vela-git
-Usage Users should refrain from using latest as the tag for the Docker image.
+Usage  NOTE:
+Users should refrain from using latest as the tag for the Docker image.
 It is recommended to use a semantically versioned tag instead.
  Sample of cloning a repository:
 steps:-name:clone_hello-worldimage:target/vela-git:latestpull:alwaysparameters:path:hello-worldref:refs/heads/masterremote:https://github.com/octocat/hello-world.gitsha:7fd1a60b01f91b314f59955a4e4d4e80d8edf11d Sample of cloning a repository with submodules:">
 
 
-<meta itemprop="dateModified" content="2020-10-09T08:34:18-05:00" />
-<meta itemprop="wordCount" content="454">
+<meta itemprop="dateModified" content="2021-01-11T10:01:41-06:00" />
+<meta itemprop="wordCount" content="477">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Git"/>
-<meta name="twitter:description" content="Overview This plugin is automatically injected into every pipeline for the source repository.  This plugin enables the ability to clone repositories in a Vela pipeline to the build workspace.
+<meta name="twitter:description" content="Description  NOTE: This plugin is automatically injected into your pipeline for the source repository.
+ This plugin enables you to clone repositories in a Vela pipeline to your build workspace.
 Source Code: https://github.com/go-vela/vela-git
 Registry: https://hub.docker.com/r/target/vela-git
-Usage Users should refrain from using latest as the tag for the Docker image.
+Usage  NOTE:
+Users should refrain from using latest as the tag for the Docker image.
 It is recommended to use a semantically versioned tag instead.
  Sample of cloning a repository:
 steps:-name:clone_hello-worldimage:target/vela-git:latestpull:alwaysparameters:path:hello-worldref:refs/heads/masterremote:https://github.com/octocat/hello-world.gitsha:7fd1a60b01f91b314f59955a4e4d4e80d8edf11d Sample of cloning a repository with submodules:"/>
@@ -651,26 +657,6 @@ steps:-name:clone_hello-worldimage:target/vela-git:latestpull:alwaysparameters:p
 
 
 
-<nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#overview">Overview</a></li>
-<li><a href="#usage">Usage</a></li>
-<li><a href="#secrets">Secrets</a>
-<ul>
-<li><a href="#internal">Internal</a></li>
-<li><a href="#external">External</a></li>
-</ul></li>
-<li><a href="#parameters">Parameters</a></li>
-<li><a href="#template">Template</a></li>
-<li><a href="#troubleshooting">Troubleshooting</a></li>
-</ul></li>
-</ul>
-</nav>
-
-
-
           </div>
           <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
             <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
@@ -721,19 +707,13 @@ steps:-name:clone_hello-worldimage:target/vela-git:latestpull:alwaysparameters:p
 <div class="td-content">
 	<h1>Git</h1>
 	
-	
+	<h2 id="description">Description</h2>
 
-<h2 id="overview">Overview</h2>
+<blockquote>
+<p><strong>NOTE:</strong> This plugin is automatically injected into your pipeline for the source repository.</p>
+</blockquote>
 
-
-
-<div class="alert alert-info" role="alert">
-
-This plugin is automatically injected into every pipeline for the source repository.
-</div>
-
-
-<p>This plugin enables the ability to clone repositories in a Vela pipeline to the build workspace.</p>
+<p>This plugin enables you to clone repositories in a Vela pipeline to your build workspace.</p>
 
 <p>Source Code: <a href="https://github.com/go-vela/vela-git" target="_blank">https://github.com/go-vela/vela-git</a></p>
 
@@ -741,16 +721,13 @@ This plugin is automatically injected into every pipeline for the source reposit
 
 <h2 id="usage">Usage</h2>
 
+<blockquote>
+<p><strong>NOTE:</strong></p>
 
-
-<div class="alert alert-warning" role="alert">
-
-<p>Users should refrain from using <code>latest</code> as the tag for the Docker image.</p>
+<p>Users should refrain from using latest as the tag for the Docker image.</p>
 
 <p>It is recommended to use a semantically versioned tag instead.</p>
-
-</div>
-
+</blockquote>
 
 <p>Sample of cloning a repository:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">steps<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
@@ -788,65 +765,34 @@ This plugin is automatically injected into every pipeline for the source reposit
 </span></code></pre></div>
 <h2 id="secrets">Secrets</h2>
 
-
-
-<div class="alert alert-warning" role="alert">
-
-Users should refrain from configuring sensitive information in their pipeline in plain text.
-</div>
-
+<blockquote>
+<p><strong>NOTE:</strong> Users should refrain from configuring sensitive information in your pipeline in plain text.</p>
+</blockquote>
 
 <h3 id="internal">Internal</h3>
 
-<p>The plugin accepts the following <code>parameters</code> for authentication:</p>
-
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Environment Variable Configuration</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td><code>netrc_password</code></td>
-<td><code>GIT_PASSWORD</code>, <code>PARAMETER_NETRC_PASSWORD</code>, <code>VELA_NETRC_PASSWORD</code></td>
-</tr>
-
-<tr>
-<td><code>netrc_username</code></td>
-<td><code>GIT_USERNAME</code>, <code>PARAMETER_NETRC_USERNAME</code>, <code>VELA_NETRC_USERNAME</code></td>
-</tr>
-</tbody>
-</table>
-
-<p>Users can use <a href="/docs/concepts/pipeline/secrets/">Vela internal secrets</a> to substitute sensitive values at runtime:</p>
+<p>Users can use <a href="https://go-vela.github.io/docs/concepts/pipeline/secrets/" target="_blank">Vela internal secrets</a> to substitute these sensitive values at runtime:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: clone_hello-world
     image: target/vela-git:latest
     pull: always
 <span style="color:#00a000">+   secrets: [ git_username, git_password ]
 </span><span style="color:#00a000"></span>    parameters:
-<span style="color:#a40000">-     netrc_username: octocat
-</span><span style="color:#a40000">-     netrc_password: superSecretPassword
-</span><span style="color:#a40000"></span>      path: /vela/src/github.com/octocat/hello-world
+<span style="color:#a40000">-     username: octocat
+</span><span style="color:#a40000">-     password: superSecretPassword
+</span><span style="color:#a40000"></span>      path: /home/octocat_hello-world_1
       ref: refs/heads/master
       remote: https://github.com/octocat/hello-world.git
       sha: 7fd1a60b01f91b314f59955a4e4d4e80d8edf11d
 </code></pre></div>
+<blockquote>
+<p>This example will add the secrets to the <code>clone_hello-world</code> step as environment variables:</p>
 
-
-<div class="alert alert-info" role="alert">
-
-This example will add the <code>secrets</code> to the <code>clone_hello-world</code> step as environment variables:</p>
-
-<ul>
+<p><ul>
 <li><code>GIT_USERNAME=&lt;value&gt;</code></li>
 <li><code>GIT_PASSWORD=&lt;value&gt;</code></li>
 </ul>
-</div>
-
+</blockquote></p>
 
 <h3 id="external">External</h3>
 
@@ -862,50 +808,43 @@ This example will add the <code>secrets</code> to the <code>clone_hello-world</c
 
 <tbody>
 <tr>
-<td><code>netrc_password</code></td>
-<td><code>/vela/parameters/git/netrc/password</code>, <code>/vela/secrets/git/netrc/password</code></td>
+<td><code>password</code></td>
+<td><code>/vela/parameters/git/password</code>, <code>/vela/secrets/git/password</code></td>
 </tr>
 
 <tr>
-<td><code>netrc_username</code></td>
-<td><code>/vela/parameters/git/netrc/username</code>, <code>/vela/secrets/git/netrc/username</code></td>
+<td><code>username</code></td>
+<td><code>/vela/parameters/git/username</code>, <code>/vela/secrets/git/username</code></td>
 </tr>
 </tbody>
 </table>
 
-<p>Users can use <a href="/docs/concepts/pipeline/secrets/">Vela external secrets</a> to substitute these sensitive values at runtime:</p>
+<p>Users can use <a href="https://go-vela.github.io/docs/concepts/pipeline/secrets/origin/" target="_blank">Vela external secrets</a> to substitute these sensitive values at runtime:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: clone_hello-world
     image: target/vela-git:latest
     pull: always
     parameters:
-<span style="color:#a40000">-     netrc_username: octocat
-</span><span style="color:#a40000">-     netrc_password: superSecretPassword
-</span><span style="color:#a40000"></span>      path: /vela/src/github.com/octocat/hello-world
+<span style="color:#a40000">-     username: octocat
+</span><span style="color:#a40000">-     password: superSecretPassword
+</span><span style="color:#a40000"></span>      path: /home/octocat_hello-world_1
       ref: refs/heads/master
       remote: https://github.com/octocat/hello-world.git
       sha: 7fd1a60b01f91b314f59955a4e4d4e80d8edf11d
 </code></pre></div>
-
-
-<div class="alert alert-info" role="alert">
-
-This example will read the secrets values in the volume stored at <code>/vela/secrets/</code>:
-</div>
-
+<blockquote>
+<p>This example will read the secret values in the volume stored at <code>/vela/secrets/</code></p>
+</blockquote>
 
 <h2 id="parameters">Parameters</h2>
 
+<blockquote>
+<p><strong>NOTE:</strong></p>
 
-
-<div class="alert alert-info" role="alert">
-
-<p>The plugin supports reading all parameters vie environment variables or files.</p>
+<p>The plugin supports reading all parameters via environment variables or files.</p>
 
 <p>Any values set from a file take precedence over values set from the environment.</p>
-
-</div>
-
+</blockquote>
 
 <p>The following parameters are used to configure the image:</p>
 
@@ -916,6 +855,7 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <th>Description</th>
 <th>Required</th>
 <th>Default</th>
+<th>Environment Variables</th>
 </tr>
 </thead>
 
@@ -925,27 +865,31 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <td>set the log level for the plugin</td>
 <td><code>true</code></td>
 <td><code>info</code></td>
+<td><code>PARAMETER_LOG_LEVEL</code><br><code>GIT_LOG_LEVEL</code></td>
 </tr>
 
 <tr>
-<td><code>netrc_machine</code></td>
+<td><code>machine</code></td>
 <td>machine name to communicate with</td>
 <td><code>true</code></td>
 <td><code>github.com</code></td>
+<td><code>PARAMETER_MACHINE</code><br><code>GIT_MACHINE</code><br><code>VELA_NETRC_MACHINE</code></td>
 </tr>
 
 <tr>
-<td><code>netrc_password</code></td>
+<td><code>password</code></td>
 <td>password for authentication</td>
 <td><code>true</code></td>
 <td><strong>set by Vela</strong></td>
+<td><code>PARAMETER_PASSWORD</code><br><code>GIT_PASSWORD</code><br><code>VELA_NETRC_PASSWORD</code></td>
 </tr>
 
 <tr>
-<td><code>netrc_username</code></td>
+<td><code>username</code></td>
 <td>user name for authentication</td>
 <td><code>true</code></td>
 <td><strong>set by Vela</strong></td>
+<td><code>PARAMETER_USERNAME</code><br><code>GIT_USERNAME</code><br><code>VELA_NETRC_USERNAME</code></td>
 </tr>
 
 <tr>
@@ -953,6 +897,7 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <td>local path to clone repository to</td>
 <td><code>true</code></td>
 <td><strong>set by Vela</strong></td>
+<td><code>PARAMETER_PATH</code><br><code>GIT_PATH</code><br><code>VELA_BUILD_WORKSPACE</code></td>
 </tr>
 
 <tr>
@@ -960,6 +905,7 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <td>reference generated for commit</td>
 <td><code>true</code></td>
 <td><code>refs/heads/master</code></td>
+<td><code>PARAMETER_REF</code><br><code>GIT_REF</code><br><code>VELA_BUILD_REF</code></td>
 </tr>
 
 <tr>
@@ -967,6 +913,7 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <td>full url for cloning repository</td>
 <td><code>true</code></td>
 <td><strong>set by Vela</strong></td>
+<td><code>PARAMETER_REMOTE</code><br><code>GIT_REMOTE</code><br><code>VELA_REPO_CLONE</code></td>
 </tr>
 
 <tr>
@@ -974,6 +921,7 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <td>SHA-1 hash generated for commit</td>
 <td><code>true</code></td>
 <td><strong>set by Vela</strong></td>
+<td><code>PARAMETER_SHA</code><br><code>GIT_SHA</code><br><code>VELA_BUILD_COMMIT</code></td>
 </tr>
 
 <tr>
@@ -981,6 +929,7 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <td>enables fetching of submodules</td>
 <td><code>false</code></td>
 <td><code>false</code></td>
+<td><code>PARAMETER_SUBMODULES</code><br><code>GIT_SUBMODULES</code></td>
 </tr>
 
 <tr>
@@ -988,6 +937,15 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <td>enables fetching of tags</td>
 <td><code>false</code></td>
 <td><code>false</code></td>
+<td><code>PARAMETER_TAGS</code><br><code>GIT_TAGS</code></td>
+</tr>
+
+<tr>
+<td><code>depth</code></td>
+<td>enables fetching with a specific depth</td>
+<td><code>false</code></td>
+<td>Not set</td>
+<td><code>PARAMETER_DEPTH</code><br><code>GIT_DEPTH</code></td>
 </tr>
 </tbody>
 </table>
@@ -1012,11 +970,9 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 </code></pre></div>
 <p>Below are a list of common problems and how to solve them:</p>
 
-<p>COMING SOON!</p>
-
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified October 9, 2020: <a  href="https://github.com/go-vela/docs/commit/41d05b49562c5f26c25fc2f5a2d05123b1d5172d">chore: update image tags for consistency (#175) (41d05b4)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified January 11, 2021: <a  href="https://github.com/go-vela/docs/commit/0f1f3118545c45703ea36be53a78318921aaaf93">feat(plugins): source docs from repos (#190) (0f1f311)</a>
 </div>
 </div>
 

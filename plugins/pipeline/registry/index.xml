@@ -22,11 +22,9 @@
       <description>
         
         
-        
+        &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 
-&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
-
-&lt;p&gt;This plugin enables the ability to manage artifacts in &lt;a href=&#34;https://jfrog.com/artifactory/&#34; target=&#34;_blank&#34;&gt;Artifactory&lt;/a&gt; in a Vela pipeline.&lt;/p&gt;
+&lt;p&gt;This plugin enables you to manage artifacts in &lt;a href=&#34;https://jfrog.com/artifactory/&#34; target=&#34;_blank&#34;&gt;Artifactory&lt;/a&gt; in a Vela pipeline.&lt;/p&gt;
 
 &lt;p&gt;Source Code: &lt;a href=&#34;https://github.com/go-vela/vela-artifactory&#34; target=&#34;_blank&#34;&gt;https://github.com/go-vela/vela-artifactory&lt;/a&gt;&lt;/p&gt;
 
@@ -34,16 +32,13 @@
 
 &lt;h2 id=&#34;usage&#34;&gt;Usage&lt;/h2&gt;
 
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt;&lt;/p&gt;
 
-
-&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
-
-&lt;p&gt;Users should refrain from using &lt;code&gt;latest&lt;/code&gt; as the tag for the Docker image.&lt;/p&gt;
+&lt;p&gt;Users should refrain from using latest as the tag for the Docker image.&lt;/p&gt;
 
 &lt;p&gt;It is recommended to use a semantically versioned tag instead.&lt;/p&gt;
-
-&lt;/div&gt;
-
+&lt;/blockquote&gt;
 
 &lt;p&gt;Sample of copying an artifact:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;steps&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
@@ -122,45 +117,13 @@
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;target_tags&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;${BUILD_COMMIT:0:8}&amp;#34;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2 id=&#34;secrets&#34;&gt;Secrets&lt;/h2&gt;
 
-
-
-&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
-
-Users should refrain from configuring sensitive information in their pipeline in plain text.
-&lt;/div&gt;
-
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; Users should refrain from configuring sensitive information in your pipeline in plain text.&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;h3 id=&#34;internal&#34;&gt;Internal&lt;/h3&gt;
 
-&lt;p&gt;The plugin accepts the following &lt;code&gt;parameters&lt;/code&gt; for authentication:&lt;/p&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Parameter&lt;/th&gt;
-&lt;th&gt;Environment Variable Configuration&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;api_key&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;ARTIFACTORY_API_KEY&lt;/code&gt;, &lt;code&gt;CONFIG_API_KEY&lt;/code&gt;, &lt;code&gt;PARAMETER_API_KEY&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;password&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;ARTIFACTORY_PASSWORD&lt;/code&gt;, &lt;code&gt;CONFIG_PASSWORD&lt;/code&gt;, &lt;code&gt;PARAMETER_PASSWORD&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;username&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;ARTIFACTORY_USERNAME&lt;/code&gt;, &lt;code&gt;CONFIG_USERNAME&lt;/code&gt;, &lt;code&gt;PARAMETER_USERNAME&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;Users can use &lt;a href=&#34;https://go-vela.github.io/docs/docs/concepts/pipeline/secrets/&#34;&gt;Vela internal secrets&lt;/a&gt; to substitute these sensitive values at runtime:&lt;/p&gt;
+&lt;p&gt;Users can use &lt;a href=&#34;https://go-vela.github.io/docs/concepts/pipeline/secrets/&#34; target=&#34;_blank&#34;&gt;Vela internal secrets&lt;/a&gt; to substitute these sensitive values at runtime:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
   - name: copy_artifacts
     image: target/vela-artifactory:latest
@@ -174,18 +137,14 @@ Users should refrain from configuring sensitive information in their pipeline in
 &lt;span style=&#34;color:#a40000&#34;&gt;-     username: octocat
 &lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;-     password: superSecretPassword
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This example will add the secrets to the &lt;code&gt;copy_artifacts&lt;/code&gt; step as environment variables:&lt;/p&gt;
 
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-
-This example will add the &lt;code&gt;secrets&lt;/code&gt; to the &lt;code&gt;copy_artifacts&lt;/code&gt; step as environment variables:&lt;/p&gt;
-
-&lt;ul&gt;
+&lt;p&gt;&lt;ul&gt;
 &lt;li&gt;&lt;code&gt;ARTIFACTORY_USERNAME=&amp;lt;value&amp;gt;&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;ARTIFACTORY_PASSWORD=&amp;lt;value&amp;gt;&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-
+&lt;/blockquote&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;external&#34;&gt;External&lt;/h3&gt;
 
@@ -202,22 +161,22 @@ This example will add the &lt;code&gt;secrets&lt;/code&gt; to the &lt;code&gt;co
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;api_key&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;/vela/parameters/config/artifactory/api_key&lt;/code&gt;, &lt;code&gt;/vela/secrets/artifactory/api_key&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;/vela/parameters/artifactory/api_key&lt;/code&gt;, &lt;code&gt;/vela/secrets/artifactory/api_key&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;password&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;/vela/parameters/config/artifactory/password&lt;/code&gt;, &lt;code&gt;/vela/secrets/artifactory/password&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;/vela/parameters/artifactory/password&lt;/code&gt;, &lt;code&gt;/vela/secrets/artifactory/password&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;username&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;/vela/parameters/config/artifactory/username&lt;/code&gt;, &lt;code&gt;/vela/secrets/artifactory/username&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;/vela/parameters/artifactory/username&lt;/code&gt;, &lt;code&gt;/vela/secrets/artifactory/username&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;p&gt;Users can use &lt;a href=&#34;https://go-vela.github.io/docs/docs/concepts/pipeline/secrets/&#34;&gt;Vela external secrets&lt;/a&gt; to substitute these sensitive values at runtime:&lt;/p&gt;
+&lt;p&gt;Users can use &lt;a href=&#34;https://go-vela.github.io/docs/concepts/pipeline/secrets/origin/&#34; target=&#34;_blank&#34;&gt;Vela external secrets&lt;/a&gt; to substitute these sensitive values at runtime:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
   - name: copy_artifacts
     image: target/vela-artifactory:latest
@@ -230,26 +189,19 @@ This example will add the &lt;code&gt;secrets&lt;/code&gt; to the &lt;code&gt;co
 &lt;span style=&#34;color:#a40000&#34;&gt;-     username: octocat
 &lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;-     password: superSecretPassword
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-
-This example will read the secrets values in the volume stored at &lt;code&gt;/vela/secrets/&lt;/code&gt;
-&lt;/div&gt;
-
+&lt;blockquote&gt;
+&lt;p&gt;This example will read the secret values in the volume stored at &lt;code&gt;/vela/secrets/&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;h2 id=&#34;parameters&#34;&gt;Parameters&lt;/h2&gt;
 
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt;&lt;/p&gt;
 
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-
-&lt;p&gt;The plugin supports reading all parameters vie environment variables or files.&lt;/p&gt;
+&lt;p&gt;The plugin supports reading all parameters via environment variables or files.&lt;/p&gt;
 
 &lt;p&gt;Any values set from a file take precedence over values set from the environment.&lt;/p&gt;
-
-&lt;/div&gt;
-
+&lt;/blockquote&gt;
 
 &lt;p&gt;The following parameters are used to configure the image:&lt;/p&gt;
 
@@ -260,6 +212,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;th&gt;Description&lt;/th&gt;
 &lt;th&gt;Required&lt;/th&gt;
 &lt;th&gt;Default&lt;/th&gt;
+&lt;th&gt;Environment Variables&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 
@@ -269,6 +222,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;action to perform against Artifactory&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_ACTION&lt;/code&gt;&lt;br&gt;&lt;code&gt;ARTIFACTORY_ACTION&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -276,6 +230,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;API key for communication with Artifactory&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_DRY_RUN&lt;/code&gt;&lt;br&gt;&lt;code&gt;ARTIFACTORY_DRY_RUN&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -283,6 +238,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;enables pretending to perform the action&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_API_KEY&lt;/code&gt;&lt;br&gt;&lt;code&gt;ARTIFACTORY_API_KEY&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -290,6 +246,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;set the log level for the plugin&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;info&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_LOG_LEVEL&lt;/code&gt;&lt;br&gt;&lt;code&gt;ARTIFACTORY_LOG_LEVEL&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -297,13 +254,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;password for communication with Artifactory&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;path&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;source/target Artifactory path to artifact(s) for action&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_PASSWORD&lt;/code&gt;&lt;br&gt;&lt;code&gt;ARTIFACTORY_PASSWORD&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -311,6 +262,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;Artifactory instance to communicate with&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_URL&lt;/code&gt;&lt;br&gt;&lt;code&gt;ARTIFACTORY_URL&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -318,6 +270,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;user name for communication with Artifactory&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_USERNAME&lt;/code&gt;&lt;br&gt;&lt;code&gt;ARTIFACTORY_USERNAME&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -333,6 +286,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;th&gt;Description&lt;/th&gt;
 &lt;th&gt;Required&lt;/th&gt;
 &lt;th&gt;Default&lt;/th&gt;
+&lt;th&gt;Environment Variables&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 
@@ -342,6 +296,15 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;enables removing source directory hierarchy&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_FLAT&lt;/code&gt;&lt;br&gt;&lt;code&gt;ARTIFACTORY_FLAT&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;path&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;source path to copy artifact(s) from&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_PATH&lt;/code&gt;&lt;br&gt;&lt;code&gt;ARTIFACTORY_PATH&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -349,13 +312,15 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;enables copying sub-directories for the artifact(s)&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_RECURSIVE&lt;/code&gt;&lt;br&gt;&lt;code&gt;ARTIFACTORY_RECURSIVE&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;target&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;target Artifactory path to copy artifact(s) to&lt;/td&gt;
+&lt;td&gt;target path to copy artifact(s) to&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_TARGET&lt;/code&gt;&lt;br&gt;&lt;code&gt;ARTIFACTORY_TARGET&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -371,20 +336,30 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;th&gt;Description&lt;/th&gt;
 &lt;th&gt;Required&lt;/th&gt;
 &lt;th&gt;Default&lt;/th&gt;
+&lt;th&gt;Environment Variables&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 
 &lt;tbody&gt;
 &lt;tr&gt;
+&lt;td&gt;&lt;code&gt;path&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;target path to delete artifact(s) from&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_PATH&lt;/code&gt;&lt;br&gt;&lt;code&gt;ARTIFACTORY_PATH&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
 &lt;td&gt;&lt;code&gt;recursive&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;enables removing sub-directories for the artifact(s)&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_RECURSIVE&lt;/code&gt;&lt;br&gt;&lt;code&gt;ARTIFACTORY_RECURSIVE&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;h3 id=&#34;docker-promote&#34;&gt;Docker-Promote&lt;/h3&gt;
+&lt;h4 id=&#34;docker-promote&#34;&gt;Docker-Promote&lt;/h4&gt;
 
 &lt;p&gt;The following parameters are used to configure the &lt;code&gt;docker-promote&lt;/code&gt; action:&lt;/p&gt;
 
@@ -395,6 +370,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;th&gt;Description&lt;/th&gt;
 &lt;th&gt;Required&lt;/th&gt;
 &lt;th&gt;Default&lt;/th&gt;
+&lt;th&gt;Environment Variables&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 
@@ -404,6 +380,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;name of the docker registry containing the image&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_TARGET_REPO&lt;/code&gt;&lt;br&gt;&lt;code&gt;ARTIFACTORY_TARGET_REPO&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -411,6 +388,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;path to image in docker registry&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_DOCKER_REGISTRY&lt;/code&gt;&lt;br&gt;&lt;code&gt;ARTIFACTORY_DOCKER_REGISTRY&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -418,6 +396,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;path for target image in docker registry&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_TARGET_DOCKER_REGISTRY&lt;/code&gt;&lt;br&gt;&lt;code&gt;ARTIFACTORY_TARGET_DOCKER_REGISTRY&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -425,6 +404,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;name of the tag for promoting&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_TAG&lt;/code&gt;&lt;br&gt;&lt;code&gt;ARTIFACTORY_TAG&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -432,6 +412,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;name of the final tags after promotion&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_TARGET_TAGS&lt;/code&gt;&lt;br&gt;&lt;code&gt;ARTIFACTORY_TARGET_TAGS&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -439,6 +420,15 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;set to copy instead of moving the image&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_COPY&lt;/code&gt;&lt;br&gt;&lt;code&gt;ARTIFACTORY_COPY&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;promote_props&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;enables setting properties on the promoted artifact&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_PROMOTE_PROPS&lt;/code&gt;&lt;br&gt;&lt;code&gt;ARTIFACTORY_PROMOTE_PROPS&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -454,15 +444,25 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;th&gt;Description&lt;/th&gt;
 &lt;th&gt;Required&lt;/th&gt;
 &lt;th&gt;Default&lt;/th&gt;
+&lt;th&gt;Environment Variables&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 
 &lt;tbody&gt;
 &lt;tr&gt;
+&lt;td&gt;&lt;code&gt;path&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;target path to artifact(s)&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_PATH&lt;/code&gt;&lt;br&gt;&lt;code&gt;ARTIFACTORY_PATH&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
 &lt;td&gt;&lt;code&gt;props&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;properties to set on the artifact(s)&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_PROPS&lt;/code&gt;&lt;br&gt;&lt;code&gt;ARTIFACTORY_PROPS&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -478,6 +478,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;th&gt;Description&lt;/th&gt;
 &lt;th&gt;Required&lt;/th&gt;
 &lt;th&gt;Default&lt;/th&gt;
+&lt;th&gt;Environment Variables&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 
@@ -487,6 +488,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;enables removing source directory hierarchy&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_FLAT&lt;/code&gt;&lt;br&gt;&lt;code&gt;ARTIFACTORY_FLAT&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -494,6 +496,15 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;enables including sub-directories for the artifact(s)&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_INCLUDE_DIRS&lt;/code&gt;&lt;br&gt;&lt;code&gt;ARTIFACTORY_INCLUDE_DIRS&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;path&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;target path to upload artifact(s) to&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_PATH&lt;/code&gt;&lt;br&gt;&lt;code&gt;ARTIFACTORY_PATH&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -501,6 +512,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;enables uploading sub-directories for the artifact(s)&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_REGEXP&lt;/code&gt;&lt;br&gt;&lt;code&gt;ARTIFACTORY_REGEXP&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -508,6 +520,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;enables reading the sources as a regular expression&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_RECURSIVE&lt;/code&gt;&lt;br&gt;&lt;code&gt;ARTIFACTORY_RECURSIVE&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -515,6 +528,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;list of artifact(s) to upload&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_SOURCES&lt;/code&gt;&lt;br&gt;&lt;code&gt;ARTIFACTORY_SOURCES&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -538,8 +552,6 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
       url: http://localhost:8081/artifactory
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Below are a list of common problems and how to solve them:&lt;/p&gt;
-
-&lt;p&gt;COMING SOON!&lt;/p&gt;
 
       </description>
     </item>
@@ -691,19 +703,9 @@ This example will add the &lt;code&gt;secrets&lt;/code&gt; to the &lt;code&gt;ca
       <description>
         
         
-        
+        &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 
-&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
-
-
-
-&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
-
-This plugin was originally used to build &lt;strong&gt;all&lt;/strong&gt; Docker images. The functionality of this plugin still exists within &lt;a href=&#34;https://go-vela.github.io/docs/docs/plugins/pipeline/registry/kaniko&#34;&gt;Kaniko&lt;/a&gt;
-&lt;/div&gt;
-
-
-&lt;p&gt;This plugin enables the ability to build and publish &lt;a href=&#34;https://www.docker.com/&#34; target=&#34;_blank&#34;&gt;Docker&lt;/a&gt; images in a Vela pipeline. Plugin requires the pipeline to run on a worker that provides the plugin elevated access.&lt;/p&gt;
+&lt;p&gt;This plugin enables you to build and publish &lt;a href=&#34;https://www.docker.com/&#34; target=&#34;_blank&#34;&gt;Docker&lt;/a&gt; images in a Vela pipeline.&lt;/p&gt;
 
 &lt;p&gt;Source Code: &lt;a href=&#34;https://github.com/go-vela/vela-docker&#34; target=&#34;_blank&#34;&gt;https://github.com/go-vela/vela-docker&lt;/a&gt;&lt;/p&gt;
 
@@ -711,16 +713,7 @@ This plugin was originally used to build &lt;strong&gt;all&lt;/strong&gt; Docker
 
 &lt;h2 id=&#34;usage&#34;&gt;Usage&lt;/h2&gt;
 
-
-
-&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
-
-&lt;p&gt;Users should refrain from using &lt;code&gt;latest&lt;/code&gt; as the tag for the Docker image.&lt;/p&gt;
-
-&lt;p&gt;It is recommended to use a semantically versioned tag instead.&lt;/p&gt;
-
-&lt;/div&gt;
-
+&lt;p&gt;&lt;strong&gt;NOTE: It is not recommended to use &lt;code&gt;latest&lt;/code&gt; as the tag for the Docker image. Users should use a semantically versioned tag instead.&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;Sample of building and publishing an image:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;steps&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
@@ -786,40 +779,9 @@ This plugin was originally used to build &lt;strong&gt;all&lt;/strong&gt; Docker
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2 id=&#34;secrets&#34;&gt;Secrets&lt;/h2&gt;
 
+&lt;p&gt;&lt;strong&gt;NOTE: Users should refrain from configuring sensitive information in your pipeline in plain text.&lt;/strong&gt;&lt;/p&gt;
 
-
-&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
-
-Users should refrain from configuring sensitive information in their pipeline in plain text.
-&lt;/div&gt;
-
-
-&lt;h3 id=&#34;internal&#34;&gt;Internal&lt;/h3&gt;
-
-&lt;p&gt;The plugin accepts the following &lt;code&gt;parameters&lt;/code&gt; for authentication:&lt;/p&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Parameter&lt;/th&gt;
-&lt;th&gt;Environment Variable Configuration&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;password&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;DOCKER_PASSWORD&lt;/code&gt;, &lt;code&gt;REGISTRY_PASSWORD&lt;/code&gt;, &lt;code&gt;PARAMETER_PASSWORD&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;username&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;DOCKER_USERNAME&lt;/code&gt;, &lt;code&gt;REGISTRY_USERNAME&lt;/code&gt;, &lt;code&gt;PARAMETER_USERNAME&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;Users can use &lt;a href=&#34;https://go-vela.github.io/docs/docs/concepts/pipeline/secrets/&#34;&gt;Vela internal secrets&lt;/a&gt; to substitute these sensitive values at runtime:&lt;/p&gt;
+&lt;p&gt;You can use Vela secrets to substitute sensitive values at runtime:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
   - name: publish_hello-world
     image: target/vela-docker:latest
@@ -831,68 +793,9 @@ Users should refrain from configuring sensitive information in their pipeline in
 &lt;span style=&#34;color:#a40000&#34;&gt;-     username: octocat
 &lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;-     password: superSecretPassword
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-
-This example will add the &lt;code&gt;secrets&lt;/code&gt; to the &lt;code&gt;publish_hello-world&lt;/code&gt; step as environment variables:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;DOCKER_USERNAME=&amp;lt;value&amp;gt;&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;DOCKER_PASSWORD=&amp;lt;value&amp;gt;&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-
-
-&lt;h3 id=&#34;external&#34;&gt;External&lt;/h3&gt;
-
-&lt;p&gt;The plugin accepts the following files for authentication:&lt;/p&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Parameter&lt;/th&gt;
-&lt;th&gt;Volume Configuration&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;password&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;/vela/parameters/docker/registry/password&lt;/code&gt;, &lt;code&gt;/vela/secrets/docker/registry/password&lt;/code&gt;, &lt;code&gt;/vela/secrets/docker/password&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;username&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;/vela/parameters/docker/registry/username&lt;/code&gt;, &lt;code&gt;/vela/secrets/docker/registry/username&lt;/code&gt;, &lt;code&gt;/vela/secrets/docker/username&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;Users can use &lt;a href=&#34;https://go-vela.github.io/docs/docs/concepts/pipeline/secrets/&#34;&gt;Vela external secrets&lt;/a&gt; to substitute these sensitive values at runtime:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
-  - name: publish_hello-world
-    image: target/vela-docker:latest
-    pull: always
-    parameters:
-      registry: index.docker.io
-      tags: [ index.docker.io/octocat/hello-world:latest ] 
-&lt;span style=&#34;color:#a40000&#34;&gt;-     username: octocat
-&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;-     password: superSecretPassword
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-
-This example will read the secrets values in the volume stored at &lt;code&gt;/vela/secrets/&lt;/code&gt;:
-&lt;/div&gt;
-
-
 &lt;h2 id=&#34;parameters&#34;&gt;Parameters&lt;/h2&gt;
 
-
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt;&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;the plugin supports reading all parameters via environment variables or files&lt;/li&gt;
@@ -900,8 +803,6 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;li&gt;by default &lt;a href=&#34;https://docs.docker.com/develop/develop-images/build_enhancements/&#34; target=&#34;_blank&#34;&gt;build kit&lt;/a&gt; is on, it can be turned off by setting &lt;code&gt;DOCKER_BUILDKIT=0&lt;/code&gt; in the environment&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;key.key&lt;/code&gt; syntax signifies a new yaml object within the definition.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-
 
 &lt;h3 id=&#34;registry&#34;&gt;Registry&lt;/h3&gt;
 
@@ -1324,11 +1225,9 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
       <description>
         
         
-        
+        &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 
-&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
-
-&lt;p&gt;This plugin enables the ability to trigger builds for other repos for &lt;a href=&#34;https://go-vela.github.io/docs/&#34; target=&#34;_blank&#34;&gt;Vela&lt;/a&gt; in a pipeline.&lt;/p&gt;
+&lt;p&gt;This plugin enables you to trigger builds for other repos for &lt;a href=&#34;https://go-vela.github.io/docs/&#34; target=&#34;_blank&#34;&gt;Vela&lt;/a&gt; in a pipeline.&lt;/p&gt;
 
 &lt;p&gt;Source Code: &lt;a href=&#34;https://github.com/go-vela/vela-downstream&#34; target=&#34;_blank&#34;&gt;https://github.com/go-vela/vela-downstream&lt;/a&gt;&lt;/p&gt;
 
@@ -1336,16 +1235,13 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 
 &lt;h2 id=&#34;usage&#34;&gt;Usage&lt;/h2&gt;
 
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt;&lt;/p&gt;
 
-
-&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
-
-&lt;p&gt;Users should refrain from using &lt;code&gt;latest&lt;/code&gt; as the tag for the Docker image.&lt;/p&gt;
+&lt;p&gt;Users should refrain from using latest as the tag for the Docker image.&lt;/p&gt;
 
 &lt;p&gt;It is recommended to use a semantically versioned tag instead.&lt;/p&gt;
-
-&lt;/div&gt;
-
+&lt;/blockquote&gt;
 
 &lt;p&gt;Sample of triggering a downstream build:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;steps&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
@@ -1359,9 +1255,8 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;server&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;https&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;//vela-server.localhost&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Sample of triggering a downstream build for multiple repos:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
-&lt;span style=&#34;color:#00a000&#34;&gt;+ - name: trigger_multiple
-&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;- - name: trigger_hello-world
-&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;&lt;/span&gt;    image: target/vela-downstream:latest
+  - name: trigger_multiple
+    image: target/vela-downstream:latest
     pull: always
     parameters:
       branch: master
@@ -1372,17 +1267,12 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Sample of triggering a downstream build for multiple repos with different branches:&lt;/p&gt;
 
-
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-
-Use the @ symbol at the end of the org/repo to provide a unique branch per repo.
-&lt;/div&gt;
-
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; Use the @ symbol at the end of the org/repo to provide a unique branch per repo.&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
-&lt;span style=&#34;color:#00a000&#34;&gt;+ - name: trigger_multiple
-&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;- - name: trigger_hello-world
-&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;&lt;/span&gt;    image: target/vela-downstream:latest
+  - name: trigger_multiple
+    image: target/vela-downstream:latest
     pull: always
     parameters:
 &lt;span style=&#34;color:#a40000&#34;&gt;-     branch: master
@@ -1395,35 +1285,13 @@ Use the @ symbol at the end of the org/repo to provide a unique branch per repo.
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2 id=&#34;secrets&#34;&gt;Secrets&lt;/h2&gt;
 
-
-
-&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
-
-Users should refrain from configuring sensitive information in their pipeline in plain text.
-&lt;/div&gt;
-
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; Users should refrain from configuring sensitive information in your pipeline in plain text.&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;h3 id=&#34;internal&#34;&gt;Internal&lt;/h3&gt;
 
-&lt;p&gt;The plugin accepts the following &lt;code&gt;parameters&lt;/code&gt; for authentication:&lt;/p&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Parameter&lt;/th&gt;
-&lt;th&gt;Environment Variable Configuration&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;token&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;CONFIG_TOKEN&lt;/code&gt;, &lt;code&gt;DOWNSTREAM_TOKEN&lt;/code&gt;, &lt;code&gt;PARAMETER_TOKEN&lt;/code&gt;, &lt;code&gt;VELA_TOKEN&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;Users can use &lt;a href=&#34;https://go-vela.github.io/docs/docs/concepts/pipeline/secrets/&#34;&gt;Vela internal secrets&lt;/a&gt; to substitute these sensitive values at runtime:&lt;/p&gt;
+&lt;p&gt;Users can use &lt;a href=&#34;https://go-vela.github.io/docs/concepts/pipeline/secrets/&#34; target=&#34;_blank&#34;&gt;Vela internal secrets&lt;/a&gt; to substitute these sensitive values at runtime:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
   - name: trigger_hello-world
     image: target/vela-downstream:latest
@@ -1436,17 +1304,13 @@ Users should refrain from configuring sensitive information in their pipeline in
       server: https://vela-server.localhost
 &lt;span style=&#34;color:#a40000&#34;&gt;-     token: superSecretVelaToken
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This example will add the secret to the &lt;code&gt;trigger_hello-world&lt;/code&gt; step as environment variables:&lt;/p&gt;
 
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-
-This example will add the &lt;code&gt;secrets&lt;/code&gt; to the &lt;code&gt;trigger_hello-world&lt;/code&gt; step as environment variables:&lt;/p&gt;
-
-&lt;ul&gt;
+&lt;p&gt;&lt;ul&gt;
 &lt;li&gt;&lt;code&gt;DOWNSTREAM_TOKEN=&amp;lt;value&amp;gt;&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-
+&lt;/blockquote&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;external&#34;&gt;External&lt;/h3&gt;
 
@@ -1463,12 +1327,12 @@ This example will add the &lt;code&gt;secrets&lt;/code&gt; to the &lt;code&gt;tr
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;token&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;/vela/parameters/downstream/config/token&lt;/code&gt;, &lt;code&gt;/vela/secrets/downstream/config/token&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;/vela/parameters/downstream/token&lt;/code&gt;, &lt;code&gt;/vela/secrets/downstream/token&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;p&gt;Users can use &lt;a href=&#34;https://go-vela.github.io/docs/docs/concepts/pipeline/secrets/&#34;&gt;Vela external secrets&lt;/a&gt; to substitute these sensitive values at runtime:&lt;/p&gt;
+&lt;p&gt;Users can use &lt;a href=&#34;https://go-vela.github.io/docs/concepts/pipeline/secrets/origin/&#34; target=&#34;_blank&#34;&gt;Vela external secrets&lt;/a&gt; to substitute these sensitive values at runtime:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
   - name: trigger_hello-world
     image: target/vela-downstream:latest
@@ -1480,26 +1344,19 @@ This example will add the &lt;code&gt;secrets&lt;/code&gt; to the &lt;code&gt;tr
       server: https://vela-server.localhost
 &lt;span style=&#34;color:#a40000&#34;&gt;-     token: superSecretVelaToken
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-
-This example will read the secrets values in the volume stored at &lt;code&gt;/vela/secrets/&lt;/code&gt;:
-&lt;/div&gt;
-
+&lt;blockquote&gt;
+&lt;p&gt;This example will read the secret value in the volume stored at &lt;code&gt;/vela/secrets/&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;h2 id=&#34;parameters&#34;&gt;Parameters&lt;/h2&gt;
 
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt;&lt;/p&gt;
 
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-
-&lt;p&gt;The plugin supports reading all parameters vie environment variables or files.&lt;/p&gt;
+&lt;p&gt;The plugin supports reading all parameters via environment variables or files.&lt;/p&gt;
 
 &lt;p&gt;Any values set from a file take precedence over values set from the environment.&lt;/p&gt;
-
-&lt;/div&gt;
-
+&lt;/blockquote&gt;
 
 &lt;p&gt;The following parameters are used to configure the image:&lt;/p&gt;
 
@@ -1510,6 +1367,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;th&gt;Description&lt;/th&gt;
 &lt;th&gt;Required&lt;/th&gt;
 &lt;th&gt;Default&lt;/th&gt;
+&lt;th&gt;Environment Variables&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 
@@ -1519,6 +1377,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;default branch to trigger a build on&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;master&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_BRANCH&lt;/code&gt;&lt;br&gt;&lt;code&gt;DOWNSTREAM_BRANCH&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -1526,6 +1385,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;set the log level for the plugin&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;info&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_LOG_LEVEL&lt;/code&gt;&lt;br&gt;&lt;code&gt;DOWNSTREAM_LOG_LEVEL&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -1533,6 +1393,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;list of &lt;org&gt;/&lt;repo&gt; names to trigger a build on&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_REPOS&lt;/code&gt;&lt;br&gt;&lt;code&gt;DOWNSTREAM_REPOS&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -1540,6 +1401,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;Vela server to communicate with&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_SERVER&lt;/code&gt;&lt;br&gt;&lt;code&gt;DOWNSTREAM_SERVER&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -1547,6 +1409,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;token for communication with Vela&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_TOKEN&lt;/code&gt;&lt;br&gt;&lt;code&gt;DOWNSTREAM_TOKEN&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -1571,8 +1434,6 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Below are a list of common problems and how to solve them:&lt;/p&gt;
 
-&lt;p&gt;COMING SOON!&lt;/p&gt;
-
       </description>
     </item>
     
@@ -1585,19 +1446,13 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
       <description>
         
         
-        
+        &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 
-&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; This plugin is automatically injected into your pipeline for the source repository.&lt;/p&gt;
+&lt;/blockquote&gt;
 
-
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-
-This plugin is automatically injected into every pipeline for the source repository.
-&lt;/div&gt;
-
-
-&lt;p&gt;This plugin enables the ability to clone repositories in a Vela pipeline to the build workspace.&lt;/p&gt;
+&lt;p&gt;This plugin enables you to clone repositories in a Vela pipeline to your build workspace.&lt;/p&gt;
 
 &lt;p&gt;Source Code: &lt;a href=&#34;https://github.com/go-vela/vela-git&#34; target=&#34;_blank&#34;&gt;https://github.com/go-vela/vela-git&lt;/a&gt;&lt;/p&gt;
 
@@ -1605,16 +1460,13 @@ This plugin is automatically injected into every pipeline for the source reposit
 
 &lt;h2 id=&#34;usage&#34;&gt;Usage&lt;/h2&gt;
 
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt;&lt;/p&gt;
 
-
-&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
-
-&lt;p&gt;Users should refrain from using &lt;code&gt;latest&lt;/code&gt; as the tag for the Docker image.&lt;/p&gt;
+&lt;p&gt;Users should refrain from using latest as the tag for the Docker image.&lt;/p&gt;
 
 &lt;p&gt;It is recommended to use a semantically versioned tag instead.&lt;/p&gt;
-
-&lt;/div&gt;
-
+&lt;/blockquote&gt;
 
 &lt;p&gt;Sample of cloning a repository:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;steps&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
@@ -1652,65 +1504,34 @@ This plugin is automatically injected into every pipeline for the source reposit
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2 id=&#34;secrets&#34;&gt;Secrets&lt;/h2&gt;
 
-
-
-&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
-
-Users should refrain from configuring sensitive information in their pipeline in plain text.
-&lt;/div&gt;
-
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; Users should refrain from configuring sensitive information in your pipeline in plain text.&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;h3 id=&#34;internal&#34;&gt;Internal&lt;/h3&gt;
 
-&lt;p&gt;The plugin accepts the following &lt;code&gt;parameters&lt;/code&gt; for authentication:&lt;/p&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Parameter&lt;/th&gt;
-&lt;th&gt;Environment Variable Configuration&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;netrc_password&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;GIT_PASSWORD&lt;/code&gt;, &lt;code&gt;PARAMETER_NETRC_PASSWORD&lt;/code&gt;, &lt;code&gt;VELA_NETRC_PASSWORD&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;netrc_username&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;GIT_USERNAME&lt;/code&gt;, &lt;code&gt;PARAMETER_NETRC_USERNAME&lt;/code&gt;, &lt;code&gt;VELA_NETRC_USERNAME&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;Users can use &lt;a href=&#34;https://go-vela.github.io/docs/docs/concepts/pipeline/secrets/&#34;&gt;Vela internal secrets&lt;/a&gt; to substitute sensitive values at runtime:&lt;/p&gt;
+&lt;p&gt;Users can use &lt;a href=&#34;https://go-vela.github.io/docs/concepts/pipeline/secrets/&#34; target=&#34;_blank&#34;&gt;Vela internal secrets&lt;/a&gt; to substitute these sensitive values at runtime:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
   - name: clone_hello-world
     image: target/vela-git:latest
     pull: always
 &lt;span style=&#34;color:#00a000&#34;&gt;+   secrets: [ git_username, git_password ]
 &lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;    parameters:
-&lt;span style=&#34;color:#a40000&#34;&gt;-     netrc_username: octocat
-&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;-     netrc_password: superSecretPassword
-&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;&lt;/span&gt;      path: /vela/src/github.com/octocat/hello-world
+&lt;span style=&#34;color:#a40000&#34;&gt;-     username: octocat
+&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;-     password: superSecretPassword
+&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;&lt;/span&gt;      path: /home/octocat_hello-world_1
       ref: refs/heads/master
       remote: https://github.com/octocat/hello-world.git
       sha: 7fd1a60b01f91b314f59955a4e4d4e80d8edf11d
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This example will add the secrets to the &lt;code&gt;clone_hello-world&lt;/code&gt; step as environment variables:&lt;/p&gt;
 
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-
-This example will add the &lt;code&gt;secrets&lt;/code&gt; to the &lt;code&gt;clone_hello-world&lt;/code&gt; step as environment variables:&lt;/p&gt;
-
-&lt;ul&gt;
+&lt;p&gt;&lt;ul&gt;
 &lt;li&gt;&lt;code&gt;GIT_USERNAME=&amp;lt;value&amp;gt;&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;GIT_PASSWORD=&amp;lt;value&amp;gt;&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-
+&lt;/blockquote&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;external&#34;&gt;External&lt;/h3&gt;
 
@@ -1726,50 +1547,43 @@ This example will add the &lt;code&gt;secrets&lt;/code&gt; to the &lt;code&gt;cl
 
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;code&gt;netrc_password&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;/vela/parameters/git/netrc/password&lt;/code&gt;, &lt;code&gt;/vela/secrets/git/netrc/password&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;password&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;/vela/parameters/git/password&lt;/code&gt;, &lt;code&gt;/vela/secrets/git/password&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
-&lt;td&gt;&lt;code&gt;netrc_username&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;/vela/parameters/git/netrc/username&lt;/code&gt;, &lt;code&gt;/vela/secrets/git/netrc/username&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;username&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;/vela/parameters/git/username&lt;/code&gt;, &lt;code&gt;/vela/secrets/git/username&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;p&gt;Users can use &lt;a href=&#34;https://go-vela.github.io/docs/docs/concepts/pipeline/secrets/&#34;&gt;Vela external secrets&lt;/a&gt; to substitute these sensitive values at runtime:&lt;/p&gt;
+&lt;p&gt;Users can use &lt;a href=&#34;https://go-vela.github.io/docs/concepts/pipeline/secrets/origin/&#34; target=&#34;_blank&#34;&gt;Vela external secrets&lt;/a&gt; to substitute these sensitive values at runtime:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
   - name: clone_hello-world
     image: target/vela-git:latest
     pull: always
     parameters:
-&lt;span style=&#34;color:#a40000&#34;&gt;-     netrc_username: octocat
-&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;-     netrc_password: superSecretPassword
-&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;&lt;/span&gt;      path: /vela/src/github.com/octocat/hello-world
+&lt;span style=&#34;color:#a40000&#34;&gt;-     username: octocat
+&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;-     password: superSecretPassword
+&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;&lt;/span&gt;      path: /home/octocat_hello-world_1
       ref: refs/heads/master
       remote: https://github.com/octocat/hello-world.git
       sha: 7fd1a60b01f91b314f59955a4e4d4e80d8edf11d
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-
-This example will read the secrets values in the volume stored at &lt;code&gt;/vela/secrets/&lt;/code&gt;:
-&lt;/div&gt;
-
+&lt;blockquote&gt;
+&lt;p&gt;This example will read the secret values in the volume stored at &lt;code&gt;/vela/secrets/&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;h2 id=&#34;parameters&#34;&gt;Parameters&lt;/h2&gt;
 
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt;&lt;/p&gt;
 
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-
-&lt;p&gt;The plugin supports reading all parameters vie environment variables or files.&lt;/p&gt;
+&lt;p&gt;The plugin supports reading all parameters via environment variables or files.&lt;/p&gt;
 
 &lt;p&gt;Any values set from a file take precedence over values set from the environment.&lt;/p&gt;
-
-&lt;/div&gt;
-
+&lt;/blockquote&gt;
 
 &lt;p&gt;The following parameters are used to configure the image:&lt;/p&gt;
 
@@ -1780,6 +1594,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;th&gt;Description&lt;/th&gt;
 &lt;th&gt;Required&lt;/th&gt;
 &lt;th&gt;Default&lt;/th&gt;
+&lt;th&gt;Environment Variables&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 
@@ -1789,27 +1604,31 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;set the log level for the plugin&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;info&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_LOG_LEVEL&lt;/code&gt;&lt;br&gt;&lt;code&gt;GIT_LOG_LEVEL&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
-&lt;td&gt;&lt;code&gt;netrc_machine&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;machine&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;machine name to communicate with&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;github.com&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_MACHINE&lt;/code&gt;&lt;br&gt;&lt;code&gt;GIT_MACHINE&lt;/code&gt;&lt;br&gt;&lt;code&gt;VELA_NETRC_MACHINE&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
-&lt;td&gt;&lt;code&gt;netrc_password&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;password&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;password for authentication&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;strong&gt;set by Vela&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_PASSWORD&lt;/code&gt;&lt;br&gt;&lt;code&gt;GIT_PASSWORD&lt;/code&gt;&lt;br&gt;&lt;code&gt;VELA_NETRC_PASSWORD&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
-&lt;td&gt;&lt;code&gt;netrc_username&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;username&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;user name for authentication&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;strong&gt;set by Vela&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_USERNAME&lt;/code&gt;&lt;br&gt;&lt;code&gt;GIT_USERNAME&lt;/code&gt;&lt;br&gt;&lt;code&gt;VELA_NETRC_USERNAME&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -1817,6 +1636,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;local path to clone repository to&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;strong&gt;set by Vela&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_PATH&lt;/code&gt;&lt;br&gt;&lt;code&gt;GIT_PATH&lt;/code&gt;&lt;br&gt;&lt;code&gt;VELA_BUILD_WORKSPACE&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -1824,6 +1644,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;reference generated for commit&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;refs/heads/master&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_REF&lt;/code&gt;&lt;br&gt;&lt;code&gt;GIT_REF&lt;/code&gt;&lt;br&gt;&lt;code&gt;VELA_BUILD_REF&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -1831,6 +1652,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;full url for cloning repository&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;strong&gt;set by Vela&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_REMOTE&lt;/code&gt;&lt;br&gt;&lt;code&gt;GIT_REMOTE&lt;/code&gt;&lt;br&gt;&lt;code&gt;VELA_REPO_CLONE&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -1838,6 +1660,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;SHA-1 hash generated for commit&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;strong&gt;set by Vela&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_SHA&lt;/code&gt;&lt;br&gt;&lt;code&gt;GIT_SHA&lt;/code&gt;&lt;br&gt;&lt;code&gt;VELA_BUILD_COMMIT&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -1845,6 +1668,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;enables fetching of submodules&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_SUBMODULES&lt;/code&gt;&lt;br&gt;&lt;code&gt;GIT_SUBMODULES&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -1852,6 +1676,15 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;enables fetching of tags&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_TAGS&lt;/code&gt;&lt;br&gt;&lt;code&gt;GIT_TAGS&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;depth&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;enables fetching with a specific depth&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Not set&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_DEPTH&lt;/code&gt;&lt;br&gt;&lt;code&gt;GIT_DEPTH&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -1876,8 +1709,6 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Below are a list of common problems and how to solve them:&lt;/p&gt;
 
-&lt;p&gt;COMING SOON!&lt;/p&gt;
-
       </description>
     </item>
     
@@ -1890,11 +1721,9 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
       <description>
         
         
-        
+        &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 
-&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
-
-&lt;p&gt;This plugin uses &lt;a href=&#34;https://github.com/GoogleContainerTools/kaniko&#34; target=&#34;_blank&#34;&gt;Kaniko&lt;/a&gt; to provide the ability to build and publish &lt;a href=&#34;https://www.docker.com/&#34; target=&#34;_blank&#34;&gt;Docker&lt;/a&gt; images in a Vela pipeline without elevated access on the workers.&lt;/p&gt;
+&lt;p&gt;This plugin enables you to build and publish &lt;a href=&#34;https://www.docker.com/&#34; target=&#34;_blank&#34;&gt;Docker&lt;/a&gt; images in a Vela pipeline.&lt;/p&gt;
 
 &lt;p&gt;Source Code: &lt;a href=&#34;https://github.com/go-vela/vela-kaniko&#34; target=&#34;_blank&#34;&gt;https://github.com/go-vela/vela-kaniko&lt;/a&gt;&lt;/p&gt;
 
@@ -1902,16 +1731,13 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 
 &lt;h2 id=&#34;usage&#34;&gt;Usage&lt;/h2&gt;
 
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt;&lt;/p&gt;
 
-
-&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
-
-&lt;p&gt;Users should refrain from using &lt;code&gt;latest&lt;/code&gt; as the tag for the Docker image.&lt;/p&gt;
+&lt;p&gt;Users should refrain from using latest as the tag for the Docker image.&lt;/p&gt;
 
 &lt;p&gt;It is recommended to use a semantically versioned tag instead.&lt;/p&gt;
-
-&lt;/div&gt;
-
+&lt;/blockquote&gt;
 
 &lt;p&gt;Sample of building and publishing an image:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;steps&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
@@ -1975,77 +1801,44 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;      registry: index.docker.io
       repo: index.docker.io/octocat/hello-world
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Sample of building and publishing an image with custom labels:&lt;/p&gt;
+&lt;p&gt;Sample of building using a snapshot mode and publishing an image with caching:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
   - name: publish_hello-world
     image: target/vela-kaniko:latest
     pull: always
     parameters:
-      registry: index.docker.io
+&lt;span style=&#34;color:#00a000&#34;&gt;+     snapshot_mode: redo
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;      registry: index.docker.io
       repo: index.docker.io/octocat/hello-world
-&lt;span style=&#34;color:#00a000&#34;&gt;+     labels:
-&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+       - FOO=bar
-&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+       - HELLO=world
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2 id=&#34;secrets&#34;&gt;Secrets&lt;/h2&gt;
 
-
-
-&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
-
-Users should refrain from configuring sensitive information in their pipeline in plain text.
-&lt;/div&gt;
-
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; Users should refrain from configuring sensitive information in your pipeline in plain text.&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;h3 id=&#34;internal&#34;&gt;Internal&lt;/h3&gt;
 
-&lt;p&gt;The plugin accepts the following &lt;code&gt;parameters&lt;/code&gt; for authentication:&lt;/p&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Parameter&lt;/th&gt;
-&lt;th&gt;Environment Variable Configuration&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;password&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;DOCKER_PASSWORD&lt;/code&gt;, &lt;code&gt;REGISTRY_PASSWORD&lt;/code&gt;, &lt;code&gt;PARAMETER_PASSWORD&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;username&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;DOCKER_USERNAME&lt;/code&gt;, &lt;code&gt;REGISTRY_USERNAME&lt;/code&gt;, &lt;code&gt;PARAMETER_USERNAME&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;Users can use &lt;a href=&#34;https://go-vela.github.io/docs/docs/concepts/pipeline/secrets/&#34;&gt;Vela internal secrets&lt;/a&gt; to substitute these sensitive values at runtime:&lt;/p&gt;
+&lt;p&gt;Users can use &lt;a href=&#34;https://go-vela.github.io/docs/concepts/pipeline/secrets/&#34; target=&#34;_blank&#34;&gt;Vela internal secrets&lt;/a&gt; to substitute these sensitive values at runtime:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
   - name: publish_hello-world
     image: target/vela-kaniko:latest
     pull: always
-&lt;span style=&#34;color:#00a000&#34;&gt;+   secrets: [ docker_username, docker_password ]
+&lt;span style=&#34;color:#00a000&#34;&gt;+   secrets: [ kaniko_username, kaniko_password ]
 &lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;    parameters:
       registry: index.docker.io
       repo: index.docker.io/octocat/hello-world
 &lt;span style=&#34;color:#a40000&#34;&gt;-     username: octocat
 &lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;-     password: superSecretPassword
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This example will add the secrets to the &lt;code&gt;publish_hello-world&lt;/code&gt; step as environment variables:&lt;/p&gt;
 
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-
-This example will add the &lt;code&gt;secrets&lt;/code&gt; to the &lt;code&gt;publish_hello-world&lt;/code&gt; step as environment variables:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;DOCKER_USERNAME=&amp;lt;value&amp;gt;&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;DOCKER_PASSWORD=&amp;lt;value&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;p&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;KANIKO_USERNAME=&amp;lt;value&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;KANIKO_PASSWORD=&amp;lt;value&amp;gt;&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-
+&lt;/blockquote&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;external&#34;&gt;External&lt;/h3&gt;
 
@@ -2062,47 +1855,43 @@ This example will add the &lt;code&gt;secrets&lt;/code&gt; to the &lt;code&gt;pu
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;password&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;/vela/parameters/docker/registry/password&lt;/code&gt;, &lt;code&gt;/vela/secrets/docker/registry/password&lt;/code&gt;, &lt;code&gt;/vela/secrets/docker/password&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;/vela/parameters/kaniko/password&lt;/code&gt;, &lt;code&gt;/vela/secrets/kaniko/password&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;username&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;/vela/parameters/docker/registry/username&lt;/code&gt;, &lt;code&gt;/vela/secrets/docker/registry/username&lt;/code&gt;, &lt;code&gt;/vela/secrets/docker/username&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;/vela/parameters/kaniko/username&lt;/code&gt;, &lt;code&gt;/vela/secrets/kaniko/username&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;p&gt;Users can use &lt;a href=&#34;https://go-vela.github.io/docs/docs/concepts/pipeline/secrets/&#34;&gt;Vela external secrets&lt;/a&gt; to substitute these sensitive values at runtime:&lt;/p&gt;
+&lt;p&gt;Users can use &lt;a href=&#34;https://go-vela.github.io/docs/concepts/pipeline/secrets/origin/&#34; target=&#34;_blank&#34;&gt;Vela external secrets&lt;/a&gt; to substitute these sensitive values at runtime:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
   - name: publish_hello-world
     image: target/vela-kaniko:latest
     pull: always
-    parameters:
+&lt;span style=&#34;color:#00a000&#34;&gt;+   secrets: [ kaniko_username, kaniko_password ]
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;    parameters:
       registry: index.docker.io
       repo: index.docker.io/octocat/hello-world
 &lt;span style=&#34;color:#a40000&#34;&gt;-     username: octocat
 &lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;-     password: superSecretPassword
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-
-This example will read the secrets values in the volume stored at &lt;code&gt;/vela/secrets/&lt;/code&gt;:
-&lt;/div&gt;
-
+&lt;blockquote&gt;
+&lt;p&gt;This example will read the secret values in the volume stored at &lt;code&gt;/vela/secrets/&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;h2 id=&#34;parameters&#34;&gt;Parameters&lt;/h2&gt;
 
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt;&lt;/p&gt;
 
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-
-&lt;p&gt;The plugin supports reading all parameters vie environment variables or files.&lt;/p&gt;
+&lt;p&gt;The plugin supports reading all parameters via environment variables or files.&lt;/p&gt;
 
 &lt;p&gt;Any values set from a file take precedence over values set from the environment.&lt;/p&gt;
 
-&lt;/div&gt;
-
+&lt;p&gt;The &lt;a href=&#34;https://github.com/GoogleContainerTools/kaniko/releases/tag/v1.0.0&#34; target=&#34;_blank&#34;&gt;Snapshot mode&lt;/a&gt; can help improve performance but it is recommend to follow Kaniko&amp;rsquo;s guidelines for picking the mode.&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;p&gt;The following parameters are used to configure the image:&lt;/p&gt;
 
@@ -2113,6 +1902,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;th&gt;Description&lt;/th&gt;
 &lt;th&gt;Required&lt;/th&gt;
 &lt;th&gt;Default&lt;/th&gt;
+&lt;th&gt;Environment Variables&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 
@@ -2122,6 +1912,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;enables tagging of image automatically&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_AUTO_TAG&lt;/code&gt;&lt;br&gt;&lt;code&gt;KANIKO_AUTO_TAG&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -2129,6 +1920,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;variables passed to image at build-time&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_BUILD_ARGS&lt;/code&gt;&lt;br&gt;&lt;code&gt;KANIKO_BUILD_ARGS&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -2136,6 +1928,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;enable caching of image layers&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_CACHE&lt;/code&gt;&lt;br&gt;&lt;code&gt;KANIKO_CACHE&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -2143,6 +1936,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;specific repo to enable caching for&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_CACHE_REPO&lt;/code&gt;&lt;br&gt;&lt;code&gt;KANIKO_CACHE_REPO&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -2150,6 +1944,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;path to context for building the image&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;.&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_CONTEXT&lt;/code&gt;&lt;br&gt;&lt;code&gt;KANIKO_CONTEXT&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -2157,6 +1952,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;path to the file for building the image&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;Dockerfile&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_DOCKERFILE&lt;/code&gt;&lt;br&gt;&lt;code&gt;KANIKO_DOCKERFILE&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -2164,6 +1960,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;enable building the image without publishing&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_DRY_RUN&lt;/code&gt;&lt;br&gt;&lt;code&gt;KANIKO_DRY_RUN&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -2171,6 +1968,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;event generated for build&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;strong&gt;set by Vela&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_EVENT&lt;/code&gt;&lt;br&gt;&lt;code&gt;KANIKO_EVENT&lt;/code&gt;&lt;br&gt;&lt;code&gt;VELA_BUILD_EVENT&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -2178,6 +1976,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;unique labels to add to the image&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_LABELS&lt;/code&gt;&lt;br&gt;&lt;code&gt;KANIKO_LABELS&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -2185,6 +1984,15 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;set the log level for the plugin&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;info&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_LOG_LEVEL&lt;/code&gt;&lt;br&gt;&lt;code&gt;KANIKO_LOG_LEVEL&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;mirror&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;name of the mirror registry to use&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_MIRROR&lt;/code&gt;&lt;br&gt;&lt;code&gt;KANIKO_MIRROR&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -2192,6 +2000,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;password for communication with the registry&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_PASSWORD&lt;/code&gt;&lt;br&gt;&lt;code&gt;KANIKO_PASSWORD&lt;/code&gt;&lt;br&gt;&lt;code&gt;DOCKER_PASSWORD&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -2199,6 +2008,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;name of the registry for the repository&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;index.docker.io&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_REGISTRY&lt;/code&gt;&lt;br&gt;&lt;code&gt;KANIKO_REGISTRY&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -2206,6 +2016,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;name of the repository for the image&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_REPO&lt;/code&gt;&lt;br&gt;&lt;code&gt;KANIKO_REPO&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -2213,6 +2024,15 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;SHA-1 hash generated for commit&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;strong&gt;set by Vela&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_SHA&lt;/code&gt;&lt;br&gt;&lt;code&gt;KANIKO_SHA&lt;/code&gt;&lt;br&gt;&lt;code&gt;VELA_BUILD_COMMIT&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;snapshot_mode&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;control how to snapshot the filesystem. - options (full&lt;/td&gt;
+&lt;td&gt;redo&lt;/td&gt;
+&lt;td&gt;time)&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -2220,6 +2040,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;tag generated for build&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;strong&gt;set by Vela&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_TAG&lt;/code&gt;&lt;br&gt;&lt;code&gt;KANIKO_TAG&lt;/code&gt;&lt;br&gt;&lt;code&gt;VELA_BUILD_TAG&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -2227,13 +2048,15 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;unique tags of the image&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;latest&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_TAGS&lt;/code&gt;&lt;br&gt;&lt;code&gt;KANIKO_TAGS&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;target&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;set the target build stage&lt;/td&gt;
+&lt;td&gt;set the target build stage for the image&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_TARGET&lt;/code&gt;&lt;br&gt;&lt;code&gt;KANIKO_TARGET&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -2241,6 +2064,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;user name for communication with the registry&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_USERNAME&lt;/code&gt;&lt;br&gt;&lt;code&gt;KANIKO_USERNAME&lt;/code&gt;&lt;br&gt;&lt;code&gt;DOCKER_USERNAME&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -2263,8 +2087,6 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Below are a list of common problems and how to solve them:&lt;/p&gt;
 
-&lt;p&gt;COMING SOON!&lt;/p&gt;
-
       </description>
     </item>
     
@@ -2277,9 +2099,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
       <description>
         
         
-        
-
-&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
+        &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 
 &lt;p&gt;This plugin enables the ability to manage resources in &lt;a href=&#34;https://kubernetes.io/&#34; target=&#34;_blank&#34;&gt;Kubernetes&lt;/a&gt; in a Vela pipeline.&lt;/p&gt;
 
@@ -2289,16 +2109,13 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 
 &lt;h2 id=&#34;usage&#34;&gt;Usage&lt;/h2&gt;
 
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt;&lt;/p&gt;
 
-
-&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
-
-&lt;p&gt;Users should refrain from using &lt;code&gt;latest&lt;/code&gt; as the tag for the Docker image.&lt;/p&gt;
+&lt;p&gt;Users should refrain from using latest as the tag for the Docker image.&lt;/p&gt;
 
 &lt;p&gt;It is recommended to use a semantically versioned tag instead.&lt;/p&gt;
-
-&lt;/div&gt;
-
+&lt;/blockquote&gt;
 
 &lt;p&gt;Sample of applying Kubernetes files:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;steps&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
@@ -2352,35 +2169,13 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;statuses&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;sample&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2 id=&#34;secrets&#34;&gt;Secrets&lt;/h2&gt;
 
-
-
-&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
-
-Users should refrain from configuring sensitive information in their pipeline in plain text.
-&lt;/div&gt;
-
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; Users should refrain from configuring sensitive information in your pipeline in plain text.&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;h3 id=&#34;internal&#34;&gt;Internal&lt;/h3&gt;
 
-&lt;p&gt;The plugin accepts the following &lt;code&gt;parameters&lt;/code&gt; for authentication:&lt;/p&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Parameter&lt;/th&gt;
-&lt;th&gt;Environment Variable Configuration&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;config&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;CONFIG_FILE&lt;/code&gt;, &lt;code&gt;KUBE_CONFIG&lt;/code&gt;, &lt;code&gt;PARAMETER_CONFIG&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;Users can use &lt;a href=&#34;https://go-vela.github.io/docs/docs/concepts/pipeline/secrets/&#34;&gt;Vela internal secrets&lt;/a&gt; to substitute these sensitive values at runtime:&lt;/p&gt;
+&lt;p&gt;Users can use &lt;a href=&#34;https://go-vela.github.io/docs/concepts/pipeline/secrets/&#34; target=&#34;_blank&#34;&gt;Vela internal secrets&lt;/a&gt; to substitute these sensitive values at runtime:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
   - name: kubernetes
     image: target/vela-kubernetes:latest
@@ -2394,17 +2189,13 @@ Users should refrain from configuring sensitive information in their pipeline in
 &lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;-     apiVersion: v1
 &lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;-     kind: Config
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This example will add the secrets to the &lt;code&gt;kubernetes&lt;/code&gt; step as environment variables:&lt;/p&gt;
 
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-
-This example will add the &lt;code&gt;secrets&lt;/code&gt; to the &lt;code&gt;kubernetes&lt;/code&gt; step as environment variables:&lt;/p&gt;
-
-&lt;ul&gt;
+&lt;p&gt;&lt;ul&gt;
 &lt;li&gt;&lt;code&gt;KUBE_CONFIG=&amp;lt;value&amp;gt;&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-
+&lt;/blockquote&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;external&#34;&gt;External&lt;/h3&gt;
 
@@ -2421,17 +2212,18 @@ This example will add the &lt;code&gt;secrets&lt;/code&gt; to the &lt;code&gt;ku
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;config&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;/vela/parameters/kubernetes/config/file&lt;/code&gt;, &lt;code&gt;/vela/secrets/kubernetes/config/file&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;/vela/parameters/kubernetes/config&lt;/code&gt;, &lt;code&gt;/vela/secrets/kubernetes/config&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;p&gt;Users can use &lt;a href=&#34;https://go-vela.github.io/docs/docs/concepts/pipeline/secrets/&#34;&gt;Vela external secrets&lt;/a&gt; to substitute these sensitive values at runtime:&lt;/p&gt;
+&lt;p&gt;Users can use &lt;a href=&#34;https://go-vela.github.io/docs/concepts/pipeline/secrets/origin/&#34; target=&#34;_blank&#34;&gt;Vela external secrets&lt;/a&gt; to substitute these sensitive values at runtime:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
   - name: kubernetes
     image: target/vela-kubernetes:latest
     pull: always
-    parameters:
+&lt;span style=&#34;color:#00a000&#34;&gt;+   secrets: [ kube_config ]
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;    parameters:
       action: apply
       files: [ kubernetes/common, kubernetes/dev/deploy.yml ]
 &lt;span style=&#34;color:#a40000&#34;&gt;-     config: |
@@ -2439,26 +2231,19 @@ This example will add the &lt;code&gt;secrets&lt;/code&gt; to the &lt;code&gt;ku
 &lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;-     apiVersion: v1
 &lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;-     kind: Config
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-
-This example will read the secrets values in the volume stored at &lt;code&gt;/vela/secrets/&lt;/code&gt;:
-&lt;/div&gt;
-
+&lt;blockquote&gt;
+&lt;p&gt;This example will read the secret values in the volume stored at &lt;code&gt;/vela/secrets/&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;h2 id=&#34;parameters&#34;&gt;Parameters&lt;/h2&gt;
 
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt;&lt;/p&gt;
 
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-
-&lt;p&gt;The plugin supports reading all parameters vie environment variables or files.&lt;/p&gt;
+&lt;p&gt;The plugin supports reading all parameters via environment variables or files.&lt;/p&gt;
 
 &lt;p&gt;Any values set from a file take precedence over values set from the environment.&lt;/p&gt;
-
-&lt;/div&gt;
-
+&lt;/blockquote&gt;
 
 &lt;p&gt;The following parameters are used to configure the image:&lt;/p&gt;
 
@@ -2469,6 +2254,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;th&gt;Description&lt;/th&gt;
 &lt;th&gt;Required&lt;/th&gt;
 &lt;th&gt;Default&lt;/th&gt;
+&lt;th&gt;Environment Variables&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 
@@ -2478,6 +2264,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;action to perform against Kubernetes&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_ACTION&lt;/code&gt;&lt;br&gt;&lt;code&gt;KUBERNETES_ACTION&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -2485,6 +2272,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;Kubernetes cluster from the configuration file&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_CLUSTER&lt;/code&gt;&lt;br&gt;&lt;code&gt;KUBERNETES_CLUSTER&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -2492,13 +2280,15 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;Kubernetes context from the configuration file&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_CONTEXT&lt;/code&gt;&lt;br&gt;&lt;code&gt;KUBERNETES_CONTEXT&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
-&lt;td&gt;&lt;code&gt;file&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;configuration file for communication with Kubernetes&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;config&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;content of configuration file for communication with Kubernetes&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_CONFIG&lt;/code&gt;&lt;br&gt;&lt;code&gt;KUBERNETES_CONFIG&lt;/code&gt;&lt;br&gt;&lt;code&gt;KUBE_CONFIG&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -2506,6 +2296,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;set the log level for the plugin&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;info&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_LOG_LEVEL&lt;/code&gt;&lt;br&gt;&lt;code&gt;KUBERNETES_LOG_LEVEL&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -2513,13 +2304,23 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;Kubernetes namespace from the configuration file&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_NAMESPACE&lt;/code&gt;&lt;br&gt;&lt;code&gt;KUBERNETES_NAMESPACE&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;path&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;path to Kubernetes configuration file&lt;/td&gt;
+&lt;td&gt;path to configuration file for communication with Kubernetes&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;set by Vela&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_PATH&lt;/code&gt;&lt;br&gt;&lt;code&gt;KUBERNETES_PATH&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;version&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;version of the &lt;code&gt;kubectl&lt;/code&gt; CLI to install&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;v1.17.0&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_VERSION&lt;/code&gt;&lt;br&gt;&lt;code&gt;KUBERNETES_VERSION&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -2535,6 +2336,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;th&gt;Description&lt;/th&gt;
 &lt;th&gt;Required&lt;/th&gt;
 &lt;th&gt;Default&lt;/th&gt;
+&lt;th&gt;Environment Variables&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 
@@ -2544,6 +2346,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;enables pretending to perform the apply&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_DRY_RUN&lt;/code&gt;&lt;br&gt;&lt;code&gt;KUBERNETES_DRY_RUN&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -2551,6 +2354,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;list of Kubernetes files or directories to apply&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_FILES&lt;/code&gt;&lt;br&gt;&lt;code&gt;KUBERNETES_FILES&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -2558,6 +2362,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;set the output for the apply&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_OUTPUT&lt;/code&gt;&lt;br&gt;&lt;code&gt;KUBERNETES_OUTPUT&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -2573,6 +2378,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;th&gt;Description&lt;/th&gt;
 &lt;th&gt;Required&lt;/th&gt;
 &lt;th&gt;Default&lt;/th&gt;
+&lt;th&gt;Environment Variables&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 
@@ -2582,6 +2388,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;containers from the files to patch&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_CONTAINERS&lt;/code&gt;&lt;br&gt;&lt;code&gt;KUBERNETES_CONTAINERS&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -2589,6 +2396,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;enables pretending to perform the patch&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_DRY_RUN&lt;/code&gt;&lt;br&gt;&lt;code&gt;KUBERNETES_DRY_RUN&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -2596,6 +2404,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;list of Kubernetes files or directories to patch&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_FILES&lt;/code&gt;&lt;br&gt;&lt;code&gt;KUBERNETES_FILES&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -2603,6 +2412,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;set the output for the patch&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_OUTPUT&lt;/code&gt;&lt;br&gt;&lt;code&gt;KUBERNETES_OUTPUT&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -2618,6 +2428,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;th&gt;Description&lt;/th&gt;
 &lt;th&gt;Required&lt;/th&gt;
 &lt;th&gt;Default&lt;/th&gt;
+&lt;th&gt;Environment Variables&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 
@@ -2627,6 +2438,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;list of Kubernetes resources to watch status on&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_STATUSES&lt;/code&gt;&lt;br&gt;&lt;code&gt;KUBERNETES_STATUSES&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -2634,6 +2446,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;total time allowed to watch Kubernetes resources&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;5m&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_TIMEOUT&lt;/code&gt;&lt;br&gt;&lt;code&gt;KUBERNETES_TIMEOUT&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -2641,6 +2454,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;enables watching until the resource completes&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_WATCH&lt;/code&gt;&lt;br&gt;&lt;code&gt;KUBERNETES_WATCH&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -2663,8 +2477,6 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Below are a list of common problems and how to solve them:&lt;/p&gt;
 
-&lt;p&gt;COMING SOON!&lt;/p&gt;
-
       </description>
     </item>
     
@@ -2677,11 +2489,9 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
       <description>
         
         
-        
+        &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 
-&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
-
-&lt;p&gt;This plugin uses &lt;a href=&#34;https://github.com/uber/makisu&#34; target=&#34;_blank&#34;&gt;Kaniko&lt;/a&gt; to provide the ability to build and publish &lt;a href=&#34;https://www.docker.com/&#34; target=&#34;_blank&#34;&gt;Docker&lt;/a&gt; images in a Vela pipeline without elevated access on the workers.&lt;/p&gt;
+&lt;p&gt;This plugin enables you to build and publish &lt;a href=&#34;https://www.docker.com/&#34; target=&#34;_blank&#34;&gt;Docker&lt;/a&gt; images in a Vela pipeline.&lt;/p&gt;
 
 &lt;p&gt;Source Code: &lt;a href=&#34;https://github.com/go-vela/vela-makisu&#34; target=&#34;_blank&#34;&gt;https://github.com/go-vela/vela-makisu&lt;/a&gt;&lt;/p&gt;
 
@@ -2689,16 +2499,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 
 &lt;h2 id=&#34;usage&#34;&gt;Usage&lt;/h2&gt;
 
-
-
-&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
-
-&lt;p&gt;Users should refrain from using &lt;code&gt;latest&lt;/code&gt; as the tag for the Docker image.&lt;/p&gt;
-
-&lt;p&gt;It is recommended to use a semantically versioned tag instead.&lt;/p&gt;
-
-&lt;/div&gt;
-
+&lt;p&gt;&lt;strong&gt;NOTE: It is not recommended to use &lt;code&gt;latest&lt;/code&gt; as the tag for the Docker image. Users should use a semantically versioned tag instead.&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;Sample of building and publishing an image:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;steps&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
@@ -2760,40 +2561,9 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2 id=&#34;secrets&#34;&gt;Secrets&lt;/h2&gt;
 
+&lt;p&gt;&lt;strong&gt;NOTE: Users should refrain from configuring sensitive information in your pipeline in plain text.&lt;/strong&gt;&lt;/p&gt;
 
-
-&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
-
-Users should refrain from configuring sensitive information in their pipeline in plain text.
-&lt;/div&gt;
-
-
-&lt;h3 id=&#34;internal&#34;&gt;Internal&lt;/h3&gt;
-
-&lt;p&gt;The plugin accepts the following &lt;code&gt;parameters&lt;/code&gt; for authentication:&lt;/p&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Parameter&lt;/th&gt;
-&lt;th&gt;Environment Variable Configuration&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;password&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;DOCKER_PASSWORD&lt;/code&gt;, &lt;code&gt;REGISTRY_PASSWORD&lt;/code&gt;, &lt;code&gt;PARAMETER_PASSWORD&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;username&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;DOCKER_USERNAME&lt;/code&gt;, &lt;code&gt;REGISTRY_USERNAME&lt;/code&gt;, &lt;code&gt;PARAMETER_USERNAME&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;Users can use &lt;a href=&#34;https://go-vela.github.io/docs/docs/concepts/pipeline/secrets/&#34;&gt;Vela internal secrets&lt;/a&gt; to substitute these sensitive values at runtime:&lt;/p&gt;
+&lt;p&gt;You can use Vela secrets to substitute sensitive values at runtime:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
   - name: publish_hello-world
     image: target/vela-makisu:latest
@@ -2810,72 +2580,14 @@ Users should refrain from configuring sensitive information in their pipeline in
 &lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;-     username: octocat
 &lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;-     password: superSecretPassword
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-
-This example will add the &lt;code&gt;secrets&lt;/code&gt; to the &lt;code&gt;publish_hello-world&lt;/code&gt; step as environment variables:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;DOCKER_USERNAME=&amp;lt;value&amp;gt;&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;DOCKER_PASSWORD=&amp;lt;value&amp;gt;&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-
-
-&lt;h3 id=&#34;external&#34;&gt;External&lt;/h3&gt;
-
-&lt;p&gt;The plugin accepts the following files for authentication:&lt;/p&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Parameter&lt;/th&gt;
-&lt;th&gt;Volume Configuration&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;password&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;/vela/parameters/makisu/registry/password&lt;/code&gt;, &lt;code&gt;/vela/secrets/makisu/registry/password&lt;/code&gt;, &lt;code&gt;/vela/secrets/makisu/password&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;username&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;/vela/parameters/makisu/registry/username&lt;/code&gt;, &lt;code&gt;/vela/secrets/makisu/registry/username&lt;/code&gt;, &lt;code&gt;/vela/secrets/makisu/username&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;Users can use &lt;a href=&#34;https://go-vela.github.io/docs/docs/concepts/pipeline/secrets/&#34;&gt;Vela external secrets&lt;/a&gt; to substitute these sensitive values at runtime:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
-  - name: publish_hello-world
-    image: target/vela-makisu:latest
-    pull: always
-    parameters:
-      registry: index.docker.io
-      repo: index.docker.io/octocat/hello-world
-      pushes: [ index.docker.io ]
-&lt;span style=&#34;color:#a40000&#34;&gt;-     redis_cache: 
-&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;-       addr: redis.company.com
-&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;-       password: superSecretPassword
-&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;-       ttl: 7d      
-&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;-     username: octocat
-&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;-     password: superSecretPassword
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2 id=&#34;parameters&#34;&gt;Parameters&lt;/h2&gt;
 
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt;&lt;/p&gt;
 
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-
-&lt;p&gt;The plugin supports reading all parameters vie environment variables or files.&lt;/p&gt;
-
-&lt;p&gt;Any values set from a file take precedence over values set from the environment.&lt;/p&gt;
-
-&lt;/div&gt;
-
+&lt;ul&gt;
+&lt;li&gt;the plugin supports reading all parameters via environment variables or files&lt;/li&gt;
+&lt;li&gt;values set from a file take precedence over values set from the environment&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;The following parameters are used to configure the build and push process:&lt;/p&gt;
 
@@ -3083,8 +2795,6 @@ This example will add the &lt;code&gt;secrets&lt;/code&gt; to the &lt;code&gt;pu
 
 &lt;p&gt;Below are a list of common problems and how to solve them:&lt;/p&gt;
 
-&lt;p&gt;COMING SOON!&lt;/p&gt;
-
       </description>
     </item>
     
@@ -3097,9 +2807,7 @@ This example will add the &lt;code&gt;secrets&lt;/code&gt; to the &lt;code&gt;pu
       <description>
         
         
-        
-
-&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
+        &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 
 &lt;p&gt;This plugin enables you to cache build resources in an &lt;a href=&#34;https://aws.amazon.com/s3/&#34; target=&#34;_blank&#34;&gt;s3&lt;/a&gt; compatible store for a Vela pipeline.&lt;/p&gt;
 
@@ -3109,16 +2817,13 @@ This example will add the &lt;code&gt;secrets&lt;/code&gt; to the &lt;code&gt;pu
 
 &lt;h2 id=&#34;usage&#34;&gt;Usage&lt;/h2&gt;
 
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt;&lt;/p&gt;
 
-
-&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
-
-&lt;p&gt;Users should refrain from using &lt;code&gt;latest&lt;/code&gt; as the tag for the Docker image.&lt;/p&gt;
+&lt;p&gt;Users should refrain from using latest as the tag for the Docker image.&lt;/p&gt;
 
 &lt;p&gt;It is recommended to use a semantically versioned tag instead.&lt;/p&gt;
-
-&lt;/div&gt;
-
+&lt;/blockquote&gt;
 
 &lt;p&gt;Sample of restoring a cache:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;steps&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
@@ -3127,7 +2832,7 @@ This example will add the &lt;code&gt;secrets&lt;/code&gt; to the &lt;code&gt;pu
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;pull&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;always&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;parameters&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;action&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;restore&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;root&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;mybucket&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;bucket&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;mybucket&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;server&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;mybucket.s3-us-west&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;-2.&lt;/span&gt;amazonaws.com&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Sample of rebuilding a cache:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;steps&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
@@ -3136,7 +2841,7 @@ This example will add the &lt;code&gt;secrets&lt;/code&gt; to the &lt;code&gt;pu
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;pull&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;always&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;parameters&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;action&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;rebuild&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;root&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;mybucket&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;bucket&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;mybucket&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;server&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;mybucket.s3-us-west&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;-2.&lt;/span&gt;amazonaws.com&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;mount&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;        &lt;/span&gt;-&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;.gradle&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -3147,73 +2852,37 @@ This example will add the &lt;code&gt;secrets&lt;/code&gt; to the &lt;code&gt;pu
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;pull&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;always&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;parameters&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;action&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;flush&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;root&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;mybucket&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;bucket&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;mybucket&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;server&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;mybucket.s3-us-west&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;-2.&lt;/span&gt;amazonaws.com&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2 id=&#34;secrets&#34;&gt;Secrets&lt;/h2&gt;
 
-
-
-&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
-
-Users should refrain from configuring sensitive information in their pipeline in plain text.
-&lt;/div&gt;
-
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; Users should refrain from configuring sensitive information in your pipeline in plain text.&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;h3 id=&#34;internal&#34;&gt;Internal&lt;/h3&gt;
 
-&lt;p&gt;The plugin accepts the following &lt;code&gt;parameters&lt;/code&gt; for authentication:&lt;/p&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Parameter&lt;/th&gt;
-&lt;th&gt;Environment Variable Configuration&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;access_key&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;AWS_ACCESS_KEY_ID&lt;/code&gt;, &lt;code&gt;CACHE_S3_ACCESS_KEY&lt;/code&gt;, &lt;code&gt;PARAMETER_ACCESS_KEY&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;secret_key&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;AWS_SECRET_ACCESS_KEY&lt;/code&gt;, &lt;code&gt;CACHE_S3_SECRET_KEY&lt;/code&gt;, &lt;code&gt;PARAMETER_SECRET_KEY&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;session_token&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;AWS_SESSION_TOKEN&lt;/code&gt;, &lt;code&gt;CACHE_S3_SESSION_TOKEN&lt;/code&gt;, &lt;code&gt;PARAMETER_SESSION_TOKEN&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;Users can use &lt;a href=&#34;https://go-vela.github.io/docs/docs/concepts/pipeline/secrets/&#34;&gt;Vela internal secrets&lt;/a&gt; to substitute these sensitive values at runtime:&lt;/p&gt;
+&lt;p&gt;Users can use &lt;a href=&#34;https://go-vela.github.io/docs/concepts/pipeline/secrets/&#34; target=&#34;_blank&#34;&gt;Vela internal secrets&lt;/a&gt; to substitute these sensitive values at runtime:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
   - name: restore_cache
     image: target/vela-s3-cache:latest
     pull: always
-&lt;span style=&#34;color:#00a000&#34;&gt;+   secrets: [ cache_s3_access_key, cache_s3_secret_key ]
+&lt;span style=&#34;color:#00a000&#34;&gt;+   secrets: [ s3_cache_access_key, s3_cache_secret_key ]
 &lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;    parameters:
       action: restore
-      root: mybucket
+      bucket: mybucket
       server: mybucket.s3-us-west-2.amazonaws.com
 &lt;span style=&#34;color:#a40000&#34;&gt;-     access_key: AKIAIOSFODNN7EXAMPLE
 &lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;-     secret_key: 123456789QWERTYEXAMPLE
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This example will add the secrets to the &lt;code&gt;restore_cache&lt;/code&gt; step as environment variables:&lt;/p&gt;
 
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-
-This example will add the &lt;code&gt;secrets&lt;/code&gt; to the &lt;code&gt;restore_cache&lt;/code&gt; step as environment variables:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;CACHE_S3_ACCESS_KEY=&amp;lt;value&amp;gt;&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;CACHE_S3_SECRET_KEY=&amp;lt;value&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;p&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;S3_CACHE_ACCESS_KEY=&amp;lt;value&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;S3_CACHE_SECRET_KEY=&amp;lt;value&amp;gt;&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-
+&lt;/blockquote&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;external&#34;&gt;External&lt;/h3&gt;
 
@@ -3230,53 +2899,49 @@ This example will add the &lt;code&gt;secrets&lt;/code&gt; to the &lt;code&gt;re
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;access_key&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;/vela/parameters/s3_cache/config/access_key&lt;/code&gt;, &lt;code&gt;/vela/secrets/s3_cache/config/access_key&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;/vela/parameters/s3-cache/access_key&lt;/code&gt;, &lt;code&gt;/vela/secrets/s3-cache/access_key&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;secret_key&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;/vela/parameters/s3_cache/config/secret_key&lt;/code&gt;, &lt;code&gt;/vela/secrets/s3_cache/config/secret_key&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;/vela/parameters/s3-cache/secret_key&lt;/code&gt;, &lt;code&gt;/vela/secrets/s3-cache/secret_key&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;session_token&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;/vela/parameters/s3_cache/config/session_token&lt;/code&gt;, &lt;code&gt;/vela/secrets/s3_cache/config/session_token&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;/vela/parameters/s3-cache/session_token&lt;/code&gt;, &lt;code&gt;/vela/secrets/s3-cache/session_token&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;p&gt;Users can use &lt;a href=&#34;https://go-vela.github.io/docs/docs/concepts/pipeline/secrets/&#34;&gt;Vela external secrets&lt;/a&gt; to substitute these sensitive values at runtime:&lt;/p&gt;
+&lt;p&gt;Users can use &lt;a href=&#34;https://go-vela.github.io/docs/concepts/pipeline/secrets/origin/&#34; target=&#34;_blank&#34;&gt;Vela external secrets&lt;/a&gt; to substitute these sensitive values at runtime:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
   - name: restore_cache
     image: target/vela-s3-cache:latest
     pull: always
-    parameters:
+&lt;span style=&#34;color:#00a000&#34;&gt;+   secrets: [ s3_cache_access_key, s3_cache_secret_key ]
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;    parameters:
       action: restore
-      root: mybucket
+      bucket: mybucket
       server: mybucket.s3-us-west-2.amazonaws.com
 &lt;span style=&#34;color:#a40000&#34;&gt;-     access_key: AKIAIOSFODNN7EXAMPLE
 &lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;-     secret_key: 123456789QWERTYEXAMPLE
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-
-This example will read the secrets values in the volume stored at &lt;code&gt;/vela/secrets/&lt;/code&gt;:
-&lt;/div&gt;
-
+&lt;blockquote&gt;
+&lt;p&gt;This example will read the secret values in the volume stored at &lt;code&gt;/vela/secrets/&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;h2 id=&#34;parameters&#34;&gt;Parameters&lt;/h2&gt;
 
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt;&lt;/p&gt;
 
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-
-&lt;p&gt;The plugin supports reading all parameters vie environment variables or files.&lt;/p&gt;
+&lt;p&gt;The plugin supports reading all parameters via environment variables or files.&lt;/p&gt;
 
 &lt;p&gt;Any values set from a file take precedence over values set from the environment.&lt;/p&gt;
 
-&lt;/div&gt;
-
+&lt;p&gt;The s3 bucket set with the &lt;code&gt;bucket&lt;/code&gt; parameter is expected to be created beforehand.&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;p&gt;The following parameters can used to configure all image actions:&lt;/p&gt;
 
@@ -3287,29 +2952,17 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;th&gt;Description&lt;/th&gt;
 &lt;th&gt;Required&lt;/th&gt;
 &lt;th&gt;Default&lt;/th&gt;
+&lt;th&gt;Environment Variables&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;code&gt;action&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;action to perform against s3&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;accelerated_endpoint&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;s3 accelerated instance to communicate with&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;log_level&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;set the log level for the plugin&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;info&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;server&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;s3 instance to communicate with&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_ACCELERATED_ENDPOINT&lt;/code&gt;&lt;br&gt;&lt;code&gt;S3_CACHE_ACCELERATED_ENDPOINT&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -3317,6 +2970,79 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;access key for communication with s3&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_ACCESS_KEY&lt;/code&gt;&lt;br&gt;&lt;code&gt;S3_CACHE_ACCESS_KEY&lt;/code&gt;&lt;br&gt;&lt;code&gt;AWS_ACCESS_KEY_ID&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;action&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;action to perform against s3&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_ACTION&lt;/code&gt;&lt;br&gt;&lt;code&gt;S3_CACHE_ACTION&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;build_branch&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;branch name from build for the repository&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;set by Vela&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_BUILD_BRANCH&lt;/code&gt;&lt;br&gt;&lt;code&gt;VELA_BUILD_BRANCH&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;bucket&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;name of the s3 bucket&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_BUCKET&lt;/code&gt;&lt;br&gt;&lt;code&gt;S3_CACHE_BUCKET&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;log_level&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;set the log level for the plugin&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;info&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_LOG_LEVEL&lt;/code&gt;&lt;br&gt;&lt;code&gt;S3_CACHE_LOG_LEVEL&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;org&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;name of the org for the repository&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;set by Vela&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_ORG&lt;/code&gt;&lt;br&gt;&lt;code&gt;VELA_REPO_ORG&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;path&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;custom path for the object(s)&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_PATH&lt;/code&gt;&lt;br&gt;&lt;code&gt;S3_CACHE_PATH&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;prefix&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;path prefix for the object(s)&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_PREFIX&lt;/code&gt;&lt;br&gt;&lt;code&gt;S3_CACHE_PREFIX&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;repo&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;name of the repository&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;set by Vela&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_REPO&lt;/code&gt;&lt;br&gt;&lt;code&gt;VELA_REPO_NAME&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;repo_branch&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;default branch for the Vela repository&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;set by Vela&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_REPO_BRANCH&lt;/code&gt;&lt;br&gt;&lt;code&gt;VELA_REPO_BRANCH&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -3324,25 +3050,28 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;secret key for communication with s3&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_SECRET_KEY&lt;/code&gt;&lt;br&gt;&lt;code&gt;S3_CACHE_SECRET_KEY&lt;/code&gt;&lt;br&gt;&lt;code&gt;AWS_SECRET_ACCESS_KEY&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
-&lt;td&gt;&lt;code&gt;root&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;name of the s3 bucket&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;server&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;s3 instance to communicate with&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_SERVER&lt;/code&gt;&lt;br&gt;&lt;code&gt;S3_CACHE_SERVER&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
-&lt;td&gt;&lt;code&gt;prefix&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;path prefix for the object(s)&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;session_token&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;session token for communication with s3&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_SESSION_TOKEN&lt;/code&gt;&lt;br&gt;&lt;code&gt;S3_CACHE_SESSION_TOKEN&lt;/code&gt;&lt;br&gt;&lt;code&gt;AWS_SESSION_TOKEN&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;h4 id=&#34;restore&#34;&gt;Restore&lt;/h4&gt;
+&lt;h3 id=&#34;restore&#34;&gt;Restore&lt;/h3&gt;
 
 &lt;p&gt;The following parameters are used to configure the &lt;code&gt;restore&lt;/code&gt; action:&lt;/p&gt;
 
@@ -3353,6 +3082,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;th&gt;Description&lt;/th&gt;
 &lt;th&gt;Required&lt;/th&gt;
 &lt;th&gt;Default&lt;/th&gt;
+&lt;th&gt;Environment Variables&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 
@@ -3360,8 +3090,9 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;filename&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;the name of the cache object&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;archive.tgz&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_FILENAME&lt;/code&gt;&lt;br&gt;&lt;code&gt;S3_CACHE_FILENAME&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -3369,18 +3100,20 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;the file or directories locations to build your cache from&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_MOUNT&lt;/code&gt;&lt;br&gt;&lt;code&gt;S3_CACHE_MOUNT&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;timeout&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;the timeout for the call to s3&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;10m&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_TIMEOUT&lt;/code&gt;&lt;br&gt;&lt;code&gt;S3_CACHE_TIMEOUT&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;h4 id=&#34;rebuild&#34;&gt;Rebuild&lt;/h4&gt;
+&lt;h3 id=&#34;rebuild&#34;&gt;Rebuild&lt;/h3&gt;
 
 &lt;p&gt;The following parameters are used to configure the &lt;code&gt;rebuild&lt;/code&gt; action:&lt;/p&gt;
 
@@ -3391,6 +3124,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;th&gt;Description&lt;/th&gt;
 &lt;th&gt;Required&lt;/th&gt;
 &lt;th&gt;Default&lt;/th&gt;
+&lt;th&gt;Environment Variables&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 
@@ -3398,20 +3132,22 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;filename&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;the name of the cache object&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;archive.tgz&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_FILENAME&lt;/code&gt;&lt;br&gt;&lt;code&gt;S3_CACHE_FILENAME&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;timeout&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;the timeout for the call to s3&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;10m&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_TIMEOUT&lt;/code&gt;&lt;br&gt;&lt;code&gt;S3_CACHE_TIMEOUT&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;h4 id=&#34;flush&#34;&gt;Flush&lt;/h4&gt;
+&lt;h3 id=&#34;flush&#34;&gt;Flush&lt;/h3&gt;
 
 &lt;p&gt;The following parameters are used to configure the &lt;code&gt;flush&lt;/code&gt; action:&lt;/p&gt;
 
@@ -3422,20 +3158,20 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;th&gt;Description&lt;/th&gt;
 &lt;th&gt;Required&lt;/th&gt;
 &lt;th&gt;Default&lt;/th&gt;
+&lt;th&gt;Environment Variables&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;age&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;delete the objects past a specific age&lt;/td&gt;
+&lt;td&gt;delete the objects past a specific age (i.e. 60m, 8h)&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;14&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;336h&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_AGE&lt;/code&gt;&lt;br&gt;&lt;code&gt;S3_CACHE_AGE&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-
-&lt;h4 id=&#34;upload&#34;&gt;Upload&lt;/h4&gt;
 
 &lt;h2 id=&#34;template&#34;&gt;Template&lt;/h2&gt;
 
@@ -3450,13 +3186,11 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
     pull: always
     parameters:
       action: restore
+      bucket: mybucket
 &lt;span style=&#34;color:#00a000&#34;&gt;+     log_level: trace
-&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;      root: mybucket
-      server: mybucket.s3-us-west-2.amazonaws.com
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;      server: mybucket.s3-us-west-2.amazonaws.com
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Below are a list of common problems and how to solve them:&lt;/p&gt;
-
-&lt;p&gt;COMING SOON!&lt;/p&gt;
 
       </description>
     </item>
@@ -3470,9 +3204,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
       <description>
         
         
-        
-
-&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+        &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 
 &lt;p&gt;This plugin enables you to run &lt;a href=&#34;https://www.terraform.io/&#34; target=&#34;_blank&#34;&gt;Terraform&lt;/a&gt; against &lt;a href=&#34;https://www.terraform.io/docs/providers/index.html&#34; target=&#34;_blank&#34;&gt;providers&lt;/a&gt; in a Vela pipeline.&lt;/p&gt;
 
@@ -3482,17 +3214,23 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 
 &lt;h2 id=&#34;usage&#34;&gt;Usage&lt;/h2&gt;
 
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt;&lt;/p&gt;
 
-
-&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
-
-&lt;p&gt;Users should refrain from using &lt;code&gt;latest&lt;/code&gt; as the tag for the Docker image.&lt;/p&gt;
+&lt;p&gt;Users should refrain from using latest as the tag for the Docker image.&lt;/p&gt;
 
 &lt;p&gt;It is recommended to use a semantically versioned tag instead.&lt;/p&gt;
+&lt;/blockquote&gt;
 
-&lt;/div&gt;
-
-
+&lt;p&gt;Sample of adding installing terraform version:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;steps&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;  &lt;/span&gt;-&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;name&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;apply&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;image&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;target/vela-terraform&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;latest&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;pull&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;always&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;parameters&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;action&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;apply&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;auto_approve&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;true&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# Required for versions of Terraform 0.12.x&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;version&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0.11.7&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Sample of adding init options to Terraform configuration:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;steps&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;  &lt;/span&gt;-&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;name&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;apply&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
@@ -3542,62 +3280,32 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;action&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;validate&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2 id=&#34;secrets&#34;&gt;Secrets&lt;/h2&gt;
 
-
-
-&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
-
-Users should refrain from configuring sensitive information in their pipeline in plain text.
-&lt;/div&gt;
-
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; Users should refrain from configuring sensitive information in your pipeline in plain text.&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;h3 id=&#34;internal&#34;&gt;Internal&lt;/h3&gt;
 
-&lt;p&gt;The plugin accepts the following &lt;code&gt;parameters&lt;/code&gt; for authentication:&lt;/p&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Parameter&lt;/th&gt;
-&lt;th&gt;Environment Variable Configuration&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;netrc_password&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;GIT_PASSWORD&lt;/code&gt;, &lt;code&gt;PARAMETER_NETRC_PASSWORD&lt;/code&gt;, &lt;code&gt;VELA_NETRC_PASSWORD&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;netrc_username&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;GIT_USERNAME&lt;/code&gt;, &lt;code&gt;PARAMETER_NETRC_USERNAME&lt;/code&gt;, &lt;code&gt;VELA_NETRC_USERNAME&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;Users can use &lt;a href=&#34;https://go-vela.github.io/docs/docs/concepts/pipeline/secrets/&#34;&gt;Vela internal secrets&lt;/a&gt; to substitute sensitive values at runtime:&lt;/p&gt;
+&lt;p&gt;Users can use &lt;a href=&#34;https://go-vela.github.io/docs/concepts/pipeline/secrets/&#34; target=&#34;_blank&#34;&gt;Vela internal secrets&lt;/a&gt; to substitute these sensitive values at runtime:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
-  - name: plan
+  - name: apply
     image: target/vela-terraform:latest
     pull: always
-&lt;span style=&#34;color:#00a000&#34;&gt;+   secrets: [ git_username, git_password ]
+&lt;span style=&#34;color:#00a000&#34;&gt;+   secrets: [ terraform_username, terraform_password ]
 &lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;    parameters:
-      action: plan
-&lt;span style=&#34;color:#a40000&#34;&gt;-     netrc_username: octocat
-&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;-     netrc_password: superSecretPassword
+      action: apply
+      auto_approve: true # Required for versions of Terraform 0.12.x
+&lt;span style=&#34;color:#a40000&#34;&gt;-     username: octocat
+&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;-     password: superSecretPassword
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This example will add the secrets to the &lt;code&gt;apply&lt;/code&gt; step as environment variables:&lt;/p&gt;
 
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-
-This example will add the &lt;code&gt;secrets&lt;/code&gt; to the &lt;code&gt;plan&lt;/code&gt; step as environment variables:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;GIT_USERNAME=&amp;lt;value&amp;gt;&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;GIT_PASSWORD=&amp;lt;value&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;p&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;TERRAFORM_USERNAME=&amp;lt;value&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;TERRAFORM_PASSWORD=&amp;lt;value&amp;gt;&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-
+&lt;/blockquote&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;external&#34;&gt;External&lt;/h3&gt;
 
@@ -3613,51 +3321,43 @@ This example will add the &lt;code&gt;secrets&lt;/code&gt; to the &lt;code&gt;pl
 
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;code&gt;netrc_password&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;/vela/parameters/terraform/netrc/password&lt;/code&gt;, &lt;code&gt;/vela/secrets/terraform/netrc/password&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;password&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;/vela/parameters/terraform/password&lt;/code&gt;, &lt;code&gt;/vela/secrets/terraform/password&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
-&lt;td&gt;&lt;code&gt;netrc_username&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;/vela/parameters/terraform/netrc/username&lt;/code&gt;, &lt;code&gt;/vela/secrets/terraform/netrc/username&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;username&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;/vela/parameters/terraform/username&lt;/code&gt;, &lt;code&gt;/vela/secrets/terraform/username&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;p&gt;Users can use &lt;a href=&#34;https://go-vela.github.io/docs/docs/concepts/pipeline/secrets/&#34;&gt;Vela external secrets&lt;/a&gt; to substitute these sensitive values at runtime:&lt;/p&gt;
+&lt;p&gt;Users can use &lt;a href=&#34;https://go-vela.github.io/docs/concepts/pipeline/secrets/origin/&#34; target=&#34;_blank&#34;&gt;Vela external secrets&lt;/a&gt; to substitute these sensitive values at runtime:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
-  - name: plan
+  - name: apply
     image: target/vela-terraform:latest
     pull: always
     parameters:
-      action: plan
-&lt;span style=&#34;color:#a40000&#34;&gt;-     netrc_username: octocat
-&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;-     netrc_password: superSecretPassword
+      action: apply
+      auto_approve: true # Required for versions of Terraform 0.12.x
+&lt;span style=&#34;color:#a40000&#34;&gt;-     username: octocat
+&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;-     password: superSecretPassword
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-
-This example will read the secrets values in the volume stored at &lt;code&gt;/vela/secrets/&lt;/code&gt;:
-&lt;/div&gt;
-
+&lt;blockquote&gt;
+&lt;p&gt;This example will read the secret values in the volume stored at &lt;code&gt;/vela/secrets/&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;h2 id=&#34;parameters&#34;&gt;Parameters&lt;/h2&gt;
 
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt;&lt;/p&gt;
 
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-
-&lt;p&gt;The plugin supports reading all parameters vie environment variables or files.&lt;/p&gt;
+&lt;p&gt;The plugin supports reading all parameters via environment variables or files.&lt;/p&gt;
 
 &lt;p&gt;Any values set from a file take precedence over values set from the environment.&lt;/p&gt;
 
-&lt;p&gt;By default, Terraform runs in the current directory - use &lt;code&gt;directory: path/to/tf/files&lt;/code&gt; to point Terraform at a file or files.&lt;/p&gt;
-
-&lt;p&gt;Terraform ships with a default version but you can download the specific version you need with &lt;code&gt;version: x.x.x&lt;/code&gt;&lt;/p&gt;
-
-&lt;/div&gt;
-
+&lt;p&gt;Terraform commands will be invoked in the current directory by default.&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;p&gt;The following parameters are used to configure the image:&lt;/p&gt;
 
@@ -3668,6 +3368,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;th&gt;Description&lt;/th&gt;
 &lt;th&gt;Required&lt;/th&gt;
 &lt;th&gt;Default&lt;/th&gt;
+&lt;th&gt;Environment Variables&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 
@@ -3677,13 +3378,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;action to perform with Terraform&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;directory&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;the directory for action to be performed on&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_ACTION&lt;/code&gt;&lt;br&gt;&lt;code&gt;TERRAFORM_ACTION&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -3691,6 +3386,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;options to use for Terraform init operation&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_INIT_OPTIONS&lt;/code&gt;&lt;br&gt;&lt;code&gt;TERRAFORM_INIT_OPTIONS&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -3698,13 +3394,39 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 &lt;td&gt;set the log level for the plugin&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;info&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_LOG_LEVEL&lt;/code&gt;&lt;br&gt;&lt;code&gt;TERRAFORM_LOG_LEVEL&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;machine&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;netrc machine name to communicate with&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;github.com&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_MACHINE&lt;/code&gt;&lt;br&gt;&lt;code&gt;TERRAFORM_MACHINE&lt;/code&gt;&lt;br&gt;&lt;code&gt;VELA_NETRC_MACHINE&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;password&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;netrc password for authentication&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;set by Vela&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_PASSWORD&lt;/code&gt;&lt;br&gt;&lt;code&gt;TERRAFORM_PASSWORD&lt;/code&gt;&lt;br&gt;&lt;code&gt;VELA_NETRC_PASSWORD&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;username&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;netrc user name for authentication&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;set by Vela&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_USERNAME&lt;/code&gt;&lt;br&gt;&lt;code&gt;TERRAFORM_USERNAME&lt;/code&gt;&lt;br&gt;&lt;code&gt;VELA_NETRC_USERNAME&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;version&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;set the Terraform CLI version&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;info&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;0.12.26&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_VERSION&lt;/code&gt;&lt;br&gt;&lt;code&gt;TERRAFORM_VERSION&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -3826,13 +3548,7 @@ This example will read the secrets values in the volume stored at &lt;code&gt;/v
 
 &lt;p&gt;The following parameters are used to configure the &lt;code&gt;apply&lt;/code&gt; action:&lt;/p&gt;
 
-
-
-&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
-
-This action uses the Terraform CLI command defaults if not explicitly set.
-&lt;/div&gt;
-
+&lt;p&gt;&lt;em&gt;Command uses Terraform CLI command defaults if not overridden in config.&lt;/em&gt;&lt;/p&gt;
 
 &lt;table&gt;
 &lt;thead&gt;
@@ -3841,36 +3557,41 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 &lt;th&gt;Description&lt;/th&gt;
 &lt;th&gt;Required&lt;/th&gt;
 &lt;th&gt;Default&lt;/th&gt;
+&lt;th&gt;Environment Variables&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;auto_approve&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;skip interactive approval of running command&lt;/td&gt;
+&lt;td&gt;skip interactive approval of applying resources&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_AUTO_APPROVE&lt;/code&gt;&lt;br&gt;&lt;code&gt;TERRAFORM_AUTO_APPROVE&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
-&lt;td&gt;&lt;code&gt;back_up&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;backup&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;path to backup the existing state file&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_BACKUP&lt;/code&gt;&lt;br&gt;&lt;code&gt;TERRAFORM_BACKUP&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;directory&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;the directory for action to be performed on&lt;/td&gt;
+&lt;td&gt;the directory containing Terraform files to apply&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;.&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_DIRECTORY&lt;/code&gt;&lt;br&gt;&lt;code&gt;TERRAFORM_DIRECTORY&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;lock&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;lock the state file when locking is supported&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_LOCK&lt;/code&gt;&lt;br&gt;&lt;code&gt;TERRAFORM_LOCK&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -3878,13 +3599,15 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 &lt;td&gt;duration to retry a state lock&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_LOCK_TIMEOUT&lt;/code&gt;&lt;br&gt;&lt;code&gt;TERRAFORM_LOCK_TIMEOUT&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;no_color&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;disables colors in output&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_NO_COLOR&lt;/code&gt;&lt;br&gt;&lt;code&gt;TERRAFORM_NO_COLOR&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -3892,13 +3615,15 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 &lt;td&gt;number of concurrent operations as Terraform walks its graph&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_PARALLELISM&lt;/code&gt;&lt;br&gt;&lt;code&gt;TERRAFORM_PARALLELISM&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;refresh&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;update state prior to checking for differences&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_REFRESH&lt;/code&gt;&lt;br&gt;&lt;code&gt;TERRAFORM_REFRESH&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -3906,6 +3631,7 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 &lt;td&gt;path to read and save state&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_STATE&lt;/code&gt;&lt;br&gt;&lt;code&gt;TERRAFORM_STATE&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -3913,6 +3639,7 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 &lt;td&gt;path to write updated state file&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_STATE_OUT&lt;/code&gt;&lt;br&gt;&lt;code&gt;TERRAFORM_STATE_OUT&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -3920,6 +3647,7 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 &lt;td&gt;resource to target&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_TARGET&lt;/code&gt;&lt;br&gt;&lt;code&gt;TERRAFORM_TARGET&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -3927,6 +3655,7 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 &lt;td&gt;a map of variables to pass to the Terraform (&lt;code&gt;&amp;lt;key&amp;gt;=&amp;lt;value&amp;gt;&lt;/code&gt;)&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_VARS&lt;/code&gt;&lt;br&gt;&lt;code&gt;TERRAFORM_VARS&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -3934,6 +3663,7 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 &lt;td&gt;a list of var files to use&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_VAR_FILES&lt;/code&gt;&lt;br&gt;&lt;code&gt;TERRAFORM_VAR_FILES&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -3942,13 +3672,7 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 
 &lt;p&gt;The following parameters are used to configure the &lt;code&gt;destroy&lt;/code&gt; action:&lt;/p&gt;
 
-
-
-&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
-
-This action uses the Terraform CLI command defaults if not explicitly set.
-&lt;/div&gt;
-
+&lt;p&gt;&lt;em&gt;Command uses Terraform CLI command defaults if not overridden in config.&lt;/em&gt;&lt;/p&gt;
 
 &lt;table&gt;
 &lt;thead&gt;
@@ -3957,29 +3681,41 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 &lt;th&gt;Description&lt;/th&gt;
 &lt;th&gt;Required&lt;/th&gt;
 &lt;th&gt;Default&lt;/th&gt;
+&lt;th&gt;Environment Variables&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;auto_approve&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;skip interactive approval of running command&lt;/td&gt;
+&lt;td&gt;skip interactive approval of destroying resources&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_AUTO_APPROVE&lt;/code&gt;&lt;br&gt;&lt;code&gt;TERRAFORM_AUTO_APPROVE&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
-&lt;td&gt;&lt;code&gt;back_up&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;backup&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;path to backup the existing state file&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_BACKUP&lt;/code&gt;&lt;br&gt;&lt;code&gt;TERRAFORM_BACKUP&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;directory&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;the directory containing Terraform files to destroy&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;.&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_DIRECTORY&lt;/code&gt;&lt;br&gt;&lt;code&gt;TERRAFORM_DIRECTORY&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;lock&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;lock the state file when locking is supported&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_LOCK&lt;/code&gt;&lt;br&gt;&lt;code&gt;TERRAFORM_LOCK&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -3987,13 +3723,15 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 &lt;td&gt;duration to retry a state lock&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_LOCK_TIMEOUT&lt;/code&gt;&lt;br&gt;&lt;code&gt;TERRAFORM_LOCK_TIMEOUT&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;no_color&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;disables colors in output&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_NO_COLOR&lt;/code&gt;&lt;br&gt;&lt;code&gt;TERRAFORM_NO_COLOR&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -4001,13 +3739,15 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 &lt;td&gt;number of concurrent operations as Terraform walks its graph&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_PARALLELISM&lt;/code&gt;&lt;br&gt;&lt;code&gt;TERRAFORM_PARALLELISM&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;refresh&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;update state prior to checking for differences&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_REFRESH&lt;/code&gt;&lt;br&gt;&lt;code&gt;TERRAFORM_REFRESH&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -4015,6 +3755,7 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 &lt;td&gt;path to read and save state&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_STATE&lt;/code&gt;&lt;br&gt;&lt;code&gt;TERRAFORM_STATE&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -4022,6 +3763,7 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 &lt;td&gt;path to write updated state file&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_STATE_OUT&lt;/code&gt;&lt;br&gt;&lt;code&gt;TERRAFORM_STATE_OUT&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -4029,6 +3771,7 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 &lt;td&gt;resource to target&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_TARGET&lt;/code&gt;&lt;br&gt;&lt;code&gt;TERRAFORM_TARGET&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -4036,6 +3779,7 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 &lt;td&gt;a map of variables to pass to the Terraform (&lt;code&gt;&amp;lt;key&amp;gt;=&amp;lt;value&amp;gt;&lt;/code&gt;)&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_VARS&lt;/code&gt;&lt;br&gt;&lt;code&gt;TERRAFORM_VARS&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -4043,6 +3787,7 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 &lt;td&gt;a list of var files to use&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_VAR_FILES&lt;/code&gt;&lt;br&gt;&lt;code&gt;TERRAFORM_VAR_FILES&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -4051,13 +3796,7 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 
 &lt;p&gt;The following parameters are used to configure the &lt;code&gt;fmt&lt;/code&gt; action:&lt;/p&gt;
 
-
-
-&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
-
-This action uses the Terraform CLI command defaults if not explicitly set.
-&lt;/div&gt;
-
+&lt;p&gt;&lt;em&gt;Command uses Terraform CLI command defaults if not overridden in config.&lt;/em&gt;&lt;/p&gt;
 
 &lt;table&gt;
 &lt;thead&gt;
@@ -4066,6 +3805,7 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 &lt;th&gt;Description&lt;/th&gt;
 &lt;th&gt;Required&lt;/th&gt;
 &lt;th&gt;Default&lt;/th&gt;
+&lt;th&gt;Environment Variables&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 
@@ -4074,28 +3814,40 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 &lt;td&gt;&lt;code&gt;check&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;validate if the input is formatted&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_CHECK&lt;/code&gt;&lt;br&gt;&lt;code&gt;TERRAFORM_CHECK&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;diff&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;diffs of formatting changes&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_DIFF&lt;/code&gt;&lt;br&gt;&lt;code&gt;TERRAFORM_DIFF&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;directory&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;the directory containing Terraform files to format&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;.&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_DIRECTORY&lt;/code&gt;&lt;br&gt;&lt;code&gt;TERRAFORM_DIRECTORY&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;list&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;list files whose formatting differs&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_LIST&lt;/code&gt;&lt;br&gt;&lt;code&gt;TERRAFORM_LIST&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;write&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;write result to source file instead of STDOUT&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_WRITE&lt;/code&gt;&lt;br&gt;&lt;code&gt;TERRAFORM_WRITE&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -4104,13 +3856,7 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 
 &lt;p&gt;The following parameters are used to configure the &lt;code&gt;plan&lt;/code&gt; action:&lt;/p&gt;
 
-
-
-&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
-
-This action uses the Terraform CLI command defaults if not explicitly set.
-&lt;/div&gt;
-
+&lt;p&gt;&lt;em&gt;Command uses Terraform CLI command defaults if not overridden in config.&lt;/em&gt;&lt;/p&gt;
 
 &lt;table&gt;
 &lt;thead&gt;
@@ -4119,6 +3865,7 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 &lt;th&gt;Description&lt;/th&gt;
 &lt;th&gt;Required&lt;/th&gt;
 &lt;th&gt;Default&lt;/th&gt;
+&lt;th&gt;Environment Variables&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 
@@ -4127,21 +3874,40 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 &lt;td&gt;&lt;code&gt;destroy&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;destroy all resources managed by the given configuration and state&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_DESTROY&lt;/code&gt;&lt;br&gt;&lt;code&gt;TERRAFORM_DESTROY&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;detailed_exit_code&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;return detailed exit codes when the command exits&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_DETAILED_EXIT_CODE&lt;/code&gt;&lt;br&gt;&lt;code&gt;TERRAFORM_DETAILED_EXIT_CODE&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;directory&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;the directory containing Terraform files to plan&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;.&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_DIRECTORY&lt;/code&gt;&lt;br&gt;&lt;code&gt;TERRAFORM_DIRECTORY&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;input&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;ask for input for variables if not directly set&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_INPUT&lt;/code&gt;&lt;br&gt;&lt;code&gt;TERRAFORM_INPUT&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;lock&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;lock the state file when locking is supported&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_LOCK&lt;/code&gt;&lt;br&gt;&lt;code&gt;TERRAFORM_LOCK&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -4149,6 +3915,7 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 &lt;td&gt;duration to retry a state lock&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_LOCK_TIMEOUT&lt;/code&gt;&lt;br&gt;&lt;code&gt;TERRAFORM_LOCK_TIMEOUT&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -4156,13 +3923,15 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 &lt;td&gt;specifies the depth of modules to show in the output&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_MODULE_DEPTH&lt;/code&gt;&lt;br&gt;&lt;code&gt;TERRAFORM_MODULE_DEPTH&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;no_color&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;disables colors in output&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_NO_COLOR&lt;/code&gt;&lt;br&gt;&lt;code&gt;TERRAFORM_NO_COLOR&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -4170,13 +3939,15 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 &lt;td&gt;number of concurrent operations as Terraform walks its graph&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_PARALLELISM&lt;/code&gt;&lt;br&gt;&lt;code&gt;TERRAFORM_PARALLELISM&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;refresh&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;update state prior to checking for differences&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_REFRESH&lt;/code&gt;&lt;br&gt;&lt;code&gt;TERRAFORM_REFRESH&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -4184,13 +3955,7 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 &lt;td&gt;path to read and save state&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;state_out&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;path to write updated state file&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_STATE&lt;/code&gt;&lt;br&gt;&lt;code&gt;TERRAFORM_STATE&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -4198,6 +3963,7 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 &lt;td&gt;resource to target&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_TARGET&lt;/code&gt;&lt;br&gt;&lt;code&gt;TERRAFORM_TARGET&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -4205,6 +3971,7 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 &lt;td&gt;a map of variables to pass to the Terraform (&lt;code&gt;&amp;lt;key&amp;gt;=&amp;lt;value&amp;gt;&lt;/code&gt;)&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_VARS&lt;/code&gt;&lt;br&gt;&lt;code&gt;TERRAFORM_VARS&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -4212,6 +3979,7 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 &lt;td&gt;a list of var files to use&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_VAR_FILES&lt;/code&gt;&lt;br&gt;&lt;code&gt;TERRAFORM_VAR_FILES&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -4220,13 +3988,7 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 
 &lt;p&gt;The following parameters are used to configure the &lt;code&gt;validate&lt;/code&gt; action:&lt;/p&gt;
 
-
-
-&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
-
-This action uses the Terraform CLI command defaults if not explicitly set.
-&lt;/div&gt;
-
+&lt;p&gt;&lt;em&gt;Command uses Terraform CLI command defaults if not overridden in config.&lt;/em&gt;&lt;/p&gt;
 
 &lt;table&gt;
 &lt;thead&gt;
@@ -4235,6 +3997,7 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 &lt;th&gt;Description&lt;/th&gt;
 &lt;th&gt;Required&lt;/th&gt;
 &lt;th&gt;Default&lt;/th&gt;
+&lt;th&gt;Environment Variables&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 
@@ -4243,14 +4006,24 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 &lt;td&gt;&lt;code&gt;check_variables&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;command will check whether all required variables have been specified&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_CHECK_VARIABLES&lt;/code&gt;&lt;br&gt;&lt;code&gt;TERRAFORM_CHECK_VARIABLES&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;directory&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;the directory containing Terraform files to validate&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;.&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_DIRECTORY&lt;/code&gt;&lt;br&gt;&lt;code&gt;TERRAFORM_DIRECTORY&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;no_color&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;disables colors in output&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_NO_COLOR&lt;/code&gt;&lt;br&gt;&lt;code&gt;TERRAFORM_NO_COLOR&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -4258,6 +4031,7 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 &lt;td&gt;a map of variables to pass to the Terraform (&lt;code&gt;&amp;lt;key&amp;gt;=&amp;lt;value&amp;gt;&lt;/code&gt;)&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_VARS&lt;/code&gt;&lt;br&gt;&lt;code&gt;TERRAFORM_VARS&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -4265,6 +4039,7 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 &lt;td&gt;a list of var files to use&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_VAR_FILES&lt;/code&gt;&lt;br&gt;&lt;code&gt;TERRAFORM_VAR_FILES&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -4275,14 +4050,6 @@ This action uses the Terraform CLI command defaults if not explicitly set.
 
 &lt;h2 id=&#34;troubleshooting&#34;&gt;Troubleshooting&lt;/h2&gt;
 
-
-
-&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
-
-We recommend reviewing Terraform&amp;rsquo;s &lt;a href=&#34;https://www.terraform.io/docs/internals/debugging.html&#34; target=&#34;_blank&#34;&gt;debugging guide&lt;/a&gt; before troubleshooting further.
-&lt;/div&gt;
-
-
 &lt;p&gt;You can start troubleshooting this plugin by tuning the level of logs being displayed:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
   - name: apply
@@ -4290,14 +4057,21 @@ We recommend reviewing Terraform&amp;rsquo;s &lt;a href=&#34;https://www.terrafo
     pull: always
     parameters:
       action: apply
-      auto_approve: true # Required for versions of Terraform 0.12.x
-      init_options:
-        get_plugins: true
+      auto_approve: true
 &lt;span style=&#34;color:#00a000&#34;&gt;+     log_level: trace
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;You can also instruct the Terraform CLI to output verbose logging:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
+  - name: apply
+    image: target/vela-terraform:latest
+    pull: always
+&lt;span style=&#34;color:#00a000&#34;&gt;+   environment:
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+     TF_LOG: TRACE
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;    parameters:
+      action: apply
+      auto_approve: true
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Below are a list of common problems and how to solve them:&lt;/p&gt;
-
-&lt;p&gt;COMING SOON!&lt;/p&gt;
 
       </description>
     </item>

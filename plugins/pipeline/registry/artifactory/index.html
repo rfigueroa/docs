@@ -21,10 +21,11 @@
 <link rel="icon" type="image/png" href="/docs/favicons/android-192x192.png"sizes="192x192">
 
 <title>Artifactory | Vela</title><meta property="og:title" content="Artifactory" />
-<meta property="og:description" content="Overview This plugin enables the ability to manage artifacts in Artifactory in a Vela pipeline.
+<meta property="og:description" content="Description This plugin enables you to manage artifacts in Artifactory in a Vela pipeline.
 Source Code: https://github.com/go-vela/vela-artifactory
 Registry: https://hub.docker.com/r/target/vela-artifactory
-Usage Users should refrain from using latest as the tag for the Docker image.
+Usage  NOTE:
+Users should refrain from using latest as the tag for the Docker image.
 It is recommended to use a semantically versioned tag instead.
  Sample of copying an artifact:
 steps:-name:copy_artifactsimage:target/vela-artifactory:latestpull:alwaysparameters:action:copypath:libs-snapshot-local/foo.txttarget:libs-snapshot-local/bar.txturl:http://localhost:8081/artifactory Sample of deleting an artifact:
@@ -32,12 +33,13 @@ steps:-name:delete_artifactsimage:target/vela-artifactory:latestpull:alwaysparam
 steps:-name:set_properties_artifactsimage:target/vela-artifactory:latestpull:alwaysparameters:action:set-proppath:libs-snapshot-local/foo.txtprops:-name:singlevalue:foo-name:multiplevalues:-bar-bazurl:http://localhost:8081/artifactory Sample of uploading an artifact:" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://go-vela.github.io/docs/plugins/pipeline/registry/artifactory/" />
-<meta property="article:modified_time" content="2020-10-09T08:34:18-05:00" />
+<meta property="article:modified_time" content="2021-01-11T10:01:41-06:00" />
 <meta itemprop="name" content="Artifactory">
-<meta itemprop="description" content="Overview This plugin enables the ability to manage artifacts in Artifactory in a Vela pipeline.
+<meta itemprop="description" content="Description This plugin enables you to manage artifacts in Artifactory in a Vela pipeline.
 Source Code: https://github.com/go-vela/vela-artifactory
 Registry: https://hub.docker.com/r/target/vela-artifactory
-Usage Users should refrain from using latest as the tag for the Docker image.
+Usage  NOTE:
+Users should refrain from using latest as the tag for the Docker image.
 It is recommended to use a semantically versioned tag instead.
  Sample of copying an artifact:
 steps:-name:copy_artifactsimage:target/vela-artifactory:latestpull:alwaysparameters:action:copypath:libs-snapshot-local/foo.txttarget:libs-snapshot-local/bar.txturl:http://localhost:8081/artifactory Sample of deleting an artifact:
@@ -45,18 +47,19 @@ steps:-name:delete_artifactsimage:target/vela-artifactory:latestpull:alwaysparam
 steps:-name:set_properties_artifactsimage:target/vela-artifactory:latestpull:alwaysparameters:action:set-proppath:libs-snapshot-local/foo.txtprops:-name:singlevalue:foo-name:multiplevalues:-bar-bazurl:http://localhost:8081/artifactory Sample of uploading an artifact:">
 
 
-<meta itemprop="dateModified" content="2020-10-09T08:34:18-05:00" />
-<meta itemprop="wordCount" content="663">
+<meta itemprop="dateModified" content="2021-01-11T10:01:41-06:00" />
+<meta itemprop="wordCount" content="740">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Artifactory"/>
-<meta name="twitter:description" content="Overview This plugin enables the ability to manage artifacts in Artifactory in a Vela pipeline.
+<meta name="twitter:description" content="Description This plugin enables you to manage artifacts in Artifactory in a Vela pipeline.
 Source Code: https://github.com/go-vela/vela-artifactory
 Registry: https://hub.docker.com/r/target/vela-artifactory
-Usage Users should refrain from using latest as the tag for the Docker image.
+Usage  NOTE:
+Users should refrain from using latest as the tag for the Docker image.
 It is recommended to use a semantically versioned tag instead.
  Sample of copying an artifact:
 steps:-name:copy_artifactsimage:target/vela-artifactory:latestpull:alwaysparameters:action:copypath:libs-snapshot-local/foo.txttarget:libs-snapshot-local/bar.txturl:http://localhost:8081/artifactory Sample of deleting an artifact:
@@ -657,38 +660,6 @@ steps:-name:set_properties_artifactsimage:target/vela-artifactory:latestpull:alw
 
 
 
-<nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#overview">Overview</a></li>
-<li><a href="#usage">Usage</a></li>
-<li><a href="#secrets">Secrets</a>
-<ul>
-<li><a href="#internal">Internal</a></li>
-<li><a href="#external">External</a></li>
-</ul></li>
-<li><a href="#parameters">Parameters</a>
-<ul>
-<li>
-<ul>
-<li><a href="#copy">Copy</a></li>
-<li><a href="#delete">Delete</a></li>
-</ul></li>
-<li><a href="#docker-promote">Docker-Promote</a>
-<ul>
-<li><a href="#set-prop">Set-Prop</a></li>
-<li><a href="#upload">Upload</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#template">Template</a></li>
-<li><a href="#troubleshooting">Troubleshooting</a></li>
-</ul></li>
-</ul>
-</nav>
-
-
-
           </div>
           <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
             <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
@@ -739,11 +710,9 @@ steps:-name:set_properties_artifactsimage:target/vela-artifactory:latestpull:alw
 <div class="td-content">
 	<h1>Artifactory</h1>
 	
-	
+	<h2 id="description">Description</h2>
 
-<h2 id="overview">Overview</h2>
-
-<p>This plugin enables the ability to manage artifacts in <a href="https://jfrog.com/artifactory/" target="_blank">Artifactory</a> in a Vela pipeline.</p>
+<p>This plugin enables you to manage artifacts in <a href="https://jfrog.com/artifactory/" target="_blank">Artifactory</a> in a Vela pipeline.</p>
 
 <p>Source Code: <a href="https://github.com/go-vela/vela-artifactory" target="_blank">https://github.com/go-vela/vela-artifactory</a></p>
 
@@ -751,16 +720,13 @@ steps:-name:set_properties_artifactsimage:target/vela-artifactory:latestpull:alw
 
 <h2 id="usage">Usage</h2>
 
+<blockquote>
+<p><strong>NOTE:</strong></p>
 
-
-<div class="alert alert-warning" role="alert">
-
-<p>Users should refrain from using <code>latest</code> as the tag for the Docker image.</p>
+<p>Users should refrain from using latest as the tag for the Docker image.</p>
 
 <p>It is recommended to use a semantically versioned tag instead.</p>
-
-</div>
-
+</blockquote>
 
 <p>Sample of copying an artifact:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">steps<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
@@ -839,45 +805,13 @@ steps:-name:set_properties_artifactsimage:target/vela-artifactory:latestpull:alw
 </span><span style="color:#f8f8f8;text-decoration:underline">      </span>target_tags<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#34;${BUILD_COMMIT:0:8}&#34;</span></code></pre></div>
 <h2 id="secrets">Secrets</h2>
 
-
-
-<div class="alert alert-warning" role="alert">
-
-Users should refrain from configuring sensitive information in their pipeline in plain text.
-</div>
-
+<blockquote>
+<p><strong>NOTE:</strong> Users should refrain from configuring sensitive information in your pipeline in plain text.</p>
+</blockquote>
 
 <h3 id="internal">Internal</h3>
 
-<p>The plugin accepts the following <code>parameters</code> for authentication:</p>
-
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Environment Variable Configuration</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td><code>api_key</code></td>
-<td><code>ARTIFACTORY_API_KEY</code>, <code>CONFIG_API_KEY</code>, <code>PARAMETER_API_KEY</code></td>
-</tr>
-
-<tr>
-<td><code>password</code></td>
-<td><code>ARTIFACTORY_PASSWORD</code>, <code>CONFIG_PASSWORD</code>, <code>PARAMETER_PASSWORD</code></td>
-</tr>
-
-<tr>
-<td><code>username</code></td>
-<td><code>ARTIFACTORY_USERNAME</code>, <code>CONFIG_USERNAME</code>, <code>PARAMETER_USERNAME</code></td>
-</tr>
-</tbody>
-</table>
-
-<p>Users can use <a href="/docs/concepts/pipeline/secrets/">Vela internal secrets</a> to substitute these sensitive values at runtime:</p>
+<p>Users can use <a href="https://go-vela.github.io/docs/concepts/pipeline/secrets/" target="_blank">Vela internal secrets</a> to substitute these sensitive values at runtime:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: copy_artifacts
     image: target/vela-artifactory:latest
@@ -891,18 +825,14 @@ Users should refrain from configuring sensitive information in their pipeline in
 <span style="color:#a40000">-     username: octocat
 </span><span style="color:#a40000">-     password: superSecretPassword
 </span></code></pre></div>
+<blockquote>
+<p>This example will add the secrets to the <code>copy_artifacts</code> step as environment variables:</p>
 
-
-<div class="alert alert-info" role="alert">
-
-This example will add the <code>secrets</code> to the <code>copy_artifacts</code> step as environment variables:</p>
-
-<ul>
+<p><ul>
 <li><code>ARTIFACTORY_USERNAME=&lt;value&gt;</code></li>
 <li><code>ARTIFACTORY_PASSWORD=&lt;value&gt;</code></li>
 </ul>
-</div>
-
+</blockquote></p>
 
 <h3 id="external">External</h3>
 
@@ -919,22 +849,22 @@ This example will add the <code>secrets</code> to the <code>copy_artifacts</code
 <tbody>
 <tr>
 <td><code>api_key</code></td>
-<td><code>/vela/parameters/config/artifactory/api_key</code>, <code>/vela/secrets/artifactory/api_key</code></td>
+<td><code>/vela/parameters/artifactory/api_key</code>, <code>/vela/secrets/artifactory/api_key</code></td>
 </tr>
 
 <tr>
 <td><code>password</code></td>
-<td><code>/vela/parameters/config/artifactory/password</code>, <code>/vela/secrets/artifactory/password</code></td>
+<td><code>/vela/parameters/artifactory/password</code>, <code>/vela/secrets/artifactory/password</code></td>
 </tr>
 
 <tr>
 <td><code>username</code></td>
-<td><code>/vela/parameters/config/artifactory/username</code>, <code>/vela/secrets/artifactory/username</code></td>
+<td><code>/vela/parameters/artifactory/username</code>, <code>/vela/secrets/artifactory/username</code></td>
 </tr>
 </tbody>
 </table>
 
-<p>Users can use <a href="/docs/concepts/pipeline/secrets/">Vela external secrets</a> to substitute these sensitive values at runtime:</p>
+<p>Users can use <a href="https://go-vela.github.io/docs/concepts/pipeline/secrets/origin/" target="_blank">Vela external secrets</a> to substitute these sensitive values at runtime:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: copy_artifacts
     image: target/vela-artifactory:latest
@@ -947,26 +877,19 @@ This example will add the <code>secrets</code> to the <code>copy_artifacts</code
 <span style="color:#a40000">-     username: octocat
 </span><span style="color:#a40000">-     password: superSecretPassword
 </span></code></pre></div>
-
-
-<div class="alert alert-info" role="alert">
-
-This example will read the secrets values in the volume stored at <code>/vela/secrets/</code>
-</div>
-
+<blockquote>
+<p>This example will read the secret values in the volume stored at <code>/vela/secrets/</code></p>
+</blockquote>
 
 <h2 id="parameters">Parameters</h2>
 
+<blockquote>
+<p><strong>NOTE:</strong></p>
 
-
-<div class="alert alert-info" role="alert">
-
-<p>The plugin supports reading all parameters vie environment variables or files.</p>
+<p>The plugin supports reading all parameters via environment variables or files.</p>
 
 <p>Any values set from a file take precedence over values set from the environment.</p>
-
-</div>
-
+</blockquote>
 
 <p>The following parameters are used to configure the image:</p>
 
@@ -977,6 +900,7 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <th>Description</th>
 <th>Required</th>
 <th>Default</th>
+<th>Environment Variables</th>
 </tr>
 </thead>
 
@@ -986,6 +910,7 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <td>action to perform against Artifactory</td>
 <td><code>true</code></td>
 <td><code>N/A</code></td>
+<td><code>PARAMETER_ACTION</code><br><code>ARTIFACTORY_ACTION</code></td>
 </tr>
 
 <tr>
@@ -993,6 +918,7 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <td>API key for communication with Artifactory</td>
 <td><code>false</code></td>
 <td><code>N/A</code></td>
+<td><code>PARAMETER_DRY_RUN</code><br><code>ARTIFACTORY_DRY_RUN</code></td>
 </tr>
 
 <tr>
@@ -1000,6 +926,7 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <td>enables pretending to perform the action</td>
 <td><code>false</code></td>
 <td><code>false</code></td>
+<td><code>PARAMETER_API_KEY</code><br><code>ARTIFACTORY_API_KEY</code></td>
 </tr>
 
 <tr>
@@ -1007,6 +934,7 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <td>set the log level for the plugin</td>
 <td><code>true</code></td>
 <td><code>info</code></td>
+<td><code>PARAMETER_LOG_LEVEL</code><br><code>ARTIFACTORY_LOG_LEVEL</code></td>
 </tr>
 
 <tr>
@@ -1014,13 +942,7 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <td>password for communication with Artifactory</td>
 <td><code>false</code></td>
 <td><code>N/A</code></td>
-</tr>
-
-<tr>
-<td><code>path</code></td>
-<td>source/target Artifactory path to artifact(s) for action</td>
-<td><code>true</code></td>
-<td><code>N/A</code></td>
+<td><code>PARAMETER_PASSWORD</code><br><code>ARTIFACTORY_PASSWORD</code></td>
 </tr>
 
 <tr>
@@ -1028,6 +950,7 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <td>Artifactory instance to communicate with</td>
 <td><code>true</code></td>
 <td><code>N/A</code></td>
+<td><code>PARAMETER_URL</code><br><code>ARTIFACTORY_URL</code></td>
 </tr>
 
 <tr>
@@ -1035,6 +958,7 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <td>user name for communication with Artifactory</td>
 <td><code>true</code></td>
 <td><code>N/A</code></td>
+<td><code>PARAMETER_USERNAME</code><br><code>ARTIFACTORY_USERNAME</code></td>
 </tr>
 </tbody>
 </table>
@@ -1050,6 +974,7 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <th>Description</th>
 <th>Required</th>
 <th>Default</th>
+<th>Environment Variables</th>
 </tr>
 </thead>
 
@@ -1059,6 +984,15 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <td>enables removing source directory hierarchy</td>
 <td><code>false</code></td>
 <td><code>false</code></td>
+<td><code>PARAMETER_FLAT</code><br><code>ARTIFACTORY_FLAT</code></td>
+</tr>
+
+<tr>
+<td><code>path</code></td>
+<td>source path to copy artifact(s) from</td>
+<td><code>true</code></td>
+<td><code>N/A</code></td>
+<td><code>PARAMETER_PATH</code><br><code>ARTIFACTORY_PATH</code></td>
 </tr>
 
 <tr>
@@ -1066,13 +1000,15 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <td>enables copying sub-directories for the artifact(s)</td>
 <td><code>false</code></td>
 <td><code>false</code></td>
+<td><code>PARAMETER_RECURSIVE</code><br><code>ARTIFACTORY_RECURSIVE</code></td>
 </tr>
 
 <tr>
 <td><code>target</code></td>
-<td>target Artifactory path to copy artifact(s) to</td>
+<td>target path to copy artifact(s) to</td>
 <td><code>true</code></td>
 <td><code>N/A</code></td>
+<td><code>PARAMETER_TARGET</code><br><code>ARTIFACTORY_TARGET</code></td>
 </tr>
 </tbody>
 </table>
@@ -1088,20 +1024,30 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <th>Description</th>
 <th>Required</th>
 <th>Default</th>
+<th>Environment Variables</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
+<td><code>path</code></td>
+<td>target path to delete artifact(s) from</td>
+<td><code>true</code></td>
+<td><code>N/A</code></td>
+<td><code>PARAMETER_PATH</code><br><code>ARTIFACTORY_PATH</code></td>
+</tr>
+
+<tr>
 <td><code>recursive</code></td>
 <td>enables removing sub-directories for the artifact(s)</td>
 <td><code>false</code></td>
 <td><code>false</code></td>
+<td><code>PARAMETER_RECURSIVE</code><br><code>ARTIFACTORY_RECURSIVE</code></td>
 </tr>
 </tbody>
 </table>
 
-<h3 id="docker-promote">Docker-Promote</h3>
+<h4 id="docker-promote">Docker-Promote</h4>
 
 <p>The following parameters are used to configure the <code>docker-promote</code> action:</p>
 
@@ -1112,6 +1058,7 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <th>Description</th>
 <th>Required</th>
 <th>Default</th>
+<th>Environment Variables</th>
 </tr>
 </thead>
 
@@ -1121,6 +1068,7 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <td>name of the docker registry containing the image</td>
 <td><code>true</code></td>
 <td><code>N/A</code></td>
+<td><code>PARAMETER_TARGET_REPO</code><br><code>ARTIFACTORY_TARGET_REPO</code></td>
 </tr>
 
 <tr>
@@ -1128,6 +1076,7 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <td>path to image in docker registry</td>
 <td><code>true</code></td>
 <td><code>N/A</code></td>
+<td><code>PARAMETER_DOCKER_REGISTRY</code><br><code>ARTIFACTORY_DOCKER_REGISTRY</code></td>
 </tr>
 
 <tr>
@@ -1135,6 +1084,7 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <td>path for target image in docker registry</td>
 <td><code>true</code></td>
 <td><code>N/A</code></td>
+<td><code>PARAMETER_TARGET_DOCKER_REGISTRY</code><br><code>ARTIFACTORY_TARGET_DOCKER_REGISTRY</code></td>
 </tr>
 
 <tr>
@@ -1142,6 +1092,7 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <td>name of the tag for promoting</td>
 <td><code>true</code></td>
 <td><code>N/A</code></td>
+<td><code>PARAMETER_TAG</code><br><code>ARTIFACTORY_TAG</code></td>
 </tr>
 
 <tr>
@@ -1149,6 +1100,7 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <td>name of the final tags after promotion</td>
 <td><code>true</code></td>
 <td><code>N/A</code></td>
+<td><code>PARAMETER_TARGET_TAGS</code><br><code>ARTIFACTORY_TARGET_TAGS</code></td>
 </tr>
 
 <tr>
@@ -1156,6 +1108,15 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <td>set to copy instead of moving the image</td>
 <td><code>false</code></td>
 <td><code>false</code></td>
+<td><code>PARAMETER_COPY</code><br><code>ARTIFACTORY_COPY</code></td>
+</tr>
+
+<tr>
+<td><code>promote_props</code></td>
+<td>enables setting properties on the promoted artifact</td>
+<td><code>false</code></td>
+<td><code>false</code></td>
+<td><code>PARAMETER_PROMOTE_PROPS</code><br><code>ARTIFACTORY_PROMOTE_PROPS</code></td>
 </tr>
 </tbody>
 </table>
@@ -1171,15 +1132,25 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <th>Description</th>
 <th>Required</th>
 <th>Default</th>
+<th>Environment Variables</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
+<td><code>path</code></td>
+<td>target path to artifact(s)</td>
+<td><code>true</code></td>
+<td><code>N/A</code></td>
+<td><code>PARAMETER_PATH</code><br><code>ARTIFACTORY_PATH</code></td>
+</tr>
+
+<tr>
 <td><code>props</code></td>
 <td>properties to set on the artifact(s)</td>
 <td><code>true</code></td>
 <td><code>N/A</code></td>
+<td><code>PARAMETER_PROPS</code><br><code>ARTIFACTORY_PROPS</code></td>
 </tr>
 </tbody>
 </table>
@@ -1195,6 +1166,7 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <th>Description</th>
 <th>Required</th>
 <th>Default</th>
+<th>Environment Variables</th>
 </tr>
 </thead>
 
@@ -1204,6 +1176,7 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <td>enables removing source directory hierarchy</td>
 <td><code>false</code></td>
 <td><code>false</code></td>
+<td><code>PARAMETER_FLAT</code><br><code>ARTIFACTORY_FLAT</code></td>
 </tr>
 
 <tr>
@@ -1211,6 +1184,15 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <td>enables including sub-directories for the artifact(s)</td>
 <td><code>false</code></td>
 <td><code>false</code></td>
+<td><code>PARAMETER_INCLUDE_DIRS</code><br><code>ARTIFACTORY_INCLUDE_DIRS</code></td>
+</tr>
+
+<tr>
+<td><code>path</code></td>
+<td>target path to upload artifact(s) to</td>
+<td><code>true</code></td>
+<td><code>N/A</code></td>
+<td><code>PARAMETER_PATH</code><br><code>ARTIFACTORY_PATH</code></td>
 </tr>
 
 <tr>
@@ -1218,6 +1200,7 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <td>enables uploading sub-directories for the artifact(s)</td>
 <td><code>false</code></td>
 <td><code>false</code></td>
+<td><code>PARAMETER_REGEXP</code><br><code>ARTIFACTORY_REGEXP</code></td>
 </tr>
 
 <tr>
@@ -1225,6 +1208,7 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <td>enables reading the sources as a regular expression</td>
 <td><code>false</code></td>
 <td><code>false</code></td>
+<td><code>PARAMETER_RECURSIVE</code><br><code>ARTIFACTORY_RECURSIVE</code></td>
 </tr>
 
 <tr>
@@ -1232,6 +1216,7 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <td>list of artifact(s) to upload</td>
 <td><code>true</code></td>
 <td><code>N/A</code></td>
+<td><code>PARAMETER_SOURCES</code><br><code>ARTIFACTORY_SOURCES</code></td>
 </tr>
 </tbody>
 </table>
@@ -1256,11 +1241,9 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 </code></pre></div>
 <p>Below are a list of common problems and how to solve them:</p>
 
-<p>COMING SOON!</p>
-
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified October 9, 2020: <a  href="https://github.com/go-vela/docs/commit/41d05b49562c5f26c25fc2f5a2d05123b1d5172d">chore: update image tags for consistency (#175) (41d05b4)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified January 11, 2021: <a  href="https://github.com/go-vela/docs/commit/0f1f3118545c45703ea36be53a78318921aaaf93">feat(plugins): source docs from repos (#190) (0f1f311)</a>
 </div>
 </div>
 

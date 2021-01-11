@@ -21,47 +21,50 @@
 <link rel="icon" type="image/png" href="/docs/favicons/android-192x192.png"sizes="192x192">
 
 <title>S3 Cache | Vela</title><meta property="og:title" content="S3 Cache" />
-<meta property="og:description" content="Overview This plugin enables you to cache build resources in an s3 compatible store for a Vela pipeline.
+<meta property="og:description" content="Description This plugin enables you to cache build resources in an s3 compatible store for a Vela pipeline.
 Source Code: https://github.com/go-vela/vela-s3-cache
 Registry: https://hub.docker.com/r/target/vela-s3-cache
-Usage Users should refrain from using latest as the tag for the Docker image.
+Usage  NOTE:
+Users should refrain from using latest as the tag for the Docker image.
 It is recommended to use a semantically versioned tag instead.
  Sample of restoring a cache:
-steps:-name:restore_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters:action:restoreroot:mybucketserver:mybucket.s3-us-west-2.amazonaws.com Sample of rebuilding a cache:
-steps:-name:rebuild_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters:action:rebuildroot:mybucketserver:mybucket.s3-us-west-2.amazonaws.commount:-.gradle Sample of flushing a cache:
-steps:-name:flushing_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters:action:flushroot:mybucketserver:mybucket.s3-us-west-2.amazonaws.com Secrets Users should refrain from configuring sensitive information in their pipeline in plain text." />
+steps:-name:restore_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters:action:restorebucket:mybucketserver:mybucket.s3-us-west-2.amazonaws.com Sample of rebuilding a cache:
+steps:-name:rebuild_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters:action:rebuildbucket:mybucketserver:mybucket.s3-us-west-2.amazonaws.commount:-.gradle Sample of flushing a cache:
+steps:-name:flushing_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters:action:flushbucket:mybucketserver:mybucket.s3-us-west-2.amazonaws.com Secrets  NOTE: Users should refrain from configuring sensitive information in your pipeline in plain text." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://go-vela.github.io/docs/plugins/pipeline/registry/s3_cache/" />
-<meta property="article:modified_time" content="2020-10-09T08:34:18-05:00" />
+<meta property="article:modified_time" content="2021-01-11T10:01:41-06:00" />
 <meta itemprop="name" content="S3 Cache">
-<meta itemprop="description" content="Overview This plugin enables you to cache build resources in an s3 compatible store for a Vela pipeline.
+<meta itemprop="description" content="Description This plugin enables you to cache build resources in an s3 compatible store for a Vela pipeline.
 Source Code: https://github.com/go-vela/vela-s3-cache
 Registry: https://hub.docker.com/r/target/vela-s3-cache
-Usage Users should refrain from using latest as the tag for the Docker image.
+Usage  NOTE:
+Users should refrain from using latest as the tag for the Docker image.
 It is recommended to use a semantically versioned tag instead.
  Sample of restoring a cache:
-steps:-name:restore_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters:action:restoreroot:mybucketserver:mybucket.s3-us-west-2.amazonaws.com Sample of rebuilding a cache:
-steps:-name:rebuild_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters:action:rebuildroot:mybucketserver:mybucket.s3-us-west-2.amazonaws.commount:-.gradle Sample of flushing a cache:
-steps:-name:flushing_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters:action:flushroot:mybucketserver:mybucket.s3-us-west-2.amazonaws.com Secrets Users should refrain from configuring sensitive information in their pipeline in plain text.">
+steps:-name:restore_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters:action:restorebucket:mybucketserver:mybucket.s3-us-west-2.amazonaws.com Sample of rebuilding a cache:
+steps:-name:rebuild_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters:action:rebuildbucket:mybucketserver:mybucket.s3-us-west-2.amazonaws.commount:-.gradle Sample of flushing a cache:
+steps:-name:flushing_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters:action:flushbucket:mybucketserver:mybucket.s3-us-west-2.amazonaws.com Secrets  NOTE: Users should refrain from configuring sensitive information in your pipeline in plain text.">
 
 
-<meta itemprop="dateModified" content="2020-10-09T08:34:18-05:00" />
-<meta itemprop="wordCount" content="484">
+<meta itemprop="dateModified" content="2021-01-11T10:01:41-06:00" />
+<meta itemprop="wordCount" content="604">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="S3 Cache"/>
-<meta name="twitter:description" content="Overview This plugin enables you to cache build resources in an s3 compatible store for a Vela pipeline.
+<meta name="twitter:description" content="Description This plugin enables you to cache build resources in an s3 compatible store for a Vela pipeline.
 Source Code: https://github.com/go-vela/vela-s3-cache
 Registry: https://hub.docker.com/r/target/vela-s3-cache
-Usage Users should refrain from using latest as the tag for the Docker image.
+Usage  NOTE:
+Users should refrain from using latest as the tag for the Docker image.
 It is recommended to use a semantically versioned tag instead.
  Sample of restoring a cache:
-steps:-name:restore_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters:action:restoreroot:mybucketserver:mybucket.s3-us-west-2.amazonaws.com Sample of rebuilding a cache:
-steps:-name:rebuild_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters:action:rebuildroot:mybucketserver:mybucket.s3-us-west-2.amazonaws.commount:-.gradle Sample of flushing a cache:
-steps:-name:flushing_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters:action:flushroot:mybucketserver:mybucket.s3-us-west-2.amazonaws.com Secrets Users should refrain from configuring sensitive information in their pipeline in plain text."/>
+steps:-name:restore_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters:action:restorebucket:mybucketserver:mybucket.s3-us-west-2.amazonaws.com Sample of rebuilding a cache:
+steps:-name:rebuild_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters:action:rebuildbucket:mybucketserver:mybucket.s3-us-west-2.amazonaws.commount:-.gradle Sample of flushing a cache:
+steps:-name:flushing_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters:action:flushbucket:mybucketserver:mybucket.s3-us-west-2.amazonaws.com Secrets  NOTE: Users should refrain from configuring sensitive information in your pipeline in plain text."/>
 
 
 
@@ -657,35 +660,6 @@ steps:-name:flushing_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters
 
 
 
-<nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#overview">Overview</a></li>
-<li><a href="#usage">Usage</a></li>
-<li><a href="#secrets">Secrets</a>
-<ul>
-<li><a href="#internal">Internal</a></li>
-<li><a href="#external">External</a></li>
-</ul></li>
-<li><a href="#parameters">Parameters</a>
-<ul>
-<li>
-<ul>
-<li><a href="#restore">Restore</a></li>
-<li><a href="#rebuild">Rebuild</a></li>
-<li><a href="#flush">Flush</a></li>
-<li><a href="#upload">Upload</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#template">Template</a></li>
-<li><a href="#troubleshooting">Troubleshooting</a></li>
-</ul></li>
-</ul>
-</nav>
-
-
-
           </div>
           <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
             <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
@@ -736,9 +710,7 @@ steps:-name:flushing_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters
 <div class="td-content">
 	<h1>S3 Cache</h1>
 	
-	
-
-<h2 id="overview">Overview</h2>
+	<h2 id="description">Description</h2>
 
 <p>This plugin enables you to cache build resources in an <a href="https://aws.amazon.com/s3/" target="_blank">s3</a> compatible store for a Vela pipeline.</p>
 
@@ -748,16 +720,13 @@ steps:-name:flushing_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters
 
 <h2 id="usage">Usage</h2>
 
+<blockquote>
+<p><strong>NOTE:</strong></p>
 
-
-<div class="alert alert-warning" role="alert">
-
-<p>Users should refrain from using <code>latest</code> as the tag for the Docker image.</p>
+<p>Users should refrain from using latest as the tag for the Docker image.</p>
 
 <p>It is recommended to use a semantically versioned tag instead.</p>
-
-</div>
-
+</blockquote>
 
 <p>Sample of restoring a cache:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">steps<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
@@ -766,7 +735,7 @@ steps:-name:flushing_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters
 </span><span style="color:#f8f8f8;text-decoration:underline">    </span>pull<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>always<span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">    </span>parameters<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">      </span>action<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>restore<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span>root<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>mybucket<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span>bucket<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>mybucket<span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">      </span>server<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>mybucket.s3-us-west<span style="color:#0000cf;font-weight:bold">-2.</span>amazonaws.com</code></pre></div>
 <p>Sample of rebuilding a cache:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">steps<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
@@ -775,7 +744,7 @@ steps:-name:flushing_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters
 </span><span style="color:#f8f8f8;text-decoration:underline">    </span>pull<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>always<span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">    </span>parameters<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">      </span>action<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>rebuild<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span>root<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>mybucket<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span>bucket<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>mybucket<span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">      </span>server<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>mybucket.s3-us-west<span style="color:#0000cf;font-weight:bold">-2.</span>amazonaws.com<span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">      </span>mount<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">        </span>-<span style="color:#f8f8f8;text-decoration:underline"> </span>.gradle</code></pre></div>
@@ -786,73 +755,37 @@ steps:-name:flushing_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters
 </span><span style="color:#f8f8f8;text-decoration:underline">    </span>pull<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>always<span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">    </span>parameters<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">      </span>action<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>flush<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span>root<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>mybucket<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span>bucket<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>mybucket<span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">      </span>server<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>mybucket.s3-us-west<span style="color:#0000cf;font-weight:bold">-2.</span>amazonaws.com</code></pre></div>
 <h2 id="secrets">Secrets</h2>
 
-
-
-<div class="alert alert-warning" role="alert">
-
-Users should refrain from configuring sensitive information in their pipeline in plain text.
-</div>
-
+<blockquote>
+<p><strong>NOTE:</strong> Users should refrain from configuring sensitive information in your pipeline in plain text.</p>
+</blockquote>
 
 <h3 id="internal">Internal</h3>
 
-<p>The plugin accepts the following <code>parameters</code> for authentication:</p>
-
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Environment Variable Configuration</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td><code>access_key</code></td>
-<td><code>AWS_ACCESS_KEY_ID</code>, <code>CACHE_S3_ACCESS_KEY</code>, <code>PARAMETER_ACCESS_KEY</code></td>
-</tr>
-
-<tr>
-<td><code>secret_key</code></td>
-<td><code>AWS_SECRET_ACCESS_KEY</code>, <code>CACHE_S3_SECRET_KEY</code>, <code>PARAMETER_SECRET_KEY</code></td>
-</tr>
-
-<tr>
-<td><code>session_token</code></td>
-<td><code>AWS_SESSION_TOKEN</code>, <code>CACHE_S3_SESSION_TOKEN</code>, <code>PARAMETER_SESSION_TOKEN</code></td>
-</tr>
-</tbody>
-</table>
-
-<p>Users can use <a href="/docs/concepts/pipeline/secrets/">Vela internal secrets</a> to substitute these sensitive values at runtime:</p>
+<p>Users can use <a href="https://go-vela.github.io/docs/concepts/pipeline/secrets/" target="_blank">Vela internal secrets</a> to substitute these sensitive values at runtime:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: restore_cache
     image: target/vela-s3-cache:latest
     pull: always
-<span style="color:#00a000">+   secrets: [ cache_s3_access_key, cache_s3_secret_key ]
+<span style="color:#00a000">+   secrets: [ s3_cache_access_key, s3_cache_secret_key ]
 </span><span style="color:#00a000"></span>    parameters:
       action: restore
-      root: mybucket
+      bucket: mybucket
       server: mybucket.s3-us-west-2.amazonaws.com
 <span style="color:#a40000">-     access_key: AKIAIOSFODNN7EXAMPLE
 </span><span style="color:#a40000">-     secret_key: 123456789QWERTYEXAMPLE
 </span></code></pre></div>
+<blockquote>
+<p>This example will add the secrets to the <code>restore_cache</code> step as environment variables:</p>
 
-
-<div class="alert alert-info" role="alert">
-
-This example will add the <code>secrets</code> to the <code>restore_cache</code> step as environment variables:</p>
-
-<ul>
-<li><code>CACHE_S3_ACCESS_KEY=&lt;value&gt;</code></li>
-<li><code>CACHE_S3_SECRET_KEY=&lt;value&gt;</code></li>
+<p><ul>
+<li><code>S3_CACHE_ACCESS_KEY=&lt;value&gt;</code></li>
+<li><code>S3_CACHE_SECRET_KEY=&lt;value&gt;</code></li>
 </ul>
-</div>
-
+</blockquote></p>
 
 <h3 id="external">External</h3>
 
@@ -869,53 +802,49 @@ This example will add the <code>secrets</code> to the <code>restore_cache</code>
 <tbody>
 <tr>
 <td><code>access_key</code></td>
-<td><code>/vela/parameters/s3_cache/config/access_key</code>, <code>/vela/secrets/s3_cache/config/access_key</code></td>
+<td><code>/vela/parameters/s3-cache/access_key</code>, <code>/vela/secrets/s3-cache/access_key</code></td>
 </tr>
 
 <tr>
 <td><code>secret_key</code></td>
-<td><code>/vela/parameters/s3_cache/config/secret_key</code>, <code>/vela/secrets/s3_cache/config/secret_key</code></td>
+<td><code>/vela/parameters/s3-cache/secret_key</code>, <code>/vela/secrets/s3-cache/secret_key</code></td>
 </tr>
 
 <tr>
 <td><code>session_token</code></td>
-<td><code>/vela/parameters/s3_cache/config/session_token</code>, <code>/vela/secrets/s3_cache/config/session_token</code></td>
+<td><code>/vela/parameters/s3-cache/session_token</code>, <code>/vela/secrets/s3-cache/session_token</code></td>
 </tr>
 </tbody>
 </table>
 
-<p>Users can use <a href="/docs/concepts/pipeline/secrets/">Vela external secrets</a> to substitute these sensitive values at runtime:</p>
+<p>Users can use <a href="https://go-vela.github.io/docs/concepts/pipeline/secrets/origin/" target="_blank">Vela external secrets</a> to substitute these sensitive values at runtime:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: restore_cache
     image: target/vela-s3-cache:latest
     pull: always
-    parameters:
+<span style="color:#00a000">+   secrets: [ s3_cache_access_key, s3_cache_secret_key ]
+</span><span style="color:#00a000"></span>    parameters:
       action: restore
-      root: mybucket
+      bucket: mybucket
       server: mybucket.s3-us-west-2.amazonaws.com
 <span style="color:#a40000">-     access_key: AKIAIOSFODNN7EXAMPLE
 </span><span style="color:#a40000">-     secret_key: 123456789QWERTYEXAMPLE
 </span></code></pre></div>
-
-
-<div class="alert alert-info" role="alert">
-
-This example will read the secrets values in the volume stored at <code>/vela/secrets/</code>:
-</div>
-
+<blockquote>
+<p>This example will read the secret values in the volume stored at <code>/vela/secrets/</code></p>
+</blockquote>
 
 <h2 id="parameters">Parameters</h2>
 
+<blockquote>
+<p><strong>NOTE:</strong></p>
 
-
-<div class="alert alert-info" role="alert">
-
-<p>The plugin supports reading all parameters vie environment variables or files.</p>
+<p>The plugin supports reading all parameters via environment variables or files.</p>
 
 <p>Any values set from a file take precedence over values set from the environment.</p>
 
-</div>
-
+<p>The s3 bucket set with the <code>bucket</code> parameter is expected to be created beforehand.</p>
+</blockquote>
 
 <p>The following parameters can used to configure all image actions:</p>
 
@@ -926,29 +855,17 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <th>Description</th>
 <th>Required</th>
 <th>Default</th>
+<th>Environment Variables</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td><code>action</code></td>
-<td>action to perform against s3</td>
-<td><code>true</code></td>
+<td><code>accelerated_endpoint</code></td>
+<td>s3 accelerated instance to communicate with</td>
+<td><code>false</code></td>
 <td><code>N/A</code></td>
-</tr>
-
-<tr>
-<td><code>log_level</code></td>
-<td>set the log level for the plugin</td>
-<td><code>true</code></td>
-<td><code>info</code></td>
-</tr>
-
-<tr>
-<td><code>server</code></td>
-<td>s3 instance to communicate with</td>
-<td><code>true</code></td>
-<td><code>N/A</code></td>
+<td><code>PARAMETER_ACCELERATED_ENDPOINT</code><br><code>S3_CACHE_ACCELERATED_ENDPOINT</code></td>
 </tr>
 
 <tr>
@@ -956,6 +873,79 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <td>access key for communication with s3</td>
 <td><code>true</code></td>
 <td><code>N/A</code></td>
+<td><code>PARAMETER_ACCESS_KEY</code><br><code>S3_CACHE_ACCESS_KEY</code><br><code>AWS_ACCESS_KEY_ID</code></td>
+</tr>
+
+<tr>
+<td><code>action</code></td>
+<td>action to perform against s3</td>
+<td><code>true</code></td>
+<td><code>N/A</code></td>
+<td><code>PARAMETER_ACTION</code><br><code>S3_CACHE_ACTION</code></td>
+</tr>
+
+<tr>
+<td><code>build_branch</code></td>
+<td>branch name from build for the repository</td>
+<td><code>false</code></td>
+<td><strong>set by Vela</strong></td>
+<td><code>PARAMETER_BUILD_BRANCH</code><br><code>VELA_BUILD_BRANCH</code></td>
+</tr>
+
+<tr>
+<td><code>bucket</code></td>
+<td>name of the s3 bucket</td>
+<td><code>true</code></td>
+<td><code>N/A</code></td>
+<td><code>PARAMETER_BUCKET</code><br><code>S3_CACHE_BUCKET</code></td>
+</tr>
+
+<tr>
+<td><code>log_level</code></td>
+<td>set the log level for the plugin</td>
+<td><code>false</code></td>
+<td><code>info</code></td>
+<td><code>PARAMETER_LOG_LEVEL</code><br><code>S3_CACHE_LOG_LEVEL</code></td>
+</tr>
+
+<tr>
+<td><code>org</code></td>
+<td>name of the org for the repository</td>
+<td><code>true</code></td>
+<td><strong>set by Vela</strong></td>
+<td><code>PARAMETER_ORG</code><br><code>VELA_REPO_ORG</code></td>
+</tr>
+
+<tr>
+<td><code>path</code></td>
+<td>custom path for the object(s)</td>
+<td><code>false</code></td>
+<td><code>N/A</code></td>
+<td><code>PARAMETER_PATH</code><br><code>S3_CACHE_PATH</code></td>
+</tr>
+
+<tr>
+<td><code>prefix</code></td>
+<td>path prefix for the object(s)</td>
+<td><code>false</code></td>
+<td><code>N/A</code></td>
+<td><code>PARAMETER_PREFIX</code><br><code>S3_CACHE_PREFIX</code></td>
+</tr>
+
+<tr>
+<td><code>repo</code></td>
+<td>name of the repository</td>
+<td><code>true</code></td>
+<td><strong>set by Vela</strong></td>
+<td><code>PARAMETER_REPO</code><br><code>VELA_REPO_NAME</code></td>
+</tr>
+
+<tr>
+<td><code>repo_branch</code></td>
+<td>default branch for the Vela repository</td>
+<td><code>false</code></td>
+<td><strong>set by Vela</strong></td>
+<td><code>PARAMETER_REPO_BRANCH</code><br><code>VELA_REPO_BRANCH</code></td>
 </tr>
 
 <tr>
@@ -963,25 +953,28 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <td>secret key for communication with s3</td>
 <td><code>true</code></td>
 <td><code>N/A</code></td>
+<td><code>PARAMETER_SECRET_KEY</code><br><code>S3_CACHE_SECRET_KEY</code><br><code>AWS_SECRET_ACCESS_KEY</code></td>
 </tr>
 
 <tr>
-<td><code>root</code></td>
-<td>name of the s3 bucket</td>
+<td><code>server</code></td>
+<td>s3 instance to communicate with</td>
 <td><code>true</code></td>
 <td><code>N/A</code></td>
+<td><code>PARAMETER_SERVER</code><br><code>S3_CACHE_SERVER</code></td>
 </tr>
 
 <tr>
-<td><code>prefix</code></td>
-<td>path prefix for the object(s)</td>
+<td><code>session_token</code></td>
+<td>session token for communication with s3</td>
 <td><code>true</code></td>
 <td><code>N/A</code></td>
+<td><code>PARAMETER_SESSION_TOKEN</code><br><code>S3_CACHE_SESSION_TOKEN</code><br><code>AWS_SESSION_TOKEN</code></td>
 </tr>
 </tbody>
 </table>
 
-<h4 id="restore">Restore</h4>
+<h3 id="restore">Restore</h3>
 
 <p>The following parameters are used to configure the <code>restore</code> action:</p>
 
@@ -992,6 +985,7 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <th>Description</th>
 <th>Required</th>
 <th>Default</th>
+<th>Environment Variables</th>
 </tr>
 </thead>
 
@@ -999,8 +993,9 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <tr>
 <td><code>filename</code></td>
 <td>the name of the cache object</td>
-<td><code>false</code></td>
 <td><code>true</code></td>
+<td><code>archive.tgz</code></td>
+<td><code>PARAMETER_FILENAME</code><br><code>S3_CACHE_FILENAME</code></td>
 </tr>
 
 <tr>
@@ -1008,18 +1003,20 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <td>the file or directories locations to build your cache from</td>
 <td><code>true</code></td>
 <td><code>N/A</code></td>
+<td><code>PARAMETER_MOUNT</code><br><code>S3_CACHE_MOUNT</code></td>
 </tr>
 
 <tr>
 <td><code>timeout</code></td>
 <td>the timeout for the call to s3</td>
 <td><code>false</code></td>
-<td><code>true</code></td>
+<td><code>10m</code></td>
+<td><code>PARAMETER_TIMEOUT</code><br><code>S3_CACHE_TIMEOUT</code></td>
 </tr>
 </tbody>
 </table>
 
-<h4 id="rebuild">Rebuild</h4>
+<h3 id="rebuild">Rebuild</h3>
 
 <p>The following parameters are used to configure the <code>rebuild</code> action:</p>
 
@@ -1030,6 +1027,7 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <th>Description</th>
 <th>Required</th>
 <th>Default</th>
+<th>Environment Variables</th>
 </tr>
 </thead>
 
@@ -1037,20 +1035,22 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <tr>
 <td><code>filename</code></td>
 <td>the name of the cache object</td>
-<td><code>false</code></td>
 <td><code>true</code></td>
+<td><code>archive.tgz</code></td>
+<td><code>PARAMETER_FILENAME</code><br><code>S3_CACHE_FILENAME</code></td>
 </tr>
 
 <tr>
 <td><code>timeout</code></td>
 <td>the timeout for the call to s3</td>
 <td><code>false</code></td>
-<td><code>true</code></td>
+<td><code>10m</code></td>
+<td><code>PARAMETER_TIMEOUT</code><br><code>S3_CACHE_TIMEOUT</code></td>
 </tr>
 </tbody>
 </table>
 
-<h4 id="flush">Flush</h4>
+<h3 id="flush">Flush</h3>
 
 <p>The following parameters are used to configure the <code>flush</code> action:</p>
 
@@ -1061,20 +1061,20 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <th>Description</th>
 <th>Required</th>
 <th>Default</th>
+<th>Environment Variables</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
 <td><code>age</code></td>
-<td>delete the objects past a specific age</td>
+<td>delete the objects past a specific age (i.e. 60m, 8h)</td>
 <td><code>false</code></td>
-<td><code>14</code></td>
+<td><code>336h</code></td>
+<td><code>PARAMETER_AGE</code><br><code>S3_CACHE_AGE</code></td>
 </tr>
 </tbody>
 </table>
-
-<h4 id="upload">Upload</h4>
 
 <h2 id="template">Template</h2>
 
@@ -1089,17 +1089,15 @@ This example will read the secrets values in the volume stored at <code>/vela/se
     pull: always
     parameters:
       action: restore
+      bucket: mybucket
 <span style="color:#00a000">+     log_level: trace
-</span><span style="color:#00a000"></span>      root: mybucket
-      server: mybucket.s3-us-west-2.amazonaws.com
+</span><span style="color:#00a000"></span>      server: mybucket.s3-us-west-2.amazonaws.com
 </code></pre></div>
 <p>Below are a list of common problems and how to solve them:</p>
 
-<p>COMING SOON!</p>
-
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified October 9, 2020: <a  href="https://github.com/go-vela/docs/commit/41d05b49562c5f26c25fc2f5a2d05123b1d5172d">chore: update image tags for consistency (#175) (41d05b4)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified January 11, 2021: <a  href="https://github.com/go-vela/docs/commit/0f1f3118545c45703ea36be53a78318921aaaf93">feat(plugins): source docs from repos (#190) (0f1f311)</a>
 </div>
 </div>
 

@@ -21,40 +21,43 @@
 <link rel="icon" type="image/png" href="/docs/favicons/android-192x192.png"sizes="192x192">
 
 <title>Kubernetes | Vela</title><meta property="og:title" content="Kubernetes" />
-<meta property="og:description" content="Overview This plugin enables the ability to manage resources in Kubernetes in a Vela pipeline.
+<meta property="og:description" content="Description This plugin enables the ability to manage resources in Kubernetes in a Vela pipeline.
 Source Code: https://github.com/go-vela/vela-kubernetes
 Registry: https://hub.docker.com/r/target/vela-kubernetes
-Usage Users should refrain from using latest as the tag for the Docker image.
+Usage  NOTE:
+Users should refrain from using latest as the tag for the Docker image.
 It is recommended to use a semantically versioned tag instead.
  Sample of applying Kubernetes files:
 steps:-name:kubernetesimage:target/vela-kubernetes:latestpull:alwaysparameters:action:applyfiles:[kubernetes/common,kubernetes/dev/deploy.yml] Sample of pretending to apply Kubernetes files:
 steps: - name: kubernetes image: target/vela-kubernetes:latest pull: always parameters: action: apply &#43; dry_run: true  files: [ kubernetes/common, kubernetes/dev/deploy." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://go-vela.github.io/docs/plugins/pipeline/registry/kubernetes/" />
-<meta property="article:modified_time" content="2020-10-09T08:34:18-05:00" />
+<meta property="article:modified_time" content="2021-01-11T10:01:41-06:00" />
 <meta itemprop="name" content="Kubernetes">
-<meta itemprop="description" content="Overview This plugin enables the ability to manage resources in Kubernetes in a Vela pipeline.
+<meta itemprop="description" content="Description This plugin enables the ability to manage resources in Kubernetes in a Vela pipeline.
 Source Code: https://github.com/go-vela/vela-kubernetes
 Registry: https://hub.docker.com/r/target/vela-kubernetes
-Usage Users should refrain from using latest as the tag for the Docker image.
+Usage  NOTE:
+Users should refrain from using latest as the tag for the Docker image.
 It is recommended to use a semantically versioned tag instead.
  Sample of applying Kubernetes files:
 steps:-name:kubernetesimage:target/vela-kubernetes:latestpull:alwaysparameters:action:applyfiles:[kubernetes/common,kubernetes/dev/deploy.yml] Sample of pretending to apply Kubernetes files:
 steps: - name: kubernetes image: target/vela-kubernetes:latest pull: always parameters: action: apply &#43; dry_run: true  files: [ kubernetes/common, kubernetes/dev/deploy.">
 
 
-<meta itemprop="dateModified" content="2020-10-09T08:34:18-05:00" />
-<meta itemprop="wordCount" content="580">
+<meta itemprop="dateModified" content="2021-01-11T10:01:41-06:00" />
+<meta itemprop="wordCount" content="628">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Kubernetes"/>
-<meta name="twitter:description" content="Overview This plugin enables the ability to manage resources in Kubernetes in a Vela pipeline.
+<meta name="twitter:description" content="Description This plugin enables the ability to manage resources in Kubernetes in a Vela pipeline.
 Source Code: https://github.com/go-vela/vela-kubernetes
 Registry: https://hub.docker.com/r/target/vela-kubernetes
-Usage Users should refrain from using latest as the tag for the Docker image.
+Usage  NOTE:
+Users should refrain from using latest as the tag for the Docker image.
 It is recommended to use a semantically versioned tag instead.
  Sample of applying Kubernetes files:
 steps:-name:kubernetesimage:target/vela-kubernetes:latestpull:alwaysparameters:action:applyfiles:[kubernetes/common,kubernetes/dev/deploy.yml] Sample of pretending to apply Kubernetes files:
@@ -654,34 +657,6 @@ steps: - name: kubernetes image: target/vela-kubernetes:latest pull: always para
 
 
 
-<nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#overview">Overview</a></li>
-<li><a href="#usage">Usage</a></li>
-<li><a href="#secrets">Secrets</a>
-<ul>
-<li><a href="#internal">Internal</a></li>
-<li><a href="#external">External</a></li>
-</ul></li>
-<li><a href="#parameters">Parameters</a>
-<ul>
-<li>
-<ul>
-<li><a href="#apply">Apply</a></li>
-<li><a href="#patch">Patch</a></li>
-<li><a href="#status">Status</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#template">Template</a></li>
-<li><a href="#troubleshooting">Troubleshooting</a></li>
-</ul></li>
-</ul>
-</nav>
-
-
-
           </div>
           <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
             <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
@@ -732,9 +707,7 @@ steps: - name: kubernetes image: target/vela-kubernetes:latest pull: always para
 <div class="td-content">
 	<h1>Kubernetes</h1>
 	
-	
-
-<h2 id="overview">Overview</h2>
+	<h2 id="description">Description</h2>
 
 <p>This plugin enables the ability to manage resources in <a href="https://kubernetes.io/" target="_blank">Kubernetes</a> in a Vela pipeline.</p>
 
@@ -744,16 +717,13 @@ steps: - name: kubernetes image: target/vela-kubernetes:latest pull: always para
 
 <h2 id="usage">Usage</h2>
 
+<blockquote>
+<p><strong>NOTE:</strong></p>
 
-
-<div class="alert alert-warning" role="alert">
-
-<p>Users should refrain from using <code>latest</code> as the tag for the Docker image.</p>
+<p>Users should refrain from using latest as the tag for the Docker image.</p>
 
 <p>It is recommended to use a semantically versioned tag instead.</p>
-
-</div>
-
+</blockquote>
 
 <p>Sample of applying Kubernetes files:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">steps<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
@@ -807,35 +777,13 @@ steps: - name: kubernetes image: target/vela-kubernetes:latest pull: always para
 </span><span style="color:#f8f8f8;text-decoration:underline">      </span>statuses<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">[</span><span style="color:#f8f8f8;text-decoration:underline"> </span>sample<span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">]</span></code></pre></div>
 <h2 id="secrets">Secrets</h2>
 
-
-
-<div class="alert alert-warning" role="alert">
-
-Users should refrain from configuring sensitive information in their pipeline in plain text.
-</div>
-
+<blockquote>
+<p><strong>NOTE:</strong> Users should refrain from configuring sensitive information in your pipeline in plain text.</p>
+</blockquote>
 
 <h3 id="internal">Internal</h3>
 
-<p>The plugin accepts the following <code>parameters</code> for authentication:</p>
-
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Environment Variable Configuration</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td><code>config</code></td>
-<td><code>CONFIG_FILE</code>, <code>KUBE_CONFIG</code>, <code>PARAMETER_CONFIG</code></td>
-</tr>
-</tbody>
-</table>
-
-<p>Users can use <a href="/docs/concepts/pipeline/secrets/">Vela internal secrets</a> to substitute these sensitive values at runtime:</p>
+<p>Users can use <a href="https://go-vela.github.io/docs/concepts/pipeline/secrets/" target="_blank">Vela internal secrets</a> to substitute these sensitive values at runtime:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: kubernetes
     image: target/vela-kubernetes:latest
@@ -849,17 +797,13 @@ Users should refrain from configuring sensitive information in their pipeline in
 </span><span style="color:#a40000">-     apiVersion: v1
 </span><span style="color:#a40000">-     kind: Config
 </span></code></pre></div>
+<blockquote>
+<p>This example will add the secrets to the <code>kubernetes</code> step as environment variables:</p>
 
-
-<div class="alert alert-info" role="alert">
-
-This example will add the <code>secrets</code> to the <code>kubernetes</code> step as environment variables:</p>
-
-<ul>
+<p><ul>
 <li><code>KUBE_CONFIG=&lt;value&gt;</code></li>
 </ul>
-</div>
-
+</blockquote></p>
 
 <h3 id="external">External</h3>
 
@@ -876,17 +820,18 @@ This example will add the <code>secrets</code> to the <code>kubernetes</code> st
 <tbody>
 <tr>
 <td><code>config</code></td>
-<td><code>/vela/parameters/kubernetes/config/file</code>, <code>/vela/secrets/kubernetes/config/file</code></td>
+<td><code>/vela/parameters/kubernetes/config</code>, <code>/vela/secrets/kubernetes/config</code></td>
 </tr>
 </tbody>
 </table>
 
-<p>Users can use <a href="/docs/concepts/pipeline/secrets/">Vela external secrets</a> to substitute these sensitive values at runtime:</p>
+<p>Users can use <a href="https://go-vela.github.io/docs/concepts/pipeline/secrets/origin/" target="_blank">Vela external secrets</a> to substitute these sensitive values at runtime:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: kubernetes
     image: target/vela-kubernetes:latest
     pull: always
-    parameters:
+<span style="color:#00a000">+   secrets: [ kube_config ]
+</span><span style="color:#00a000"></span>    parameters:
       action: apply
       files: [ kubernetes/common, kubernetes/dev/deploy.yml ]
 <span style="color:#a40000">-     config: |
@@ -894,26 +839,19 @@ This example will add the <code>secrets</code> to the <code>kubernetes</code> st
 </span><span style="color:#a40000">-     apiVersion: v1
 </span><span style="color:#a40000">-     kind: Config
 </span></code></pre></div>
-
-
-<div class="alert alert-info" role="alert">
-
-This example will read the secrets values in the volume stored at <code>/vela/secrets/</code>:
-</div>
-
+<blockquote>
+<p>This example will read the secret values in the volume stored at <code>/vela/secrets/</code></p>
+</blockquote>
 
 <h2 id="parameters">Parameters</h2>
 
+<blockquote>
+<p><strong>NOTE:</strong></p>
 
-
-<div class="alert alert-info" role="alert">
-
-<p>The plugin supports reading all parameters vie environment variables or files.</p>
+<p>The plugin supports reading all parameters via environment variables or files.</p>
 
 <p>Any values set from a file take precedence over values set from the environment.</p>
-
-</div>
-
+</blockquote>
 
 <p>The following parameters are used to configure the image:</p>
 
@@ -924,6 +862,7 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <th>Description</th>
 <th>Required</th>
 <th>Default</th>
+<th>Environment Variables</th>
 </tr>
 </thead>
 
@@ -933,6 +872,7 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <td>action to perform against Kubernetes</td>
 <td><code>true</code></td>
 <td><code>N/A</code></td>
+<td><code>PARAMETER_ACTION</code><br><code>KUBERNETES_ACTION</code></td>
 </tr>
 
 <tr>
@@ -940,6 +880,7 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <td>Kubernetes cluster from the configuration file</td>
 <td><code>false</code></td>
 <td><code>N/A</code></td>
+<td><code>PARAMETER_CLUSTER</code><br><code>KUBERNETES_CLUSTER</code></td>
 </tr>
 
 <tr>
@@ -947,13 +888,15 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <td>Kubernetes context from the configuration file</td>
 <td><code>false</code></td>
 <td><code>N/A</code></td>
+<td><code>PARAMETER_CONTEXT</code><br><code>KUBERNETES_CONTEXT</code></td>
 </tr>
 
 <tr>
-<td><code>file</code></td>
-<td>configuration file for communication with Kubernetes</td>
+<td><code>config</code></td>
+<td>content of configuration file for communication with Kubernetes</td>
 <td><code>true</code></td>
 <td><code>N/A</code></td>
+<td><code>PARAMETER_CONFIG</code><br><code>KUBERNETES_CONFIG</code><br><code>KUBE_CONFIG</code></td>
 </tr>
 
 <tr>
@@ -961,6 +904,7 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <td>set the log level for the plugin</td>
 <td><code>true</code></td>
 <td><code>info</code></td>
+<td><code>PARAMETER_LOG_LEVEL</code><br><code>KUBERNETES_LOG_LEVEL</code></td>
 </tr>
 
 <tr>
@@ -968,13 +912,23 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <td>Kubernetes namespace from the configuration file</td>
 <td><code>false</code></td>
 <td><code>N/A</code></td>
+<td><code>PARAMETER_NAMESPACE</code><br><code>KUBERNETES_NAMESPACE</code></td>
 </tr>
 
 <tr>
 <td><code>path</code></td>
-<td>path to Kubernetes configuration file</td>
+<td>path to configuration file for communication with Kubernetes</td>
 <td><code>false</code></td>
-<td><strong>set by Vela</strong></td>
+<td><code>N/A</code></td>
+<td><code>PARAMETER_PATH</code><br><code>KUBERNETES_PATH</code></td>
+</tr>
+
+<tr>
+<td><code>version</code></td>
+<td>version of the <code>kubectl</code> CLI to install</td>
+<td><code>false</code></td>
+<td><code>v1.17.0</code></td>
+<td><code>PARAMETER_VERSION</code><br><code>KUBERNETES_VERSION</code></td>
 </tr>
 </tbody>
 </table>
@@ -990,6 +944,7 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <th>Description</th>
 <th>Required</th>
 <th>Default</th>
+<th>Environment Variables</th>
 </tr>
 </thead>
 
@@ -999,6 +954,7 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <td>enables pretending to perform the apply</td>
 <td><code>false</code></td>
 <td><code>false</code></td>
+<td><code>PARAMETER_DRY_RUN</code><br><code>KUBERNETES_DRY_RUN</code></td>
 </tr>
 
 <tr>
@@ -1006,6 +962,7 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <td>list of Kubernetes files or directories to apply</td>
 <td><code>true</code></td>
 <td><code>N/A</code></td>
+<td><code>PARAMETER_FILES</code><br><code>KUBERNETES_FILES</code></td>
 </tr>
 
 <tr>
@@ -1013,6 +970,7 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <td>set the output for the apply</td>
 <td><code>false</code></td>
 <td><code>N/A</code></td>
+<td><code>PARAMETER_OUTPUT</code><br><code>KUBERNETES_OUTPUT</code></td>
 </tr>
 </tbody>
 </table>
@@ -1028,6 +986,7 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <th>Description</th>
 <th>Required</th>
 <th>Default</th>
+<th>Environment Variables</th>
 </tr>
 </thead>
 
@@ -1037,6 +996,7 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <td>containers from the files to patch</td>
 <td><code>true</code></td>
 <td><code>N/A</code></td>
+<td><code>PARAMETER_CONTAINERS</code><br><code>KUBERNETES_CONTAINERS</code></td>
 </tr>
 
 <tr>
@@ -1044,6 +1004,7 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <td>enables pretending to perform the patch</td>
 <td><code>false</code></td>
 <td><code>false</code></td>
+<td><code>PARAMETER_DRY_RUN</code><br><code>KUBERNETES_DRY_RUN</code></td>
 </tr>
 
 <tr>
@@ -1051,6 +1012,7 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <td>list of Kubernetes files or directories to patch</td>
 <td><code>true</code></td>
 <td><code>N/A</code></td>
+<td><code>PARAMETER_FILES</code><br><code>KUBERNETES_FILES</code></td>
 </tr>
 
 <tr>
@@ -1058,6 +1020,7 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <td>set the output for the patch</td>
 <td><code>false</code></td>
 <td><code>N/A</code></td>
+<td><code>PARAMETER_OUTPUT</code><br><code>KUBERNETES_OUTPUT</code></td>
 </tr>
 </tbody>
 </table>
@@ -1073,6 +1036,7 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <th>Description</th>
 <th>Required</th>
 <th>Default</th>
+<th>Environment Variables</th>
 </tr>
 </thead>
 
@@ -1082,6 +1046,7 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <td>list of Kubernetes resources to watch status on</td>
 <td><code>true</code></td>
 <td><code>N/A</code></td>
+<td><code>PARAMETER_STATUSES</code><br><code>KUBERNETES_STATUSES</code></td>
 </tr>
 
 <tr>
@@ -1089,6 +1054,7 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <td>total time allowed to watch Kubernetes resources</td>
 <td><code>true</code></td>
 <td><code>5m</code></td>
+<td><code>PARAMETER_TIMEOUT</code><br><code>KUBERNETES_TIMEOUT</code></td>
 </tr>
 
 <tr>
@@ -1096,6 +1062,7 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 <td>enables watching until the resource completes</td>
 <td><code>false</code></td>
 <td><code>true</code></td>
+<td><code>PARAMETER_WATCH</code><br><code>KUBERNETES_WATCH</code></td>
 </tr>
 </tbody>
 </table>
@@ -1118,11 +1085,9 @@ This example will read the secrets values in the volume stored at <code>/vela/se
 </span></code></pre></div>
 <p>Below are a list of common problems and how to solve them:</p>
 
-<p>COMING SOON!</p>
-
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified October 9, 2020: <a  href="https://github.com/go-vela/docs/commit/41d05b49562c5f26c25fc2f5a2d05123b1d5172d">chore: update image tags for consistency (#175) (41d05b4)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified January 11, 2021: <a  href="https://github.com/go-vela/docs/commit/0f1f3118545c45703ea36be53a78318921aaaf93">feat(plugins): source docs from repos (#190) (0f1f311)</a>
 </div>
 </div>
 
