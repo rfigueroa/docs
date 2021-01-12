@@ -4,115 +4,80 @@
 
 
     {
-    "url": "https://go-vela.github.io/docs/usage/getting-started/authenticate/",
-    "display": "Usage/Getting started/Authenticate",
-    "title": "Authenticate",
-    "content": "warning these docs assume you have vela running. ui navigate to your deployed instance follow the oauth workflow presented on web interface. cli please see authentication reference. if not yet installed cli, install reference first. api sdk "
-    },
-
-    {
-    "url": "https://go-vela.github.io/docs/usage/samples/secrets_external/",
-    "display": "Usage/Samples/Secrets external",
+    "url": "https://go-vela.github.io/docs/usage/examples/secrets_external/",
+    "display": "Usage/Examples/Secrets external",
     "title": "External Secrets",
-    "content": "sample yaml configuration for project requiring secrets to be used within step scenario user looking create pipeline that can integrate with private vault inject not pushing docker image registry. note: it assumed you have created secret vault_token the web interface cli. samples show using repository secrets. vela contains three types: repository, organization, shared. examples on organization shared, please see concepts documentation. steps following are being below: pull parameters plugins must stored base of as .vela.yml .vela.yaml recommended pin image: versions production pipelines version:&#34;1&#34;steps:-name:publishhelloworldimage:target/vela-docker:latestpull:alwaysparameters:registry:index.docker.iorepo:index.docker.io/vela/hello-worldsecrets:# implicit definition.-name:vault_token-origin:name:privatevaultimage:target/secret-vault:latestpull:alwayssecrets:[vault_token]parameters:addr:vault.example.comauth_method:tokenusername:octocatitems:-source:secret/dockerpath:docker stages version:&#34;1&#34;worker:runtime:dockerstages:docker:steps:-name:publishhelloworldimage:target/vela-docker:latestpull:alwayssecrets:[docker_username,docker_password]parameters:registry:index.docker.iorepo:index.docker.io/vela/hello-worldsecrets:# "
+    "content": "example yaml configuration for project requiring secrets to be used within step scenario user looking create pipeline that can integrate with private vault inject not pushing docker image registry. note: it assumed you have created secret vault_token the web interface cli. examples show using repository secrets. vela contains three types: repository, organization, shared. on organization shared, please see concepts documentation. steps following are being below: pull parameters plugins must stored base of as .vela.yml .vela.yaml recommended pin image: versions production pipelines version:&#34;1&#34;steps:-name:publishhelloworldimage:target/vela-docker:latestpull:alwaysparameters:registry:index.docker.iorepo:index.docker.io/vela/hello-worldsecrets:# implicit definition.-name:vault_token-origin:name:privatevaultimage:target/secret-vault:latestpull:alwayssecrets:[vault_token]parameters:addr:vault.example.comauth_method:tokenusername:octocatitems:-source:secret/dockerpath:docker stages version:&#34;1&#34;worker:runtime:dockerstages:docker:steps:-name:publishhelloworldimage:target/vela-docker:latestpull:alwayssecrets:[docker_username,docker_password]parameters:registry:index.docker.iorepo:index.docker.io/vela/hello-worldsecrets:# "
     },
 
     {
-    "url": "https://go-vela.github.io/docs/usage/samples/go_modules/",
-    "display": "Usage/Samples/Go modules",
+    "url": "https://go-vela.github.io/docs/usage/examples/go_modules/",
+    "display": "Usage/Examples/Go modules",
     "title": "Go (With Modules)",
-    "content": "sample yaml configuration for project building go binary with modules. scenario user looking to create pipeline that builds an artifact on any event branch pushed source control. steps the following concepts are being used below: image environment pull commands note: must be stored base of repository as .vela.yml .vela.yaml it recommended pin image: versions production pipelines version:&#34;1&#34;steps:-name:installimage:golang:latestpull:alwaysenvironment:cgo_enabled:&#39;0&#39;goos:linuxcommands:-goget./...-name:testimage:golang:latestpull:alwaysenvironment:cgo_enabled:&#39;0&#39;goos:linuxcommands:-gotest./...-name:buildimage:golang:latestpull:alwaysenvironment:cgo_enabled:&#39;0&#39;goos:linuxcommands:-gobuild stages needs version:&#34;1&#34;stages:install:steps:-name:installimage:golang:latestpull:alwaysenvironment:cgo_enabled:&#39;0&#39;goos:linuxcommands:-goget./...test:needs:[install]steps:-name:testimage:golang:latestpull:alwaysenvironment:cgo_enabled:&#39;0&#39;goos:linuxcommands:-gotest./...build:needs:[install]steps:-name:buildimage:golang:latestpull:alwaysenvironment:cgo_enabled:&#39;0&#39;goos:linuxcommands:-gobuild "
+    "content": "example yaml configuration for project building go binary with modules. scenario user looking to create pipeline that builds an artifact on any event branch pushed source control. steps the following concepts are being used below: image environment pull commands note: must be stored base of repository as .vela.yml .vela.yaml it recommended pin image: versions production pipelines version:&#34;1&#34;steps:-name:installimage:golang:latestpull:alwaysenvironment:cgo_enabled:&#39;0&#39;goos:linuxcommands:-goget./...-name:testimage:golang:latestpull:alwaysenvironment:cgo_enabled:&#39;0&#39;goos:linuxcommands:-gotest./...-name:buildimage:golang:latestpull:alwaysenvironment:cgo_enabled:&#39;0&#39;goos:linuxcommands:-gobuild stages needs version:&#34;1&#34;stages:install:steps:-name:installimage:golang:latestpull:alwaysenvironment:cgo_enabled:&#39;0&#39;goos:linuxcommands:-goget./...test:needs:[install]steps:-name:testimage:golang:latestpull:alwaysenvironment:cgo_enabled:&#39;0&#39;goos:linuxcommands:-gotest./...build:needs:[install]steps:-name:buildimage:golang:latestpull:alwaysenvironment:cgo_enabled:&#39;0&#39;goos:linuxcommands:-gobuild "
     },
 
     {
-    "url": "https://go-vela.github.io/docs/usage/samples/secrets_internal/",
-    "display": "Usage/Samples/Secrets internal",
+    "url": "https://go-vela.github.io/docs/usage/examples/secrets_internal/",
+    "display": "Usage/Examples/Secrets internal",
     "title": "Internal Secrets",
-    "content": "sample yaml configuration for project requiring secrets to be used within step scenario user looking create pipeline that can inject not placed into file. simple example would producing docker image with username password. note: it assumed you have created docker_username docker_password the web interface cli. samples show using repository secrets. vela contains three secret types: repository, organization, shared. examples on organization shared, please see concepts documentation. steps following are being below: pull parameters plugins must stored base of as .vela.yml .vela.yaml recommended pin image: versions production pipelines version:&#34;1&#34;steps:-name:publishhelloworldimage:target/vela-docker:latestpull:alwayssecrets:[docker_username,docker_password]parameters:registry:index.docker.iorepo:index.docker.io/vela/hello-worldsecrets:# implicit definition. definition only supported native type.-name:docker_username# declarative definition.-name:foo1key:vela/hello-world/docker_passwordengine:nativetype:repo stages version:&#34;1&#34;worker:runtime:dockerstages:docker:steps:-name:publishhelloworldimage:target/vela-docker:latestpull:alwayssecrets:[docker_username,docker_password]parameters:registry:index.docker.iorepo:index.docker.io/vela/hello-worldsecrets:# "
+    "content": "example yaml configuration for project requiring secrets to be used within step scenario user looking create pipeline that can inject not placed into file. simple would producing docker image with username password. note: it assumed you have created docker_username docker_password the web interface cli. examples show using repository secrets. vela contains three secret types: repository, organization, shared. on organization shared, please see concepts documentation. steps following are being below: pull parameters plugins must stored base of as .vela.yml .vela.yaml recommended pin image: versions production pipelines version:&#34;1&#34;steps:-name:publishhelloworldimage:target/vela-docker:latestpull:alwayssecrets:[docker_username,docker_password]parameters:registry:index.docker.iorepo:index.docker.io/vela/hello-worldsecrets:# implicit definition. definition only supported native type.-name:docker_username# declarative definition.-name:foo1key:vela/hello-world/docker_passwordengine:nativetype:repo stages version:&#34;1&#34;worker:runtime:dockerstages:docker:steps:-name:publishhelloworldimage:target/vela-docker:latestpull:alwayssecrets:[docker_username,docker_password]parameters:registry:index.docker.iorepo:index.docker.io/vela/hello-worldsecrets:# "
     },
 
     {
-    "url": "https://go-vela.github.io/docs/usage/validation/schema/",
-    "display": "Usage/Validation/Schema",
-    "title": "JSON Schema",
-    "content": "the schema gets published updated via https://github.com/go-vela/types where it ends up as release artifact. latest available for download from https://github.com/go-vela/types/releases/latest/download/schema.json. addition, has been added to json store project at https://www.schemastore.org/ which provides direct support various editors (see supporting section https://www.schemastore.org/json/). "
-    },
-
-    {
-    "url": "https://go-vela.github.io/docs/usage/samples/mongo/",
-    "display": "Usage/Samples/Mongo",
+    "url": "https://go-vela.github.io/docs/usage/examples/mongo/",
+    "display": "Usage/Examples/Mongo",
     "title": "Mongo",
-    "content": "sample yaml configuration for project requiring mongo as pipeline dependency. scenario user looking to create that can integrate with an ephemeral instance. services block be used stages steps pipelines. example uses basic configuration. the following concepts are being below: image pull commands note: must stored base of repository .vela.yml .vela.yaml it recommended pin image: versions production pipelines version: &#34;1&#34; services: name: mongo:latest pull: always steps: check status commands: sleeping help ensure service adequate time start sleep 15 &#34;mongo --host --eval &#34;{ ping: &#34;&#34; detach if you&rsquo;re more granular container you add flag within detach: true "
+    "content": "example yaml configuration for project requiring mongo as pipeline dependency. scenario user looking to create that can integrate with an ephemeral instance. services block be used stages steps pipelines. uses basic configuration. the following concepts are being below: image pull commands note: must stored base of repository .vela.yml .vela.yaml it recommended pin image: versions production pipelines version: &#34;1&#34; services: name: mongo:latest pull: always steps: check status commands: sleeping help ensure service adequate time start sleep 15 &#34;mongo --host --eval &#34;{ ping: &#34;&#34; detach if you&rsquo;re more granular container you add flag within detach: true "
     },
 
     {
-    "url": "https://go-vela.github.io/docs/usage/samples/postgres/",
-    "display": "Usage/Samples/Postgres",
+    "url": "https://go-vela.github.io/docs/usage/examples/postgres/",
+    "display": "Usage/Examples/Postgres",
     "title": "Postgres",
-    "content": "sample yaml configuration for project requiring postgres as pipeline dependency. scenario user looking to create that can integrate with an ephemeral instance. services block be used stages steps pipelines. example uses basic configuration. the following concepts are being below: image pull commands note: must stored base of repository .vela.yml .vela.yaml it recommended pin image: versions production pipelines version: &#34;1&#34; services: name: postgres:latest pull: always environment: postgres_user: admin postgres_db: vela steps: check status commands: sleeping help ensure service adequate time start sleep 15 psql -u -d -h tcp://postgres:5432 detach if you&rsquo;re more granular container you add flag within detach: true "
+    "content": "example yaml configuration for project requiring postgres as pipeline dependency. scenario user looking to create that can integrate with an ephemeral instance. services block be used stages steps pipelines. uses basic configuration. the following concepts are being below: image pull commands note: must stored base of repository .vela.yml .vela.yaml it recommended pin image: versions production pipelines version: &#34;1&#34; services: name: postgres:latest pull: always environment: postgres_user: admin postgres_db: vela steps: check status commands: sleeping help ensure service adequate time start sleep 15 psql -u -d -h tcp://postgres:5432 detach if you&rsquo;re more granular container you add flag within detach: true "
     },
 
     {
-    "url": "https://go-vela.github.io/docs/usage/samples/redis/",
-    "display": "Usage/Samples/Redis",
+    "url": "https://go-vela.github.io/docs/usage/examples/redis/",
+    "display": "Usage/Examples/Redis",
     "title": "Redis",
-    "content": "sample yaml configuration for project requiring redis as pipeline dependency. scenario user looking to create that can integrate with an ephemeral instance. services block be used stages steps pipelines. example uses basic configuration. the following concepts are being below: image pull commands note: must stored base of repository .vela.yml .vela.yaml it recommended pin image: versions production pipelines version: &#34;1&#34; services: name: redis:latest pull: always steps: check status commands: sleeping help ensure service adequate time start sleep 15 redis-cli -h ping detach if you&rsquo;re more granular container you add flag within detach: true "
+    "content": "example yaml configuration for project requiring redis as pipeline dependency. scenario user looking to create that can integrate with an ephemeral instance. services block be used stages steps pipelines. uses basic configuration. the following concepts are being below: image pull commands note: must stored base of repository .vela.yml .vela.yaml it recommended pin image: versions production pipelines version: &#34;1&#34; services: name: redis:latest pull: always steps: check status commands: sleeping help ensure service adequate time start sleep 15 redis-cli -h ping detach if you&rsquo;re more granular container you add flag within detach: true "
     },
 
     {
-    "url": "https://go-vela.github.io/docs/usage/samples/route/",
-    "display": "Usage/Samples/Route",
+    "url": "https://go-vela.github.io/docs/usage/examples/route/",
+    "display": "Usage/Examples/Route",
     "title": "Route",
-    "content": "sample yaml configuration for project requiring specific runtime platform. scenario user looking to create pipeline that can only run within docker runtime. note: work with your server administer understand what routes are available installation steps the following concepts being used below: worker image pull commands must be stored base of repository as .vela.yml .vela.yaml it recommended pin image: versions production pipelines version:&#34;1&#34;worker:runtime:dockersteps:-name:viewworkernameimage:alpine:latestpull:alwayscommands:-echo&#34;hello ${build_host} worker!!&#34; stages environment version:&#34;1&#34;worker:runtime:dockerstages:docker:steps:-name:viewworkernameimage:alpine:latestpull:alwayscommands:-echo&#34;hello "
+    "content": "example yaml configuration for project requiring specific runtime platform. scenario user looking to create pipeline that can only run within docker runtime. note: work with your server administer understand what routes are available installation steps the following concepts being used below: worker image pull commands must be stored base of repository as .vela.yml .vela.yaml it recommended pin image: versions production pipelines version:&#34;1&#34;worker:runtime:dockersteps:-name:viewworkernameimage:alpine:latestpull:alwayscommands:-echo&#34;hello ${build_host} worker!!&#34; stages environment version:&#34;1&#34;worker:runtime:dockerstages:docker:steps:-name:viewworkernameimage:alpine:latestpull:alwayscommands:-echo&#34;hello "
     },
 
     {
-    "url": "https://go-vela.github.io/docs/usage/samples/rust_cargo/",
-    "display": "Usage/Samples/Rust cargo",
+    "url": "https://go-vela.github.io/docs/usage/examples/rust_cargo/",
+    "display": "Usage/Examples/Rust cargo",
     "title": "Rust (With Cargo)",
-    "content": "sample yaml configuration for project building rust binary with cargo. scenario user looking to create pipeline that builds an artifact on any event branch pushed source control. steps the following concepts are being used below: image pull commands note: must be stored base of repository as .vela.yml .vela.yaml it recommended pin image: versions production pipelines version:&#34;1&#34;steps:-name:fetchimage:rust:latestpull:alwayscommands:-cargofetch--verbose--all-name:testimage:rust:latestpull:alwaysenvironment:cgo_enabled:&#39;0&#39;goos:linuxcommands:-cargotest--verbose--all-name:buildimage:rust:latestpull:alwaysenvironment:cgo_enabled:&#39;0&#39;goos:linuxcommands:-cargobuild--verbose--all stages needs version:&#34;1&#34;stages:fetch:steps:-name:fetchimage:rust:latestpull:alwayscommands:-cargofetch--verbose--alltest:needs:[fetch]steps:-name:testimage:rust:latestpull:alwayscommands:-cargotest--verbose--allbuild:needs:[fetch]steps:-name:buildimage:rust:latestpull:alwayscommands:-cargobuild--verbose--all "
+    "content": "example yaml configuration for project building rust binary with cargo. scenario user looking to create pipeline that builds an artifact on any event branch pushed source control. steps the following concepts are being used below: image pull commands note: must be stored base of repository as .vela.yml .vela.yaml it recommended pin image: versions production pipelines version:&#34;1&#34;steps:-name:fetchimage:rust:latestpull:alwayscommands:-cargofetch--verbose--all-name:testimage:rust:latestpull:alwaysenvironment:cgo_enabled:&#39;0&#39;goos:linuxcommands:-cargotest--verbose--all-name:buildimage:rust:latestpull:alwaysenvironment:cgo_enabled:&#39;0&#39;goos:linuxcommands:-cargobuild--verbose--all stages needs version:&#34;1&#34;stages:fetch:steps:-name:fetchimage:rust:latestpull:alwayscommands:-cargofetch--verbose--alltest:needs:[fetch]steps:-name:testimage:rust:latestpull:alwayscommands:-cargotest--verbose--allbuild:needs:[fetch]steps:-name:buildimage:rust:latestpull:alwayscommands:-cargobuild--verbose--all "
     },
 
     {
-    "url": "https://go-vela.github.io/docs/usage/samples/java_gradle/",
-    "display": "Usage/Samples/Java gradle",
+    "url": "https://go-vela.github.io/docs/usage/examples/java_gradle/",
+    "display": "Usage/Examples/Java gradle",
     "title": "Java (With Gradle)",
-    "content": "sample yaml configuration for project building java application with gradle. scenario user looking to create pipeline that builds an artifact on any event branch pushed source control. steps the following concepts are being used below: image environment pull commands note: must be stored base of repository as .vela.yml .vela.yaml it recommended pin image: versions production pipelines version:&#34;1&#34;steps:-name:installimage:gradle:latestpull:alwaysenvironment:gradle_user_home:.gradlegradle_opts:-dorg.gradle.daemon=false-dorg.gradle.workers.max=1-dorg.gradle.parallel=falsecommands:-gradledownloaddependencies-name:testimage:gradle:latestpull:alwaysenvironment:gradle_user_home:.gradlegradle_opts:-dorg.gradle.daemon=false-dorg.gradle.workers.max=1-dorg.gradle.parallel=falsecommands:-gradletest-name:buildimage:gradle:latestpull:alwaysenvironment:gradle_user_home:.gradlegradle_opts:-dorg.gradle.daemon=false-dorg.gradle.workers.max=1-dorg.gradle.parallel=falsecommands:-gradlebuild stages needs version:&#34;1&#34;stages:install:steps:-name:installimage:gradle:latestpull:alwaysenvironment:gradle_user_home:.gradlegradle_opts:-dorg.gradle.daemon=false-dorg.gradle.workers.max=1-dorg.gradle.parallel=falsecommands:-gradledownloaddependenciestest:needs:[install]steps:-name:testimage:gradle:latestpull:alwaysenvironment:gradle_user_home:.gradlegradle_opts:-dorg.gradle.daemon=false-dorg.gradle.workers.max=1-dorg.gradle.parallel=falsecommands:-gradletestbuild:needs:[install]steps:-name:buildimage:gradle:latestpull:alwaysenvironment:gradle_user_home:.gradlegradle_opts:-dorg.gradle.daemon=false-dorg.gradle.workers.max=1-dorg.gradle.parallel=falsecommands:-gradlebuild "
+    "content": "example yaml configuration for project building java application with gradle. scenario user looking to create pipeline that builds an artifact on any event branch pushed source control. steps the following concepts are being used below: image environment pull commands note: must be stored base of repository as .vela.yml .vela.yaml it recommended pin image: versions production pipelines version:&#34;1&#34;steps:-name:installimage:gradle:latestpull:alwaysenvironment:gradle_user_home:.gradlegradle_opts:-dorg.gradle.daemon=false-dorg.gradle.workers.max=1-dorg.gradle.parallel=falsecommands:-gradledownloaddependencies-name:testimage:gradle:latestpull:alwaysenvironment:gradle_user_home:.gradlegradle_opts:-dorg.gradle.daemon=false-dorg.gradle.workers.max=1-dorg.gradle.parallel=falsecommands:-gradletest-name:buildimage:gradle:latestpull:alwaysenvironment:gradle_user_home:.gradlegradle_opts:-dorg.gradle.daemon=false-dorg.gradle.workers.max=1-dorg.gradle.parallel=falsecommands:-gradlebuild stages needs version:&#34;1&#34;stages:install:steps:-name:installimage:gradle:latestpull:alwaysenvironment:gradle_user_home:.gradlegradle_opts:-dorg.gradle.daemon=false-dorg.gradle.workers.max=1-dorg.gradle.parallel=falsecommands:-gradledownloaddependenciestest:needs:[install]steps:-name:testimage:gradle:latestpull:alwaysenvironment:gradle_user_home:.gradlegradle_opts:-dorg.gradle.daemon=false-dorg.gradle.workers.max=1-dorg.gradle.parallel=falsecommands:-gradletestbuild:needs:[install]steps:-name:buildimage:gradle:latestpull:alwaysenvironment:gradle_user_home:.gradlegradle_opts:-dorg.gradle.daemon=false-dorg.gradle.workers.max=1-dorg.gradle.parallel=falsecommands:-gradlebuild "
     },
 
     {
-    "url": "https://go-vela.github.io/docs/usage/samples/java_maven/",
-    "display": "Usage/Samples/Java maven",
+    "url": "https://go-vela.github.io/docs/usage/examples/java_maven/",
+    "display": "Usage/Examples/Java maven",
     "title": "Java (With Maven)",
-    "content": "sample yaml configuration for project building java application with maven. scenario user looking to create pipeline that builds an artifact on any event branch pushed source control. steps the following concepts are being used below: image pull commands note: must be stored base of repository as .vela.yml .vela.yaml it recommended pin image: versions production pipelines version:&#34;1&#34;steps:-name:installimage:maven:latestpull:alwayscommands:-mvninstall-name:testimage:maven:latestpull:alwayscommands:-mvntest-name:buildimage:maven:latestpull:alwayscommands:-mvnpackage stages needs version:&#34;1&#34;stages:install:steps:-name:installimage:maven:latestpull:alwayscommands:-mvninstalltest:needs:[install]steps:-name:testimage:maven:latestpull:alwaysenvironment:gradle_user_home:.gradlegradle_opts:-dorg.gradle.daemon=false-dorg.gradle.workers.max=1-dorg.gradle.parallel=falsecommands:-mvntestbuild:needs:[install]steps:-name:buildimage:maven:latestpull:alwaysenvironment:gradle_user_home:.gradlegradle_opts:-dorg.gradle.daemon=false-dorg.gradle.workers.max=1-dorg.gradle.parallel=falsecommands:-mvnpackage "
+    "content": "example yaml configuration for project building java application with maven. scenario user looking to create pipeline that builds an artifact on any event branch pushed source control. steps the following concepts are being used below: image pull commands note: must be stored base of repository as .vela.yml .vela.yaml it recommended pin image: versions production pipelines version:&#34;1&#34;steps:-name:installimage:maven:latestpull:alwayscommands:-mvninstall-name:testimage:maven:latestpull:alwayscommands:-mvntest-name:buildimage:maven:latestpull:alwayscommands:-mvnpackage stages needs version:&#34;1&#34;stages:install:steps:-name:installimage:maven:latestpull:alwayscommands:-mvninstalltest:needs:[install]steps:-name:testimage:maven:latestpull:alwaysenvironment:gradle_user_home:.gradlegradle_opts:-dorg.gradle.daemon=false-dorg.gradle.workers.max=1-dorg.gradle.parallel=falsecommands:-mvntestbuild:needs:[install]steps:-name:buildimage:maven:latestpull:alwaysenvironment:gradle_user_home:.gradlegradle_opts:-dorg.gradle.daemon=false-dorg.gradle.workers.max=1-dorg.gradle.parallel=falsecommands:-mvnpackage "
     },
 
     {
-    "url": "https://go-vela.github.io/docs/usage/getting-started/roles/",
-    "display": "Usage/Getting started/Roles",
-    "title": "Roles",
-    "content": "warning at time the only source control provider github. so documentation tailored for those users. vela does not maintain any authentication (authn) authorization (authz) internally, but instead inherits its access from (version control) provider. more information on github&rsquo;s model can be found their documentation. platform roles: admin write read roles admins have full when interacting with cli, ui, api. within github organization option to use orgs allow users permissions all repositories org, fine-grained of adding directly individual repositories. role enables repository, which grants following levels resources: repo build step service log secret "
-    },
-
-    {
-    "url": "https://go-vela.github.io/docs/usage/getting-started/enable_repo/",
-    "display": "Usage/Getting started/Enable repo",
-    "title": "Enable a Repo",
-    "content": "note: you will need admin access to the repo be able activate it vela. because add webhooks repo. via ui for example, we&rsquo;ll go over using can always head cli docs on how cli. log into your vela instance. click repositories. select org from available list. next would like add. alternatively all repos an org. if doesn&rsquo;t exist, try clicking refresh list top right. now has necessary web hook "
-    },
-
-    {
-    "url": "https://go-vela.github.io/docs/usage/samples/node/",
-    "display": "Usage/Samples/Node",
+    "url": "https://go-vela.github.io/docs/usage/examples/node/",
+    "display": "Usage/Examples/Node",
     "title": "Node",
-    "content": "sample yaml configuration for project building node application. scenario user looking to create pipeline that builds an artifact on any event branch pushed source control. steps the following concepts are being used below: image pull commands note: must be stored base of repository as .vela.yml .vela.yaml it recommended pin image: versions production pipelines version:&#34;1&#34;steps:-name:installimage:node:latestpull:alwayscommands:-nodeinstall-name:lintimage:node:latestpull:alwayscommands:-nodetest-name:buildimage:node:latestpull:alwayscommands:-nodebuild stages needs version:&#34;1&#34;stages:install:steps:-name:installimage:node:latestpull:alwayscommands:-nodeinstalltest:needs:[install]steps:-name:testimage:node:latestpull:alwayscommands:-nodetestbuild:needs:[install]steps:-name:buildimage:node:latestpull:alwayscommands:-nodebuild "
-    },
-
-    {
-    "url": "https://go-vela.github.io/docs/usage/getting-started/start_build/",
-    "display": "Usage/Getting started/Start build",
-    "title": "Start a Build",
-    "content": "if you&rsquo;ve followed the documentation for enabling repo writing pipeline, all that should be left to push your pipeline repo. build does not trigger when change repo, check webhook response see there an error. "
+    "content": "example yaml configuration for project building node application. scenario user looking to create pipeline that builds an artifact on any event branch pushed source control. steps the following concepts are being used below: image pull commands note: must be stored base of repository as .vela.yml .vela.yaml it recommended pin image: versions production pipelines version:&#34;1&#34;steps:-name:installimage:node:latestpull:alwayscommands:-nodeinstall-name:lintimage:node:latestpull:alwayscommands:-nodetest-name:buildimage:node:latestpull:alwayscommands:-nodebuild stages needs version:&#34;1&#34;stages:install:steps:-name:installimage:node:latestpull:alwayscommands:-nodeinstalltest:needs:[install]steps:-name:testimage:node:latestpull:alwayscommands:-nodetestbuild:needs:[install]steps:-name:buildimage:node:latestpull:alwayscommands:-nodebuild "
     },
 
     {
@@ -134,41 +99,6 @@
     "display": "Sdk/Go/Install",
     "title": "Install",
     "content": "download you can the go sdk to your project with following command: get -u github.com/go-vela/sdk-go import into statement: &#34;github.com/go-vela/sdk-go/vela&#34; "
-    },
-
-    {
-    "url": "https://go-vela.github.io/docs/usage/getting-started/skipping_build/",
-    "display": "Usage/Getting started/Skipping build",
-    "title": "Skipping a Build",
-    "content": "to prevent vela from running build for commit, add one of the following your commit title message: [skip ci] [ci skip] vela] [vela ***no_ci*** note: you can use upper lower case. will receive payload source control provider return 200 response with reason why was not triggered. "
-    },
-
-    {
-    "url": "https://go-vela.github.io/docs/usage/getting-started/environment/",
-    "display": "Usage/Getting started/Environment",
-    "title": "Using the Environment",
-    "content": "vela provides the ability to define environment variables scoped individual steps, services secrets. pleas note design be unique per container. does inject variety of default values from build, repo user information. defaults: steps usage following pipeline concepts are being used below: secrets origin note: please warned that ${variable} expressions subject pre-processing. if you do not want pre-processor evaluate your expression it must escaped. version: &#34;1&#34; services: name: redis environment: example: hello, world! image: redis:latest steps: check status commands: can use bash commands in-line set override export example=&#34;hello world team&#34; echo ${example} secrets: origin: private vault target/secret-vault:latest vault_token parameters: addr: vault.example.com auth_method: token username: octocat items: source: secret/docker path: docker "
-    },
-
-    {
-    "url": "https://go-vela.github.io/docs/usage/getting-started/docker/",
-    "display": "Usage/Getting started/Docker",
-    "title": "Building Docker Images",
-    "content": "we assume you understand how to build run docker images. if need assistance on get started with docker; recommend see their documentation for getting set up. vela runs all workloads within containers. which essentially gives us two core different ways images: without elevated daemon access both options have disadvantages advantages, so encourage administrators weigh the pros/cons of they want images cluster. building an image most secure pattern not allowing any workers there are plugin those vela-kaniko vela-makisu customers read tool comparisons before picking technology in-depth examples either utility available respective pages. simple example provided below: version: &#34;1&#34; steps: name: publish kaniko image: target/vela-kaniko:latest pull: always parameters: registry: index.docker.io repo: index.docker.io/octocat/hello-world makisu target/vela-makisu:latest tag: pushes: allowed as long required allow list worker. it&rsquo;s important work your administrator stand instances was deployed support. supported dockers kit target/vela-docker:latest tags: environment: docker_buildkit=0 additional resources container securely kubernetes why rootless hard? introducing tools comparison "
-    },
-
-    {
-    "url": "https://go-vela.github.io/docs/usage/getting-started/workspace/",
-    "display": "Usage/Getting started/Workspace",
-    "title": "Understanding the Workspace",
-    "content": "vela uses shared volume model between steps to allow file system during the build process. these volumes should be considered ephemeral sense once completes execution all data via being destroyed. working directory ensures configuration, code, dependencies, compiled binaries are persisted steps. default workspace attached every unique matches below pattern: source: syntax /vela/src/&lt;source_provider/&lt;source org&gt;/&lt;source repo&gt; example /vela/src/github.com/go-vela/hello-world secrets: /vela/secrets/&lt;path&gt;/&lt;key&gt; /vela/secrets/github/username/ /vela/secrets/github/password/ parameters: /vela/parameters/github/repo/settings/topics before you use parameters check plugin authors docs ensure it has support read from /vela/parameters would equivalent following docker commands executed: create build-workspace run --volume=build-workspace:/vela/ &lt;image&gt; cloning automatically checks out repository into local that mounted each container. generally referred as workspace, which defines by build. git clone https://github.com/go-vela/hello-world.git &lt;workspace&gt; cases where your needs special configuration add step at beginning of pipeline adding desired behavior. "
-    },
-
-    {
-    "url": "https://go-vela.github.io/docs/usage/getting-started/pull_policies/",
-    "display": "Usage/Getting started/Pull policies",
-    "title": "Pull Policies",
-    "content": "vela provides the ability to define how when images for secrets, steps, services will be retrieved at runtime. usage following pipeline concepts are being used below: pull steps secrets origin note: please warned that declaration not required. if you do provide declaration, default value of not_present used. version: &#34;1&#34; services: name: redis image: redis:latest pull: always steps: check status alpine:latest commands: can use bash commands in-line set override variables export example=&#34;hello world from team&#34; echo ${example} secrets: origin: private vault target/secret-vault:latest on_start vault_token parameters: addr: vault.example.com auth_method: token username: octocat items: source: secret/docker path: docker will: attempt image, even it exists locally only image doesn&rsquo;t already exist wait until right before starting container "
     },
 
     {
@@ -312,6 +242,20 @@
     },
 
     {
+    "url": "https://go-vela.github.io/docs/usage/authenticate/",
+    "display": "Docs/Usage/Authenticate",
+    "title": "Authenticate",
+    "content": "warning these docs assume you have vela running. ui navigate to your deployed instance follow the oauth workflow presented on web interface. cli please see authentication reference. if not yet installed cli, install reference first. api sdk "
+    },
+
+    {
+    "url": "https://go-vela.github.io/docs/usage/badge/",
+    "display": "Docs/Usage/Badge",
+    "title": "Badges",
+    "content": "note: these docs assume you have vela running. how to get your badge the server has an endpoint that will return svg for default branch of repo. syntax https://&lt;vela server&gt;/badge/&lt;org&gt;/&lt;repo&gt;/status.svg example https://vela-server.localhost/badge/octocat/hello-world/status.svg addition can specify which want by supplying ?branch= query parameter url. server&gt;/badge/&lt;org&gt;/&lt;repo&gt;/status.svg?branch=&lt;branch name&gt; https://vela-server.localhost/badge/octocat/hello-world/status.svg?branch=not_master embedding markdown embed formatted file, follow example: [![build status](https://&lt;vela server&gt;/badge/&lt;org&gt;/&lt;repo&gt;/status.svg)](https://&lt;vela server&gt;/badge/&lt;org&gt;/&lt;repo&gt;) status](https://vela-server.localhost/badge/octocat/hello-world/status.svg)](https://vela-server.localhost/badge/octocat/hello-world) "
+    },
+
+    {
     "url": "https://go-vela.github.io/docs/plugins/pipeline/tutorials/bash/",
     "display": "Pipeline/Tutorials/Bash",
     "title": "Bash",
@@ -330,6 +274,13 @@
     "display": "Concepts/System/Build",
     "title": "Build",
     "content": "the build component part of core system components for vela. defined as single, ephemeral execution pipeline. comprised one many services steps that contain instructions to execute from typically created hook triggered by repo source control provider. fields following make up component: name type description author string commit branch base_ref sha clone full url int64 unix timestamp when was deploy environment targeted deployment distribution operating executed on email enqueued published queue error message received during time event finished completed host hostname id unique identifier link navigatable number int parent previous ref reference repo_id runtime with sender started status signifies end condition title stored configured vela backend builds table. references api cli sdk go "
+    },
+
+    {
+    "url": "https://go-vela.github.io/docs/usage/docker/",
+    "display": "Docs/Usage/Docker",
+    "title": "Building Docker Images",
+    "content": "we assume you understand how to build run docker images. if need assistance on get started with docker; recommend see their documentation for getting set up. vela runs all workloads within containers. which essentially gives us two core different ways images: without elevated daemon access both options have disadvantages advantages, so encourage administrators weigh the pros/cons of they want images cluster. building an image most secure pattern not allowing any workers there are plugin those vela-kaniko vela-makisu customers read tool comparisons before picking technology in-depth examples either utility available respective pages. simple example provided below: version: &#34;1&#34; steps: name: publish kaniko image: target/vela-kaniko:latest pull: always parameters: registry: index.docker.io repo: index.docker.io/octocat/hello-world makisu target/vela-makisu:latest tag: pushes: allowed as long required allow list worker. it&rsquo;s important work your administrator stand instances was deployed support. supported dockers kit target/vela-docker:latest tags: environment: docker_buildkit=0 additional resources container securely kubernetes why rootless hard? introducing tools comparison "
     },
 
     {
@@ -407,6 +358,13 @@
     "display": "Pipeline/Registry/Downstream",
     "title": "Downstream",
     "content": "description plugin enables you to trigger builds for other repos vela pipeline. source code: https://github.com/go-vela/vela-downstream registry: https://hub.docker.com/r/target/vela-downstream usage note: users should refrain from using latest as the tag docker image. it recommended use semantically versioned instead. sample of triggering downstream build: steps:-name:trigger_hello-worldimage:target/vela-downstream:latestpull:alwaysparameters:branch:masterrepos:-octocat/hello-worldserver:https://vela-server.localhost build multiple repos: steps: name: trigger_multiple image: target/vela-downstream:latest pull: always parameters: branch: master octocat/hello-world go-vela/hello-world server: https://vela-server.localhost with different branches: symbol at end org/repo provide unique branch per repo. octocat/hello-world@test go-vela/hello-world@stage secrets configuring sensitive information your pipeline plain text. internal can substitute these values runtime: trigger_hello-world secrets: downstream_token token: supersecretvelatoken example will add secret step environment variables: downstream_token=&lt;value&gt; external accepts following files authentication: parameter volume configuration token /vela/parameters/downstream/token, /vela/secrets/downstream/token read value stored /vela/secrets/ parameters supports reading all via variables files. any set file take precedence over environment. are used configure name required default on true parameter_branch downstream_branch log_level log level info parameter_log_level downstream_log_level list names n/a parameter_repos downstream_repos server communicate parameter_server downstream_server communication parameter_token template coming soon! troubleshooting start by tuning logs being displayed: log_level: trace below common problems how solve them: "
+    },
+
+    {
+    "url": "https://go-vela.github.io/docs/usage/enable_repo/",
+    "display": "Docs/Usage/Enable repo",
+    "title": "Enable a Repo",
+    "content": "note: you will need admin access to the repo be able activate it vela. because add webhooks repo. via ui for example, we&rsquo;ll go over using can always head cli docs on how cli. log into your vela instance. click repositories. select org from available list. next would like add. alternatively all repos an org. if doesn&rsquo;t exist, try clicking refresh list top right. now has necessary web hook "
     },
 
     {
@@ -669,6 +627,13 @@
     },
 
     {
+    "url": "https://go-vela.github.io/docs/usage/schema/",
+    "display": "Docs/Usage/Schema",
+    "title": "JSON Schema support",
+    "content": "the schema gets published updated via https://github.com/go-vela/types where it ends up as release artifact. latest available for download from https://github.com/go-vela/types/releases/latest/download/schema.json. addition, has been added to json store project at https://www.schemastore.org/ which provides direct support various editors (see supporting section https://www.schemastore.org/json/). "
+    },
+
+    {
     "url": "https://go-vela.github.io/docs/plugins/pipeline/registry/kaniko/",
     "display": "Pipeline/Registry/Kaniko",
     "title": "Kaniko",
@@ -848,6 +813,13 @@
     "display": "Pipeline/Steps/Pull",
     "title": "Pull",
     "content": "the pull component part of step for vela. declaration allows you to control how when vela will attempt image provided step. has default value not_present. means always from its existing cache images. options following are available configure component: name description even if it exists local never assumes already not_present only does not exist on_start waits until right before starting container syntax an example valid version: &#34;1&#34; metadata: template: false steps: name: test image: golang pull: commands: go ./... build pipeline execute first, then run "
+    },
+
+    {
+    "url": "https://go-vela.github.io/docs/usage/pull_policies/",
+    "display": "Docs/Usage/Pull policies",
+    "title": "Pull Policies",
+    "content": "vela provides the ability to define how when images for secrets, steps, services will be retrieved at runtime. usage following pipeline concepts are being used below: pull steps secrets origin note: please warned that declaration not required. if you do provide declaration, default value of not_present used. version: &#34;1&#34; services: name: redis image: redis:latest pull: always steps: check status alpine:latest commands: can use bash commands in-line set override variables export example=&#34;hello world from team&#34; echo ${example} secrets: origin: private vault target/secret-vault:latest on_start vault_token parameters: addr: vault.example.com auth_method: token username: octocat items: source: secret/docker path: docker will: attempt image, even it exists locally only image doesn&rsquo;t already exist wait until right before starting container "
     },
 
     {
@@ -1040,6 +1012,13 @@
     },
 
     {
+    "url": "https://go-vela.github.io/docs/usage/roles/",
+    "display": "Docs/Usage/Roles",
+    "title": "Roles",
+    "content": "warning at time the only source control provider github. so documentation tailored for those users. vela does not maintain any authentication (authn) authorization (authz) internally, but instead inherits its access from (version control) provider. more information on github&rsquo;s model can be found their documentation. platform roles: admin write read roles admins have full when interacting with cli, ui, api. within github organization option to use orgs allow users permissions all repositories org, fine-grained of adding directly individual repositories. role enables repository, which grants following levels resources: repo build step service log secret "
+    },
+
+    {
     "url": "https://go-vela.github.io/docs/plugins/pipeline/tutorials/ruby/",
     "display": "Pipeline/Tutorials/Ruby",
     "title": "Ruby",
@@ -1110,6 +1089,13 @@
     },
 
     {
+    "url": "https://go-vela.github.io/docs/usage/skipping_build/",
+    "display": "Docs/Usage/Skipping build",
+    "title": "Skipping a Build",
+    "content": "to prevent vela from running build for commit, add one of the following your commit title message: [skip ci] [ci skip] vela] [vela ***no_ci*** note: you can use upper lower case. will receive payload source control provider return 200 response with reason why was not triggered. "
+    },
+
+    {
     "url": "https://go-vela.github.io/docs/concepts/infrastructure/server/source/",
     "display": "Infrastructure/Server/Source",
     "title": "Source",
@@ -1121,6 +1107,13 @@
     "display": "Pipeline/Templates/Source",
     "title": "Source",
     "content": "the source component part of template for vela. declaration allows you to provide path remote system. syntax following an example valid component: version: &#34;1&#34; metadata: template: false templates name: source: github.com/vela/atlas/cmd type: github steps: test vars: cmd: go ./... build pipeline will execute step first, then run step. "
+    },
+
+    {
+    "url": "https://go-vela.github.io/docs/usage/start_build/",
+    "display": "Docs/Usage/Start build",
+    "title": "Start a Build",
+    "content": "if you&rsquo;ve followed the documentation for enabling repo writing pipeline, all that should be left to push your pipeline repo. build does not trigger when change repo, check webhook response see there an error. "
     },
 
     {
@@ -1170,6 +1163,13 @@
     "display": "Pipeline/Templates/Type",
     "title": "Type",
     "content": "the type component part of template for vela. declaration allows you to provide provided from remote system. options following are available configure component: name description github fetches enterprise instance designed fetch templates enterprise. syntax an example valid version: &#34;1&#34; metadata: template: false name: source: github.com/vela/atlas/cmd type: steps: test vars: cmd: go ./... build pipeline will execute step first, then run step. "
+    },
+
+    {
+    "url": "https://go-vela.github.io/docs/usage/workspace/",
+    "display": "Docs/Usage/Workspace",
+    "title": "Understanding the Workspace",
+    "content": "vela uses shared volume model between steps to allow file system during the build process. these volumes should be considered ephemeral sense once completes execution all data via being destroyed. working directory ensures configuration, code, dependencies, compiled binaries are persisted steps. default workspace attached every unique matches below pattern: source: syntax /vela/src/&lt;source_provider/&lt;source org&gt;/&lt;source repo&gt; example /vela/src/github.com/go-vela/hello-world secrets: /vela/secrets/&lt;path&gt;/&lt;key&gt; /vela/secrets/github/username/ /vela/secrets/github/password/ parameters: /vela/parameters/github/repo/settings/topics before you use parameters check plugin authors docs ensure it has support read from /vela/parameters would equivalent following docker commands executed: create build-workspace run --volume=build-workspace:/vela/ &lt;image&gt; cloning automatically checks out repository into local that mounted each container. generally referred as workspace, which defines by build. git clone https://github.com/go-vela/hello-world.git &lt;workspace&gt; cases where your needs special configuration add step at beginning of pipeline adding desired behavior. "
     },
 
     {
@@ -1296,6 +1296,13 @@
     "display": "Concepts/System/User",
     "title": "User",
     "content": "the user component part of core system components for vela. defined as personal account granted to each individual who registers fields following make up component: name type description active bool signifies current status admin enables elevated permissions builds executed repo favorites []string list repos favorited ui hash string unique secret generated by id int64 identifier token access source control provider stored configured vela backend users table. references api "
+    },
+
+    {
+    "url": "https://go-vela.github.io/docs/usage/environment/",
+    "display": "Docs/Usage/Environment",
+    "title": "Using the Environment",
+    "content": "vela provides the ability to define environment variables scoped individual steps, services secrets. pleas note design be unique per container. does inject variety of default values from build, repo user information. defaults: steps usage following pipeline concepts are being used below: secrets origin note: please warned that ${variable} expressions subject pre-processing. if you do not want pre-processor evaluate your expression it must escaped. version: &#34;1&#34; services: name: redis environment: example: hello, world! image: redis:latest steps: check status commands: can use bash commands in-line set override export example=&#34;hello world team&#34; echo ${example} secrets: origin: private vault target/secret-vault:latest vault_token parameters: addr: vault.example.com auth_method: token username: octocat items: source: secret/docker path: docker "
     },
 
     {
