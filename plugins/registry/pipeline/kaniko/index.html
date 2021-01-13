@@ -1,0 +1,1079 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.59.1" />
+
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/docs/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/docs/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/docs/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/docs/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/docs/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/docs/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/docs/favicons/android-96x196.png" sizes="96x196">
+<link rel="icon" type="image/png" href="/docs/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/docs/favicons/android-192x192.png"sizes="192x192">
+
+<title>Kaniko | Vela</title><meta property="og:title" content="Kaniko" />
+<meta property="og:description" content="Description This plugin enables you to build and publish Docker images in a Vela pipeline.
+Source Code: https://github.com/go-vela/vela-kaniko
+Registry: https://hub.docker.com/r/target/vela-kaniko
+Usage  NOTE:
+Users should refrain from using latest as the tag for the Docker image.
+It is recommended to use a semantically versioned tag instead.
+ Sample of building and publishing an image:
+steps:-name:publish_hello-worldimage:target/vela-kaniko:latestpull:alwaysparameters:registry:index.docker.iorepo:index.docker.io/octocat/hello-world Sample of building an image without publishing:
+steps: - name: publish_hello-world image: target/vela-kaniko:latest pull: always parameters: &#43; dry_run: true  registry: index." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://go-vela.github.io/docs/plugins/registry/pipeline/kaniko/" />
+<meta property="article:modified_time" content="2021-01-13T15:05:51-06:00" />
+<meta itemprop="name" content="Kaniko">
+<meta itemprop="description" content="Description This plugin enables you to build and publish Docker images in a Vela pipeline.
+Source Code: https://github.com/go-vela/vela-kaniko
+Registry: https://hub.docker.com/r/target/vela-kaniko
+Usage  NOTE:
+Users should refrain from using latest as the tag for the Docker image.
+It is recommended to use a semantically versioned tag instead.
+ Sample of building and publishing an image:
+steps:-name:publish_hello-worldimage:target/vela-kaniko:latestpull:alwaysparameters:registry:index.docker.iorepo:index.docker.io/octocat/hello-world Sample of building an image without publishing:
+steps: - name: publish_hello-world image: target/vela-kaniko:latest pull: always parameters: &#43; dry_run: true  registry: index.">
+
+
+<meta itemprop="dateModified" content="2021-01-13T15:05:51-06:00" />
+<meta itemprop="wordCount" content="699">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Kaniko"/>
+<meta name="twitter:description" content="Description This plugin enables you to build and publish Docker images in a Vela pipeline.
+Source Code: https://github.com/go-vela/vela-kaniko
+Registry: https://hub.docker.com/r/target/vela-kaniko
+Usage  NOTE:
+Users should refrain from using latest as the tag for the Docker image.
+It is recommended to use a semantically versioned tag instead.
+ Sample of building and publishing an image:
+steps:-name:publish_hello-worldimage:target/vela-kaniko:latestpull:alwaysparameters:registry:index.docker.iorepo:index.docker.io/octocat/hello-world Sample of building an image without publishing:
+steps: - name: publish_hello-world image: target/vela-kaniko:latest pull: always parameters: &#43; dry_run: true  registry: index."/>
+
+
+
+
+
+
+
+<link rel="preload" href="/docs/scss/main.min.70d8bad3cbfd44b25762dfb0cadb082e7e2c882cbc3cb7ff0b318df81507856d.css" as="style">
+<link href="/docs/scss/main.min.70d8bad3cbfd44b25762dfb0cadb082e7e2c882cbc3cb7ff0b318df81507856d.css" rel="stylesheet" integrity="">
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+
+    <title>Kaniko | Vela</title>
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="/docs/">
+		<span class="navbar-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1500"><title>vela-inverse</title><polygon points="1477.22 329.54 1338.11 219.91 1349.56 43.16 1202.3 141.58 1037.73 76.07 1085.84 246.54 972.68 382.81 1149.67 389.74 1244.3 539.46 1305.58 373.27 1477.22 329.54" style="fill:#9e6bae"/><path d="M1174.75 635.12 757.57 1357.69a3.47 3.47.0 0 1-6 0L125.38 273.13a3.48 3.48.0 0 1 3-5.22H925.24l39.14-47.13L950.19 170.5H128.39A100.9 100.9.0 0 0 41 321.84L667.19 1406.4a100.88 100.88.0 0 0 174.74.0l391.61-678.27z" style="fill:#34c6f4"/><polygon points="1087.64 497.29 1038.27 495.36 754.56 986.75 395.9 365.54 288.13 365.54 754.56 1173.42 1117.58 544.66 1087.64 497.29" style="fill:#fff"/></svg></span><span class="text-uppercase font-weight-bold">Vela</span>
+	</a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/docs/install/" ><span>Install</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/docs/concepts/" ><span>Concepts</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/docs/usage/" ><span>Usage</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link active" href="/docs/plugins/" ><span class="active">Plugins</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/docs/templates/" ><span>Templates</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/docs/reference/" ><span>Reference</span></a>
+			</li>
+			
+			
+			
+		</ul>
+	</div>
+	<div class="navbar-nav d-none d-lg-block"><div>
+    
+
+    <div class="search -navbar" id="search1">
+        <input id="search1input" type="text" placeholder="Search site..." v-model="txt" @blur="close()" maxlength="50">
+        <div class="search-results" :style="{'display': showresult?'block':'none'}">
+            <a v-for="item in result" :href="item.url">{{ item.display }}</a>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js" integrity="sha256-mpnrJ5DpEZZkwkE1ZgkEQQJW/46CSEh/STrZKOB/qoM=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js" integrity="sha256-FtWfRI+thWlNz2sB3SJbwKx5PgMyKIVgwHCTwa3biXc=" crossorigin="anonymous"></script>
+    <script>
+        let mounted = function() {
+            
+            document.getElementById("search1input").addEventListener("keyup", e => {
+                this.txt = e.target.value;
+                this.search();
+            });
+            
+            axios.get('https:\/\/go-vela.github.io\/docs\/search\/index.json')
+                .then(function(response) {
+                    vuesearch1.bdd = response.data.results;
+                })
+                .catch(function(error) {
+                    console.log(error);
+                });
+        }
+        let close = function() {
+            
+            
+            setTimeout(function() {
+                vuesearch1.showresult = false;
+                vuesearch1.txt = '';
+            }, 300);
+        }
+        let search = function() {
+            
+            clearTimeout(this.timeoutID);
+            this.timeoutID = setTimeout(this.dosearch, 500);
+        }
+
+        let dosearch = function() {
+            
+            this.result = []; 
+            let words = this.txt.split(' '); 
+            let words2 = []; 
+            words.forEach(function(element) { 
+                if (element) {
+                    words2.push(element);
+                }
+            });
+            let r;
+            let resultmp;
+            words2.forEach(function(e) {
+                r = vuesearch1.bdd.filter(p => p.content.indexOf(e.toLowerCase()) !== -1);
+                if (vuesearch1.result.length === 0) {
+                    vuesearch1.result = r.slice();
+                    return;
+                }
+                resultmp = [];
+                vuesearch1.result.forEach(function(all1) {
+                    r.forEach(function(all2) {
+                        if (all1.url === all2.url) {
+                            resultmp.push(all1);
+                        }
+                    });
+                });
+                vuesearch1.result = resultmp.slice();
+            });
+            this.result = this.result.slice(0, 10); 
+            this.result = this.result.sort(function (a, b) {
+                return ('' + a.display).localeCompare(b.display);
+            })
+            this.showresult = (this.result.length > 0);
+        }
+        let vuesearch1 = new Vue({
+            el: '#search1',
+            data: {
+                txt: '',
+                timeoutID: 0,
+                showresult: false,
+                result: {},
+                bdd: []
+            },
+            mounted: mounted,
+            methods: {
+                close: close,
+                search: search,
+                dosearch: dosearch
+            }
+        });
+    </script>
+</div></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            
+
+
+
+
+<div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <form class="td-sidebar__search d-flex align-items-center">
+    <div>
+    <div class="search -sidebar" id="search2">
+        <input id="search2input" type="text" placeholder="Search site..." v-model="txt" @blur="close()" maxlength="50">
+        <div class="search-results" :style="{'display': showresult?'block':'none'}">
+            <a v-for="item in result" :href="item.url">{{ item.display }}</a>
+        </div>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js" integrity="sha256-mpnrJ5DpEZZkwkE1ZgkEQQJW/46CSEh/STrZKOB/qoM=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js" integrity="sha256-FtWfRI+thWlNz2sB3SJbwKx5PgMyKIVgwHCTwa3biXc=" crossorigin="anonymous"></script>
+<script>
+    let mounted_sidebar = function() {
+        document.getElementById("search2input").addEventListener("keyup", e => {
+            this.txt = e.target.value;
+            this.search();
+        });
+        axios.get('https:\/\/go-vela.github.io\/docs\/search\/index.json')
+            .then(function(response) {
+                vuesearch2.bdd = response.data.results;
+            })
+            .catch(function(error) {
+                console.log(error);
+            });
+    }
+    let close_sidebar = function() {
+        setTimeout(function() {
+            vuesearch2.showresult = false;
+            vuesearch2.txt = '';
+        }, 300);
+    }
+
+    let dosearch_sidebar = function() {
+        this.result = [];
+        var words = this.txt.split(' ');
+        var words2 = [];
+        words.forEach(function(element) {
+            if (element) {
+                words2.push(element);
+            }
+        });
+        var r;
+        var resultmp;
+        words2.forEach(function(e) {
+            r = vuesearch2.bdd.filter(p => p.content.indexOf(e.toLowerCase()) !== -1);
+            if (vuesearch2.result.length === 0) {
+                vuesearch2.result = r.slice();
+                return;
+            }
+            resultmp = [];
+            vuesearch2.result.forEach(function(all1) {
+                r.forEach(function(all2) {
+                    if (all1.url === all2.url) {
+                        resultmp.push(all1);
+                    }
+                });
+            });
+            vuesearch2.result = resultmp.slice();
+        });
+        this.result = this.result.slice(0, 10);
+        this.result = this.result.sort(function (a, b) {
+            return ('' + a.display).localeCompare(b.display);
+        })
+        this.showresult = (this.result.length > 0);
+    }
+    let vuesearch2 = new Vue({
+        el: '#search2',
+        data: {
+            txt: '',
+            timeoutID: 0,
+            showresult: false,
+            result: {},
+            bdd: []
+        },
+        mounted: mounted_sidebar,
+        methods: {
+            close: close_sidebar,
+            search: search,
+            dosearch: dosearch_sidebar
+        }
+    });
+</script>
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  
+  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
+    
+    
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/plugins/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Plugins</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="docs-plugins">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/plugins/registry/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Registry</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="docs-plugins-registry">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/plugins/registry/pipeline/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Pipeline</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="docs-plugins-registry-pipeline">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-registry-pipeline-artifactory" href="/docs/plugins/registry/pipeline/artifactory/">Artifactory</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-registry-pipeline-captains-log" href="/docs/plugins/registry/pipeline/captains_log/">Captain&#39;s Log</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-registry-pipeline-docker" href="/docs/plugins/registry/pipeline/docker/">Docker</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-registry-pipeline-downstream" href="/docs/plugins/registry/pipeline/downstream/">Downstream</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-registry-pipeline-git" href="/docs/plugins/registry/pipeline/git/">Git</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docs-plugins-registry-pipeline-kaniko" href="/docs/plugins/registry/pipeline/kaniko/">Kaniko</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-registry-pipeline-kubernetes" href="/docs/plugins/registry/pipeline/kubernetes/">Kubernetes</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-registry-pipeline-makisu" href="/docs/plugins/registry/pipeline/makisu/">Makisu</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-registry-pipeline-s3-cache" href="/docs/plugins/registry/pipeline/s3_cache/">S3 Cache</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-registry-pipeline-terraform" href="/docs/plugins/registry/pipeline/terraform/">Terraform</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/plugins/registry/secret/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Secret</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docs-plugins-registry-secret">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-registry-secret-vault" href="/docs/plugins/registry/secret/vault/">Vault</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/plugins/tutorials/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Tutorials</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docs-plugins-tutorials">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-tutorials-bash" href="/docs/plugins/tutorials/bash/">Bash</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-tutorials-go" href="/docs/plugins/tutorials/go/">Go</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-tutorials-node" href="/docs/plugins/tutorials/node/">Node.js</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-tutorials-python" href="/docs/plugins/tutorials/python/">Python</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-tutorials-ruby" href="/docs/plugins/tutorials/ruby/">Ruby</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+  </nav>
+</div>
+
+
+
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+            
+
+
+
+
+<div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+
+
+
+<a href="https://github.com/go-vela/docs/edit/master/content/plugins/registry/pipeline/kaniko.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+<a href="https://github.com/go-vela/docs/issues/new?title=Kaniko" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+
+</div>
+
+
+
+
+
+
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	<ol class="breadcrumb spb-1">
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="https://go-vela.github.io/docs/plugins/">Plugins</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="https://go-vela.github.io/docs/plugins/registry/">Registry</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="https://go-vela.github.io/docs/plugins/registry/pipeline/">Pipeline</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item active" aria-current="page">
+	<a href="https://go-vela.github.io/docs/plugins/registry/pipeline/kaniko/">Kaniko</a>
+</li>
+
+	</ol>
+</nav	>
+
+            
+<div class="td-content">
+	<h1>Kaniko</h1>
+	
+	<h2 id="description">Description</h2>
+
+<p>This plugin enables you to build and publish <a href="https://www.docker.com/" target="_blank">Docker</a> images in a Vela pipeline.</p>
+
+<p>Source Code: <a href="https://github.com/go-vela/vela-kaniko" target="_blank">https://github.com/go-vela/vela-kaniko</a></p>
+
+<p>Registry: <a href="https://hub.docker.com/r/target/vela-kaniko" target="_blank">https://hub.docker.com/r/target/vela-kaniko</a></p>
+
+<h2 id="usage">Usage</h2>
+
+<blockquote>
+<p><strong>NOTE:</strong></p>
+
+<p>Users should refrain from using latest as the tag for the Docker image.</p>
+
+<p>It is recommended to use a semantically versioned tag instead.</p>
+</blockquote>
+
+<p>Sample of building and publishing an image:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">steps<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span>-<span style="color:#f8f8f8;text-decoration:underline"> </span>name<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>publish_hello-world<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>image<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>target/vela-kaniko<span style="color:#000;font-weight:bold">:</span>latest<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>pull<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>always<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>parameters<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span>registry<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>index.docker.io<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span>repo<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>index.docker.io/octocat/hello-world</code></pre></div>
+<p>Sample of building an image without publishing:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
+  - name: publish_hello-world
+    image: target/vela-kaniko:latest
+    pull: always
+    parameters:
+<span style="color:#00a000">+     dry_run: true
+</span><span style="color:#00a000"></span>      registry: index.docker.io
+      repo: index.docker.io/octocat/hello-world
+</code></pre></div>
+<p>Sample of building and publishing an image with custom tags:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
+  - name: publish_hello-world
+    image: target/vela-kaniko:latest
+    pull: always
+    parameters:
+      registry: index.docker.io
+      repo: index.docker.io/octocat/hello-world
+<span style="color:#00a000">+     tags:
+</span><span style="color:#00a000">+       - latest
+</span><span style="color:#00a000">+       - foobar
+</span></code></pre></div>
+<p>Sample of building and publishing an image with automatic tags:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
+  - name: publish_hello-world
+    image: target/vela-kaniko:latest
+    pull: always
+    parameters:
+<span style="color:#00a000">+     auto_tag: true
+</span><span style="color:#00a000"></span>      registry: index.docker.io
+      repo: index.docker.io/octocat/hello-world
+</code></pre></div>
+<p>Sample of building and publishing an image with build arguments:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
+  - name: publish_hello-world
+    image: target/vela-kaniko:latest
+    pull: always
+    parameters:
+<span style="color:#00a000">+     build_args:
+</span><span style="color:#00a000">+       - FOO=bar
+</span><span style="color:#00a000"></span>      registry: index.docker.io
+      repo: index.docker.io/octocat/hello-world
+</code></pre></div>
+<p>Sample of building and publishing an image with caching:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
+  - name: publish_hello-world
+    image: target/vela-kaniko:latest
+    pull: always
+    parameters:
+<span style="color:#00a000">+     cache: true
+</span><span style="color:#00a000">+     cache_repo: index.docker.io/octocat/hello-world
+</span><span style="color:#00a000"></span>      registry: index.docker.io
+      repo: index.docker.io/octocat/hello-world
+</code></pre></div>
+<p>Sample of building using a snapshot mode and publishing an image with caching:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
+  - name: publish_hello-world
+    image: target/vela-kaniko:latest
+    pull: always
+    parameters:
+<span style="color:#00a000">+     snapshot_mode: redo
+</span><span style="color:#00a000"></span>      registry: index.docker.io
+      repo: index.docker.io/octocat/hello-world
+</code></pre></div>
+<h2 id="secrets">Secrets</h2>
+
+<blockquote>
+<p><strong>NOTE:</strong> Users should refrain from configuring sensitive information in your pipeline in plain text.</p>
+</blockquote>
+
+<h3 id="internal">Internal</h3>
+
+<p>Users can use <a href="https://go-vela.github.io/docs/concepts/pipeline/secrets/" target="_blank">Vela internal secrets</a> to substitute these sensitive values at runtime:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
+  - name: publish_hello-world
+    image: target/vela-kaniko:latest
+    pull: always
+<span style="color:#00a000">+   secrets: [ kaniko_username, kaniko_password ]
+</span><span style="color:#00a000"></span>    parameters:
+      registry: index.docker.io
+      repo: index.docker.io/octocat/hello-world
+<span style="color:#a40000">-     username: octocat
+</span><span style="color:#a40000">-     password: superSecretPassword
+</span></code></pre></div>
+<blockquote>
+<p>This example will add the secrets to the <code>publish_hello-world</code> step as environment variables:</p>
+
+<p><ul>
+<li><code>KANIKO_USERNAME=&lt;value&gt;</code></li>
+<li><code>KANIKO_PASSWORD=&lt;value&gt;</code></li>
+</ul>
+</blockquote></p>
+
+<h3 id="external">External</h3>
+
+<p>The plugin accepts the following files for authentication:</p>
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Volume Configuration</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>password</code></td>
+<td><code>/vela/parameters/kaniko/password</code>, <code>/vela/secrets/kaniko/password</code></td>
+</tr>
+
+<tr>
+<td><code>username</code></td>
+<td><code>/vela/parameters/kaniko/username</code>, <code>/vela/secrets/kaniko/username</code></td>
+</tr>
+</tbody>
+</table>
+
+<p>Users can use <a href="https://go-vela.github.io/docs/concepts/pipeline/secrets/origin/" target="_blank">Vela external secrets</a> to substitute these sensitive values at runtime:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
+  - name: publish_hello-world
+    image: target/vela-kaniko:latest
+    pull: always
+<span style="color:#00a000">+   secrets: [ kaniko_username, kaniko_password ]
+</span><span style="color:#00a000"></span>    parameters:
+      registry: index.docker.io
+      repo: index.docker.io/octocat/hello-world
+<span style="color:#a40000">-     username: octocat
+</span><span style="color:#a40000">-     password: superSecretPassword
+</span></code></pre></div>
+<blockquote>
+<p>This example will read the secret values in the volume stored at <code>/vela/secrets/</code></p>
+</blockquote>
+
+<h2 id="parameters">Parameters</h2>
+
+<blockquote>
+<p><strong>NOTE:</strong></p>
+
+<p>The plugin supports reading all parameters via environment variables or files.</p>
+
+<p>Any values set from a file take precedence over values set from the environment.</p>
+
+<p>The <a href="https://github.com/GoogleContainerTools/kaniko/releases/tag/v1.0.0" target="_blank">Snapshot mode</a> can help improve performance but it is recommend to follow Kaniko&rsquo;s guidelines for picking the mode.</p>
+</blockquote>
+
+<p>The following parameters are used to configure the image:</p>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Required</th>
+<th>Default</th>
+<th>Environment Variables</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>auto_tag</code></td>
+<td>enables tagging of image automatically</td>
+<td><code>false</code></td>
+<td><code>false</code></td>
+<td><code>PARAMETER_AUTO_TAG</code><br><code>KANIKO_AUTO_TAG</code></td>
+</tr>
+
+<tr>
+<td><code>build_args</code></td>
+<td>variables passed to image at build-time</td>
+<td><code>false</code></td>
+<td><code>N/A</code></td>
+<td><code>PARAMETER_BUILD_ARGS</code><br><code>KANIKO_BUILD_ARGS</code></td>
+</tr>
+
+<tr>
+<td><code>cache</code></td>
+<td>enable caching of image layers</td>
+<td><code>false</code></td>
+<td><code>false</code></td>
+<td><code>PARAMETER_CACHE</code><br><code>KANIKO_CACHE</code></td>
+</tr>
+
+<tr>
+<td><code>cache_repo</code></td>
+<td>specific repo to enable caching for</td>
+<td><code>false</code></td>
+<td><code>N/A</code></td>
+<td><code>PARAMETER_CACHE_REPO</code><br><code>KANIKO_CACHE_REPO</code></td>
+</tr>
+
+<tr>
+<td><code>context</code></td>
+<td>path to context for building the image</td>
+<td><code>true</code></td>
+<td><code>.</code></td>
+<td><code>PARAMETER_CONTEXT</code><br><code>KANIKO_CONTEXT</code></td>
+</tr>
+
+<tr>
+<td><code>dockerfile</code></td>
+<td>path to the file for building the image</td>
+<td><code>true</code></td>
+<td><code>Dockerfile</code></td>
+<td><code>PARAMETER_DOCKERFILE</code><br><code>KANIKO_DOCKERFILE</code></td>
+</tr>
+
+<tr>
+<td><code>dry_run</code></td>
+<td>enable building the image without publishing</td>
+<td><code>false</code></td>
+<td><code>false</code></td>
+<td><code>PARAMETER_DRY_RUN</code><br><code>KANIKO_DRY_RUN</code></td>
+</tr>
+
+<tr>
+<td><code>event</code></td>
+<td>event generated for build</td>
+<td><code>true</code></td>
+<td><strong>set by Vela</strong></td>
+<td><code>PARAMETER_EVENT</code><br><code>KANIKO_EVENT</code><br><code>VELA_BUILD_EVENT</code></td>
+</tr>
+
+<tr>
+<td><code>labels</code></td>
+<td>unique labels to add to the image</td>
+<td><code>false</code></td>
+<td><code>N/A</code></td>
+<td><code>PARAMETER_LABELS</code><br><code>KANIKO_LABELS</code></td>
+</tr>
+
+<tr>
+<td><code>log_level</code></td>
+<td>set the log level for the plugin</td>
+<td><code>true</code></td>
+<td><code>info</code></td>
+<td><code>PARAMETER_LOG_LEVEL</code><br><code>KANIKO_LOG_LEVEL</code></td>
+</tr>
+
+<tr>
+<td><code>mirror</code></td>
+<td>name of the mirror registry to use</td>
+<td><code>false</code></td>
+<td><code>N/A</code></td>
+<td><code>PARAMETER_MIRROR</code><br><code>KANIKO_MIRROR</code></td>
+</tr>
+
+<tr>
+<td><code>password</code></td>
+<td>password for communication with the registry</td>
+<td><code>true</code></td>
+<td><code>N/A</code></td>
+<td><code>PARAMETER_PASSWORD</code><br><code>KANIKO_PASSWORD</code><br><code>DOCKER_PASSWORD</code></td>
+</tr>
+
+<tr>
+<td><code>registry</code></td>
+<td>name of the registry for the repository</td>
+<td><code>true</code></td>
+<td><code>index.docker.io</code></td>
+<td><code>PARAMETER_REGISTRY</code><br><code>KANIKO_REGISTRY</code></td>
+</tr>
+
+<tr>
+<td><code>repo</code></td>
+<td>name of the repository for the image</td>
+<td><code>true</code></td>
+<td><code>N/A</code></td>
+<td><code>PARAMETER_REPO</code><br><code>KANIKO_REPO</code></td>
+</tr>
+
+<tr>
+<td><code>sha</code></td>
+<td>SHA-1 hash generated for commit</td>
+<td><code>true</code></td>
+<td><strong>set by Vela</strong></td>
+<td><code>PARAMETER_SHA</code><br><code>KANIKO_SHA</code><br><code>VELA_BUILD_COMMIT</code></td>
+</tr>
+
+<tr>
+<td><code>snapshot_mode</code></td>
+<td>control how to snapshot the filesystem. - options (full</td>
+<td>redo</td>
+<td>time)</td>
+<td><code>false</code></td>
+</tr>
+
+<tr>
+<td><code>tag</code></td>
+<td>tag generated for build</td>
+<td><code>false</code></td>
+<td><strong>set by Vela</strong></td>
+<td><code>PARAMETER_TAG</code><br><code>KANIKO_TAG</code><br><code>VELA_BUILD_TAG</code></td>
+</tr>
+
+<tr>
+<td><code>tags</code></td>
+<td>unique tags of the image</td>
+<td><code>true</code></td>
+<td><code>latest</code></td>
+<td><code>PARAMETER_TAGS</code><br><code>KANIKO_TAGS</code></td>
+</tr>
+
+<tr>
+<td><code>target</code></td>
+<td>set the target build stage for the image</td>
+<td><code>false</code></td>
+<td><code>N/A</code></td>
+<td><code>PARAMETER_TARGET</code><br><code>KANIKO_TARGET</code></td>
+</tr>
+
+<tr>
+<td><code>username</code></td>
+<td>user name for communication with the registry</td>
+<td><code>true</code></td>
+<td><code>N/A</code></td>
+<td><code>PARAMETER_USERNAME</code><br><code>KANIKO_USERNAME</code><br><code>DOCKER_USERNAME</code></td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="template">Template</h2>
+
+<p>COMING SOON!</p>
+
+<h2 id="troubleshooting">Troubleshooting</h2>
+
+<p>You can start troubleshooting this plugin by tuning the level of logs being displayed:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
+  - name: publish_hello-world
+    image: target/vela-kaniko:latest
+    pull: always
+    parameters:
+<span style="color:#00a000">+     log_level: trace
+</span><span style="color:#00a000"></span>      registry: index.docker.io
+      repo: index.docker.io/octocat/hello-world
+</code></pre></div>
+<p>Below are a list of common problems and how to solve them:</p>
+
+	
+	
+	<div class="text-muted mt-5 pt-3 border-top">Last modified January 13, 2021: <a  href="https://github.com/go-vela/docs/commit/8672a3955650232bed0b8d390565e9ae6d317f76">refactor: flatten plugin documentation (#193) (8672a39)</a>
+</div>
+</div>
+
+
+          </main>
+        </div>
+      </div>
+      
+<footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        
+        
+        
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="GitHub" aria-label="GitHub">
+    <a class="text-white" target="_blank" href="https://github.com/go-vela">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Slack" aria-label="Slack">
+    <a class="text-white" target="_blank" href="https://gophers.slack.com/app_redirect?channel=CNRRKE8KY">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Developer mailing list" aria-label="Developer mailing list">
+    <a class="text-white" target="_blank" href="mailto:vela@target.com">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">&copy; 2021 Target Brands All Rights Reserved</small>
+        <small class="ml-1"><a href="https://github.com/go-vela/server/blob/master/LICENSE" target="_blank">Privacy Policy</a></small>
+	
+		
+	
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    </div>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+
+
+
+
+<script src="/docs/js/main.min.249bfd804cb79020e7c423ccdbcde3013d7a34a1365fe174e162d05ba8fbbfdf.js" integrity="sha256-JJv9gEy3kCDnxCPM283jAT16NKE2X&#43;F04WLQW6j7v98=" crossorigin="anonymous"></script>
+
+
+
+  </body>
+</html>

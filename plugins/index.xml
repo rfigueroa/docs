@@ -15,10 +15,10 @@
     
     <item>
       <title>Plugins: Artifactory</title>
-      <link>https://go-vela.github.io/docs/plugins/pipeline/registry/artifactory/</link>
+      <link>https://go-vela.github.io/docs/plugins/registry/pipeline/artifactory/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://go-vela.github.io/docs/plugins/pipeline/registry/artifactory/</guid>
+      <guid>https://go-vela.github.io/docs/plugins/registry/pipeline/artifactory/</guid>
       <description>
         
         
@@ -558,10 +558,10 @@
     
     <item>
       <title>Plugins: Bash</title>
-      <link>https://go-vela.github.io/docs/plugins/pipeline/tutorials/bash/</link>
+      <link>https://go-vela.github.io/docs/plugins/tutorials/bash/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://go-vela.github.io/docs/plugins/pipeline/tutorials/bash/</guid>
+      <guid>https://go-vela.github.io/docs/plugins/tutorials/bash/</guid>
       <description>
         
         
@@ -678,10 +678,10 @@ This has the added benefit of enabling others in the community to consume your p
     
     <item>
       <title>Plugins: Captain&#39;s Log</title>
-      <link>https://go-vela.github.io/docs/plugins/pipeline/registry/captains_log/</link>
+      <link>https://go-vela.github.io/docs/plugins/registry/pipeline/captains_log/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://go-vela.github.io/docs/plugins/pipeline/registry/captains_log/</guid>
+      <guid>https://go-vela.github.io/docs/plugins/registry/pipeline/captains_log/</guid>
       <description>
         
         
@@ -816,10 +816,10 @@ This example will add the &lt;code&gt;secrets&lt;/code&gt; to the &lt;code&gt;ca
     
     <item>
       <title>Plugins: Docker</title>
-      <link>https://go-vela.github.io/docs/plugins/pipeline/registry/docker/</link>
+      <link>https://go-vela.github.io/docs/plugins/registry/pipeline/docker/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://go-vela.github.io/docs/plugins/pipeline/registry/docker/</guid>
+      <guid>https://go-vela.github.io/docs/plugins/registry/pipeline/docker/</guid>
       <description>
         
         
@@ -1338,10 +1338,10 @@ This example will add the &lt;code&gt;secrets&lt;/code&gt; to the &lt;code&gt;ca
     
     <item>
       <title>Plugins: Downstream</title>
-      <link>https://go-vela.github.io/docs/plugins/pipeline/registry/downstream/</link>
+      <link>https://go-vela.github.io/docs/plugins/registry/pipeline/downstream/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://go-vela.github.io/docs/plugins/pipeline/registry/downstream/</guid>
+      <guid>https://go-vela.github.io/docs/plugins/registry/pipeline/downstream/</guid>
       <description>
         
         
@@ -1559,10 +1559,10 @@ This example will add the &lt;code&gt;secrets&lt;/code&gt; to the &lt;code&gt;ca
     
     <item>
       <title>Plugins: Git</title>
-      <link>https://go-vela.github.io/docs/plugins/pipeline/registry/git/</link>
+      <link>https://go-vela.github.io/docs/plugins/registry/pipeline/git/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://go-vela.github.io/docs/plugins/pipeline/registry/git/</guid>
+      <guid>https://go-vela.github.io/docs/plugins/registry/pipeline/git/</guid>
       <description>
         
         
@@ -1834,10 +1834,10 @@ This example will add the &lt;code&gt;secrets&lt;/code&gt; to the &lt;code&gt;ca
     
     <item>
       <title>Plugins: Go</title>
-      <link>https://go-vela.github.io/docs/plugins/pipeline/tutorials/go/</link>
+      <link>https://go-vela.github.io/docs/plugins/tutorials/go/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://go-vela.github.io/docs/plugins/pipeline/tutorials/go/</guid>
+      <guid>https://go-vela.github.io/docs/plugins/tutorials/go/</guid>
       <description>
         
         
@@ -1990,10 +1990,10 @@ This has the added benefit of enabling others in the community to consume your p
     
     <item>
       <title>Plugins: Kaniko</title>
-      <link>https://go-vela.github.io/docs/plugins/pipeline/registry/kaniko/</link>
+      <link>https://go-vela.github.io/docs/plugins/registry/pipeline/kaniko/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://go-vela.github.io/docs/plugins/pipeline/registry/kaniko/</guid>
+      <guid>https://go-vela.github.io/docs/plugins/registry/pipeline/kaniko/</guid>
       <description>
         
         
@@ -2368,10 +2368,10 @@ This has the added benefit of enabling others in the community to consume your p
     
     <item>
       <title>Plugins: Kubernetes</title>
-      <link>https://go-vela.github.io/docs/plugins/pipeline/registry/kubernetes/</link>
+      <link>https://go-vela.github.io/docs/plugins/registry/pipeline/kubernetes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://go-vela.github.io/docs/plugins/pipeline/registry/kubernetes/</guid>
+      <guid>https://go-vela.github.io/docs/plugins/registry/pipeline/kubernetes/</guid>
       <description>
         
         
@@ -2758,10 +2758,10 @@ This has the added benefit of enabling others in the community to consume your p
     
     <item>
       <title>Plugins: Makisu</title>
-      <link>https://go-vela.github.io/docs/plugins/pipeline/registry/makisu/</link>
+      <link>https://go-vela.github.io/docs/plugins/registry/pipeline/makisu/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://go-vela.github.io/docs/plugins/pipeline/registry/makisu/</guid>
+      <guid>https://go-vela.github.io/docs/plugins/registry/pipeline/makisu/</guid>
       <description>
         
         
@@ -3076,10 +3076,10 @@ This has the added benefit of enabling others in the community to consume your p
     
     <item>
       <title>Plugins: Node.js</title>
-      <link>https://go-vela.github.io/docs/plugins/pipeline/tutorials/node/</link>
+      <link>https://go-vela.github.io/docs/plugins/tutorials/node/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://go-vela.github.io/docs/plugins/pipeline/tutorials/node/</guid>
+      <guid>https://go-vela.github.io/docs/plugins/tutorials/node/</guid>
       <description>
         
         
@@ -3213,138 +3213,11 @@ This has the added benefit of enabling others in the community to consume your p
     </item>
     
     <item>
-      <title>Plugins: Overview</title>
-      <link>https://go-vela.github.io/docs/plugins/overview/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://go-vela.github.io/docs/plugins/overview/</guid>
-      <description>
-        
-        
-        
-
-
-
-&lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;Note:&lt;/h4&gt;
-Before you begin your plugin journey we recommend the following pre-requisites:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/concepts/pipeline/steps/&#34;&gt;Steps&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/concepts/pipeline/stages/&#34;&gt;Stages&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/concepts/pipeline/templates/&#34;&gt;Templates&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-
-
-&lt;h2 id=&#34;pipeline&#34;&gt;Pipeline&lt;/h2&gt;
-
-&lt;p&gt;These plugins are designed to be used within steps, stages and template pipelines. Pipeline plugins configuration works via environment variables that pass data from pipeline to the container at runtime.&lt;/p&gt;
-
-&lt;p&gt;A pipeline plugin is a Docker container that is designed to perform a set of pre-defined actions.&lt;/p&gt;
-
-&lt;p&gt;These actions can be for any number of general tasks, including:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;deploying code&lt;/li&gt;
-&lt;li&gt;publishing artifacts&lt;/li&gt;
-&lt;li&gt;sending notifications&lt;/li&gt;
-&lt;li&gt;much, much more&amp;hellip;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;secret&#34;&gt;Secret&lt;/h2&gt;
-
-
-
-&lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;Note:&lt;/h4&gt;
-Secret plugins are by default under an allow list of available images for an installation. To know which secret plugins are available for your Vela installation we recommend consulting your system administrators.
-&lt;/div&gt;
-
-
-&lt;p&gt;These plugins are designed to be used within the secrets Yaml block of pipelines. Secret plugins configuration works via environment variables that pass data from pipeline to the container at runtime.&lt;/p&gt;
-
-&lt;p&gt;A secret plugin works in tandem with the Vela workspace to read data from a provider and write them into an available location (&lt;code&gt;/vela/secrets&lt;/code&gt;) within a pipeline.&lt;/p&gt;
-
-&lt;h2 id=&#34;using-a-plugin&#34;&gt;Using a plugin&lt;/h2&gt;
-
-&lt;p&gt;Typically, plugins are configured as a step in a pipeline and should accept their configuration via environment variables. The below example shows a pipeline and secret plugin working together to publish an image to a registry:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;version&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;1&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;steps&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;  &lt;/span&gt;-&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;name&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;plugin&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;image&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;target/vela-docker&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;pull&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;always&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;parameters&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;registry&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;index.docker.io&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;repo&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;index.docker.io/octocat/hello-world&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;secrets&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;  &lt;/span&gt;-&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;name&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;vault_token&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;  &lt;/span&gt;-&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;origin&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;name&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;plugin&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;image&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;target/secret-vault&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;pull&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;always&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;secrets&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;vault_token&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;parameters&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;        &lt;/span&gt;addr&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;vault.company.com&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;        &lt;/span&gt;auth_method&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;token&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;        &lt;/span&gt;items&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;          &lt;/span&gt;-&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;source&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;secret/docker&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;            &lt;/span&gt;path&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;docker&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;   &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;We pass these variables in Vela using the &lt;code&gt;parameters&lt;/code&gt; block. Any variable passed to this block, will be injected into the step as &lt;code&gt;PARAMETER_&amp;lt;variable&amp;gt;&lt;/code&gt;:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;version: &amp;#34;1&amp;#34;
-
-steps:
-  - name: docker
-    image: target/vela-docker
-    pull: always
-&lt;span style=&#34;color:#00a000&#34;&gt;+   parameters:
-&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+     registry: index.docker.io
-&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+     repo: index.docker.io/octocat/hello-world
-&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;
-secrets:
-  - name: vault_token
-
-  - origin:
-      name: vault
-      image: target/secret-vault
-      pull: always
-      secrets: [ vault_token ]
-&lt;span style=&#34;color:#00a000&#34;&gt;+     parameters:
-&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+       addr: vault.company.com
-&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+       auth_method: token
-&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+       items:
-&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+         - source: secret/docker
-&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+           path: docker  
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;From the above example, the following environment variables would be added to the containers:&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Docker:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;PARAMETER_REGISTRY=index.docker.io&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;PARAMETER_REPO=index.docker.io/octocat/hello-world&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;Vault:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;PARAMETER_ADDR=index.docker.io&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;PARAMETER_AUTH_METHOD=index.docker.io/octocat/hello-world&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;PARAMETER_ITEMS={&amp;quot;items&amp;quot;: [{&amp;quot;source&amp;quot;: &amp;quot;secret/docker&amp;quot;}],&amp;quot;path&amp;quot;: &amp;quot;docker&amp;quot;}&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-      </description>
-    </item>
-    
-    <item>
       <title>Plugins: Python</title>
-      <link>https://go-vela.github.io/docs/plugins/pipeline/tutorials/python/</link>
+      <link>https://go-vela.github.io/docs/plugins/tutorials/python/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://go-vela.github.io/docs/plugins/pipeline/tutorials/python/</guid>
+      <guid>https://go-vela.github.io/docs/plugins/tutorials/python/</guid>
       <description>
         
         
@@ -3475,10 +3348,10 @@ This has the added benefit of enabling others in the community to consume your p
     
     <item>
       <title>Plugins: Ruby</title>
-      <link>https://go-vela.github.io/docs/plugins/pipeline/tutorials/ruby/</link>
+      <link>https://go-vela.github.io/docs/plugins/tutorials/ruby/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://go-vela.github.io/docs/plugins/pipeline/tutorials/ruby/</guid>
+      <guid>https://go-vela.github.io/docs/plugins/tutorials/ruby/</guid>
       <description>
         
         
@@ -3608,10 +3481,10 @@ This has the added benefit of enabling others in the community to consume your p
     
     <item>
       <title>Plugins: S3 Cache</title>
-      <link>https://go-vela.github.io/docs/plugins/pipeline/registry/s3_cache/</link>
+      <link>https://go-vela.github.io/docs/plugins/registry/pipeline/s3_cache/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://go-vela.github.io/docs/plugins/pipeline/registry/s3_cache/</guid>
+      <guid>https://go-vela.github.io/docs/plugins/registry/pipeline/s3_cache/</guid>
       <description>
         
         
@@ -4005,10 +3878,10 @@ This has the added benefit of enabling others in the community to consume your p
     
     <item>
       <title>Plugins: Terraform</title>
-      <link>https://go-vela.github.io/docs/plugins/pipeline/registry/terraform/</link>
+      <link>https://go-vela.github.io/docs/plugins/registry/pipeline/terraform/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://go-vela.github.io/docs/plugins/pipeline/registry/terraform/</guid>
+      <guid>https://go-vela.github.io/docs/plugins/registry/pipeline/terraform/</guid>
       <description>
         
         
@@ -4886,16 +4759,14 @@ This has the added benefit of enabling others in the community to consume your p
     
     <item>
       <title>Plugins: Vault</title>
-      <link>https://go-vela.github.io/docs/plugins/secret/registry/vault/</link>
+      <link>https://go-vela.github.io/docs/plugins/registry/secret/vault/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://go-vela.github.io/docs/plugins/secret/registry/vault/</guid>
+      <guid>https://go-vela.github.io/docs/plugins/registry/secret/vault/</guid>
       <description>
         
         
-        
-
-&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
+        &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 
 &lt;p&gt;This plugin enables the ability pull secrets from &lt;a href=&#34;https://www.vaultproject.io/&#34; target=&#34;_blank&#34;&gt;Vault&lt;/a&gt; into the secret mount within a Vela pipeline.&lt;/p&gt;
 
@@ -4905,23 +4776,11 @@ This has the added benefit of enabling others in the community to consume your p
 
 &lt;h2 id=&#34;usage&#34;&gt;Usage&lt;/h2&gt;
 
-
-
-&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
-
-&lt;p&gt;Users should refrain from using &lt;code&gt;latest&lt;/code&gt; as the tag for the Docker image.&lt;/p&gt;
-
-&lt;p&gt;It is recommended to use a semantically versioned tag instead.&lt;/p&gt;
-
-&lt;/div&gt;
-
-
 &lt;p&gt;Sample of writing a secret using token authentication:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;secrets&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;  &lt;/span&gt;-&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;origin&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;name&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;vault&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;image&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;target/vela/secret-vault&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;latest&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;pull&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;always&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;parameters&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;        &lt;/span&gt;addr&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;vault.company.com&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;        &lt;/span&gt;token&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;superSecretVaultToken&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
@@ -4935,7 +4794,6 @@ This has the added benefit of enabling others in the community to consume your p
   - origin:
       name: vault
       image: target/vela/secret-vault:latest
-      pull: always
       parameters:
         addr: vault.company.com
 &lt;span style=&#34;color:#00a000&#34;&gt;+       username: octocat
@@ -4952,7 +4810,6 @@ This has the added benefit of enabling others in the community to consume your p
   - origin:
       name: vault
       image: target/vela/secret-vault:latest
-      pull: always
       parameters:
         addr: vault.company.com
         username: octocat
@@ -4967,18 +4824,11 @@ This has the added benefit of enabling others in the community to consume your p
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2 id=&#34;secrets&#34;&gt;Secrets&lt;/h2&gt;
 
+&lt;p&gt;&lt;strong&gt;NOTE: Users should refrain from configuring sensitive information in your pipeline in plain text.&lt;/strong&gt;&lt;/p&gt;
 
+&lt;p&gt;&lt;strong&gt;NOTE: Secrets used within the secret plugin must exist as Vela secrets.&lt;/strong&gt;&lt;/p&gt;
 
-&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
-
-&lt;p&gt;Users should refrain from configuring sensitive information in their pipeline in plain text.&lt;/p&gt;
-
-&lt;p&gt;Secrets used within the secret plugin must exist as Vela secrets.&lt;/p&gt;
-
-&lt;/div&gt;
-
-
-&lt;p&gt;Users can use &lt;a href=&#34;https://go-vela.github.io/docs/docs/concepts/pipeline/secrets/&#34;&gt;Vela internal secrets&lt;/a&gt; to substitute these sensitive values at runtime:&lt;/p&gt;
+&lt;p&gt;You can use Vela secrets to substitute sensitive values at runtime:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;secrets:
   # Repo secret created within Vela
   - name: vault_token
@@ -4987,9 +4837,8 @@ This has the added benefit of enabling others in the community to consume your p
   - origin:
       name: vault
       image: target/vela/secret-vault:latest
-      pull: always
-&lt;span style=&#34;color:#00a000&#34;&gt;+     secret: [ vault_token ]
-&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;      parameters:
+      secret: [ vault_token ]
+      parameters:
         addr: vault.company.com
 &lt;span style=&#34;color:#a40000&#34;&gt;-       token: superSecretVaultToken
 &lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;&lt;/span&gt;        auth_method: token
@@ -4998,18 +4847,6 @@ This has the added benefit of enabling others in the community to consume your p
           - source: secret/vela/username
             path: docker
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-
-This example will add the &lt;code&gt;secrets&lt;/code&gt; to the &lt;code&gt;vault&lt;/code&gt; step as environment variables:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;VAULT_TOKEN=&amp;lt;value&amp;gt;&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-
-
 &lt;h2 id=&#34;parameters&#34;&gt;Parameters&lt;/h2&gt;
 
 &lt;p&gt;The following parameters are used to configure the image:&lt;/p&gt;
@@ -5099,25 +4936,7 @@ This example will add the &lt;code&gt;secrets&lt;/code&gt; to the &lt;code&gt;va
 
 &lt;h2 id=&#34;troubleshooting&#34;&gt;Troubleshooting&lt;/h2&gt;
 
-&lt;p&gt;You can start troubleshooting this plugin by tuning the level of logs being displayed:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;secrets:
-  - origin:
-      name: vault
-      image: target/vela/secret-vault:latest
-      pull: always
-      parameters:
-&lt;span style=&#34;color:#00a000&#34;&gt;+       log_level: trace
-&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;        addr: vault.company.com
-        token: superSecretVaultToken
-        auth_method: token
-        items:
-          # Written to path: &amp;#34;/vela/secrets/docker/&amp;lt;key&amp;gt;&amp;#34;
-          - source: secret/vela/username
-            path: docker
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Below are a list of common problems and how to solve them:&lt;/p&gt;
-
-&lt;p&gt;COMING SOON!&lt;/p&gt;
 
       </description>
     </item>

@@ -188,8 +188,8 @@
   </url>
   
   <url>
-    <loc>https://go-vela.github.io/docs/plugins/pipeline/registry/artifactory/</loc>
-    <lastmod>2021-01-11T10:01:41-06:00</lastmod>
+    <loc>https://go-vela.github.io/docs/plugins/registry/pipeline/artifactory/</loc>
+    <lastmod>2021-01-13T15:05:51-06:00</lastmod>
   </url>
   
   <url>
@@ -203,8 +203,8 @@
   </url>
   
   <url>
-    <loc>https://go-vela.github.io/docs/plugins/pipeline/tutorials/bash/</loc>
-    <lastmod>2020-09-30T13:15:30-05:00</lastmod>
+    <loc>https://go-vela.github.io/docs/plugins/tutorials/bash/</loc>
+    <lastmod>2021-01-13T15:05:51-06:00</lastmod>
   </url>
   
   <url>
@@ -238,8 +238,8 @@
   </url>
   
   <url>
-    <loc>https://go-vela.github.io/docs/plugins/pipeline/registry/captains_log/</loc>
-    <lastmod>2020-09-30T13:15:30-05:00</lastmod>
+    <loc>https://go-vela.github.io/docs/plugins/registry/pipeline/captains_log/</loc>
+    <lastmod>2021-01-13T15:05:51-06:00</lastmod>
   </url>
   
   <url>
@@ -318,13 +318,13 @@
   </url>
   
   <url>
-    <loc>https://go-vela.github.io/docs/plugins/pipeline/registry/docker/</loc>
-    <lastmod>2021-01-11T10:01:41-06:00</lastmod>
+    <loc>https://go-vela.github.io/docs/plugins/registry/pipeline/docker/</loc>
+    <lastmod>2021-01-13T15:05:51-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://go-vela.github.io/docs/plugins/pipeline/registry/downstream/</loc>
-    <lastmod>2021-01-11T10:01:41-06:00</lastmod>
+    <loc>https://go-vela.github.io/docs/plugins/registry/pipeline/downstream/</loc>
+    <lastmod>2021-01-13T15:05:51-06:00</lastmod>
   </url>
   
   <url>
@@ -488,13 +488,13 @@
   </url>
   
   <url>
-    <loc>https://go-vela.github.io/docs/plugins/pipeline/registry/git/</loc>
-    <lastmod>2021-01-11T10:01:41-06:00</lastmod>
+    <loc>https://go-vela.github.io/docs/plugins/registry/pipeline/git/</loc>
+    <lastmod>2021-01-13T15:05:51-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://go-vela.github.io/docs/plugins/pipeline/tutorials/go/</loc>
-    <lastmod>2020-09-30T13:15:30-05:00</lastmod>
+    <loc>https://go-vela.github.io/docs/plugins/tutorials/go/</loc>
+    <lastmod>2021-01-13T15:05:51-06:00</lastmod>
   </url>
   
   <url>
@@ -548,8 +548,8 @@
   </url>
   
   <url>
-    <loc>https://go-vela.github.io/docs/plugins/pipeline/registry/kaniko/</loc>
-    <lastmod>2021-01-11T10:01:41-06:00</lastmod>
+    <loc>https://go-vela.github.io/docs/plugins/registry/pipeline/kaniko/</loc>
+    <lastmod>2021-01-13T15:05:51-06:00</lastmod>
   </url>
   
   <url>
@@ -558,8 +558,8 @@
   </url>
   
   <url>
-    <loc>https://go-vela.github.io/docs/plugins/pipeline/registry/kubernetes/</loc>
-    <lastmod>2021-01-11T10:01:41-06:00</lastmod>
+    <loc>https://go-vela.github.io/docs/plugins/registry/pipeline/kubernetes/</loc>
+    <lastmod>2021-01-13T15:05:51-06:00</lastmod>
   </url>
   
   <url>
@@ -613,8 +613,8 @@
   </url>
   
   <url>
-    <loc>https://go-vela.github.io/docs/plugins/pipeline/registry/makisu/</loc>
-    <lastmod>2021-01-11T10:01:41-06:00</lastmod>
+    <loc>https://go-vela.github.io/docs/plugins/registry/pipeline/makisu/</loc>
+    <lastmod>2021-01-13T15:05:51-06:00</lastmod>
   </url>
   
   <url>
@@ -633,18 +633,13 @@
   </url>
   
   <url>
-    <loc>https://go-vela.github.io/docs/plugins/pipeline/tutorials/node/</loc>
-    <lastmod>2020-09-30T13:15:30-05:00</lastmod>
+    <loc>https://go-vela.github.io/docs/plugins/tutorials/node/</loc>
+    <lastmod>2021-01-13T15:05:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/concepts/pipeline/secrets/origin/</loc>
     <lastmod>2020-08-12T12:32:50-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://go-vela.github.io/docs/plugins/overview/</loc>
-    <lastmod>2020-09-30T13:15:30-05:00</lastmod>
   </url>
   
   <url>
@@ -663,8 +658,8 @@
   </url>
   
   <url>
-    <loc>https://go-vela.github.io/docs/plugins/pipeline/</loc>
-    <lastmod>2020-09-30T13:15:30-05:00</lastmod>
+    <loc>https://go-vela.github.io/docs/plugins/registry/pipeline/</loc>
+    <lastmod>2021-01-13T15:05:51-06:00</lastmod>
   </url>
   
   <url>
@@ -679,7 +674,7 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/plugins/</loc>
-    <lastmod>2020-02-03T14:46:54-06:00</lastmod>
+    <lastmod>2021-01-13T15:05:51-06:00</lastmod>
   </url>
   
   <url>
@@ -708,8 +703,8 @@
   </url>
   
   <url>
-    <loc>https://go-vela.github.io/docs/plugins/pipeline/tutorials/python/</loc>
-    <lastmod>2020-09-30T13:15:30-05:00</lastmod>
+    <loc>https://go-vela.github.io/docs/plugins/tutorials/python/</loc>
+    <lastmod>2021-01-13T15:05:51-06:00</lastmod>
   </url>
   
   <url>
@@ -728,13 +723,8 @@
   </url>
   
   <url>
-    <loc>https://go-vela.github.io/docs/plugins/pipeline/registry/</loc>
-    <lastmod>2020-08-04T23:37:38-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://go-vela.github.io/docs/plugins/secret/registry/</loc>
-    <lastmod>2020-08-04T23:37:38-05:00</lastmod>
+    <loc>https://go-vela.github.io/docs/plugins/registry/</loc>
+    <lastmod>2021-01-13T15:05:51-06:00</lastmod>
   </url>
   
   <url>
@@ -883,8 +873,8 @@
   </url>
   
   <url>
-    <loc>https://go-vela.github.io/docs/plugins/pipeline/tutorials/ruby/</loc>
-    <lastmod>2020-09-30T13:15:30-05:00</lastmod>
+    <loc>https://go-vela.github.io/docs/plugins/tutorials/ruby/</loc>
+    <lastmod>2021-01-13T15:05:51-06:00</lastmod>
   </url>
   
   <url>
@@ -898,8 +888,8 @@
   </url>
   
   <url>
-    <loc>https://go-vela.github.io/docs/plugins/pipeline/registry/s3_cache/</loc>
-    <lastmod>2021-01-11T10:01:41-06:00</lastmod>
+    <loc>https://go-vela.github.io/docs/plugins/registry/pipeline/s3_cache/</loc>
+    <lastmod>2021-01-13T15:05:51-06:00</lastmod>
   </url>
   
   <url>
@@ -923,8 +913,8 @@
   </url>
   
   <url>
-    <loc>https://go-vela.github.io/docs/plugins/secret/</loc>
-    <lastmod>2020-09-30T13:15:30-05:00</lastmod>
+    <loc>https://go-vela.github.io/docs/plugins/registry/secret/</loc>
+    <lastmod>2021-01-13T15:05:51-06:00</lastmod>
   </url>
   
   <url>
@@ -1073,18 +1063,13 @@
   </url>
   
   <url>
-    <loc>https://go-vela.github.io/docs/plugins/pipeline/registry/terraform/</loc>
-    <lastmod>2021-01-11T10:01:41-06:00</lastmod>
+    <loc>https://go-vela.github.io/docs/plugins/registry/pipeline/terraform/</loc>
+    <lastmod>2021-01-13T15:05:51-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://go-vela.github.io/docs/plugins/pipeline/tutorials/</loc>
-    <lastmod>2020-08-04T23:37:38-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://go-vela.github.io/docs/plugins/secret/tutorials/</loc>
-    <lastmod>2020-08-04T23:37:38-05:00</lastmod>
+    <loc>https://go-vela.github.io/docs/plugins/tutorials/</loc>
+    <lastmod>2021-01-13T15:05:51-06:00</lastmod>
   </url>
   
   <url>
@@ -1223,8 +1208,8 @@
   </url>
   
   <url>
-    <loc>https://go-vela.github.io/docs/plugins/secret/registry/vault/</loc>
-    <lastmod>2020-10-09T08:34:18-05:00</lastmod>
+    <loc>https://go-vela.github.io/docs/plugins/registry/secret/vault/</loc>
+    <lastmod>2021-01-13T15:05:51-06:00</lastmod>
   </url>
   
   <url>
@@ -1360,6 +1345,11 @@
   <url>
     <loc>https://go-vela.github.io/docs/concepts/pipeline/worker/</loc>
     <lastmod>2020-08-10T11:46:39-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://go-vela.github.io/docs/usage/plugin/</loc>
+    <lastmod>2021-01-13T15:05:51-06:00</lastmod>
   </url>
   
 </urlset>
