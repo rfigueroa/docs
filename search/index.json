@@ -95,24 +95,10 @@
     },
 
     {
-    "url": "https://go-vela.github.io/docs/reference/sdk/go/install/",
-    "display": "Sdk/Go/Install",
-    "title": "Install",
-    "content": "download you can the go sdk to your project with following command: get -u github.com/go-vela/sdk-go import into statement: &#34;github.com/go-vela/sdk-go/vela&#34; "
-    },
-
-    {
     "url": "https://go-vela.github.io/docs/reference/cli/authentication/",
     "display": "Reference/Cli/Authentication",
     "title": "Authentication",
     "content": "overview authentication with the vela cli responsibility of client initiating request. each request requires server address user token to be provided. you can provide these variables three ways: configuration file environment flags recommended method for providing api cli. default path found $home/.vela/config.yml. log capture personal token: syntax login --api.addr &lt;vela url&gt; example https://vela-server.localhost generate file: config --api.token &lt;personal token&gt; qwerty123 more information, visit documentation. configure vela_addr variable: export vela_addr=https://vela-server.localhost vela_token vela_token=&lt;personal it&rsquo;s add your terminal profile (~/.bashrc ~/.zshrc) pass as flag argument: "
-    },
-
-    {
-    "url": "https://go-vela.github.io/docs/reference/sdk/go/authentication/",
-    "display": "Sdk/Go/Authentication",
-    "title": "Authentication",
-    "content": "overview authentication with the vela sdk responsibility of client initiating request. each request requires server address user token to be provided. sample below go program demonstrating how authenticate sdk: package main import &#34;github.com/go-vela/sdk-go/vela&#34; func main() // url full uri := &#34;http://localhost:8080&#34; access given you from tip: can get by using /login endpoint &#34;qwerty123&#34; instantiate new client, vela.newclient(url, nil) set mechanism for use our client.authentication.settokenauth(token) "
     },
 
     {
@@ -200,41 +186,6 @@
     },
 
     {
-    "url": "https://go-vela.github.io/docs/reference/sdk/go/build/add/",
-    "display": "Go/Build/Add",
-    "title": "Add",
-    "content": "function func (svc *buildservice) add(org, repo string, *library.build) (*library.build, *response, error) for more information, you can view our go documentation. parameters the following are used to configure function: name description org of organization repository information on build permissions coming soon! responses status code 200 indicates request has succeeded 401 user does not have proper sample section assumes already know how authenticate with sdk. sdk, please review authentication find an example here. "
-    },
-
-    {
-    "url": "https://go-vela.github.io/docs/reference/sdk/go/repo/add/",
-    "display": "Go/Repo/Add",
-    "title": "Add",
-    "content": "function func (svc *reposervice) add(r *library.repo) (*library.repo, *response, error) for more information, you can view our go documentation. parameters the following are used to configure function: name description information on repo permissions coming soon! responses status code 200 indicates request has succeeded 401 user does not have proper sample section assumes already know how authenticate with sdk. sdk, please review authentication find an example of here. "
-    },
-
-    {
-    "url": "https://go-vela.github.io/docs/reference/sdk/go/secret/add/",
-    "display": "Go/Secret/Add",
-    "title": "Add",
-    "content": "function func (svc *secretservice) add(engine, stype, org, name string, *library.secret) (*library.secret, *response, error) for more information, you can view our go documentation. parameters the following are used to configure function: description engine of secret stype type org organization repository team information on permissions coming soon! responses status code 200 indicates request has succeeded 401 user does not have proper sample section assumes already know how authenticate with sdk. sdk, please review authentication find an example here. "
-    },
-
-    {
-    "url": "https://go-vela.github.io/docs/reference/sdk/go/service/add/",
-    "display": "Go/Service/Add",
-    "title": "Add",
-    "content": "function func (svc *svcservice) add(org, repo string, build int, *library.service) (*library.service, *response, error) for more information, you can view our go documentation. parameters the following are used to configure function: name description org of organization repository number information on service permissions coming soon! responses status code 200 indicates request has succeeded 401 user does not have proper sample section assumes already know how authenticate with sdk. sdk, please review authentication find an example here. "
-    },
-
-    {
-    "url": "https://go-vela.github.io/docs/reference/sdk/go/step/add/",
-    "display": "Go/Step/Add",
-    "title": "Add",
-    "content": "function func (svc *stepservice) add(org, repo string, build int, *library.step) (*library.step, *response, error) for more information, you can view our go documentation. parameters the following are used to configure function: name description org of organization repository number information on step permissions coming soon! responses status code 200 indicates request has succeeded 401 user does not have proper sample section assumes already know how authenticate with sdk. sdk, please review authentication find an example here. "
-    },
-
-    {
     "url": "https://go-vela.github.io/docs/plugins/registry/pipeline/artifactory/",
     "display": "Registry/Pipeline/Artifactory",
     "title": "Artifactory",
@@ -302,13 +253,6 @@
     "display": "Cli/Repo/Chown",
     "title": "Chown",
     "content": "command vela chown repo &lt;parameters...&gt; &lt;arguments...&gt; for more information, you can run --help. parameters the following are used to configure command: name description environment variables org of organization repository vela_org, repo_org vela_repo, repo_name output format vela_output, repo_output also supports setting via configuration file: please review cli config documentation. permissions coming soon! sample section assumes have already installed setup cli. install cli, installation authentication request --org github --repo octocat response &#34;github/octocat&#34; changed owner "
-    },
-
-    {
-    "url": "https://go-vela.github.io/docs/reference/sdk/go/repo/chown/",
-    "display": "Go/Repo/Chown",
-    "title": "Chown",
-    "content": "function func (svc *reposervice) chown(org, repo string) (*string, *response, error) for more information, you can view our go documentation. parameters the following are used to configure function: name description org of organization repository permissions coming soon! responses status code 200 indicates request has succeeded 401 user does not have proper sample section assumes already know how authenticate with sdk. sdk, please review authentication find an example here. "
     },
 
     {
@@ -550,41 +494,6 @@
     },
 
     {
-    "url": "https://go-vela.github.io/docs/reference/sdk/go/build/get/",
-    "display": "Go/Build/Get",
-    "title": "Get",
-    "content": "function func (svc *buildservice) getall(org, repo string, opt *listoptions) (*[]library.build, *response, error) for more information, you can view our go documentation. parameters the following are used to configure function: name description org of organization repository options listing builds permissions coming soon! responses status code 200 indicates request has succeeded 401 user does not have proper sample section assumes already know how authenticate with sdk. sdk, please review authentication find an example here. "
-    },
-
-    {
-    "url": "https://go-vela.github.io/docs/reference/sdk/go/repo/get/",
-    "display": "Go/Repo/Get",
-    "title": "Get",
-    "content": "function func (svc *reposervice) getall(opt *listoptions) (*[]library.repo, *response, error) for more information, you can view our go documentation. parameters the following are used to configure function: name description opt options listing repos permissions coming soon! responses status code 200 indicates request has succeeded 401 user does not have proper sample section assumes already know how authenticate with sdk. sdk, please review authentication find an example of here. "
-    },
-
-    {
-    "url": "https://go-vela.github.io/docs/reference/sdk/go/secret/get/",
-    "display": "Go/Secret/Get",
-    "title": "Get",
-    "content": "function func (svc *secretservice) getall(engine, stype, org, name string, opt *listoptions) (*[]library.secret, *response, error) for more information, you can view our go documentation. parameters the following are used to configure function: description engine of secret stype type org organization repository team options listing builds permissions coming soon! responses status code 200 indicates request has succeeded 401 user does not have proper sample section assumes already know how authenticate with sdk. sdk, please review authentication find an example here. "
-    },
-
-    {
-    "url": "https://go-vela.github.io/docs/reference/sdk/go/service/get/",
-    "display": "Go/Service/Get",
-    "title": "Get",
-    "content": "function func (svc *svcservice) getall(org, repo string, build int, opt *listoptions) (*[]library.service, *response, error) for more information, you can view our go documentation. parameters the following are used to configure function: name description org of organization repository number options listing services permissions coming soon! responses status code 200 indicates request has succeeded 401 user does not have proper sample section assumes already know how authenticate with sdk. sdk, please review authentication find an example here. "
-    },
-
-    {
-    "url": "https://go-vela.github.io/docs/reference/sdk/go/step/get/",
-    "display": "Go/Step/Get",
-    "title": "Get",
-    "content": "function func (svc *stepservice) getall(org, repo string, build int, opt *listoptions) (*[]library.step, *response, error) for more information, you can view our go documentation. parameters the following are used to configure function: name description org of organization repository number options listing steps permissions coming soon! responses status code 200 indicates request has succeeded 401 user does not have proper sample section assumes already know how authenticate with sdk. sdk, please review authentication find an example here. "
-    },
-
-    {
     "url": "https://go-vela.github.io/docs/plugins/registry/pipeline/git/",
     "display": "Registry/Pipeline/Git",
     "title": "Git",
@@ -596,6 +505,13 @@
     "display": "Plugins/Tutorials/Go",
     "title": "Go",
     "content": "we recommend reviewing docker&rsquo;s best practices before attempting to create custom plugin. that all plugins be placed inside scratch image. overview from go documentation: an open source programming language makes it easy build simple, reliable, efficient software. code plugin using go, we&rsquo;ll need first decide what task want accomplish. for example, we&rsquo;re going program http request the provided input: package main import &#34;fmt&#34; &#34;net/http&#34; &#34;os&#34; &#34;strings&#34; func main() // method parameter environment := os.getenv(&#34;parameter_method&#34;) body os.getenv(&#34;parameter_body&#34;) url os.getenv(&#34;parameter_url&#34;) payload strings.newreader(body) new input request, err http.newrequest(method, url, payload) if != nil fmt.println(err) os.exit(1) send capture response response, http.defaultclient.do(request) output fmt.println(response) example of section go-vela/vela-tutorials repository. executable now have accomplish our plugin&rsquo;s task, compile produce binary target platform: goos=linux goarch=amd64 cgo_enabled=0 -o vela-sample please ensure compiled right platform. it&rsquo;s not, may fail properly run unclear error messages. image once needed dockerfile should contain setup when executed: fromgolang:alpinerun apk add --update --no-cache ca-certificatescopy /bin/vela-sampleentrypoint [&#34;/bin/vela-sample&#34;] target/vela-sample docker publishing order pipeline, make sure publish registry: -t target/vela-sample:go push has added benefit enabling others community consume your plugin! troubleshooting verify performs desired can executed locally via command line: --rm -e parameter_body=&#34;this sample vela written with go&#34; parameter_method=&#34;post&#34; parameter_url=&#34;http://vela.localhost.com&#34; usage after registry, referenced pipeline: version:&#34;1&#34;steps:-name:samplegopluginimage:target/vela-sample:gopull:alwaysparameters:url:http://vela.localhost.commethod:postbody:| "
+    },
+
+    {
+    "url": "https://go-vela.github.io/docs/reference/sdk/go/",
+    "display": "Reference/Sdk/Go",
+    "title": "Go",
+    "content": "overview vela go sdk client to perform operations on objects view content new way integrate into applications. for complete list of apis examples, please take look at the godoc reference documentation. minimum requirements 1.13 above get build info example below sample program demonstrating how authenticate with sdk: package main import &#34;fmt&#34; &#34;github.com/go-vela/sdk-go/vela&#34; func main() // full uri server url := &#34;https://your-vela-server.example.com&#34; token &#34;sometoken&#34; accesstoken &#34;someaccesstoken&#34; refreshtoken &#34;somerefreshtoken&#34; instantiate client, err vela.newclient(url, nil) if != nil fmt.println(err) set authentication mechanisms client.authentication.settokenauth(token) client.authentication.setaccessandrefreshauth(accesstoken, refreshtoken) from build, resp, c.build.get(&#34;go-vela&#34;, &#34;sdk-go&#34;, 1) fmt.printf(&#34;received response code %d, %+v&#34;, resp.statuscode, build) "
     },
 
     {
@@ -680,27 +596,6 @@
     "display": "Api/Step/Logs",
     "title": "Logs",
     "content": "endpoint get /api/v1/repos/:org/:repo/builds/:build/steps/:step/logs parameters the following are used to configure endpoint: name description org of organization repo repository build number step permissions coming soon! responses status code 200 indicates request has succeeded 401 user does not have proper sample section assumes you already know how authenticate api. api, please review authentication documentation. curl -x -h &#34;authorization: bearer &lt;token&gt;&#34; &#34;http://127.0.0.1:8080/api/v1/repos/github/octocat/builds/1/steps/1/logs&#34; response &#34;id&#34;: 1, &#34;build_id&#34;: &#34;repo_id&#34;: &#34;step_id&#34;: &#34;data&#34;: &#34;sgvsbg8sifdvcmxkiq==&#34; "
-    },
-
-    {
-    "url": "https://go-vela.github.io/docs/reference/sdk/go/build/logs/",
-    "display": "Go/Build/Logs",
-    "title": "Logs",
-    "content": "function func (svc *buildservice) getlogs(org, repo string, build int) (*[]library.log, *response, error) for more information, you can view our go documentation. parameters the following are used to configure endpoint: name description org of organization repository number permissions coming soon! responses status code 200 indicates request has succeeded 401 user does not have proper sample section assumes already know how authenticate with sdk. sdk, please review authentication find an example here. "
-    },
-
-    {
-    "url": "https://go-vela.github.io/docs/reference/sdk/go/service/logs/",
-    "display": "Go/Service/Logs",
-    "title": "Logs",
-    "content": "function func (svc *logservice) getservice(org, repo string, build, service int) (*library.log, *response, error) for more information, you can view our go documentation. parameters the following are used to configure endpoint: name description org of organization repository build number permissions coming soon! responses status code 200 indicates request has succeeded 401 user does not have proper sample section assumes already know how authenticate with sdk. sdk, please review authentication find an example here. "
-    },
-
-    {
-    "url": "https://go-vela.github.io/docs/reference/sdk/go/step/logs/",
-    "display": "Go/Step/Logs",
-    "title": "Logs",
-    "content": "function func (svc *logservice) getstep(org, repo string, build, step int) (*library.log, *response, error) for more information, you can view our go documentation. parameters the following are used to configure endpoint: name description org of organization repository build number permissions coming soon! responses status code 200 indicates request has succeeded 401 user does not have proper sample section assumes already know how authenticate with sdk. sdk, please review authentication find an example here. "
     },
 
     {
@@ -823,6 +718,13 @@
     },
 
     {
+    "url": "https://go-vela.github.io/docs/reference/sdk/python/",
+    "display": "Reference/Sdk/Python",
+    "title": "Python",
+    "content": "overview vela python sdk client to perform operations on objects view content new way integrate into applications. for complete list of apis examples, please take look at the reference documentation. requirements. 2.7 3.4+ get build info example below sample go program demonstrating how authenticate with sdk: from __future__ import print_function time vela.rest apiexception pprint configure api key authorization: apikeyauth configuration vela.configuration() configuration.api_key[&#39;authorization&#39;] &#39;your_api_key&#39; configuration.api_key_prefix[&#39;authorization&#39;] &#39;bearer&#39; endpoint configuration.host &#39;https://your-vela-server.example.com&#39; create an instance class api_instance vela.buildsapi(vela.apiclient(configuration)) try: api_response api_instance.get_builds(org=&#34;go-vela&#34;,repo=&#34;sdk-python&#34;) pprint(api_response) except as e: print(&#34;exception when calling buildsapi-&gt;get_builds: %s n&#34; e) "
+    },
+
+    {
     "url": "https://go-vela.github.io/docs/concepts/infrastructure/server/queue/",
     "display": "Infrastructure/Server/Queue",
     "title": "Queue",
@@ -907,41 +809,6 @@
     },
 
     {
-    "url": "https://go-vela.github.io/docs/reference/sdk/go/build/remove/",
-    "display": "Go/Build/Remove",
-    "title": "Remove",
-    "content": "function func (svc *buildservice) remove(org, repo string, build int) (*string, *response, error) for more information, you can view our go documentation. parameters the following are used to configure endpoint: name description org of organization repository number permissions coming soon! responses status code 200 indicates request has succeeded 401 user does not have proper sample section assumes already know how authenticate with sdk. sdk, please review authentication find an example here. "
-    },
-
-    {
-    "url": "https://go-vela.github.io/docs/reference/sdk/go/repo/remove/",
-    "display": "Go/Repo/Remove",
-    "title": "Remove",
-    "content": "function func (svc *reposervice) remove(org, repo string) (*string, *response, error) for more information, you can view our go documentation. parameters the following are used to configure endpoint: name description org of organization repository permissions coming soon! responses status code 200 indicates request has succeeded 401 user does not have proper sample section assumes already know how authenticate with sdk. sdk, please review authentication find an example here. "
-    },
-
-    {
-    "url": "https://go-vela.github.io/docs/reference/sdk/go/secret/remove/",
-    "display": "Go/Secret/Remove",
-    "title": "Remove",
-    "content": "function func (svc *secretservice) remove(engine, stype, org, name, secret string) (*string, *response, error) for more information, you can view our go documentation. parameters the following are used to configure endpoint: name description engine of stype type org organization repository team permissions coming soon! responses status code 200 indicates request has succeeded 401 user does not have proper sample section assumes already know how authenticate with sdk. sdk, please review authentication find an example here. "
-    },
-
-    {
-    "url": "https://go-vela.github.io/docs/reference/sdk/go/service/remove/",
-    "display": "Go/Service/Remove",
-    "title": "Remove",
-    "content": "function func (svc *svcservice) remove(org, repo string, build, service int) (*string, *response, error) for more information, you can view our go documentation. parameters the following are used to configure endpoint: name description org of organization repository build number permissions coming soon! responses status code 200 indicates request has succeeded 401 user does not have proper sample section assumes already know how authenticate with sdk. sdk, please review authentication find an example here. "
-    },
-
-    {
-    "url": "https://go-vela.github.io/docs/reference/sdk/go/step/remove/",
-    "display": "Go/Step/Remove",
-    "title": "Remove",
-    "content": "function func (svc *stepservice) remove(org, repo string, build, step int) (*string, *response, error) for more information, you can view our go documentation. parameters the following are used to configure endpoint: name description org of organization repository build number permissions coming soon! responses status code 200 indicates request has succeeded 401 user does not have proper sample section assumes already know how authenticate with sdk. sdk, please review authentication find an example here. "
-    },
-
-    {
     "url": "https://go-vela.github.io/docs/reference/api/repo/repair/",
     "display": "Api/Repo/Repair",
     "title": "Repair",
@@ -953,13 +820,6 @@
     "display": "Cli/Repo/Repair",
     "title": "Repair",
     "content": "command vela repair repo &lt;parameters...&gt; &lt;arguments...&gt; for more information, you can run --help. parameters the following are used to configure command: name description environment variables org of organization repository vela_org, repo_org vela_repo, repo_name output format vela_output, repo_output also supports setting via configuration file: please review cli config documentation. permissions coming soon! sample section assumes have already installed setup cli. install cli, installation authentication request --org github --repo octocat response &#34;github/octocat&#34; repaired "
-    },
-
-    {
-    "url": "https://go-vela.github.io/docs/reference/sdk/go/repo/repair/",
-    "display": "Go/Repo/Repair",
-    "title": "Repair",
-    "content": "function func (svc *reposervice) repair(org, repo string) (*string, *response, error) for more information, you can view our go documentation. parameters the following are used to configure function: name description org of organization repository permissions coming soon! responses status code 200 indicates request has succeeded 401 user does not have proper sample section assumes already know how authenticate with sdk. sdk, please review authentication find an example here. "
     },
 
     {
@@ -995,13 +855,6 @@
     "display": "Cli/Build/Restart",
     "title": "Restart",
     "content": "command vela restart build &lt;parameters...&gt; &lt;arguments...&gt; for more information, you can run --help. parameters the following are used to configure command: name description environment variables org of organization vela_org, build_org repo repository vela_repo, build_repo number vela_build, build_number output format vela_output, build_output also supports setting via configuration file: please review cli config documentation. permissions coming soon! sample section assumes have already installed setup cli. install cli, installation authentication request --org github --repo octocat --build response id: repo_id: number: parent: event: push status: created error: &#34;&#34; populates when platform runs into an error with enqueued: 1563474087 created: 1563474086 started: finished: deploy: clone: https://github.com/github/octocat.git source: https://github.com/github/octocat/commit/48afb5bdc41ad69bf22588491333f7cf71135163 title: received from https://github.com/github/octocat message: first commit... commit: 48afb5bdc41ad69bf22588491333f7cf71135163 sender: octokitty author: branch: master ref: refs/heads/master baseref: host: &#34;company.localhost&#34; runtime: &#34;docker&#34; distribution: &#34;linux&#34; "
-    },
-
-    {
-    "url": "https://go-vela.github.io/docs/reference/sdk/go/build/restart/",
-    "display": "Go/Build/Restart",
-    "title": "Restart",
-    "content": "function func (svc *buildservice) restart(org, repo string, build int) (*library.build, *response, error) for more information, you can view our go documentation. parameters the following are used to configure endpoint: name description org of organization repository number permissions coming soon! responses status code 200 indicates request has succeeded 401 user does not have proper sample section assumes already know how authenticate with sdk. sdk, please review authentication find an example here. "
     },
 
     {
@@ -1243,41 +1096,6 @@
     },
 
     {
-    "url": "https://go-vela.github.io/docs/reference/sdk/go/build/update/",
-    "display": "Go/Build/Update",
-    "title": "Update",
-    "content": "function func (svc *buildservice) update(org, repo string, *library.build) (*library.build, *response, error) for more information, you can view our go documentation. parameters the following are used to configure endpoint: name description org of organization repository information on build permissions coming soon! responses status code 200 indicates request has succeeded 401 user does not have proper sample section assumes already know how authenticate with sdk. sdk, please review authentication find an example here. "
-    },
-
-    {
-    "url": "https://go-vela.github.io/docs/reference/sdk/go/repo/update/",
-    "display": "Go/Repo/Update",
-    "title": "Update",
-    "content": "function func (svc *reposervice) update(org, repo string, *library.repo) (*library.repo, *response, error) for more information, you can view our go documentation. parameters the following are used to configure endpoint: name description org of organization repository information on permissions coming soon! responses status code 200 indicates request has succeeded 401 user does not have proper sample section assumes already know how authenticate with sdk. sdk, please review authentication find an example here. "
-    },
-
-    {
-    "url": "https://go-vela.github.io/docs/reference/sdk/go/secret/update/",
-    "display": "Go/Secret/Update",
-    "title": "Update",
-    "content": "function func (svc *secretservice) update(engine, stype, org, name string, *library.secret) (*library.secret, *response, error) for more information, you can view our go documentation. parameters the following are used to configure endpoint: description engine of secret stype type org organization repository team information on permissions coming soon! responses status code 200 indicates request has succeeded 401 user does not have proper sample section assumes already know how authenticate with sdk. sdk, please review authentication find an example here. "
-    },
-
-    {
-    "url": "https://go-vela.github.io/docs/reference/sdk/go/service/update/",
-    "display": "Go/Service/Update",
-    "title": "Update",
-    "content": "function func (svc *svcservice) update(org, repo string, build int, *library.service) (*library.service, *response, error) for more information, you can view our go documentation. parameters the following are used to configure endpoint: name description org of organization repository number information on service permissions coming soon! responses status code 200 indicates request has succeeded 401 user does not have proper sample section assumes already know how authenticate with sdk. sdk, please review authentication find an example here. "
-    },
-
-    {
-    "url": "https://go-vela.github.io/docs/reference/sdk/go/step/update/",
-    "display": "Go/Step/Update",
-    "title": "Update",
-    "content": "function func (svc *stepservice) update(org, repo string, build int, *library.step) (*library.step, *response, error) for more information, you can view our go documentation. parameters the following are used to configure endpoint: name description org of organization repository number information on step permissions coming soon! responses status code 200 indicates request has succeeded 401 user does not have proper sample section assumes already know how authenticate with sdk. sdk, please review authentication find an example here. "
-    },
-
-    {
     "url": "https://go-vela.github.io/docs/concepts/system/user/",
     "display": "Concepts/System/User",
     "title": "User",
@@ -1443,41 +1261,6 @@
     "display": "Cli/Step/View",
     "title": "View",
     "content": "command vela view step &lt;parameters...&gt; &lt;arguments...&gt; for more information, you can run --help. parameters the following are used to configure command: name description environment variables org of organization vela_org, step_org repo repository vela_repo, step_repo build number vela_build, step_build vela_step, step_number output format vela_output, step_output also supports setting via configuration file: please review cli config documentation. permissions coming soon! sample section assumes have already installed setup cli. install cli, installation authentication request --org github --repo octocat --build --step response id: build_id: repo_id: number: name: clone status: success error: &#34;&#34; populates when platform runs into an error with exitcode: created: 1561748980 started: 1561748979 finished: 1561748981 host: &#34;worker.host.com&#34; runtime: &#34;docker&#34; distribution: &#34;linux&#34; "
-    },
-
-    {
-    "url": "https://go-vela.github.io/docs/reference/sdk/go/build/view/",
-    "display": "Go/Build/View",
-    "title": "View",
-    "content": "function func (svc *buildservice) get(org, repo string, build int) (*library.build, *response, error) for more information, you can view our go documentation. parameters the following are used to configure endpoint: name description org of organization repository number permissions coming soon! responses status code 200 indicates request has succeeded 401 user does not have proper sample section assumes already know how authenticate with sdk. sdk, please review authentication find an example here. "
-    },
-
-    {
-    "url": "https://go-vela.github.io/docs/reference/sdk/go/repo/view/",
-    "display": "Go/Repo/View",
-    "title": "View",
-    "content": "function func (svc *reposervice) get(org, repo string) (*library.repo, *response, error) for more information, you can view our go documentation. parameters the following are used to configure endpoint: name description org of organization repository permissions coming soon! responses status code 200 indicates request has succeeded 401 user does not have proper sample section assumes already know how authenticate with sdk. sdk, please review authentication find an example here. "
-    },
-
-    {
-    "url": "https://go-vela.github.io/docs/reference/sdk/go/secret/view/",
-    "display": "Go/Secret/View",
-    "title": "View",
-    "content": "function func (svc *secretservice) get(engine, stype, org, name, secret string) (*library.secret, *response, error) for more information, you can view our go documentation. parameters the following are used to configure endpoint: name description engine of stype type org organization repository team permissions coming soon! responses status code 200 indicates request has succeeded 401 user does not have proper sample section assumes already know how authenticate with sdk. sdk, please review authentication find an example here. "
-    },
-
-    {
-    "url": "https://go-vela.github.io/docs/reference/sdk/go/service/view/",
-    "display": "Go/Service/View",
-    "title": "View",
-    "content": "function func (svc *svcservice) get(org, repo string, build, service int) (*library.service, *response, error) for more information, you can view our go documentation. parameters the following are used to configure endpoint: name description org of organization repository build number permissions coming soon! responses status code 200 indicates request has succeeded 401 user does not have proper sample section assumes already know how authenticate with sdk. sdk, please review authentication find an example here. "
-    },
-
-    {
-    "url": "https://go-vela.github.io/docs/reference/sdk/go/step/view/",
-    "display": "Go/Step/View",
-    "title": "View",
-    "content": "function func (svc *stepservice) get(org, repo string, build, step int) (*library.step, *response, error) for more information, you can view our go documentation. parameters the following are used to configure endpoint: name description org of organization repository build number permissions coming soon! responses status code 200 indicates request has succeeded 401 user does not have proper sample section assumes already know how authenticate with sdk. sdk, please review authentication find an example here. "
     },
 
     {

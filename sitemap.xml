@@ -78,17 +78,7 @@
   </url>
   
   <url>
-    <loc>https://go-vela.github.io/docs/reference/sdk/go/install/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://go-vela.github.io/docs/reference/cli/authentication/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://go-vela.github.io/docs/reference/sdk/go/authentication/</loc>
     <lastmod>2021-01-13T09:29:09-06:00</lastmod>
   </url>
   
@@ -153,31 +143,6 @@
   </url>
   
   <url>
-    <loc>https://go-vela.github.io/docs/reference/sdk/go/build/add/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://go-vela.github.io/docs/reference/sdk/go/repo/add/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://go-vela.github.io/docs/reference/sdk/go/secret/add/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://go-vela.github.io/docs/reference/sdk/go/service/add/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://go-vela.github.io/docs/reference/sdk/go/step/add/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://go-vela.github.io/docs/reference/api/admin/</loc>
     <lastmod>2021-01-13T09:29:09-06:00</lastmod>
   </url>
@@ -228,11 +193,6 @@
   </url>
   
   <url>
-    <loc>https://go-vela.github.io/docs/reference/sdk/go/build/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://go-vela.github.io/docs/usage/docker/</loc>
     <lastmod>2021-01-12T13:56:22-06:00</lastmod>
   </url>
@@ -249,11 +209,6 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/cli/repo/chown/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://go-vela.github.io/docs/reference/sdk/go/repo/chown/</loc>
     <lastmod>2021-01-13T09:29:09-06:00</lastmod>
   </url>
   
@@ -463,31 +418,6 @@
   </url>
   
   <url>
-    <loc>https://go-vela.github.io/docs/reference/sdk/go/build/get/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://go-vela.github.io/docs/reference/sdk/go/repo/get/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://go-vela.github.io/docs/reference/sdk/go/secret/get/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://go-vela.github.io/docs/reference/sdk/go/service/get/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://go-vela.github.io/docs/reference/sdk/go/step/get/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://go-vela.github.io/docs/plugins/registry/pipeline/git/</loc>
     <lastmod>2021-01-13T15:05:51-06:00</lastmod>
   </url>
@@ -499,7 +429,7 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/sdk/go/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-01-14T12:57:07-06:00</lastmod>
   </url>
   
   <url>
@@ -584,21 +514,6 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/step/logs/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://go-vela.github.io/docs/reference/sdk/go/build/logs/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://go-vela.github.io/docs/reference/sdk/go/service/logs/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://go-vela.github.io/docs/reference/sdk/go/step/logs/</loc>
     <lastmod>2021-01-13T09:29:09-06:00</lastmod>
   </url>
   
@@ -708,6 +623,11 @@
   </url>
   
   <url>
+    <loc>https://go-vela.github.io/docs/reference/sdk/python/</loc>
+    <lastmod>2021-01-14T12:57:07-06:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://go-vela.github.io/docs/concepts/infrastructure/server/queue/</loc>
     <lastmod>2020-03-18T18:00:35+00:00</lastmod>
   </url>
@@ -783,42 +703,12 @@
   </url>
   
   <url>
-    <loc>https://go-vela.github.io/docs/reference/sdk/go/build/remove/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://go-vela.github.io/docs/reference/sdk/go/repo/remove/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://go-vela.github.io/docs/reference/sdk/go/secret/remove/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://go-vela.github.io/docs/reference/sdk/go/service/remove/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://go-vela.github.io/docs/reference/sdk/go/step/remove/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://go-vela.github.io/docs/reference/api/repo/repair/</loc>
     <lastmod>2021-01-13T09:29:09-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/cli/repo/repair/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://go-vela.github.io/docs/reference/sdk/go/repo/repair/</loc>
     <lastmod>2021-01-13T09:29:09-06:00</lastmod>
   </url>
   
@@ -843,11 +733,6 @@
   </url>
   
   <url>
-    <loc>https://go-vela.github.io/docs/reference/sdk/go/repo/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://go-vela.github.io/docs/reference/api/user/current/repos/</loc>
     <lastmod>2021-01-13T09:29:09-06:00</lastmod>
   </url>
@@ -859,11 +744,6 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/cli/build/restart/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://go-vela.github.io/docs/reference/sdk/go/build/restart/</loc>
     <lastmod>2021-01-13T09:29:09-06:00</lastmod>
   </url>
   
@@ -894,7 +774,7 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/sdk/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-01-14T12:57:07-06:00</lastmod>
   </url>
   
   <url>
@@ -933,11 +813,6 @@
   </url>
   
   <url>
-    <loc>https://go-vela.github.io/docs/reference/sdk/go/secret/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://go-vela.github.io/docs/concepts/pipeline/secrets/</loc>
     <lastmod>2020-08-12T12:32:50-05:00</lastmod>
   </url>
@@ -969,11 +844,6 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/cli/service/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://go-vela.github.io/docs/reference/sdk/go/service/</loc>
     <lastmod>2021-01-13T09:29:09-06:00</lastmod>
   </url>
   
@@ -1024,11 +894,6 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/cli/step/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://go-vela.github.io/docs/reference/sdk/go/step/</loc>
     <lastmod>2021-01-13T09:29:09-06:00</lastmod>
   </url>
   
@@ -1149,31 +1014,6 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/cli/secret/update/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://go-vela.github.io/docs/reference/sdk/go/build/update/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://go-vela.github.io/docs/reference/sdk/go/repo/update/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://go-vela.github.io/docs/reference/sdk/go/secret/update/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://go-vela.github.io/docs/reference/sdk/go/service/update/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://go-vela.github.io/docs/reference/sdk/go/step/update/</loc>
     <lastmod>2021-01-13T09:29:09-06:00</lastmod>
   </url>
   
@@ -1309,31 +1149,6 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/cli/step/view/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://go-vela.github.io/docs/reference/sdk/go/build/view/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://go-vela.github.io/docs/reference/sdk/go/repo/view/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://go-vela.github.io/docs/reference/sdk/go/secret/view/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://go-vela.github.io/docs/reference/sdk/go/service/view/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://go-vela.github.io/docs/reference/sdk/go/step/view/</loc>
     <lastmod>2021-01-13T09:29:09-06:00</lastmod>
   </url>
   
