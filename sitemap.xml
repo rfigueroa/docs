@@ -148,6 +148,11 @@
   </url>
   
   <url>
+    <loc>https://go-vela.github.io/docs/templates/tutorials/starlark/anatomy/</loc>
+    <lastmod>2021-01-28T13:57:03-06:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://go-vela.github.io/docs/reference/api/</loc>
     <lastmod>2021-01-13T09:29:09-06:00</lastmod>
   </url>
@@ -238,8 +243,13 @@
   </url>
   
   <url>
-    <loc>https://go-vela.github.io/docs/templates/tutorials/conditional/</loc>
-    <lastmod>2020-12-14T17:23:24+00:00</lastmod>
+    <loc>https://go-vela.github.io/docs/templates/tutorials/go/conditional/</loc>
+    <lastmod>2021-01-28T13:57:03-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://go-vela.github.io/docs/templates/tutorials/starlark/conditional/</loc>
+    <lastmod>2021-01-28T13:57:03-06:00</lastmod>
   </url>
   
   <url>
@@ -320,6 +330,11 @@
   <url>
     <loc>https://go-vela.github.io/docs/concepts/pipeline/worker/flavor/</loc>
     <lastmod>2020-08-10T11:46:39-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://go-vela.github.io/docs/templates/tutorials/starlark/functions/</loc>
+    <lastmod>2021-01-28T13:57:03-06:00</lastmod>
   </url>
   
   <url>
@@ -433,6 +448,11 @@
   </url>
   
   <url>
+    <loc>https://go-vela.github.io/docs/templates/tutorials/go/</loc>
+    <lastmod>2021-01-28T13:57:03-06:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://go-vela.github.io/docs/concepts/system/hook/</loc>
     <lastmod>2020-05-21T16:27:50+00:00</lastmod>
   </url>
@@ -518,13 +538,23 @@
   </url>
   
   <url>
-    <loc>https://go-vela.github.io/docs/templates/tutorials/loops_maps/</loc>
-    <lastmod>2020-12-14T17:23:24+00:00</lastmod>
+    <loc>https://go-vela.github.io/docs/templates/tutorials/go/loops_maps/</loc>
+    <lastmod>2021-01-28T13:57:03-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://go-vela.github.io/docs/templates/tutorials/loops_slice/</loc>
-    <lastmod>2020-12-14T17:23:24+00:00</lastmod>
+    <loc>https://go-vela.github.io/docs/templates/tutorials/starlark/loops_map/</loc>
+    <lastmod>2021-01-28T13:57:03-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://go-vela.github.io/docs/templates/tutorials/go/loops_slice/</loc>
+    <lastmod>2021-01-28T13:57:03-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://go-vela.github.io/docs/templates/tutorials/starlark/loops_slice/</loc>
+    <lastmod>2021-01-28T13:57:03-06:00</lastmod>
   </url>
   
   <url>
@@ -538,8 +568,8 @@
   </url>
   
   <url>
-    <loc>https://go-vela.github.io/docs/templates/tutorials/mulitline/</loc>
-    <lastmod>2020-12-14T17:23:24+00:00</lastmod>
+    <loc>https://go-vela.github.io/docs/templates/tutorials/go/mulitline/</loc>
+    <lastmod>2021-01-28T13:57:03-06:00</lastmod>
   </url>
   
   <url>
@@ -555,11 +585,6 @@
   <url>
     <loc>https://go-vela.github.io/docs/concepts/pipeline/secrets/origin/</loc>
     <lastmod>2020-08-12T12:32:50-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://go-vela.github.io/docs/templates/overview/</loc>
-    <lastmod>2020-12-14T17:23:24+00:00</lastmod>
   </url>
   
   <url>
@@ -585,6 +610,16 @@
   <url>
     <loc>https://go-vela.github.io/docs/concepts/pipeline/worker/platform/</loc>
     <lastmod>2020-08-10T11:46:39-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://go-vela.github.io/docs/templates/tutorials/go/vars_platform/</loc>
+    <lastmod>2021-01-28T13:57:03-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://go-vela.github.io/docs/templates/tutorials/starlark/vars_platform/</loc>
+    <lastmod>2021-01-28T13:57:03-06:00</lastmod>
   </url>
   
   <url>
@@ -645,11 +680,6 @@
   <url>
     <loc>https://go-vela.github.io/docs/plugins/registry/</loc>
     <lastmod>2021-01-13T15:05:51-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://go-vela.github.io/docs/templates/registry/</loc>
-    <lastmod>2020-01-30T22:15:16-06:00</lastmod>
   </url>
   
   <url>
@@ -873,6 +903,11 @@
   </url>
   
   <url>
+    <loc>https://go-vela.github.io/docs/templates/tutorials/starlark/</loc>
+    <lastmod>2021-01-28T13:57:03-06:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://go-vela.github.io/docs/usage/start_build/</loc>
     <lastmod>2021-01-12T13:56:22-06:00</lastmod>
   </url>
@@ -923,8 +958,13 @@
   </url>
   
   <url>
+    <loc>https://go-vela.github.io/docs/templates/tutorials/starlark/vars_template/</loc>
+    <lastmod>2021-01-28T13:57:03-06:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://go-vela.github.io/docs/templates/</loc>
-    <lastmod>2020-07-09T15:23:16-05:00</lastmod>
+    <lastmod>2021-01-28T13:57:03-06:00</lastmod>
   </url>
   
   <url>
@@ -939,7 +979,7 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/templates/tutorials/</loc>
-    <lastmod>2020-04-30T15:20:21-05:00</lastmod>
+    <lastmod>2021-01-28T13:57:03-06:00</lastmod>
   </url>
   
   <url>

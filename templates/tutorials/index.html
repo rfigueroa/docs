@@ -341,8 +341,19 @@
       
       
       
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/templates/tutorials/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Tutorials</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="docs-templates-tutorials">
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-templates-overview" href="/docs/templates/overview/">Overview</a>
       
       
       
@@ -355,11 +366,41 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/templates/registry/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Registry</a>
+    <a  href="/docs/templates/tutorials/go/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Go</a>
   </li>
   <ul>
-    <li class="collapse " id="docs-templates-registry">
+    <li class="collapse " id="docs-templates-tutorials-go">
       
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-templates-tutorials-go-conditional" href="/docs/templates/tutorials/go/conditional/">Conditionals</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-templates-tutorials-go-loops-maps" href="/docs/templates/tutorials/go/loops_maps/">Loops with Maps</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-templates-tutorials-go-loops-slice" href="/docs/templates/tutorials/go/loops_slice/">Loops with Slices</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-templates-tutorials-go-mulitline" href="/docs/templates/tutorials/go/mulitline/">Multiline</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-templates-tutorials-go-vars-platform" href="/docs/templates/tutorials/go/vars_platform/">Platform Vars</a>
       
       
     </li>
@@ -378,35 +419,59 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/templates/tutorials/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Tutorials</a>
+    <a  href="/docs/templates/tutorials/starlark/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Starlark</a>
   </li>
   <ul>
-    <li class="collapse show" id="docs-templates-tutorials">
+    <li class="collapse " id="docs-templates-tutorials-starlark">
       
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-templates-tutorials-conditional" href="/docs/templates/tutorials/conditional/">Conditionals</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-templates-tutorials-starlark-anatomy" href="/docs/templates/tutorials/starlark/anatomy/">Anatomy</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-templates-tutorials-loops-maps" href="/docs/templates/tutorials/loops_maps/">Loops with Maps</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-templates-tutorials-starlark-conditional" href="/docs/templates/tutorials/starlark/conditional/">Conditionals</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-templates-tutorials-loops-slice" href="/docs/templates/tutorials/loops_slice/">Loops with Slices</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-templates-tutorials-starlark-functions" href="/docs/templates/tutorials/starlark/functions/">Functions</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-templates-tutorials-mulitline" href="/docs/templates/tutorials/mulitline/">Multiline</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-templates-tutorials-starlark-loops-map" href="/docs/templates/tutorials/starlark/loops_map/">Loops with Maps</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-templates-tutorials-starlark-loops-slice" href="/docs/templates/tutorials/starlark/loops_slice/">Loops with Slices</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-templates-tutorials-starlark-vars-platform" href="/docs/templates/tutorials/starlark/vars_platform/">Platform Vars</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-templates-tutorials-starlark-vars-template" href="/docs/templates/tutorials/starlark/vars_template/">Template Vars</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
       
       
     </li>
@@ -477,6 +542,17 @@
 	<h1>Tutorials</h1>
 	<div class="lead">Learn how to write your own templates for Vela.</div>
 	
+
+<div class="alert alert-primary" role="alert">
+<h4 class="alert-heading">Note:</h4>
+Pipeline templates are an advanced way to write pipelines. We strongly recommend you have a grasp on the following concepts before continuing:</p>
+
+<ul>
+<li><a href="/docs/concepts/pipeline/steps/">Steps</a></li>
+</ul>
+</div>
+
+
         <div class="section-index">
     
     
@@ -485,45 +561,45 @@
     <hr class="panel-line">
         
             
-                <div class="entry">
-                    <h5>
-                        <a href="/docs/templates/tutorials/conditional/">Conditionals</a>
-                    </h5>
-                    <p>Learn how to write a Vela template with conditionals.
-</p>
-                </div>
+        
+            
+        
+            
+        
             
         
             
                 <div class="entry">
                     <h5>
-                        <a href="/docs/templates/tutorials/loops_maps/">Loops with Maps</a>
+                        <a href="/docs/templates/tutorials/go/">Go</a>
                     </h5>
-                    <p>Learn how to write a Vela template with loops and maps.
+                    <p>See examples on how to write Go templates.
 </p>
                 </div>
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
             
         
             
                 <div class="entry">
                     <h5>
-                        <a href="/docs/templates/tutorials/loops_slice/">Loops with Slices</a>
+                        <a href="/docs/templates/tutorials/starlark/">Starlark</a>
                     </h5>
-                    <p>Learn how to write a Vela template with loops and slices.
+                    <p>See examples on how to write Starlark templates.
 </p>
                 </div>
-            
-        
-            
-                <div class="entry">
-                    <h5>
-                        <a href="/docs/templates/tutorials/mulitline/">Multiline</a>
-                    </h5>
-                    <p>Learn how to write a Vela template that passes multiline strings.
-</p>
-                </div>
-            
-        
             
         
             
@@ -537,7 +613,7 @@
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified April 30, 2020: <a  href="https://github.com/go-vela/docs/commit/486886e4f00b3720909715f560bb5cf436c2efbf">chore: remove coming soon (#130) (486886e)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified January 28, 2021: <a  href="https://github.com/go-vela/docs/commit/b829e28e20a6c2d587b7f872a6d579e886ebec5d">docs: update templates for starlark and go (#201) (b829e28)</a>
 </div>
 </div>
 
