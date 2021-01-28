@@ -2,7 +2,7 @@
 title: "Multiline"
 linkTitle: "Multiline"
 description: >
-  Learn how to write a Vela template that passes multiline strings.
+  Example Go template with multiline strings.
 ---
 
 {{% alert color="note" %}}

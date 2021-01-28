@@ -1,8 +1,8 @@
 ---
-title: "Loops with Maps"
-linkTitle: "Loops with Maps"
+title: "Loops with Slices"
+linkTitle: "Loops with Slices"
 description: >
-  Learn how to write a Vela template with loops and maps.
+  Example Go template with loops and slices.
 ---
 
 {{% alert color="note" %}}
@@ -17,7 +17,7 @@ From [Go template range](https://golang.org/pkg/text/template/#hdr-Actions):
 
 ```text
 {{range pipeline}}
-  T1
+  T1 
 {{end}}
 ```
 
@@ -34,7 +34,7 @@ For information on range/else statements see [conditional docs](https://golang.o
 
 ## Sample
 
-Let's take a look at ranging over a map for a template:
+Let's take a look at ranging over a slice for a template:
 
 ```yaml
 metadata:
@@ -42,9 +42,9 @@ metadata:
 
 steps:
 
-  {{ range $key, $value := .images }}
+  {{ range $value := .images }}
 
-  - name: test{{ $key }}
+  - name: test_{{ $value }}
     commands:
       - go test ./...
     image: {{ $value }}
@@ -81,17 +81,10 @@ steps:
       name: sample
       vars:
         pull_policy: "pull: always"
-        images:
-          _latest: golang:latest
-          _1.13: golang:1.13
-          _1.12: golang:1.13
+        images: [ golang:latest, golang:1.13, golang:1.12s ]
 ```
 
 Which means the compiled pipeline for execution on a worker is:
-
-{{% alert color="warning" %}}
-Go does not guarantee order with maps. If you need the steps to **always** be outputted in the same order use the loops with slice implementation.
-{{% /alert %}}
 
 ```yaml
 version: "1"
@@ -104,7 +97,7 @@ steps:
     ruleset:
       event: [ push, pull_request ]
 
-  - name: sample_test_1.13
+  - name: sample_test_golang:1.13
     commands:
       - go test ./...
     image: golang:1.13
@@ -112,7 +105,7 @@ steps:
     ruleset:
       event: [ push, pull_request ]
 
-  - name: sample_test_1.12
+  - name: sample_test_golang:1.12
     commands:
       - go test ./...
     image: golang:1.12
