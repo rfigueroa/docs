@@ -227,12 +227,12 @@ This component is stored in the configured Vela backend in the &lt;code&gt;build
 &lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/api/build/&#34;&gt;API&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/cli/build/&#34;&gt;CLI&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/api/build/&#34;&gt;API&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/cli/build/&#34;&gt;CLI&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;SDK
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/sdk/go/build/&#34;&gt;Go&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/sdk/go/&#34;&gt;Go&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -2097,12 +2097,12 @@ This component is stored in the configured Vela backend in the &lt;code&gt;hooks
 &lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/api/build/&#34;&gt;API&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/cli/build/&#34;&gt;CLI&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/api/build/&#34;&gt;API&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/cli/build/&#34;&gt;CLI&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;SDK
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/sdk/go/build/&#34;&gt;Go&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/sdk/go/&#34;&gt;Go&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -2410,18 +2410,15 @@ This component is stored in the configured Vela backend in the &lt;code&gt;logs&
 &lt;li&gt;API
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/api/build/logs/&#34;&gt;Build&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/api/service/logs/&#34;&gt;Service&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/api/step/logs/&#34;&gt;Step&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/api/build/logs/&#34;&gt;Build&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/api/service/logs/&#34;&gt;Service&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/api/step/logs/&#34;&gt;Step&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/cli/log/&#34;&gt;CLI&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/cli/log/&#34;&gt;CLI&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;SDK
 
 &lt;ul&gt;
-&lt;li&gt;Go&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/sdk/go/build/logs/&#34;&gt;Build&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/sdk/go/service/logs/&#34;&gt;Service&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/sdk/go/step/logs/&#34;&gt;Step&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/sdk/go/repo/&#34;&gt;Go&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -3308,12 +3305,12 @@ This component is stored in the configured Vela backend in the &lt;code&gt;repos
 &lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/api/repo/&#34;&gt;API&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/cli/repo/&#34;&gt;CLI&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/api/build/&#34;&gt;API&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/cli/build/&#34;&gt;CLI&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;SDK
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/sdk/go/repo/&#34;&gt;Go&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/sdk/go/&#34;&gt;Go&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -3847,12 +3844,12 @@ This secret type requires you to be a member of the team in the organization.
 &lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/api/secret/&#34;&gt;API&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/cli/secret/&#34;&gt;CLI&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/api/build/&#34;&gt;API&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/cli/build/&#34;&gt;CLI&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;SDK
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/sdk/go/secret/&#34;&gt;Go&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/sdk/go/&#34;&gt;Go&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -4143,12 +4140,12 @@ This component is stored in the configured Vela backend in the &lt;code&gt;servi
 &lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/api/service/&#34;&gt;API&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/cli/service/&#34;&gt;CLI&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/api/build/&#34;&gt;API&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/cli/build/&#34;&gt;CLI&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;SDK
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/sdk/go/service/&#34;&gt;Go&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/sdk/go/&#34;&gt;Go&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -4465,12 +4462,12 @@ This component is stored in the configured Vela backend in the &lt;code&gt;steps
 &lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/api/step/&#34;&gt;API&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/cli/step/&#34;&gt;CLI&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/api/build/&#34;&gt;API&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/cli/build/&#34;&gt;CLI&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;SDK
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/sdk/go/step/&#34;&gt;Go&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/sdk/go/&#34;&gt;Go&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -4918,7 +4915,7 @@ This component is stored in the configured Vela backend in the &lt;code&gt;users
 &lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/api/user/&#34;&gt;API&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/api/user/&#34;&gt;API&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
       </description>

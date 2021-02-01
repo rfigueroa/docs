@@ -95,7 +95,7 @@ For more information, you can run &lt;code&gt;vela get build --help&lt;/code&gt;
 &lt;li&gt;&lt;code&gt;output&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;For more information, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/cli/config/&#34;&gt;CLI config documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;For more information, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/cli/config/&#34;&gt;CLI config documentation&lt;/a&gt;.&lt;/p&gt;
 
 &lt;/div&gt;
 
@@ -112,9 +112,9 @@ For more information, you can run &lt;code&gt;vela get build --help&lt;/code&gt;
 
 &lt;p&gt;This section assumes you have already installed and setup the CLI.&lt;/p&gt;
 
-&lt;p&gt;To install the CLI, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/cli/install/&#34;&gt;installation documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;To install the CLI, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/cli/install/&#34;&gt;installation documentation&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;To setup the CLI, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/cli/authentication/&#34;&gt;authentication documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;To setup the CLI, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/cli/authentication/&#34;&gt;authentication documentation&lt;/a&gt;.&lt;/p&gt;
 
 &lt;/div&gt;
 
@@ -207,7 +207,7 @@ For more information, you can run &lt;code&gt;vela restart build --help&lt;/code
 &lt;li&gt;&lt;code&gt;output&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;For more information, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/cli/config/&#34;&gt;CLI config documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;For more information, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/cli/config/&#34;&gt;CLI config documentation&lt;/a&gt;.&lt;/p&gt;
 
 &lt;/div&gt;
 
@@ -224,9 +224,9 @@ For more information, you can run &lt;code&gt;vela restart build --help&lt;/code
 
 &lt;p&gt;This section assumes you have already installed and setup the CLI.&lt;/p&gt;
 
-&lt;p&gt;To install the CLI, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/cli/install/&#34;&gt;installation documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;To install the CLI, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/cli/install/&#34;&gt;installation documentation&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;To setup the CLI, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/cli/authentication/&#34;&gt;authentication documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;To setup the CLI, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/cli/authentication/&#34;&gt;authentication documentation&lt;/a&gt;.&lt;/p&gt;
 
 &lt;/div&gt;
 
@@ -338,7 +338,7 @@ For more information, you can run &lt;code&gt;vela view build --help&lt;/code&gt
 &lt;li&gt;&lt;code&gt;output&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;For more information, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/cli/config/&#34;&gt;CLI config documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;For more information, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/cli/config/&#34;&gt;CLI config documentation&lt;/a&gt;.&lt;/p&gt;
 
 &lt;/div&gt;
 
@@ -355,9 +355,9 @@ For more information, you can run &lt;code&gt;vela view build --help&lt;/code&gt
 
 &lt;p&gt;This section assumes you have already installed and setup the CLI.&lt;/p&gt;
 
-&lt;p&gt;To install the CLI, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/cli/install/&#34;&gt;installation documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;To install the CLI, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/cli/install/&#34;&gt;installation documentation&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;To setup the CLI, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/cli/authentication/&#34;&gt;authentication documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;To setup the CLI, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/cli/authentication/&#34;&gt;authentication documentation&lt;/a&gt;.&lt;/p&gt;
 
 &lt;/div&gt;
 

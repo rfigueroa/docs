@@ -4,7 +4,7 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/usage/examples/secrets_external/</loc>
-    <lastmod>2021-01-12T13:56:22-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
@@ -19,7 +19,7 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/usage/examples/secrets_internal/</loc>
-    <lastmod>2021-01-28T13:49:05-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
@@ -119,72 +119,72 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/cli/authentication/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/cli/validate/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/build/add/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/deployment/add/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/hook/add/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/repo/add/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/secret/add/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/service/add/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/step/add/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/user/add/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/cli/deployment/add/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/cli/repo/add/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/cli/secret/add/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/admin/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
@@ -204,7 +204,7 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/usage/authenticate/</loc>
-    <lastmod>2021-01-12T13:56:22-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
@@ -219,22 +219,22 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/concepts/system/build/</loc>
-    <lastmod>2020-03-18T18:00:35+00:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/admin/build/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/build/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/cli/build/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
@@ -249,12 +249,12 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/repo/chown/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/cli/repo/chown/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
@@ -274,7 +274,7 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/cli/completion/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
@@ -294,12 +294,12 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/cli/config/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/user/current/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
@@ -309,12 +309,12 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/deployment/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/cli/deployment/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
@@ -334,7 +334,7 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/usage/enable_repo/</loc>
-    <lastmod>2021-01-12T13:56:22-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
@@ -379,97 +379,97 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/cli/completion/generate/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/cli/config/generate/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/cli/pipeline/generate/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/build/get/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/deployment/get/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/hook/get/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/repo/get/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/secret/get/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/service/get/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/step/get/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/user/get/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/cli/build/get/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/cli/deployment/get/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/cli/hook/get/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/cli/log/get/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/cli/repo/get/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/cli/secret/get/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/cli/service/get/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/cli/step/get/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
@@ -494,22 +494,22 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/concepts/system/hook/</loc>
-    <lastmod>2020-05-21T16:27:50+00:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/admin/hook/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/hook/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/cli/hook/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
@@ -554,27 +554,27 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/concepts/system/log/</loc>
-    <lastmod>2020-03-18T18:00:35+00:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/cli/log/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/build/logs/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/service/logs/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/step/logs/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
@@ -644,7 +644,7 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/cli/pipeline/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
@@ -724,97 +724,97 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/build/remove/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/hook/remove/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/repo/remove/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/secret/remove/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/service/remove/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/step/remove/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/user/remove/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/cli/config/remove/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/cli/repo/remove/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/cli/secret/remove/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/repo/repair/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/cli/repo/repair/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/concepts/system/repo/</loc>
-    <lastmod>2020-05-01T14:09:59-05:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/admin/repo/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/repo/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/cli/repo/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/user/current/repos/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/build/restart/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/cli/build/restart/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
@@ -859,7 +859,7 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/concepts/system/secret/</loc>
-    <lastmod>2020-10-15T19:29:36+00:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
@@ -869,17 +869,17 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/admin/secret/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/secret/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/cli/secret/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
@@ -899,22 +899,22 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/concepts/system/service/</loc>
-    <lastmod>2020-03-18T18:00:35+00:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/admin/service/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/service/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/cli/service/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
@@ -954,22 +954,22 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/concepts/system/step/</loc>
-    <lastmod>2020-03-18T18:00:35+00:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/admin/step/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/step/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/cli/step/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
@@ -1044,57 +1044,57 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/build/update/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/hook/update/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/repo/update/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/secret/update/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/service/update/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/step/update/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/user/current/update/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/user/update/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/cli/config/update/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/cli/repo/update/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/cli/secret/update/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
@@ -1104,17 +1104,17 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/concepts/system/user/</loc>
-    <lastmod>2020-10-15T19:29:36+00:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/admin/user/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/user/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
@@ -1124,7 +1124,7 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/cli/pipeline/validate/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
@@ -1144,92 +1144,92 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/build/view/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/deployment/view/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/hook/view/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/repo/view/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/secret/view/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/service/view/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/step/view/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/user/current/view/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/user/view/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/cli/build/view/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/cli/config/view/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/cli/deployment/view/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/cli/hook/view/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/cli/log/view/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/cli/repo/view/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/cli/secret/view/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/cli/service/view/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/cli/step/view/</loc>
-    <lastmod>2021-01-13T09:29:09-06:00</lastmod>
+    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
   </url>
   
   <url>

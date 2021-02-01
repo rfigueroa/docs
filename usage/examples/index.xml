@@ -34,7 +34,7 @@
 
 &lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Note:&lt;/h4&gt;
-It is assumed you have created secret &lt;code&gt;vault_token&lt;/code&gt; in the web interface or &lt;a href=&#34;https://go-vela.github.io/docs/docs/cli/&#34;&gt;CLI&lt;/a&gt;.
+It is assumed you have created secret &lt;code&gt;vault_token&lt;/code&gt; in the web interface or &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/cli/&#34;&gt;CLI&lt;/a&gt;.
 &lt;/div&gt;
 
 
@@ -326,7 +326,7 @@ It is assumed you have created secret &lt;code&gt;vault_token&lt;/code&gt; in th
 
 &lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Note:&lt;/h4&gt;
-It is assumed you have created secrets &lt;code&gt;docker_username&lt;/code&gt; and &lt;code&gt;docker_password&lt;/code&gt; in the web interface or &lt;a href=&#34;https://go-vela.github.io/docs/docs/cli/&#34;&gt;CLI&lt;/a&gt;.
+It is assumed you have created secrets &lt;code&gt;docker_username&lt;/code&gt; and &lt;code&gt;docker_password&lt;/code&gt; in the web interface or &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/cli/&#34;&gt;CLI&lt;/a&gt;.
 &lt;/div&gt;
 
 
