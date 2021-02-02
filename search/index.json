@@ -165,6 +165,13 @@
     },
 
     {
+    "url": "https://go-vela.github.io/docs/reference/cli/version/",
+    "display": "Reference/Cli/Version",
+    "title": "Version",
+    "content": "command vela version sample section assumes you have already installed setup the cli. to install cli, please review installation documentation. authentication request response canonical: v0.7.0, major: 0, minor: 7, patch: metadata: architecture: amd64, builddate: 2021-02-01t15:40:21z, compiler: gc, gitcommit: 6225623858e09b7277f3d274d1ed75289a9eb549, goversion: go1.15.7, operatingsystem: darwin, "
+    },
+
+    {
     "url": "https://go-vela.github.io/docs/reference/api/build/add/",
     "display": "Api/Build/Add",
     "title": "Add",

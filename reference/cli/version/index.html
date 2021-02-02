@@ -7,7 +7,6 @@
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
-<link rel="alternate" type="application/rss&#43;xml" href="https://go-vela.github.io/docs/reference/cli/service/index.xml">
 
 
 <link rel="shortcut icon" href="/favicons/favicon.ico" >
@@ -21,19 +20,26 @@
 <link rel="icon" type="image/png" href="/docs/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/docs/favicons/android-192x192.png"sizes="192x192">
 
-<title>Service | Vela</title><meta property="og:title" content="Service" />
-<meta property="og:description" content="Learn how to use CLI commands for the service resource.
+<title>Version | Vela</title><meta property="og:title" content="Version" />
+<meta property="og:description" content="Learn how to get version information for the Vela CLI.
 " />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://go-vela.github.io/docs/reference/cli/service/" />
-
-<meta itemprop="name" content="Service">
-<meta itemprop="description" content="Learn how to use CLI commands for the service resource.
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://go-vela.github.io/docs/reference/cli/version/" />
+<meta property="article:modified_time" content="2021-02-02T13:43:34+00:00" />
+<meta itemprop="name" content="Version">
+<meta itemprop="description" content="Learn how to get version information for the Vela CLI.
 ">
 
+
+<meta itemprop="dateModified" content="2021-02-02T13:43:34&#43;00:00" />
+<meta itemprop="wordCount" content="63">
+
+
+
+<meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Service"/>
-<meta name="twitter:description" content="Learn how to use CLI commands for the service resource.
+<meta name="twitter:title" content="Version"/>
+<meta name="twitter:description" content="Learn how to get version information for the Vela CLI.
 "/>
 
 
@@ -51,9 +57,9 @@
   crossorigin="anonymous"></script>
 
 
-    <title>Service | Vela</title>
+    <title>Version | Vela</title>
   </head>
-  <body class="td-section">
+  <body class="td-page">
     <header>
       
 <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
@@ -932,7 +938,7 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/reference/cli/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">CLI</a>
+    <a  href="/docs/reference/cli/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">CLI</a>
   </li>
   <ul>
     <li class="collapse show" id="docs-reference-cli">
@@ -960,7 +966,7 @@
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-reference-cli-version" href="/docs/reference/cli/version/">Version</a>
+      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docs-reference-cli-version" href="/docs/reference/cli/version/">Version</a>
       
       
       
@@ -1354,10 +1360,10 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/reference/cli/service/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Service</a>
+    <a  href="/docs/reference/cli/service/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Service</a>
   </li>
   <ul>
-    <li class="collapse show" id="docs-reference-cli-service">
+    <li class="collapse " id="docs-reference-cli-service">
       
       
       
@@ -1547,13 +1553,32 @@
 
 
 
-<a href="https://github.com/go-vela/docs/edit/master/content/reference/cli/service/_index.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
-<a href="https://github.com/go-vela/docs/issues/new?title=Service" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+<a href="https://github.com/go-vela/docs/edit/master/content/reference/cli/version.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+<a href="https://github.com/go-vela/docs/issues/new?title=Version" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
 
 </div>
 
 
 
+
+
+
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#command">Command</a></li>
+<li><a href="#sample">Sample</a>
+<ul>
+<li>
+<ul>
+<li><a href="#request">Request</a></li>
+<li><a href="#response">Response</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
 
 
 
@@ -1587,7 +1612,7 @@
 
 
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="https://go-vela.github.io/docs/reference/cli/service/">Service</a>
+	<a href="https://go-vela.github.io/docs/reference/cli/version/">Version</a>
 </li>
 
 	</ol>
@@ -1595,9 +1620,16 @@
 
             
 <div class="td-content">
-	<h1>Service</h1>
-	<div class="lead">Learn how to use CLI commands for the service resource.</div>
-	<p>The below commands are available to operate on the <code>service</code> resource.</p>
+	<h1>Version</h1>
+	<div class="lead">Learn how to get version information for the Vela CLI.</div>
+	
+
+<h2 id="command">Command</h2>
+
+<pre><code>$ vela version
+</code></pre>
+
+<h2 id="sample">Sample</h2>
 
 
 
@@ -1605,300 +1637,35 @@
 
 <p>This section assumes you have already installed and setup the CLI.</p>
 
-<p>To install the CLI, please review the <a href="/docs/reference/cli/install/">installation documentation</a>.</p>
-
-<p>To setup the CLI, please review the <a href="/docs/reference/cli/authentication/">authentication documentation</a>.</p>
+<p>To install the CLI, please review the <a href="/docs/reference/cli/install/">installation documentation</a>.
+To setup the CLI, please review the <a href="/docs/reference/cli/authentication/">authentication documentation</a>.</p>
 
 </div>
 
 
-        <div class="section-index">
-    
-    
-    
-    
-    <hr class="panel-line">
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-                <div class="entry">
-                    <h5>
-                        <a href="/docs/reference/cli/service/get/">Get</a>
-                    </h5>
-                    <p>Learn how to list services.
-</p>
-                </div>
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-                <div class="entry">
-                    <h5>
-                        <a href="/docs/reference/cli/service/view/">View</a>
-                    </h5>
-                    <p>Learn how to inspect a service.
-</p>
-                </div>
-            
-        
-            
-        
-            
-        
-    
-</div>
-
+<h4 id="request">Request</h4>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">vela version</code></pre></div>
+<h4 id="response">Response</h4>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#ce5c00;font-weight:bold">{</span>
+  Canonical: v0.7.0,
+  Major: <span style="color:#0000cf;font-weight:bold">0</span>,
+  Minor: <span style="color:#0000cf;font-weight:bold">7</span>,
+  Patch: <span style="color:#0000cf;font-weight:bold">0</span>,
+  Metadata: <span style="color:#ce5c00;font-weight:bold">{</span>
+    Architecture: amd64,
+    BuildDate: <span style="color:#0000cf;font-weight:bold">2021</span>-02-01T15:40:21Z,
+    Compiler: gc,
+    GitCommit: 6225623858e09b7277f3d274d1ed75289a9eb549,
+    GoVersion: go1.15.7,
+    OperatingSystem: darwin,
+  <span style="color:#ce5c00;font-weight:bold">}</span>
+<span style="color:#ce5c00;font-weight:bold">}</span></code></pre></div>
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified February 1, 2021: <a  href="https://github.com/go-vela/docs/commit/6dc23bdb5b3d7b927fe2acf30bd5d347f7a2cb83">fix(reference): fix broken links (#205) (6dc23bd)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified February 2, 2021: <a  href="https://github.com/go-vela/docs/commit/c89ac9801931175c9ef4cb8877ae958c765d2671">docs: add version information (#206) (c89ac98)</a>
 </div>
 </div>
+
 
           </main>
         </div>
