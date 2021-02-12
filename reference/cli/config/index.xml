@@ -58,8 +58,20 @@ For more information, you can run &lt;code&gt;vela generate config --help&lt;/co
 &lt;/tr&gt;
 
 &lt;tr&gt;
+&lt;td&gt;&lt;code&gt;api.token.access&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;API access token&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;VELA_ACCESS_TOKEN&lt;/code&gt;, &lt;code&gt;CONFIG_ACCESS_TOKEN&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;api.token.refresh&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;API refresh token&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;VELA_REFRESH_TOKEN&lt;/code&gt;, &lt;code&gt;CONFIG_REFRESH_TOKEN&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
 &lt;td&gt;&lt;code&gt;api.token&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;user token from API server&lt;/td&gt;
+&lt;td&gt;PAT for API server&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_TOKEN&lt;/code&gt;, &lt;code&gt;CONFIG_TOKEN&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
@@ -127,14 +139,13 @@ For more information, you can run &lt;code&gt;vela generate config --help&lt;/co
 
 
 &lt;h4 id=&#34;request&#34;&gt;Request&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;vela generate config --api.addr https://vela-server.localhost --api.token superSecretToken&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;vela generate config --api.addr https://vela-server.localhost --log.level info&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h4 id=&#34;response&#34;&gt;Response&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;api:
   addr: https://vela-server.localhost
-  token: superSecretToken
-  version: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;1&amp;#34;&lt;/span&gt;
 log:
-  level: info&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  level: info
+secret: &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
       </description>
     </item>
     
@@ -188,6 +199,18 @@ Providing no parameters to this command will remove the entire configuration fil
 &lt;td&gt;&lt;code&gt;api.addr&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;removes the API address field&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_ADDR&lt;/code&gt;, &lt;code&gt;CONFIG_ADDR&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;api.token.access&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;removes the API access token field&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;VELA_ACCESS_TOKEN&lt;/code&gt;, &lt;code&gt;CONFIG_ACCESS_TOKEN&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;api.token.refresh&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;removes the API refresh token field&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;VELA_REFRESH_TOKEN&lt;/code&gt;, &lt;code&gt;CONFIG_REFRESH_TOKEN&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -311,6 +334,18 @@ For more information, you can run &lt;code&gt;vela update config --help&lt;/code
 &lt;/tr&gt;
 
 &lt;tr&gt;
+&lt;td&gt;&lt;code&gt;api.token.access&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;updates the API access token field&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;VELA_ACCESS_TOKEN&lt;/code&gt;, &lt;code&gt;CONFIG_ACCESS_TOKEN&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;api.token.refresh&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;updates the API refresh token field&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;VELA_REFRESH_TOKEN&lt;/code&gt;, &lt;code&gt;CONFIG_REFRESH_TOKEN&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
 &lt;td&gt;&lt;code&gt;api.token&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;updates the API token field&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_TOKEN&lt;/code&gt;, &lt;code&gt;CONFIG_TOKEN&lt;/code&gt;&lt;/td&gt;
@@ -384,10 +419,12 @@ For more information, you can run &lt;code&gt;vela update config --help&lt;/code
 &lt;h4 id=&#34;response&#34;&gt;Response&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;api:
   addr: https://vela-server.localhost
-  token: superSecretToken
-  version: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;1&amp;#34;&lt;/span&gt;
+  access_token: superSecretAccessToken
+  refresh_token: superSecretRefreshToken
+  version: v1
 log:
   level: info
+secret: &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{}&lt;/span&gt;
 org: github&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
       </description>
     </item>
@@ -440,10 +477,12 @@ For more information, you can run &lt;code&gt;vela view config --help&lt;/code&g
 &lt;h4 id=&#34;response&#34;&gt;Response&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;api:
   addr: https://vela-server.localhost
-  token: superSecretToken
-  version: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;1&amp;#34;&lt;/span&gt;
+  access_token: superSecretAccessToken
+  refresh_token: superSecretRefreshToken
+  version: v1
 log:
-  level: info&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  level: info
+secret: &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
       </description>
     </item>
     

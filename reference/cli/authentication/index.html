@@ -25,14 +25,14 @@
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://go-vela.github.io/docs/reference/cli/authentication/" />
-<meta property="article:modified_time" content="2021-02-01T17:58:51-06:00" />
+<meta property="article:modified_time" content="2021-02-11T18:41:35-06:00" />
 <meta itemprop="name" content="Authentication">
 <meta itemprop="description" content="Learn how authenticating with the Vela CLI works.
 ">
 
 
-<meta itemprop="dateModified" content="2021-02-01T17:58:51-06:00" />
-<meta itemprop="wordCount" content="221">
+<meta itemprop="dateModified" content="2021-02-11T18:41:35-06:00" />
+<meta itemprop="wordCount" content="190">
 
 
 
@@ -1625,19 +1625,19 @@
 
 <p>Authentication with the Vela CLI is the responsibility of the client initiating the request.</p>
 
-<p>Each request requires a server address and user token to be provided. You can provide these variables to the CLI in three ways:</p>
+<p>Each request requires a server address. You can provide this variable to the CLI in three ways:</p>
 
 <ul>
 <li>Configuration File</li>
-<li>Environment Variables</li>
-<li>Flags</li>
+<li>Environment Variable</li>
+<li>Flag</li>
 </ul>
 
 
 
 <div class="alert alert-info" role="alert">
 
-A configuration file is the recommended method for providing the API address and token to the CLI.
+A configuration file is the recommended method for providing the API address to the CLI.
 </div>
 
 
@@ -1651,18 +1651,22 @@ The default path for this configuration file can be found @ <code>$HOME/.vela/co
 </div>
 
 
-<p>Log in and capture the personal token:</p>
+<p>Log in:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8f5902;font-style:italic"># Syntax</span>
 vela login --api.addr &lt;vela server url&gt;
 
 <span style="color:#8f5902;font-style:italic"># Example</span>
 vela login --api.addr https://vela-server.localhost</code></pre></div>
-<p>Generate the configuration file:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8f5902;font-style:italic"># Syntax</span>
-vela generate config --api.addr &lt;vela server url&gt; --api.token &lt;personal token&gt;
+<p>Confirm authentication via browser prompt:</p>
 
-<span style="color:#8f5902;font-style:italic"># Example</span>
-vela generate config --api.addr https://vela-server.localhost --api.token qwerty123</code></pre></div>
+<pre><code>Open https://vela-server.localhost in your browser and complete authentication (Press Enter to confirm):
+</code></pre>
+
+<p>Confirm to generate or update the configuration file prompt:</p>
+
+<pre><code>Authentication complete. Continue to save configuration (existing config will be overwritten):
+</code></pre>
+
 
 
 <div class="alert alert-info" role="alert">
@@ -1675,10 +1679,8 @@ For more information, you can visit the <a href="/docs/reference/cli/config/">CL
 
 <p>Configure the environment with the <code>VELA_ADDR</code> environment variable:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#204a87">export</span> <span style="color:#000">VELA_ADDR</span><span style="color:#ce5c00;font-weight:bold">=</span>https://vela-server.localhost</code></pre></div>
-<p>Log in and capture the personal token:</p>
+<p>Log in and confirm the two prompts as stated above:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">vela login</code></pre></div>
-<p>Configure the environment with the <code>VELA_TOKEN</code> environment variable:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#204a87">export</span> <span style="color:#000">VELA_TOKEN</span><span style="color:#ce5c00;font-weight:bold">=</span>&lt;personal token&gt;</code></pre></div>
 
 
 <div class="alert alert-info" role="alert">
@@ -1689,21 +1691,15 @@ It&rsquo;s recommended to add these to your terminal profile (<code>~/.bashrc</c
 
 <h3 id="flags">Flags</h3>
 
-<p>Log in and capture the personal token:</p>
+<p>Log in and confirm the two prompts as stated above:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8f5902;font-style:italic"># Syntax</span>
-vela --api.addr &lt;vela server url&gt; login
+vela login --api.addr &lt;vela server url&gt;
 
 <span style="color:#8f5902;font-style:italic"># Example</span>
-vela --api.addr https://vela-server.localhost login</code></pre></div>
-<p>Pass the personal token as a flag argument:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8f5902;font-style:italic"># Syntax</span>
-vela --api.addr &lt;vela server url&gt; --api.token &lt;personal token&gt;
-
-<span style="color:#8f5902;font-style:italic"># Example</span>
-vela --api.addr https://vela-server.localhost --api.token qwerty123</code></pre></div>
+vela login --api.addr https://vela-server.localhost</code></pre></div>
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified February 1, 2021: <a  href="https://github.com/go-vela/docs/commit/6dc23bdb5b3d7b927fe2acf30bd5d347f7a2cb83">fix(reference): fix broken links (#205) (6dc23bd)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified February 11, 2021: <a  href="https://github.com/go-vela/docs/commit/4438b576c7b309076009adf6e7e1b6b4ef6a2b3c">chore(authentication): update auth instructions and fix broken links (#203) (4438b57)</a>
 </div>
 </div>
 

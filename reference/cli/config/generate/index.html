@@ -25,14 +25,14 @@
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://go-vela.github.io/docs/reference/cli/config/generate/" />
-<meta property="article:modified_time" content="2021-02-01T17:58:51-06:00" />
+<meta property="article:modified_time" content="2021-02-11T18:41:35-06:00" />
 <meta itemprop="name" content="Generate">
 <meta itemprop="description" content="Learn how to produce a config.
 ">
 
 
-<meta itemprop="dateModified" content="2021-02-01T17:58:51-06:00" />
-<meta itemprop="wordCount" content="162">
+<meta itemprop="dateModified" content="2021-02-11T18:41:35-06:00" />
+<meta itemprop="wordCount" content="171">
 
 
 
@@ -1670,8 +1670,20 @@ For more information, you can run <code>vela generate config --help</code>.
 </tr>
 
 <tr>
+<td><code>api.token.access</code></td>
+<td>API access token</td>
+<td><code>VELA_ACCESS_TOKEN</code>, <code>CONFIG_ACCESS_TOKEN</code></td>
+</tr>
+
+<tr>
+<td><code>api.token.refresh</code></td>
+<td>API refresh token</td>
+<td><code>VELA_REFRESH_TOKEN</code>, <code>CONFIG_REFRESH_TOKEN</code></td>
+</tr>
+
+<tr>
 <td><code>api.token</code></td>
-<td>user token from API server</td>
+<td>PAT for API server</td>
 <td><code>VELA_TOKEN</code>, <code>CONFIG_TOKEN</code></td>
 </tr>
 
@@ -1739,17 +1751,16 @@ For more information, you can run <code>vela generate config --help</code>.
 
 
 <h4 id="request">Request</h4>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">vela generate config --api.addr https://vela-server.localhost --api.token superSecretToken</code></pre></div>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">vela generate config --api.addr https://vela-server.localhost --log.level info</code></pre></div>
 <h4 id="response">Response</h4>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">api:
   addr: https://vela-server.localhost
-  token: superSecretToken
-  version: <span style="color:#4e9a06">&#34;1&#34;</span>
 log:
-  level: info</code></pre></div>
+  level: info
+secret: <span style="color:#ce5c00;font-weight:bold">{}</span></code></pre></div>
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified February 1, 2021: <a  href="https://github.com/go-vela/docs/commit/6dc23bdb5b3d7b927fe2acf30bd5d347f7a2cb83">fix(reference): fix broken links (#205) (6dc23bd)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified February 11, 2021: <a  href="https://github.com/go-vela/docs/commit/4438b576c7b309076009adf6e7e1b6b4ef6a2b3c">chore(authentication): update auth instructions and fix broken links (#203) (4438b57)</a>
 </div>
 </div>
 
