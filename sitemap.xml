@@ -283,6 +283,11 @@
   </url>
   
   <url>
+    <loc>https://go-vela.github.io/docs/reference/api/pipeline/compile/</loc>
+    <lastmod>2021-02-11T18:47:19-06:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://go-vela.github.io/docs/concepts/infrastructure/server/compiler/</loc>
     <lastmod>2020-03-18T18:00:35+00:00</lastmod>
   </url>
@@ -383,6 +388,11 @@
   </url>
   
   <url>
+    <loc>https://go-vela.github.io/docs/reference/api/pipeline/expand/</loc>
+    <lastmod>2021-02-11T18:47:19-06:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://go-vela.github.io/docs/concepts/pipeline/worker/flavor/</loc>
     <lastmod>2020-08-10T11:46:39-05:00</lastmod>
   </url>
@@ -420,6 +430,11 @@
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/hook/get/</loc>
     <lastmod>2021-02-01T17:58:51-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://go-vela.github.io/docs/reference/api/pipeline/get/</loc>
+    <lastmod>2021-02-11T18:47:19-06:00</lastmod>
   </url>
   
   <url>
@@ -655,6 +670,11 @@
   <url>
     <loc>https://go-vela.github.io/docs/plugins/registry/pipeline/</loc>
     <lastmod>2021-01-13T15:05:51-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://go-vela.github.io/docs/reference/api/pipeline/</loc>
+    <lastmod>2021-02-11T18:47:19-06:00</lastmod>
   </url>
   
   <url>
@@ -1018,6 +1038,11 @@
   </url>
   
   <url>
+    <loc>https://go-vela.github.io/docs/reference/api/pipeline/templates/</loc>
+    <lastmod>2021-02-11T18:47:19-06:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://go-vela.github.io/docs/templates/</loc>
     <lastmod>2021-01-28T13:57:03-06:00</lastmod>
   </url>
@@ -1135,6 +1160,11 @@
   <url>
     <loc>https://go-vela.github.io/docs/usage/environment/</loc>
     <lastmod>2021-01-12T13:56:22-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://go-vela.github.io/docs/reference/api/pipeline/validate/</loc>
+    <lastmod>2021-02-11T18:47:19-06:00</lastmod>
   </url>
   
   <url>

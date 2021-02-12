@@ -347,6 +347,13 @@
     },
 
     {
+    "url": "https://go-vela.github.io/docs/reference/api/pipeline/compile/",
+    "display": "Api/Pipeline/Compile",
+    "title": "Compile",
+    "content": "endpoint post /api/v1/pipelines/:org/:repo/compile parameters the following are used to configure endpoint: name description org of organization repo repository ref file for fetching from source provider output format compiled pipeline configuration permissions coming soon! responses status code 200 indicates request has succeeded 400 unable retrieve compile templates 401 user does not have proper 404 500 system error while retrieving compiling sample section assumes you already know how authenticate api. api, please review authentication documentation. curl -x get -h &#34;authorization: bearer &lt;token&gt;&#34; &#34;http://127.0.0.1:8080/api/v1/pipelines/github/octocat/expand&#34; response notice, when step fields such as image commands will be arranged alphabetical order. version:&#34;1&#34;secrets:-name:go_modulekey:github/octocat/template_secretengine:nativetype:reposteps:-commands:-govet./...&amp;&amp;gitdiff--exit-code;code=$?;gitcheckout--.;(exit$code)-gofmt./...&amp;&amp;gitdiff--exit-code;code=$?;gitcheckout--.;(exit$code)image:golang:latestname:go_validatepull:not_present-commands:-gotest./...image:golang:latestname:go_testpull:not_present-commands:-gobuild-a-ldflags&#39;-extldflags &#34;-static&#34;&#39;-orelease/heyvela{$go_module}image:golang:latestname:go_buildpull:not_presentenvironment:cgo_enabled:&#34;0&#34;goos:linuxtemplates:-name:gosource:github.com/github/octocat/go/template.ymltype:github{ &#34;version&#34;: &#34;1&#34;, &#34;metadata&#34;: {}, &#34;worker&#34;: &#34;secrets&#34;: &#34;name&#34;: &#34;go_module&#34;, &#34;key&#34;: &#34;github/octocat/template_secret&#34;, &#34;engine&#34;: &#34;native&#34;, &#34;type&#34;: &#34;repo&#34;, &#34;origin&#34;: &#34;ruleset&#34;: &#34;if&#34;: &#34;unless&#34;: {} ], &#34;steps&#34;: }, &#34;commands&#34;: &#34;go vet ./... &amp;&amp; git diff --exit-code; code=$?; checkout -- .; (exit $code)&#34;, fmt $code)&#34; &#34;template&#34;: &#34;image&#34;: &#34;golang:latest&#34;, &#34;go_validate&#34;, &#34;pull&#34;: &#34;not_present&#34; test ./...&#34; &#34;go_test&#34;, build -a -ldflags &#39;-extldflags &#34;-static &#34;&#39; -o release/heyvela {$go_module}&#34; &#34;go_build&#34;, &#34;not_present&#34;, &#34;environment&#34;: &#34;cgo_enabled&#34;: &#34;0&#34;, &#34;goos&#34;: &#34;linux&#34; &#34;go-tag_validate&#34;, &#34;go-tag_test&#34;, &#34;go-tag_build&#34;, &#34;templates&#34;: &#34;go&#34;, &#34;source&#34;: &#34;github.com/github/octocat/go/template.yml&#34;, &#34;github&#34; "
+    },
+
+    {
     "url": "https://go-vela.github.io/docs/concepts/infrastructure/server/compiler/",
     "display": "Infrastructure/Server/Compiler",
     "title": "Compiler",
@@ -445,6 +452,13 @@
     },
 
     {
+    "url": "https://go-vela.github.io/docs/reference/api/pipeline/expand/",
+    "display": "Api/Pipeline/Expand",
+    "title": "Expand",
+    "content": "endpoint post /api/v1/pipelines/:org/:repo/expand parameters the following are used to configure endpoint: name description org of organization repo repository ref file for fetching from source provider output format expanded pipeline configuration permissions coming soon! responses status code 200 indicates request has succeeded 400 unable retrieve expand templates 401 user does not have proper 404 500 system error while retrieving expanding sample section assumes you already know how authenticate api. api, please review authentication documentation. curl -x get -h &#34;authorization: bearer &lt;token&gt;&#34; &#34;http://127.0.0.1:8080/api/v1/pipelines/github/octocat/expand&#34; response notice, when step fields such as image commands will be arranged alphabetical order. version:&#34;1&#34;secrets:-name:go_modulekey:github/octocat/template_secretengine:nativetype:reposteps:-commands:-govet./...&amp;&amp;gitdiff--exit-code;code=$?;gitcheckout--.;(exit$code)-gofmt./...&amp;&amp;gitdiff--exit-code;code=$?;gitcheckout--.;(exit$code)image:golang:latestname:go_validatepull:not_present-commands:-gotest./...image:golang:latestname:go_testpull:not_present-commands:-gobuild-a-ldflags&#39;-extldflags &#34;-static&#34;&#39;-orelease/heyvela{$go_module}image:golang:latestname:go_buildpull:not_presentenvironment:cgo_enabled:&#34;0&#34;goos:linuxtemplates:-name:gosource:github.com/github/octocat/go/template.ymltype:github{ &#34;version&#34;: &#34;1&#34;, &#34;metadata&#34;: {}, &#34;worker&#34;: &#34;secrets&#34;: &#34;name&#34;: &#34;go_module&#34;, &#34;key&#34;: &#34;github/octocat/template_secret&#34;, &#34;engine&#34;: &#34;native&#34;, &#34;type&#34;: &#34;repo&#34;, &#34;origin&#34;: &#34;ruleset&#34;: &#34;if&#34;: &#34;unless&#34;: {} ], &#34;steps&#34;: }, &#34;commands&#34;: &#34;go vet ./... &amp;&amp; git diff --exit-code; code=$?; checkout -- .; (exit $code)&#34;, fmt $code)&#34; &#34;template&#34;: &#34;image&#34;: &#34;golang:latest&#34;, &#34;go_validate&#34;, &#34;pull&#34;: &#34;not_present&#34; test ./...&#34; &#34;go_test&#34;, build -a -ldflags &#39;-extldflags &#34;-static &#34;&#39; -o release/heyvela {$go_module}&#34; &#34;go_build&#34;, &#34;not_present&#34;, &#34;environment&#34;: &#34;cgo_enabled&#34;: &#34;0&#34;, &#34;goos&#34;: &#34;linux&#34; &#34;templates&#34;: &#34;go&#34;, &#34;source&#34;: &#34;github.com/github/octocat/go/template.yml&#34;, &#34;github&#34; "
+    },
+
+    {
     "url": "https://go-vela.github.io/docs/concepts/pipeline/worker/flavor/",
     "display": "Pipeline/Worker/Flavor",
     "title": "Flavor",
@@ -498,6 +512,13 @@
     "display": "Api/Hook/Get",
     "title": "Get",
     "content": "endpoint get /api/v1/hooks/:org/:repo parameters the following are used to configure endpoint: name description org of organization repo repository permissions coming soon! responses status code 200 indicates request has succeeded 401 user does not have proper sample section assumes you already know how authenticate api. api, please review authentication documentation. curl -x -h &#34;authorization: bearer &lt;token&gt;&#34; &#34;http://127.0.0.1:8080/api/v1/hooks/github/octocat&#34; response &#34;id&#34;: 2, &#34;repo_id&#34;: 1, &#34;build_id&#34;: &#34;number&#34;: &#34;source_id&#34;: &#34;c8da1302-07d6-11ea-882f-4893bca275b8&#34;, &#34;created&#34;: &#34;1563474076&#34;, &#34;host&#34;: &#34;github.com&#34;, &#34;event&#34;: &#34;push&#34;, &#34;branch&#34;: &#34;master&#34;, &#34;error&#34;: &#34;&#34;, &#34;status&#34;: &#34;success&#34;, &#34;link&#34;: &#34;&#34; }, "
+    },
+
+    {
+    "url": "https://go-vela.github.io/docs/reference/api/pipeline/get/",
+    "display": "Api/Pipeline/Get",
+    "title": "Get",
+    "content": "endpoint get /api/v1/pipelines/:org/:repo parameters the following are used to configure endpoint: name description org of organization repo repository ref file for fetching from source provider output format pipeline configuration permissions coming soon! responses status code 200 indicates request has succeeded 400 unable retrieve 401 user does not have proper 404 500 system error while retrieving sample section assumes you already know how authenticate api. api, please review authentication documentation. curl -x -h &#34;authorization: bearer &lt;token&gt;&#34; &#34;http://127.0.0.1:8080/api/v1/pipelines/github/octocat&#34; response version:&#34;1&#34;steps:-name:helloimage:golangruleset:event:pushcommands:-echo&#34;hello&#34;{ &#34;version&#34;: &#34;1&#34;, &#34;metadata&#34;: {}, &#34;worker&#34;: &#34;steps&#34;: &#34;ruleset&#34;: &#34;if&#34;: &#34;event&#34;: &#34;push&#34; }, &#34;unless&#34;: &#34;matcher&#34;: &#34;filepath&#34;, &#34;operator&#34;: &#34;and&#34; &#34;commands&#34;: &#34;echo &#34;hello &#34;&#34; ], &#34;template&#34;: &#34;image&#34;: &#34;golang&#34;, &#34;name&#34;: &#34;hello&#34;, &#34;pull&#34;: &#34;not_present&#34; "
     },
 
     {
@@ -1117,6 +1138,13 @@
     },
 
     {
+    "url": "https://go-vela.github.io/docs/reference/api/pipeline/templates/",
+    "display": "Api/Pipeline/Templates",
+    "title": "Templates",
+    "content": "endpoint get /api/v1/pipelines/:org/:repo/templates parameters the following are used to configure endpoint: name description org of organization repo repository ref file for fetching from source provider output format pipeline templates permissions coming soon! responses status code 200 indicates request has succeeded 400 unable retrieve configuration 401 user does not have proper 404 500 system error while retrieving sample section assumes you already know how authenticate api. api, please review authentication documentation. curl -x -h &#34;authorization: bearer &lt;token&gt;&#34; &#34;http://127.0.0.1:8080/api/v1/pipelines/github/octocat/templates&#34; response some_template:link:https://github.com/github/octocat/blob/master/template.ymlname:some_templatesource:github.com/github/octocat/template.ymltype:github{ &#34;some_template&#34;: &#34;link&#34;: &#34;https://github.com/github/octocat/blob/master/template.yml&#34;, &#34;name&#34;: &#34;some_template&#34;, &#34;source&#34;: &#34;github.com/github/octocat/template.yml&#34;, &#34;type&#34;: &#34;github&#34; }, "
+    },
+
+    {
     "url": "https://go-vela.github.io/docs/plugins/registry/pipeline/terraform/",
     "display": "Registry/Pipeline/Terraform",
     "title": "Terraform",
@@ -1240,6 +1268,13 @@
     "display": "Docs/Usage/Environment",
     "title": "Using the Environment",
     "content": "vela provides the ability to define environment variables scoped individual steps, services secrets. pleas note design be unique per container. does inject variety of default values from build, repo user information. defaults: steps usage following pipeline concepts are being used below: secrets origin note: please warned that ${variable} expressions subject pre-processing. if you do not want pre-processor evaluate your expression it must escaped. version: &#34;1&#34; services: name: redis environment: example: hello, world! image: redis:latest steps: check status commands: can use bash commands in-line set override export example=&#34;hello world team&#34; echo ${example} secrets: origin: private vault target/secret-vault:latest vault_token parameters: addr: vault.example.com auth_method: token username: octocat items: source: secret/docker path: docker "
+    },
+
+    {
+    "url": "https://go-vela.github.io/docs/reference/api/pipeline/validate/",
+    "display": "Api/Pipeline/Validate",
+    "title": "Validate",
+    "content": "endpoint post /api/v1/pipelines/:org/:repo/validate parameters the following are used to configure endpoint: name description org of organization repo repository ref file for fetching from source provider permissions coming soon! responses status code 200 indicates request has succeeded 400 unable retrieve validate pipeline configuration templates 401 user does not have proper 404 500 system error while retrieving validating sample section assumes you already know how authenticate api. api, please review authentication documentation. curl -x get -h &#34;authorization: bearer &lt;token&gt;&#34; &#34;http://127.0.0.1:8080/api/v1/pipelines/github/octocat/validate&#34; response &quot;pipeline valid&quot; "
     },
 
     {
