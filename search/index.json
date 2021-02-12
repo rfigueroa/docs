@@ -305,6 +305,20 @@
     },
 
     {
+    "url": "https://go-vela.github.io/docs/reference/api/build/cancel/",
+    "display": "Api/Build/Cancel",
+    "title": "Cancel",
+    "content": "endpoint delete /api/v1/repos/:org/:repo/builds/:build/cancel permissions coming soon! responses status code description 200 indicates the request has succeeded 401 user does not have proper 404 that server was unable to cancel build 500 there an error trying sample section assumes you already know how authenticate api. api, please review authentication documentation. curl -x -h &#34;authorization: bearer &lt;token&gt;&#34; &#34;http://127.0.0.1:8080/api/v1/repos/github/octocat/builds/1/cancel&#34; response &#34;canceled github/octocat/36&#34; "
+    },
+
+    {
+    "url": "https://go-vela.github.io/docs/reference/cli/build/cancel/",
+    "display": "Cli/Build/Cancel",
+    "title": "Cancel",
+    "content": "command vela cancel build &lt;parameters...&gt; for more information, you can run --help. parameters the following are used to configure command: name description environment variables org of organization vela_org, build_org repo repository vela_repo, build_repo number vela_build, build_number output format vela_output, build_output also supports setting via configuration file: please review cli config documentation. permissions coming soon! sample section assumes have already installed setup cli. install cli, installation authentication request --org github --repo octocat --build response canceled github/octocat/1 "
+    },
+
+    {
     "url": "https://go-vela.github.io/docs/plugins/registry/pipeline/captains_log/",
     "display": "Registry/Pipeline/Captains log",
     "title": "Captain's Log",

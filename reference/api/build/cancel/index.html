@@ -7,7 +7,6 @@
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
-<link rel="alternate" type="application/rss&#43;xml" href="https://go-vela.github.io/docs/reference/cli/config/index.xml">
 
 
 <link rel="shortcut icon" href="/favicons/favicon.ico" >
@@ -21,19 +20,26 @@
 <link rel="icon" type="image/png" href="/docs/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/docs/favicons/android-192x192.png"sizes="192x192">
 
-<title>Config | Vela</title><meta property="og:title" content="Config" />
-<meta property="og:description" content="Learn how to use CLI commands for the config resource.
+<title>Cancel | Vela</title><meta property="og:title" content="Cancel" />
+<meta property="og:description" content="Learn how to cancel a build.
 " />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://go-vela.github.io/docs/reference/cli/config/" />
-
-<meta itemprop="name" content="Config">
-<meta itemprop="description" content="Learn how to use CLI commands for the config resource.
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://go-vela.github.io/docs/reference/api/build/cancel/" />
+<meta property="article:modified_time" content="2021-02-12T00:43:42+00:00" />
+<meta itemprop="name" content="Cancel">
+<meta itemprop="description" content="Learn how to cancel a build.
 ">
 
+
+<meta itemprop="dateModified" content="2021-02-12T00:43:42&#43;00:00" />
+<meta itemprop="wordCount" content="86">
+
+
+
+<meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Config"/>
-<meta name="twitter:description" content="Learn how to use CLI commands for the config resource.
+<meta name="twitter:title" content="Cancel"/>
+<meta name="twitter:description" content="Learn how to cancel a build.
 "/>
 
 
@@ -51,9 +57,9 @@
   crossorigin="anonymous"></script>
 
 
-    <title>Config | Vela</title>
+    <title>Cancel | Vela</title>
   </head>
-  <body class="td-section">
+  <body class="td-page">
     <header>
       
 <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
@@ -349,10 +355,10 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/reference/api/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">API</a>
+    <a  href="/docs/reference/api/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">API</a>
   </li>
   <ul>
-    <li class="collapse " id="docs-reference-api">
+    <li class="collapse show" id="docs-reference-api">
       
       
       
@@ -437,10 +443,10 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/reference/api/build/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Build</a>
+    <a  href="/docs/reference/api/build/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Build</a>
   </li>
   <ul>
-    <li class="collapse " id="docs-reference-api-build">
+    <li class="collapse show" id="docs-reference-api-build">
       
       
       
@@ -453,7 +459,7 @@
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-reference-api-build-cancel" href="/docs/reference/api/build/cancel/">Cancel</a>
+      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docs-reference-api-build-cancel" href="/docs/reference/api/build/cancel/">Cancel</a>
       
       
       
@@ -938,10 +944,10 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/reference/cli/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">CLI</a>
+    <a  href="/docs/reference/cli/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">CLI</a>
   </li>
   <ul>
-    <li class="collapse show" id="docs-reference-cli">
+    <li class="collapse " id="docs-reference-cli">
       
       
       
@@ -1055,10 +1061,10 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/reference/cli/config/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Config</a>
+    <a  href="/docs/reference/cli/config/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Config</a>
   </li>
   <ul>
-    <li class="collapse show" id="docs-reference-cli-config">
+    <li class="collapse " id="docs-reference-cli-config">
       
       
       
@@ -1559,13 +1565,34 @@
 
 
 
-<a href="https://github.com/go-vela/docs/edit/master/content/reference/cli/config/_index.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
-<a href="https://github.com/go-vela/docs/issues/new?title=Config" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+<a href="https://github.com/go-vela/docs/edit/master/content/reference/api/build/cancel.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+<a href="https://github.com/go-vela/docs/issues/new?title=Cancel" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
 
 </div>
 
 
 
+
+
+
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#endpoint">Endpoint</a></li>
+<li><a href="#permissions">Permissions</a></li>
+<li><a href="#responses">Responses</a></li>
+<li><a href="#sample">Sample</a>
+<ul>
+<li>
+<ul>
+<li><a href="#request">Request</a></li>
+<li><a href="#response">Response</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
 
 
 
@@ -1584,6 +1611,9 @@
 
 
 
+
+
+
 <li class="breadcrumb-item" >
 	<a href="https://go-vela.github.io/docs/reference/">Reference</a>
 </li>
@@ -1592,14 +1622,21 @@
 
 
 <li class="breadcrumb-item" >
-	<a href="https://go-vela.github.io/docs/reference/cli/">CLI</a>
+	<a href="https://go-vela.github.io/docs/reference/api/">API</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="https://go-vela.github.io/docs/reference/api/build/">Build</a>
 </li>
 
 
 
 
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="https://go-vela.github.io/docs/reference/cli/config/">Config</a>
+	<a href="https://go-vela.github.io/docs/reference/api/build/cancel/">Cancel</a>
 </li>
 
 	</ol>
@@ -1607,330 +1644,78 @@
 
             
 <div class="td-content">
-	<h1>Config</h1>
-	<div class="lead">Learn how to use CLI commands for the config resource.</div>
-	<p>The below commands are available to operate on the <code>config</code> resource.</p>
+	<h1>Cancel</h1>
+	<div class="lead">Learn how to cancel a build.</div>
+	
+
+<h2 id="endpoint">Endpoint</h2>
+
+<pre><code>DELETE  /api/v1/repos/:org/:repo/builds/:build/cancel
+</code></pre>
+
+<h2 id="permissions">Permissions</h2>
+
+<p>COMING SOON!</p>
+
+<h2 id="responses">Responses</h2>
+
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>200</code></td>
+<td>indicates the request has succeeded</td>
+</tr>
+
+<tr>
+<td><code>401</code></td>
+<td>indicates the user does not have proper permissions</td>
+</tr>
+
+<tr>
+<td><code>404</code></td>
+<td>indicates that the server was unable to cancel the build</td>
+</tr>
+
+<tr>
+<td><code>500</code></td>
+<td>indicates there was an error trying to cancel the build</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="sample">Sample</h2>
 
 
 
 <div class="alert alert-warning" role="alert">
 
-<p>This section assumes you have already installed and setup the CLI.</p>
+<p>This section assumes you already know how to authenticate to the API.</p>
 
-<p>To install the CLI, please review the <a href="/docs/reference/cli/install/">installation documentation</a>.</p>
-
-<p>To setup the CLI, please review the <a href="/docs/reference/cli/authentication/">authentication documentation</a>.</p>
+<p>To authenticate to the API, please review the <a href="/docs/reference/api/authentication/">authentication documentation</a>.</p>
 
 </div>
 
 
-        <div class="section-index">
-    
-    
-    
-    
-    <hr class="panel-line">
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-                <div class="entry">
-                    <h5>
-                        <a href="/docs/reference/cli/config/generate/">Generate</a>
-                    </h5>
-                    <p>Learn how to produce a config.
-</p>
-                </div>
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-                <div class="entry">
-                    <h5>
-                        <a href="/docs/reference/cli/config/remove/">Remove</a>
-                    </h5>
-                    <p>Learn how to delete a config.
-</p>
-                </div>
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-                <div class="entry">
-                    <h5>
-                        <a href="/docs/reference/cli/config/update/">Update</a>
-                    </h5>
-                    <p>Learn how to modify a config.
-</p>
-                </div>
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-                <div class="entry">
-                    <h5>
-                        <a href="/docs/reference/cli/config/view/">View</a>
-                    </h5>
-                    <p>Learn how to inspect a config.
-</p>
-                </div>
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-    
-</div>
-
+<h4 id="request">Request</h4>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">curl <span style="color:#4e9a06">\
+</span><span style="color:#4e9a06"></span>  -X DELETE <span style="color:#4e9a06">\
+</span><span style="color:#4e9a06"></span>  -H <span style="color:#4e9a06">&#34;Authorization: Bearer &lt;token&gt;&#34;</span> <span style="color:#4e9a06">\
+</span><span style="color:#4e9a06"></span>  <span style="color:#4e9a06">&#34;http://127.0.0.1:8080/api/v1/repos/github/octocat/builds/1/cancel&#34;</span></code></pre></div>
+<h4 id="response">Response</h4>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">  <span style="color:#4e9a06">&#34;canceled build github/octocat/36&#34;</span></code></pre></div>
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified February 1, 2021: <a  href="https://github.com/go-vela/docs/commit/6dc23bdb5b3d7b927fe2acf30bd5d347f7a2cb83">fix(reference): fix broken links (#205) (6dc23bd)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified February 12, 2021: <a  href="https://github.com/go-vela/docs/commit/df0116d640bbc329802a2c7bef492c5c34c847fb">feat(cancel): add cancel documentation (#204) (df0116d)</a>
 </div>
 </div>
+
 
           </main>
         </div>
