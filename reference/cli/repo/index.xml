@@ -70,6 +70,12 @@ For more information, you can run &lt;code&gt;vela add repo --help&lt;/code&gt;.
 &lt;/tr&gt;
 
 &lt;tr&gt;
+&lt;td&gt;&lt;code&gt;branch&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;default branch for the repository&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;VELA_BRANCH&lt;/code&gt;, &lt;code&gt;REPO_BRANCH&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
 &lt;td&gt;&lt;code&gt;clone&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;clone URL for the repository&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_CLONE&lt;/code&gt;, &lt;code&gt;REPO_CLONE&lt;/code&gt;&lt;/td&gt;
@@ -650,6 +656,12 @@ For more information, you can run &lt;code&gt;vela update repo --help&lt;/code&g
 &lt;td&gt;&lt;code&gt;link&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;full URL for the repository&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_LINK&lt;/code&gt;, &lt;code&gt;REPO_LINK&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;branch&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;default branch for the repository&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;VELA_BRANCH&lt;/code&gt;, &lt;code&gt;REPO_BRANCH&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
