@@ -2963,7 +2963,7 @@ This has the added benefit of enabling others in the community to consume your p
 &lt;/tr&gt;
 
 &lt;tr&gt;
-&lt;td&gt;&lt;code&gt;perserve_root&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;preserve_root&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;copying storage from root in the storage during and after build&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;

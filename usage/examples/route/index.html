@@ -25,13 +25,13 @@
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://go-vela.github.io/docs/usage/examples/route/" />
-<meta property="article:modified_time" content="2021-01-12T13:56:22-06:00" />
+<meta property="article:modified_time" content="2021-04-02T09:28:53-05:00" />
 <meta itemprop="name" content="Route">
 <meta itemprop="description" content="Example Pipeline with build routing
 ">
 
 
-<meta itemprop="dateModified" content="2021-01-12T13:56:22-06:00" />
+<meta itemprop="dateModified" content="2021-04-02T09:28:53-05:00" />
 <meta itemprop="wordCount" content="133">
 
 
@@ -603,7 +603,7 @@ Work with your server administer to understand what routes are available for you
 <li><a href="/docs/concepts/pipeline/worker/">Worker</a>
 
 <ul>
-<li><a href="/docs/concepts/pipeline/worker/runtime/">Runtime</a></li>
+<li><a href="/docs/concepts/pipeline/worker/platform/">Platform</a></li>
 </ul></li>
 <li><a href="/docs/concepts/pipeline/steps/">Steps</a>
 
@@ -627,7 +627,7 @@ Work with your server administer to understand what routes are available for you
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">version<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#34;1&#34;</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline"></span>worker<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span>runtime<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>docker<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span>platform<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>docker<span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline"></span>steps<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">  </span>-<span style="color:#f8f8f8;text-decoration:underline"> </span>name<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>view<span style="color:#f8f8f8;text-decoration:underline"> </span>worker<span style="color:#f8f8f8;text-decoration:underline"> </span>name<span style="color:#f8f8f8;text-decoration:underline">
@@ -643,7 +643,7 @@ Work with your server administer to understand what routes are available for you
 <li><a href="/docs/concepts/pipeline/worker/">Worker</a>
 
 <ul>
-<li><a href="/docs/concepts/pipeline/worker/runtime/">Runtime</a></li>
+<li><a href="/docs/concepts/pipeline/worker/platform/">Platform</a></li>
 </ul></li>
 <li><a href="/docs/concepts/pipeline/stages/">Stages</a>
 
@@ -669,7 +669,7 @@ Work with your server administer to understand what routes are available for you
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">version<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#34;1&#34;</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline"></span>worker<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span>runtime<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>docker<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span>platform<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>docker<span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline"></span>stages<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">  </span>docker<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
@@ -681,7 +681,7 @@ Work with your server administer to understand what routes are available for you
 </span><span style="color:#f8f8f8;text-decoration:underline">          </span>-<span style="color:#f8f8f8;text-decoration:underline"> </span>echo<span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#34;Hello ${BUILD_HOST} Worker!!&#34;</span></code></pre></div>
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified January 12, 2021: <a  href="https://github.com/go-vela/docs/commit/a65d9c9f94cddaccbdb2250f044a6d47eecb699c">refactor: flatten the usage docs (#191) (a65d9c9)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified April 2, 2021: <a  href="https://github.com/go-vela/docs/commit/6ece282f412f4bca18508b04e9884f37bd95581e">fix: update broken links (#215) (6ece282)</a>
 </div>
 </div>
 

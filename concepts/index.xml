@@ -1936,7 +1936,7 @@ The following table includes variables only available during the &lt;strong&gt;t
         
         
 
-&lt;p&gt;The &lt;code&gt;flavor&lt;/code&gt; component is a part of a &lt;a href=&#34;https://go-vela.github.io/docs/docs/concepts/pipeline/flavor/&#34;&gt;template&lt;/a&gt; for Vela.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;flavor&lt;/code&gt; component is a part of a &lt;a href=&#34;https://go-vela.github.io/docs/docs/concepts/pipeline/worker/flavor/&#34;&gt;template&lt;/a&gt; for Vela.&lt;/p&gt;
 
 &lt;p&gt;This declaration allows you to route your build to a single flavors within a Vela cluster.&lt;/p&gt;
 
@@ -2418,7 +2418,7 @@ This component is stored in the configured Vela backend in the &lt;code&gt;logs&
 &lt;li&gt;SDK
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/sdk/go/repo/&#34;&gt;Go&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/sdk/go/&#34;&gt;Go&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -2552,7 +2552,7 @@ This pipeline will execute the &lt;code&gt;test&lt;/code&gt; stage first, then r
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 
-To see what plugins are supported and how they integrate with the Vela build lifecycle see the &lt;a href=&#34;https://go-vela.github.io/docs/docs/plugins/secrets/&#34;&gt;plugins page&lt;/a&gt;
+To see what plugins are supported and how they integrate with the Vela build lifecycle see the &lt;a href=&#34;https://go-vela.github.io/docs/docs/plugins/registry/secret/&#34;&gt;plugins page&lt;/a&gt;
 &lt;/div&gt;
 
 
@@ -2658,7 +2658,7 @@ This pipeline will add the following environment variables to the &lt;code&gt;pl
         
         
 
-&lt;p&gt;The &lt;code&gt;platform&lt;/code&gt; component is a part of a &lt;a href=&#34;https://go-vela.github.io/docs/docs/concepts/pipeline/platform/&#34;&gt;template&lt;/a&gt; for Vela.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;platform&lt;/code&gt; component is a part of a &lt;a href=&#34;https://go-vela.github.io/docs/docs/concepts/pipeline/worker/platform/&#34;&gt;template&lt;/a&gt; for Vela.&lt;/p&gt;
 
 &lt;p&gt;This declaration allows you to route your build to a single platform within a Vela cluster.&lt;/p&gt;
 

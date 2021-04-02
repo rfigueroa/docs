@@ -24,7 +24,7 @@
         
         
 
-&lt;p&gt;The &lt;code&gt;flavor&lt;/code&gt; component is a part of a &lt;a href=&#34;https://go-vela.github.io/docs/docs/concepts/pipeline/flavor/&#34;&gt;template&lt;/a&gt; for Vela.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;flavor&lt;/code&gt; component is a part of a &lt;a href=&#34;https://go-vela.github.io/docs/docs/concepts/pipeline/worker/flavor/&#34;&gt;template&lt;/a&gt; for Vela.&lt;/p&gt;
 
 &lt;p&gt;This declaration allows you to route your build to a single flavors within a Vela cluster.&lt;/p&gt;
 
@@ -67,7 +67,7 @@ This pipeline will start and run on a worker with the available route &lt;code&g
         
         
 
-&lt;p&gt;The &lt;code&gt;platform&lt;/code&gt; component is a part of a &lt;a href=&#34;https://go-vela.github.io/docs/docs/concepts/pipeline/platform/&#34;&gt;template&lt;/a&gt; for Vela.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;platform&lt;/code&gt; component is a part of a &lt;a href=&#34;https://go-vela.github.io/docs/docs/concepts/pipeline/worker/platform/&#34;&gt;template&lt;/a&gt; for Vela.&lt;/p&gt;
 
 &lt;p&gt;This declaration allows you to route your build to a single platform within a Vela cluster.&lt;/p&gt;
 

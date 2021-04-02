@@ -4,7 +4,7 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/usage/examples/secrets_external/</loc>
-    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
+    <lastmod>2021-04-02T09:28:53-05:00</lastmod>
   </url>
   
   <url>
@@ -14,12 +14,12 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/usage/examples/go_modules/</loc>
-    <lastmod>2021-01-12T13:56:22-06:00</lastmod>
+    <lastmod>2021-04-02T09:28:53-05:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/usage/examples/secrets_internal/</loc>
-    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
+    <lastmod>2021-04-02T09:28:53-05:00</lastmod>
   </url>
   
   <url>
@@ -39,12 +39,12 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/usage/examples/route/</loc>
-    <lastmod>2021-01-12T13:56:22-06:00</lastmod>
+    <lastmod>2021-04-02T09:28:53-05:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/usage/examples/rust_cargo/</loc>
-    <lastmod>2021-01-12T13:56:22-06:00</lastmod>
+    <lastmod>2021-04-02T09:28:53-05:00</lastmod>
   </url>
   
   <url>
@@ -64,7 +64,7 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/usage/examples/java_maven/</loc>
-    <lastmod>2021-01-12T13:56:22-06:00</lastmod>
+    <lastmod>2021-04-02T09:28:53-05:00</lastmod>
   </url>
   
   <url>
@@ -74,7 +74,7 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/usage/examples/node/</loc>
-    <lastmod>2021-01-12T13:56:22-06:00</lastmod>
+    <lastmod>2021-04-02T09:28:53-05:00</lastmod>
   </url>
   
   <url>
@@ -244,7 +244,7 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/usage/docker/</loc>
-    <lastmod>2021-03-08T09:42:12-06:00</lastmod>
+    <lastmod>2021-04-02T09:28:53-05:00</lastmod>
   </url>
   
   <url>
@@ -284,7 +284,7 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/pipeline/compile/</loc>
-    <lastmod>2021-02-11T18:47:19-06:00</lastmod>
+    <lastmod>2021-04-02T09:28:53-05:00</lastmod>
   </url>
   
   <url>
@@ -389,12 +389,12 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/pipeline/expand/</loc>
-    <lastmod>2021-02-11T18:47:19-06:00</lastmod>
+    <lastmod>2021-04-02T09:28:53-05:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/concepts/pipeline/worker/flavor/</loc>
-    <lastmod>2020-08-10T11:46:39-05:00</lastmod>
+    <lastmod>2021-04-02T09:28:53-05:00</lastmod>
   </url>
   
   <url>
@@ -434,7 +434,7 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/pipeline/get/</loc>
-    <lastmod>2021-02-11T18:47:19-06:00</lastmod>
+    <lastmod>2021-04-02T09:28:53-05:00</lastmod>
   </url>
   
   <url>
@@ -584,7 +584,7 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/concepts/system/log/</loc>
-    <lastmod>2021-02-01T17:58:51-06:00</lastmod>
+    <lastmod>2021-04-02T09:28:53-05:00</lastmod>
   </url>
   
   <url>
@@ -654,7 +654,7 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/concepts/pipeline/secrets/origin/</loc>
-    <lastmod>2020-08-12T12:32:50-05:00</lastmod>
+    <lastmod>2021-04-02T09:28:53-05:00</lastmod>
   </url>
   
   <url>
@@ -674,7 +674,7 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/pipeline/</loc>
-    <lastmod>2021-02-11T18:47:19-06:00</lastmod>
+    <lastmod>2021-04-02T09:28:53-05:00</lastmod>
   </url>
   
   <url>
@@ -684,7 +684,7 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/concepts/pipeline/worker/platform/</loc>
-    <lastmod>2020-08-10T11:46:39-05:00</lastmod>
+    <lastmod>2021-04-02T09:28:53-05:00</lastmod>
   </url>
   
   <url>
@@ -724,7 +724,7 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/usage/pull_policies/</loc>
-    <lastmod>2021-01-12T13:56:22-06:00</lastmod>
+    <lastmod>2021-04-02T09:28:53-05:00</lastmod>
   </url>
   
   <url>
@@ -984,7 +984,7 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/usage/start_build/</loc>
-    <lastmod>2021-01-12T13:56:22-06:00</lastmod>
+    <lastmod>2021-04-02T09:28:53-05:00</lastmod>
   </url>
   
   <url>
@@ -1039,7 +1039,7 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/pipeline/templates/</loc>
-    <lastmod>2021-02-11T18:47:19-06:00</lastmod>
+    <lastmod>2021-04-02T09:28:53-05:00</lastmod>
   </url>
   
   <url>
@@ -1159,12 +1159,12 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/usage/environment/</loc>
-    <lastmod>2021-01-12T13:56:22-06:00</lastmod>
+    <lastmod>2021-04-02T09:28:53-05:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/reference/api/pipeline/validate/</loc>
-    <lastmod>2021-02-11T18:47:19-06:00</lastmod>
+    <lastmod>2021-04-02T09:28:53-05:00</lastmod>
   </url>
   
   <url>
