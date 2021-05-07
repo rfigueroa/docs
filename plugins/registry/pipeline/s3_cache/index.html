@@ -48,7 +48,7 @@ steps:-name:flushing_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters
 
 
 <meta itemprop="dateModified" content="2021-01-13T15:05:51-06:00" />
-<meta itemprop="wordCount" content="604">
+<meta itemprop="wordCount" content="680">
 
 
 
@@ -1022,6 +1022,15 @@ steps:-name:flushing_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters
 </span><span style="color:#00a000"></span>      server: mybucket.s3-us-west-2.amazonaws.com
 </code></pre></div>
 <p>Below are a list of common problems and how to solve them:</p>
+
+<h3 id="invalid-duration-value">Invalid duration value</h3>
+
+<p>The error may look like this:</p>
+
+<pre><code>could not parse \&quot;14d\&quot; as duration value for flag flush.age: time: unknown unit \&quot;d\&quot; in duration \&quot;14d\&quot;
+</code></pre>
+
+<p>Values for rebuild and restore <code>timeout</code> and flushing <code>age</code> are parsed using Go&rsquo;s <a href="https://golang.org/pkg/time/#ParseDuration" target="_blank">time.ParseDuration</a> function. Only <code>h</code> for hours, <code>m</code> for minutes, and so on for smaller time units are supported; <code>d</code> for days will cause an error unless added in subsequent versions of Go after v1.16, which is <a href="https://github.com/golang/go/issues/11473" target="_blank">unlikely</a>.</p>
 
 	
 	
