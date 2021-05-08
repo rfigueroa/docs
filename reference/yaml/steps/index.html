@@ -25,14 +25,14 @@
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://go-vela.github.io/docs/reference/yaml/steps/" />
-<meta property="article:modified_time" content="2021-02-01T10:38:05-06:00" />
+<meta property="article:modified_time" content="2021-05-07T21:14:33-05:00" />
 <meta itemprop="name" content="Steps">
 <meta itemprop="description" content="YAML tags for steps block
 ">
 
 
-<meta itemprop="dateModified" content="2021-02-01T10:38:05-06:00" />
-<meta itemprop="wordCount" content="994">
+<meta itemprop="dateModified" content="2021-05-07T21:14:33-05:00" />
+<meta itemprop="wordCount" content="995">
 
 
 
@@ -1838,8 +1838,8 @@
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---<span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline"></span>steps<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#8f5902;font-style:italic"># Declaration to configure if and when the Docker image is pulled.</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#8f5902;font-style:italic"># By default, the compiler will inject pull but accepts the </span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#8f5902;font-style:italic"># following values: always, never, no_present, on_start, </span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#8f5902;font-style:italic"># By default, the compiler will inject pull with value not_present but</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#8f5902;font-style:italic"># accepts the following values: always, never, not_present, on_start</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">  </span>-<span style="color:#f8f8f8;text-decoration:underline"> </span>pull<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>always</code></pre></div>
 <h4 id="the-secrets-tag">The <code>secrets:</code> tag</h4>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---<span style="color:#f8f8f8;text-decoration:underline">
@@ -2138,7 +2138,7 @@
 </span><span style="color:#f8f8f8;text-decoration:underline">  </span>-<span style="color:#f8f8f8;text-decoration:underline"> </span>privileged<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#204a87;font-weight:bold">true</span></code></pre></div>
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified February 1, 2021: <a  href="https://github.com/go-vela/docs/commit/9d7fdaf836501436eb27a594d78fa102e6e0775f">feat(ref): add a yaml section (#196) (9d7fdaf)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified May 7, 2021: <a  href="https://github.com/go-vela/docs/commit/4b2a01328af0347747463dcd6ebef56df0fcac18">fix: update default value for &#34;pull&#34; tag (#218) (4b2a013)</a>
 </div>
 </div>
 

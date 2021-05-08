@@ -46,7 +46,7 @@ steps: - name: publish_hello-world image: target/vela-kaniko:latest pull: always
 
 
 <meta itemprop="dateModified" content="2021-01-13T15:05:51-06:00" />
-<meta itemprop="wordCount" content="699">
+<meta itemprop="wordCount" content="731">
 
 
 
@@ -693,6 +693,24 @@ steps: - name: publish_hello-world image: target/vela-kaniko:latest pull: always
 </span><span style="color:#00a000"></span>      registry: index.docker.io
       repo: index.docker.io/octocat/hello-world
 </code></pre></div>
+<p>Depending on the type of event, the image will be tagged as follows:</p>
+
+<ul>
+<li><p>tag event (using <code>v1.0.0</code> as an example):</p>
+
+<ul>
+<li><code>index.docker.io/octocat/hello-world:latest</code></li>
+<li><code>index.docker.io/octocat/hello-world:v1.0.0</code></li>
+</ul></li>
+
+<li><p>all other events:</p>
+
+<ul>
+<li><code>index.docker.io/octocat/hello-world:latest</code></li>
+<li><code>index.docker.io/octocat/hello-world:eeea105fed7fc11bda4b43a00edfc49a5c982968</code></li>
+</ul></li>
+</ul>
+
 <p>Sample of building and publishing an image with build arguments:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: publish_hello-world
@@ -823,7 +841,7 @@ steps: - name: publish_hello-world image: target/vela-kaniko:latest pull: always
 <tbody>
 <tr>
 <td><code>auto_tag</code></td>
-<td>enables tagging of image automatically</td>
+<td>enables automatic tagging of images (tag or sha, and <code>latest</code>)</td>
 <td><code>false</code></td>
 <td><code>false</code></td>
 <td><code>PARAMETER_AUTO_TAG</code><br><code>KANIKO_AUTO_TAG</code></td>

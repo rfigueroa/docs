@@ -1983,6 +1983,24 @@ This example will add the &lt;code&gt;secrets&lt;/code&gt; to the &lt;code&gt;ca
 &lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;      registry: index.docker.io
       repo: index.docker.io/octocat/hello-world
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Depending on the type of event, the image will be tagged as follows:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;tag event (using &lt;code&gt;v1.0.0&lt;/code&gt; as an example):&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;index.docker.io/octocat/hello-world:latest&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;index.docker.io/octocat/hello-world:v1.0.0&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;all other events:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;index.docker.io/octocat/hello-world:latest&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;index.docker.io/octocat/hello-world:eeea105fed7fc11bda4b43a00edfc49a5c982968&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;p&gt;Sample of building and publishing an image with build arguments:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
   - name: publish_hello-world
@@ -2113,7 +2131,7 @@ This example will add the &lt;code&gt;secrets&lt;/code&gt; to the &lt;code&gt;ca
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;auto_tag&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;enables tagging of image automatically&lt;/td&gt;
+&lt;td&gt;enables automatic tagging of images (tag or sha, and &lt;code&gt;latest&lt;/code&gt;)&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;PARAMETER_AUTO_TAG&lt;/code&gt;&lt;br&gt;&lt;code&gt;KANIKO_AUTO_TAG&lt;/code&gt;&lt;/td&gt;
