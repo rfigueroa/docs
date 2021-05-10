@@ -1912,7 +1912,7 @@ You can use upper or lower case.
       <description>
         
         
-        &lt;p&gt;If you&amp;rsquo;ve followed the documentation for &lt;a href=&#34;https://go-vela.github.io/docs/docs/usage/enable_repo/&#34;&gt;enabling a repo&lt;/a&gt; and &lt;a href=&#34;https://go-vela.github.io/docs/docs/usage/write_pipeline/&#34;&gt;writing a pipeline&lt;/a&gt;, all that should be left is to push your pipeline to your repo.&lt;/p&gt;
+        &lt;p&gt;If you&amp;rsquo;ve followed the documentation for &lt;a href=&#34;https://go-vela.github.io/docs/docs/usage/enable_repo/&#34;&gt;enabling a repo&lt;/a&gt; and wrote a pipeline (&lt;a href=&#34;https://go-vela.github.io/docs/docs/usage/examples/&#34;&gt;here are some example pipelines&lt;/a&gt;), all that should be left is to push your pipeline to your repo.&lt;/p&gt;
 
 &lt;p&gt;If a build does not trigger when your push a change to your repo, check the webhook response to see if there is an error.&lt;/p&gt;
 

@@ -1099,7 +1099,7 @@
     "url": "https://go-vela.github.io/docs/usage/start_build/",
     "display": "Docs/Usage/Start build",
     "title": "Start a Build",
-    "content": "if you&rsquo;ve followed the documentation for enabling repo writing pipeline, all that should be left to push your pipeline repo. build does not trigger when change repo, check webhook response see there an error. "
+    "content": "if you&rsquo;ve followed the documentation for enabling repo wrote pipeline (here are some example pipelines), all that should be left to push your repo. build does not trigger when change repo, check webhook response see there an error. "
     },
 
     {
