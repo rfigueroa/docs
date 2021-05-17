@@ -1,6 +1,6 @@
 ---
-title: "Substitution"
-linkTitle: "Substitution"
+title: "Variables"
+linkTitle: "Variables"
 description: >
   Learn what environment variables are injected into containers
 ---
