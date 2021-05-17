@@ -1,0 +1,850 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vela – Environment</title>
+    <link>https://go-vela.github.io/docs/reference/environment/</link>
+    <description>Recent content in Environment on Vela</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="https://go-vela.github.io/docs/reference/environment/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Reference: Substitution</title>
+      <link>https://go-vela.github.io/docs/reference/environment/substitution/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://go-vela.github.io/docs/reference/environment/substitution/</guid>
+      <description>
+        
+        
+        
+
+&lt;p&gt;Vela imports a substitution library to provide the ability to expand, or substitute, repository and build metadata to facilitate dynamic pipeline configurations.&lt;/p&gt;
+
+&lt;h2 id=&#34;string-operations&#34;&gt;String Operations&lt;/h2&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Syntax&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;${var^}&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;var substitution with uppercase first char&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;${var^^}&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;var substitution with all uppercase&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;${var,}&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;var substitution with lowercase first char&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;${var,,}&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;var substitution with all lowercase&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;${var:position}&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;var substitution with substring&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;${var:position:length}&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;var substitution with substring and length&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;${var#substring}&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;var substitution with find and replace&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;${var##substring}&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;var substitution with find and replace&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;${var%substring}&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;var substitution with find and replace&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;${var%%substring}&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;var substitution with suffix removal&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;${var/substring/replacement}&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;var substitution with find and replace&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;${var//substring/replacement}&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;var substitution with find and replace&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;${var/#substring/replacement}&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;var substitution with find and replace&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;${var/%substring/replacement}&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;var substitution with find and replace&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;${#var}&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;var substitution&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;${var=default}&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;var substitution with default&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;${var:=default}&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;var substitution with default&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;${var:-default}&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;var substitution with default&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&#34;escaping&#34;&gt;Escaping&lt;/h3&gt;
+
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Tip:&lt;/h4&gt;
+var expressions are evaluated before the yaml is parsed. If you do not want the system to evaluate an expression it must be escaped.
+&lt;/div&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;version: &amp;#34;1&amp;#34;
+steps:
+  - name: echo
+    commands:
+    # This expression does not escape the evaluation
+&lt;span style=&#34;color:#00a000&#34;&gt;+   - echo ${VELA_BUILD_COMMIT}
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;    # This expression does escape the evaluation by adding the double &amp;#39;$$&amp;#39;
+&lt;span style=&#34;color:#00a000&#34;&gt;+   - echo $${VELA_BUILD_COMMIT}
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Reference: Substitution</title>
+      <link>https://go-vela.github.io/docs/reference/environment/variables/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://go-vela.github.io/docs/reference/environment/variables/</guid>
+      <description>
+        
+        
+        
+
+&lt;h2 id=&#34;container-defaults&#34;&gt;Container Defaults&lt;/h2&gt;
+
+&lt;p&gt;The following environment variables are injected into every step, service, or secret container.&lt;/p&gt;
+
+&lt;h4 id=&#34;build-environment-variables&#34;&gt;Build Environment Variables&lt;/h4&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Key&lt;/th&gt;
+&lt;th&gt;Value&lt;/th&gt;
+&lt;th&gt;Explanation&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_BUILD_AUTHOR&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;octocat&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;author from the source commit&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_BUILD_AUTHOR_EMAIL&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;octocat@github.com&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;author email from the source commit&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_BUILD_BASE_REF&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;refs/heads/dev&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;reference from the base commit&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_BUILD_BRANCH&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;master&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;branch from the source commit&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_BUILD_CHANNEL&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;vela&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;queue channel the build was published to&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_BUILD_CLONE&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;https://github.com/octocat/hello-world.git&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;clone url for the repository the build was triggered from&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_BUILD_COMMIT&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;7fd1a60b01f91b314f59955a4e4d4e80d8edf11d&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;commit sha from the source commit&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_BUILD_CREATED&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;1556720958&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;unix timestamp representing build creation time&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_BUILD_DISTRIBUTION&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;linux&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;distribution where the build was executed&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_BUILD_ENQUEUED&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;1556720958&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;unix timestamp representing build enqueued time&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_BUILD_EVENT&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;push&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;webhook event that triggered the build&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_BUILD_HOST&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;vela-worker-1&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;fully qualified domain name of the worker the build was executed on&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_BUILD_LINK&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;https://vela-server.localhost/octocat/hello-world/1&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;link to the build in the UI&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_BUILD_MESSAGE&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Merge pull request #6 from octocat/patch-1&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;message from the source commit&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_BUILD_NUMBER&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;1&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;build number&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_BUILD_PARENT&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;1&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;previous build number&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_BUILD_REF&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;refs/heads/master&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;reference from the source commit&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_BUILD_RUNTIME&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;docker&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;runtime where the build was executed&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_BUILD_SENDER&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;NealColeman&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;user who triggered the build&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_BUILD_STARTED&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;1556730001&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;unix timestamp representing build start time&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_BUILD_SOURCE&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;1556730001&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;name of the source provider for the repo&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_BUILD_STATUS&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;success&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;status of the build&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_BUILD_TITLE&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;push received from https://github.com/octocat/hello-world&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;title for the build&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_BUILD_WORKSPACE&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;/vela/src/github.com/octocat/hello-world&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;working directory the build is executed in&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+The following table includes variables only available during the &lt;strong&gt;comment&lt;/strong&gt; event
+&lt;/div&gt;
+
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Key&lt;/th&gt;
+&lt;th&gt;Value&lt;/th&gt;
+&lt;th&gt;Explanation&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_BUILD_PULL_REQUEST&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;1&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;pull request number is populated from the source reference&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_PULL_REQUEST&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;1&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;pull request number is populated from the source reference&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+The following table includes variables only available during the &lt;strong&gt;deploy&lt;/strong&gt; event
+&lt;/div&gt;
+
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Key&lt;/th&gt;
+&lt;th&gt;Value&lt;/th&gt;
+&lt;th&gt;Explanation&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_BUILD_TARGET&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;production&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;name of target environment for the deployment&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_DEPLOYMENT&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;production&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;name of target environment for the deployment&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+The following table includes variables only available during the &lt;strong&gt;pull request&lt;/strong&gt; event
+&lt;/div&gt;
+
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Key&lt;/th&gt;
+&lt;th&gt;Value&lt;/th&gt;
+&lt;th&gt;Explanation&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_BUILD_PULL_REQUEST&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;1&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;pull request number is populated from the source reference&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_PULL_REQUEST&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;1&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;pull request number is populated from the source reference&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_PULL_REQUEST_SOURCE&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;dev&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;pull request branch from the source reference&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_PULL_REQUEST_TARGET&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;master&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;pull request branch for the target reference&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+The following table includes variables only available during the &lt;strong&gt;tag&lt;/strong&gt; event
+&lt;/div&gt;
+
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Key&lt;/th&gt;
+&lt;th&gt;Value&lt;/th&gt;
+&lt;th&gt;Explanation&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_BUILD_TAG&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;v1.0.0&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;tag is populated from the source reference&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h4 id=&#34;vela-environment-variables&#34;&gt;Vela Environment Variables&lt;/h4&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Key&lt;/th&gt;
+&lt;th&gt;Value&lt;/th&gt;
+&lt;th&gt;Explanation&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;environment is Vela&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_ADDR&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;vela-server.localhost&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;fully qualified domain name of the Vela server&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_CHANNEL&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;vela&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;queue channel the build was published to&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_DATABASE&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;postgres&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;database Vela is connected to&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_HOST&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;vela-worker-1&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;fully qualified domain name of the worker the build was executed on&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_QUEUE&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;redis&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;queue build was published to&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_RUNTIME&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;docker&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;runtime environment build was executed in&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_SOURCE&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;github&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;queue channel the build was published to&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_VERSION&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;v0.1.0&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Vela version&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_WORKSPACE&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;/vela/src/github.com/github/octocat/hello-world&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;working directory the build is executed in&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;CI&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;vela&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;CI enabled is Vela&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h4 id=&#34;repository-environment-variables&#34;&gt;Repository Environment Variables&lt;/h4&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Key&lt;/th&gt;
+&lt;th&gt;Value&lt;/th&gt;
+&lt;th&gt;Explanation&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_REPO_ACTIVE&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;active setting for the repository&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_REPO_ALLOW_COMMENT&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;comment enabled setting for the repository&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_REPO_ALLOW_DEPLOY&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;deploy enabled setting for the repository&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_REPO_ALLOW_PULL&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;pull enabled setting for the repository&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_REPO_ALLOW_PUSH&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;push enabled setting for the repository&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_REPO_ALLOW_TAG&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;tag enabled setting for the repository&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_REPO_BRANCH&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;master&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;default branch of the repository&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_REPO_CLONE&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;https://github.com/octocat/hello-world.git&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;clone url of the repository&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_REPO_FULL_NAME&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;octocat/hello-world&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;full name of the repository&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_REPO_LINK&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;https://github.com/octocat/hello-world&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;direct url of the repository&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_REPO_NAME&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;hello-world&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;name of the repository&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_REPO_ORG&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;octocat&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;org of the repository&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_REPO_PRIVATE&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;privacy setting for the repository&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_REPO_TIMEOUT&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;30&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;timeout setting for the repository&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_REPO_TRUSTED&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;trusted setting for the repository&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_REPO_VISIBILITY&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;public&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;visibility setting for the repository&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h4 id=&#34;user-environment-variables&#34;&gt;User Environment Variables&lt;/h4&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Key&lt;/th&gt;
+&lt;th&gt;Value&lt;/th&gt;
+&lt;th&gt;Explanation&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_USER_ACTIVE&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;active setting for the user&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_USER_ADMIN&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;admin platform status for the user&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_USER_FAVORITES&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;[ &amp;quot;octocat/hello-world&amp;quot; ]&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;favorites starred for the user&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_USER_NAME&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Octocat&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;user handle setting for the user&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;step-only-defaults&#34;&gt;Step Only Defaults&lt;/h2&gt;
+
+&lt;p&gt;The following environment variables are &lt;strong&gt;only&lt;/strong&gt; injected into every step container.&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Key&lt;/th&gt;
+&lt;th&gt;Value&lt;/th&gt;
+&lt;th&gt;Explanation&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_STEP_CREATED&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;1556720958&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;unix timestamp representing step creation time&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_STEP_DISTRIBUTION&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;linux&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;distribution where the step was executed&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_STEP_EXIT_CODE&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;0&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;exit code of the step when container starts&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_STEP_HOST&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;vela-worker-1&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;fully qualified domain name of the worker the step was executed on&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_STEP_IMAGE&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;target/vela-git:latest&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;name of the image executed&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_STEP_NAME&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;clone&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;name of the step&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_STEP_NUMBER&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;1&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;number of the step executed within the pipeline&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_STEP_RUNTIME&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;docker&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;runtime where the step was executed&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_STEP_STAGE&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;clone&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;name of the stage the step belongs to within the pipeline&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_STEP_STARTED&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;1556730001&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;unix timestamp representing step start time&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_STEP_STATUS&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;success&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;status of the step&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;service-only-defaults&#34;&gt;Service Only Defaults&lt;/h2&gt;
+
+&lt;p&gt;The following environment variables are &lt;strong&gt;only&lt;/strong&gt; injected into every step container.&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Key&lt;/th&gt;
+&lt;th&gt;Value&lt;/th&gt;
+&lt;th&gt;Explanation&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_SERVICE_CREATED&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;1556720958&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;unix timestamp representing service creation time&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_SERVICE_DISTRIBUTION&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;linux&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;distribution where the service was executed&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_SERVICE_EXIT_CODE&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;0&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;exit code of the service when container starts&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_SERVICE_HOST&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;vela-worker-1&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;fully qualified domain name of the worker the service was executed on&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_SERVICE_IMAGE&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;target/vela-git:latest&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;name of the image executed&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_SERVICE_NAME&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;clone&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;name of the service&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_SERVICE_NUMBER&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;1&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;number of the service executed within the pipeline&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_SERVICE_RUNTIME&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;docker&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;runtime where the service was executed&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_SERVICE_STARTED&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;1556730001&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;unix timestamp representing service start time&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;VELA_SERVICE_STATUS&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;success&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;status of the service&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

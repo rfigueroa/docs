@@ -374,12 +374,17 @@
   
   <url>
     <loc>https://go-vela.github.io/docs/concepts/pipeline/services/environment/</loc>
-    <lastmod>2020-08-20T18:38:37-05:00</lastmod>
+    <lastmod>2021-05-17T11:41:49-05:00</lastmod>
   </url>
   
   <url>
     <loc>https://go-vela.github.io/docs/concepts/pipeline/steps/environment/</loc>
-    <lastmod>2020-11-05T17:04:10+00:00</lastmod>
+    <lastmod>2021-05-17T11:41:49-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://go-vela.github.io/docs/reference/environment/</loc>
+    <lastmod>2021-05-17T11:41:49-05:00</lastmod>
   </url>
   
   <url>
@@ -1015,6 +1020,16 @@
   <url>
     <loc>https://go-vela.github.io/docs/concepts/pipeline/steps/</loc>
     <lastmod>2020-03-18T18:00:35+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://go-vela.github.io/docs/reference/environment/substitution/</loc>
+    <lastmod>2021-05-17T11:41:49-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://go-vela.github.io/docs/reference/environment/variables/</loc>
+    <lastmod>2021-05-17T11:41:49-05:00</lastmod>
   </url>
   
   <url>
