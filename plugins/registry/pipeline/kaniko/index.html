@@ -46,7 +46,7 @@ steps: - name: publish_hello-world image: target/vela-kaniko:latest pull: always
 
 
 <meta itemprop="dateModified" content="2021-01-13T15:05:51-06:00" />
-<meta itemprop="wordCount" content="731">
+<meta itemprop="wordCount" content="773">
 
 
 
@@ -671,6 +671,16 @@ steps: - name: publish_hello-world image: target/vela-kaniko:latest pull: always
 </span><span style="color:#00a000"></span>      registry: index.docker.io
       repo: index.docker.io/octocat/hello-world
 </code></pre></div>
+<p>Sample of attempting the publishing of an image three times:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
+  - name: publish_hello-world
+    image: target/vela-kaniko:latest
+    pull: always
+    parameters:
+<span style="color:#00a000">+     push_retry: 3
+</span><span style="color:#00a000"></span>      registry: index.docker.io
+      repo: index.docker.io/octocat/hello-world
+</code></pre></div>
 <p>Sample of building and publishing an image with custom tags:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: publish_hello-world
@@ -933,6 +943,14 @@ steps: - name: publish_hello-world image: target/vela-kaniko:latest pull: always
 <td><code>true</code></td>
 <td><code>N/A</code></td>
 <td><code>PARAMETER_PASSWORD</code><br><code>KANIKO_PASSWORD</code><br><code>DOCKER_PASSWORD</code></td>
+</tr>
+
+<tr>
+<td><code>push_retry</code></td>
+<td>number of retries for pushing an image to a remote destination</td>
+<td><code>false</code></td>
+<td><code>0</code></td>
+<td><code>PARAMETER_PUSH_RETRY</code><br><code>KANIKO_PUSH_RETRY</code></td>
 </tr>
 
 <tr>

@@ -2237,6 +2237,16 @@ This has the added benefit of enabling others in the community to consume your p
 &lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;      registry: index.docker.io
       repo: index.docker.io/octocat/hello-world
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Sample of attempting the publishing of an image three times:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
+  - name: publish_hello-world
+    image: target/vela-kaniko:latest
+    pull: always
+    parameters:
+&lt;span style=&#34;color:#00a000&#34;&gt;+     push_retry: 3
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;      registry: index.docker.io
+      repo: index.docker.io/octocat/hello-world
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Sample of building and publishing an image with custom tags:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
   - name: publish_hello-world
@@ -2499,6 +2509,14 @@ This has the added benefit of enabling others in the community to consume your p
 &lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;PARAMETER_PASSWORD&lt;/code&gt;&lt;br&gt;&lt;code&gt;KANIKO_PASSWORD&lt;/code&gt;&lt;br&gt;&lt;code&gt;DOCKER_PASSWORD&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;push_retry&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;number of retries for pushing an image to a remote destination&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;0&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_PUSH_RETRY&lt;/code&gt;&lt;br&gt;&lt;code&gt;KANIKO_PUSH_RETRY&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
