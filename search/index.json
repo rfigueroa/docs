@@ -445,6 +445,13 @@
     },
 
     {
+    "url": "https://go-vela.github.io/docs/reference/cli/pipeline/exec/",
+    "display": "Cli/Pipeline/Exec",
+    "title": "Exec",
+    "content": "command vela exec pipeline &lt;parameters...&gt; &lt;arguments...&gt; for more information, you can run --help. parameters the following are used to configure command: name description environment variables branch build vela_branch, pipeline_branch comment vela_comment, pipeline_comment event vela_event, pipeline_event tag vela_tag, pipeline_tag target vela_target, pipeline_target output format json, spew yaml vela_output, pipeline_output file of vela_file, pipeline_file path vela_path, pipeline_path local enables mounting directory vela_local, pipeline_local volume provide list volumes mount vela_volumes, pipeline_volumes org organization vela_org, pipeline_org repo repository vela_repo, pipeline_repo secrets does not have access any secret stored other attached store. set by putting them before command, ie my_secret=foo pipeline. so if our using kaniko plugin, it may require kaniko_password, which we with kaniko_password=mypass sample section assumes already installed setup cli. install cli, please review installation documentation. authentication request response [step: init] &gt; inspecting runtime network... docker network inspect localorg_localrepo_1 &#34;name&#34;: &#34;localorg_localrepo_1&#34;, &#34;id&#34;: &#34;cf204e6081cd4c10e3a285e7545790152afca05991c2dc67534f496844c1d274&#34;, &#34;created&#34;: &#34;2021-06-01t19:37:35.4772628z&#34;, &#34;scope&#34;: &#34;local&#34;, &#34;driver&#34;: &#34;bridge&#34;, &#34;enableipv6&#34;: false, &#34;ipam&#34;: &#34;default&#34;, &#34;options&#34;: null, &#34;config&#34;: &#34;subnet&#34;: &#34;192.168.0.0/20&#34;, &#34;gateway&#34;: &#34;192.168.0.1&#34; }, &#34;internal&#34;: &#34;attachable&#34;: &#34;ingress&#34;: &#34;configfrom&#34;: &#34;network&#34;: &#34;&#34; &#34;configonly&#34;: &#34;containers&#34;: {}, &#34;labels&#34;: {} volume... &#34;createdat&#34;: &#34;2021-06-01t19:37:35z&#34;, &#34;mountpoint&#34;: &#34;/var/lib/docker/volumes/localorg_localrepo_1/_data&#34;, &#34;local&#34; pulling service images... stage step image alpine:latest sha256:6dbb9cc54074106d46d4ccb330f2a40a682d49dda5f4844962b7dce9fe44aaec hello vela] echo &#34;hello vela!&#34; vela! "
+    },
+
+    {
     "url": "https://go-vela.github.io/docs/concepts/infrastructure/worker/executor/",
     "display": "Infrastructure/Worker/Executor",
     "title": "Executor",

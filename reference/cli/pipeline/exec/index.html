@@ -7,7 +7,6 @@
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
-<link rel="alternate" type="application/rss&#43;xml" href="https://go-vela.github.io/docs/reference/api/user/index.xml">
 
 
 <link rel="shortcut icon" href="/favicons/favicon.ico" >
@@ -21,19 +20,26 @@
 <link rel="icon" type="image/png" href="/docs/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/docs/favicons/android-192x192.png"sizes="192x192">
 
-<title>User | Vela</title><meta property="og:title" content="User" />
-<meta property="og:description" content="Learn how to use API endpoints for the user resource.
+<title>Exec | Vela</title><meta property="og:title" content="Exec" />
+<meta property="og:description" content="Learn how to execute a pipeline locally.
 " />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://go-vela.github.io/docs/reference/api/user/" />
-
-<meta itemprop="name" content="User">
-<meta itemprop="description" content="Learn how to use API endpoints for the user resource.
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://go-vela.github.io/docs/reference/cli/pipeline/exec/" />
+<meta property="article:modified_time" content="2021-06-02T13:06:59-05:00" />
+<meta itemprop="name" content="Exec">
+<meta itemprop="description" content="Learn how to execute a pipeline locally.
 ">
 
+
+<meta itemprop="dateModified" content="2021-06-02T13:06:59-05:00" />
+<meta itemprop="wordCount" content="374">
+
+
+
+<meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="User"/>
-<meta name="twitter:description" content="Learn how to use API endpoints for the user resource.
+<meta name="twitter:title" content="Exec"/>
+<meta name="twitter:description" content="Learn how to execute a pipeline locally.
 "/>
 
 
@@ -51,9 +57,9 @@
   crossorigin="anonymous"></script>
 
 
-    <title>User | Vela</title>
+    <title>Exec | Vela</title>
   </head>
-  <body class="td-section">
+  <body class="td-page">
     <header>
       
 <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
@@ -349,10 +355,10 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/reference/api/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">API</a>
+    <a  href="/docs/reference/api/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">API</a>
   </li>
   <ul>
-    <li class="collapse show" id="docs-reference-api">
+    <li class="collapse " id="docs-reference-api">
       
       
       
@@ -891,10 +897,10 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/reference/api/user/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">User</a>
+    <a  href="/docs/reference/api/user/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">User</a>
   </li>
   <ul>
-    <li class="collapse show" id="docs-reference-api-user">
+    <li class="collapse " id="docs-reference-api-user">
       
       
       
@@ -991,10 +997,10 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/reference/cli/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">CLI</a>
+    <a  href="/docs/reference/cli/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">CLI</a>
   </li>
   <ul>
-    <li class="collapse " id="docs-reference-cli">
+    <li class="collapse show" id="docs-reference-cli">
       
       
       
@@ -1266,17 +1272,17 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/reference/cli/pipeline/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Pipeline</a>
+    <a  href="/docs/reference/cli/pipeline/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Pipeline</a>
   </li>
   <ul>
-    <li class="collapse " id="docs-reference-cli-pipeline">
+    <li class="collapse show" id="docs-reference-cli-pipeline">
       
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-reference-cli-pipeline-exec" href="/docs/reference/cli/pipeline/exec/">Exec</a>
+      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docs-reference-cli-pipeline-exec" href="/docs/reference/cli/pipeline/exec/">Exec</a>
       
       
       
@@ -1653,13 +1659,34 @@
 
 
 
-<a href="https://github.com/go-vela/docs/edit/master/content/reference/api/user/_index.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
-<a href="https://github.com/go-vela/docs/issues/new?title=User" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+<a href="https://github.com/go-vela/docs/edit/master/content/reference/cli/pipeline/exec.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+<a href="https://github.com/go-vela/docs/issues/new?title=Exec" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
 
 </div>
 
 
 
+
+
+
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#command">Command</a></li>
+<li><a href="#parameters">Parameters</a></li>
+<li><a href="#secrets">Secrets</a></li>
+<li><a href="#sample">Sample</a>
+<ul>
+<li>
+<ul>
+<li><a href="#request">Request</a></li>
+<li><a href="#response">Response</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
 
 
 
@@ -1678,6 +1705,9 @@
 
 
 
+
+
+
 <li class="breadcrumb-item" >
 	<a href="https://go-vela.github.io/docs/reference/">Reference</a>
 </li>
@@ -1686,14 +1716,21 @@
 
 
 <li class="breadcrumb-item" >
-	<a href="https://go-vela.github.io/docs/reference/api/">API</a>
+	<a href="https://go-vela.github.io/docs/reference/cli/">CLI</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="https://go-vela.github.io/docs/reference/cli/pipeline/">Pipeline</a>
 </li>
 
 
 
 
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="https://go-vela.github.io/docs/reference/api/user/">User</a>
+	<a href="https://go-vela.github.io/docs/reference/cli/pipeline/exec/">Exec</a>
 </li>
 
 	</ol>
@@ -1701,364 +1738,195 @@
 
             
 <div class="td-content">
-	<h1>User</h1>
-	<div class="lead">Learn how to use API endpoints for the user resource.</div>
-	<p>The below endpoints are available to operate on the <code>user</code> resource.</p>
+	<h1>Exec</h1>
+	<div class="lead">Learn how to execute a pipeline locally.</div>
+	
+
+<h2 id="command">Command</h2>
+
+<pre><code>$ vela exec pipeline &lt;parameters...&gt; &lt;arguments...&gt;
+</code></pre>
+
+
+
+<div class="alert alert-info" role="alert">
+
+For more information, you can run <code>vela exec pipeline --help</code>.
+</div>
+
+
+<h2 id="parameters">Parameters</h2>
+
+<p>The following parameters are used to configure the command:</p>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Environment Variables</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>branch</code></td>
+<td>the build branch for the pipeline</td>
+<td><code>VELA_BRANCH</code>, <code>PIPELINE_BRANCH</code></td>
+</tr>
+
+<tr>
+<td><code>comment</code></td>
+<td>the build comment for the pipeline</td>
+<td><code>VELA_COMMENT</code>, <code>PIPELINE_COMMENT</code></td>
+</tr>
+
+<tr>
+<td><code>event</code></td>
+<td>the build event for the pipeline</td>
+<td><code>VELA_EVENT</code>, <code>PIPELINE_EVENT</code></td>
+</tr>
+
+<tr>
+<td><code>tag</code></td>
+<td>the build tag for the pipeline</td>
+<td><code>VELA_TAG</code>, <code>PIPELINE_TAG</code></td>
+</tr>
+
+<tr>
+<td><code>target</code></td>
+<td>the build target for the pipeline</td>
+<td><code>VELA_TARGET</code>, <code>PIPELINE_TARGET</code></td>
+</tr>
+
+<tr>
+<td><code>output</code></td>
+<td>format the output in json, spew or yaml</td>
+<td><code>VELA_OUTPUT</code>, <code>PIPELINE_OUTPUT</code></td>
+</tr>
+
+<tr>
+<td><code>file</code></td>
+<td>name of the file for the pipeline</td>
+<td><code>VELA_FILE</code>, <code>PIPELINE_FILE</code></td>
+</tr>
+
+<tr>
+<td><code>path</code></td>
+<td>path to the file for the pipeline</td>
+<td><code>VELA_PATH</code>, <code>PIPELINE_PATH</code></td>
+</tr>
+
+<tr>
+<td><code>local</code></td>
+<td>enables mounting local directory to pipeline</td>
+<td><code>VELA_LOCAL</code>, <code>PIPELINE_LOCAL</code></td>
+</tr>
+
+<tr>
+<td><code>volume</code></td>
+<td>provide list of local volumes to mount</td>
+<td><code>VELA_VOLUMES</code>, <code>PIPELINE_VOLUMES</code></td>
+</tr>
+
+<tr>
+<td><code>org</code></td>
+<td>provide the organization for the pipeline</td>
+<td><code>VELA_ORG</code>, <code>PIPELINE_ORG</code></td>
+</tr>
+
+<tr>
+<td><code>repo</code></td>
+<td>provide the repository for the pipeline</td>
+<td><code>VELA_REPO</code>, <code>PIPELINE_REPO</code></td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="secrets">Secrets</h2>
+
+<p>The Vela Exec command does not have access to any secret you have stored in Vela or any other attached secret store.</p>
+
+<p>You can set environment variables for the command by putting them before the command, ie <code>MY_SECRET=foo vela exec pipeline</code>.</p>
+
+<p>So if our pipeline is using the <a href="https://go-vela.github.io/docs/plugins/registry/pipeline/kaniko/" target="_blank">kaniko plugin</a>, it may require the secret <code>kaniko_password</code>, which we can provide with <code>KANIKO_PASSWORD=mypass vela exec pipeline</code></p>
+
+<h2 id="sample">Sample</h2>
 
 
 
 <div class="alert alert-warning" role="alert">
 
-<p>This section assumes you already know how to authenticate to the API.</p>
+<p>This section assumes you have already installed and setup the CLI.</p>
 
-<p>To authenticate to the API, please review the <a href="/docs/reference/api/authentication/">authentication documentation</a>.</p>
+<p>To install the CLI, please review the <a href="/docs/reference/cli/install/">installation documentation</a>.</p>
+
+<p>To setup the CLI, please review the <a href="/docs/reference/cli/authentication/">authentication documentation</a>.</p>
 
 </div>
 
 
-        <div class="section-index">
-    
-    
-    
-    
-    <hr class="panel-line">
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-                <div class="entry">
-                    <h5>
-                        <a href="/docs/reference/api/user/add/">Add</a>
-                    </h5>
-                    <p>Learn how to create a user.
-</p>
-                </div>
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-                <div class="entry">
-                    <h5>
-                        <a href="/docs/reference/api/user/current/">Current</a>
-                    </h5>
-                    <p>Learn how to use API endpoints for the current user.
-</p>
-                </div>
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-                <div class="entry">
-                    <h5>
-                        <a href="/docs/reference/api/user/get/">Get</a>
-                    </h5>
-                    <p>Learn how to list users.
-</p>
-                </div>
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-                <div class="entry">
-                    <h5>
-                        <a href="/docs/reference/api/user/remove/">Remove</a>
-                    </h5>
-                    <p>Learn how to delete a user.
-</p>
-                </div>
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-                <div class="entry">
-                    <h5>
-                        <a href="/docs/reference/api/user/update/">Update</a>
-                    </h5>
-                    <p>Learn how to modify a user.
-</p>
-                </div>
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-                <div class="entry">
-                    <h5>
-                        <a href="/docs/reference/api/user/view/">View</a>
-                    </h5>
-                    <p>Learn how to inspect a user.
-</p>
-                </div>
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-    
-</div>
+<h4 id="request">Request</h4>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">vela <span style="color:#204a87">exec</span> pipeline</code></pre></div>
+<h4 id="response">Response</h4>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#ce5c00;font-weight:bold">[</span>step: init<span style="color:#ce5c00;font-weight:bold">]</span> &gt; Inspecting runtime network...
+<span style="color:#ce5c00;font-weight:bold">[</span>step: init<span style="color:#ce5c00;font-weight:bold">]</span> $ docker network inspect localOrg_localRepo_1
+<span style="color:#ce5c00;font-weight:bold">{</span>
+ <span style="color:#4e9a06">&#34;Name&#34;</span>: <span style="color:#4e9a06">&#34;localOrg_localRepo_1&#34;</span>,
+ <span style="color:#4e9a06">&#34;Id&#34;</span>: <span style="color:#4e9a06">&#34;cf204e6081cd4c10e3a285e7545790152afca05991c2dc67534f496844c1d274&#34;</span>,
+ <span style="color:#4e9a06">&#34;Created&#34;</span>: <span style="color:#4e9a06">&#34;2021-06-01T19:37:35.4772628Z&#34;</span>,
+ <span style="color:#4e9a06">&#34;Scope&#34;</span>: <span style="color:#4e9a06">&#34;local&#34;</span>,
+ <span style="color:#4e9a06">&#34;Driver&#34;</span>: <span style="color:#4e9a06">&#34;bridge&#34;</span>,
+ <span style="color:#4e9a06">&#34;EnableIPv6&#34;</span>: false,
+ <span style="color:#4e9a06">&#34;IPAM&#34;</span>: <span style="color:#ce5c00;font-weight:bold">{</span>
+  <span style="color:#4e9a06">&#34;Driver&#34;</span>: <span style="color:#4e9a06">&#34;default&#34;</span>,
+  <span style="color:#4e9a06">&#34;Options&#34;</span>: null,
+  <span style="color:#4e9a06">&#34;Config&#34;</span>: <span style="color:#ce5c00;font-weight:bold">[</span>
+   <span style="color:#ce5c00;font-weight:bold">{</span>
+    <span style="color:#4e9a06">&#34;Subnet&#34;</span>: <span style="color:#4e9a06">&#34;192.168.0.0/20&#34;</span>,
+    <span style="color:#4e9a06">&#34;Gateway&#34;</span>: <span style="color:#4e9a06">&#34;192.168.0.1&#34;</span>
+   <span style="color:#ce5c00;font-weight:bold">}</span>
+  <span style="color:#ce5c00;font-weight:bold">]</span>
+ <span style="color:#ce5c00;font-weight:bold">}</span>,
+ <span style="color:#4e9a06">&#34;Internal&#34;</span>: false,
+ <span style="color:#4e9a06">&#34;Attachable&#34;</span>: false,
+ <span style="color:#4e9a06">&#34;Ingress&#34;</span>: false,
+ <span style="color:#4e9a06">&#34;ConfigFrom&#34;</span>: <span style="color:#ce5c00;font-weight:bold">{</span>
+  <span style="color:#4e9a06">&#34;Network&#34;</span>: <span style="color:#4e9a06">&#34;&#34;</span>
+ <span style="color:#ce5c00;font-weight:bold">}</span>,
+ <span style="color:#4e9a06">&#34;ConfigOnly&#34;</span>: false,
+ <span style="color:#4e9a06">&#34;Containers&#34;</span>: <span style="color:#ce5c00;font-weight:bold">{}</span>,
+ <span style="color:#4e9a06">&#34;Options&#34;</span>: <span style="color:#ce5c00;font-weight:bold">{}</span>,
+ <span style="color:#4e9a06">&#34;Labels&#34;</span>: <span style="color:#ce5c00;font-weight:bold">{}</span>
+<span style="color:#ce5c00;font-weight:bold">}</span>
 
+<span style="color:#ce5c00;font-weight:bold">[</span>step: init<span style="color:#ce5c00;font-weight:bold">]</span> &gt; Inspecting runtime volume...
+<span style="color:#ce5c00;font-weight:bold">[</span>step: init<span style="color:#ce5c00;font-weight:bold">]</span> $ docker volume inspect localOrg_localRepo_1
+<span style="color:#ce5c00;font-weight:bold">{</span>
+ <span style="color:#4e9a06">&#34;CreatedAt&#34;</span>: <span style="color:#4e9a06">&#34;2021-06-01T19:37:35Z&#34;</span>,
+ <span style="color:#4e9a06">&#34;Driver&#34;</span>: <span style="color:#4e9a06">&#34;local&#34;</span>,
+ <span style="color:#4e9a06">&#34;Labels&#34;</span>: null,
+ <span style="color:#4e9a06">&#34;Mountpoint&#34;</span>: <span style="color:#4e9a06">&#34;/var/lib/docker/volumes/localOrg_localRepo_1/_data&#34;</span>,
+ <span style="color:#4e9a06">&#34;Name&#34;</span>: <span style="color:#4e9a06">&#34;localOrg_localRepo_1&#34;</span>,
+ <span style="color:#4e9a06">&#34;Options&#34;</span>: null,
+ <span style="color:#4e9a06">&#34;Scope&#34;</span>: <span style="color:#4e9a06">&#34;local&#34;</span>
+<span style="color:#ce5c00;font-weight:bold">}</span>
+
+<span style="color:#ce5c00;font-weight:bold">[</span>step: init<span style="color:#ce5c00;font-weight:bold">]</span> &gt; Pulling service images...
+<span style="color:#ce5c00;font-weight:bold">[</span>step: init<span style="color:#ce5c00;font-weight:bold">]</span> &gt; Pulling stage images...
+<span style="color:#ce5c00;font-weight:bold">[</span>step: init<span style="color:#ce5c00;font-weight:bold">]</span> &gt; Pulling step images...
+<span style="color:#ce5c00;font-weight:bold">[</span>step: init<span style="color:#ce5c00;font-weight:bold">]</span> $ docker image inspect alpine:latest
+sha256:6dbb9cc54074106d46d4ccb330f2a40a682d49dda5f4844962b7dce9fe44aaec
+
+
+<span style="color:#ce5c00;font-weight:bold">[</span>step: hello Vela<span style="color:#ce5c00;font-weight:bold">]</span> $ <span style="color:#204a87">echo</span> <span style="color:#4e9a06">&#34;hello Vela!&#34;</span>
+<span style="color:#ce5c00;font-weight:bold">[</span>step: hello Vela<span style="color:#ce5c00;font-weight:bold">]</span> hello Vela!</code></pre></div>
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified February 1, 2021: <a  href="https://github.com/go-vela/docs/commit/6dc23bdb5b3d7b927fe2acf30bd5d347f7a2cb83">fix(reference): fix broken links (#205) (6dc23bd)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified June 2, 2021: <a  href="https://github.com/go-vela/docs/commit/e4549ddfdebe94f025c2de9360076fd69bf36a15">docs: add reference docs for local exec (#229) (e4549dd)</a>
 </div>
 </div>
+
 
           </main>
         </div>

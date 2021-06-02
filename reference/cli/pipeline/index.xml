@@ -14,6 +14,199 @@
     
     
     <item>
+      <title>Reference: Exec</title>
+      <link>https://go-vela.github.io/docs/reference/cli/pipeline/exec/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://go-vela.github.io/docs/reference/cli/pipeline/exec/</guid>
+      <description>
+        
+        
+        
+
+&lt;h2 id=&#34;command&#34;&gt;Command&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;$ vela exec pipeline &amp;lt;parameters...&amp;gt; &amp;lt;arguments...&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+For more information, you can run &lt;code&gt;vela exec pipeline --help&lt;/code&gt;.
+&lt;/div&gt;
+
+
+&lt;h2 id=&#34;parameters&#34;&gt;Parameters&lt;/h2&gt;
+
+&lt;p&gt;The following parameters are used to configure the command:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;th&gt;Environment Variables&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;branch&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;the build branch for the pipeline&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;VELA_BRANCH&lt;/code&gt;, &lt;code&gt;PIPELINE_BRANCH&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;comment&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;the build comment for the pipeline&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;VELA_COMMENT&lt;/code&gt;, &lt;code&gt;PIPELINE_COMMENT&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;event&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;the build event for the pipeline&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;VELA_EVENT&lt;/code&gt;, &lt;code&gt;PIPELINE_EVENT&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;tag&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;the build tag for the pipeline&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;VELA_TAG&lt;/code&gt;, &lt;code&gt;PIPELINE_TAG&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;target&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;the build target for the pipeline&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;VELA_TARGET&lt;/code&gt;, &lt;code&gt;PIPELINE_TARGET&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;output&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;format the output in json, spew or yaml&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;VELA_OUTPUT&lt;/code&gt;, &lt;code&gt;PIPELINE_OUTPUT&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;file&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;name of the file for the pipeline&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;VELA_FILE&lt;/code&gt;, &lt;code&gt;PIPELINE_FILE&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;path&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;path to the file for the pipeline&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;VELA_PATH&lt;/code&gt;, &lt;code&gt;PIPELINE_PATH&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;local&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;enables mounting local directory to pipeline&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;VELA_LOCAL&lt;/code&gt;, &lt;code&gt;PIPELINE_LOCAL&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;volume&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;provide list of local volumes to mount&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;VELA_VOLUMES&lt;/code&gt;, &lt;code&gt;PIPELINE_VOLUMES&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;org&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;provide the organization for the pipeline&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;VELA_ORG&lt;/code&gt;, &lt;code&gt;PIPELINE_ORG&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;repo&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;provide the repository for the pipeline&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;VELA_REPO&lt;/code&gt;, &lt;code&gt;PIPELINE_REPO&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;secrets&#34;&gt;Secrets&lt;/h2&gt;
+
+&lt;p&gt;The Vela Exec command does not have access to any secret you have stored in Vela or any other attached secret store.&lt;/p&gt;
+
+&lt;p&gt;You can set environment variables for the command by putting them before the command, ie &lt;code&gt;MY_SECRET=foo vela exec pipeline&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;So if our pipeline is using the &lt;a href=&#34;https://go-vela.github.io/docs/plugins/registry/pipeline/kaniko/&#34; target=&#34;_blank&#34;&gt;kaniko plugin&lt;/a&gt;, it may require the secret &lt;code&gt;kaniko_password&lt;/code&gt;, which we can provide with &lt;code&gt;KANIKO_PASSWORD=mypass vela exec pipeline&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;sample&#34;&gt;Sample&lt;/h2&gt;
+
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+
+&lt;p&gt;This section assumes you have already installed and setup the CLI.&lt;/p&gt;
+
+&lt;p&gt;To install the CLI, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/cli/install/&#34;&gt;installation documentation&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;To setup the CLI, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/cli/authentication/&#34;&gt;authentication documentation&lt;/a&gt;.&lt;/p&gt;
+
+&lt;/div&gt;
+
+
+&lt;h4 id=&#34;request&#34;&gt;Request&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;vela &lt;span style=&#34;color:#204a87&#34;&gt;exec&lt;/span&gt; pipeline&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4 id=&#34;response&#34;&gt;Response&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;[&lt;/span&gt;step: init&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;]&lt;/span&gt; &amp;gt; Inspecting runtime network...
+&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;[&lt;/span&gt;step: init&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;]&lt;/span&gt; $ docker network inspect localOrg_localRepo_1
+&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{&lt;/span&gt;
+ &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Name&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;localOrg_localRepo_1&amp;#34;&lt;/span&gt;,
+ &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Id&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;cf204e6081cd4c10e3a285e7545790152afca05991c2dc67534f496844c1d274&amp;#34;&lt;/span&gt;,
+ &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Created&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;2021-06-01T19:37:35.4772628Z&amp;#34;&lt;/span&gt;,
+ &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Scope&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;local&amp;#34;&lt;/span&gt;,
+ &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Driver&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;bridge&amp;#34;&lt;/span&gt;,
+ &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;EnableIPv6&amp;#34;&lt;/span&gt;: false,
+ &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;IPAM&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{&lt;/span&gt;
+  &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Driver&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;default&amp;#34;&lt;/span&gt;,
+  &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Options&amp;#34;&lt;/span&gt;: null,
+  &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Config&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;[&lt;/span&gt;
+   &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{&lt;/span&gt;
+    &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Subnet&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;192.168.0.0/20&amp;#34;&lt;/span&gt;,
+    &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Gateway&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;192.168.0.1&amp;#34;&lt;/span&gt;
+   &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;}&lt;/span&gt;
+  &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;]&lt;/span&gt;
+ &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;}&lt;/span&gt;,
+ &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Internal&amp;#34;&lt;/span&gt;: false,
+ &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Attachable&amp;#34;&lt;/span&gt;: false,
+ &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Ingress&amp;#34;&lt;/span&gt;: false,
+ &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;ConfigFrom&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{&lt;/span&gt;
+  &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Network&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;
+ &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;}&lt;/span&gt;,
+ &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;ConfigOnly&amp;#34;&lt;/span&gt;: false,
+ &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Containers&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{}&lt;/span&gt;,
+ &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Options&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{}&lt;/span&gt;,
+ &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Labels&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{}&lt;/span&gt;
+&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;}&lt;/span&gt;
+
+&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;[&lt;/span&gt;step: init&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;]&lt;/span&gt; &amp;gt; Inspecting runtime volume...
+&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;[&lt;/span&gt;step: init&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;]&lt;/span&gt; $ docker volume inspect localOrg_localRepo_1
+&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{&lt;/span&gt;
+ &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;CreatedAt&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;2021-06-01T19:37:35Z&amp;#34;&lt;/span&gt;,
+ &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Driver&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;local&amp;#34;&lt;/span&gt;,
+ &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Labels&amp;#34;&lt;/span&gt;: null,
+ &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Mountpoint&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;/var/lib/docker/volumes/localOrg_localRepo_1/_data&amp;#34;&lt;/span&gt;,
+ &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Name&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;localOrg_localRepo_1&amp;#34;&lt;/span&gt;,
+ &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Options&amp;#34;&lt;/span&gt;: null,
+ &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Scope&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;local&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;}&lt;/span&gt;
+
+&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;[&lt;/span&gt;step: init&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;]&lt;/span&gt; &amp;gt; Pulling service images...
+&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;[&lt;/span&gt;step: init&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;]&lt;/span&gt; &amp;gt; Pulling stage images...
+&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;[&lt;/span&gt;step: init&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;]&lt;/span&gt; &amp;gt; Pulling step images...
+&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;[&lt;/span&gt;step: init&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;]&lt;/span&gt; $ docker image inspect alpine:latest
+sha256:6dbb9cc54074106d46d4ccb330f2a40a682d49dda5f4844962b7dce9fe44aaec
+
+
+&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;[&lt;/span&gt;step: hello Vela&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;]&lt;/span&gt; $ &lt;span style=&#34;color:#204a87&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;hello Vela!&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;[&lt;/span&gt;step: hello Vela&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;]&lt;/span&gt; hello Vela!&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
       <title>Reference: Generate</title>
       <link>https://go-vela.github.io/docs/reference/cli/pipeline/generate/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
