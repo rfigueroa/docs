@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.59.1" />
+<meta name="generator" content="Hugo 0.79.0" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -28,9 +28,9 @@ Usage  NOTE:
 Users should refrain from using latest as the tag for the Docker image.
 It is recommended to use a semantically versioned tag instead.
  Sample of restoring a cache:
-steps:-name:restore_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters:action:restorebucket:mybucketserver:mybucket.s3-us-west-2.amazonaws.com Sample of rebuilding a cache:
-steps:-name:rebuild_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters:action:rebuildbucket:mybucketserver:mybucket.s3-us-west-2.amazonaws.commount:-.gradle Sample of flushing a cache:
-steps:-name:flushing_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters:action:flushbucket:mybucketserver:mybucket.s3-us-west-2.amazonaws.com Secrets  NOTE: Users should refrain from configuring sensitive information in your pipeline in plain text." />
+steps:- name:restore_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters:action:restorebucket:mybucketserver:mybucket.s3-us-west-2.amazonaws.comSample of rebuilding a cache:
+steps:- name:rebuild_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters:action:rebuildbucket:mybucketserver:mybucket.s3-us-west-2.amazonaws.commount:- .gradleSample of flushing a cache:
+steps:- name:flushing_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters:action:flushbucket:mybucketserver:mybucket.s3-us-west-2.amazonaws.comSecrets  NOTE: Users should refrain from configuring sensitive information in your pipeline in plain text." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://go-vela.github.io/docs/plugins/registry/pipeline/s3_cache/" />
 <meta property="article:modified_time" content="2021-01-13T15:05:51-06:00" />
@@ -42,13 +42,11 @@ Usage  NOTE:
 Users should refrain from using latest as the tag for the Docker image.
 It is recommended to use a semantically versioned tag instead.
  Sample of restoring a cache:
-steps:-name:restore_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters:action:restorebucket:mybucketserver:mybucket.s3-us-west-2.amazonaws.com Sample of rebuilding a cache:
-steps:-name:rebuild_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters:action:rebuildbucket:mybucketserver:mybucket.s3-us-west-2.amazonaws.commount:-.gradle Sample of flushing a cache:
-steps:-name:flushing_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters:action:flushbucket:mybucketserver:mybucket.s3-us-west-2.amazonaws.com Secrets  NOTE: Users should refrain from configuring sensitive information in your pipeline in plain text.">
-
-
+steps:- name:restore_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters:action:restorebucket:mybucketserver:mybucket.s3-us-west-2.amazonaws.comSample of rebuilding a cache:
+steps:- name:rebuild_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters:action:rebuildbucket:mybucketserver:mybucket.s3-us-west-2.amazonaws.commount:- .gradleSample of flushing a cache:
+steps:- name:flushing_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters:action:flushbucket:mybucketserver:mybucket.s3-us-west-2.amazonaws.comSecrets  NOTE: Users should refrain from configuring sensitive information in your pipeline in plain text.">
 <meta itemprop="dateModified" content="2021-01-13T15:05:51-06:00" />
-<meta itemprop="wordCount" content="680">
+<meta itemprop="wordCount" content="681">
 
 
 
@@ -62,9 +60,9 @@ Usage  NOTE:
 Users should refrain from using latest as the tag for the Docker image.
 It is recommended to use a semantically versioned tag instead.
  Sample of restoring a cache:
-steps:-name:restore_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters:action:restorebucket:mybucketserver:mybucket.s3-us-west-2.amazonaws.com Sample of rebuilding a cache:
-steps:-name:rebuild_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters:action:rebuildbucket:mybucketserver:mybucket.s3-us-west-2.amazonaws.commount:-.gradle Sample of flushing a cache:
-steps:-name:flushing_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters:action:flushbucket:mybucketserver:mybucket.s3-us-west-2.amazonaws.com Secrets  NOTE: Users should refrain from configuring sensitive information in your pipeline in plain text."/>
+steps:- name:restore_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters:action:restorebucket:mybucketserver:mybucket.s3-us-west-2.amazonaws.comSample of rebuilding a cache:
+steps:- name:rebuild_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters:action:rebuildbucket:mybucketserver:mybucket.s3-us-west-2.amazonaws.commount:- .gradleSample of flushing a cache:
+steps:- name:flushing_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters:action:flushbucket:mybucketserver:mybucket.s3-us-west-2.amazonaws.comSecrets  NOTE: Users should refrain from configuring sensitive information in your pipeline in plain text."/>
 
 
 
@@ -72,8 +70,8 @@ steps:-name:flushing_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters
 
 
 
-<link rel="preload" href="/docs/scss/main.min.70d8bad3cbfd44b25762dfb0cadb082e7e2c882cbc3cb7ff0b318df81507856d.css" as="style">
-<link href="/docs/scss/main.min.70d8bad3cbfd44b25762dfb0cadb082e7e2c882cbc3cb7ff0b318df81507856d.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/docs/scss/main.min.a9587066c0180698d994bba5dbdd49fa05ee0044b1678d06704a7a605676b1df.css" as="style">
+<link href="/docs/scss/main.min.a9587066c0180698d994bba5dbdd49fa05ee0044b1678d06704a7a605676b1df.css" rel="stylesheet" integrity="">
 
 <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
@@ -88,7 +86,7 @@ steps:-name:flushing_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters
       
 <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
         <a class="navbar-brand" href="/docs/">
-		<span class="navbar-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1500"><title>vela-inverse</title><polygon points="1477.22 329.54 1338.11 219.91 1349.56 43.16 1202.3 141.58 1037.73 76.07 1085.84 246.54 972.68 382.81 1149.67 389.74 1244.3 539.46 1305.58 373.27 1477.22 329.54" style="fill:#9e6bae"/><path d="M1174.75 635.12 757.57 1357.69a3.47 3.47.0 0 1-6 0L125.38 273.13a3.48 3.48.0 0 1 3-5.22H925.24l39.14-47.13L950.19 170.5H128.39A100.9 100.9.0 0 0 41 321.84L667.19 1406.4a100.88 100.88.0 0 0 174.74.0l391.61-678.27z" style="fill:#34c6f4"/><polygon points="1087.64 497.29 1038.27 495.36 754.56 986.75 395.9 365.54 288.13 365.54 754.56 1173.42 1117.58 544.66 1087.64 497.29" style="fill:#fff"/></svg></span><span class="text-uppercase font-weight-bold">Vela</span>
+		<span class="navbar-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1500"><title>vela-inverse</title><polygon points="1477.22 329.54 1338.11 219.91 1349.56 43.16 1202.3 141.58 1037.73 76.07 1085.84 246.54 972.68 382.81 1149.67 389.74 1244.3 539.46 1305.58 373.27 1477.22 329.54" style="fill:#9e6bae"/><path d="M1174.75 635.12 757.57 1357.69a3.47 3.47.0 01-6 0L125.38 273.13a3.48 3.48.0 013-5.22H925.24l39.14-47.13L950.19 170.5H128.39A100.9 100.9.0 0041 321.84L667.19 1406.4a100.88 100.88.0 00174.74.0l391.61-678.27z" style="fill:#34c6f4"/><polygon points="1087.64 497.29 1038.27 495.36 754.56 986.75 395.9 365.54 288.13 365.54 754.56 1173.42 1117.58 544.66 1087.64 497.29" style="fill:#fff"/></svg></span><span class="text-uppercase font-weight-bold">Vela</span>
 	</a>
 	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
 		<ul class="navbar-nav mt-2 mt-lg-0">
@@ -111,7 +109,7 @@ steps:-name:flushing_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters
 				
 				
 				
-				<a class="nav-link" href="/docs/concepts/" ><span>Concepts</span></a>
+				<a class="nav-link" href="/docs/tour/" ><span>Tour</span></a>
 			</li>
 			
 			<li class="nav-item mr-4 mb-2 mb-lg-0">
@@ -365,7 +363,7 @@ steps:-name:flushing_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters
     <a  href="/docs/plugins/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Plugins</a>
   </li>
   <ul>
-    <li class="collapse show" id="docs-plugins">
+    <li class="collapse show" id="docsplugins">
       
       
       
@@ -382,7 +380,7 @@ steps:-name:flushing_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters
     <a  href="/docs/plugins/registry/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Registry</a>
   </li>
   <ul>
-    <li class="collapse show" id="docs-plugins-registry">
+    <li class="collapse show" id="docspluginsregistry">
       
       
       
@@ -399,68 +397,68 @@ steps:-name:flushing_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters
     <a  href="/docs/plugins/registry/pipeline/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Pipeline</a>
   </li>
   <ul>
-    <li class="collapse show" id="docs-plugins-registry-pipeline">
+    <li class="collapse show" id="docspluginsregistrypipeline">
       
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-registry-pipeline-artifactory" href="/docs/plugins/registry/pipeline/artifactory/">Artifactory</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginsregistrypipelineartifactory" href="/docs/plugins/registry/pipeline/artifactory/">Artifactory</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-registry-pipeline-captains-log" href="/docs/plugins/registry/pipeline/captains_log/">Captain&#39;s Log</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginsregistrypipelinecaptains_log" href="/docs/plugins/registry/pipeline/captains_log/">Captain&#39;s Log</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-registry-pipeline-docker" href="/docs/plugins/registry/pipeline/docker/">Docker</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginsregistrypipelinedocker" href="/docs/plugins/registry/pipeline/docker/">Docker</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-registry-pipeline-downstream" href="/docs/plugins/registry/pipeline/downstream/">Downstream</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginsregistrypipelinedownstream" href="/docs/plugins/registry/pipeline/downstream/">Downstream</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-registry-pipeline-git" href="/docs/plugins/registry/pipeline/git/">Git</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginsregistrypipelinegit" href="/docs/plugins/registry/pipeline/git/">Git</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-registry-pipeline-kaniko" href="/docs/plugins/registry/pipeline/kaniko/">Kaniko</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginsregistrypipelinekaniko" href="/docs/plugins/registry/pipeline/kaniko/">Kaniko</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-registry-pipeline-kubernetes" href="/docs/plugins/registry/pipeline/kubernetes/">Kubernetes</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginsregistrypipelinekubernetes" href="/docs/plugins/registry/pipeline/kubernetes/">Kubernetes</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-registry-pipeline-makisu" href="/docs/plugins/registry/pipeline/makisu/">Makisu</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginsregistrypipelinemakisu" href="/docs/plugins/registry/pipeline/makisu/">Makisu</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docs-plugins-registry-pipeline-s3-cache" href="/docs/plugins/registry/pipeline/s3_cache/">S3 Cache</a>
+      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docspluginsregistrypipelines3_cache" href="/docs/plugins/registry/pipeline/s3_cache/">S3 Cache</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-registry-pipeline-terraform" href="/docs/plugins/registry/pipeline/terraform/">Terraform</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginsregistrypipelineterraform" href="/docs/plugins/registry/pipeline/terraform/">Terraform</a>
       
       
     </li>
@@ -482,14 +480,14 @@ steps:-name:flushing_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters
     <a  href="/docs/plugins/registry/secret/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Secret</a>
   </li>
   <ul>
-    <li class="collapse " id="docs-plugins-registry-secret">
+    <li class="collapse " id="docspluginsregistrysecret">
       
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-registry-secret-vault" href="/docs/plugins/registry/secret/vault/">Vault</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginsregistrysecretvault" href="/docs/plugins/registry/secret/vault/">Vault</a>
       
       
     </li>
@@ -517,38 +515,38 @@ steps:-name:flushing_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters
     <a  href="/docs/plugins/tutorials/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Tutorials</a>
   </li>
   <ul>
-    <li class="collapse " id="docs-plugins-tutorials">
+    <li class="collapse " id="docspluginstutorials">
       
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-tutorials-bash" href="/docs/plugins/tutorials/bash/">Bash</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginstutorialsbash" href="/docs/plugins/tutorials/bash/">Bash</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-tutorials-go" href="/docs/plugins/tutorials/go/">Go</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginstutorialsgo" href="/docs/plugins/tutorials/go/">Go</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-tutorials-node" href="/docs/plugins/tutorials/node/">Node.js</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginstutorialsnode" href="/docs/plugins/tutorials/node/">Node.js</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-tutorials-python" href="/docs/plugins/tutorials/python/">Python</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginstutorialspython" href="/docs/plugins/tutorials/python/">Python</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-tutorials-ruby" href="/docs/plugins/tutorials/ruby/">Ruby</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginstutorialsruby" href="/docs/plugins/tutorials/ruby/">Ruby</a>
       
       
     </li>
@@ -582,6 +580,8 @@ steps:-name:flushing_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters
 <a href="https://github.com/go-vela/docs/issues/new?title=S3%20Cache" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
 
 </div>
+
+
 
 
 
@@ -639,61 +639,50 @@ steps:-name:flushing_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters
 	<h1>S3 Cache</h1>
 	
 	<h2 id="description">Description</h2>
-
-<p>This plugin enables you to cache build resources in an <a href="https://aws.amazon.com/s3/" target="_blank">s3</a> compatible store for a Vela pipeline.</p>
-
-<p>Source Code: <a href="https://github.com/go-vela/vela-s3-cache" target="_blank">https://github.com/go-vela/vela-s3-cache</a></p>
-
-<p>Registry: <a href="https://hub.docker.com/r/target/vela-s3-cache" target="_blank">https://hub.docker.com/r/target/vela-s3-cache</a></p>
-
+<p>This plugin enables you to cache build resources in an <a href="https://aws.amazon.com/s3/">s3</a> compatible store for a Vela pipeline.</p>
+<p>Source Code: <a href="https://github.com/go-vela/vela-s3-cache">https://github.com/go-vela/vela-s3-cache</a></p>
+<p>Registry: <a href="https://hub.docker.com/r/target/vela-s3-cache">https://hub.docker.com/r/target/vela-s3-cache</a></p>
 <h2 id="usage">Usage</h2>
-
 <blockquote>
 <p><strong>NOTE:</strong></p>
-
 <p>Users should refrain from using latest as the tag for the Docker image.</p>
-
 <p>It is recommended to use a semantically versioned tag instead.</p>
 </blockquote>
-
 <p>Sample of restoring a cache:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">steps<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span>-<span style="color:#f8f8f8;text-decoration:underline"> </span>name<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>restore_cache<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>image<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>target/vela-s3-cache<span style="color:#000;font-weight:bold">:</span>latest<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>pull<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>always<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>parameters<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span>action<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>restore<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span>bucket<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>mybucket<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span>server<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>mybucket.s3-us-west<span style="color:#0000cf;font-weight:bold">-2.</span>amazonaws.com</code></pre></div>
-<p>Sample of rebuilding a cache:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">steps<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span>-<span style="color:#f8f8f8;text-decoration:underline"> </span>name<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>rebuild_cache<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>image<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>target/vela-s3-cache<span style="color:#000;font-weight:bold">:</span>latest<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>pull<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>always<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>parameters<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span>action<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>rebuild<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span>bucket<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>mybucket<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span>server<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>mybucket.s3-us-west<span style="color:#0000cf;font-weight:bold">-2.</span>amazonaws.com<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span>mount<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">        </span>-<span style="color:#f8f8f8;text-decoration:underline"> </span>.gradle</code></pre></div>
-<p>Sample of flushing a cache:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">steps<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span>-<span style="color:#f8f8f8;text-decoration:underline"> </span>name<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>flushing_cache<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>image<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>target/vela-s3-cache<span style="color:#000;font-weight:bold">:</span>latest<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>pull<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>always<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>parameters<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span>action<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>flush<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span>bucket<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>mybucket<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span>server<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>mybucket.s3-us-west<span style="color:#0000cf;font-weight:bold">-2.</span>amazonaws.com</code></pre></div>
-<h2 id="secrets">Secrets</h2>
-
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">steps</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span>- <span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">restore_cache</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">image</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">target/vela-s3-cache:latest</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">pull</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">always</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">parameters</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">action</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">restore</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">bucket</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">mybucket</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">server</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">mybucket.s3-us-west-2.amazonaws.com</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></code></pre></div><p>Sample of rebuilding a cache:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">steps</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span>- <span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">rebuild_cache</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">image</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">target/vela-s3-cache:latest</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">pull</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">always</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">parameters</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">action</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">rebuild</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">bucket</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">mybucket</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">server</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">mybucket.s3-us-west-2.amazonaws.com</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">mount</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">        </span>- <span style="color:#000">.gradle</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></code></pre></div><p>Sample of flushing a cache:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">steps</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span>- <span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">flushing_cache</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">image</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">target/vela-s3-cache:latest</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">pull</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">always</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">parameters</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">action</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">flush</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">bucket</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">mybucket</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">server</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">mybucket.s3-us-west-2.amazonaws.com</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></code></pre></div><h2 id="secrets">Secrets</h2>
 <blockquote>
 <p><strong>NOTE:</strong> Users should refrain from configuring sensitive information in your pipeline in plain text.</p>
 </blockquote>
-
 <h3 id="internal">Internal</h3>
-
-<p>Users can use <a href="https://go-vela.github.io/docs/concepts/pipeline/secrets/" target="_blank">Vela internal secrets</a> to substitute these sensitive values at runtime:</p>
+<p>Users can use <a href="https://go-vela.github.io/docs/concepts/pipeline/secrets/">Vela internal secrets</a> to substitute these sensitive values at runtime:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: restore_cache
     image: target/vela-s3-cache:latest
@@ -705,20 +694,15 @@ steps:-name:flushing_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters
       server: mybucket.s3-us-west-2.amazonaws.com
 <span style="color:#a40000">-     access_key: AKIAIOSFODNN7EXAMPLE
 </span><span style="color:#a40000">-     secret_key: 123456789QWERTYEXAMPLE
-</span></code></pre></div>
-<blockquote>
+</span></code></pre></div><blockquote>
 <p>This example will add the secrets to the <code>restore_cache</code> step as environment variables:</p>
-
-<p><ul>
+<ul>
 <li><code>S3_CACHE_ACCESS_KEY=&lt;value&gt;</code></li>
 <li><code>S3_CACHE_SECRET_KEY=&lt;value&gt;</code></li>
 </ul>
-</blockquote></p>
-
+</blockquote>
 <h3 id="external">External</h3>
-
 <p>The plugin accepts the following files for authentication:</p>
-
 <table>
 <thead>
 <tr>
@@ -726,26 +710,22 @@ steps:-name:flushing_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters
 <th>Volume Configuration</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><code>access_key</code></td>
 <td><code>/vela/parameters/s3-cache/access_key</code>, <code>/vela/secrets/s3-cache/access_key</code></td>
 </tr>
-
 <tr>
 <td><code>secret_key</code></td>
 <td><code>/vela/parameters/s3-cache/secret_key</code>, <code>/vela/secrets/s3-cache/secret_key</code></td>
 </tr>
-
 <tr>
 <td><code>session_token</code></td>
 <td><code>/vela/parameters/s3-cache/session_token</code>, <code>/vela/secrets/s3-cache/session_token</code></td>
 </tr>
 </tbody>
 </table>
-
-<p>Users can use <a href="https://go-vela.github.io/docs/concepts/pipeline/secrets/origin/" target="_blank">Vela external secrets</a> to substitute these sensitive values at runtime:</p>
+<p>Users can use <a href="https://go-vela.github.io/docs/concepts/pipeline/secrets/origin/">Vela external secrets</a> to substitute these sensitive values at runtime:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: restore_cache
     image: target/vela-s3-cache:latest
@@ -757,25 +737,17 @@ steps:-name:flushing_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters
       server: mybucket.s3-us-west-2.amazonaws.com
 <span style="color:#a40000">-     access_key: AKIAIOSFODNN7EXAMPLE
 </span><span style="color:#a40000">-     secret_key: 123456789QWERTYEXAMPLE
-</span></code></pre></div>
-<blockquote>
+</span></code></pre></div><blockquote>
 <p>This example will read the secret values in the volume stored at <code>/vela/secrets/</code></p>
 </blockquote>
-
 <h2 id="parameters">Parameters</h2>
-
 <blockquote>
 <p><strong>NOTE:</strong></p>
-
 <p>The plugin supports reading all parameters via environment variables or files.</p>
-
 <p>Any values set from a file take precedence over values set from the environment.</p>
-
 <p>The s3 bucket set with the <code>bucket</code> parameter is expected to be created beforehand.</p>
 </blockquote>
-
 <p>The following parameters can used to configure all image actions:</p>
-
 <table>
 <thead>
 <tr>
@@ -786,7 +758,6 @@ steps:-name:flushing_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters
 <th>Environment Variables</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><code>accelerated_endpoint</code></td>
@@ -795,7 +766,6 @@ steps:-name:flushing_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters
 <td><code>N/A</code></td>
 <td><code>PARAMETER_ACCELERATED_ENDPOINT</code><br><code>S3_CACHE_ACCELERATED_ENDPOINT</code></td>
 </tr>
-
 <tr>
 <td><code>access_key</code></td>
 <td>access key for communication with s3</td>
@@ -803,7 +773,6 @@ steps:-name:flushing_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters
 <td><code>N/A</code></td>
 <td><code>PARAMETER_ACCESS_KEY</code><br><code>S3_CACHE_ACCESS_KEY</code><br><code>AWS_ACCESS_KEY_ID</code></td>
 </tr>
-
 <tr>
 <td><code>action</code></td>
 <td>action to perform against s3</td>
@@ -811,7 +780,6 @@ steps:-name:flushing_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters
 <td><code>N/A</code></td>
 <td><code>PARAMETER_ACTION</code><br><code>S3_CACHE_ACTION</code></td>
 </tr>
-
 <tr>
 <td><code>build_branch</code></td>
 <td>branch name from build for the repository</td>
@@ -819,7 +787,6 @@ steps:-name:flushing_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters
 <td><strong>set by Vela</strong></td>
 <td><code>PARAMETER_BUILD_BRANCH</code><br><code>VELA_BUILD_BRANCH</code></td>
 </tr>
-
 <tr>
 <td><code>bucket</code></td>
 <td>name of the s3 bucket</td>
@@ -827,7 +794,6 @@ steps:-name:flushing_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters
 <td><code>N/A</code></td>
 <td><code>PARAMETER_BUCKET</code><br><code>S3_CACHE_BUCKET</code></td>
 </tr>
-
 <tr>
 <td><code>log_level</code></td>
 <td>set the log level for the plugin</td>
@@ -835,7 +801,6 @@ steps:-name:flushing_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters
 <td><code>info</code></td>
 <td><code>PARAMETER_LOG_LEVEL</code><br><code>S3_CACHE_LOG_LEVEL</code></td>
 </tr>
-
 <tr>
 <td><code>org</code></td>
 <td>name of the org for the repository</td>
@@ -843,7 +808,6 @@ steps:-name:flushing_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters
 <td><strong>set by Vela</strong></td>
 <td><code>PARAMETER_ORG</code><br><code>VELA_REPO_ORG</code></td>
 </tr>
-
 <tr>
 <td><code>path</code></td>
 <td>custom path for the object(s)</td>
@@ -851,7 +815,6 @@ steps:-name:flushing_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters
 <td><code>N/A</code></td>
 <td><code>PARAMETER_PATH</code><br><code>S3_CACHE_PATH</code></td>
 </tr>
-
 <tr>
 <td><code>prefix</code></td>
 <td>path prefix for the object(s)</td>
@@ -859,7 +822,6 @@ steps:-name:flushing_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters
 <td><code>N/A</code></td>
 <td><code>PARAMETER_PREFIX</code><br><code>S3_CACHE_PREFIX</code></td>
 </tr>
-
 <tr>
 <td><code>repo</code></td>
 <td>name of the repository</td>
@@ -867,7 +829,6 @@ steps:-name:flushing_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters
 <td><strong>set by Vela</strong></td>
 <td><code>PARAMETER_REPO</code><br><code>VELA_REPO_NAME</code></td>
 </tr>
-
 <tr>
 <td><code>repo_branch</code></td>
 <td>default branch for the Vela repository</td>
@@ -875,7 +836,6 @@ steps:-name:flushing_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters
 <td><strong>set by Vela</strong></td>
 <td><code>PARAMETER_REPO_BRANCH</code><br><code>VELA_REPO_BRANCH</code></td>
 </tr>
-
 <tr>
 <td><code>secret_key</code></td>
 <td>secret key for communication with s3</td>
@@ -883,7 +843,6 @@ steps:-name:flushing_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters
 <td><code>N/A</code></td>
 <td><code>PARAMETER_SECRET_KEY</code><br><code>S3_CACHE_SECRET_KEY</code><br><code>AWS_SECRET_ACCESS_KEY</code></td>
 </tr>
-
 <tr>
 <td><code>server</code></td>
 <td>s3 instance to communicate with</td>
@@ -891,7 +850,6 @@ steps:-name:flushing_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters
 <td><code>N/A</code></td>
 <td><code>PARAMETER_SERVER</code><br><code>S3_CACHE_SERVER</code></td>
 </tr>
-
 <tr>
 <td><code>session_token</code></td>
 <td>session token for communication with s3</td>
@@ -901,11 +859,8 @@ steps:-name:flushing_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters
 </tr>
 </tbody>
 </table>
-
 <h3 id="restore">Restore</h3>
-
 <p>The following parameters are used to configure the <code>restore</code> action:</p>
-
 <table>
 <thead>
 <tr>
@@ -916,7 +871,6 @@ steps:-name:flushing_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters
 <th>Environment Variables</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><code>filename</code></td>
@@ -925,7 +879,6 @@ steps:-name:flushing_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters
 <td><code>archive.tgz</code></td>
 <td><code>PARAMETER_FILENAME</code><br><code>S3_CACHE_FILENAME</code></td>
 </tr>
-
 <tr>
 <td><code>mount</code></td>
 <td>the file or directories locations to build your cache from</td>
@@ -933,7 +886,6 @@ steps:-name:flushing_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters
 <td><code>N/A</code></td>
 <td><code>PARAMETER_MOUNT</code><br><code>S3_CACHE_MOUNT</code></td>
 </tr>
-
 <tr>
 <td><code>timeout</code></td>
 <td>the timeout for the call to s3</td>
@@ -943,11 +895,8 @@ steps:-name:flushing_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters
 </tr>
 </tbody>
 </table>
-
 <h3 id="rebuild">Rebuild</h3>
-
 <p>The following parameters are used to configure the <code>rebuild</code> action:</p>
-
 <table>
 <thead>
 <tr>
@@ -958,7 +907,6 @@ steps:-name:flushing_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters
 <th>Environment Variables</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><code>filename</code></td>
@@ -967,7 +915,6 @@ steps:-name:flushing_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters
 <td><code>archive.tgz</code></td>
 <td><code>PARAMETER_FILENAME</code><br><code>S3_CACHE_FILENAME</code></td>
 </tr>
-
 <tr>
 <td><code>timeout</code></td>
 <td>the timeout for the call to s3</td>
@@ -977,11 +924,8 @@ steps:-name:flushing_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters
 </tr>
 </tbody>
 </table>
-
 <h3 id="flush">Flush</h3>
-
 <p>The following parameters are used to configure the <code>flush</code> action:</p>
-
 <table>
 <thead>
 <tr>
@@ -992,7 +936,6 @@ steps:-name:flushing_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters
 <th>Environment Variables</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><code>age</code></td>
@@ -1003,13 +946,9 @@ steps:-name:flushing_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters
 </tr>
 </tbody>
 </table>
-
 <h2 id="template">Template</h2>
-
 <p>COMING SOON!</p>
-
 <h2 id="troubleshooting">Troubleshooting</h2>
-
 <p>You can start troubleshooting this plugin by tuning the level of logs being displayed:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: restore_cache
@@ -1020,17 +959,12 @@ steps:-name:flushing_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters
       bucket: mybucket
 <span style="color:#00a000">+     log_level: trace
 </span><span style="color:#00a000"></span>      server: mybucket.s3-us-west-2.amazonaws.com
-</code></pre></div>
-<p>Below are a list of common problems and how to solve them:</p>
-
+</code></pre></div><p>Below are a list of common problems and how to solve them:</p>
 <h3 id="invalid-duration-value">Invalid duration value</h3>
-
 <p>The error may look like this:</p>
-
 <pre><code>could not parse \&quot;14d\&quot; as duration value for flag flush.age: time: unknown unit \&quot;d\&quot; in duration \&quot;14d\&quot;
 </code></pre>
-
-<p>Values for rebuild and restore <code>timeout</code> and flushing <code>age</code> are parsed using Go&rsquo;s <a href="https://golang.org/pkg/time/#ParseDuration" target="_blank">time.ParseDuration</a> function. Only <code>h</code> for hours, <code>m</code> for minutes, and so on for smaller time units are supported; <code>d</code> for days will cause an error unless added in subsequent versions of Go after v1.16, which is <a href="https://github.com/golang/go/issues/11473" target="_blank">unlikely</a>.</p>
+<p>Values for rebuild and restore <code>timeout</code> and flushing <code>age</code> are parsed using Go&rsquo;s <a href="https://golang.org/pkg/time/#ParseDuration">time.ParseDuration</a> function. Only <code>h</code> for hours, <code>m</code> for minutes, and so on for smaller time units are supported; <code>d</code> for days will cause an error unless added in subsequent versions of Go after v1.16, which is <a href="https://github.com/golang/go/issues/11473">unlikely</a>.</p>
 
 	
 	

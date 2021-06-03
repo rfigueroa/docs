@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.59.1" />
+<meta name="generator" content="Hugo 0.79.0" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -28,7 +28,7 @@ Usage  NOTE:
 Users should refrain from using latest as the tag for the Docker image.
 It is recommended to use a semantically versioned tag instead.
  Sample of triggering a downstream build:
-steps:-name:trigger_hello-worldimage:target/vela-downstream:latestpull:alwaysparameters:branch:masterrepos:-octocat/hello-worldserver:https://vela-server.localhost Sample of triggering a downstream build for multiple repos:
+steps:- name:trigger_hello-worldimage:target/vela-downstream:latestpull:alwaysparameters:branch:masterrepos:- octocat/hello-worldserver:https://vela-server.localhostSample of triggering a downstream build for multiple repos:
 steps: - name: trigger_multiple image: target/vela-downstream:latest pull: always parameters: branch: master repos: - octocat/hello-world &#43; - go-vela/hello-world  server: https://vela-server." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://go-vela.github.io/docs/plugins/registry/pipeline/downstream/" />
@@ -41,12 +41,10 @@ Usage  NOTE:
 Users should refrain from using latest as the tag for the Docker image.
 It is recommended to use a semantically versioned tag instead.
  Sample of triggering a downstream build:
-steps:-name:trigger_hello-worldimage:target/vela-downstream:latestpull:alwaysparameters:branch:masterrepos:-octocat/hello-worldserver:https://vela-server.localhost Sample of triggering a downstream build for multiple repos:
+steps:- name:trigger_hello-worldimage:target/vela-downstream:latestpull:alwaysparameters:branch:masterrepos:- octocat/hello-worldserver:https://vela-server.localhostSample of triggering a downstream build for multiple repos:
 steps: - name: trigger_multiple image: target/vela-downstream:latest pull: always parameters: branch: master repos: - octocat/hello-world &#43; - go-vela/hello-world  server: https://vela-server.">
-
-
 <meta itemprop="dateModified" content="2021-01-13T15:05:51-06:00" />
-<meta itemprop="wordCount" content="414">
+<meta itemprop="wordCount" content="415">
 
 
 
@@ -60,7 +58,7 @@ Usage  NOTE:
 Users should refrain from using latest as the tag for the Docker image.
 It is recommended to use a semantically versioned tag instead.
  Sample of triggering a downstream build:
-steps:-name:trigger_hello-worldimage:target/vela-downstream:latestpull:alwaysparameters:branch:masterrepos:-octocat/hello-worldserver:https://vela-server.localhost Sample of triggering a downstream build for multiple repos:
+steps:- name:trigger_hello-worldimage:target/vela-downstream:latestpull:alwaysparameters:branch:masterrepos:- octocat/hello-worldserver:https://vela-server.localhostSample of triggering a downstream build for multiple repos:
 steps: - name: trigger_multiple image: target/vela-downstream:latest pull: always parameters: branch: master repos: - octocat/hello-world &#43; - go-vela/hello-world  server: https://vela-server."/>
 
 
@@ -69,8 +67,8 @@ steps: - name: trigger_multiple image: target/vela-downstream:latest pull: alway
 
 
 
-<link rel="preload" href="/docs/scss/main.min.70d8bad3cbfd44b25762dfb0cadb082e7e2c882cbc3cb7ff0b318df81507856d.css" as="style">
-<link href="/docs/scss/main.min.70d8bad3cbfd44b25762dfb0cadb082e7e2c882cbc3cb7ff0b318df81507856d.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/docs/scss/main.min.a9587066c0180698d994bba5dbdd49fa05ee0044b1678d06704a7a605676b1df.css" as="style">
+<link href="/docs/scss/main.min.a9587066c0180698d994bba5dbdd49fa05ee0044b1678d06704a7a605676b1df.css" rel="stylesheet" integrity="">
 
 <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
@@ -85,7 +83,7 @@ steps: - name: trigger_multiple image: target/vela-downstream:latest pull: alway
       
 <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
         <a class="navbar-brand" href="/docs/">
-		<span class="navbar-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1500"><title>vela-inverse</title><polygon points="1477.22 329.54 1338.11 219.91 1349.56 43.16 1202.3 141.58 1037.73 76.07 1085.84 246.54 972.68 382.81 1149.67 389.74 1244.3 539.46 1305.58 373.27 1477.22 329.54" style="fill:#9e6bae"/><path d="M1174.75 635.12 757.57 1357.69a3.47 3.47.0 0 1-6 0L125.38 273.13a3.48 3.48.0 0 1 3-5.22H925.24l39.14-47.13L950.19 170.5H128.39A100.9 100.9.0 0 0 41 321.84L667.19 1406.4a100.88 100.88.0 0 0 174.74.0l391.61-678.27z" style="fill:#34c6f4"/><polygon points="1087.64 497.29 1038.27 495.36 754.56 986.75 395.9 365.54 288.13 365.54 754.56 1173.42 1117.58 544.66 1087.64 497.29" style="fill:#fff"/></svg></span><span class="text-uppercase font-weight-bold">Vela</span>
+		<span class="navbar-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1500"><title>vela-inverse</title><polygon points="1477.22 329.54 1338.11 219.91 1349.56 43.16 1202.3 141.58 1037.73 76.07 1085.84 246.54 972.68 382.81 1149.67 389.74 1244.3 539.46 1305.58 373.27 1477.22 329.54" style="fill:#9e6bae"/><path d="M1174.75 635.12 757.57 1357.69a3.47 3.47.0 01-6 0L125.38 273.13a3.48 3.48.0 013-5.22H925.24l39.14-47.13L950.19 170.5H128.39A100.9 100.9.0 0041 321.84L667.19 1406.4a100.88 100.88.0 00174.74.0l391.61-678.27z" style="fill:#34c6f4"/><polygon points="1087.64 497.29 1038.27 495.36 754.56 986.75 395.9 365.54 288.13 365.54 754.56 1173.42 1117.58 544.66 1087.64 497.29" style="fill:#fff"/></svg></span><span class="text-uppercase font-weight-bold">Vela</span>
 	</a>
 	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
 		<ul class="navbar-nav mt-2 mt-lg-0">
@@ -108,7 +106,7 @@ steps: - name: trigger_multiple image: target/vela-downstream:latest pull: alway
 				
 				
 				
-				<a class="nav-link" href="/docs/concepts/" ><span>Concepts</span></a>
+				<a class="nav-link" href="/docs/tour/" ><span>Tour</span></a>
 			</li>
 			
 			<li class="nav-item mr-4 mb-2 mb-lg-0">
@@ -362,7 +360,7 @@ steps: - name: trigger_multiple image: target/vela-downstream:latest pull: alway
     <a  href="/docs/plugins/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Plugins</a>
   </li>
   <ul>
-    <li class="collapse show" id="docs-plugins">
+    <li class="collapse show" id="docsplugins">
       
       
       
@@ -379,7 +377,7 @@ steps: - name: trigger_multiple image: target/vela-downstream:latest pull: alway
     <a  href="/docs/plugins/registry/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Registry</a>
   </li>
   <ul>
-    <li class="collapse show" id="docs-plugins-registry">
+    <li class="collapse show" id="docspluginsregistry">
       
       
       
@@ -396,68 +394,68 @@ steps: - name: trigger_multiple image: target/vela-downstream:latest pull: alway
     <a  href="/docs/plugins/registry/pipeline/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Pipeline</a>
   </li>
   <ul>
-    <li class="collapse show" id="docs-plugins-registry-pipeline">
+    <li class="collapse show" id="docspluginsregistrypipeline">
       
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-registry-pipeline-artifactory" href="/docs/plugins/registry/pipeline/artifactory/">Artifactory</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginsregistrypipelineartifactory" href="/docs/plugins/registry/pipeline/artifactory/">Artifactory</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-registry-pipeline-captains-log" href="/docs/plugins/registry/pipeline/captains_log/">Captain&#39;s Log</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginsregistrypipelinecaptains_log" href="/docs/plugins/registry/pipeline/captains_log/">Captain&#39;s Log</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-registry-pipeline-docker" href="/docs/plugins/registry/pipeline/docker/">Docker</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginsregistrypipelinedocker" href="/docs/plugins/registry/pipeline/docker/">Docker</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docs-plugins-registry-pipeline-downstream" href="/docs/plugins/registry/pipeline/downstream/">Downstream</a>
+      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docspluginsregistrypipelinedownstream" href="/docs/plugins/registry/pipeline/downstream/">Downstream</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-registry-pipeline-git" href="/docs/plugins/registry/pipeline/git/">Git</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginsregistrypipelinegit" href="/docs/plugins/registry/pipeline/git/">Git</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-registry-pipeline-kaniko" href="/docs/plugins/registry/pipeline/kaniko/">Kaniko</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginsregistrypipelinekaniko" href="/docs/plugins/registry/pipeline/kaniko/">Kaniko</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-registry-pipeline-kubernetes" href="/docs/plugins/registry/pipeline/kubernetes/">Kubernetes</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginsregistrypipelinekubernetes" href="/docs/plugins/registry/pipeline/kubernetes/">Kubernetes</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-registry-pipeline-makisu" href="/docs/plugins/registry/pipeline/makisu/">Makisu</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginsregistrypipelinemakisu" href="/docs/plugins/registry/pipeline/makisu/">Makisu</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-registry-pipeline-s3-cache" href="/docs/plugins/registry/pipeline/s3_cache/">S3 Cache</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginsregistrypipelines3_cache" href="/docs/plugins/registry/pipeline/s3_cache/">S3 Cache</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-registry-pipeline-terraform" href="/docs/plugins/registry/pipeline/terraform/">Terraform</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginsregistrypipelineterraform" href="/docs/plugins/registry/pipeline/terraform/">Terraform</a>
       
       
     </li>
@@ -479,14 +477,14 @@ steps: - name: trigger_multiple image: target/vela-downstream:latest pull: alway
     <a  href="/docs/plugins/registry/secret/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Secret</a>
   </li>
   <ul>
-    <li class="collapse " id="docs-plugins-registry-secret">
+    <li class="collapse " id="docspluginsregistrysecret">
       
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-registry-secret-vault" href="/docs/plugins/registry/secret/vault/">Vault</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginsregistrysecretvault" href="/docs/plugins/registry/secret/vault/">Vault</a>
       
       
     </li>
@@ -514,38 +512,38 @@ steps: - name: trigger_multiple image: target/vela-downstream:latest pull: alway
     <a  href="/docs/plugins/tutorials/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Tutorials</a>
   </li>
   <ul>
-    <li class="collapse " id="docs-plugins-tutorials">
+    <li class="collapse " id="docspluginstutorials">
       
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-tutorials-bash" href="/docs/plugins/tutorials/bash/">Bash</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginstutorialsbash" href="/docs/plugins/tutorials/bash/">Bash</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-tutorials-go" href="/docs/plugins/tutorials/go/">Go</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginstutorialsgo" href="/docs/plugins/tutorials/go/">Go</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-tutorials-node" href="/docs/plugins/tutorials/node/">Node.js</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginstutorialsnode" href="/docs/plugins/tutorials/node/">Node.js</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-tutorials-python" href="/docs/plugins/tutorials/python/">Python</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginstutorialspython" href="/docs/plugins/tutorials/python/">Python</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-tutorials-ruby" href="/docs/plugins/tutorials/ruby/">Ruby</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginstutorialsruby" href="/docs/plugins/tutorials/ruby/">Ruby</a>
       
       
     </li>
@@ -579,6 +577,8 @@ steps: - name: trigger_multiple image: target/vela-downstream:latest pull: alway
 <a href="https://github.com/go-vela/docs/issues/new?title=Downstream" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
 
 </div>
+
+
 
 
 
@@ -636,34 +636,26 @@ steps: - name: trigger_multiple image: target/vela-downstream:latest pull: alway
 	<h1>Downstream</h1>
 	
 	<h2 id="description">Description</h2>
-
-<p>This plugin enables you to trigger builds for other repos for <a href="https://go-vela.github.io/docs/" target="_blank">Vela</a> in a pipeline.</p>
-
-<p>Source Code: <a href="https://github.com/go-vela/vela-downstream" target="_blank">https://github.com/go-vela/vela-downstream</a></p>
-
-<p>Registry: <a href="https://hub.docker.com/r/target/vela-downstream" target="_blank">https://hub.docker.com/r/target/vela-downstream</a></p>
-
+<p>This plugin enables you to trigger builds for other repos for <a href="https://go-vela.github.io/docs/">Vela</a> in a pipeline.</p>
+<p>Source Code: <a href="https://github.com/go-vela/vela-downstream">https://github.com/go-vela/vela-downstream</a></p>
+<p>Registry: <a href="https://hub.docker.com/r/target/vela-downstream">https://hub.docker.com/r/target/vela-downstream</a></p>
 <h2 id="usage">Usage</h2>
-
 <blockquote>
 <p><strong>NOTE:</strong></p>
-
 <p>Users should refrain from using latest as the tag for the Docker image.</p>
-
 <p>It is recommended to use a semantically versioned tag instead.</p>
 </blockquote>
-
 <p>Sample of triggering a downstream build:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">steps<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span>-<span style="color:#f8f8f8;text-decoration:underline"> </span>name<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>trigger_hello-world<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>image<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>target/vela-downstream<span style="color:#000;font-weight:bold">:</span>latest<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>pull<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>always<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>parameters<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span>branch<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>master<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span>repos<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">        </span>-<span style="color:#f8f8f8;text-decoration:underline"> </span>octocat/hello-world<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span>server<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>https<span style="color:#000;font-weight:bold">:</span>//vela-server.localhost</code></pre></div>
-<p>Sample of triggering a downstream build for multiple repos:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">steps</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span>- <span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">trigger_hello-world</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">image</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">target/vela-downstream:latest</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">pull</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">always</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">parameters</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">branch</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">master</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">repos</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">        </span>- <span style="color:#000">octocat/hello-world</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">server</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">https://vela-server.localhost</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></code></pre></div><p>Sample of triggering a downstream build for multiple repos:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: trigger_multiple
     image: target/vela-downstream:latest
@@ -674,9 +666,7 @@ steps: - name: trigger_multiple image: target/vela-downstream:latest pull: alway
         - octocat/hello-world
 <span style="color:#00a000">+       - go-vela/hello-world
 </span><span style="color:#00a000"></span>      server: https://vela-server.localhost
-</code></pre></div>
-<p>Sample of triggering a downstream build for multiple repos with different branches:</p>
-
+</code></pre></div><p>Sample of triggering a downstream build for multiple repos with different branches:</p>
 <blockquote>
 <p><strong>NOTE:</strong> Use the @ symbol at the end of the org/repo to provide a unique branch per repo.</p>
 </blockquote>
@@ -692,16 +682,12 @@ steps: - name: trigger_multiple image: target/vela-downstream:latest pull: alway
 </span><span style="color:#00a000"></span><span style="color:#a40000">-       - go-vela/hello-world
 </span><span style="color:#a40000"></span><span style="color:#00a000">+       - go-vela/hello-world@stage
 </span><span style="color:#00a000"></span>      server: https://vela-server.localhost
-</code></pre></div>
-<h2 id="secrets">Secrets</h2>
-
+</code></pre></div><h2 id="secrets">Secrets</h2>
 <blockquote>
 <p><strong>NOTE:</strong> Users should refrain from configuring sensitive information in your pipeline in plain text.</p>
 </blockquote>
-
 <h3 id="internal">Internal</h3>
-
-<p>Users can use <a href="https://go-vela.github.io/docs/concepts/pipeline/secrets/" target="_blank">Vela internal secrets</a> to substitute these sensitive values at runtime:</p>
+<p>Users can use <a href="https://go-vela.github.io/docs/concepts/pipeline/secrets/">Vela internal secrets</a> to substitute these sensitive values at runtime:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: trigger_hello-world
     image: target/vela-downstream:latest
@@ -713,19 +699,14 @@ steps: - name: trigger_multiple image: target/vela-downstream:latest pull: alway
         - octocat/hello-world
       server: https://vela-server.localhost
 <span style="color:#a40000">-     token: superSecretVelaToken
-</span></code></pre></div>
-<blockquote>
+</span></code></pre></div><blockquote>
 <p>This example will add the secret to the <code>trigger_hello-world</code> step as environment variables:</p>
-
-<p><ul>
+<ul>
 <li><code>DOWNSTREAM_TOKEN=&lt;value&gt;</code></li>
 </ul>
-</blockquote></p>
-
+</blockquote>
 <h3 id="external">External</h3>
-
 <p>The plugin accepts the following files for authentication:</p>
-
 <table>
 <thead>
 <tr>
@@ -733,7 +714,6 @@ steps: - name: trigger_multiple image: target/vela-downstream:latest pull: alway
 <th>Volume Configuration</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><code>token</code></td>
@@ -741,8 +721,7 @@ steps: - name: trigger_multiple image: target/vela-downstream:latest pull: alway
 </tr>
 </tbody>
 </table>
-
-<p>Users can use <a href="https://go-vela.github.io/docs/concepts/pipeline/secrets/origin/" target="_blank">Vela external secrets</a> to substitute these sensitive values at runtime:</p>
+<p>Users can use <a href="https://go-vela.github.io/docs/concepts/pipeline/secrets/origin/">Vela external secrets</a> to substitute these sensitive values at runtime:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: trigger_hello-world
     image: target/vela-downstream:latest
@@ -753,23 +732,16 @@ steps: - name: trigger_multiple image: target/vela-downstream:latest pull: alway
         - octocat/hello-world
       server: https://vela-server.localhost
 <span style="color:#a40000">-     token: superSecretVelaToken
-</span></code></pre></div>
-<blockquote>
+</span></code></pre></div><blockquote>
 <p>This example will read the secret value in the volume stored at <code>/vela/secrets/</code></p>
 </blockquote>
-
 <h2 id="parameters">Parameters</h2>
-
 <blockquote>
 <p><strong>NOTE:</strong></p>
-
 <p>The plugin supports reading all parameters via environment variables or files.</p>
-
 <p>Any values set from a file take precedence over values set from the environment.</p>
 </blockquote>
-
 <p>The following parameters are used to configure the image:</p>
-
 <table>
 <thead>
 <tr>
@@ -780,7 +752,6 @@ steps: - name: trigger_multiple image: target/vela-downstream:latest pull: alway
 <th>Environment Variables</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><code>branch</code></td>
@@ -789,7 +760,6 @@ steps: - name: trigger_multiple image: target/vela-downstream:latest pull: alway
 <td><code>master</code></td>
 <td><code>PARAMETER_BRANCH</code><br><code>DOWNSTREAM_BRANCH</code></td>
 </tr>
-
 <tr>
 <td><code>log_level</code></td>
 <td>set the log level for the plugin</td>
@@ -797,7 +767,6 @@ steps: - name: trigger_multiple image: target/vela-downstream:latest pull: alway
 <td><code>info</code></td>
 <td><code>PARAMETER_LOG_LEVEL</code><br><code>DOWNSTREAM_LOG_LEVEL</code></td>
 </tr>
-
 <tr>
 <td><code>repos</code></td>
 <td>list of <org>/<repo> names to trigger a build on</td>
@@ -805,7 +774,6 @@ steps: - name: trigger_multiple image: target/vela-downstream:latest pull: alway
 <td><code>N/A</code></td>
 <td><code>PARAMETER_REPOS</code><br><code>DOWNSTREAM_REPOS</code></td>
 </tr>
-
 <tr>
 <td><code>server</code></td>
 <td>Vela server to communicate with</td>
@@ -813,7 +781,6 @@ steps: - name: trigger_multiple image: target/vela-downstream:latest pull: alway
 <td><code>N/A</code></td>
 <td><code>PARAMETER_SERVER</code><br><code>DOWNSTREAM_SERVER</code></td>
 </tr>
-
 <tr>
 <td><code>token</code></td>
 <td>token for communication with Vela</td>
@@ -823,13 +790,9 @@ steps: - name: trigger_multiple image: target/vela-downstream:latest pull: alway
 </tr>
 </tbody>
 </table>
-
 <h2 id="template">Template</h2>
-
 <p>COMING SOON!</p>
-
 <h2 id="troubleshooting">Troubleshooting</h2>
-
 <p>You can start troubleshooting this plugin by tuning the level of logs being displayed:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: trigger_hello-world
@@ -841,8 +804,7 @@ steps: - name: trigger_multiple image: target/vela-downstream:latest pull: alway
 </span><span style="color:#00a000"></span>      repos:
         - octocat/hello-world
       server: https://vela-server.localhost
-</code></pre></div>
-<p>Below are a list of common problems and how to solve them:</p>
+</code></pre></div><p>Below are a list of common problems and how to solve them:</p>
 
 	
 	

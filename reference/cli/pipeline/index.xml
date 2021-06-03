@@ -22,25 +22,17 @@
       <description>
         
         
-        
-
-&lt;h2 id=&#34;command&#34;&gt;Command&lt;/h2&gt;
-
+        &lt;h2 id=&#34;command&#34;&gt;Command&lt;/h2&gt;
 &lt;pre&gt;&lt;code&gt;$ vela exec pipeline &amp;lt;parameters...&amp;gt; &amp;lt;arguments...&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
-
-
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 
 For more information, you can run &lt;code&gt;vela exec pipeline --help&lt;/code&gt;.
 &lt;/div&gt;
 
-
 &lt;h2 id=&#34;parameters&#34;&gt;Parameters&lt;/h2&gt;
-
 &lt;p&gt;The following parameters are used to configure the command:&lt;/p&gt;
-
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -49,74 +41,62 @@ For more information, you can run &lt;code&gt;vela exec pipeline --help&lt;/code
 &lt;th&gt;Environment Variables&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;branch&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;the build branch for the pipeline&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_BRANCH&lt;/code&gt;, &lt;code&gt;PIPELINE_BRANCH&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;comment&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;the build comment for the pipeline&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_COMMENT&lt;/code&gt;, &lt;code&gt;PIPELINE_COMMENT&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;event&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;the build event for the pipeline&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_EVENT&lt;/code&gt;, &lt;code&gt;PIPELINE_EVENT&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;tag&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;the build tag for the pipeline&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_TAG&lt;/code&gt;, &lt;code&gt;PIPELINE_TAG&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;target&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;the build target for the pipeline&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_TARGET&lt;/code&gt;, &lt;code&gt;PIPELINE_TARGET&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;output&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;format the output in json, spew or yaml&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_OUTPUT&lt;/code&gt;, &lt;code&gt;PIPELINE_OUTPUT&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;file&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;name of the file for the pipeline&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_FILE&lt;/code&gt;, &lt;code&gt;PIPELINE_FILE&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;path&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;path to the file for the pipeline&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_PATH&lt;/code&gt;, &lt;code&gt;PIPELINE_PATH&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;local&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;enables mounting local directory to pipeline&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_LOCAL&lt;/code&gt;, &lt;code&gt;PIPELINE_LOCAL&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;volume&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;provide list of local volumes to mount&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_VOLUMES&lt;/code&gt;, &lt;code&gt;PIPELINE_VOLUMES&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;org&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;provide the organization for the pipeline&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_ORG&lt;/code&gt;, &lt;code&gt;PIPELINE_ORG&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;repo&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;provide the repository for the pipeline&lt;/td&gt;
@@ -124,33 +104,24 @@ For more information, you can run &lt;code&gt;vela exec pipeline --help&lt;/code
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-
 &lt;h2 id=&#34;secrets&#34;&gt;Secrets&lt;/h2&gt;
-
 &lt;p&gt;The Vela Exec command does not have access to any secret you have stored in Vela or any other attached secret store.&lt;/p&gt;
-
 &lt;p&gt;You can set environment variables for the command by putting them before the command, ie &lt;code&gt;MY_SECRET=foo vela exec pipeline&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;So if our pipeline is using the &lt;a href=&#34;https://go-vela.github.io/docs/plugins/registry/pipeline/kaniko/&#34; target=&#34;_blank&#34;&gt;kaniko plugin&lt;/a&gt;, it may require the secret &lt;code&gt;kaniko_password&lt;/code&gt;, which we can provide with &lt;code&gt;KANIKO_PASSWORD=mypass vela exec pipeline&lt;/code&gt;&lt;/p&gt;
-
+&lt;p&gt;So if our pipeline is using the &lt;a href=&#34;https://go-vela.github.io/docs/plugins/registry/pipeline/kaniko/&#34;&gt;kaniko plugin&lt;/a&gt;, it may require the secret &lt;code&gt;kaniko_password&lt;/code&gt;, which we can provide with &lt;code&gt;KANIKO_PASSWORD=mypass vela exec pipeline&lt;/code&gt;&lt;/p&gt;
 &lt;h2 id=&#34;sample&#34;&gt;Sample&lt;/h2&gt;
-
 
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 
 &lt;p&gt;This section assumes you have already installed and setup the CLI.&lt;/p&gt;
-
 &lt;p&gt;To install the CLI, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/cli/install/&#34;&gt;installation documentation&lt;/a&gt;.&lt;/p&gt;
-
 &lt;p&gt;To setup the CLI, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/cli/authentication/&#34;&gt;authentication documentation&lt;/a&gt;.&lt;/p&gt;
 
 &lt;/div&gt;
 
-
 &lt;h4 id=&#34;request&#34;&gt;Request&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;vela &lt;span style=&#34;color:#204a87&#34;&gt;exec&lt;/span&gt; pipeline&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h4 id=&#34;response&#34;&gt;Response&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;vela &lt;span style=&#34;color:#204a87&#34;&gt;exec&lt;/span&gt; pipeline
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;response&#34;&gt;Response&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;[&lt;/span&gt;step: init&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;]&lt;/span&gt; &amp;gt; Inspecting runtime network...
 &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;[&lt;/span&gt;step: init&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;]&lt;/span&gt; $ docker network inspect localOrg_localRepo_1
 &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{&lt;/span&gt;
@@ -202,7 +173,8 @@ sha256:6dbb9cc54074106d46d4ccb330f2a40a682d49dda5f4844962b7dce9fe44aaec
 
 
 &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;[&lt;/span&gt;step: hello Vela&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;]&lt;/span&gt; $ &lt;span style=&#34;color:#204a87&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;hello Vela!&amp;#34;&lt;/span&gt;
-&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;[&lt;/span&gt;step: hello Vela&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;]&lt;/span&gt; hello Vela!&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;[&lt;/span&gt;step: hello Vela&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;]&lt;/span&gt; hello Vela!
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
       </description>
     </item>
     
@@ -215,25 +187,17 @@ sha256:6dbb9cc54074106d46d4ccb330f2a40a682d49dda5f4844962b7dce9fe44aaec
       <description>
         
         
-        
-
-&lt;h2 id=&#34;command&#34;&gt;Command&lt;/h2&gt;
-
+        &lt;h2 id=&#34;command&#34;&gt;Command&lt;/h2&gt;
 &lt;pre&gt;&lt;code&gt;$ vela generate pipeline &amp;lt;parameters...&amp;gt; &amp;lt;arguments...&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
-
-
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 
 For more information, you can run &lt;code&gt;vela generate pipeline --help&lt;/code&gt;.
 &lt;/div&gt;
 
-
 &lt;h2 id=&#34;parameters&#34;&gt;Parameters&lt;/h2&gt;
-
 &lt;p&gt;The following parameters are used to configure the command:&lt;/p&gt;
-
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -242,26 +206,22 @@ For more information, you can run &lt;code&gt;vela generate pipeline --help&lt;/
 &lt;th&gt;Environment Variables&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;file&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;name of the file for the pipeline&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_FILE&lt;/code&gt;, &lt;code&gt;PIPELINE_FILE&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;path&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;path to the file for the pipeline&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_PATH&lt;/code&gt;, &lt;code&gt;PIPELINE_PATH&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;stages&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;generates the pipeline with stages&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_STAGES&lt;/code&gt;, &lt;code&gt;PIPELINE_STAGES&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;type&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;type of pipeline being generated&lt;/td&gt;
@@ -269,30 +229,24 @@ For more information, you can run &lt;code&gt;vela generate pipeline --help&lt;/
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-
 &lt;h2 id=&#34;permissions&#34;&gt;Permissions&lt;/h2&gt;
-
 &lt;p&gt;COMING SOON!&lt;/p&gt;
-
 &lt;h2 id=&#34;sample&#34;&gt;Sample&lt;/h2&gt;
-
 
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 
 &lt;p&gt;This section assumes you have already installed and setup the CLI.&lt;/p&gt;
-
 &lt;p&gt;To install the CLI, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/cli/install/&#34;&gt;installation documentation&lt;/a&gt;.&lt;/p&gt;
-
 &lt;p&gt;To setup the CLI, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/cli/authentication/&#34;&gt;authentication documentation&lt;/a&gt;.&lt;/p&gt;
 
 &lt;/div&gt;
 
-
 &lt;h4 id=&#34;request&#34;&gt;Request&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;vela generate pipeline&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h4 id=&#34;response&#34;&gt;Response&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;.vela.yml&amp;#34;&lt;/span&gt; go pipeline generated&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;vela generate pipeline
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;response&#34;&gt;Response&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;.vela.yml&amp;#34;&lt;/span&gt; go pipeline generated
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
       </description>
     </item>
     
@@ -305,25 +259,17 @@ For more information, you can run &lt;code&gt;vela generate pipeline --help&lt;/
       <description>
         
         
-        
-
-&lt;h2 id=&#34;command&#34;&gt;Command&lt;/h2&gt;
-
+        &lt;h2 id=&#34;command&#34;&gt;Command&lt;/h2&gt;
 &lt;pre&gt;&lt;code&gt;$ vela validate pipeline &amp;lt;parameters...&amp;gt; &amp;lt;arguments...&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
-
-
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 
 For more information, please run &lt;code&gt;vela validate pipeline --help&lt;/code&gt;.
 &lt;/div&gt;
 
-
 &lt;h2 id=&#34;parameters&#34;&gt;Parameters&lt;/h2&gt;
-
 &lt;p&gt;The following parameters are used to configure the command:&lt;/p&gt;
-
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -332,14 +278,12 @@ For more information, please run &lt;code&gt;vela validate pipeline --help&lt;/c
 &lt;th&gt;Environment Variables&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;file&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;name of the file for the pipeline&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_FILE&lt;/code&gt;, &lt;code&gt;PIPELINE_FILE&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;path&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;path to the file for the pipeline&lt;/td&gt;
@@ -347,29 +291,24 @@ For more information, please run &lt;code&gt;vela validate pipeline --help&lt;/c
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-
 &lt;h2 id=&#34;permissions&#34;&gt;Permissions&lt;/h2&gt;
-
 &lt;p&gt;COMING SOON!&lt;/p&gt;
-
 &lt;h2 id=&#34;sample&#34;&gt;Sample&lt;/h2&gt;
-
 
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 
 &lt;p&gt;This section assumes you have already installed and setup the CLI.&lt;/p&gt;
-
 &lt;p&gt;To install the CLI, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/cli/install/&#34;&gt;installation documentation&lt;/a&gt;.
 To setup the CLI, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/cli/authentication/&#34;&gt;authentication documentation&lt;/a&gt;.&lt;/p&gt;
 
 &lt;/div&gt;
 
-
 &lt;h4 id=&#34;request&#34;&gt;Request&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;vela validate pipeline&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h4 id=&#34;response&#34;&gt;Response&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;.vela.yml&amp;#34;&lt;/span&gt; is valid&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;vela validate pipeline
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;response&#34;&gt;Response&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;.vela.yml&amp;#34;&lt;/span&gt; is valid
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
       </description>
     </item>
     

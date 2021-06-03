@@ -22,25 +22,17 @@
       <description>
         
         
-        
-
-&lt;h2 id=&#34;command&#34;&gt;Command&lt;/h2&gt;
-
+        &lt;h2 id=&#34;command&#34;&gt;Command&lt;/h2&gt;
 &lt;pre&gt;&lt;code&gt;$ vela generate config &amp;lt;parameters...&amp;gt; &amp;lt;arguments...&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
-
-
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 
 For more information, you can run &lt;code&gt;vela generate config --help&lt;/code&gt;.
 &lt;/div&gt;
 
-
 &lt;h2 id=&#34;parameters&#34;&gt;Parameters&lt;/h2&gt;
-
 &lt;p&gt;The following parameters are used to configure the command:&lt;/p&gt;
-
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -49,68 +41,57 @@ For more information, you can run &lt;code&gt;vela generate config --help&lt;/co
 &lt;th&gt;Environment Variables&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;api.addr&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;full URL to API server&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_ADDR&lt;/code&gt;, &lt;code&gt;CONFIG_ADDR&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;api.token.access&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;API access token&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_ACCESS_TOKEN&lt;/code&gt;, &lt;code&gt;CONFIG_ACCESS_TOKEN&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;api.token.refresh&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;API refresh token&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_REFRESH_TOKEN&lt;/code&gt;, &lt;code&gt;CONFIG_REFRESH_TOKEN&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;api.token&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;PAT for API server&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_TOKEN&lt;/code&gt;, &lt;code&gt;CONFIG_TOKEN&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;api.version&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;version of API for server&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_API_VERSION&lt;/code&gt;, &lt;code&gt;CONFIG_API_VERSION&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;log.level&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;set the level of logging&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_LOG_LEVEL&lt;/code&gt;, &lt;code&gt;CONFIG_LOG_LEVEL&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;output&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;format the output for API results&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_OUTPUT&lt;/code&gt;, &lt;code&gt;CONFIG_OUTPUT&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;org&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;name of organization for API calls&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_ORG&lt;/code&gt;, &lt;code&gt;CONFIG_ORG&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;repo&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;name of repository for API calls&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_REPO&lt;/code&gt;, &lt;code&gt;CONFIG_REPO&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;secret.engine&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;name of secret engine for API calls&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_ENGINE&lt;/code&gt;, &lt;code&gt;CONFIG_ENGINE&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;secret.type&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;name of secret type for API calls&lt;/td&gt;
@@ -118,34 +99,28 @@ For more information, you can run &lt;code&gt;vela generate config --help&lt;/co
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-
 &lt;h2 id=&#34;permissions&#34;&gt;Permissions&lt;/h2&gt;
-
 &lt;p&gt;COMING SOON!&lt;/p&gt;
-
 &lt;h2 id=&#34;sample&#34;&gt;Sample&lt;/h2&gt;
-
 
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 
 &lt;p&gt;This section assumes you have already installed and setup the CLI.&lt;/p&gt;
-
 &lt;p&gt;To install the CLI, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/cli/install/&#34;&gt;installation documentation&lt;/a&gt;.&lt;/p&gt;
-
 &lt;p&gt;To setup the CLI, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/cli/authentication/&#34;&gt;authentication documentation&lt;/a&gt;.&lt;/p&gt;
 
 &lt;/div&gt;
 
-
 &lt;h4 id=&#34;request&#34;&gt;Request&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;vela generate config --api.addr https://vela-server.localhost --log.level info&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h4 id=&#34;response&#34;&gt;Response&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;vela generate config --api.addr https://vela-server.localhost --log.level info
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;response&#34;&gt;Response&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;api:
   addr: https://vela-server.localhost
 log:
   level: info
-secret: &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+secret: &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
       </description>
     </item>
     
@@ -158,32 +133,23 @@ secret: &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{}&lt;/span&g
       <description>
         
         
-        
-
-&lt;h2 id=&#34;command&#34;&gt;Command&lt;/h2&gt;
-
+        &lt;h2 id=&#34;command&#34;&gt;Command&lt;/h2&gt;
 &lt;pre&gt;&lt;code&gt;$ vela remove config &amp;lt;parameters...&amp;gt; &amp;lt;arguments...&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
-
-
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 
 For more information, you can run &lt;code&gt;vela remove config --help&lt;/code&gt;.
 &lt;/div&gt;
 
-
 &lt;h2 id=&#34;parameters&#34;&gt;Parameters&lt;/h2&gt;
-
 &lt;p&gt;The following parameters are used to configure the command:&lt;/p&gt;
-
 
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 
 Providing no parameters to this command will remove the entire configuration file.
 &lt;/div&gt;
-
 
 &lt;table&gt;
 &lt;thead&gt;
@@ -193,68 +159,57 @@ Providing no parameters to this command will remove the entire configuration fil
 &lt;th&gt;Environment Variables&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;api.addr&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;removes the API address field&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_ADDR&lt;/code&gt;, &lt;code&gt;CONFIG_ADDR&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;api.token.access&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;removes the API access token field&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_ACCESS_TOKEN&lt;/code&gt;, &lt;code&gt;CONFIG_ACCESS_TOKEN&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;api.token.refresh&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;removes the API refresh token field&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_REFRESH_TOKEN&lt;/code&gt;, &lt;code&gt;CONFIG_REFRESH_TOKEN&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;api.token&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;removes the API token field&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_TOKEN&lt;/code&gt;, &lt;code&gt;CONFIG_TOKEN&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;api.version&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;removes the API version field&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_API_VERSION&lt;/code&gt;, &lt;code&gt;CONFIG_API_VERSION&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;log.level&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;removes the log level field&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_LOG_LEVEL&lt;/code&gt;, &lt;code&gt;CONFIG_LOG_LEVEL&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;output&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;removes the output field&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_OUTPUT&lt;/code&gt;, &lt;code&gt;CONFIG_OUTPUT&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;org&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;removes the org field&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_ORG&lt;/code&gt;, &lt;code&gt;CONFIG_ORG&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;repo&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;removes the repo field&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_REPO&lt;/code&gt;, &lt;code&gt;CONFIG_REPO&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;secret.engine&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;removes the secret engine field&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_ENGINE&lt;/code&gt;, &lt;code&gt;CONFIG_ENGINE&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;secret.type&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;removes the secret type field&lt;/td&gt;
@@ -262,29 +217,22 @@ Providing no parameters to this command will remove the entire configuration fil
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-
 &lt;h2 id=&#34;permissions&#34;&gt;Permissions&lt;/h2&gt;
-
 &lt;p&gt;COMING SOON!&lt;/p&gt;
-
 &lt;h2 id=&#34;sample&#34;&gt;Sample&lt;/h2&gt;
-
 
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 
 &lt;p&gt;This section assumes you have already installed and setup the CLI.&lt;/p&gt;
-
 &lt;p&gt;To install the CLI, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/cli/install/&#34;&gt;installation documentation&lt;/a&gt;.&lt;/p&gt;
-
 &lt;p&gt;To setup the CLI, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/cli/authentication/&#34;&gt;authentication documentation&lt;/a&gt;.&lt;/p&gt;
 
 &lt;/div&gt;
 
-
 &lt;h4 id=&#34;request&#34;&gt;Request&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;vela remove config&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h4 id=&#34;response&#34;&gt;Response&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;vela remove config
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;response&#34;&gt;Response&lt;/h4&gt;
 
       </description>
     </item>
@@ -298,25 +246,17 @@ Providing no parameters to this command will remove the entire configuration fil
       <description>
         
         
-        
-
-&lt;h2 id=&#34;command&#34;&gt;Command&lt;/h2&gt;
-
+        &lt;h2 id=&#34;command&#34;&gt;Command&lt;/h2&gt;
 &lt;pre&gt;&lt;code&gt;$ vela update config &amp;lt;parameters...&amp;gt; &amp;lt;arguments...&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
-
-
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 
 For more information, you can run &lt;code&gt;vela update config --help&lt;/code&gt;.
 &lt;/div&gt;
 
-
 &lt;h2 id=&#34;parameters&#34;&gt;Parameters&lt;/h2&gt;
-
 &lt;p&gt;The following parameters are used to configure the command:&lt;/p&gt;
-
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -325,68 +265,57 @@ For more information, you can run &lt;code&gt;vela update config --help&lt;/code
 &lt;th&gt;Environment Variables&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;api.addr&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;updates the API address field&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_ADDR&lt;/code&gt;, &lt;code&gt;CONFIG_ADDR&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;api.token.access&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;updates the API access token field&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_ACCESS_TOKEN&lt;/code&gt;, &lt;code&gt;CONFIG_ACCESS_TOKEN&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;api.token.refresh&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;updates the API refresh token field&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_REFRESH_TOKEN&lt;/code&gt;, &lt;code&gt;CONFIG_REFRESH_TOKEN&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;api.token&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;updates the API token field&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_TOKEN&lt;/code&gt;, &lt;code&gt;CONFIG_TOKEN&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;api.version&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;updates the API version field&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_API_VERSION&lt;/code&gt;, &lt;code&gt;CONFIG_API_VERSION&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;log.level&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;updates the log level field&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_LOG_LEVEL&lt;/code&gt;, &lt;code&gt;CONFIG_LOG_LEVEL&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;output&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;updates the output field&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_OUTPUT&lt;/code&gt;, &lt;code&gt;CONFIG_OUTPUT&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;org&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;updates the org field&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_ORG&lt;/code&gt;, &lt;code&gt;CONFIG_ORG&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;repo&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;updates the repo field&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_REPO&lt;/code&gt;, &lt;code&gt;CONFIG_REPO&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;secret.engine&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;updates the secret engine field&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_ENGINE&lt;/code&gt;, &lt;code&gt;CONFIG_ENGINE&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;secret.type&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;updates the secret type field&lt;/td&gt;
@@ -394,29 +323,22 @@ For more information, you can run &lt;code&gt;vela update config --help&lt;/code
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-
 &lt;h2 id=&#34;permissions&#34;&gt;Permissions&lt;/h2&gt;
-
 &lt;p&gt;COMING SOON!&lt;/p&gt;
-
 &lt;h2 id=&#34;sample&#34;&gt;Sample&lt;/h2&gt;
-
 
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 
 &lt;p&gt;This section assumes you have already installed and setup the CLI.&lt;/p&gt;
-
 &lt;p&gt;To install the CLI, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/cli/install/&#34;&gt;installation documentation&lt;/a&gt;.&lt;/p&gt;
-
 &lt;p&gt;To setup the CLI, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/cli/authentication/&#34;&gt;authentication documentation&lt;/a&gt;.&lt;/p&gt;
 
 &lt;/div&gt;
 
-
 &lt;h4 id=&#34;request&#34;&gt;Request&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;vela update config --org github&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h4 id=&#34;response&#34;&gt;Response&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;vela update config --org github
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;response&#34;&gt;Response&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;api:
   addr: https://vela-server.localhost
   access_token: superSecretAccessToken
@@ -425,7 +347,8 @@ For more information, you can run &lt;code&gt;vela update config --help&lt;/code
 log:
   level: info
 secret: &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{}&lt;/span&gt;
-org: github&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+org: github
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
       </description>
     </item>
     
@@ -438,43 +361,31 @@ org: github&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
       <description>
         
         
-        
-
-&lt;h2 id=&#34;command&#34;&gt;Command&lt;/h2&gt;
-
+        &lt;h2 id=&#34;command&#34;&gt;Command&lt;/h2&gt;
 &lt;pre&gt;&lt;code&gt;$ vela view config &amp;lt;arguments...&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
-
-
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 
 For more information, you can run &lt;code&gt;vela view config --help&lt;/code&gt;.
 &lt;/div&gt;
 
-
 &lt;h2 id=&#34;permissions&#34;&gt;Permissions&lt;/h2&gt;
-
 &lt;p&gt;COMING SOON!&lt;/p&gt;
-
 &lt;h2 id=&#34;sample&#34;&gt;Sample&lt;/h2&gt;
-
 
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 
 &lt;p&gt;This section assumes you have already installed and setup the CLI.&lt;/p&gt;
-
 &lt;p&gt;To install the CLI, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/cli/install/&#34;&gt;installation documentation&lt;/a&gt;.&lt;/p&gt;
-
 &lt;p&gt;To setup the CLI, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/cli/authentication/&#34;&gt;authentication documentation&lt;/a&gt;.&lt;/p&gt;
 
 &lt;/div&gt;
 
-
 &lt;h4 id=&#34;request&#34;&gt;Request&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;vela view config&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h4 id=&#34;response&#34;&gt;Response&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;vela view config
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;response&#34;&gt;Response&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;api:
   addr: https://vela-server.localhost
   access_token: superSecretAccessToken
@@ -482,7 +393,8 @@ For more information, you can run &lt;code&gt;vela view config --help&lt;/code&g
   version: v1
 log:
   level: info
-secret: &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+secret: &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
       </description>
     </item>
     

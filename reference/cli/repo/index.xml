@@ -22,25 +22,17 @@
       <description>
         
         
-        
-
-&lt;h2 id=&#34;command&#34;&gt;Command&lt;/h2&gt;
-
+        &lt;h2 id=&#34;command&#34;&gt;Command&lt;/h2&gt;
 &lt;pre&gt;&lt;code&gt;$ vela add repo &amp;lt;parameters...&amp;gt; &amp;lt;arguments...&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
-
-
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 
 For more information, you can run &lt;code&gt;vela add repo --help&lt;/code&gt;.
 &lt;/div&gt;
 
-
 &lt;h2 id=&#34;parameters&#34;&gt;Parameters&lt;/h2&gt;
-
 &lt;p&gt;The following parameters are used to configure the command:&lt;/p&gt;
-
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -49,80 +41,67 @@ For more information, you can run &lt;code&gt;vela add repo --help&lt;/code&gt;.
 &lt;th&gt;Environment Variables&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;org&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;name of organization for the repository&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_ORG&lt;/code&gt;, &lt;code&gt;REPO_ORG&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;repo&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;name of repository&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_REPO&lt;/code&gt;, &lt;code&gt;REPO_NAME&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;link&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;full URL for the repository&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_LINK&lt;/code&gt;, &lt;code&gt;REPO_LINK&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;branch&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;default branch for the repository&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_BRANCH&lt;/code&gt;, &lt;code&gt;REPO_BRANCH&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;clone&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;clone URL for the repository&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_CLONE&lt;/code&gt;, &lt;code&gt;REPO_CLONE&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;visibility&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;access level required to view the repository&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_VISIBILITY&lt;/code&gt;, &lt;code&gt;REPO_VISIBILITY&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;timeout&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;max time allowed per build&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_TIMEOUT&lt;/code&gt;, &lt;code&gt;REPO_TIMEOUT&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;counter&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;set a value for a new build number&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_COUNTER&lt;/code&gt;, &lt;code&gt;REPO_COUNTER&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;private&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;disables public access to the repository&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_PRIVATE&lt;/code&gt;, &lt;code&gt;REPO_PRIVATE&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;trusted&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;elevates permissions for builds for the repository&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_TRUSTED&lt;/code&gt;, &lt;code&gt;REPO_TRUSTED&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;active&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;enables/disables the repository&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_ACTIVE&lt;/code&gt;, &lt;code&gt;REPO_ACTIVE&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;event&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;events to trigger builds for the repository&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_EVENTS&lt;/code&gt;, &lt;code&gt;REPO_EVENTS&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;output&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;format the output for the repository&lt;/td&gt;
@@ -132,44 +111,34 @@ For more information, you can run &lt;code&gt;vela add repo --help&lt;/code&gt;.
 &lt;/table&gt;
 
 
-
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 
 &lt;p&gt;This command also supports setting the following parameters via a configuration file:&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;org&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;repo&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;output&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;For more information, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/cli/config/&#34;&gt;CLI config documentation&lt;/a&gt;.&lt;/p&gt;
 
 &lt;/div&gt;
 
-
 &lt;h2 id=&#34;permissions&#34;&gt;Permissions&lt;/h2&gt;
-
 &lt;p&gt;COMING SOON!&lt;/p&gt;
-
 &lt;h2 id=&#34;sample&#34;&gt;Sample&lt;/h2&gt;
-
 
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 
 &lt;p&gt;This section assumes you have already installed and setup the CLI.&lt;/p&gt;
-
 &lt;p&gt;To install the CLI, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/cli/install/&#34;&gt;installation documentation&lt;/a&gt;.&lt;/p&gt;
-
 &lt;p&gt;To setup the CLI, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/cli/authentication/&#34;&gt;authentication documentation&lt;/a&gt;.&lt;/p&gt;
 
 &lt;/div&gt;
 
-
 &lt;h4 id=&#34;request&#34;&gt;Request&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;vela add repo --org github --repo octocat&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h4 id=&#34;response&#34;&gt;Response&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;vela add repo --org github --repo octocat
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;response&#34;&gt;Response&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;id: &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;
 userid: &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;
 org: github
@@ -188,7 +157,8 @@ allowpull: &lt;span style=&#34;color:#204a87&#34;&gt;true&lt;/span&gt;
 allowpush: &lt;span style=&#34;color:#204a87&#34;&gt;true&lt;/span&gt;
 allowdeploy: &lt;span style=&#34;color:#204a87&#34;&gt;false&lt;/span&gt;
 allowtag: &lt;span style=&#34;color:#204a87&#34;&gt;false&lt;/span&gt;
-allowcomment: false&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+allowcomment: &lt;span style=&#34;color:#204a87&#34;&gt;false&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
       </description>
     </item>
     
@@ -201,25 +171,17 @@ allowcomment: false&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
       <description>
         
         
-        
-
-&lt;h2 id=&#34;command&#34;&gt;Command&lt;/h2&gt;
-
+        &lt;h2 id=&#34;command&#34;&gt;Command&lt;/h2&gt;
 &lt;pre&gt;&lt;code&gt;$ vela chown repo &amp;lt;parameters...&amp;gt; &amp;lt;arguments...&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
-
-
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 
 For more information, you can run &lt;code&gt;vela chown repo --help&lt;/code&gt;.
 &lt;/div&gt;
 
-
 &lt;h2 id=&#34;parameters&#34;&gt;Parameters&lt;/h2&gt;
-
 &lt;p&gt;The following parameters are used to configure the command:&lt;/p&gt;
-
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -228,20 +190,17 @@ For more information, you can run &lt;code&gt;vela chown repo --help&lt;/code&gt
 &lt;th&gt;Environment Variables&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;org&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;name of organization for the repository&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_ORG&lt;/code&gt;, &lt;code&gt;REPO_ORG&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;repo&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;name of repository&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_REPO&lt;/code&gt;, &lt;code&gt;REPO_NAME&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;output&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;format the output for the repository&lt;/td&gt;
@@ -251,45 +210,36 @@ For more information, you can run &lt;code&gt;vela chown repo --help&lt;/code&gt
 &lt;/table&gt;
 
 
-
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 
 &lt;p&gt;This command also supports setting the following parameters via a configuration file:&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;org&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;repo&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;output&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;For more information, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/cli/config/&#34;&gt;CLI config documentation&lt;/a&gt;.&lt;/p&gt;
 
 &lt;/div&gt;
 
-
 &lt;h2 id=&#34;permissions&#34;&gt;Permissions&lt;/h2&gt;
-
 &lt;p&gt;COMING SOON!&lt;/p&gt;
-
 &lt;h2 id=&#34;sample&#34;&gt;Sample&lt;/h2&gt;
-
 
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 
 &lt;p&gt;This section assumes you have already installed and setup the CLI.&lt;/p&gt;
-
 &lt;p&gt;To install the CLI, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/cli/install/&#34;&gt;installation documentation&lt;/a&gt;.&lt;/p&gt;
-
 &lt;p&gt;To setup the CLI, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/cli/authentication/&#34;&gt;authentication documentation&lt;/a&gt;.&lt;/p&gt;
 
 &lt;/div&gt;
 
-
 &lt;h4 id=&#34;request&#34;&gt;Request&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;vela chown repo --org github --repo octocat&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h4 id=&#34;response&#34;&gt;Response&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;repo &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;github/octocat&amp;#34;&lt;/span&gt; changed owner&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;vela chown repo --org github --repo octocat
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;response&#34;&gt;Response&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;repo &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;github/octocat&amp;#34;&lt;/span&gt; changed owner
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
       </description>
     </item>
     
@@ -302,25 +252,17 @@ For more information, you can run &lt;code&gt;vela chown repo --help&lt;/code&gt
       <description>
         
         
-        
-
-&lt;h2 id=&#34;command&#34;&gt;Command&lt;/h2&gt;
-
+        &lt;h2 id=&#34;command&#34;&gt;Command&lt;/h2&gt;
 &lt;pre&gt;&lt;code&gt;$ vela get repo &amp;lt;parameters...&amp;gt; &amp;lt;arguments...&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
-
-
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 
 For more information, you can run &lt;code&gt;vela get repo --help&lt;/code&gt;.
 &lt;/div&gt;
 
-
 &lt;h2 id=&#34;parameters&#34;&gt;Parameters&lt;/h2&gt;
-
 &lt;p&gt;The following parameters are used to configure the command:&lt;/p&gt;
-
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -329,32 +271,27 @@ For more information, you can run &lt;code&gt;vela get repo --help&lt;/code&gt;.
 &lt;th&gt;Environment Variables&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;org&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;name of organization for the repository&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_ORG&lt;/code&gt;, &lt;code&gt;REPO_ORG&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;repo&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;name of repository&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_REPO&lt;/code&gt;, &lt;code&gt;REPO_NAME&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;output&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;format the output for the repository&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_OUTPUT&lt;/code&gt;, &lt;code&gt;REPO_OUTPUT&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;page&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;prints a specific page of repositories&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_PAGE&lt;/code&gt;, &lt;code&gt;REPO_PAGE&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;per.page&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;number of repositories to print per page&lt;/td&gt;
@@ -364,46 +301,37 @@ For more information, you can run &lt;code&gt;vela get repo --help&lt;/code&gt;.
 &lt;/table&gt;
 
 
-
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 
 &lt;p&gt;This command also supports setting the following parameters via a configuration file:&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;org&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;repo&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;output&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;For more information, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/cli/config/&#34;&gt;CLI config documentation&lt;/a&gt;.&lt;/p&gt;
 
 &lt;/div&gt;
 
-
 &lt;h2 id=&#34;permissions&#34;&gt;Permissions&lt;/h2&gt;
-
 &lt;p&gt;COMING SOON!&lt;/p&gt;
-
 &lt;h2 id=&#34;sample&#34;&gt;Sample&lt;/h2&gt;
-
 
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 
 &lt;p&gt;This section assumes you have already installed and setup the CLI.&lt;/p&gt;
-
 &lt;p&gt;To install the CLI, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/cli/install/&#34;&gt;installation documentation&lt;/a&gt;.&lt;/p&gt;
-
 &lt;p&gt;To setup the CLI, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/cli/authentication/&#34;&gt;authentication documentation&lt;/a&gt;.&lt;/p&gt;
 
 &lt;/div&gt;
 
-
 &lt;h4 id=&#34;request&#34;&gt;Request&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;vela get repo&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h4 id=&#34;response&#34;&gt;Response&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;vela get repo
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;response&#34;&gt;Response&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;ORG/REPO        STATUS  EVENTS             VISIBILITY  BRANCH
-github/octocat  &lt;span style=&#34;color:#204a87&#34;&gt;true&lt;/span&gt;    push,pull_request  public      master&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+github/octocat  &lt;span style=&#34;color:#204a87&#34;&gt;true&lt;/span&gt;    push,pull_request  public      master
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
       </description>
     </item>
     
@@ -416,25 +344,17 @@ github/octocat  &lt;span style=&#34;color:#204a87&#34;&gt;true&lt;/span&gt;    p
       <description>
         
         
-        
-
-&lt;h2 id=&#34;command&#34;&gt;Command&lt;/h2&gt;
-
+        &lt;h2 id=&#34;command&#34;&gt;Command&lt;/h2&gt;
 &lt;pre&gt;&lt;code&gt;$ vela remove repo &amp;lt;parameters...&amp;gt; &amp;lt;arguments...&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
-
-
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 
 For more information, you can run &lt;code&gt;vela remove repo --help&lt;/code&gt;.
 &lt;/div&gt;
 
-
 &lt;h2 id=&#34;parameters&#34;&gt;Parameters&lt;/h2&gt;
-
 &lt;p&gt;The following parameters are used to configure the command:&lt;/p&gt;
-
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -443,20 +363,17 @@ For more information, you can run &lt;code&gt;vela remove repo --help&lt;/code&g
 &lt;th&gt;Environment Variables&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;org&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;name of organization for the repository&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_ORG&lt;/code&gt;, &lt;code&gt;REPO_ORG&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;repo&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;name of repository&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_REPO&lt;/code&gt;, &lt;code&gt;REPO_NAME&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;output&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;format the output for the repository&lt;/td&gt;
@@ -466,45 +383,36 @@ For more information, you can run &lt;code&gt;vela remove repo --help&lt;/code&g
 &lt;/table&gt;
 
 
-
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 
 &lt;p&gt;This command also supports setting the following parameters via a configuration file:&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;org&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;repo&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;output&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;For more information, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/cli/config/&#34;&gt;CLI config documentation&lt;/a&gt;.&lt;/p&gt;
 
 &lt;/div&gt;
 
-
 &lt;h2 id=&#34;permissions&#34;&gt;Permissions&lt;/h2&gt;
-
 &lt;p&gt;COMING SOON!&lt;/p&gt;
-
 &lt;h2 id=&#34;sample&#34;&gt;Sample&lt;/h2&gt;
-
 
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 
 &lt;p&gt;This section assumes you have already installed and setup the CLI.&lt;/p&gt;
-
 &lt;p&gt;To install the CLI, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/cli/install/&#34;&gt;installation documentation&lt;/a&gt;.&lt;/p&gt;
-
 &lt;p&gt;To setup the CLI, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/cli/authentication/&#34;&gt;authentication documentation&lt;/a&gt;.&lt;/p&gt;
 
 &lt;/div&gt;
 
-
 &lt;h4 id=&#34;request&#34;&gt;Request&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;vela remove repo --org github --repo octocat&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h4 id=&#34;response&#34;&gt;Response&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;repo &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;github/octocat&amp;#34;&lt;/span&gt; was deleted&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;vela remove repo --org github --repo octocat
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;response&#34;&gt;Response&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;repo &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;github/octocat&amp;#34;&lt;/span&gt; was deleted
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
       </description>
     </item>
     
@@ -517,25 +425,17 @@ For more information, you can run &lt;code&gt;vela remove repo --help&lt;/code&g
       <description>
         
         
-        
-
-&lt;h2 id=&#34;command&#34;&gt;Command&lt;/h2&gt;
-
+        &lt;h2 id=&#34;command&#34;&gt;Command&lt;/h2&gt;
 &lt;pre&gt;&lt;code&gt;$ vela repair repo &amp;lt;parameters...&amp;gt; &amp;lt;arguments...&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
-
-
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 
 For more information, you can run &lt;code&gt;vela repair repo --help&lt;/code&gt;.
 &lt;/div&gt;
 
-
 &lt;h2 id=&#34;parameters&#34;&gt;Parameters&lt;/h2&gt;
-
 &lt;p&gt;The following parameters are used to configure the command:&lt;/p&gt;
-
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -544,20 +444,17 @@ For more information, you can run &lt;code&gt;vela repair repo --help&lt;/code&g
 &lt;th&gt;Environment Variables&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;org&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;name of organization for the repository&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_ORG&lt;/code&gt;, &lt;code&gt;REPO_ORG&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;repo&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;name of repository&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_REPO&lt;/code&gt;, &lt;code&gt;REPO_NAME&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;output&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;format the output for the repository&lt;/td&gt;
@@ -567,45 +464,36 @@ For more information, you can run &lt;code&gt;vela repair repo --help&lt;/code&g
 &lt;/table&gt;
 
 
-
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 
 &lt;p&gt;This command also supports setting the following parameters via a configuration file:&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;org&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;repo&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;output&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;For more information, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/cli/config/&#34;&gt;CLI config documentation&lt;/a&gt;.&lt;/p&gt;
 
 &lt;/div&gt;
 
-
 &lt;h2 id=&#34;permissions&#34;&gt;Permissions&lt;/h2&gt;
-
 &lt;p&gt;COMING SOON!&lt;/p&gt;
-
 &lt;h2 id=&#34;sample&#34;&gt;Sample&lt;/h2&gt;
-
 
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 
 &lt;p&gt;This section assumes you have already installed and setup the CLI.&lt;/p&gt;
-
 &lt;p&gt;To install the CLI, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/cli/install/&#34;&gt;installation documentation&lt;/a&gt;.&lt;/p&gt;
-
 &lt;p&gt;To setup the CLI, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/cli/authentication/&#34;&gt;authentication documentation&lt;/a&gt;.&lt;/p&gt;
 
 &lt;/div&gt;
 
-
 &lt;h4 id=&#34;request&#34;&gt;Request&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;vela repair repo --org github --repo octocat&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h4 id=&#34;response&#34;&gt;Response&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;repo &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;github/octocat&amp;#34;&lt;/span&gt; repaired&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;vela repair repo --org github --repo octocat
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;response&#34;&gt;Response&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;repo &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;github/octocat&amp;#34;&lt;/span&gt; repaired
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
       </description>
     </item>
     
@@ -618,25 +506,17 @@ For more information, you can run &lt;code&gt;vela repair repo --help&lt;/code&g
       <description>
         
         
-        
-
-&lt;h2 id=&#34;command&#34;&gt;Command&lt;/h2&gt;
-
+        &lt;h2 id=&#34;command&#34;&gt;Command&lt;/h2&gt;
 &lt;pre&gt;&lt;code&gt;$ vela update repo &amp;lt;parameters...&amp;gt; &amp;lt;arguments...&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
-
-
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 
 For more information, you can run &lt;code&gt;vela update repo --help&lt;/code&gt;.
 &lt;/div&gt;
 
-
 &lt;h2 id=&#34;parameters&#34;&gt;Parameters&lt;/h2&gt;
-
 &lt;p&gt;The following parameters are used to configure the command:&lt;/p&gt;
-
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -645,80 +525,67 @@ For more information, you can run &lt;code&gt;vela update repo --help&lt;/code&g
 &lt;th&gt;Environment Variables&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;org&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;name of organization for the repository&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_ORG&lt;/code&gt;, &lt;code&gt;REPO_ORG&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;repo&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;name of repository&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_REPO&lt;/code&gt;, &lt;code&gt;REPO_NAME&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;link&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;full URL for the repository&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_LINK&lt;/code&gt;, &lt;code&gt;REPO_LINK&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;branch&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;default branch for the repository&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_BRANCH&lt;/code&gt;, &lt;code&gt;REPO_BRANCH&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;clone&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;clone URL for the repository&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_CLONE&lt;/code&gt;, &lt;code&gt;REPO_CLONE&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;visibility&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;access level required to view the repository&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_VISIBILITY&lt;/code&gt;, &lt;code&gt;REPO_VISIBILITY&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;timeout&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;max time allowed per build&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_TIMEOUT&lt;/code&gt;, &lt;code&gt;REPO_TIMEOUT&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;counter&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;set a value for a new build number&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_COUNTER&lt;/code&gt;, &lt;code&gt;REPO_COUNTER&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;private&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;disables public access to the repository&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_PRIVATE&lt;/code&gt;, &lt;code&gt;REPO_PRIVATE&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;trusted&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;elevates permissions for builds for the repository&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_TRUSTED&lt;/code&gt;, &lt;code&gt;REPO_TRUSTED&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;active&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;enables/disables the repository&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_ACTIVE&lt;/code&gt;, &lt;code&gt;REPO_ACTIVE&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;event&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;events to trigger builds for the repository&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_EVENTS&lt;/code&gt;, &lt;code&gt;REPO_EVENTS&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;output&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;format the output for the repository&lt;/td&gt;
@@ -728,44 +595,34 @@ For more information, you can run &lt;code&gt;vela update repo --help&lt;/code&g
 &lt;/table&gt;
 
 
-
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 
 &lt;p&gt;This command also supports setting the following parameters via a configuration file:&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;org&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;repo&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;output&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;For more information, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/cli/config/&#34;&gt;CLI config documentation&lt;/a&gt;.&lt;/p&gt;
 
 &lt;/div&gt;
 
-
 &lt;h2 id=&#34;permissions&#34;&gt;Permissions&lt;/h2&gt;
-
 &lt;p&gt;COMING SOON!&lt;/p&gt;
-
 &lt;h2 id=&#34;sample&#34;&gt;Sample&lt;/h2&gt;
-
 
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 
 &lt;p&gt;This section assumes you have already installed and setup the CLI.&lt;/p&gt;
-
 &lt;p&gt;To install the CLI, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/cli/install/&#34;&gt;installation documentation&lt;/a&gt;.&lt;/p&gt;
-
 &lt;p&gt;To setup the CLI, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/cli/authentication/&#34;&gt;authentication documentation&lt;/a&gt;.&lt;/p&gt;
 
 &lt;/div&gt;
 
-
 &lt;h4 id=&#34;request&#34;&gt;Request&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;vela update repo --org github --repo octocat --event tag&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h4 id=&#34;response&#34;&gt;Response&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;vela update repo --org github --repo octocat --event tag
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;response&#34;&gt;Response&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;id: &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;
 userid: &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;
 org: github
@@ -784,7 +641,8 @@ allowpull: &lt;span style=&#34;color:#204a87&#34;&gt;true&lt;/span&gt;
 allowpush: &lt;span style=&#34;color:#204a87&#34;&gt;true&lt;/span&gt;
 allowdeploy: &lt;span style=&#34;color:#204a87&#34;&gt;false&lt;/span&gt;
 allowtag: &lt;span style=&#34;color:#204a87&#34;&gt;true&lt;/span&gt;
-allowcomment: false&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+allowcomment: &lt;span style=&#34;color:#204a87&#34;&gt;false&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
       </description>
     </item>
     
@@ -797,25 +655,17 @@ allowcomment: false&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
       <description>
         
         
-        
-
-&lt;h2 id=&#34;command&#34;&gt;Command&lt;/h2&gt;
-
+        &lt;h2 id=&#34;command&#34;&gt;Command&lt;/h2&gt;
 &lt;pre&gt;&lt;code&gt;$ vela view repo &amp;lt;parameters...&amp;gt; &amp;lt;arguments...&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
-
-
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 
 For more information, you can run &lt;code&gt;vela view repo --help&lt;/code&gt;.
 &lt;/div&gt;
 
-
 &lt;h2 id=&#34;parameters&#34;&gt;Parameters&lt;/h2&gt;
-
 &lt;p&gt;The following parameters are used to configure the command:&lt;/p&gt;
-
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -824,20 +674,17 @@ For more information, you can run &lt;code&gt;vela view repo --help&lt;/code&gt;
 &lt;th&gt;Environment Variables&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;org&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;name of organization for the repository&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_ORG&lt;/code&gt;, &lt;code&gt;REPO_ORG&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;repo&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;name of repository&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_REPO&lt;/code&gt;, &lt;code&gt;REPO_NAME&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;output&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;format the output for the repository&lt;/td&gt;
@@ -847,44 +694,34 @@ For more information, you can run &lt;code&gt;vela view repo --help&lt;/code&gt;
 &lt;/table&gt;
 
 
-
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 
 &lt;p&gt;This command also supports setting the following parameters via a configuration file:&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;org&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;repo&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;output&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;For more information, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/cli/config/&#34;&gt;CLI config documentation&lt;/a&gt;.&lt;/p&gt;
 
 &lt;/div&gt;
 
-
 &lt;h2 id=&#34;permissions&#34;&gt;Permissions&lt;/h2&gt;
-
 &lt;p&gt;COMING SOON!&lt;/p&gt;
-
 &lt;h2 id=&#34;sample&#34;&gt;Sample&lt;/h2&gt;
-
 
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 
 &lt;p&gt;This section assumes you have already installed and setup the CLI.&lt;/p&gt;
-
 &lt;p&gt;To install the CLI, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/cli/install/&#34;&gt;installation documentation&lt;/a&gt;.&lt;/p&gt;
-
 &lt;p&gt;To setup the CLI, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/cli/authentication/&#34;&gt;authentication documentation&lt;/a&gt;.&lt;/p&gt;
 
 &lt;/div&gt;
 
-
 &lt;h4 id=&#34;request&#34;&gt;Request&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;vela view repo --org github --repo octocat&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h4 id=&#34;response&#34;&gt;Response&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;vela view repo --org github --repo octocat
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;response&#34;&gt;Response&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;id: &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;
 userid: &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;
 org: github
@@ -903,7 +740,8 @@ allowpull: &lt;span style=&#34;color:#204a87&#34;&gt;true&lt;/span&gt;
 allowpush: &lt;span style=&#34;color:#204a87&#34;&gt;true&lt;/span&gt;
 allowdeploy: &lt;span style=&#34;color:#204a87&#34;&gt;false&lt;/span&gt;
 allowtag: &lt;span style=&#34;color:#204a87&#34;&gt;false&lt;/span&gt;
-allowcomment: false&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+allowcomment: &lt;span style=&#34;color:#204a87&#34;&gt;false&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
       </description>
     </item>
     

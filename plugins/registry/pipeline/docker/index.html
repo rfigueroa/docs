@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.59.1" />
+<meta name="generator" content="Hugo 0.79.0" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -28,7 +28,7 @@ Usage  NOTE:
 Users should refrain from using latest as the tag for the Docker image.
 It is recommended to use a semantically versioned tag instead.
  Samples of building and publishing an image:
-steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparameters:registry:index.docker.iorepo:octocat/hello-worldtags:[latest]steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparameters:registry:index.docker.iotags:[index.docker.io/octocat/hello-world:latest]  NOTE: The two above samples are functionally equivalent.
+steps:- name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparameters:registry:index.docker.iorepo:octocat/hello-worldtags:[latest ]steps:- name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparameters:registry:index.docker.iotags:[index.docker.io/octocat/hello-world:latest ] NOTE: The two above samples are functionally equivalent.
  Sample of building an image without publishing:" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://go-vela.github.io/docs/plugins/registry/pipeline/docker/" />
@@ -41,12 +41,10 @@ Usage  NOTE:
 Users should refrain from using latest as the tag for the Docker image.
 It is recommended to use a semantically versioned tag instead.
  Samples of building and publishing an image:
-steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparameters:registry:index.docker.iorepo:octocat/hello-worldtags:[latest]steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparameters:registry:index.docker.iotags:[index.docker.io/octocat/hello-world:latest]  NOTE: The two above samples are functionally equivalent.
+steps:- name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparameters:registry:index.docker.iorepo:octocat/hello-worldtags:[latest ]steps:- name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparameters:registry:index.docker.iotags:[index.docker.io/octocat/hello-world:latest ] NOTE: The two above samples are functionally equivalent.
  Sample of building an image without publishing:">
-
-
 <meta itemprop="dateModified" content="2021-01-13T15:05:51-06:00" />
-<meta itemprop="wordCount" content="1220">
+<meta itemprop="wordCount" content="1224">
 
 
 
@@ -60,7 +58,7 @@ Usage  NOTE:
 Users should refrain from using latest as the tag for the Docker image.
 It is recommended to use a semantically versioned tag instead.
  Samples of building and publishing an image:
-steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparameters:registry:index.docker.iorepo:octocat/hello-worldtags:[latest]steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparameters:registry:index.docker.iotags:[index.docker.io/octocat/hello-world:latest]  NOTE: The two above samples are functionally equivalent.
+steps:- name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparameters:registry:index.docker.iorepo:octocat/hello-worldtags:[latest ]steps:- name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparameters:registry:index.docker.iotags:[index.docker.io/octocat/hello-world:latest ] NOTE: The two above samples are functionally equivalent.
  Sample of building an image without publishing:"/>
 
 
@@ -69,8 +67,8 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
 
 
 
-<link rel="preload" href="/docs/scss/main.min.70d8bad3cbfd44b25762dfb0cadb082e7e2c882cbc3cb7ff0b318df81507856d.css" as="style">
-<link href="/docs/scss/main.min.70d8bad3cbfd44b25762dfb0cadb082e7e2c882cbc3cb7ff0b318df81507856d.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/docs/scss/main.min.a9587066c0180698d994bba5dbdd49fa05ee0044b1678d06704a7a605676b1df.css" as="style">
+<link href="/docs/scss/main.min.a9587066c0180698d994bba5dbdd49fa05ee0044b1678d06704a7a605676b1df.css" rel="stylesheet" integrity="">
 
 <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
@@ -85,7 +83,7 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
       
 <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
         <a class="navbar-brand" href="/docs/">
-		<span class="navbar-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1500"><title>vela-inverse</title><polygon points="1477.22 329.54 1338.11 219.91 1349.56 43.16 1202.3 141.58 1037.73 76.07 1085.84 246.54 972.68 382.81 1149.67 389.74 1244.3 539.46 1305.58 373.27 1477.22 329.54" style="fill:#9e6bae"/><path d="M1174.75 635.12 757.57 1357.69a3.47 3.47.0 0 1-6 0L125.38 273.13a3.48 3.48.0 0 1 3-5.22H925.24l39.14-47.13L950.19 170.5H128.39A100.9 100.9.0 0 0 41 321.84L667.19 1406.4a100.88 100.88.0 0 0 174.74.0l391.61-678.27z" style="fill:#34c6f4"/><polygon points="1087.64 497.29 1038.27 495.36 754.56 986.75 395.9 365.54 288.13 365.54 754.56 1173.42 1117.58 544.66 1087.64 497.29" style="fill:#fff"/></svg></span><span class="text-uppercase font-weight-bold">Vela</span>
+		<span class="navbar-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1500"><title>vela-inverse</title><polygon points="1477.22 329.54 1338.11 219.91 1349.56 43.16 1202.3 141.58 1037.73 76.07 1085.84 246.54 972.68 382.81 1149.67 389.74 1244.3 539.46 1305.58 373.27 1477.22 329.54" style="fill:#9e6bae"/><path d="M1174.75 635.12 757.57 1357.69a3.47 3.47.0 01-6 0L125.38 273.13a3.48 3.48.0 013-5.22H925.24l39.14-47.13L950.19 170.5H128.39A100.9 100.9.0 0041 321.84L667.19 1406.4a100.88 100.88.0 00174.74.0l391.61-678.27z" style="fill:#34c6f4"/><polygon points="1087.64 497.29 1038.27 495.36 754.56 986.75 395.9 365.54 288.13 365.54 754.56 1173.42 1117.58 544.66 1087.64 497.29" style="fill:#fff"/></svg></span><span class="text-uppercase font-weight-bold">Vela</span>
 	</a>
 	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
 		<ul class="navbar-nav mt-2 mt-lg-0">
@@ -108,7 +106,7 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
 				
 				
 				
-				<a class="nav-link" href="/docs/concepts/" ><span>Concepts</span></a>
+				<a class="nav-link" href="/docs/tour/" ><span>Tour</span></a>
 			</li>
 			
 			<li class="nav-item mr-4 mb-2 mb-lg-0">
@@ -362,7 +360,7 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
     <a  href="/docs/plugins/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Plugins</a>
   </li>
   <ul>
-    <li class="collapse show" id="docs-plugins">
+    <li class="collapse show" id="docsplugins">
       
       
       
@@ -379,7 +377,7 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
     <a  href="/docs/plugins/registry/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Registry</a>
   </li>
   <ul>
-    <li class="collapse show" id="docs-plugins-registry">
+    <li class="collapse show" id="docspluginsregistry">
       
       
       
@@ -396,68 +394,68 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
     <a  href="/docs/plugins/registry/pipeline/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Pipeline</a>
   </li>
   <ul>
-    <li class="collapse show" id="docs-plugins-registry-pipeline">
+    <li class="collapse show" id="docspluginsregistrypipeline">
       
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-registry-pipeline-artifactory" href="/docs/plugins/registry/pipeline/artifactory/">Artifactory</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginsregistrypipelineartifactory" href="/docs/plugins/registry/pipeline/artifactory/">Artifactory</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-registry-pipeline-captains-log" href="/docs/plugins/registry/pipeline/captains_log/">Captain&#39;s Log</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginsregistrypipelinecaptains_log" href="/docs/plugins/registry/pipeline/captains_log/">Captain&#39;s Log</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docs-plugins-registry-pipeline-docker" href="/docs/plugins/registry/pipeline/docker/">Docker</a>
+      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docspluginsregistrypipelinedocker" href="/docs/plugins/registry/pipeline/docker/">Docker</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-registry-pipeline-downstream" href="/docs/plugins/registry/pipeline/downstream/">Downstream</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginsregistrypipelinedownstream" href="/docs/plugins/registry/pipeline/downstream/">Downstream</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-registry-pipeline-git" href="/docs/plugins/registry/pipeline/git/">Git</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginsregistrypipelinegit" href="/docs/plugins/registry/pipeline/git/">Git</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-registry-pipeline-kaniko" href="/docs/plugins/registry/pipeline/kaniko/">Kaniko</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginsregistrypipelinekaniko" href="/docs/plugins/registry/pipeline/kaniko/">Kaniko</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-registry-pipeline-kubernetes" href="/docs/plugins/registry/pipeline/kubernetes/">Kubernetes</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginsregistrypipelinekubernetes" href="/docs/plugins/registry/pipeline/kubernetes/">Kubernetes</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-registry-pipeline-makisu" href="/docs/plugins/registry/pipeline/makisu/">Makisu</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginsregistrypipelinemakisu" href="/docs/plugins/registry/pipeline/makisu/">Makisu</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-registry-pipeline-s3-cache" href="/docs/plugins/registry/pipeline/s3_cache/">S3 Cache</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginsregistrypipelines3_cache" href="/docs/plugins/registry/pipeline/s3_cache/">S3 Cache</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-registry-pipeline-terraform" href="/docs/plugins/registry/pipeline/terraform/">Terraform</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginsregistrypipelineterraform" href="/docs/plugins/registry/pipeline/terraform/">Terraform</a>
       
       
     </li>
@@ -479,14 +477,14 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
     <a  href="/docs/plugins/registry/secret/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Secret</a>
   </li>
   <ul>
-    <li class="collapse " id="docs-plugins-registry-secret">
+    <li class="collapse " id="docspluginsregistrysecret">
       
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-registry-secret-vault" href="/docs/plugins/registry/secret/vault/">Vault</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginsregistrysecretvault" href="/docs/plugins/registry/secret/vault/">Vault</a>
       
       
     </li>
@@ -514,38 +512,38 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
     <a  href="/docs/plugins/tutorials/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Tutorials</a>
   </li>
   <ul>
-    <li class="collapse " id="docs-plugins-tutorials">
+    <li class="collapse " id="docspluginstutorials">
       
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-tutorials-bash" href="/docs/plugins/tutorials/bash/">Bash</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginstutorialsbash" href="/docs/plugins/tutorials/bash/">Bash</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-tutorials-go" href="/docs/plugins/tutorials/go/">Go</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginstutorialsgo" href="/docs/plugins/tutorials/go/">Go</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-tutorials-node" href="/docs/plugins/tutorials/node/">Node.js</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginstutorialsnode" href="/docs/plugins/tutorials/node/">Node.js</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-tutorials-python" href="/docs/plugins/tutorials/python/">Python</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginstutorialspython" href="/docs/plugins/tutorials/python/">Python</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-tutorials-ruby" href="/docs/plugins/tutorials/ruby/">Ruby</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginstutorialsruby" href="/docs/plugins/tutorials/ruby/">Ruby</a>
       
       
     </li>
@@ -579,6 +577,8 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
 <a href="https://github.com/go-vela/docs/issues/new?title=Docker" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
 
 </div>
+
+
 
 
 
@@ -636,42 +636,34 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
 	<h1>Docker</h1>
 	
 	<h2 id="description">Description</h2>
-
-<p>This plugin enables you to build and publish <a href="https://www.docker.com/" target="_blank">Docker</a> images in a Vela pipeline.</p>
-
-<p>Source Code: <a href="https://github.com/go-vela/vela-docker" target="_blank">https://github.com/go-vela/vela-docker</a></p>
-
-<p>Registry: <a href="https://hub.docker.com/r/target/vela-docker" target="_blank">https://hub.docker.com/r/target/vela-docker</a></p>
-
+<p>This plugin enables you to build and publish <a href="https://www.docker.com/">Docker</a> images in a Vela pipeline.</p>
+<p>Source Code: <a href="https://github.com/go-vela/vela-docker">https://github.com/go-vela/vela-docker</a></p>
+<p>Registry: <a href="https://hub.docker.com/r/target/vela-docker">https://hub.docker.com/r/target/vela-docker</a></p>
 <h2 id="usage">Usage</h2>
-
 <blockquote>
 <p><strong>NOTE:</strong></p>
-
 <p>Users should refrain from using latest as the tag for the Docker image.</p>
-
 <p>It is recommended to use a semantically versioned tag instead.</p>
 </blockquote>
-
 <p>Samples of building and publishing an image:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">steps<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span>-<span style="color:#f8f8f8;text-decoration:underline"> </span>name<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>publish_hello-world<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>image<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>target/vela-docker<span style="color:#000;font-weight:bold">:</span>latest<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>pull<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>always<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>parameters<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span>registry<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>index.docker.io<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span>repo<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>octocat/hello-world<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span>tags<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">[</span><span style="color:#f8f8f8;text-decoration:underline"> </span>latest<span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">]</span></code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">steps<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span>-<span style="color:#f8f8f8;text-decoration:underline"> </span>name<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>publish_hello-world<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>image<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>target/vela-docker<span style="color:#000;font-weight:bold">:</span>latest<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>pull<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>always<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>parameters<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span>registry<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>index.docker.io<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span>tags<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">[</span><span style="color:#f8f8f8;text-decoration:underline"> </span>index.docker.io/octocat/hello-world<span style="color:#000;font-weight:bold">:</span>latest<span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">]</span></code></pre></div>
-<blockquote>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">steps</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span>- <span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">publish_hello-world</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">image</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">target/vela-docker:latest</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">pull</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">always</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">parameters</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">registry</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">index.docker.io</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">repo</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">octocat/hello-world</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">tags</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">[</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">latest ]</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">steps</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span>- <span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">publish_hello-world</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">image</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">target/vela-docker:latest</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">pull</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">always</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">parameters</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">registry</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">index.docker.io</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">tags</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">[</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">index.docker.io/octocat/hello-world:latest ]</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></code></pre></div><blockquote>
 <p><strong>NOTE:</strong> The two above samples are functionally equivalent.</p>
 </blockquote>
-
 <p>Sample of building an image without publishing:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: publish hello world
@@ -682,8 +674,7 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
 </span><span style="color:#00a000"></span>      registry: index.docker.io
       repo: octocat/hello-world
       tags: [ latest ]
-</code></pre></div>
-<p>Sample of building and publishing an image with custom tags:</p>
+</code></pre></div><p>Sample of building and publishing an image with custom tags:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: publish hello world
     image: target/vela-docker:latest
@@ -696,8 +687,7 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
 </span><span style="color:#00a000">+       - latest
 </span><span style="color:#00a000">+       - octocat/hello-world:1
 </span><span style="color:#00a000">+       - index.docker.io/octocat/hello-world:foobar
-</span></code></pre></div>
-<p>Sample of building and publishing an image with build arguments:</p>
+</span></code></pre></div><p>Sample of building and publishing an image with build arguments:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: publish hello world
     image: target/vela-docker:latest
@@ -708,8 +698,7 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
 </span><span style="color:#00a000"></span>      registry: index.docker.io
       repo: octocat/hello-world
       tags: [ latest ]
-</code></pre></div>
-<p>Sample of building and publishing an image with image caching:</p>
+</code></pre></div><p>Sample of building and publishing an image with image caching:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: publish_hello-world
     image: target/vela-docker:latest
@@ -719,8 +708,7 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
 </span><span style="color:#00a000"></span>      registry: index.docker.io
       repo: octocat/hello-world
       tags: [ latest ]
-</code></pre></div>
-<p>Sample of building and publishing with custom daemon settings:</p>
+</code></pre></div><p>Sample of building and publishing with custom daemon settings:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: publish_hello-world
     image: target/vela-docker:latest
@@ -731,16 +719,12 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
 </span><span style="color:#00a000"></span>      registry: index.docker.io
       repo: octocat/hello-world
       tags: [ latest ]
-</code></pre></div>
-<h2 id="secrets">Secrets</h2>
-
+</code></pre></div><h2 id="secrets">Secrets</h2>
 <blockquote>
 <p><strong>NOTE:</strong> Users should refrain from configuring sensitive information in your pipeline in plain text.</p>
 </blockquote>
-
 <h3 id="internal">Internal</h3>
-
-<p>Users can use <a href="https://go-vela.github.io/docs/concepts/pipeline/secrets/" target="_blank">Vela internal secrets</a> to substitute these sensitive values at runtime:</p>
+<p>Users can use <a href="https://go-vela.github.io/docs/concepts/pipeline/secrets/">Vela internal secrets</a> to substitute these sensitive values at runtime:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: publish_hello-world
     image: target/vela-docker:latest
@@ -752,20 +736,15 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
       tags: [ latest ]
 <span style="color:#a40000">-     username: octocat
 </span><span style="color:#a40000">-     password: superSecretPassword
-</span></code></pre></div>
-<blockquote>
+</span></code></pre></div><blockquote>
 <p>This example will add the secrets to the <code>publish_hello-world</code> step as environment variables:</p>
-
-<p><ul>
+<ul>
 <li><code>DOCKER_USERNAME=&lt;value&gt;</code></li>
 <li><code>DOCKER_PASSWORD=&lt;value&gt;</code></li>
 </ul>
-</blockquote></p>
-
+</blockquote>
 <h3 id="external">External</h3>
-
 <p>The plugin accepts the following files for authentication:</p>
-
 <table>
 <thead>
 <tr>
@@ -773,21 +752,18 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
 <th>Volume Configuration</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><code>password</code></td>
 <td><code>/vela/parameters/docker/password</code>, <code>/vela/secrets/docker/password</code></td>
 </tr>
-
 <tr>
 <td><code>username</code></td>
 <td><code>/vela/parameters/docker/username</code>, <code>/vela/secrets/docker/username</code></td>
 </tr>
 </tbody>
 </table>
-
-<p>Users can use <a href="https://go-vela.github.io/docs/concepts/pipeline/secrets/origin/" target="_blank">Vela external secrets</a> to substitute these sensitive values at runtime:</p>
+<p>Users can use <a href="https://go-vela.github.io/docs/concepts/pipeline/secrets/origin/">Vela external secrets</a> to substitute these sensitive values at runtime:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: publish_hello-world
     image: target/vela-docker:latest
@@ -798,25 +774,18 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
       tags: [ latest ]
 <span style="color:#a40000">-     username: octocat
 </span><span style="color:#a40000">-     password: superSecretPassword
-</span></code></pre></div>
-<blockquote>
+</span></code></pre></div><blockquote>
 <p>This example will read the secret values in the volume stored at <code>/vela/secrets/</code></p>
-
+</blockquote>
 <h2 id="parameters">Parameters</h2>
-
+<blockquote>
 <p><strong>NOTE:</strong></p>
-
 <p>The plugin supports reading all parameters via environment variables or files.</p>
-
 <p>Any values set from a file take precedence over values set from the environment.</p>
-
-<p>By default <a href="https://docs.docker.com/develop/develop-images/build_enhancements/" target="_blank">build kit</a> is on; it can be turned off by setting <code>DOCKER_BUILDKIT=0</code> in the environment.</p>
-
+<p>By default <a href="https://docs.docker.com/develop/develop-images/build_enhancements/">build kit</a> is on; it can be turned off by setting <code>DOCKER_BUILDKIT=0</code> in the environment.</p>
 <p>The <code>key.key</code> syntax signifies a new yaml object within the definition.</p>
 </blockquote>
-
 <p>The following parameters are used to configure the image:</p>
-
 <table>
 <thead>
 <tr>
@@ -827,7 +796,6 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
 <th>Environment Variables</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><code>add_hosts</code></td>
@@ -836,7 +804,6 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
 <td>N/A</td>
 <td><code>PARAMETER_ADD_HOSTS</code><br><code>DOCKER_ADD_HOSTS</code></td>
 </tr>
-
 <tr>
 <td><code>build_args</code></td>
 <td>set variables to pass to the image at build-time</td>
@@ -844,7 +811,6 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
 <td>N/A</td>
 <td><code>PARAMETER_BUILD_ARGS</code><br><code>DOCKER_BUILD_ARGS</code></td>
 </tr>
-
 <tr>
 <td><code>cache_from</code></td>
 <td>set of images to consider as cache sources</td>
@@ -852,7 +818,6 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
 <td>N/A</td>
 <td><code>PARAMETER_CACHE_FROM</code><br><code>DOCKER_CACHE_FROM</code></td>
 </tr>
-
 <tr>
 <td><code>cgroup_parent</code></td>
 <td>set a parent cgroup for the container</td>
@@ -860,7 +825,6 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
 <td>N/A</td>
 <td><code>PARAMETER_CGROUP_PARENT</code><br><code>DOCKER_CGROUP_PARENT</code></td>
 </tr>
-
 <tr>
 <td><code>compress</code></td>
 <td>enable compressing the build context using gzip</td>
@@ -868,7 +832,6 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
 <td><code>false</code></td>
 <td><code>PARAMETER_COMPRESS</code><br><code>DOCKER_COMPRESS</code></td>
 </tr>
-
 <tr>
 <td><code>context</code></td>
 <td>set of files and/or directory to build the image from</td>
@@ -876,7 +839,6 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
 <td><code>.</code></td>
 <td><code>PARAMETER_CONTEXT</code><br><code>DOCKER_CONTEXT</code></td>
 </tr>
-
 <tr>
 <td><code>cpu</code></td>
 <td>set the cpu parameter, see <a href="#cpu">cpu</a> settings below</td>
@@ -884,7 +846,6 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
 <td>N/A</td>
 <td><code>PARAMETER_CPU</code><br><code>DOCKER_CPU</code></td>
 </tr>
-
 <tr>
 <td><code>daemon</code></td>
 <td>set the daemon parameter, see <a href="#daemon">daemon</a> settings below</td>
@@ -892,7 +853,6 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
 <td>N/A</td>
 <td><code>PARAMETER_DAEMON</code><br><code>DOCKER_DAEMON</code></td>
 </tr>
-
 <tr>
 <td><code>disable_content_trust</code></td>
 <td>enable skipping verification of the image</td>
@@ -900,7 +860,6 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
 <td><code>true</code></td>
 <td><code>PARAMETER_DISABLE_CONTENT_TRUST</code><br><code>DOCKER_DISABLE_CONTENT_TRUST</code></td>
 </tr>
-
 <tr>
 <td><code>dry_run</code></td>
 <td>enable building the image without publishing</td>
@@ -908,7 +867,6 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
 <td><code>false</code></td>
 <td><code>PARAMETER_DRY_RUN</code><br><code>DOCKER_DRY_RUN</code></td>
 </tr>
-
 <tr>
 <td><code>file</code></td>
 <td>set the name of the Dockerfile</td>
@@ -916,7 +874,6 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
 <td>N/A</td>
 <td><code>PARAMETER_FILE</code><br><code>DOCKER_FILE</code></td>
 </tr>
-
 <tr>
 <td><code>force_rm</code></td>
 <td>enable always removing the intermediate containers after a successful build</td>
@@ -924,7 +881,6 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
 <td><code>false</code></td>
 <td><code>PARAMETER_FORCE_RM</code><br><code>DOCKER_FORCE_RM</code></td>
 </tr>
-
 <tr>
 <td><code>image_id_file</code></td>
 <td>set the file to write the image ID to</td>
@@ -932,7 +888,6 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
 <td>N/A</td>
 <td><code>PARAMETER_IMAGE_ID_FILE</code><br><code>DOCKER_IMAGE_ID_FILE</code></td>
 </tr>
-
 <tr>
 <td><code>isolation</code></td>
 <td>set container isolation technology</td>
@@ -940,7 +895,6 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
 <td>N/A</td>
 <td><code>PARAMETER_ISOLATION</code><br><code>DOCKER_ISOLATION</code></td>
 </tr>
-
 <tr>
 <td><code>labels</code></td>
 <td>set metadata for an image</td>
@@ -948,7 +902,6 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
 <td>N/A</td>
 <td><code>PARAMETER_LABELS</code><br><code>DOCKER_LABELS</code></td>
 </tr>
-
 <tr>
 <td><code>log_level</code></td>
 <td>set the log level for the plugin</td>
@@ -956,7 +909,6 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
 <td><code>info</code></td>
 <td><code>PARAMETER_LOG_LEVEL</code><br><code>DOCKER_LOG_LEVEL</code></td>
 </tr>
-
 <tr>
 <td><code>memory</code></td>
 <td>set memory limit</td>
@@ -964,7 +916,6 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
 <td>N/A</td>
 <td><code>PARAMETER_MEMORY</code><br><code>DOCKER_MEMORY</code></td>
 </tr>
-
 <tr>
 <td><code>memory_swaps</code></td>
 <td>set the swap limit equal to memory plus swap: &lsquo;-1&rsquo; to enable unlimited swap</td>
@@ -972,7 +923,6 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
 <td>N/A</td>
 <td><code>PARAMETER_MEMORY_SWAPS</code><br><code>DOCKER_MEMORY_SWAPS</code></td>
 </tr>
-
 <tr>
 <td><code>network</code></td>
 <td>set the networking mode for the RUN instructions during build</td>
@@ -980,7 +930,6 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
 <td>N/A</td>
 <td><code>PARAMETER_NETWORK</code><br><code>DOCKER_NETWORK</code></td>
 </tr>
-
 <tr>
 <td><code>no_cache</code></td>
 <td>disable caching when building the image</td>
@@ -988,7 +937,6 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
 <td><code>false</code></td>
 <td><code>PARAMETER_NO_CACHE</code><br><code>DOCKER_NO_CACHE</code></td>
 </tr>
-
 <tr>
 <td><code>output</code></td>
 <td>set the output destination - format (type=local,dest=path)</td>
@@ -996,7 +944,6 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
 <td>N/A</td>
 <td><code>PARAMETER_OUTPUTS</code><br><code>DOCKER_OUTPUTS</code></td>
 </tr>
-
 <tr>
 <td><code>password</code></td>
 <td>set password for communication with the registry</td>
@@ -1004,7 +951,6 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
 <td>N/A</td>
 <td><code>PARAMETER_PASSWORD</code><br><code>DOCKER_PASSWORD</code></td>
 </tr>
-
 <tr>
 <td><code>platform</code></td>
 <td>set a platform if server is multi-platform capable</td>
@@ -1012,7 +958,6 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
 <td>N/A</td>
 <td><code>PARAMETER_PLATFORM</code><br><code>DOCKER_PLATFORM</code></td>
 </tr>
-
 <tr>
 <td><code>progress</code></td>
 <td>set type of progress output - options (auto|plain|tty)</td>
@@ -1020,7 +965,6 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
 <td>N/A</td>
 <td><code>PARAMETER_PROGRESS</code><br><code>DOCKER_PROGRESS</code></td>
 </tr>
-
 <tr>
 <td><code>pull</code></td>
 <td>enable always attempting to pull a newer version of the image</td>
@@ -1028,7 +972,6 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
 <td><code>false</code></td>
 <td><code>PARAMETER_PULL</code><br><code>DOCKER_PULL</code></td>
 </tr>
-
 <tr>
 <td><code>quiet</code></td>
 <td>enable suppressing the build output and print image ID on success</td>
@@ -1036,7 +979,6 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
 <td><code>false</code></td>
 <td><code>PARAMETER_QUIET</code><br><code>DOCKER_QUIET</code></td>
 </tr>
-
 <tr>
 <td><code>registry</code></td>
 <td>set Docker registry address to communicate with</td>
@@ -1044,7 +986,6 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
 <td><code>index.docker.io</code></td>
 <td><code>PARAMETER_REGISTRY</code><br><code>DOCKER_REGISTRY</code></td>
 </tr>
-
 <tr>
 <td><code>remove</code></td>
 <td>enable removing the intermediate containers after a successful build</td>
@@ -1052,7 +993,6 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
 <td><code>true</code></td>
 <td><code>PARAMETER_REMOVE</code><br><code>DOCKER_REMOVE</code></td>
 </tr>
-
 <tr>
 <td><code>repo</code></td>
 <td>set Docker repository for the image</td>
@@ -1060,7 +1000,6 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
 <td>N/A</td>
 <td><code>PARAMETER_REPO</code><br><code>DOCKER_REPO</code></td>
 </tr>
-
 <tr>
 <td><code>secret</code></td>
 <td>set secret file to expose to the build (only if BuildKit enabled) - format (id=mysecret,src=/local/secret)</td>
@@ -1068,7 +1007,6 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
 <td>N/A</td>
 <td><code>PARAMETER_SECRETS</code><br><code>DOCKER_SECRETS</code></td>
 </tr>
-
 <tr>
 <td><code>security_opts</code></td>
 <td>set options for security</td>
@@ -1076,7 +1014,6 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
 <td>N/A</td>
 <td><code>PARAMETER_SECURITY_OPTS</code><br><code>DOCKER_SECURITY_OPTS</code></td>
 </tr>
-
 <tr>
 <td><code>shm_sizes</code></td>
 <td>set the size of /dev/shm</td>
@@ -1084,7 +1021,6 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
 <td>N/A</td>
 <td><code>PARAMETER_SHM_SIZES</code><br><code>DOCKER_SHM_SIZES</code></td>
 </tr>
-
 <tr>
 <td><code>squash</code></td>
 <td>enable squashing newly built layers into a single new layer</td>
@@ -1092,7 +1028,6 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
 <td><code>false</code></td>
 <td><code>PARAMETER_SQUASH</code><br><code>DOCKER_SQUASH</code></td>
 </tr>
-
 <tr>
 <td><code>ssh_components</code></td>
 <td>set SSH agent socket or keys to expose to the build (only if BuildKit enabled) - format (default|<id>[=<socket>|<key>[,<key>]])</td>
@@ -1100,7 +1035,6 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
 <td>N/A</td>
 <td><code>PARAMETER_SSH_COMPONENTS</code><br><code>DOCKER_SSH_COMPONENTS</code></td>
 </tr>
-
 <tr>
 <td><code>stream</code></td>
 <td>enable stream attaching to the server to negotiate build context</td>
@@ -1108,7 +1042,6 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
 <td><code>false</code></td>
 <td><code>PARAMETER_STREAM</code><br><code>DOCKER_STREAM</code></td>
 </tr>
-
 <tr>
 <td><code>tags</code></td>
 <td>set the tags for the Docker image - format (name:tag)</td>
@@ -1116,7 +1049,6 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
 <td>N/A</td>
 <td><code>PARAMETER_TAGS</code><br><code>DOCKER_TAGS</code></td>
 </tr>
-
 <tr>
 <td><code>target</code></td>
 <td>set the target build stage to build</td>
@@ -1124,7 +1056,6 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
 <td>N/A</td>
 <td><code>PARAMETER_TARGET</code><br><code>DOCKER_TARGET</code></td>
 </tr>
-
 <tr>
 <td><code>ulimits</code></td>
 <td>set options for ulimits</td>
@@ -1132,7 +1063,6 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
 <td>N/A</td>
 <td><code>PARAMETER_ULIMITS</code><br><code>DOCKER_ULIMITS</code></td>
 </tr>
-
 <tr>
 <td><code>username</code></td>
 <td>set user name for communication with the registry</td>
@@ -1142,11 +1072,8 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
 </tr>
 </tbody>
 </table>
-
 <h3 id="cpu">CPU</h3>
-
 <p>The following settings are used to configure the <code>cpu</code> parameter:</p>
-
 <table>
 <thead>
 <tr>
@@ -1156,7 +1083,6 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
 <th>Default</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><code>period</code></td>
@@ -1164,28 +1090,24 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
 <td><code>false</code></td>
 <td>N/A</td>
 </tr>
-
 <tr>
 <td><code>quota</code></td>
 <td>set limit on the CPU CFS (Completely Fair Scheduler) quota</td>
 <td><code>false</code></td>
 <td>N/A</td>
 </tr>
-
 <tr>
 <td><code>shares</code></td>
 <td>set CPU shares (relative weight)</td>
 <td><code>false</code></td>
 <td>N/A</td>
 </tr>
-
 <tr>
 <td><code>set_cpus</code></td>
 <td>set CPUs in which to allow execution (0-3, 0,1)</td>
 <td><code>false</code></td>
 <td>N/A</td>
 </tr>
-
 <tr>
 <td><code>set_mems</code></td>
 <td>set MEMs in which to allow execution (0-3, 0,1)</td>
@@ -1194,11 +1116,8 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
 </tr>
 </tbody>
 </table>
-
 <h3 id="daemon">Daemon</h3>
-
 <p>The following settings are used to configure the <code>daemon</code> parameter:</p>
-
 <table>
 <thead>
 <tr>
@@ -1208,7 +1127,6 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
 <th>Default</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><code>bip</code></td>
@@ -1216,49 +1134,42 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
 <td><code>false</code></td>
 <td>N/A</td>
 </tr>
-
 <tr>
 <td><code>dns</code></td>
 <td>set the DNS settings, see <a href="#dns">dns</a> settings below</td>
 <td><code>false</code></td>
 <td>N/A</td>
 </tr>
-
 <tr>
 <td><code>experimental</code></td>
 <td>enable experimental features</td>
 <td><code>false</code></td>
 <td>N/A</td>
 </tr>
-
 <tr>
 <td><code>insecure_registries</code></td>
 <td>set the insecure Docker registries</td>
 <td><code>false</code></td>
 <td>N/A</td>
 </tr>
-
 <tr>
 <td><code>ipv6</code></td>
 <td>enable IPv6 networking</td>
 <td><code>false</code></td>
 <td>N/A</td>
 </tr>
-
 <tr>
 <td><code>mtu</code></td>
 <td>set the network MTU for the contain</td>
 <td><code>false</code></td>
 <td>N/A</td>
 </tr>
-
 <tr>
 <td><code>registry_mirrors</code></td>
 <td>set the Docker registry mirrors</td>
 <td><code>false</code></td>
 <td>N/A</td>
 </tr>
-
 <tr>
 <td><code>storage</code></td>
 <td>set the storage settings, see <a href="#storage">storage</a> settings below</td>
@@ -1267,11 +1178,8 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
 </tr>
 </tbody>
 </table>
-
 <h3 id="dns">DNS</h3>
-
 <p>The following settings are used to configure the <code>dns daemon</code> setting:</p>
-
 <table>
 <thead>
 <tr>
@@ -1281,7 +1189,6 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
 <th>Default</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><code>servers</code></td>
@@ -1289,7 +1196,6 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
 <td><code>false</code></td>
 <td>N/A</td>
 </tr>
-
 <tr>
 <td><code>searches</code></td>
 <td>set the DNS search domains</td>
@@ -1298,11 +1204,8 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
 </tr>
 </tbody>
 </table>
-
 <h3 id="storage">Storage</h3>
-
 <p>The following settings are used to configure the <code>storage daemon</code> setting:</p>
-
 <table>
 <thead>
 <tr>
@@ -1312,7 +1215,6 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
 <th>Default</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><code>driver</code></td>
@@ -1320,7 +1222,6 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
 <td><code>false</code></td>
 <td>N/A</td>
 </tr>
-
 <tr>
 <td><code>opts</code></td>
 <td>set the storage options for the daemon</td>
@@ -1329,13 +1230,9 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
 </tr>
 </tbody>
 </table>
-
 <h2 id="template">Template</h2>
-
 <p>COMING SOON!</p>
-
 <h2 id="troubleshooting">Troubleshooting</h2>
-
 <p>You can start troubleshooting this plugin by tuning the level of logs being displayed:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: publish_hello-world
@@ -1346,8 +1243,8 @@ steps:-name:publish_hello-worldimage:target/vela-docker:latestpull:alwaysparamet
       repo: octocat/hello-world
       tags: [ latest ]
 <span style="color:#00a000">+     log_level: trace
-</span></code></pre></div>
-<p>Below are a list of common problems and how to solve them:</p>
+</span><span style="color:#00a000"></span>
+</code></pre></div><p>Below are a list of common problems and how to solve them:</p>
 
 	
 	

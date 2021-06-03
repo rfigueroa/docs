@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.59.1" />
+<meta name="generator" content="Hugo 0.79.0" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -28,9 +28,9 @@ Usage  NOTE:
 Users should refrain from using latest as the tag for the Docker image.
 It is recommended to use a semantically versioned tag instead.
  Sample of copying an artifact:
-steps:-name:copy_artifactsimage:target/vela-artifactory:latestpull:alwaysparameters:action:copypath:libs-snapshot-local/foo.txttarget:libs-snapshot-local/bar.txturl:http://localhost:8081/artifactory Sample of deleting an artifact:
-steps:-name:delete_artifactsimage:target/vela-artifactory:latestpull:alwaysparameters:action:deletepath:libs-snapshot-local/foo.txturl:http://localhost:8081/artifactory Sample of setting properties on an artifact:
-steps:-name:set_properties_artifactsimage:target/vela-artifactory:latestpull:alwaysparameters:action:set-proppath:libs-snapshot-local/foo.txtprops:-name:singlevalue:foo-name:multiplevalues:-bar-bazurl:http://localhost:8081/artifactory Sample of uploading an artifact:" />
+steps:- name:copy_artifactsimage:target/vela-artifactory:latestpull:alwaysparameters:action:copypath:libs-snapshot-local/foo.txttarget:libs-snapshot-local/bar.txturl:http://localhost:8081/artifactorySample of deleting an artifact:
+steps:- name:delete_artifactsimage:target/vela-artifactory:latestpull:alwaysparameters:action:deletepath:libs-snapshot-local/foo.txturl:http://localhost:8081/artifactorySample of setting properties on an artifact:
+steps:- name:set_properties_artifactsimage:target/vela-artifactory:latestpull:alwaysparameters:action:set-proppath:libs-snapshot-local/foo.txtprops:- name:singlevalue:foo- name:multiplevalues:- bar- bazurl:http://localhost:8081/artifactorySample of uploading an artifact:" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://go-vela.github.io/docs/plugins/registry/pipeline/artifactory/" />
 <meta property="article:modified_time" content="2021-01-13T15:05:51-06:00" />
@@ -42,13 +42,11 @@ Usage  NOTE:
 Users should refrain from using latest as the tag for the Docker image.
 It is recommended to use a semantically versioned tag instead.
  Sample of copying an artifact:
-steps:-name:copy_artifactsimage:target/vela-artifactory:latestpull:alwaysparameters:action:copypath:libs-snapshot-local/foo.txttarget:libs-snapshot-local/bar.txturl:http://localhost:8081/artifactory Sample of deleting an artifact:
-steps:-name:delete_artifactsimage:target/vela-artifactory:latestpull:alwaysparameters:action:deletepath:libs-snapshot-local/foo.txturl:http://localhost:8081/artifactory Sample of setting properties on an artifact:
-steps:-name:set_properties_artifactsimage:target/vela-artifactory:latestpull:alwaysparameters:action:set-proppath:libs-snapshot-local/foo.txtprops:-name:singlevalue:foo-name:multiplevalues:-bar-bazurl:http://localhost:8081/artifactory Sample of uploading an artifact:">
-
-
+steps:- name:copy_artifactsimage:target/vela-artifactory:latestpull:alwaysparameters:action:copypath:libs-snapshot-local/foo.txttarget:libs-snapshot-local/bar.txturl:http://localhost:8081/artifactorySample of deleting an artifact:
+steps:- name:delete_artifactsimage:target/vela-artifactory:latestpull:alwaysparameters:action:deletepath:libs-snapshot-local/foo.txturl:http://localhost:8081/artifactorySample of setting properties on an artifact:
+steps:- name:set_properties_artifactsimage:target/vela-artifactory:latestpull:alwaysparameters:action:set-proppath:libs-snapshot-local/foo.txtprops:- name:singlevalue:foo- name:multiplevalues:- bar- bazurl:http://localhost:8081/artifactorySample of uploading an artifact:">
 <meta itemprop="dateModified" content="2021-01-13T15:05:51-06:00" />
-<meta itemprop="wordCount" content="740">
+<meta itemprop="wordCount" content="747">
 
 
 
@@ -62,9 +60,9 @@ Usage  NOTE:
 Users should refrain from using latest as the tag for the Docker image.
 It is recommended to use a semantically versioned tag instead.
  Sample of copying an artifact:
-steps:-name:copy_artifactsimage:target/vela-artifactory:latestpull:alwaysparameters:action:copypath:libs-snapshot-local/foo.txttarget:libs-snapshot-local/bar.txturl:http://localhost:8081/artifactory Sample of deleting an artifact:
-steps:-name:delete_artifactsimage:target/vela-artifactory:latestpull:alwaysparameters:action:deletepath:libs-snapshot-local/foo.txturl:http://localhost:8081/artifactory Sample of setting properties on an artifact:
-steps:-name:set_properties_artifactsimage:target/vela-artifactory:latestpull:alwaysparameters:action:set-proppath:libs-snapshot-local/foo.txtprops:-name:singlevalue:foo-name:multiplevalues:-bar-bazurl:http://localhost:8081/artifactory Sample of uploading an artifact:"/>
+steps:- name:copy_artifactsimage:target/vela-artifactory:latestpull:alwaysparameters:action:copypath:libs-snapshot-local/foo.txttarget:libs-snapshot-local/bar.txturl:http://localhost:8081/artifactorySample of deleting an artifact:
+steps:- name:delete_artifactsimage:target/vela-artifactory:latestpull:alwaysparameters:action:deletepath:libs-snapshot-local/foo.txturl:http://localhost:8081/artifactorySample of setting properties on an artifact:
+steps:- name:set_properties_artifactsimage:target/vela-artifactory:latestpull:alwaysparameters:action:set-proppath:libs-snapshot-local/foo.txtprops:- name:singlevalue:foo- name:multiplevalues:- bar- bazurl:http://localhost:8081/artifactorySample of uploading an artifact:"/>
 
 
 
@@ -72,8 +70,8 @@ steps:-name:set_properties_artifactsimage:target/vela-artifactory:latestpull:alw
 
 
 
-<link rel="preload" href="/docs/scss/main.min.70d8bad3cbfd44b25762dfb0cadb082e7e2c882cbc3cb7ff0b318df81507856d.css" as="style">
-<link href="/docs/scss/main.min.70d8bad3cbfd44b25762dfb0cadb082e7e2c882cbc3cb7ff0b318df81507856d.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/docs/scss/main.min.a9587066c0180698d994bba5dbdd49fa05ee0044b1678d06704a7a605676b1df.css" as="style">
+<link href="/docs/scss/main.min.a9587066c0180698d994bba5dbdd49fa05ee0044b1678d06704a7a605676b1df.css" rel="stylesheet" integrity="">
 
 <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
@@ -88,7 +86,7 @@ steps:-name:set_properties_artifactsimage:target/vela-artifactory:latestpull:alw
       
 <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
         <a class="navbar-brand" href="/docs/">
-		<span class="navbar-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1500"><title>vela-inverse</title><polygon points="1477.22 329.54 1338.11 219.91 1349.56 43.16 1202.3 141.58 1037.73 76.07 1085.84 246.54 972.68 382.81 1149.67 389.74 1244.3 539.46 1305.58 373.27 1477.22 329.54" style="fill:#9e6bae"/><path d="M1174.75 635.12 757.57 1357.69a3.47 3.47.0 0 1-6 0L125.38 273.13a3.48 3.48.0 0 1 3-5.22H925.24l39.14-47.13L950.19 170.5H128.39A100.9 100.9.0 0 0 41 321.84L667.19 1406.4a100.88 100.88.0 0 0 174.74.0l391.61-678.27z" style="fill:#34c6f4"/><polygon points="1087.64 497.29 1038.27 495.36 754.56 986.75 395.9 365.54 288.13 365.54 754.56 1173.42 1117.58 544.66 1087.64 497.29" style="fill:#fff"/></svg></span><span class="text-uppercase font-weight-bold">Vela</span>
+		<span class="navbar-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1500"><title>vela-inverse</title><polygon points="1477.22 329.54 1338.11 219.91 1349.56 43.16 1202.3 141.58 1037.73 76.07 1085.84 246.54 972.68 382.81 1149.67 389.74 1244.3 539.46 1305.58 373.27 1477.22 329.54" style="fill:#9e6bae"/><path d="M1174.75 635.12 757.57 1357.69a3.47 3.47.0 01-6 0L125.38 273.13a3.48 3.48.0 013-5.22H925.24l39.14-47.13L950.19 170.5H128.39A100.9 100.9.0 0041 321.84L667.19 1406.4a100.88 100.88.0 00174.74.0l391.61-678.27z" style="fill:#34c6f4"/><polygon points="1087.64 497.29 1038.27 495.36 754.56 986.75 395.9 365.54 288.13 365.54 754.56 1173.42 1117.58 544.66 1087.64 497.29" style="fill:#fff"/></svg></span><span class="text-uppercase font-weight-bold">Vela</span>
 	</a>
 	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
 		<ul class="navbar-nav mt-2 mt-lg-0">
@@ -111,7 +109,7 @@ steps:-name:set_properties_artifactsimage:target/vela-artifactory:latestpull:alw
 				
 				
 				
-				<a class="nav-link" href="/docs/concepts/" ><span>Concepts</span></a>
+				<a class="nav-link" href="/docs/tour/" ><span>Tour</span></a>
 			</li>
 			
 			<li class="nav-item mr-4 mb-2 mb-lg-0">
@@ -365,7 +363,7 @@ steps:-name:set_properties_artifactsimage:target/vela-artifactory:latestpull:alw
     <a  href="/docs/plugins/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Plugins</a>
   </li>
   <ul>
-    <li class="collapse show" id="docs-plugins">
+    <li class="collapse show" id="docsplugins">
       
       
       
@@ -382,7 +380,7 @@ steps:-name:set_properties_artifactsimage:target/vela-artifactory:latestpull:alw
     <a  href="/docs/plugins/registry/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Registry</a>
   </li>
   <ul>
-    <li class="collapse show" id="docs-plugins-registry">
+    <li class="collapse show" id="docspluginsregistry">
       
       
       
@@ -399,68 +397,68 @@ steps:-name:set_properties_artifactsimage:target/vela-artifactory:latestpull:alw
     <a  href="/docs/plugins/registry/pipeline/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Pipeline</a>
   </li>
   <ul>
-    <li class="collapse show" id="docs-plugins-registry-pipeline">
+    <li class="collapse show" id="docspluginsregistrypipeline">
       
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docs-plugins-registry-pipeline-artifactory" href="/docs/plugins/registry/pipeline/artifactory/">Artifactory</a>
+      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docspluginsregistrypipelineartifactory" href="/docs/plugins/registry/pipeline/artifactory/">Artifactory</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-registry-pipeline-captains-log" href="/docs/plugins/registry/pipeline/captains_log/">Captain&#39;s Log</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginsregistrypipelinecaptains_log" href="/docs/plugins/registry/pipeline/captains_log/">Captain&#39;s Log</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-registry-pipeline-docker" href="/docs/plugins/registry/pipeline/docker/">Docker</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginsregistrypipelinedocker" href="/docs/plugins/registry/pipeline/docker/">Docker</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-registry-pipeline-downstream" href="/docs/plugins/registry/pipeline/downstream/">Downstream</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginsregistrypipelinedownstream" href="/docs/plugins/registry/pipeline/downstream/">Downstream</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-registry-pipeline-git" href="/docs/plugins/registry/pipeline/git/">Git</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginsregistrypipelinegit" href="/docs/plugins/registry/pipeline/git/">Git</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-registry-pipeline-kaniko" href="/docs/plugins/registry/pipeline/kaniko/">Kaniko</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginsregistrypipelinekaniko" href="/docs/plugins/registry/pipeline/kaniko/">Kaniko</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-registry-pipeline-kubernetes" href="/docs/plugins/registry/pipeline/kubernetes/">Kubernetes</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginsregistrypipelinekubernetes" href="/docs/plugins/registry/pipeline/kubernetes/">Kubernetes</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-registry-pipeline-makisu" href="/docs/plugins/registry/pipeline/makisu/">Makisu</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginsregistrypipelinemakisu" href="/docs/plugins/registry/pipeline/makisu/">Makisu</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-registry-pipeline-s3-cache" href="/docs/plugins/registry/pipeline/s3_cache/">S3 Cache</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginsregistrypipelines3_cache" href="/docs/plugins/registry/pipeline/s3_cache/">S3 Cache</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-registry-pipeline-terraform" href="/docs/plugins/registry/pipeline/terraform/">Terraform</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginsregistrypipelineterraform" href="/docs/plugins/registry/pipeline/terraform/">Terraform</a>
       
       
     </li>
@@ -482,14 +480,14 @@ steps:-name:set_properties_artifactsimage:target/vela-artifactory:latestpull:alw
     <a  href="/docs/plugins/registry/secret/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Secret</a>
   </li>
   <ul>
-    <li class="collapse " id="docs-plugins-registry-secret">
+    <li class="collapse " id="docspluginsregistrysecret">
       
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-registry-secret-vault" href="/docs/plugins/registry/secret/vault/">Vault</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginsregistrysecretvault" href="/docs/plugins/registry/secret/vault/">Vault</a>
       
       
     </li>
@@ -517,38 +515,38 @@ steps:-name:set_properties_artifactsimage:target/vela-artifactory:latestpull:alw
     <a  href="/docs/plugins/tutorials/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Tutorials</a>
   </li>
   <ul>
-    <li class="collapse " id="docs-plugins-tutorials">
+    <li class="collapse " id="docspluginstutorials">
       
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-tutorials-bash" href="/docs/plugins/tutorials/bash/">Bash</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginstutorialsbash" href="/docs/plugins/tutorials/bash/">Bash</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-tutorials-go" href="/docs/plugins/tutorials/go/">Go</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginstutorialsgo" href="/docs/plugins/tutorials/go/">Go</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-tutorials-node" href="/docs/plugins/tutorials/node/">Node.js</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginstutorialsnode" href="/docs/plugins/tutorials/node/">Node.js</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-tutorials-python" href="/docs/plugins/tutorials/python/">Python</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginstutorialspython" href="/docs/plugins/tutorials/python/">Python</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docs-plugins-tutorials-ruby" href="/docs/plugins/tutorials/ruby/">Ruby</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginstutorialsruby" href="/docs/plugins/tutorials/ruby/">Ruby</a>
       
       
     </li>
@@ -582,6 +580,8 @@ steps:-name:set_properties_artifactsimage:target/vela-artifactory:latestpull:alw
 <a href="https://github.com/go-vela/docs/issues/new?title=Artifactory" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
 
 </div>
+
+
 
 
 
@@ -639,72 +639,64 @@ steps:-name:set_properties_artifactsimage:target/vela-artifactory:latestpull:alw
 	<h1>Artifactory</h1>
 	
 	<h2 id="description">Description</h2>
-
-<p>This plugin enables you to manage artifacts in <a href="https://jfrog.com/artifactory/" target="_blank">Artifactory</a> in a Vela pipeline.</p>
-
-<p>Source Code: <a href="https://github.com/go-vela/vela-artifactory" target="_blank">https://github.com/go-vela/vela-artifactory</a></p>
-
-<p>Registry: <a href="https://hub.docker.com/r/target/vela-artifactory" target="_blank">https://hub.docker.com/r/target/vela-artifactory</a></p>
-
+<p>This plugin enables you to manage artifacts in <a href="https://jfrog.com/artifactory/">Artifactory</a> in a Vela pipeline.</p>
+<p>Source Code: <a href="https://github.com/go-vela/vela-artifactory">https://github.com/go-vela/vela-artifactory</a></p>
+<p>Registry: <a href="https://hub.docker.com/r/target/vela-artifactory">https://hub.docker.com/r/target/vela-artifactory</a></p>
 <h2 id="usage">Usage</h2>
-
 <blockquote>
 <p><strong>NOTE:</strong></p>
-
 <p>Users should refrain from using latest as the tag for the Docker image.</p>
-
 <p>It is recommended to use a semantically versioned tag instead.</p>
 </blockquote>
-
 <p>Sample of copying an artifact:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">steps<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span>-<span style="color:#f8f8f8;text-decoration:underline"> </span>name<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>copy_artifacts<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>image<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>target/vela-artifactory<span style="color:#000;font-weight:bold">:</span>latest<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>pull<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>always<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>parameters<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span>action<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>copy<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span>path<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>libs-snapshot-local/foo.txt<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span>target<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>libs-snapshot-local/bar.txt<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span>url<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>http<span style="color:#000;font-weight:bold">:</span>//localhost<span style="color:#000;font-weight:bold">:</span><span style="color:#0000cf;font-weight:bold">8081</span>/artifactory</code></pre></div>
-<p>Sample of deleting an artifact:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">steps<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span>-<span style="color:#f8f8f8;text-decoration:underline"> </span>name<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>delete_artifacts<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>image<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>target/vela-artifactory<span style="color:#000;font-weight:bold">:</span>latest<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>pull<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>always<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>parameters<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span>action<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>delete<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span>path<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>libs-snapshot-local/foo.txt<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span>url<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>http<span style="color:#000;font-weight:bold">:</span>//localhost<span style="color:#000;font-weight:bold">:</span><span style="color:#0000cf;font-weight:bold">8081</span>/artifactory</code></pre></div>
-<p>Sample of setting properties on an artifact:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">steps<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span>-<span style="color:#f8f8f8;text-decoration:underline"> </span>name<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>set_properties_artifacts<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>image<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>target/vela-artifactory<span style="color:#000;font-weight:bold">:</span>latest<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>pull<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>always<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>parameters<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span>action<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>set-prop<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span>path<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>libs-snapshot-local/foo.txt<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span>props<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">        </span>-<span style="color:#f8f8f8;text-decoration:underline"> </span>name<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>single<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">          </span>value<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>foo<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">        </span>-<span style="color:#f8f8f8;text-decoration:underline"> </span>name<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>multiple<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">          </span>values<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">            </span>-<span style="color:#f8f8f8;text-decoration:underline"> </span>bar<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">            </span>-<span style="color:#f8f8f8;text-decoration:underline"> </span>baz<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span>url<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>http<span style="color:#000;font-weight:bold">:</span>//localhost<span style="color:#000;font-weight:bold">:</span><span style="color:#0000cf;font-weight:bold">8081</span>/artifactory</code></pre></div>
-<p>Sample of uploading an artifact:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">steps<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span>-<span style="color:#f8f8f8;text-decoration:underline"> </span>name<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>upload_artifacts<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>image<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>target/vela-artifactory<span style="color:#000;font-weight:bold">:</span>latest<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>pull<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>always<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>parameters<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span>action<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>upload<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span>path<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>libs-snapshot-local/<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span>sources<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">        </span>-<span style="color:#f8f8f8;text-decoration:underline"> </span>foo.txt<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">        </span>-<span style="color:#f8f8f8;text-decoration:underline"> </span>target/<span style="color:#8f5902;font-style:italic">*.jar</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">        </span>-<span style="color:#f8f8f8;text-decoration:underline"> </span>dist/<span style="color:#8f5902;font-style:italic">**/*.js</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span>url<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>http<span style="color:#000;font-weight:bold">:</span>//localhost<span style="color:#000;font-weight:bold">:</span><span style="color:#0000cf;font-weight:bold">8081</span>/artifactory</code></pre></div>
-<p>Sample of pretending to upload an artifact:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">steps</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span>- <span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">copy_artifacts</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">image</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">target/vela-artifactory:latest</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">pull</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">always</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">parameters</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">action</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">copy</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">path</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">libs-snapshot-local/foo.txt</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">target</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">libs-snapshot-local/bar.txt</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">url</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">http://localhost:8081/artifactory</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></code></pre></div><p>Sample of deleting an artifact:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">steps</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span>- <span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">delete_artifacts</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">image</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">target/vela-artifactory:latest</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">pull</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">always</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">parameters</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">action</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">delete</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">path</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">libs-snapshot-local/foo.txt</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">url</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">http://localhost:8081/artifactory</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></code></pre></div><p>Sample of setting properties on an artifact:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">steps</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span>- <span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">set_properties_artifacts</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">image</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">target/vela-artifactory:latest</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">pull</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">always</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">parameters</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">action</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">set-prop</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">path</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">libs-snapshot-local/foo.txt</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">props</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">        </span>- <span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">single</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">          </span><span style="color:#204a87;font-weight:bold">value</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">foo</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">        </span>- <span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">multiple</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">          </span><span style="color:#204a87;font-weight:bold">values</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">            </span>- <span style="color:#000">bar</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">            </span>- <span style="color:#000">baz</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">url</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">http://localhost:8081/artifactory</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></code></pre></div><p>Sample of uploading an artifact:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">steps</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span>- <span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">upload_artifacts</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">image</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">target/vela-artifactory:latest</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">pull</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">always</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">parameters</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">action</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">upload</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">path</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">libs-snapshot-local/</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">sources</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">        </span>- <span style="color:#000">foo.txt</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">        </span>- <span style="color:#000">target/*.jar</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">        </span>- <span style="color:#000">dist/**/*.js</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">url</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">http://localhost:8081/artifactory</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></code></pre></div><p>Sample of pretending to upload an artifact:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: upload_artifacts
     image: target/vela-artifactory:latest
@@ -718,28 +710,24 @@ steps:-name:set_properties_artifactsimage:target/vela-artifactory:latestpull:alw
         - target/*.jar
         - dist/**/*.js
       url: http://localhost:8081/artifactory
-</code></pre></div>
-<p>Sample of using docker-promote on an artifact:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">steps<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span>-<span style="color:#f8f8f8;text-decoration:underline"> </span>name<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>docker_promote_artifacts<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>image<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>target/vela-artifactory<span style="color:#000;font-weight:bold">:</span>latest<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>pull<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>always<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>parameters<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span>action<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>docker-promote<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span>target_repo<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>libs-snapshot-local<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span>docker_registry<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>octocat/hello-world<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span>tag<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>latest<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span>target_docker_registry<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>octocat/hello-world<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span>target_tags<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#34;${BUILD_COMMIT:0:8}&#34;</span></code></pre></div>
-<h2 id="secrets">Secrets</h2>
-
+</code></pre></div><p>Sample of using docker-promote on an artifact:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">steps</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span>- <span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">docker_promote_artifacts</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">image</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">target/vela-artifactory:latest</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">pull</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">always</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">parameters</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">action</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">docker-promote</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">target_repo</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">libs-snapshot-local</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">docker_registry</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">octocat/hello-world</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">tag</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">latest</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">target_docker_registry</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">octocat/hello-world</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">target_tags</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#34;${BUILD_COMMIT:0:8}&#34;</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></code></pre></div><h2 id="secrets">Secrets</h2>
 <blockquote>
 <p><strong>NOTE:</strong> Users should refrain from configuring sensitive information in your pipeline in plain text.</p>
 </blockquote>
-
 <h3 id="internal">Internal</h3>
-
-<p>Users can use <a href="https://go-vela.github.io/docs/concepts/pipeline/secrets/" target="_blank">Vela internal secrets</a> to substitute these sensitive values at runtime:</p>
+<p>Users can use <a href="https://go-vela.github.io/docs/concepts/pipeline/secrets/">Vela internal secrets</a> to substitute these sensitive values at runtime:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: copy_artifacts
     image: target/vela-artifactory:latest
@@ -752,20 +740,15 @@ steps:-name:set_properties_artifactsimage:target/vela-artifactory:latestpull:alw
       url: http://localhost:8081/artifactory
 <span style="color:#a40000">-     username: octocat
 </span><span style="color:#a40000">-     password: superSecretPassword
-</span></code></pre></div>
-<blockquote>
+</span></code></pre></div><blockquote>
 <p>This example will add the secrets to the <code>copy_artifacts</code> step as environment variables:</p>
-
-<p><ul>
+<ul>
 <li><code>ARTIFACTORY_USERNAME=&lt;value&gt;</code></li>
 <li><code>ARTIFACTORY_PASSWORD=&lt;value&gt;</code></li>
 </ul>
-</blockquote></p>
-
+</blockquote>
 <h3 id="external">External</h3>
-
 <p>The plugin accepts the following files for authentication:</p>
-
 <table>
 <thead>
 <tr>
@@ -773,26 +756,22 @@ steps:-name:set_properties_artifactsimage:target/vela-artifactory:latestpull:alw
 <th>Volume Configuration</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><code>api_key</code></td>
 <td><code>/vela/parameters/artifactory/api_key</code>, <code>/vela/secrets/artifactory/api_key</code></td>
 </tr>
-
 <tr>
 <td><code>password</code></td>
 <td><code>/vela/parameters/artifactory/password</code>, <code>/vela/secrets/artifactory/password</code></td>
 </tr>
-
 <tr>
 <td><code>username</code></td>
 <td><code>/vela/parameters/artifactory/username</code>, <code>/vela/secrets/artifactory/username</code></td>
 </tr>
 </tbody>
 </table>
-
-<p>Users can use <a href="https://go-vela.github.io/docs/concepts/pipeline/secrets/origin/" target="_blank">Vela external secrets</a> to substitute these sensitive values at runtime:</p>
+<p>Users can use <a href="https://go-vela.github.io/docs/concepts/pipeline/secrets/origin/">Vela external secrets</a> to substitute these sensitive values at runtime:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: copy_artifacts
     image: target/vela-artifactory:latest
@@ -804,23 +783,16 @@ steps:-name:set_properties_artifactsimage:target/vela-artifactory:latestpull:alw
       url: http://localhost:8081/artifactory
 <span style="color:#a40000">-     username: octocat
 </span><span style="color:#a40000">-     password: superSecretPassword
-</span></code></pre></div>
-<blockquote>
+</span></code></pre></div><blockquote>
 <p>This example will read the secret values in the volume stored at <code>/vela/secrets/</code></p>
 </blockquote>
-
 <h2 id="parameters">Parameters</h2>
-
 <blockquote>
 <p><strong>NOTE:</strong></p>
-
 <p>The plugin supports reading all parameters via environment variables or files.</p>
-
 <p>Any values set from a file take precedence over values set from the environment.</p>
 </blockquote>
-
 <p>The following parameters are used to configure the image:</p>
-
 <table>
 <thead>
 <tr>
@@ -831,7 +803,6 @@ steps:-name:set_properties_artifactsimage:target/vela-artifactory:latestpull:alw
 <th>Environment Variables</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><code>action</code></td>
@@ -840,7 +811,6 @@ steps:-name:set_properties_artifactsimage:target/vela-artifactory:latestpull:alw
 <td><code>N/A</code></td>
 <td><code>PARAMETER_ACTION</code><br><code>ARTIFACTORY_ACTION</code></td>
 </tr>
-
 <tr>
 <td><code>api_key</code></td>
 <td>API key for communication with Artifactory</td>
@@ -848,7 +818,6 @@ steps:-name:set_properties_artifactsimage:target/vela-artifactory:latestpull:alw
 <td><code>N/A</code></td>
 <td><code>PARAMETER_DRY_RUN</code><br><code>ARTIFACTORY_DRY_RUN</code></td>
 </tr>
-
 <tr>
 <td><code>dry_run</code></td>
 <td>enables pretending to perform the action</td>
@@ -856,7 +825,6 @@ steps:-name:set_properties_artifactsimage:target/vela-artifactory:latestpull:alw
 <td><code>false</code></td>
 <td><code>PARAMETER_API_KEY</code><br><code>ARTIFACTORY_API_KEY</code></td>
 </tr>
-
 <tr>
 <td><code>log_level</code></td>
 <td>set the log level for the plugin</td>
@@ -864,7 +832,6 @@ steps:-name:set_properties_artifactsimage:target/vela-artifactory:latestpull:alw
 <td><code>info</code></td>
 <td><code>PARAMETER_LOG_LEVEL</code><br><code>ARTIFACTORY_LOG_LEVEL</code></td>
 </tr>
-
 <tr>
 <td><code>password</code></td>
 <td>password for communication with Artifactory</td>
@@ -872,7 +839,6 @@ steps:-name:set_properties_artifactsimage:target/vela-artifactory:latestpull:alw
 <td><code>N/A</code></td>
 <td><code>PARAMETER_PASSWORD</code><br><code>ARTIFACTORY_PASSWORD</code></td>
 </tr>
-
 <tr>
 <td><code>url</code></td>
 <td>Artifactory instance to communicate with</td>
@@ -880,7 +846,6 @@ steps:-name:set_properties_artifactsimage:target/vela-artifactory:latestpull:alw
 <td><code>N/A</code></td>
 <td><code>PARAMETER_URL</code><br><code>ARTIFACTORY_URL</code></td>
 </tr>
-
 <tr>
 <td><code>username</code></td>
 <td>user name for communication with Artifactory</td>
@@ -890,11 +855,8 @@ steps:-name:set_properties_artifactsimage:target/vela-artifactory:latestpull:alw
 </tr>
 </tbody>
 </table>
-
 <h4 id="copy">Copy</h4>
-
 <p>The following parameters are used to configure the <code>copy</code> action:</p>
-
 <table>
 <thead>
 <tr>
@@ -905,7 +867,6 @@ steps:-name:set_properties_artifactsimage:target/vela-artifactory:latestpull:alw
 <th>Environment Variables</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><code>flat</code></td>
@@ -914,7 +875,6 @@ steps:-name:set_properties_artifactsimage:target/vela-artifactory:latestpull:alw
 <td><code>false</code></td>
 <td><code>PARAMETER_FLAT</code><br><code>ARTIFACTORY_FLAT</code></td>
 </tr>
-
 <tr>
 <td><code>path</code></td>
 <td>source path to copy artifact(s) from</td>
@@ -922,7 +882,6 @@ steps:-name:set_properties_artifactsimage:target/vela-artifactory:latestpull:alw
 <td><code>N/A</code></td>
 <td><code>PARAMETER_PATH</code><br><code>ARTIFACTORY_PATH</code></td>
 </tr>
-
 <tr>
 <td><code>recursive</code></td>
 <td>enables copying sub-directories for the artifact(s)</td>
@@ -930,7 +889,6 @@ steps:-name:set_properties_artifactsimage:target/vela-artifactory:latestpull:alw
 <td><code>false</code></td>
 <td><code>PARAMETER_RECURSIVE</code><br><code>ARTIFACTORY_RECURSIVE</code></td>
 </tr>
-
 <tr>
 <td><code>target</code></td>
 <td>target path to copy artifact(s) to</td>
@@ -940,11 +898,8 @@ steps:-name:set_properties_artifactsimage:target/vela-artifactory:latestpull:alw
 </tr>
 </tbody>
 </table>
-
 <h4 id="delete">Delete</h4>
-
 <p>The following parameters are used to configure the <code>delete</code> action:</p>
-
 <table>
 <thead>
 <tr>
@@ -955,7 +910,6 @@ steps:-name:set_properties_artifactsimage:target/vela-artifactory:latestpull:alw
 <th>Environment Variables</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><code>path</code></td>
@@ -964,7 +918,6 @@ steps:-name:set_properties_artifactsimage:target/vela-artifactory:latestpull:alw
 <td><code>N/A</code></td>
 <td><code>PARAMETER_PATH</code><br><code>ARTIFACTORY_PATH</code></td>
 </tr>
-
 <tr>
 <td><code>recursive</code></td>
 <td>enables removing sub-directories for the artifact(s)</td>
@@ -974,11 +927,8 @@ steps:-name:set_properties_artifactsimage:target/vela-artifactory:latestpull:alw
 </tr>
 </tbody>
 </table>
-
 <h4 id="docker-promote">Docker-Promote</h4>
-
 <p>The following parameters are used to configure the <code>docker-promote</code> action:</p>
-
 <table>
 <thead>
 <tr>
@@ -989,7 +939,6 @@ steps:-name:set_properties_artifactsimage:target/vela-artifactory:latestpull:alw
 <th>Environment Variables</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><code>target_repo</code></td>
@@ -998,7 +947,6 @@ steps:-name:set_properties_artifactsimage:target/vela-artifactory:latestpull:alw
 <td><code>N/A</code></td>
 <td><code>PARAMETER_TARGET_REPO</code><br><code>ARTIFACTORY_TARGET_REPO</code></td>
 </tr>
-
 <tr>
 <td><code>docker_registry</code></td>
 <td>path to image in docker registry</td>
@@ -1006,7 +954,6 @@ steps:-name:set_properties_artifactsimage:target/vela-artifactory:latestpull:alw
 <td><code>N/A</code></td>
 <td><code>PARAMETER_DOCKER_REGISTRY</code><br><code>ARTIFACTORY_DOCKER_REGISTRY</code></td>
 </tr>
-
 <tr>
 <td><code>target_docker_registry</code></td>
 <td>path for target image in docker registry</td>
@@ -1014,7 +961,6 @@ steps:-name:set_properties_artifactsimage:target/vela-artifactory:latestpull:alw
 <td><code>N/A</code></td>
 <td><code>PARAMETER_TARGET_DOCKER_REGISTRY</code><br><code>ARTIFACTORY_TARGET_DOCKER_REGISTRY</code></td>
 </tr>
-
 <tr>
 <td><code>tag</code></td>
 <td>name of the tag for promoting</td>
@@ -1022,7 +968,6 @@ steps:-name:set_properties_artifactsimage:target/vela-artifactory:latestpull:alw
 <td><code>N/A</code></td>
 <td><code>PARAMETER_TAG</code><br><code>ARTIFACTORY_TAG</code></td>
 </tr>
-
 <tr>
 <td><code>target_tags</code></td>
 <td>name of the final tags after promotion</td>
@@ -1030,7 +975,6 @@ steps:-name:set_properties_artifactsimage:target/vela-artifactory:latestpull:alw
 <td><code>N/A</code></td>
 <td><code>PARAMETER_TARGET_TAGS</code><br><code>ARTIFACTORY_TARGET_TAGS</code></td>
 </tr>
-
 <tr>
 <td><code>copy</code></td>
 <td>set to copy instead of moving the image</td>
@@ -1038,7 +982,6 @@ steps:-name:set_properties_artifactsimage:target/vela-artifactory:latestpull:alw
 <td><code>false</code></td>
 <td><code>PARAMETER_COPY</code><br><code>ARTIFACTORY_COPY</code></td>
 </tr>
-
 <tr>
 <td><code>promote_props</code></td>
 <td>enables setting properties on the promoted artifact</td>
@@ -1048,11 +991,8 @@ steps:-name:set_properties_artifactsimage:target/vela-artifactory:latestpull:alw
 </tr>
 </tbody>
 </table>
-
 <h4 id="set-prop">Set-Prop</h4>
-
 <p>The following parameters are used to configure the <code>set-prop</code> action:</p>
-
 <table>
 <thead>
 <tr>
@@ -1063,7 +1003,6 @@ steps:-name:set_properties_artifactsimage:target/vela-artifactory:latestpull:alw
 <th>Environment Variables</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><code>path</code></td>
@@ -1072,7 +1011,6 @@ steps:-name:set_properties_artifactsimage:target/vela-artifactory:latestpull:alw
 <td><code>N/A</code></td>
 <td><code>PARAMETER_PATH</code><br><code>ARTIFACTORY_PATH</code></td>
 </tr>
-
 <tr>
 <td><code>props</code></td>
 <td>properties to set on the artifact(s)</td>
@@ -1082,11 +1020,8 @@ steps:-name:set_properties_artifactsimage:target/vela-artifactory:latestpull:alw
 </tr>
 </tbody>
 </table>
-
 <h4 id="upload">Upload</h4>
-
 <p>The following parameters are used to configure the <code>upload</code> action:</p>
-
 <table>
 <thead>
 <tr>
@@ -1097,7 +1032,6 @@ steps:-name:set_properties_artifactsimage:target/vela-artifactory:latestpull:alw
 <th>Environment Variables</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><code>flat</code></td>
@@ -1106,7 +1040,6 @@ steps:-name:set_properties_artifactsimage:target/vela-artifactory:latestpull:alw
 <td><code>false</code></td>
 <td><code>PARAMETER_FLAT</code><br><code>ARTIFACTORY_FLAT</code></td>
 </tr>
-
 <tr>
 <td><code>include_dirs</code></td>
 <td>enables including sub-directories for the artifact(s)</td>
@@ -1114,7 +1047,6 @@ steps:-name:set_properties_artifactsimage:target/vela-artifactory:latestpull:alw
 <td><code>false</code></td>
 <td><code>PARAMETER_INCLUDE_DIRS</code><br><code>ARTIFACTORY_INCLUDE_DIRS</code></td>
 </tr>
-
 <tr>
 <td><code>path</code></td>
 <td>target path to upload artifact(s) to</td>
@@ -1122,7 +1054,6 @@ steps:-name:set_properties_artifactsimage:target/vela-artifactory:latestpull:alw
 <td><code>N/A</code></td>
 <td><code>PARAMETER_PATH</code><br><code>ARTIFACTORY_PATH</code></td>
 </tr>
-
 <tr>
 <td><code>recursive</code></td>
 <td>enables uploading sub-directories for the artifact(s)</td>
@@ -1130,7 +1061,6 @@ steps:-name:set_properties_artifactsimage:target/vela-artifactory:latestpull:alw
 <td><code>false</code></td>
 <td><code>PARAMETER_REGEXP</code><br><code>ARTIFACTORY_REGEXP</code></td>
 </tr>
-
 <tr>
 <td><code>regexp</code></td>
 <td>enables reading the sources as a regular expression</td>
@@ -1138,7 +1068,6 @@ steps:-name:set_properties_artifactsimage:target/vela-artifactory:latestpull:alw
 <td><code>false</code></td>
 <td><code>PARAMETER_RECURSIVE</code><br><code>ARTIFACTORY_RECURSIVE</code></td>
 </tr>
-
 <tr>
 <td><code>sources</code></td>
 <td>list of artifact(s) to upload</td>
@@ -1148,13 +1077,9 @@ steps:-name:set_properties_artifactsimage:target/vela-artifactory:latestpull:alw
 </tr>
 </tbody>
 </table>
-
 <h2 id="template">Template</h2>
-
 <p>COMING SOON!</p>
-
 <h2 id="troubleshooting">Troubleshooting</h2>
-
 <p>You can start troubleshooting this plugin by tuning the level of logs being displayed:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: copy_artifacts
@@ -1166,8 +1091,7 @@ steps:-name:set_properties_artifactsimage:target/vela-artifactory:latestpull:alw
 </span><span style="color:#00a000"></span>      path: libs-snapshot-local/foo.txt
       target: libs-snapshot-local/bar.txt
       url: http://localhost:8081/artifactory
-</code></pre></div>
-<p>Below are a list of common problems and how to solve them:</p>
+</code></pre></div><p>Below are a list of common problems and how to solve them:</p>
 
 	
 	
