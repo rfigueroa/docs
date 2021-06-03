@@ -1595,6 +1595,14 @@ to the repo.
 
 &lt;p&gt;Your repo now has the necessary web hook to Vela.&lt;/p&gt;
 
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Tip:&lt;/h4&gt;
+If you&amp;rsquo;re coming from another CI platform you can set a starting build number by updating the counter field on the repo via the UI, &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/cli/repo/&#34;&gt;CLI&lt;/a&gt;, or &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/api/repo/&#34;&gt;API&lt;/a&gt;.
+&lt;/div&gt;
+
+
       </description>
     </item>
     
