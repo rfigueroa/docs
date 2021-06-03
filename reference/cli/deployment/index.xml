@@ -68,6 +68,11 @@ For more information, you can run &lt;code&gt;vela add deployment --help&lt;/cod
 &lt;td&gt;&lt;code&gt;VELA_DESCRIPTION&lt;/code&gt;, &lt;code&gt;DEPLOYMENT_DESCRIPTION&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
+&lt;td&gt;&lt;code&gt;parameter&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;parameter(s) in key=value format for the deployment&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;VELA_PARAMETERS,&lt;/code&gt;, &lt;code&gt;DEPLOYMENT_PARAMETERS&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
 &lt;td&gt;&lt;code&gt;task&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;name of task for the deployment&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_TASK&lt;/code&gt;, &lt;code&gt;DEPLOYMENT_TASK&lt;/code&gt;&lt;/td&gt;
@@ -93,8 +98,6 @@ For more information, you can run &lt;code&gt;vela add deployment --help&lt;/cod
 
 &lt;/div&gt;
 
-&lt;h2 id=&#34;permissions&#34;&gt;Permissions&lt;/h2&gt;
-&lt;p&gt;COMING SOON!&lt;/p&gt;
 &lt;h2 id=&#34;sample&#34;&gt;Sample&lt;/h2&gt;
 
 
@@ -106,10 +109,27 @@ For more information, you can run &lt;code&gt;vela add deployment --help&lt;/cod
 
 &lt;/div&gt;
 
-&lt;h4 id=&#34;request&#34;&gt;Request&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;vela add deployment --org github --repo octocat
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;response&#34;&gt;Response&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;deployment &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;https://api.github.com/repos/github/octocat/deployments/1&amp;#34;&lt;/span&gt; was created
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# Request with CLI to add a deployment for the &amp;#34;github&amp;#34; org and &amp;#34;octocat&amp;#34; repo&lt;/span&gt;
+$ vela add deployment --org github --repo octocat
+
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# Response generated from successful CLI command&lt;/span&gt;
+deployment &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;https://api.github.com/repos/github/octocat/deployments/1&amp;#34;&lt;/span&gt; was created
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;EXAMPLES:
+  1. Add a deployment &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;for&lt;/span&gt; a repository.
+    $ vela add deployment --org MyOrg --repo MyRepo
+  2. Add a deployment &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;for&lt;/span&gt; a repository with a specific target environment.
+    $ vela add deployment --org MyOrg --repo MyRepo --target stage
+  3. Add a deployment &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;for&lt;/span&gt; a repository with a specific branch reference.
+    $ vela add deployment --org MyOrg --repo MyRepo --ref dev
+  4. Add a deployment &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;for&lt;/span&gt; a repository with a specific commit reference.
+    $ vela add deployment --org MyOrg --repo MyRepo --ref 48afb5bdc41ad69bf22588491333f7cf71135163
+  5. Add a deployment &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;for&lt;/span&gt; a repository with a specific description.
+    $ vela add deployment --org MyOrg --repo MyRepo --description &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;my custom message&amp;#39;&lt;/span&gt;
+  6. Add a deployment &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;for&lt;/span&gt; a repository with two parameters.
+    $ vela add deployment --org MyOrg --repo MyRepo --parameter &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;key=value&amp;#39;&lt;/span&gt; --parameter &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;foo=bar&amp;#39;&lt;/span&gt;
+  7. Add a deployment &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;for&lt;/span&gt; a repository when config or environment variables are set.
+    $ vela add deployment
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
       </description>
     </item>
@@ -184,8 +204,6 @@ For more information, you can run &lt;code&gt;vela get deployment --help&lt;/cod
 
 &lt;/div&gt;
 
-&lt;h2 id=&#34;permissions&#34;&gt;Permissions&lt;/h2&gt;
-&lt;p&gt;COMING SOON!&lt;/p&gt;
 &lt;h2 id=&#34;sample&#34;&gt;Sample&lt;/h2&gt;
 
 
@@ -197,12 +215,25 @@ For more information, you can run &lt;code&gt;vela get deployment --help&lt;/cod
 
 &lt;/div&gt;
 
-&lt;h4 id=&#34;request&#34;&gt;Request&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;vela get deployment --org github --repo octocat
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;response&#34;&gt;Response&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;ID  TASK         USER     REF     TARGET
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# Request with CLI to view a deployment for the &amp;#34;github&amp;#34; org and &amp;#34;octocat&amp;#34; repo&lt;/span&gt;
+$ vela get deployment --org github --repo octocat
+
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# Response generated from successful CLI command&lt;/span&gt;
+ID  TASK         USER     REF     TARGET
 &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;2&lt;/span&gt;   deploy:vela  octocat  master  production
 &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;   deploy:vela  octocat  master  production
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;EXAMPLES:
+  1. Get deployments &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;for&lt;/span&gt; a repository.
+    $ vela get deployment --org MyOrg --repo MyRepo
+  2. Get deployments &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;for&lt;/span&gt; a repository with wide view output.
+    $ vela get deployment --org MyOrg --repo MyRepo --output wide
+  3. Get deployments &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;for&lt;/span&gt; a repository with yaml output.
+    $ vela get deployment --org MyOrg --repo MyRepo --output yaml
+  4. Get deployments &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;for&lt;/span&gt; a repository with json output.
+    $ vela get deployment --org MyOrg --repo MyRepo --output json
+  5. Get deployments &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;for&lt;/span&gt; a repository when config or environment variables are set.
+    $ vela get deployment
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
       </description>
     </item>
@@ -272,8 +303,6 @@ For more information, you can run &lt;code&gt;vela view deployment --help&lt;/co
 
 &lt;/div&gt;
 
-&lt;h2 id=&#34;permissions&#34;&gt;Permissions&lt;/h2&gt;
-&lt;p&gt;COMING SOON!&lt;/p&gt;
 &lt;h2 id=&#34;sample&#34;&gt;Sample&lt;/h2&gt;
 
 
@@ -285,10 +314,11 @@ For more information, you can run &lt;code&gt;vela view deployment --help&lt;/co
 
 &lt;/div&gt;
 
-&lt;h4 id=&#34;request&#34;&gt;Request&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;vela view deployment --org github --repo octocat --deployment &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;response&#34;&gt;Response&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;id: &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# Request with CLI to add a deployment for the &amp;#34;github&amp;#34; org and &amp;#34;octocat&amp;#34; repo&lt;/span&gt;
+$ vela view deployment --org github --repo octocat --deployment &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;
+
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# Response generated from successful CLI command&lt;/span&gt;
+id: &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;
 repo_id: &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;
 url: https://api.github.com/repos/github/octocat/deployments/1
 user: octocat
@@ -297,6 +327,14 @@ ref: master
 task: deploy:vela
 target: production
 description: Deployment request from Vela
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;EXAMPLES:
+  1. View deployment details &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;for&lt;/span&gt; a repository.
+    $ vela view deployment --org MyOrg --repo MyRepo --deployment &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;
+  2. View deployment details &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;for&lt;/span&gt; a repository with json output.
+    $ vela view deployment --org MyOrg --repo MyRepo --deployment &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt; --output json
+  3. View deployment details &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;for&lt;/span&gt; a repository config or environment variables are set.
+    $ vela view deployment --deployment &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
       </description>
     </item>

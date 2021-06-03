@@ -269,11 +269,12 @@ steps:
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+&lt;h5 id=&#34;comment-event-only&#34;&gt;&lt;code&gt;comment&lt;/code&gt; event only&lt;/h5&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 
-The following table includes variables only available during the &lt;strong&gt;comment&lt;/strong&gt; event
+The following table includes variables only available during the &lt;strong&gt;comment&lt;/strong&gt; event.
 &lt;/div&gt;
 
 &lt;table&gt;
@@ -297,11 +298,14 @@ The following table includes variables only available during the &lt;strong&gt;c
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+&lt;h5 id=&#34;deployment-event-only&#34;&gt;&lt;code&gt;deployment&lt;/code&gt; event only&lt;/h5&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 
-The following table includes variables only available during the &lt;strong&gt;deploy&lt;/strong&gt; event
+&lt;p&gt;The following table includes variables only available during the &lt;strong&gt;deployment&lt;/strong&gt; event.&lt;/p&gt;
+&lt;p&gt;All custom parameters are passed to the deployment available with a &lt;code&gt;DEPLOYMENT_PARAMETER_&lt;/code&gt; prefix of the key.&lt;/p&gt;
+
 &lt;/div&gt;
 
 &lt;table&gt;
@@ -325,11 +329,12 @@ The following table includes variables only available during the &lt;strong&gt;d
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+&lt;h5 id=&#34;pull_request-event-only&#34;&gt;&lt;code&gt;pull_request&lt;/code&gt; event only&lt;/h5&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 
-The following table includes variables only available during the &lt;strong&gt;pull request&lt;/strong&gt; event
+The following table includes variables only available during the &lt;strong&gt;pull_request&lt;/strong&gt; event.
 &lt;/div&gt;
 
 &lt;table&gt;
@@ -363,11 +368,12 @@ The following table includes variables only available during the &lt;strong&gt;p
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+&lt;h5 id=&#34;tag-event-only&#34;&gt;&lt;code&gt;tag&lt;/code&gt; event only&lt;/h5&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 
-The following table includes variables only available during the &lt;strong&gt;tag&lt;/strong&gt; event
+The following table includes variables only available during the &lt;strong&gt;tag&lt;/strong&gt; event.
 &lt;/div&gt;
 
 &lt;table&gt;

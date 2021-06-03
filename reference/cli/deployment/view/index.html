@@ -25,12 +25,12 @@
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://go-vela.github.io/docs/reference/cli/deployment/view/" />
-<meta property="article:modified_time" content="2021-02-01T17:58:51-06:00" />
+<meta property="article:modified_time" content="2021-06-03T13:53:04-05:00" />
 <meta itemprop="name" content="View">
 <meta itemprop="description" content="Learn how to inspect a deployment.
 ">
-<meta itemprop="dateModified" content="2021-02-01T17:58:51-06:00" />
-<meta itemprop="wordCount" content="154">
+<meta itemprop="dateModified" content="2021-06-03T13:53:04-05:00" />
+<meta itemprop="wordCount" content="232">
 
 
 
@@ -1671,12 +1671,8 @@
   <ul>
     <li><a href="#command">Command</a></li>
     <li><a href="#parameters">Parameters</a></li>
-    <li><a href="#permissions">Permissions</a></li>
-    <li><a href="#sample">Sample</a>
-      <ul>
-        <li></li>
-      </ul>
-    </li>
+    <li><a href="#sample">Sample</a></li>
+    <li><a href="#examples">Examples</a></li>
   </ul>
 </nav>
 
@@ -1788,8 +1784,6 @@ For more information, you can run <code>vela view deployment --help</code>.
 
 </div>
 
-<h2 id="permissions">Permissions</h2>
-<p>COMING SOON!</p>
 <h2 id="sample">Sample</h2>
 
 
@@ -1801,10 +1795,11 @@ For more information, you can run <code>vela view deployment --help</code>.
 
 </div>
 
-<h4 id="request">Request</h4>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">vela view deployment --org github --repo octocat --deployment <span style="color:#0000cf;font-weight:bold">1</span>
-</code></pre></div><h4 id="response">Response</h4>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">id: <span style="color:#0000cf;font-weight:bold">1</span>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8f5902;font-style:italic"># Request with CLI to add a deployment for the &#34;github&#34; org and &#34;octocat&#34; repo</span>
+$ vela view deployment --org github --repo octocat --deployment <span style="color:#0000cf;font-weight:bold">1</span>
+
+<span style="color:#8f5902;font-style:italic"># Response generated from successful CLI command</span>
+id: <span style="color:#0000cf;font-weight:bold">1</span>
 repo_id: <span style="color:#0000cf;font-weight:bold">1</span>
 url: https://api.github.com/repos/github/octocat/deployments/1
 user: octocat
@@ -1813,10 +1808,18 @@ ref: master
 task: deploy:vela
 target: production
 description: Deployment request from Vela
+</code></pre></div><h2 id="examples">Examples</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">EXAMPLES:
+  1. View deployment details <span style="color:#204a87;font-weight:bold">for</span> a repository.
+    $ vela view deployment --org MyOrg --repo MyRepo --deployment <span style="color:#0000cf;font-weight:bold">1</span>
+  2. View deployment details <span style="color:#204a87;font-weight:bold">for</span> a repository with json output.
+    $ vela view deployment --org MyOrg --repo MyRepo --deployment <span style="color:#0000cf;font-weight:bold">1</span> --output json
+  3. View deployment details <span style="color:#204a87;font-weight:bold">for</span> a repository config or environment variables are set.
+    $ vela view deployment --deployment <span style="color:#0000cf;font-weight:bold">1</span>
 </code></pre></div>
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified February 1, 2021: <a  href="https://github.com/go-vela/docs/commit/6dc23bdb5b3d7b927fe2acf30bd5d347f7a2cb83">fix(reference): fix broken links (#205) (6dc23bd)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified June 3, 2021: <a  href="https://github.com/go-vela/docs/commit/b7d29a13d7fbc8dc7489bf30d7dddf8d724846eb">feat: add additional deployment info (#228) (b7d29a1)</a>
 </div>
 </div>
 
