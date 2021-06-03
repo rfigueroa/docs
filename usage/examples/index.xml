@@ -700,9 +700,9 @@ Work with your server administer to understand what routes are available for you
 &lt;h3 id=&#34;steps&#34;&gt;Steps&lt;/h3&gt;
 &lt;p&gt;The following &lt;a href=&#34;https://go-vela.github.io/docs/docs/tour/&#34;&gt;pipeline concepts&lt;/a&gt; are being used in the pipeline below:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/tour/worker/&#34;&gt;Worker&lt;/a&gt;
+&lt;li&gt;&lt;em&gt;Worker&lt;/em&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/tour/worker/&#34;&gt;Platform&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Platform&lt;/em&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/tour/steps/&#34;&gt;Steps&lt;/a&gt;

@@ -22,7 +22,7 @@
       <description>
         
         
-        &lt;p&gt;The &lt;code&gt;origin&lt;/code&gt; component is a part of a &lt;a href=&#34;https://go-vela.github.io/docs/docs/concepts/pipeline/secrets/&#34;&gt;secret&lt;/a&gt; for Vela.&lt;/p&gt;
+        &lt;p&gt;The &lt;code&gt;origin&lt;/code&gt; component is a part of a &lt;a href=&#34;https://go-vela.github.io/docs/docs/tour/secrets/&#34;&gt;secret&lt;/a&gt; for Vela.&lt;/p&gt;
 &lt;p&gt;This declaration allows you to pull secrets from non-internal secret providers via plugins.&lt;/p&gt;
 
 
