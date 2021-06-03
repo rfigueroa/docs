@@ -1,0 +1,27 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+  <h3>{{ .Description }}</h3>
+
+  {{- $sectionDelimiter := "<!-- section break -->" -}}
+  {{- $rawContentSections := split .RawContent $sectionDelimiter -}}
+  {{- if gt (len $rawContentSections) 1 -}}
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-6" >
+        {{ index $rawContentSections 0 | .RenderString }}
+      </div>
+      <div class="col-6" >
+        {{ index $rawContentSections 1 | .RenderString }}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg">
+        {{ index $rawContentSections 2 | .RenderString }}
+      </div>  
+    </div>
+  </div>
+
+
+  {{- end -}}
+{{ end }}
