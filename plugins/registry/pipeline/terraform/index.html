@@ -706,7 +706,7 @@ steps:- name:applyimage:target/vela-terraform:latestpull:alwaysparameters:action
 <p><strong>NOTE:</strong> Users should refrain from configuring sensitive information in your pipeline in plain text.</p>
 </blockquote>
 <h3 id="internal">Internal</h3>
-<p>Users can use <a href="https://go-vela.github.io/docs/concepts/pipeline/secrets/">Vela internal secrets</a> to substitute these sensitive values at runtime:</p>
+<p>Users can use <a href="https://go-vela.github.io/docs/tour/secrets/">Vela internal secrets</a> to substitute these sensitive values at runtime:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: apply
     image: target/vela-terraform:latest
@@ -744,7 +744,7 @@ steps:- name:applyimage:target/vela-terraform:latestpull:alwaysparameters:action
 </tr>
 </tbody>
 </table>
-<p>Users can use <a href="https://go-vela.github.io/docs/concepts/pipeline/secrets/origin/">Vela external secrets</a> to substitute these sensitive values at runtime:</p>
+<p>Users can use <a href="https://go-vela.github.io/docs/tour/secrets/">Vela external secrets</a> to substitute these sensitive values at runtime:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: apply
     image: target/vela-terraform:latest

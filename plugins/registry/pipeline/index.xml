@@ -111,7 +111,7 @@
 &lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; Users should refrain from configuring sensitive information in your pipeline in plain text.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;internal&#34;&gt;Internal&lt;/h3&gt;
-&lt;p&gt;Users can use &lt;a href=&#34;https://go-vela.github.io/docs/concepts/pipeline/secrets/&#34;&gt;Vela internal secrets&lt;/a&gt; to substitute these sensitive values at runtime:&lt;/p&gt;
+&lt;p&gt;Users can use &lt;a href=&#34;https://go-vela.github.io/docs/tour/secrets/&#34;&gt;Vela internal secrets&lt;/a&gt; to substitute these sensitive values at runtime:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
   - name: copy_artifacts
     image: target/vela-artifactory:latest
@@ -698,7 +698,7 @@ Users should refrain from configuring sensitive information in their pipeline in
 &lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; Users should refrain from configuring sensitive information in your pipeline in plain text.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;internal&#34;&gt;Internal&lt;/h3&gt;
-&lt;p&gt;Users can use &lt;a href=&#34;https://go-vela.github.io/docs/concepts/pipeline/secrets/&#34;&gt;Vela internal secrets&lt;/a&gt; to substitute these sensitive values at runtime:&lt;/p&gt;
+&lt;p&gt;Users can use &lt;a href=&#34;https://go-vela.github.io/docs/tour/secrets/&#34;&gt;Vela internal secrets&lt;/a&gt; to substitute these sensitive values at runtime:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
   - name: publish_hello-world
     image: target/vela-docker:latest
@@ -1284,7 +1284,7 @@ Users should refrain from configuring sensitive information in their pipeline in
 &lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; Users should refrain from configuring sensitive information in your pipeline in plain text.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;internal&#34;&gt;Internal&lt;/h3&gt;
-&lt;p&gt;Users can use &lt;a href=&#34;https://go-vela.github.io/docs/concepts/pipeline/secrets/&#34;&gt;Vela internal secrets&lt;/a&gt; to substitute these sensitive values at runtime:&lt;/p&gt;
+&lt;p&gt;Users can use &lt;a href=&#34;https://go-vela.github.io/docs/tour/secrets/&#34;&gt;Vela internal secrets&lt;/a&gt; to substitute these sensitive values at runtime:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
   - name: trigger_hello-world
     image: target/vela-downstream:latest
@@ -1465,7 +1465,7 @@ Users should refrain from configuring sensitive information in their pipeline in
 &lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; Users should refrain from configuring sensitive information in your pipeline in plain text.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;internal&#34;&gt;Internal&lt;/h3&gt;
-&lt;p&gt;Users can use &lt;a href=&#34;https://go-vela.github.io/docs/concepts/pipeline/secrets/&#34;&gt;Vela internal secrets&lt;/a&gt; to substitute these sensitive values at runtime:&lt;/p&gt;
+&lt;p&gt;Users can use &lt;a href=&#34;https://go-vela.github.io/docs/tour/secrets/&#34;&gt;Vela internal secrets&lt;/a&gt; to substitute these sensitive values at runtime:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
   - name: clone_hello-world
     image: target/vela-git:latest
@@ -1752,7 +1752,7 @@ Users should refrain from configuring sensitive information in their pipeline in
 &lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; Users should refrain from configuring sensitive information in your pipeline in plain text.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;internal&#34;&gt;Internal&lt;/h3&gt;
-&lt;p&gt;Users can use &lt;a href=&#34;https://go-vela.github.io/docs/concepts/pipeline/secrets/&#34;&gt;Vela internal secrets&lt;/a&gt; to substitute these sensitive values at runtime:&lt;/p&gt;
+&lt;p&gt;Users can use &lt;a href=&#34;https://go-vela.github.io/docs/tour/secrets/&#34;&gt;Vela internal secrets&lt;/a&gt; to substitute these sensitive values at runtime:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
   - name: publish_hello-world
     image: target/vela-kaniko:latest
@@ -2061,7 +2061,7 @@ Users should refrain from configuring sensitive information in their pipeline in
 &lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; Users should refrain from configuring sensitive information in your pipeline in plain text.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;internal&#34;&gt;Internal&lt;/h3&gt;
-&lt;p&gt;Users can use &lt;a href=&#34;https://go-vela.github.io/docs/concepts/pipeline/secrets/&#34;&gt;Vela internal secrets&lt;/a&gt; to substitute these sensitive values at runtime:&lt;/p&gt;
+&lt;p&gt;Users can use &lt;a href=&#34;https://go-vela.github.io/docs/tour/secrets/&#34;&gt;Vela internal secrets&lt;/a&gt; to substitute these sensitive values at runtime:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
   - name: kubernetes
     image: target/vela-kubernetes:latest
@@ -2644,7 +2644,7 @@ Users should refrain from configuring sensitive information in their pipeline in
 &lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; Users should refrain from configuring sensitive information in your pipeline in plain text.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;internal&#34;&gt;Internal&lt;/h3&gt;
-&lt;p&gt;Users can use &lt;a href=&#34;https://go-vela.github.io/docs/concepts/pipeline/secrets/&#34;&gt;Vela internal secrets&lt;/a&gt; to substitute these sensitive values at runtime:&lt;/p&gt;
+&lt;p&gt;Users can use &lt;a href=&#34;https://go-vela.github.io/docs/tour/secrets/&#34;&gt;Vela internal secrets&lt;/a&gt; to substitute these sensitive values at runtime:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
   - name: restore_cache
     image: target/vela-s3-cache:latest
@@ -3011,7 +3011,7 @@ Users should refrain from configuring sensitive information in their pipeline in
 &lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; Users should refrain from configuring sensitive information in your pipeline in plain text.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;internal&#34;&gt;Internal&lt;/h3&gt;
-&lt;p&gt;Users can use &lt;a href=&#34;https://go-vela.github.io/docs/concepts/pipeline/secrets/&#34;&gt;Vela internal secrets&lt;/a&gt; to substitute these sensitive values at runtime:&lt;/p&gt;
+&lt;p&gt;Users can use &lt;a href=&#34;https://go-vela.github.io/docs/tour/secrets/&#34;&gt;Vela internal secrets&lt;/a&gt; to substitute these sensitive values at runtime:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
   - name: apply
     image: target/vela-terraform:latest
@@ -3049,7 +3049,7 @@ Users should refrain from configuring sensitive information in their pipeline in
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;Users can use &lt;a href=&#34;https://go-vela.github.io/docs/concepts/pipeline/secrets/origin/&#34;&gt;Vela external secrets&lt;/a&gt; to substitute these sensitive values at runtime:&lt;/p&gt;
+&lt;p&gt;Users can use &lt;a href=&#34;https://go-vela.github.io/docs/tour/secrets/&#34;&gt;Vela external secrets&lt;/a&gt; to substitute these sensitive values at runtime:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
   - name: apply
     image: target/vela-terraform:latest

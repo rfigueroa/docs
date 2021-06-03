@@ -297,7 +297,7 @@ It is assumed you have created secret &lt;code&gt;vault_token&lt;/code&gt; in th
 It is assumed you have created secrets &lt;code&gt;docker_username&lt;/code&gt; and &lt;code&gt;docker_password&lt;/code&gt; in the web interface or &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/cli/&#34;&gt;CLI&lt;/a&gt;.
 &lt;/div&gt;
 
-&lt;p&gt;The examples show a pipeline using repository secrets. Vela contains three secret types: repository, organization, and shared. For examples on organization and shared, please see the &lt;a href=&#34;https://go-vela.github.io/docs/docs/tour/steps/secrets/&#34;&gt;secret concepts&lt;/a&gt; documentation.&lt;/p&gt;
+&lt;p&gt;The examples show a pipeline using repository secrets. Vela contains three secret types: repository, organization, and shared. For examples on organization and shared, please see the &lt;a href=&#34;https://go-vela.github.io/docs/docs/tour/secrets/&#34;&gt;secret concepts&lt;/a&gt; documentation.&lt;/p&gt;
 &lt;h3 id=&#34;steps&#34;&gt;Steps&lt;/h3&gt;
 &lt;p&gt;The following &lt;a href=&#34;https://go-vela.github.io/docs/docs/tour/&#34;&gt;pipeline concepts&lt;/a&gt; are being used in the pipeline below:&lt;/p&gt;
 &lt;ul&gt;
@@ -1552,12 +1552,12 @@ $ vela add deployment --org github --repo octocat --parameter &lt;span style=&#3
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/tour/services/&#34;&gt;Services&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/tour/services/image/&#34;&gt;Pull&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/tour/image/&#34;&gt;Pull&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/tour/steps/&#34;&gt;Steps&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/tour/steps/image/&#34;&gt;Pull&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/tour/image/&#34;&gt;Pull&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/tour/secrets/&#34;&gt;Secrets&lt;/a&gt;
