@@ -2333,6 +2333,9 @@ Users should refrain from configuring sensitive information in their pipeline in
 &lt;p&gt;This plugin enables you to build and publish &lt;a href=&#34;https://www.docker.com/&#34;&gt;Docker&lt;/a&gt; images in a Vela pipeline.&lt;/p&gt;
 &lt;p&gt;Source Code: &lt;a href=&#34;https://github.com/go-vela/vela-makisu&#34;&gt;https://github.com/go-vela/vela-makisu&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Registry: &lt;a href=&#34;https://hub.docker.com/r/target/vela-makisu&#34;&gt;https://hub.docker.com/r/target/vela-makisu&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;deprecation-warning&#34;&gt;Deprecation Warning&lt;/h2&gt;
+&lt;p&gt;As of May 2021, makisu has been deprecated by the maintainers upstream. Therefore, this plugin will also be deprecated and not receive updates. It is suggested to use a different docker option. At an undecided later date it will be removed entirely.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/uber-archive/makisu/issues/365&#34;&gt;https://github.com/uber-archive/makisu/issues/365&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;usage&#34;&gt;Usage&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;NOTE: It is not recommended to use &lt;code&gt;latest&lt;/code&gt; as the tag for the Docker image. Users should use a semantically versioned tag instead.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Sample of building and publishing an image:&lt;/p&gt;

@@ -24,10 +24,9 @@
 <meta property="og:description" content="Description This plugin enables you to build and publish Docker images in a Vela pipeline.
 Source Code: https://github.com/go-vela/vela-makisu
 Registry: https://hub.docker.com/r/target/vela-makisu
-Usage NOTE: It is not recommended to use latest as the tag for the Docker image. Users should use a semantically versioned tag instead.
-Sample of building and publishing an image:
-steps:- name:publish_hello-worldimage:target/vela-makisu:latestpull:alwaysparameters:registry:index.docker.iotag:index.docker.io/octocat/hello-worldpushes:[index.docker.io ]Sample of building an image without publishing:
-steps: - name: publish hello world image: target/vela-makisu:latest pull: always parameters: - pushes: [ index." />
+Deprecation Warning As of May 2021, makisu has been deprecated by the maintainers upstream. Therefore, this plugin will also be deprecated and not receive updates. It is suggested to use a different docker option. At an undecided later date it will be removed entirely.
+https://github.com/uber-archive/makisu/issues/365
+Usage NOTE: It is not recommended to use latest as the tag for the Docker image." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://go-vela.github.io/docs/plugins/registry/pipeline/makisu/" />
 <meta property="article:modified_time" content="2021-01-13T15:05:51-06:00" />
@@ -35,12 +34,11 @@ steps: - name: publish hello world image: target/vela-makisu:latest pull: always
 <meta itemprop="description" content="Description This plugin enables you to build and publish Docker images in a Vela pipeline.
 Source Code: https://github.com/go-vela/vela-makisu
 Registry: https://hub.docker.com/r/target/vela-makisu
-Usage NOTE: It is not recommended to use latest as the tag for the Docker image. Users should use a semantically versioned tag instead.
-Sample of building and publishing an image:
-steps:- name:publish_hello-worldimage:target/vela-makisu:latestpull:alwaysparameters:registry:index.docker.iotag:index.docker.io/octocat/hello-worldpushes:[index.docker.io ]Sample of building an image without publishing:
-steps: - name: publish hello world image: target/vela-makisu:latest pull: always parameters: - pushes: [ index.">
+Deprecation Warning As of May 2021, makisu has been deprecated by the maintainers upstream. Therefore, this plugin will also be deprecated and not receive updates. It is suggested to use a different docker option. At an undecided later date it will be removed entirely.
+https://github.com/uber-archive/makisu/issues/365
+Usage NOTE: It is not recommended to use latest as the tag for the Docker image.">
 <meta itemprop="dateModified" content="2021-01-13T15:05:51-06:00" />
-<meta itemprop="wordCount" content="574">
+<meta itemprop="wordCount" content="619">
 
 
 
@@ -50,10 +48,9 @@ steps: - name: publish hello world image: target/vela-makisu:latest pull: always
 <meta name="twitter:description" content="Description This plugin enables you to build and publish Docker images in a Vela pipeline.
 Source Code: https://github.com/go-vela/vela-makisu
 Registry: https://hub.docker.com/r/target/vela-makisu
-Usage NOTE: It is not recommended to use latest as the tag for the Docker image. Users should use a semantically versioned tag instead.
-Sample of building and publishing an image:
-steps:- name:publish_hello-worldimage:target/vela-makisu:latestpull:alwaysparameters:registry:index.docker.iotag:index.docker.io/octocat/hello-worldpushes:[index.docker.io ]Sample of building an image without publishing:
-steps: - name: publish hello world image: target/vela-makisu:latest pull: always parameters: - pushes: [ index."/>
+Deprecation Warning As of May 2021, makisu has been deprecated by the maintainers upstream. Therefore, this plugin will also be deprecated and not receive updates. It is suggested to use a different docker option. At an undecided later date it will be removed entirely.
+https://github.com/uber-archive/makisu/issues/365
+Usage NOTE: It is not recommended to use latest as the tag for the Docker image."/>
 
 
 
@@ -633,6 +630,9 @@ steps: - name: publish hello world image: target/vela-makisu:latest pull: always
 <p>This plugin enables you to build and publish <a href="https://www.docker.com/">Docker</a> images in a Vela pipeline.</p>
 <p>Source Code: <a href="https://github.com/go-vela/vela-makisu">https://github.com/go-vela/vela-makisu</a></p>
 <p>Registry: <a href="https://hub.docker.com/r/target/vela-makisu">https://hub.docker.com/r/target/vela-makisu</a></p>
+<h2 id="deprecation-warning">Deprecation Warning</h2>
+<p>As of May 2021, makisu has been deprecated by the maintainers upstream. Therefore, this plugin will also be deprecated and not receive updates. It is suggested to use a different docker option. At an undecided later date it will be removed entirely.</p>
+<p><a href="https://github.com/uber-archive/makisu/issues/365">https://github.com/uber-archive/makisu/issues/365</a></p>
 <h2 id="usage">Usage</h2>
 <p><strong>NOTE: It is not recommended to use <code>latest</code> as the tag for the Docker image. Users should use a semantically versioned tag instead.</strong></p>
 <p>Sample of building and publishing an image:</p>
