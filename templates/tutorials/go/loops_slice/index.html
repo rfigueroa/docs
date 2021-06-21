@@ -25,11 +25,11 @@
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://go-vela.github.io/docs/templates/tutorials/go/loops_slice/" />
-<meta property="article:modified_time" content="2021-02-23T08:27:21-06:00" />
+<meta property="article:modified_time" content="2021-06-21T08:35:40-04:00" />
 <meta itemprop="name" content="Loops with Slices">
 <meta itemprop="description" content="Example Go template with loops and slices.
 ">
-<meta itemprop="dateModified" content="2021-02-23T08:27:21-06:00" />
+<meta itemprop="dateModified" content="2021-06-21T08:35:40-04:00" />
 <meta itemprop="wordCount" content="198">
 
 
@@ -609,7 +609,7 @@ For information on range/else statements see <a href="https://golang.org/pkg/tex
 </span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">commands</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">      </span>- <span style="color:#000">go test ./...</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">image</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>{{<span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">$value }}</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>{{<span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">.pull_policy }}</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>{{<span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">$.pull_policy }}</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">ruleset</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">event</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">[</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">push, pull_request ]</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">
@@ -622,7 +622,7 @@ For information on range/else statements see <a href="https://golang.org/pkg/tex
 </span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">CGO_ENABLED</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#39;0&#39;</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">GOOS</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">linux</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">image</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">golang:latest</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>{{<span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">.pull_policy }}</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>{{<span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">$.pull_policy }}</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">ruleset</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">event</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">[</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">push, pull_request ]</span><span style="color:#f8f8f8;text-decoration:underline">
 </span></code></pre></div><p>The caller of this template could look like:</p>
@@ -679,7 +679,7 @@ For information on range/else statements see <a href="https://golang.org/pkg/tex
 </span></code></pre></div>
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified February 23, 2021: <a  href="https://github.com/go-vela/docs/commit/1466b9a15b283bd0436afbde1d6e2a99f5393b6d">fix(typos): utilize correct image (#208) (1466b9a)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified June 21, 2021: <a  href="https://github.com/go-vela/docs/commit/83e54e4a0bb64c70e7169c8007da0b8b281f7345">docs: fix invalid template example (#234) (83e54e4)</a>
 </div>
 </div>
 
