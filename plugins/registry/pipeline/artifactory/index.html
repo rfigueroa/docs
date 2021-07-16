@@ -46,7 +46,7 @@ steps:- name:copy_artifactsimage:target/vela-artifactory:latestpull:alwaysparame
 steps:- name:delete_artifactsimage:target/vela-artifactory:latestpull:alwaysparameters:action:deletepath:libs-snapshot-local/foo.txturl:http://localhost:8081/artifactorySample of setting properties on an artifact:
 steps:- name:set_properties_artifactsimage:target/vela-artifactory:latestpull:alwaysparameters:action:set-proppath:libs-snapshot-local/foo.txtprops:- name:singlevalue:foo- name:multiplevalues:- bar- bazurl:http://localhost:8081/artifactorySample of uploading an artifact:">
 <meta itemprop="dateModified" content="2021-01-13T15:05:51-06:00" />
-<meta itemprop="wordCount" content="747">
+<meta itemprop="wordCount" content="776">
 
 
 
@@ -721,12 +721,35 @@ steps:- name:set_properties_artifactsimage:target/vela-artifactory:latestpull:al
 </span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">docker_registry</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">octocat/hello-world</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">tag</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">latest</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">target_docker_registry</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">octocat/hello-world</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">target_tags</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#34;${BUILD_COMMIT:0:8}&#34;</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">target_tags</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#34;${VELA_BUILD_COMMIT:0:8}&#34;</span><span style="color:#f8f8f8;text-decoration:underline">
 </span></code></pre></div><h2 id="secrets">Secrets</h2>
 <blockquote>
 <p><strong>NOTE:</strong> Users should refrain from configuring sensitive information in your pipeline in plain text.</p>
 </blockquote>
 <h3 id="internal">Internal</h3>
+<p>The plugin accepts the following <code>parameters</code> for authentication:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Environment Variable Configuration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>api_key</code></td>
+<td><code>PARAMETER_API_KEY</code>, <code>ARTIFACTORY_API_KEY</code></td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td><code>PARAMETER_PASSWORD</code>, <code>ARTIFACTORY_PASSWORD</code></td>
+</tr>
+<tr>
+<td><code>username</code></td>
+<td><code>PARAMETER_USERNAME</code>, <code>ARTIFACTORY_USERNAME</code></td>
+</tr>
+</tbody>
+</table>
 <p>Users can use <a href="https://go-vela.github.io/docs/tour/secrets/">Vela internal secrets</a> to substitute these sensitive values at runtime:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: copy_artifacts
@@ -753,7 +776,7 @@ steps:- name:set_properties_artifactsimage:target/vela-artifactory:latestpull:al
 <thead>
 <tr>
 <th>Parameter</th>
-<th>Volume Configuration</th>
+<th>File Configuration</th>
 </tr>
 </thead>
 <tbody>
@@ -771,7 +794,7 @@ steps:- name:set_properties_artifactsimage:target/vela-artifactory:latestpull:al
 </tr>
 </tbody>
 </table>
-<p>Users can use <a href="https://go-vela.github.io/docs/concepts/pipeline/secrets/origin/">Vela external secrets</a> to substitute these sensitive values at runtime:</p>
+<p>Users can use <a href="https://go-vela.github.io/docs/tour/secrets/">Vela external secrets</a> to substitute these sensitive values at runtime:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: copy_artifacts
     image: target/vela-artifactory:latest
@@ -784,13 +807,17 @@ steps:- name:set_properties_artifactsimage:target/vela-artifactory:latestpull:al
 <span style="color:#a40000">-     username: octocat
 </span><span style="color:#a40000">-     password: superSecretPassword
 </span></code></pre></div><blockquote>
-<p>This example will read the secret values in the volume stored at <code>/vela/secrets/</code></p>
+<p>This example will read the secret values in the build workspace stored at <code>/vela/secrets/artifactory/*</code></p>
 </blockquote>
 <h2 id="parameters">Parameters</h2>
 <blockquote>
 <p><strong>NOTE:</strong></p>
-<p>The plugin supports reading all parameters via environment variables or files.</p>
-<p>Any values set from a file take precedence over values set from the environment.</p>
+<p>The plugin supports reading all parameters via:</p>
+<ul>
+<li>environment variables - <code>PARAMETER_*</code> OR <code>ARTIFACTORY_*</code></li>
+<li>files - <code>/vela/parameters/artifactory/*</code> OR <code>/vela/secrets/artifactory/*</code></li>
+</ul>
+<p>Any values set from a file takes precedence over values set from the environment.</p>
 </blockquote>
 <p>The following parameters are used to configure the image:</p>
 <table>
@@ -816,14 +843,14 @@ steps:- name:set_properties_artifactsimage:target/vela-artifactory:latestpull:al
 <td>API key for communication with Artifactory</td>
 <td><code>false</code></td>
 <td><code>N/A</code></td>
-<td><code>PARAMETER_DRY_RUN</code><br><code>ARTIFACTORY_DRY_RUN</code></td>
+<td><code>PARAMETER_API_KEY</code><br><code>ARTIFACTORY_API_KEY</code></td>
 </tr>
 <tr>
 <td><code>dry_run</code></td>
 <td>enables pretending to perform the action</td>
 <td><code>false</code></td>
 <td><code>false</code></td>
-<td><code>PARAMETER_API_KEY</code><br><code>ARTIFACTORY_API_KEY</code></td>
+<td><code>PARAMETER_DRY_RUN</code><br><code>ARTIFACTORY_DRY_RUN</code></td>
 </tr>
 <tr>
 <td><code>log_level</code></td>
@@ -849,13 +876,13 @@ steps:- name:set_properties_artifactsimage:target/vela-artifactory:latestpull:al
 <tr>
 <td><code>username</code></td>
 <td>user name for communication with Artifactory</td>
-<td><code>true</code></td>
+<td><code>false</code></td>
 <td><code>N/A</code></td>
 <td><code>PARAMETER_USERNAME</code><br><code>ARTIFACTORY_USERNAME</code></td>
 </tr>
 </tbody>
 </table>
-<h4 id="copy">Copy</h4>
+<h3 id="copy">Copy</h3>
 <p>The following parameters are used to configure the <code>copy</code> action:</p>
 <table>
 <thead>
@@ -898,7 +925,7 @@ steps:- name:set_properties_artifactsimage:target/vela-artifactory:latestpull:al
 </tr>
 </tbody>
 </table>
-<h4 id="delete">Delete</h4>
+<h3 id="delete">Delete</h3>
 <p>The following parameters are used to configure the <code>delete</code> action:</p>
 <table>
 <thead>
@@ -927,7 +954,7 @@ steps:- name:set_properties_artifactsimage:target/vela-artifactory:latestpull:al
 </tr>
 </tbody>
 </table>
-<h4 id="docker-promote">Docker-Promote</h4>
+<h3 id="docker-promote">Docker-Promote</h3>
 <p>The following parameters are used to configure the <code>docker-promote</code> action:</p>
 <table>
 <thead>
@@ -941,11 +968,11 @@ steps:- name:set_properties_artifactsimage:target/vela-artifactory:latestpull:al
 </thead>
 <tbody>
 <tr>
-<td><code>target_repo</code></td>
-<td>name of the docker registry containing the image</td>
+<td><code>copy</code></td>
+<td>set to copy instead of moving the image</td>
+<td><code>false</code></td>
 <td><code>true</code></td>
-<td><code>N/A</code></td>
-<td><code>PARAMETER_TARGET_REPO</code><br><code>ARTIFACTORY_TARGET_REPO</code></td>
+<td><code>PARAMETER_COPY</code><br><code>ARTIFACTORY_COPY</code></td>
 </tr>
 <tr>
 <td><code>docker_registry</code></td>
@@ -955,11 +982,11 @@ steps:- name:set_properties_artifactsimage:target/vela-artifactory:latestpull:al
 <td><code>PARAMETER_DOCKER_REGISTRY</code><br><code>ARTIFACTORY_DOCKER_REGISTRY</code></td>
 </tr>
 <tr>
-<td><code>target_docker_registry</code></td>
-<td>path for target image in docker registry</td>
-<td><code>true</code></td>
-<td><code>N/A</code></td>
-<td><code>PARAMETER_TARGET_DOCKER_REGISTRY</code><br><code>ARTIFACTORY_TARGET_DOCKER_REGISTRY</code></td>
+<td><code>promote_props</code></td>
+<td>enables setting properties on the promoted artifact</td>
+<td><code>false</code></td>
+<td><code>false</code></td>
+<td><code>PARAMETER_PROMOTE_PROPS</code><br><code>ARTIFACTORY_PROMOTE_PROPS</code></td>
 </tr>
 <tr>
 <td><code>tag</code></td>
@@ -969,29 +996,29 @@ steps:- name:set_properties_artifactsimage:target/vela-artifactory:latestpull:al
 <td><code>PARAMETER_TAG</code><br><code>ARTIFACTORY_TAG</code></td>
 </tr>
 <tr>
+<td><code>target_docker_registry</code></td>
+<td>path for target image in docker registry</td>
+<td><code>true</code></td>
+<td><code>N/A</code></td>
+<td><code>PARAMETER_TARGET_DOCKER_REGISTRY</code><br><code>ARTIFACTORY_TARGET_DOCKER_REGISTRY</code></td>
+</tr>
+<tr>
+<td><code>target_repo</code></td>
+<td>name of the docker registry containing the image</td>
+<td><code>true</code></td>
+<td><code>N/A</code></td>
+<td><code>PARAMETER_TARGET_REPO</code><br><code>ARTIFACTORY_TARGET_REPO</code></td>
+</tr>
+<tr>
 <td><code>target_tags</code></td>
 <td>name of the final tags after promotion</td>
 <td><code>true</code></td>
 <td><code>N/A</code></td>
 <td><code>PARAMETER_TARGET_TAGS</code><br><code>ARTIFACTORY_TARGET_TAGS</code></td>
 </tr>
-<tr>
-<td><code>copy</code></td>
-<td>set to copy instead of moving the image</td>
-<td><code>false</code></td>
-<td><code>false</code></td>
-<td><code>PARAMETER_COPY</code><br><code>ARTIFACTORY_COPY</code></td>
-</tr>
-<tr>
-<td><code>promote_props</code></td>
-<td>enables setting properties on the promoted artifact</td>
-<td><code>false</code></td>
-<td><code>false</code></td>
-<td><code>PARAMETER_PROMOTE_PROPS</code><br><code>ARTIFACTORY_PROMOTE_PROPS</code></td>
-</tr>
 </tbody>
 </table>
-<h4 id="set-prop">Set-Prop</h4>
+<h3 id="set-prop">Set-Prop</h3>
 <p>The following parameters are used to configure the <code>set-prop</code> action:</p>
 <table>
 <thead>
@@ -1020,7 +1047,7 @@ steps:- name:set_properties_artifactsimage:target/vela-artifactory:latestpull:al
 </tr>
 </tbody>
 </table>
-<h4 id="upload">Upload</h4>
+<h3 id="upload">Upload</h3>
 <p>The following parameters are used to configure the <code>upload</code> action:</p>
 <table>
 <thead>
@@ -1059,14 +1086,14 @@ steps:- name:set_properties_artifactsimage:target/vela-artifactory:latestpull:al
 <td>enables uploading sub-directories for the artifact(s)</td>
 <td><code>false</code></td>
 <td><code>false</code></td>
-<td><code>PARAMETER_REGEXP</code><br><code>ARTIFACTORY_REGEXP</code></td>
+<td><code>PARAMETER_RECURSIVE</code><br><code>ARTIFACTORY_RECURSIVE</code></td>
 </tr>
 <tr>
 <td><code>regexp</code></td>
 <td>enables reading the sources as a regular expression</td>
 <td><code>false</code></td>
 <td><code>false</code></td>
-<td><code>PARAMETER_RECURSIVE</code><br><code>ARTIFACTORY_RECURSIVE</code></td>
+<td><code>PARAMETER_REGEXP</code><br><code>ARTIFACTORY_REGEXP</code></td>
 </tr>
 <tr>
 <td><code>sources</code></td>
