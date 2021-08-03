@@ -189,7 +189,7 @@
     "url": "https://go-vela.github.io/docs/reference/yaml/stages/",
     "display": "Reference/Yaml/Stages",
     "title": "Stages",
-    "content": "the stages tag intended to be used parallelize one-to-many sets of step tasks. ---# document displaying all required tags# run two with one task parallel.stages:test:hello:- name:hello worldimage:alpine:latestcommands:- echo &#34;hello, vela user&#34;welcome:steps:- name:welcome velaimage:alpine:latestcommands:- &#34;welcome vela!&#34;tags type description name string unique identifier for stage pipeline steps []string sequential execution instructions needs struct that must complete before starting current usage name: ---stages:# pipeline.welcome:the steps: pipeline.welcome:# stage.steps:the tip: more details on tags, see tags documentation ---stages:greeting:# one.needs:[greeting "
+    "content": "the stages tag intended to be used parallelize one-to-many sets of step tasks. ---# document displaying all required tags# run two with one task parallel.stages:test:hello:- name:hello worldimage:alpine:latestcommands:- echo &#34;hello, vela user&#34;welcome:steps:- name:welcome velaimage:alpine:latestcommands:- &#34;welcome vela!&#34;tags type description name string unique identifier for stage pipeline steps []string sequential execution instructions needs that must complete before starting current usage name: ---stages:# pipeline.welcome:the steps: pipeline.welcome:# stage.steps:the tip: more details on tags, see tags documentation ---stages:greeting:# one.needs:[greeting "
     },
 
     {
