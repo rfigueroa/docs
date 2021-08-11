@@ -4,13 +4,6 @@
 
 
     {
-    "url": "https://go-vela.github.io/docs/reference/yaml/environment/",
-    "display": "Reference/Yaml/Environment",
-    "title": "Environment",
-    "content": "the environment tag intended to be used inject global configuration into steps, services secret containers. control of which container types get injected settings available via metadata block. ---# document displaying using with map syntax.# additionally, you can also use array syntax where items in# they are pattern hello=&#34;hello, vela!&#34;environment:hello:&#34;hello, vela!&#34; "
-    },
-
-    {
     "url": "https://go-vela.github.io/docs/usage/examples/secrets_external/",
     "display": "Usage/Examples/Secrets external",
     "title": "External Secrets",
@@ -105,7 +98,7 @@
     "url": "https://go-vela.github.io/docs/reference/yaml/metadata/",
     "display": "Reference/Yaml/Metadata",
     "title": "Metadata",
-    "content": "the metadata tag intended to be used during compile phase signal how treat yaml document. ---# document displaying all available tags# their default state for process.metadata:template:falseclone:truetags required type description template bool enables compiling pipeline as template. clone injecting process. usage template: tip: learn write templates, see documentation. ---metadata:# value defaulted &#34;false&#34; if not explicitly provided by user.template:truethe clone: processclone:truethe environment: default, below populated into every with# services, steps, secrets. but, when block exists the# configuration specified phase.environment:[steps, secrets "
+    "content": "the metadata tag intended to be used during compile phase signal how treat yaml document. ---# document displaying all available tags# their default state for process.metadata:template:falseclone:truetags required type description template bool enables compiling pipeline as template. clone injecting process. usage template: tip: learn write templates, see documentation. ---metadata:# value defaulted &#34;false&#34; if not explicitly provided by user.template:truethe clone: processclone:true "
     },
 
     {
@@ -1078,7 +1071,7 @@
     "url": "https://go-vela.github.io/docs/usage/environment/",
     "display": "Docs/Usage/Environment",
     "title": "Using the Environment",
-    "content": "vela provides the ability to define environment variables scoped individual steps, services secrets. additionally, if you need global can set it at parent have injected all containers. please note designed be unique per container. does inject variety of default values from build, repo user information. defaults: container steps only usage following pipeline concepts are being used below: secrets origin note: warned that ${variable} expressions subject pre-processing. do not want pre-processor evaluate your expression must escaped. version: &#34;1&#34; environment: global_example: hello, world globally! services: name: redis local_example: world! image: redis:latest steps: check status commands: use bash commands in-line override export example=&#34;hello team&#34; echo ${example} ${global_example} secrets: origin: private vault target/secret-vault:latest example: vault_token parameters: addr: vault.example.com auth_method: token username: octocat items: source: secret/docker path: docker by injection affects containers ran within pipeline. however, some types receive configuration limit which get them adding declaration into metadata. valid for metadata yaml tag metadata: longer available local shell since &#34;secrets&#34; was removed as value metadata.environment block. "
+    "content": "vela provides the ability to define environment variables scoped individual steps, services secrets. pleas note design be unique per container. does inject variety of default values from build, repo user information. defaults: container steps only usage following pipeline concepts are being used below: secrets origin note: please warned that ${variable} expressions subject pre-processing. if you do not want pre-processor evaluate your expression it must escaped. version: &#34;1&#34; services: name: redis environment: example: hello, world! image: redis:latest steps: check status commands: can use bash commands in-line set override export example=&#34;hello world team&#34; echo ${example} secrets: origin: private vault target/secret-vault:latest vault_token parameters: addr: vault.example.com auth_method: token username: octocat items: source: secret/docker path: docker "
     },
 
     {
