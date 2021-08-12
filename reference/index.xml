@@ -456,7 +456,7 @@ sudo cp releases/vela /usr/local/bin/
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;image&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;Y&lt;/td&gt;
-&lt;td&gt;[]string&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
 &lt;td&gt;Docker image used to create an ephemeral container&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -587,7 +587,7 @@ sudo cp releases/vela /usr/local/bin/
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;image&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;Y&lt;/td&gt;
-&lt;td&gt;[]string&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
 &lt;td&gt;Docker image used to create ephemeral container.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
