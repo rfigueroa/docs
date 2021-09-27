@@ -28,8 +28,8 @@ Usage  NOTE:
 Users should refrain from using latest as the tag for the Docker image.
 It is recommended to use a semantically versioned tag instead.
  Sample of triggering a downstream build:
-steps:- name:trigger_hello-worldimage:target/vela-downstream:latestpull:alwaysparameters:branch:masterrepos:- octocat/hello-worldserver:https://vela-server.localhostSample of triggering a downstream build for multiple repos:
-steps: - name: trigger_multiple image: target/vela-downstream:latest pull: always parameters: branch: master repos: - octocat/hello-world &#43; - go-vela/hello-world  server: https://vela-server." />
+steps:- name:trigger_hello-worldimage:target/vela-downstream:latestpull:alwaysparameters:repos:- octocat/hello-worldserver:https://vela-server.localhostSample of triggering a downstream build for a specific branch:
+steps: - name: trigger_hello-world image: target/vela-downstream:latest pull: always parameters: &#43; branch: main  repos: - octocat/hello-world server: https://vela-server." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://go-vela.github.io/docs/plugins/registry/pipeline/downstream/" />
 <meta property="article:modified_time" content="2021-01-13T15:05:51-06:00" />
@@ -41,10 +41,10 @@ Usage  NOTE:
 Users should refrain from using latest as the tag for the Docker image.
 It is recommended to use a semantically versioned tag instead.
  Sample of triggering a downstream build:
-steps:- name:trigger_hello-worldimage:target/vela-downstream:latestpull:alwaysparameters:branch:masterrepos:- octocat/hello-worldserver:https://vela-server.localhostSample of triggering a downstream build for multiple repos:
-steps: - name: trigger_multiple image: target/vela-downstream:latest pull: always parameters: branch: master repos: - octocat/hello-world &#43; - go-vela/hello-world  server: https://vela-server.">
+steps:- name:trigger_hello-worldimage:target/vela-downstream:latestpull:alwaysparameters:repos:- octocat/hello-worldserver:https://vela-server.localhostSample of triggering a downstream build for a specific branch:
+steps: - name: trigger_hello-world image: target/vela-downstream:latest pull: always parameters: &#43; branch: main  repos: - octocat/hello-world server: https://vela-server.">
 <meta itemprop="dateModified" content="2021-01-13T15:05:51-06:00" />
-<meta itemprop="wordCount" content="415">
+<meta itemprop="wordCount" content="546">
 
 
 
@@ -58,8 +58,8 @@ Usage  NOTE:
 Users should refrain from using latest as the tag for the Docker image.
 It is recommended to use a semantically versioned tag instead.
  Sample of triggering a downstream build:
-steps:- name:trigger_hello-worldimage:target/vela-downstream:latestpull:alwaysparameters:branch:masterrepos:- octocat/hello-worldserver:https://vela-server.localhostSample of triggering a downstream build for multiple repos:
-steps: - name: trigger_multiple image: target/vela-downstream:latest pull: always parameters: branch: master repos: - octocat/hello-world &#43; - go-vela/hello-world  server: https://vela-server."/>
+steps:- name:trigger_hello-worldimage:target/vela-downstream:latestpull:alwaysparameters:repos:- octocat/hello-worldserver:https://vela-server.localhostSample of triggering a downstream build for a specific branch:
+steps: - name: trigger_hello-world image: target/vela-downstream:latest pull: always parameters: &#43; branch: main  repos: - octocat/hello-world server: https://vela-server."/>
 
 
 
@@ -531,6 +531,12 @@ steps: - name: trigger_multiple image: target/vela-downstream:latest pull: alway
       
       
       
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginstutorialskotlin" href="/docs/plugins/tutorials/kotlin/">Kotlin</a>
+      
+      
+      
+      
+      
       <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginstutorialsnode" href="/docs/plugins/tutorials/node/">Node.js</a>
       
       
@@ -651,32 +657,66 @@ steps: - name: trigger_multiple image: target/vela-downstream:latest pull: alway
 </span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">image</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">target/vela-downstream:latest</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">pull</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">always</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">parameters</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">branch</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">master</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">repos</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">        </span>- <span style="color:#000">octocat/hello-world</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">server</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">https://vela-server.localhost</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></code></pre></div><p>Sample of triggering a downstream build for a specific branch:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
+  - name: trigger_hello-world
+    image: target/vela-downstream:latest
+    pull: always
+    parameters:
+<span style="color:#00a000">+     branch: main
+</span><span style="color:#00a000"></span>      repos:
+        - octocat/hello-world
+      server: https://vela-server.localhost
+</code></pre></div><p>Sample of triggering a downstream build for a specific event:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
+  - name: trigger_hello-world
+    image: target/vela-downstream:latest
+    pull: always
+    parameters:
+<span style="color:#00a000">+     event: tag
+</span><span style="color:#00a000"></span>      repos:
+        - octocat/hello-world
+      server: https://vela-server.localhost
+</code></pre></div><p>Sample of triggering a downstream build for a specific status:</p>
+<blockquote>
+<p><strong>NOTE:</strong></p>
+<p>You can provide a list of statuses to the plugin.</p>
+<p>The first build found matching either of the statuses will be triggered.</p>
+</blockquote>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
+  - name: trigger_hello-world
+    image: target/vela-downstream:latest
+    pull: always
+    parameters:
+      repos:
+        - octocat/hello-world
+      server: https://vela-server.localhost
+<span style="color:#00a000">+     status: [ success, failure ]
 </span></code></pre></div><p>Sample of triggering a downstream build for multiple repos:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: trigger_multiple
     image: target/vela-downstream:latest
     pull: always
     parameters:
-      branch: master
       repos:
         - octocat/hello-world
 <span style="color:#00a000">+       - go-vela/hello-world
 </span><span style="color:#00a000"></span>      server: https://vela-server.localhost
 </code></pre></div><p>Sample of triggering a downstream build for multiple repos with different branches:</p>
 <blockquote>
-<p><strong>NOTE:</strong> Use the @ symbol at the end of the org/repo to provide a unique branch per repo.</p>
+<p><strong>NOTE:</strong></p>
+<p>Use the @ symbol at the end of the org/repo to provide a unique branch per repo.</p>
+<p>This will override the value set for the <code>branch</code> parameter.</p>
 </blockquote>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
   - name: trigger_multiple
     image: target/vela-downstream:latest
     pull: always
     parameters:
-<span style="color:#a40000">-     branch: master
-</span><span style="color:#a40000"></span>      repos:
+      repos:
 <span style="color:#a40000">-       - octocat/hello-world
 </span><span style="color:#a40000"></span><span style="color:#00a000">+       - octocat/hello-world@test
 </span><span style="color:#00a000"></span><span style="color:#a40000">-       - go-vela/hello-world
@@ -694,7 +734,6 @@ steps: - name: trigger_multiple image: target/vela-downstream:latest pull: alway
     pull: always
 <span style="color:#00a000">+   secrets: [ downstream_token ]
 </span><span style="color:#00a000"></span>    parameters:
-      branch: master
       repos:
         - octocat/hello-world
       server: https://vela-server.localhost
@@ -727,7 +766,6 @@ steps: - name: trigger_multiple image: target/vela-downstream:latest pull: alway
     image: target/vela-downstream:latest
     pull: always
     parameters:
-      branch: master
       repos:
         - octocat/hello-world
       server: https://vela-server.localhost
@@ -755,10 +793,17 @@ steps: - name: trigger_multiple image: target/vela-downstream:latest pull: alway
 <tbody>
 <tr>
 <td><code>branch</code></td>
-<td>default branch to trigger a build on</td>
+<td>branch to trigger a build on</td>
 <td><code>true</code></td>
 <td><code>master</code></td>
 <td><code>PARAMETER_BRANCH</code><br><code>DOWNSTREAM_BRANCH</code></td>
+</tr>
+<tr>
+<td><code>event</code></td>
+<td>event to trigger a build on</td>
+<td><code>true</code></td>
+<td><code>push</code></td>
+<td><code>PARAMETER_EVENT</code><br><code>DOWNSTREAM_EVENT</code></td>
 </tr>
 <tr>
 <td><code>log_level</code></td>
@@ -782,6 +827,13 @@ steps: - name: trigger_multiple image: target/vela-downstream:latest pull: alway
 <td><code>PARAMETER_SERVER</code><br><code>DOWNSTREAM_SERVER</code></td>
 </tr>
 <tr>
+<td><code>status</code></td>
+<td>list of statuses to trigger a build on</td>
+<td><code>true</code></td>
+<td><code>[ success ]</code></td>
+<td><code>PARAMETER_STATUS</code><br><code>DOWNSTREAM_STATUS</code></td>
+</tr>
+<tr>
 <td><code>token</code></td>
 <td>token for communication with Vela</td>
 <td><code>true</code></td>
@@ -799,7 +851,6 @@ steps: - name: trigger_multiple image: target/vela-downstream:latest pull: alway
     image: target/vela-downstream:latest
     pull: always
     parameters:
-      branch: master
 <span style="color:#00a000">+     log_level: trace
 </span><span style="color:#00a000"></span>      repos:
         - octocat/hello-world

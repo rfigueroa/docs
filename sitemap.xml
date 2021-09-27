@@ -563,6 +563,11 @@
   </url>
   
   <url>
+    <loc>https://go-vela.github.io/docs/plugins/tutorials/kotlin/</loc>
+    <lastmod>2021-09-27T09:14:22-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://go-vela.github.io/docs/plugins/registry/pipeline/kubernetes/</loc>
     <lastmod>2021-01-13T15:05:51-06:00</lastmod>
   </url>

@@ -1275,32 +1275,66 @@ Users should refrain from configuring sensitive information in their pipeline in
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;image&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;target/vela-downstream:latest&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;pull&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;always&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;parameters&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;branch&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;master&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;repos&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;        &lt;/span&gt;- &lt;span style=&#34;color:#000&#34;&gt;octocat/hello-world&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;server&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;https://vela-server.localhost&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Sample of triggering a downstream build for a specific branch:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
+  - name: trigger_hello-world
+    image: target/vela-downstream:latest
+    pull: always
+    parameters:
+&lt;span style=&#34;color:#00a000&#34;&gt;+     branch: main
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;      repos:
+        - octocat/hello-world
+      server: https://vela-server.localhost
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Sample of triggering a downstream build for a specific event:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
+  - name: trigger_hello-world
+    image: target/vela-downstream:latest
+    pull: always
+    parameters:
+&lt;span style=&#34;color:#00a000&#34;&gt;+     event: tag
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;      repos:
+        - octocat/hello-world
+      server: https://vela-server.localhost
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Sample of triggering a downstream build for a specific status:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;You can provide a list of statuses to the plugin.&lt;/p&gt;
+&lt;p&gt;The first build found matching either of the statuses will be triggered.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
+  - name: trigger_hello-world
+    image: target/vela-downstream:latest
+    pull: always
+    parameters:
+      repos:
+        - octocat/hello-world
+      server: https://vela-server.localhost
+&lt;span style=&#34;color:#00a000&#34;&gt;+     status: [ success, failure ]
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Sample of triggering a downstream build for multiple repos:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
   - name: trigger_multiple
     image: target/vela-downstream:latest
     pull: always
     parameters:
-      branch: master
       repos:
         - octocat/hello-world
 &lt;span style=&#34;color:#00a000&#34;&gt;+       - go-vela/hello-world
 &lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;      server: https://vela-server.localhost
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Sample of triggering a downstream build for multiple repos with different branches:&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; Use the @ symbol at the end of the org/repo to provide a unique branch per repo.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Use the @ symbol at the end of the org/repo to provide a unique branch per repo.&lt;/p&gt;
+&lt;p&gt;This will override the value set for the &lt;code&gt;branch&lt;/code&gt; parameter.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
   - name: trigger_multiple
     image: target/vela-downstream:latest
     pull: always
     parameters:
-&lt;span style=&#34;color:#a40000&#34;&gt;-     branch: master
-&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;&lt;/span&gt;      repos:
+      repos:
 &lt;span style=&#34;color:#a40000&#34;&gt;-       - octocat/hello-world
 &lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+       - octocat/hello-world@test
 &lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;-       - go-vela/hello-world
@@ -1318,7 +1352,6 @@ Users should refrain from configuring sensitive information in their pipeline in
     pull: always
 &lt;span style=&#34;color:#00a000&#34;&gt;+   secrets: [ downstream_token ]
 &lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;    parameters:
-      branch: master
       repos:
         - octocat/hello-world
       server: https://vela-server.localhost
@@ -1351,7 +1384,6 @@ Users should refrain from configuring sensitive information in their pipeline in
     image: target/vela-downstream:latest
     pull: always
     parameters:
-      branch: master
       repos:
         - octocat/hello-world
       server: https://vela-server.localhost
@@ -1379,10 +1411,17 @@ Users should refrain from configuring sensitive information in their pipeline in
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;branch&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;default branch to trigger a build on&lt;/td&gt;
+&lt;td&gt;branch to trigger a build on&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;master&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;PARAMETER_BRANCH&lt;/code&gt;&lt;br&gt;&lt;code&gt;DOWNSTREAM_BRANCH&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;event&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;event to trigger a build on&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;push&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_EVENT&lt;/code&gt;&lt;br&gt;&lt;code&gt;DOWNSTREAM_EVENT&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;log_level&lt;/code&gt;&lt;/td&gt;
@@ -1406,6 +1445,13 @@ Users should refrain from configuring sensitive information in their pipeline in
 &lt;td&gt;&lt;code&gt;PARAMETER_SERVER&lt;/code&gt;&lt;br&gt;&lt;code&gt;DOWNSTREAM_SERVER&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
+&lt;td&gt;&lt;code&gt;status&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;list of statuses to trigger a build on&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;[ success ]&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_STATUS&lt;/code&gt;&lt;br&gt;&lt;code&gt;DOWNSTREAM_STATUS&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
 &lt;td&gt;&lt;code&gt;token&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;token for communication with Vela&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
@@ -1423,7 +1469,6 @@ Users should refrain from configuring sensitive information in their pipeline in
     image: target/vela-downstream:latest
     pull: always
     parameters:
-      branch: master
 &lt;span style=&#34;color:#00a000&#34;&gt;+     log_level: trace
 &lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;      repos:
         - octocat/hello-world
