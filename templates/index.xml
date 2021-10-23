@@ -1216,5 +1216,51 @@ We recommend reviewing &lt;a href=&#34;https://github.com/bazelbuild/starlark/bl
       </description>
     </item>
     
+    <item>
+      <title>Templates: Working with Templates</title>
+      <link>https://go-vela.github.io/docs/templates/working_with/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://go-vela.github.io/docs/templates/working_with/</guid>
+      <description>
+        
+        
+        
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Warning&lt;/h4&gt;
+It is highly recommended before reviewing the below content to have a solid grasp on Vela&amp;rsquo;s core concepts that are explored while taking the &lt;a href=&#34;https://go-vela.github.io/docs/docs/tour/&#34;&gt;Vela Tour&lt;/a&gt;).
+&lt;/div&gt;
+
+&lt;p&gt;When writing a new template getting feedback can be a very painful process. Vela provides a few core methods to get feedback quickly to ensure the template you&amp;rsquo;re writing expands in the pipeline you expect to run. The main methods for seeing expanded pipelines are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Pipeline endpoints &lt;em&gt;(which can be used via UI or CLI)&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;CLI pipeline validation &lt;em&gt;(&lt;code&gt;vela validate pipeline&lt;/code&gt;)&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;pipeline-endpoints&#34;&gt;Pipeline endpoints&lt;/h2&gt;
+&lt;p&gt;This method allows you to evaluate your pipeline that exists within a VCS system. It is most commonly referenced on the build page in the pipeline tab.&lt;/p&gt;
+&lt;p&gt;Additionally, you can also interact with it the Vela CLI or API if you&amp;rsquo;re trying to create more elaborate workflows.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/api/pipeline/&#34;&gt;API Docs&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;cli-pipeline-validation&#34;&gt;CLI Pipeline Validation&lt;/h2&gt;
+&lt;p&gt;The CLI workflow that was mentioned above has a variety of methods for local and remote validation. All of them are designed to help you quickly identify areas with your pipeline that need to be improved and should speed up development.&lt;/p&gt;
+&lt;p&gt;Available Methods:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# this will continue to validate only the file&lt;/span&gt;
+vela validate pipeline
+
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# this will continue to validate via the pipeline endpoints on the server&lt;/span&gt;
+vela validate pipeline --remote --org MyOrg --repo MyRepo
+
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# this will allow someone to validate a local file with the template expanded&lt;/span&gt;
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# Note: this method requires the user to provide auth to the template&lt;/span&gt;
+vela validate pipeline --template
+
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# this will allow someone to override the `source:` and use a local template for testing&lt;/span&gt;
+vela validate pipeline --template --template-file name:path/to/file
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+      </description>
+    </item>
+    
   </channel>
 </rss>

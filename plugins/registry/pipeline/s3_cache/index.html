@@ -29,8 +29,7 @@ Users should refrain from using latest as the tag for the Docker image.
 It is recommended to use a semantically versioned tag instead.
  Sample of restoring a cache:
 steps:- name:restore_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters:action:restorebucket:mybucketserver:mybucket.s3-us-west-2.amazonaws.comSample of rebuilding a cache:
-steps:- name:rebuild_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters:action:rebuildbucket:mybucketserver:mybucket.s3-us-west-2.amazonaws.commount:- .gradleSample of flushing a cache:
-steps:- name:flushing_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters:action:flushbucket:mybucketserver:mybucket.s3-us-west-2.amazonaws.comSecrets  NOTE: Users should refrain from configuring sensitive information in your pipeline in plain text." />
+steps:- name:rebuild_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters:action:rebuildbucket:mybucketserver:mybucket.s3-us-west-2.amazonaws.commount:- .gradleSample of rebuilding a cache while preserving the directory structure:" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://go-vela.github.io/docs/plugins/registry/pipeline/s3_cache/" />
 <meta property="article:modified_time" content="2021-01-13T15:05:51-06:00" />
@@ -43,10 +42,9 @@ Users should refrain from using latest as the tag for the Docker image.
 It is recommended to use a semantically versioned tag instead.
  Sample of restoring a cache:
 steps:- name:restore_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters:action:restorebucket:mybucketserver:mybucket.s3-us-west-2.amazonaws.comSample of rebuilding a cache:
-steps:- name:rebuild_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters:action:rebuildbucket:mybucketserver:mybucket.s3-us-west-2.amazonaws.commount:- .gradleSample of flushing a cache:
-steps:- name:flushing_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters:action:flushbucket:mybucketserver:mybucket.s3-us-west-2.amazonaws.comSecrets  NOTE: Users should refrain from configuring sensitive information in your pipeline in plain text.">
+steps:- name:rebuild_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters:action:rebuildbucket:mybucketserver:mybucket.s3-us-west-2.amazonaws.commount:- .gradleSample of rebuilding a cache while preserving the directory structure:">
 <meta itemprop="dateModified" content="2021-01-13T15:05:51-06:00" />
-<meta itemprop="wordCount" content="681">
+<meta itemprop="wordCount" content="710">
 
 
 
@@ -61,8 +59,7 @@ Users should refrain from using latest as the tag for the Docker image.
 It is recommended to use a semantically versioned tag instead.
  Sample of restoring a cache:
 steps:- name:restore_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters:action:restorebucket:mybucketserver:mybucket.s3-us-west-2.amazonaws.comSample of rebuilding a cache:
-steps:- name:rebuild_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters:action:rebuildbucket:mybucketserver:mybucket.s3-us-west-2.amazonaws.commount:- .gradleSample of flushing a cache:
-steps:- name:flushing_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters:action:flushbucket:mybucketserver:mybucket.s3-us-west-2.amazonaws.comSecrets  NOTE: Users should refrain from configuring sensitive information in your pipeline in plain text."/>
+steps:- name:rebuild_cacheimage:target/vela-s3-cache:latestpull:alwaysparameters:action:rebuildbucket:mybucketserver:mybucket.s3-us-west-2.amazonaws.commount:- .gradleSample of rebuilding a cache while preserving the directory structure:"/>
 
 
 
@@ -674,6 +671,19 @@ steps:- name:flushing_cacheimage:target/vela-s3-cache:latestpull:alwaysparameter
 </span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">server</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">mybucket.s3-us-west-2.amazonaws.com</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">mount</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">        </span>- <span style="color:#000">.gradle</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></code></pre></div><p>Sample of rebuilding a cache while preserving the directory structure:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">steps</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span>- <span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">rebuild_cache</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">image</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">target/vela-s3-cache:latest</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">pull</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">always</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">parameters</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">action</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">rebuild</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">bucket</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">mybucket</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">server</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">mybucket.s3-us-west-2.amazonaws.com</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">preserve_path</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#204a87;font-weight:bold">true</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">mount</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">        </span>- <span style="color:#000">foo/test1</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">        </span>- <span style="color:#000">bar/test2</span><span style="color:#f8f8f8;text-decoration:underline">
 </span></code></pre></div><p>Sample of flushing a cache:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">steps</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">  </span>- <span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">flushing_cache</span><span style="color:#f8f8f8;text-decoration:underline">
@@ -886,13 +896,6 @@ steps:- name:flushing_cacheimage:target/vela-s3-cache:latestpull:alwaysparameter
 <td><code>PARAMETER_FILENAME</code><br><code>S3_CACHE_FILENAME</code></td>
 </tr>
 <tr>
-<td><code>mount</code></td>
-<td>the file or directories locations to build your cache from</td>
-<td><code>true</code></td>
-<td><code>N/A</code></td>
-<td><code>PARAMETER_MOUNT</code><br><code>S3_CACHE_MOUNT</code></td>
-</tr>
-<tr>
 <td><code>timeout</code></td>
 <td>the timeout for the call to s3</td>
 <td><code>false</code></td>
@@ -927,6 +930,20 @@ steps:- name:flushing_cacheimage:target/vela-s3-cache:latestpull:alwaysparameter
 <td><code>false</code></td>
 <td><code>10m</code></td>
 <td><code>PARAMETER_TIMEOUT</code><br><code>S3_CACHE_TIMEOUT</code></td>
+</tr>
+<tr>
+<td><code>preserve_path</code></td>
+<td>whether to preserve the relative directory structure during the tar process</td>
+<td><code>false</code></td>
+<td><code>false</code></td>
+<td><code>PARAMETER_PRESERVE_PATH</code><br><code>S3_PRESERVE_PATH</code></td>
+</tr>
+<tr>
+<td><code>mount</code></td>
+<td>the file or directories locations to build your cache from</td>
+<td><code>true</code></td>
+<td><code>N/A</code></td>
+<td><code>PARAMETER_MOUNT</code><br><code>S3_CACHE_MOUNT</code></td>
 </tr>
 </tbody>
 </table>
