@@ -548,6 +548,11 @@
   </url>
   
   <url>
+    <loc>https://go-vela.github.io/docs/plugins/registry/pipeline/hugo/</loc>
+    <lastmod>2021-10-29T14:25:12-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://go-vela.github.io/docs/plugins/registry/pipeline/influx/</loc>
     <lastmod>2021-10-29T09:41:50-05:00</lastmod>
   </url>

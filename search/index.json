@@ -648,6 +648,13 @@
     },
 
     {
+    "url": "https://go-vela.github.io/docs/plugins/registry/pipeline/hugo/",
+    "display": "Registry/Pipeline/Hugo",
+    "title": "Hugo",
+    "content": "description plugin enables you generate static website using hugo pipeline. source code: https://github.com/go-vela/vela-hugo registry: https://hub.docker.com/r/target/vela-hugo usage note: users should refrain from latest as the tag for docker image. it recommended to use semantically versioned instead. sample of building site: steps:- name:hugoimage:target/vela-hugo:latestpull:alwaysparameters:theme_name:hugo-theme-learnsample site docsy theme: steps: name: image: target/vela-hugo:latest pull: always parameters: theme_name: hugo-theme-learn custom version hugo: version: 0.79.0 extended binary: some themes may require binary additional functionality. extended: true an environment build differently depending on configuration: please see documentation how configure properly. environment: dev multiple via configuration file: name:hugoimage:target/vela-hugo:latestpull:alwaysparameters:config_file:config.tomlparameters supports reading all parameters variables files. any values set file take precedence over environment. following are used name required default base_url hostname (and path) root, e.g. http://spf13.com/ false n/a parameter_base_url hugo_base_url cache_directory filesystem path cache directory parameter_cache_directory hugo_cache_directory content_directory content parameter_content_directory hugo_content_directory config_directory config parameter_config_directory hugo_config_directory config_file (supports: json,toml,yaml) parameter_config_file hugo_config_file draft include marked parameter_draft hugo_draft target environment, located parameter_environment hugo_environment expired parameter_expired hugo_expired whether parameter_extended hugo_extended future with publish date parameter_future hugo_future layout_directory layout parameter_layout_directory hugo_layout_directory log_level log level info parameter_log_level hugo_log_level output_directory write files parameter_output_directory hugo_output_directory source_directory read relative parameter_source_directory hugo_source_directory theme_name theme parameter_theme_name hugo_theme_name theme_directory parameter_theme_directory hugo_theme_directory 0.76.5 parameter_version hugo_version template coming soon! troubleshooting can start by tuning logs being displayed: log_level: trace below list common problems solve them: "
+    },
+
+    {
     "url": "https://go-vela.github.io/docs/plugins/registry/pipeline/influx/",
     "display": "Registry/Pipeline/Influx",
     "title": "Influx",
