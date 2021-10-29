@@ -20,46 +20,46 @@
 <link rel="icon" type="image/png" href="/docs/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/docs/favicons/android-192x192.png"sizes="192x192">
 
-<title>Downstream | Vela</title><meta property="og:title" content="Downstream" />
-<meta property="og:description" content="Description This plugin enables you to trigger builds for other repos for Vela in a pipeline.
-Source Code: https://github.com/go-vela/vela-downstream
-Registry: https://hub.docker.com/r/target/vela-downstream
+<title>Influx | Vela</title><meta property="og:title" content="Influx" />
+<meta property="og:description" content="Description This plugin enables you to send data to an InfluxDB in a pipeline.
+Source Code: https://github.com/go-vela/vela-influx
+Registry: https://hub.docker.com/r/target/vela-influx
 Usage  NOTE:
 Users should refrain from using latest as the tag for the Docker image.
 It is recommended to use a semantically versioned tag instead.
- Sample of triggering a downstream build:
-steps:- name:trigger_hello-worldimage:target/vela-downstream:latestpull:alwaysparameters:repos:- octocat/hello-worldserver:https://vela-server.localhostSample of triggering a downstream build for a specific branch:
-steps: - name: trigger_hello-world image: target/vela-downstream:latest pull: always parameters: &#43; branch: main  repos: - octocat/hello-world server: https://vela-server." />
+ Sample of emitting a pass/fail build metric:
+steps:- name:writeimage:target/vela-influx:latestpull:alwaysparameters:addr:https://influx.example.comdatabase:velaname:build_reportfields:build_status:${VELA_BUILD_STATUS}Sample of emitting a pass/fail build metric with custom tags:
+steps: - name: write image: target/vela-influx:latest pull: always parameters: addr: https://influx." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://go-vela.github.io/docs/plugins/registry/pipeline/downstream/" />
-<meta property="article:modified_time" content="2021-01-13T15:05:51-06:00" />
-<meta itemprop="name" content="Downstream">
-<meta itemprop="description" content="Description This plugin enables you to trigger builds for other repos for Vela in a pipeline.
-Source Code: https://github.com/go-vela/vela-downstream
-Registry: https://hub.docker.com/r/target/vela-downstream
+<meta property="og:url" content="https://go-vela.github.io/docs/plugins/registry/pipeline/influx/" />
+<meta property="article:modified_time" content="2021-10-29T09:41:50-05:00" />
+<meta itemprop="name" content="Influx">
+<meta itemprop="description" content="Description This plugin enables you to send data to an InfluxDB in a pipeline.
+Source Code: https://github.com/go-vela/vela-influx
+Registry: https://hub.docker.com/r/target/vela-influx
 Usage  NOTE:
 Users should refrain from using latest as the tag for the Docker image.
 It is recommended to use a semantically versioned tag instead.
- Sample of triggering a downstream build:
-steps:- name:trigger_hello-worldimage:target/vela-downstream:latestpull:alwaysparameters:repos:- octocat/hello-worldserver:https://vela-server.localhostSample of triggering a downstream build for a specific branch:
-steps: - name: trigger_hello-world image: target/vela-downstream:latest pull: always parameters: &#43; branch: main  repos: - octocat/hello-world server: https://vela-server.">
-<meta itemprop="dateModified" content="2021-01-13T15:05:51-06:00" />
-<meta itemprop="wordCount" content="546">
+ Sample of emitting a pass/fail build metric:
+steps:- name:writeimage:target/vela-influx:latestpull:alwaysparameters:addr:https://influx.example.comdatabase:velaname:build_reportfields:build_status:${VELA_BUILD_STATUS}Sample of emitting a pass/fail build metric with custom tags:
+steps: - name: write image: target/vela-influx:latest pull: always parameters: addr: https://influx.">
+<meta itemprop="dateModified" content="2021-10-29T09:41:50-05:00" />
+<meta itemprop="wordCount" content="436">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Downstream"/>
-<meta name="twitter:description" content="Description This plugin enables you to trigger builds for other repos for Vela in a pipeline.
-Source Code: https://github.com/go-vela/vela-downstream
-Registry: https://hub.docker.com/r/target/vela-downstream
+<meta name="twitter:title" content="Influx"/>
+<meta name="twitter:description" content="Description This plugin enables you to send data to an InfluxDB in a pipeline.
+Source Code: https://github.com/go-vela/vela-influx
+Registry: https://hub.docker.com/r/target/vela-influx
 Usage  NOTE:
 Users should refrain from using latest as the tag for the Docker image.
 It is recommended to use a semantically versioned tag instead.
- Sample of triggering a downstream build:
-steps:- name:trigger_hello-worldimage:target/vela-downstream:latestpull:alwaysparameters:repos:- octocat/hello-worldserver:https://vela-server.localhostSample of triggering a downstream build for a specific branch:
-steps: - name: trigger_hello-world image: target/vela-downstream:latest pull: always parameters: &#43; branch: main  repos: - octocat/hello-world server: https://vela-server."/>
+ Sample of emitting a pass/fail build metric:
+steps:- name:writeimage:target/vela-influx:latestpull:alwaysparameters:addr:https://influx.example.comdatabase:velaname:build_reportfields:build_status:${VELA_BUILD_STATUS}Sample of emitting a pass/fail build metric with custom tags:
+steps: - name: write image: target/vela-influx:latest pull: always parameters: addr: https://influx."/>
 
 
 
@@ -76,7 +76,7 @@ steps: - name: trigger_hello-world image: target/vela-downstream:latest pull: al
   crossorigin="anonymous"></script>
 
 
-    <title>Downstream | Vela</title>
+    <title>Influx | Vela</title>
   </head>
   <body class="td-page">
     <header>
@@ -419,7 +419,7 @@ steps: - name: trigger_hello-world image: target/vela-downstream:latest pull: al
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docspluginsregistrypipelinedownstream" href="/docs/plugins/registry/pipeline/downstream/">Downstream</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginsregistrypipelinedownstream" href="/docs/plugins/registry/pipeline/downstream/">Downstream</a>
       
       
       
@@ -431,7 +431,7 @@ steps: - name: trigger_hello-world image: target/vela-downstream:latest pull: al
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginsregistrypipelineinflux" href="/docs/plugins/registry/pipeline/influx/">Influx</a>
+      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docspluginsregistrypipelineinflux" href="/docs/plugins/registry/pipeline/influx/">Influx</a>
       
       
       
@@ -585,8 +585,8 @@ steps: - name: trigger_hello-world image: target/vela-downstream:latest pull: al
 
 
 
-<a href="https://github.com/go-vela/docs/edit/master/content/plugins/registry/pipeline/downstream.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
-<a href="https://github.com/go-vela/docs/issues/new?title=Downstream" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+<a href="https://github.com/go-vela/docs/edit/master/content/plugins/registry/pipeline/influx.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+<a href="https://github.com/go-vela/docs/issues/new?title=Influx" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
 
 </div>
 
@@ -637,7 +637,7 @@ steps: - name: trigger_hello-world image: target/vela-downstream:latest pull: al
 
 
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="https://go-vela.github.io/docs/plugins/registry/pipeline/downstream/">Downstream</a>
+	<a href="https://go-vela.github.io/docs/plugins/registry/pipeline/influx/">Influx</a>
 </li>
 
 	</ol>
@@ -645,106 +645,82 @@ steps: - name: trigger_hello-world image: target/vela-downstream:latest pull: al
 
             
 <div class="td-content">
-	<h1>Downstream</h1>
+	<h1>Influx</h1>
 	
 	<h2 id="description">Description</h2>
-<p>This plugin enables you to trigger builds for other repos for <a href="https://go-vela.github.io/docs/">Vela</a> in a pipeline.</p>
-<p>Source Code: <a href="https://github.com/go-vela/vela-downstream">https://github.com/go-vela/vela-downstream</a></p>
-<p>Registry: <a href="https://hub.docker.com/r/target/vela-downstream">https://hub.docker.com/r/target/vela-downstream</a></p>
+<p>This plugin enables you to send data to an <a href="https://www.influxdata.com/">InfluxDB</a> in a pipeline.</p>
+<p>Source Code: <a href="https://github.com/go-vela/vela-influx">https://github.com/go-vela/vela-influx</a></p>
+<p>Registry: <a href="https://hub.docker.com/r/target/vela-influx">https://hub.docker.com/r/target/vela-influx</a></p>
 <h2 id="usage">Usage</h2>
 <blockquote>
 <p><strong>NOTE:</strong></p>
 <p>Users should refrain from using latest as the tag for the Docker image.</p>
 <p>It is recommended to use a semantically versioned tag instead.</p>
 </blockquote>
-<p>Sample of triggering a downstream build:</p>
+<p>Sample of emitting a pass/fail build metric:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">steps</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span>- <span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">trigger_hello-world</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">image</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">target/vela-downstream:latest</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span>- <span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">write</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">image</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">target/vela-influx:latest</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">pull</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">always</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">parameters</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">repos</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">        </span>- <span style="color:#000">octocat/hello-world</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">server</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">https://vela-server.localhost</span><span style="color:#f8f8f8;text-decoration:underline">
-</span></code></pre></div><p>Sample of triggering a downstream build for a specific branch:</p>
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">addr</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">https://influx.example.com</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">database</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">vela</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">build_report</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">fields</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">build_status</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">${VELA_BUILD_STATUS}</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></code></pre></div><p>Sample of emitting a pass/fail build metric with custom tags:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
-  - name: trigger_hello-world
-    image: target/vela-downstream:latest
+  - name: write
+    image: target/vela-influx:latest
     pull: always
     parameters:
-<span style="color:#00a000">+     branch: main
-</span><span style="color:#00a000"></span>      repos:
-        - octocat/hello-world
-      server: https://vela-server.localhost
-</code></pre></div><p>Sample of triggering a downstream build for a specific event:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
-  - name: trigger_hello-world
-    image: target/vela-downstream:latest
-    pull: always
-    parameters:
-<span style="color:#00a000">+     event: tag
-</span><span style="color:#00a000"></span>      repos:
-        - octocat/hello-world
-      server: https://vela-server.localhost
-</code></pre></div><p>Sample of triggering a downstream build for a specific status:</p>
-<blockquote>
-<p><strong>NOTE:</strong></p>
-<p>You can provide a list of statuses to the plugin.</p>
-<p>The first build found matching either of the statuses will be triggered.</p>
-</blockquote>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
-  - name: trigger_hello-world
-    image: target/vela-downstream:latest
-    pull: always
-    parameters:
-      repos:
-        - octocat/hello-world
-      server: https://vela-server.localhost
-<span style="color:#00a000">+     status: [ success, failure ]
-</span></code></pre></div><p>Sample of triggering a downstream build for multiple repos:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
-  - name: trigger_multiple
-    image: target/vela-downstream:latest
-    pull: always
-    parameters:
-      repos:
-        - octocat/hello-world
-<span style="color:#00a000">+       - go-vela/hello-world
-</span><span style="color:#00a000"></span>      server: https://vela-server.localhost
-</code></pre></div><p>Sample of triggering a downstream build for multiple repos with different branches:</p>
-<blockquote>
-<p><strong>NOTE:</strong></p>
-<p>Use the @ symbol at the end of the org/repo to provide a unique branch per repo.</p>
-<p>This will override the value set for the <code>branch</code> parameter.</p>
-</blockquote>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
-  - name: trigger_multiple
-    image: target/vela-downstream:latest
-    pull: always
-    parameters:
-      repos:
-<span style="color:#a40000">-       - octocat/hello-world
-</span><span style="color:#a40000"></span><span style="color:#00a000">+       - octocat/hello-world@test
-</span><span style="color:#00a000"></span><span style="color:#a40000">-       - go-vela/hello-world
-</span><span style="color:#a40000"></span><span style="color:#00a000">+       - go-vela/hello-world@stage
-</span><span style="color:#00a000"></span>      server: https://vela-server.localhost
-</code></pre></div><h2 id="secrets">Secrets</h2>
+      addr: https://influx.example.com
+      database: vela
+      name: build_report
+      fields:
+        build_status: ${BUILD_STATUS}
+<span style="color:#00a000">+     tags:
+</span><span style="color:#00a000">+       repo_name: ${VELA_REPO_FULL_NAME}
+</span><span style="color:#00a000">+       build_number: &#34;${VELA_BUILD_NUMBER}&#34;
+</span></code></pre></div><h2 id="secrets">Secrets</h2>
 <blockquote>
 <p><strong>NOTE:</strong> Users should refrain from configuring sensitive information in your pipeline in plain text.</p>
 </blockquote>
 <h3 id="internal">Internal</h3>
+<p>The plugin accepts the following <code>parameters</code> for authentication:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Environment Variable Configuration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>password</code></td>
+<td><code>PARAMETER_PASSWORD</code>, <code>INFLUX_PASSWORD</code></td>
+</tr>
+<tr>
+<td><code>username</code></td>
+<td><code>PARAMETER_USERNAME</code>, <code>INFLUX_USERNAME</code></td>
+</tr>
+</tbody>
+</table>
 <p>Users can use <a href="https://go-vela.github.io/docs/tour/secrets/">Vela internal secrets</a> to substitute these sensitive values at runtime:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
-  - name: trigger_hello-world
-    image: target/vela-downstream:latest
+  - name: write
+    image: target/vela-influx:latest
     pull: always
-<span style="color:#00a000">+   secrets: [ downstream_token ]
+<span style="color:#00a000">+   secrets: [ influx_username, influx_password ]
 </span><span style="color:#00a000"></span>    parameters:
-      repos:
-        - octocat/hello-world
-      server: https://vela-server.localhost
-<span style="color:#a40000">-     token: superSecretVelaToken
-</span></code></pre></div><blockquote>
+<span style="color:#a40000">-     username: superSecretUsername
+</span><span style="color:#a40000">-     password: superSecretPassword
+</span><span style="color:#a40000"></span>      addr: https://influx.example.com
+      database: vela
+      name: build_report
+      fields:
+        build_status: ${VELA_BUILD_STATUS}
+</code></pre></div><blockquote>
 <p>This example will add the secret to the <code>trigger_hello-world</code> step as environment variables:</p>
 <ul>
 <li><code>DOWNSTREAM_TOKEN=&lt;value&gt;</code></li>
@@ -761,22 +737,29 @@ steps: - name: trigger_hello-world image: target/vela-downstream:latest pull: al
 </thead>
 <tbody>
 <tr>
-<td><code>token</code></td>
-<td><code>/vela/parameters/downstream/token</code>, <code>/vela/secrets/downstream/token</code></td>
+<td><code>password</code></td>
+<td><code>/vela/parameters/influx/password</code>, <code>/vela/secrets/influx/password</code></td>
+</tr>
+<tr>
+<td><code>username</code></td>
+<td><code>/vela/parameters/influx/username</code>, <code>/vela/secrets/influx/username</code></td>
 </tr>
 </tbody>
 </table>
 <p>Users can use <a href="https://go-vela.github.io/docs/concepts/pipeline/secrets/origin/">Vela external secrets</a> to substitute these sensitive values at runtime:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
-  - name: trigger_hello-world
-    image: target/vela-downstream:latest
+  - name: write
+    image: target/vela-influx:latest
     pull: always
     parameters:
-      repos:
-        - octocat/hello-world
-      server: https://vela-server.localhost
-<span style="color:#a40000">-     token: superSecretVelaToken
-</span></code></pre></div><blockquote>
+<span style="color:#a40000">-     username: superSecretUsername
+</span><span style="color:#a40000">-     password: superSecretPassword
+</span><span style="color:#a40000"></span>      addr: https://influx.example.com
+      database: vela
+      name: build_report
+      fields:
+        build_status: ${VELA_BUILD_STATUS}
+</code></pre></div><blockquote>
 <p>This example will read the secret value in the volume stored at <code>/vela/secrets/</code></p>
 </blockquote>
 <h2 id="parameters">Parameters</h2>
@@ -798,53 +781,60 @@ steps: - name: trigger_hello-world image: target/vela-downstream:latest pull: al
 </thead>
 <tbody>
 <tr>
-<td><code>branch</code></td>
-<td>branch to trigger a build on</td>
+<td><code>addr</code></td>
+<td>Influx instance to communicate with</td>
 <td><code>true</code></td>
-<td><code>master</code></td>
-<td><code>PARAMETER_BRANCH</code><br><code>DOWNSTREAM_BRANCH</code></td>
+<td><code>N/A</code></td>
+<td><code>PARAMETER_ADDR</code><br><code>INFLUX_ADDR</code></td>
 </tr>
 <tr>
-<td><code>event</code></td>
-<td>event to trigger a build on</td>
+<td><code>database</code></td>
+<td>database name on Influx instance to communicate with</td>
 <td><code>true</code></td>
-<td><code>push</code></td>
-<td><code>PARAMETER_EVENT</code><br><code>DOWNSTREAM_EVENT</code></td>
+<td><code>N/A</code></td>
+<td><code>PARAMETER_DATABASE</code><br><code>INFLUX_DATABASE</code></td>
+</tr>
+<tr>
+<td><code>fields</code></td>
+<td>data fields to send along with the metric</td>
+<td><code>true</code></td>
+<td><code>N/A</code></td>
+<td><code>PARAMETER_FIELDS</code><br><code>INFLUX_FIELDS</code></td>
 </tr>
 <tr>
 <td><code>log_level</code></td>
 <td>set the log level for the plugin</td>
 <td><code>true</code></td>
 <td><code>info</code></td>
-<td><code>PARAMETER_LOG_LEVEL</code><br><code>DOWNSTREAM_LOG_LEVEL</code></td>
+<td><code>PARAMETER_LOG_LEVEL</code><br><code>INFLUX_LOG_LEVEL</code></td>
 </tr>
 <tr>
-<td><code>repos</code></td>
-<td>list of <org>/<repo> names to trigger a build on</td>
+<td><code>name</code></td>
+<td>name of metric sent to database on Influx instance</td>
 <td><code>true</code></td>
+<td><code>build_metrics</code></td>
+<td><code>PARAMETER_NAME</code><br><code>INFLUX_NAME</code></td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td>password for communication with Influx</td>
+<td><code>false</code></td>
 <td><code>N/A</code></td>
-<td><code>PARAMETER_REPOS</code><br><code>DOWNSTREAM_REPOS</code></td>
+<td><code>PARAMETER_PASSWORD</code><br><code>INFLUX_PASSWORD</code></td>
 </tr>
 <tr>
-<td><code>server</code></td>
-<td>Vela server to communicate with</td>
-<td><code>true</code></td>
+<td><code>tags</code></td>
+<td>extra metadata to send along with the metric</td>
+<td><code>false</code></td>
 <td><code>N/A</code></td>
-<td><code>PARAMETER_SERVER</code><br><code>DOWNSTREAM_SERVER</code></td>
+<td><code>PARAMETER_TAGS</code><br><code>INFLUX_TAGS</code></td>
 </tr>
 <tr>
-<td><code>status</code></td>
-<td>list of statuses to trigger a build on</td>
-<td><code>true</code></td>
-<td><code>[ success ]</code></td>
-<td><code>PARAMETER_STATUS</code><br><code>DOWNSTREAM_STATUS</code></td>
-</tr>
-<tr>
-<td><code>token</code></td>
-<td>token for communication with Vela</td>
-<td><code>true</code></td>
+<td><code>username</code></td>
+<td>user name for communication with Influx</td>
+<td><code>false</code></td>
 <td><code>N/A</code></td>
-<td><code>PARAMETER_TOKEN</code><br><code>DOWNSTREAM_TOKEN</code></td>
+<td><code>PARAMETER_USERNAME</code><br><code>INFLUX_USERNAME</code></td>
 </tr>
 </tbody>
 </table>
@@ -853,19 +843,21 @@ steps: - name: trigger_hello-world image: target/vela-downstream:latest pull: al
 <h2 id="troubleshooting">Troubleshooting</h2>
 <p>You can start troubleshooting this plugin by tuning the level of logs being displayed:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
-  - name: trigger_hello-world
-    image: target/vela-downstream:latest
+  - name: write
+    image: target/vela-influx:latest
     pull: always
     parameters:
 <span style="color:#00a000">+     log_level: trace
-</span><span style="color:#00a000"></span>      repos:
-        - octocat/hello-world
-      server: https://vela-server.localhost
+</span><span style="color:#00a000"></span>      addr: https://influx.example.com
+      database: vela
+      name: build_report
+      fields:
+        build_status: ${VELA_BUILD_STATUS}
 </code></pre></div><p>Below are a list of common problems and how to solve them:</p>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified January 13, 2021: <a  href="https://github.com/go-vela/docs/commit/8672a3955650232bed0b8d390565e9ae6d317f76">refactor: flatten plugin documentation (#193) (8672a395)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified October 29, 2021: <a  href="https://github.com/go-vela/docs/commit/e4f7688059b22b2dfe97ed7ed01c001b91e170fa">feat(plugins): add influx pipeline plugin (#251) (e4f76880)</a>
 </div>
 </div>
 

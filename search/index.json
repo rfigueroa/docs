@@ -648,6 +648,13 @@
     },
 
     {
+    "url": "https://go-vela.github.io/docs/plugins/registry/pipeline/influx/",
+    "display": "Registry/Pipeline/Influx",
+    "title": "Influx",
+    "content": "description plugin enables you to send data an influxdb pipeline. source code: https://github.com/go-vela/vela-influx registry: https://hub.docker.com/r/target/vela-influx usage note: users should refrain from using latest as the tag for docker image. it recommended use semantically versioned instead. sample of emitting pass/fail build metric: steps:- name:writeimage:target/vela-influx:latestpull:alwaysparameters:addr:https://influx.example.comdatabase:velaname:build_reportfields:build_status:${vela_build_status}sample metric with custom tags: steps: name: write image: target/vela-influx:latest pull: always parameters: addr: https://influx.example.com database: vela build_report fields: build_status: ${build_status} repo_name: ${vela_repo_full_name} build_number: &#34;${vela_build_number}&#34; secrets configuring sensitive information your pipeline plain text. internal accepts following parameters authentication: parameter environment variable configuration password parameter_password, influx_password username parameter_username, influx_username can substitute these values at runtime: secrets: influx_username, username: supersecretusername password: supersecretpassword ${vela_build_status} example will add secret trigger_hello-world step variables: downstream_token=&lt;value&gt; external files volume /vela/parameters/influx/password, /vela/secrets/influx/password /vela/parameters/influx/username, /vela/secrets/influx/username read value stored /vela/secrets/ supports reading all via variables files. any set file take precedence over environment. are used configure name required default addr influx instance communicate true n/a parameter_addr influx_addr database on parameter_database influx_database fields along parameter_fields influx_fields log_level log level info parameter_log_level influx_log_level sent build_metrics parameter_name influx_name communication false parameter_password tags extra metadata parameter_tags influx_tags user parameter_username template coming soon! troubleshooting start by tuning logs being displayed: log_level: trace below list common problems how solve them: "
+    },
+
+    {
     "url": "https://go-vela.github.io/docs/usage/schema/",
     "display": "Docs/Usage/Schema",
     "title": "JSON Schema support",
