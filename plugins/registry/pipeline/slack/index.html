@@ -7,7 +7,6 @@
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
-<link rel="alternate" type="application/rss&#43;xml" href="https://go-vela.github.io/docs/plugins/registry/pipeline/index.xml">
 
 
 <link rel="shortcut icon" href="/favicons/favicon.ico" >
@@ -21,19 +20,46 @@
 <link rel="icon" type="image/png" href="/docs/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/docs/favicons/android-192x192.png"sizes="192x192">
 
-<title>Pipeline | Vela</title><meta property="og:title" content="Pipeline" />
-<meta property="og:description" content="List of community plugins to integrate with Vela pipelines.
-" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://go-vela.github.io/docs/plugins/registry/pipeline/" />
+<title>Slack | Vela</title><meta property="og:title" content="Slack" />
+<meta property="og:description" content="Description This plugin enables you to send data to a Slack channel.
+Source Code: https://github.com/go-vela/vela-slack
+Registry: https://hub.docker.com/r/target/vela-slack
+Usage  NOTE:
+Users should refrain from using latest as the tag for the Docker image.
+It is recommended to use a semantically versioned tag instead.
+ Sample of sending a message:
+steps:- name:messageimage:target/vela-slack:latestpull:alwaysparameters:text:&#34;Hello World!&#34;Sample of sending a message with formatting:
+steps: - name: message-with-formatting image: target/vela-slack:latest pull: not_present parameters: - text: &#34;Hello World!" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://go-vela.github.io/docs/plugins/registry/pipeline/slack/" />
+<meta property="article:modified_time" content="2021-11-01T08:38:53-05:00" />
+<meta itemprop="name" content="Slack">
+<meta itemprop="description" content="Description This plugin enables you to send data to a Slack channel.
+Source Code: https://github.com/go-vela/vela-slack
+Registry: https://hub.docker.com/r/target/vela-slack
+Usage  NOTE:
+Users should refrain from using latest as the tag for the Docker image.
+It is recommended to use a semantically versioned tag instead.
+ Sample of sending a message:
+steps:- name:messageimage:target/vela-slack:latestpull:alwaysparameters:text:&#34;Hello World!&#34;Sample of sending a message with formatting:
+steps: - name: message-with-formatting image: target/vela-slack:latest pull: not_present parameters: - text: &#34;Hello World!">
+<meta itemprop="dateModified" content="2021-11-01T08:38:53-05:00" />
+<meta itemprop="wordCount" content="518">
 
-<meta itemprop="name" content="Pipeline">
-<meta itemprop="description" content="List of community plugins to integrate with Vela pipelines.
-">
+
+
+<meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Pipeline"/>
-<meta name="twitter:description" content="List of community plugins to integrate with Vela pipelines.
-"/>
+<meta name="twitter:title" content="Slack"/>
+<meta name="twitter:description" content="Description This plugin enables you to send data to a Slack channel.
+Source Code: https://github.com/go-vela/vela-slack
+Registry: https://hub.docker.com/r/target/vela-slack
+Usage  NOTE:
+Users should refrain from using latest as the tag for the Docker image.
+It is recommended to use a semantically versioned tag instead.
+ Sample of sending a message:
+steps:- name:messageimage:target/vela-slack:latestpull:alwaysparameters:text:&#34;Hello World!&#34;Sample of sending a message with formatting:
+steps: - name: message-with-formatting image: target/vela-slack:latest pull: not_present parameters: - text: &#34;Hello World!"/>
 
 
 
@@ -50,9 +76,9 @@
   crossorigin="anonymous"></script>
 
 
-    <title>Pipeline | Vela</title>
+    <title>Slack | Vela</title>
   </head>
-  <body class="td-section">
+  <body class="td-page">
     <header>
       
 <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
@@ -447,7 +473,7 @@
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginsregistrypipelineslack" href="/docs/plugins/registry/pipeline/slack/">Slack</a>
+      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docspluginsregistrypipelineslack" href="/docs/plugins/registry/pipeline/slack/">Slack</a>
       
       
       
@@ -577,8 +603,8 @@
 
 
 
-<a href="https://github.com/go-vela/docs/edit/master/content/plugins/registry/pipeline/_index.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
-<a href="https://github.com/go-vela/docs/issues/new?title=Pipeline" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+<a href="https://github.com/go-vela/docs/edit/master/content/plugins/registry/pipeline/slack.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+<a href="https://github.com/go-vela/docs/issues/new?title=Slack" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
 
 </div>
 
@@ -604,6 +630,9 @@
 
 
 
+
+
+
 <li class="breadcrumb-item" >
 	<a href="https://go-vela.github.io/docs/plugins/">Plugins</a>
 </li>
@@ -618,8 +647,15 @@
 
 
 
-<li class="breadcrumb-item active" aria-current="page">
+<li class="breadcrumb-item" >
 	<a href="https://go-vela.github.io/docs/plugins/registry/pipeline/">Pipeline</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item active" aria-current="page">
+	<a href="https://go-vela.github.io/docs/plugins/registry/pipeline/slack/">Slack</a>
 </li>
 
 	</ol>
@@ -627,174 +663,231 @@
 
             
 <div class="td-content">
-	<h1>Pipeline</h1>
-	<div class="lead">List of community plugins to integrate with Vela pipelines.</div>
+	<h1>Slack</h1>
 	
-        <div class="section-index">
-    
-    
-    
-    
-    <hr class="panel-line">
-        
-            
-                <div class="entry">
-                    <h5>
-                        <a href="/docs/plugins/registry/pipeline/artifactory/">Artifactory</a>
-                    </h5>
-                    <p></p>
-                </div>
-            
-        
-            
-        
-            
-                <div class="entry">
-                    <h5>
-                        <a href="/docs/plugins/registry/pipeline/build-summary/">Build Summary</a>
-                    </h5>
-                    <p></p>
-                </div>
-            
-        
-            
-                <div class="entry">
-                    <h5>
-                        <a href="/docs/plugins/registry/pipeline/captains_log/">Captain&#39;s Log</a>
-                    </h5>
-                    <p></p>
-                </div>
-            
-        
-            
-                <div class="entry">
-                    <h5>
-                        <a href="/docs/plugins/registry/pipeline/docker/">Docker</a>
-                    </h5>
-                    <p></p>
-                </div>
-            
-        
-            
-                <div class="entry">
-                    <h5>
-                        <a href="/docs/plugins/registry/pipeline/downstream/">Downstream</a>
-                    </h5>
-                    <p></p>
-                </div>
-            
-        
-            
-                <div class="entry">
-                    <h5>
-                        <a href="/docs/plugins/registry/pipeline/git/">Git</a>
-                    </h5>
-                    <p></p>
-                </div>
-            
-        
-            
-        
-            
-                <div class="entry">
-                    <h5>
-                        <a href="/docs/plugins/registry/pipeline/hugo/">Hugo</a>
-                    </h5>
-                    <p></p>
-                </div>
-            
-        
-            
-                <div class="entry">
-                    <h5>
-                        <a href="/docs/plugins/registry/pipeline/influx/">Influx</a>
-                    </h5>
-                    <p></p>
-                </div>
-            
-        
-            
-                <div class="entry">
-                    <h5>
-                        <a href="/docs/plugins/registry/pipeline/kaniko/">Kaniko</a>
-                    </h5>
-                    <p></p>
-                </div>
-            
-        
-            
-        
-            
-                <div class="entry">
-                    <h5>
-                        <a href="/docs/plugins/registry/pipeline/kubernetes/">Kubernetes</a>
-                    </h5>
-                    <p></p>
-                </div>
-            
-        
-            
-                <div class="entry">
-                    <h5>
-                        <a href="/docs/plugins/registry/pipeline/makisu/">Makisu</a>
-                    </h5>
-                    <p></p>
-                </div>
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-                <div class="entry">
-                    <h5>
-                        <a href="/docs/plugins/registry/pipeline/s3_cache/">S3 Cache</a>
-                    </h5>
-                    <p></p>
-                </div>
-            
-        
-            
-        
-            
-                <div class="entry">
-                    <h5>
-                        <a href="/docs/plugins/registry/pipeline/slack/">Slack</a>
-                    </h5>
-                    <p></p>
-                </div>
-            
-        
-            
-                <div class="entry">
-                    <h5>
-                        <a href="/docs/plugins/registry/pipeline/terraform/">Terraform</a>
-                    </h5>
-                    <p></p>
-                </div>
-            
-        
-            
-        
-            
-        
-    
-</div>
+	<h2 id="description">Description</h2>
+<p>This plugin enables you to send data to a <a href="https://slack.com/">Slack</a> channel.</p>
+<p>Source Code: <a href="https://github.com/go-vela/vela-slack">https://github.com/go-vela/vela-slack</a></p>
+<p>Registry: <a href="https://hub.docker.com/r/target/vela-slack">https://hub.docker.com/r/target/vela-slack</a></p>
+<h2 id="usage">Usage</h2>
+<blockquote>
+<p><strong>NOTE:</strong></p>
+<p>Users should refrain from using latest as the tag for the Docker image.</p>
+<p>It is recommended to use a semantically versioned tag instead.</p>
+</blockquote>
+<p>Sample of sending a message:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">steps</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span>- <span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">message</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">image</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">target/vela-slack:latest</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">pull</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">always</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">parameters</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">text</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#34;Hello World!&#34;</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></code></pre></div><p>Sample of sending a message with formatting:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
+  - name: message-with-formatting
+    image: target/vela-slack:latest
+    pull: not_present
+    parameters:
+<span style="color:#a40000">-     text: &#34;Hello World!&#34;
+</span><span style="color:#a40000"></span><span style="color:#00a000">+     text: &#34;Hello Repo {{ .RepositoryName }}!&#34;
+</span></code></pre></div><p>Sample of sending a message with attachment file:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
+  - name: message-with-attachment
+    image: target/vela-slack:latest
+    secrets: [ webhook ]
+    parameters:
+<span style="color:#a40000">-     text: &#34;Hello World!&#34;
+</span><span style="color:#a40000"></span>      filepath: slack_attachment.json
+</code></pre></div><p>content of <code>slack_attachment.json</code>:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#000;font-weight:bold">{</span>
+    <span style="color:#204a87;font-weight:bold">&#34;attachments&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[</span>
+        <span style="color:#000;font-weight:bold">{</span>
+            <span style="color:#204a87;font-weight:bold">&#34;fallback&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Required plain-text summary of the attachment.&#34;</span><span style="color:#000;font-weight:bold">,</span>
+            <span style="color:#204a87;font-weight:bold">&#34;color&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;#36a64f&#34;</span><span style="color:#000;font-weight:bold">,</span>
+            <span style="color:#204a87;font-weight:bold">&#34;pretext&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Optional text that appears above the attachment block&#34;</span><span style="color:#000;font-weight:bold">,</span>
+            <span style="color:#204a87;font-weight:bold">&#34;author_name&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Bobby Tables&#34;</span><span style="color:#000;font-weight:bold">,</span>
+            <span style="color:#204a87;font-weight:bold">&#34;author_link&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;http://flickr.com/bobby/&#34;</span><span style="color:#000;font-weight:bold">,</span>
+            <span style="color:#204a87;font-weight:bold">&#34;author_icon&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;http://flickr.com/icons/bobby.jpg&#34;</span><span style="color:#000;font-weight:bold">,</span>
+            <span style="color:#204a87;font-weight:bold">&#34;title&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Slack API Documentation&#34;</span><span style="color:#000;font-weight:bold">,</span>
+            <span style="color:#204a87;font-weight:bold">&#34;title_link&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://api.slack.com/&#34;</span><span style="color:#000;font-weight:bold">,</span>
+            <span style="color:#204a87;font-weight:bold">&#34;text&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Build: {{ .BuildNumber }}&#34;</span><span style="color:#000;font-weight:bold">,</span>
+            <span style="color:#204a87;font-weight:bold">&#34;fields&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[</span>
+                <span style="color:#000;font-weight:bold">{</span>
+                    <span style="color:#204a87;font-weight:bold">&#34;title&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Priority&#34;</span><span style="color:#000;font-weight:bold">,</span>
+                    <span style="color:#204a87;font-weight:bold">&#34;value&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;High&#34;</span><span style="color:#000;font-weight:bold">,</span>
+                    <span style="color:#204a87;font-weight:bold">&#34;short&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span>
+                <span style="color:#000;font-weight:bold">}</span>
+            <span style="color:#000;font-weight:bold">],</span>
+            <span style="color:#204a87;font-weight:bold">&#34;image_url&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;http://my-website.com/path/to/image.jpg&#34;</span><span style="color:#000;font-weight:bold">,</span>
+            <span style="color:#204a87;font-weight:bold">&#34;thumb_url&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;http://example.com/path/to/thumb.png&#34;</span><span style="color:#000;font-weight:bold">,</span>
+            <span style="color:#204a87;font-weight:bold">&#34;footer&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Slack API&#34;</span><span style="color:#000;font-weight:bold">,</span>
+            <span style="color:#204a87;font-weight:bold">&#34;footer_icon&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://platform.slack-edge.com/img/default_application_icon.png&#34;</span><span style="color:#000;font-weight:bold">,</span>
+            <span style="color:#204a87;font-weight:bold">&#34;ts&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">123456789</span>
+        <span style="color:#000;font-weight:bold">}</span>
+    <span style="color:#000;font-weight:bold">]</span>
+<span style="color:#000;font-weight:bold">}</span>
+</code></pre></div><blockquote>
+<p><strong>NOTE:</strong></p>
+<p>To use any variables within <code>attachments</code> the file must be saved in the attachment format and be a JSON file.</p>
+<p>The configuration below is pulled almost directly from the Slack <a href="https://api.slack.com/docs/messages/builder">Message Builder</a> attachments example.</p>
+</blockquote>
+<h2 id="secrets">Secrets</h2>
+<blockquote>
+<p><strong>NOTE:</strong> Users should refrain from configuring sensitive information in your pipeline in plain text.</p>
+</blockquote>
+<h3 id="internal">Internal</h3>
+<p>The plugin accepts the following <code>parameters</code> for authentication:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Environment Variable Configuration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>webhook</code></td>
+<td><code>PARAMETER_WEBHOOK</code>, <code>SLACK_WEBHOOK</code></td>
+</tr>
+</tbody>
+</table>
+<p>Users can use <a href="https://go-vela.github.io/docs/tour/secrets/">Vela internal secrets</a> to substitute these sensitive values at runtime:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
+  - name: message
+    image: target/vela-slack:latest
+    pull: always
+<span style="color:#00a000">+   secrets: [ slack_webhook ]
+</span><span style="color:#00a000"></span>    parameters:
+      text: &#34;Hello World!&#34;
+<span style="color:#a40000">-     webhook: http://slack.example.com
+</span></code></pre></div><blockquote>
+<p>This example will add the secret to the <code>message</code> step as environment variables:</p>
+<ul>
+<li><code>SLACK_WEBHOOK=&lt;value&gt;</code></li>
+</ul>
+</blockquote>
+<h3 id="external">External</h3>
+<p>The plugin accepts the following files for authentication:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Volume Configuration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>webhook</code></td>
+<td><code>/vela/parameters/slack/webhook</code>, <code>/vela/secrets/slack/webhook</code></td>
+</tr>
+</tbody>
+</table>
+<p>Users can use <a href="https://go-vela.github.io/docs/concepts/pipeline/secrets/origin/">Vela external secrets</a> to substitute these sensitive values at runtime:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
+  - name: message
+    image: target/vela-slack:latest
+    pull: always
+    parameters:
+      text: &#34;Hello World!&#34;
+<span style="color:#a40000">-     webhook: http://slack.example.com
+</span></code></pre></div><blockquote>
+<p>This example will read the secret value in the volume stored at <code>/vela/secrets/</code></p>
+</blockquote>
+<h2 id="parameters">Parameters</h2>
+<blockquote>
+<p><strong>NOTE:</strong></p>
+<p>The plugin supports reading all parameters via environment variables or files.</p>
+<p>Any values set from a file take precedence over values set from the environment.</p>
+</blockquote>
+<p>The following parameters are used to configure the image:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Required</th>
+<th>Default</th>
+<th>Environment Variables</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>channel</code></td>
+<td>Slack channel to send data to</td>
+<td><code>false</code></td>
+<td><code>N/A</code></td>
+<td><code>PARAMETER_CHANNEL</code><br><code>SLACK_CHANNEL</code></td>
+</tr>
+<tr>
+<td><code>filepath</code></td>
+<td>file path to attachment JSON file</td>
+<td><code>false</code></td>
+<td><code>N/A</code></td>
+<td><code>PARAMETER_FILEPATH</code><br><code>SLACK_FILEPATH</code></td>
+</tr>
+<tr>
+<td><code>icon_emoji</code></td>
+<td>Slack emoji to use for the icon</td>
+<td><code>false</code></td>
+<td><code>N/A</code></td>
+<td><code>PARAMETER_ICON_EMOJI</code><br><code>SLACK_ICON_EMOJI</code></td>
+</tr>
+<tr>
+<td><code>icon_url</code></td>
+<td>Slack emoji URL to use for the icon</td>
+<td><code>false</code></td>
+<td><code>N/A</code></td>
+<td><code>PARAMETER_ICON_URL</code><br><code>SLACK_ICON_URL</code></td>
+</tr>
+<tr>
+<td><code>log_level</code></td>
+<td>set the log level for the plugin</td>
+<td><code>true</code></td>
+<td><code>info</code></td>
+<td><code>PARAMETER_LOG_LEVEL</code><br><code>SLACK_LOG_LEVEL</code></td>
+</tr>
+<tr>
+<td><code>text</code></td>
+<td>top level text to display in message</td>
+<td><code>false</code></td>
+<td><code>N/A</code></td>
+<td><code>PARAMETER_TEXT</code><br><code>SLACK_TEXT</code></td>
+</tr>
+<tr>
+<td><code>thread_ts</code></td>
+<td>timestamp of the thread post</td>
+<td><code>false</code></td>
+<td><code>N/A</code></td>
+<td><code>PARAMETER_THREAD_TS</code><br><code>SLACK_THREAD_TS</code></td>
+</tr>
+<tr>
+<td><code>webhook</code></td>
+<td>Slack webhook url to send data to</td>
+<td><code>true</code></td>
+<td><code>N/A</code></td>
+<td><code>PARAMETER_WEBHOOK</code><br><code>SLACK_WEBHOOK</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="template">Template</h2>
+<p>COMING SOON!</p>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<p>You can start troubleshooting this plugin by tuning the level of logs being displayed:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
+  - name: message
+    image: target/vela-slack:latest
+    pull: always
+    parameters:
+<span style="color:#00a000">+     log_level: trace
+</span><span style="color:#00a000"></span>      text: &#34;Hello World!&#34;
+</code></pre></div><p>Below are a list of common problems and how to solve them:</p>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified January 13, 2021: <a  href="https://github.com/go-vela/docs/commit/8672a3955650232bed0b8d390565e9ae6d317f76">refactor: flatten plugin documentation (#193) (8672a395)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified November 1, 2021: <a  href="https://github.com/go-vela/docs/commit/db62d0df31f9e01eade90e129d20d9b97ec7dd02">feat(plugins): add slack pipeline plugin (#254) (db62d0df)</a>
 </div>
 </div>
+
 
           </main>
         </div>

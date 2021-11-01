@@ -3657,6 +3657,235 @@ Users should refrain from configuring sensitive information in their pipeline in
     </item>
     
     <item>
+      <title>Plugins: Slack</title>
+      <link>https://go-vela.github.io/docs/plugins/registry/pipeline/slack/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://go-vela.github.io/docs/plugins/registry/pipeline/slack/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;This plugin enables you to send data to a &lt;a href=&#34;https://slack.com/&#34;&gt;Slack&lt;/a&gt; channel.&lt;/p&gt;
+&lt;p&gt;Source Code: &lt;a href=&#34;https://github.com/go-vela/vela-slack&#34;&gt;https://github.com/go-vela/vela-slack&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Registry: &lt;a href=&#34;https://hub.docker.com/r/target/vela-slack&#34;&gt;https://hub.docker.com/r/target/vela-slack&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;usage&#34;&gt;Usage&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Users should refrain from using latest as the tag for the Docker image.&lt;/p&gt;
+&lt;p&gt;It is recommended to use a semantically versioned tag instead.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Sample of sending a message:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;steps&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;  &lt;/span&gt;- &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;message&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;image&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;target/vela-slack:latest&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;pull&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;always&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;parameters&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;text&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Hello World!&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Sample of sending a message with formatting:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
+  - name: message-with-formatting
+    image: target/vela-slack:latest
+    pull: not_present
+    parameters:
+&lt;span style=&#34;color:#a40000&#34;&gt;-     text: &amp;#34;Hello World!&amp;#34;
+&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+     text: &amp;#34;Hello Repo {{ .RepositoryName }}!&amp;#34;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Sample of sending a message with attachment file:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
+  - name: message-with-attachment
+    image: target/vela-slack:latest
+    secrets: [ webhook ]
+    parameters:
+&lt;span style=&#34;color:#a40000&#34;&gt;-     text: &amp;#34;Hello World!&amp;#34;
+&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;&lt;/span&gt;      filepath: slack_attachment.json
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;content of &lt;code&gt;slack_attachment.json&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;attachments&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;
+        &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;fallback&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Required plain-text summary of the attachment.&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;color&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;#36a64f&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;pretext&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Optional text that appears above the attachment block&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;author_name&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Bobby Tables&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;author_link&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;http://flickr.com/bobby/&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;author_icon&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;http://flickr.com/icons/bobby.jpg&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;title&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Slack API Documentation&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;title_link&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;https://api.slack.com/&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;text&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Build: {{ .BuildNumber }}&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;fields&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;
+                &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+                    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;title&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Priority&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+                    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;value&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;High&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+                    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;short&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;false&lt;/span&gt;
+                &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+            &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;],&lt;/span&gt;
+            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;image_url&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;http://my-website.com/path/to/image.jpg&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;thumb_url&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;http://example.com/path/to/thumb.png&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;footer&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Slack API&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;footer_icon&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;https://platform.slack-edge.com/img/default_application_icon.png&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;ts&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;123456789&lt;/span&gt;
+        &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;To use any variables within &lt;code&gt;attachments&lt;/code&gt; the file must be saved in the attachment format and be a JSON file.&lt;/p&gt;
+&lt;p&gt;The configuration below is pulled almost directly from the Slack &lt;a href=&#34;https://api.slack.com/docs/messages/builder&#34;&gt;Message Builder&lt;/a&gt; attachments example.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;secrets&#34;&gt;Secrets&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; Users should refrain from configuring sensitive information in your pipeline in plain text.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;internal&#34;&gt;Internal&lt;/h3&gt;
+&lt;p&gt;The plugin accepts the following &lt;code&gt;parameters&lt;/code&gt; for authentication:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Parameter&lt;/th&gt;
+&lt;th&gt;Environment Variable Configuration&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;webhook&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_WEBHOOK&lt;/code&gt;, &lt;code&gt;SLACK_WEBHOOK&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Users can use &lt;a href=&#34;https://go-vela.github.io/docs/tour/secrets/&#34;&gt;Vela internal secrets&lt;/a&gt; to substitute these sensitive values at runtime:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
+  - name: message
+    image: target/vela-slack:latest
+    pull: always
+&lt;span style=&#34;color:#00a000&#34;&gt;+   secrets: [ slack_webhook ]
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;    parameters:
+      text: &amp;#34;Hello World!&amp;#34;
+&lt;span style=&#34;color:#a40000&#34;&gt;-     webhook: http://slack.example.com
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;This example will add the secret to the &lt;code&gt;message&lt;/code&gt; step as environment variables:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;SLACK_WEBHOOK=&amp;lt;value&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;external&#34;&gt;External&lt;/h3&gt;
+&lt;p&gt;The plugin accepts the following files for authentication:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Parameter&lt;/th&gt;
+&lt;th&gt;Volume Configuration&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;webhook&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;/vela/parameters/slack/webhook&lt;/code&gt;, &lt;code&gt;/vela/secrets/slack/webhook&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Users can use &lt;a href=&#34;https://go-vela.github.io/docs/concepts/pipeline/secrets/origin/&#34;&gt;Vela external secrets&lt;/a&gt; to substitute these sensitive values at runtime:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
+  - name: message
+    image: target/vela-slack:latest
+    pull: always
+    parameters:
+      text: &amp;#34;Hello World!&amp;#34;
+&lt;span style=&#34;color:#a40000&#34;&gt;-     webhook: http://slack.example.com
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;This example will read the secret value in the volume stored at &lt;code&gt;/vela/secrets/&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;parameters&#34;&gt;Parameters&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The plugin supports reading all parameters via environment variables or files.&lt;/p&gt;
+&lt;p&gt;Any values set from a file take precedence over values set from the environment.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The following parameters are used to configure the image:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;th&gt;Required&lt;/th&gt;
+&lt;th&gt;Default&lt;/th&gt;
+&lt;th&gt;Environment Variables&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;channel&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Slack channel to send data to&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_CHANNEL&lt;/code&gt;&lt;br&gt;&lt;code&gt;SLACK_CHANNEL&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;filepath&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;file path to attachment JSON file&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_FILEPATH&lt;/code&gt;&lt;br&gt;&lt;code&gt;SLACK_FILEPATH&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;icon_emoji&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Slack emoji to use for the icon&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_ICON_EMOJI&lt;/code&gt;&lt;br&gt;&lt;code&gt;SLACK_ICON_EMOJI&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;icon_url&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Slack emoji URL to use for the icon&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_ICON_URL&lt;/code&gt;&lt;br&gt;&lt;code&gt;SLACK_ICON_URL&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;log_level&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;set the log level for the plugin&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;info&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_LOG_LEVEL&lt;/code&gt;&lt;br&gt;&lt;code&gt;SLACK_LOG_LEVEL&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;text&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;top level text to display in message&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_TEXT&lt;/code&gt;&lt;br&gt;&lt;code&gt;SLACK_TEXT&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;thread_ts&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;timestamp of the thread post&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_THREAD_TS&lt;/code&gt;&lt;br&gt;&lt;code&gt;SLACK_THREAD_TS&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;webhook&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Slack webhook url to send data to&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_WEBHOOK&lt;/code&gt;&lt;br&gt;&lt;code&gt;SLACK_WEBHOOK&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;template&#34;&gt;Template&lt;/h2&gt;
+&lt;p&gt;COMING SOON!&lt;/p&gt;
+&lt;h2 id=&#34;troubleshooting&#34;&gt;Troubleshooting&lt;/h2&gt;
+&lt;p&gt;You can start troubleshooting this plugin by tuning the level of logs being displayed:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
+  - name: message
+    image: target/vela-slack:latest
+    pull: always
+    parameters:
+&lt;span style=&#34;color:#00a000&#34;&gt;+     log_level: trace
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;      text: &amp;#34;Hello World!&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Below are a list of common problems and how to solve them:&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Plugins: Terraform</title>
       <link>https://go-vela.github.io/docs/plugins/registry/pipeline/terraform/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
