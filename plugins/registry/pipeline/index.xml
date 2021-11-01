@@ -508,6 +508,187 @@
     </item>
     
     <item>
+      <title>Plugins: Build Summary</title>
+      <link>https://go-vela.github.io/docs/plugins/registry/pipeline/build-summary/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://go-vela.github.io/docs/plugins/registry/pipeline/build-summary/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;This plugin enables you to provide a summary of a build in a pipeline.&lt;/p&gt;
+&lt;p&gt;Source Code: &lt;a href=&#34;https://github.com/go-vela/vela-build-summary&#34;&gt;https://github.com/go-vela/vela-build-summary&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Registry: &lt;a href=&#34;https://hub.docker.com/r/target/vela-build-summary&#34;&gt;https://hub.docker.com/r/target/vela-build-summary&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;usage&#34;&gt;Usage&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Users should refrain from using latest as the tag for the Docker image.&lt;/p&gt;
+&lt;p&gt;It is recommended to use a semantically versioned tag instead.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Sample of outputting a summary for the current build:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;steps&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;  &lt;/span&gt;- &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;build-summary&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;image&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;target/vela-build-summary:latest&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;pull&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;always&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;secrets&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;build_summary_token ]&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Sample of outputting a summary for an existing build:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
+  - name: build-summary
+    image: target/vela-build-summary:latest
+    pull: always
+    secrets: [ build_summary_token ]
+    parameters:
+&lt;span style=&#34;color:#00a000&#34;&gt;+     number: 1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Sample of outputting a summary for an existing build in a different repo:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
+  - name: build-summary
+    image: target/vela-build-summary:latest
+    pull: always
+    secrets: [ build_summary_token ]
+    parameters:
+      number: 1
+&lt;span style=&#34;color:#00a000&#34;&gt;+     org: octocat
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+     repo: hello-world
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;secrets&#34;&gt;Secrets&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; Users should refrain from configuring sensitive information in your pipeline in plain text.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;internal&#34;&gt;Internal&lt;/h3&gt;
+&lt;p&gt;The plugin accepts the following &lt;code&gt;parameters&lt;/code&gt; for authentication:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Parameter&lt;/th&gt;
+&lt;th&gt;Environment Variable Configuration&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;token&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_TOKEN&lt;/code&gt;, &lt;code&gt;BUILD_SUMMARY_TOKEN&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Users can use &lt;a href=&#34;https://go-vela.github.io/docs/tour/secrets/&#34;&gt;Vela internal secrets&lt;/a&gt; to substitute these sensitive values at runtime:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
+  - name: build-summary
+    image: target/vela-build-summary:latest
+    pull: always
+&lt;span style=&#34;color:#00a000&#34;&gt;+   secrets: [ build_summary_token ]
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;-   parameters:
+&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;-     token: superSecretToken
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;This example will add the secret to the &lt;code&gt;build-summary&lt;/code&gt; step as an environment variable:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;BUILD_SUMMARY_TOKEN=&amp;lt;value&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;external&#34;&gt;External&lt;/h3&gt;
+&lt;p&gt;The plugin accepts the following files for authentication:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Parameter&lt;/th&gt;
+&lt;th&gt;Volume Configuration&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;token&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;/vela/parameters/build-summary/token&lt;/code&gt;, &lt;code&gt;/vela/secrets/build-summary/token&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Users can use &lt;a href=&#34;https://go-vela.github.io/docs/concepts/pipeline/secrets/origin/&#34;&gt;Vela external secrets&lt;/a&gt; to substitute these sensitive values at runtime:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
+  - name: build-summary
+    image: target/vela-build-summary:latest
+    pull: always
+&lt;span style=&#34;color:#a40000&#34;&gt;-   parameters:
+&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;-     token: superSecretToken
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;This example will read the secret values in the volume stored at &lt;code&gt;/vela/secrets/&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;parameters&#34;&gt;Parameters&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The plugin supports reading all parameters via environment variables or files.&lt;/p&gt;
+&lt;p&gt;Any values set from a file take precedence over values set from the environment.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The following parameters are used to configure the image:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;th&gt;Required&lt;/th&gt;
+&lt;th&gt;Default&lt;/th&gt;
+&lt;th&gt;Environment Variables&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;log_level&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;set the log level for the plugin&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;info&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_LOG_LEVEL&lt;/code&gt;&lt;br&gt;&lt;code&gt;BUILD_SUMMARY_LOG_LEVEL&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;number&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;set the number for the build&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;set by Vela&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_NUMBER&lt;/code&gt;&lt;br&gt;&lt;code&gt;BUILD_SUMMARY_NUMBER&lt;/code&gt;&lt;br&gt;&lt;code&gt;VELA_BUILD_NUMBER&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;org&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;set the organization name for the build&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;set by Vela&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_ORG&lt;/code&gt;&lt;br&gt;&lt;code&gt;BUILD_SUMMARY_ORG&lt;/code&gt;&lt;br&gt;&lt;code&gt;VELA_REPO_ORG&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;repo&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;set the repository name for the build&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;set by Vela&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_REPO&lt;/code&gt;&lt;br&gt;&lt;code&gt;BUILD_SUMMARY_REPO&lt;/code&gt;&lt;br&gt;&lt;code&gt;VELA_REPO_NAME&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;server&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Vela server to communicate with&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;set by Vela&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_SERVER&lt;/code&gt;&lt;br&gt;&lt;code&gt;BUILD_SUMMARY_SERVER&lt;/code&gt;&lt;br&gt;&lt;code&gt;VELA_ADDR&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;token&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;token for communication with Vela&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;set by Vela&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_TOKEN&lt;/code&gt;&lt;br&gt;&lt;code&gt;BUILD_SUMMARY_TOKEN&lt;/code&gt;&lt;br&gt;&lt;code&gt;VELA_NETRC_PASSWORD&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;template&#34;&gt;Template&lt;/h2&gt;
+&lt;p&gt;COMING SOON!&lt;/p&gt;
+&lt;h2 id=&#34;troubleshooting&#34;&gt;Troubleshooting&lt;/h2&gt;
+&lt;p&gt;You can start troubleshooting this plugin by tuning the level of logs being displayed:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
+  - name: build-summary
+    image: target/vela-build-summary:latest
+    pull: always
+    secrets: [ build_summary_token ]
+&lt;span style=&#34;color:#00a000&#34;&gt;+   parameters:
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+     log_level: trace
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Below are a list of common problems and how to solve them:&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Plugins: Captain&#39;s Log</title>
       <link>https://go-vela.github.io/docs/plugins/registry/pipeline/captains_log/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

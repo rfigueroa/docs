@@ -375,6 +375,13 @@
     },
 
     {
+    "url": "https://go-vela.github.io/docs/plugins/registry/pipeline/build-summary/",
+    "display": "Registry/Pipeline/Build summary",
+    "title": "Build Summary",
+    "content": "description plugin enables you to provide summary of build pipeline. source code: https://github.com/go-vela/vela-build-summary registry: https://hub.docker.com/r/target/vela-build-summary usage note: users should refrain from using latest as the tag for docker image. it recommended use semantically versioned instead. sample outputting current build: steps:- name:build-summaryimage:target/vela-build-summary:latestpull:alwayssecrets:[build_summary_token ]sample an existing steps: name: build-summary image: target/vela-build-summary:latest pull: always secrets: build_summary_token parameters: number: different repo: org: octocat hello-world secrets configuring sensitive information your pipeline plain text. internal accepts following parameters authentication: parameter environment variable configuration token parameter_token, can vela substitute these values at runtime: token: supersecrettoken example will add secret step variable: build_summary_token=&lt;value&gt; external files volume /vela/parameters/build-summary/token, /vela/secrets/build-summary/token read stored /vela/secrets/ supports reading all via variables files. any set file take precedence over environment. are used configure name required default log_level log level true info parameter_log_level build_summary_log_level number by parameter_number build_summary_number vela_build_number org organization parameter_org build_summary_org vela_repo_org repo repository parameter_repo build_summary_repo vela_repo_name server communicate with parameter_server build_summary_server vela_addr communication parameter_token vela_netrc_password template coming soon! troubleshooting start tuning logs being displayed: log_level: trace below list common problems how solve them: "
+    },
+
+    {
     "url": "https://go-vela.github.io/docs/usage/docker/",
     "display": "Docs/Usage/Docker",
     "title": "Building Docker Images",
