@@ -249,8 +249,8 @@ steps:
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;VELA_BUILD_SOURCE&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;1556730001&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;name of the source provider for the repo&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;https://github.com/octocat/hello-world/commit/7fd1a60b01f91b314f59955a4e4d4e80d8edf11d&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;full url for the source commit the build was triggered from&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;VELA_BUILD_STATUS&lt;/code&gt;&lt;/td&gt;
