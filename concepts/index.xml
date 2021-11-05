@@ -65,7 +65,7 @@ steps:
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 
-To see more information on the Vault plugin usage see the &lt;a href=&#34;docs/plugins/registry/secret/vault&#34;&gt;Vault docs&lt;/a&gt;
+To see more information on the Vault plugin usage see the &lt;a href=&#34;https://go-vela.github.io/docs/docs/plugins/registry/secret/vault&#34;&gt;Vault docs&lt;/a&gt;
 &lt;/div&gt;
 
 
