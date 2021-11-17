@@ -52,8 +52,13 @@ steps:
 
 
 secrets:
-  # Implicit secret definition.
+  # Note here how this pipeline uses an internal secret vault_token
+  # in the origin secret below to get additional secrets from an
+  # external service.
   - name: vault_token
+    key: go-vela/vault_token
+    engine: native
+    type: org
 
   - origin:
       name: private vault
@@ -66,7 +71,7 @@ secrets:
         username: octocat
         items:
           - source: secret/docker
-            path: docker  
+            path: docker
 ```
 
 ### Stages
@@ -109,8 +114,10 @@ stages:
           repo: index.docker.io/vela/hello-world
 
 secrets:
-  # Implicit secret definition.
   - name: vault_token
+    key: go-vela/vault_token
+    engine: native
+    type: org
 
   - origin:
       name: private vault
@@ -123,5 +130,5 @@ secrets:
         username: octocat
         items:
           - source: secret/docker
-            path: docker  
+            path: docker
 ```
