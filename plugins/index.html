@@ -678,6 +678,9 @@ Secret plugins are configured with an allow list of available images via an admi
 <p><em>Not a runnable pipeline</em></p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">secrets:
   - name: vault_token
+    key: go-vela/vault_token
+    engine: native
+    type: org
 
   - origin:
       name: vault
@@ -690,7 +693,7 @@ Secret plugins are configured with an allow list of available images via an admi
 </span><span style="color:#00a000">+       username: octocat
 </span><span style="color:#00a000">+       items:
 </span><span style="color:#00a000">+         - source: secret/docker
-</span><span style="color:#00a000">+           path: docker  
+</span><span style="color:#00a000">+           path: docker
 </span></code></pre></div><p>From the above example, will have written the following available secrets to:</p>
 <ul>
 <li><code>/vela/secrets/docker/&lt;key&gt;/&lt;value/</code></li>
@@ -776,7 +779,7 @@ Secret plugins are configured with an allow list of available images via an admi
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified June 3, 2021: <a  href="https://github.com/go-vela/docs/commit/aa0aceacaeec48637b4a7d2114b402c0865c5e7e">refactor: replace concepts with tour (#207) (aa0aceac)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified November 17, 2021: <a  href="https://github.com/go-vela/docs/commit/81ea455ed358b343308f882568d2441d5c179846">docs(secrets)!:removed references to implicit secrets (#258) (81ea455e)</a>
 </div>
 </div>
 
