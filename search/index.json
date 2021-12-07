@@ -42,7 +42,7 @@
     "url": "https://go-vela.github.io/docs/usage/examples/postgres/",
     "display": "Usage/Examples/Postgres",
     "title": "Postgres",
-    "content": "example yaml configuration for project requiring postgres as pipeline dependency. scenario user looking to create that can integrate with an ephemeral instance. services block be used stages steps pipelines. uses basic configuration. the following concepts are being below: image pull commands note: must stored base of repository .vela.yml .vela.yaml it recommended pin image: versions production pipelines version: &#34;1&#34; services: name: postgres:latest pull: always environment: postgres_user: admin postgres_db: vela steps: check status commands: sleeping help ensure service adequate time start sleep 15 psql -u -d -h tcp://postgres:5432 detach if you&rsquo;re more granular container you add flag within detach: true "
+    "content": "example yaml configuration for project requiring postgres as pipeline dependency. scenario user looking to create that can integrate with an ephemeral instance. services block be used stages steps pipelines. uses basic configuration. the following concepts are being below: image pull commands note: must stored base of repository .vela.yml .vela.yaml it recommended pin image: versions production pipelines version: &#34;1&#34; services: name: postgres:latest pull: always environment: postgres_user: admin postgres_password: password postgres_db: vela steps: check status commands: sleeping help ensure service adequate time start sleep 15 psql -u -d -h tcp://postgres:5432 detach if you&rsquo;re more granular container you add flag within detach: true "
     },
 
     {
