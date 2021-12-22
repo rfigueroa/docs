@@ -1,0 +1,23 @@
+@startuml
+
+title Vela Build Workflow
+
+skinparam actorStyle awesome
+actor "Developer" as Developer
+
+participant "GitHub" as Github
+participant "Server" as Server
+participant "Queue" as Queue
+
+Developer -> Github : Git operation (i.e. git push) to trigger event
+Github -> Server : POST vela-server.example.com/webhook with event information
+Server -> Server : process webhook information
+Server -> Github : GET Vela build configuration (a.k.a. pipeline)
+Github -> Server : return Vela build configuration
+Server -> Server : compile Vela build configuration
+Server -> Github : (if defined) GET Vela build templates
+Github -> Server : (if defined) return Vela build templates
+Server -> Server : store build resources in the database
+Server -> Queue : push build configuration to be executed
+
+@enduml
