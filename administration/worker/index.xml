@@ -1,0 +1,347 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vela – Worker Overview</title>
+    <link>https://go-vela.github.io/docs/administration/worker/</link>
+    <description>Recent content in Worker Overview on Vela</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="https://go-vela.github.io/docs/administration/worker/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Administration: Docker</title>
+      <link>https://go-vela.github.io/docs/administration/worker/docker/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://go-vela.github.io/docs/administration/worker/docker/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
+&lt;p&gt;This section provides all required dependencies to install and start the worker with Docker.&lt;/p&gt;
+&lt;h3 id=&#34;dependency-1-docker&#34;&gt;Dependency 1: Docker&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.docker.com/&#34;&gt;Docker&lt;/a&gt; will be used for downloading the worker and managing the lifecycle of the application.&lt;/p&gt;
+&lt;p&gt;You can refer to &lt;a href=&#34;https://docs.docker.com/get-docker/&#34;&gt;Docker&amp;rsquo;s official documentation&lt;/a&gt; on installing and configuring the service.&lt;/p&gt;
+&lt;h3 id=&#34;dependency-2-redis&#34;&gt;Dependency 2: Redis&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://redis.io/&#34;&gt;Redis&lt;/a&gt; will be used for storing workloads, created by the &lt;a href=&#34;https://go-vela.github.io/docs/docs/administration/server/&#34;&gt;server&lt;/a&gt;, that will be run by a worker.&lt;/p&gt;
+&lt;p&gt;You can refer to &lt;a href=&#34;https://redis.io/topics/quickstart/&#34;&gt;Redis&amp;rsquo;s official documentation&lt;/a&gt; on installing and configuring the service.&lt;/p&gt;
+&lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;
+&lt;p&gt;This section provides an example of installing the worker with Docker.&lt;/p&gt;
+&lt;p&gt;This example only shows a subset of all possible configuration options.&lt;/p&gt;
+&lt;h3 id=&#34;step-1-download-the-image&#34;&gt;Step 1: Download the Image&lt;/h3&gt;
+&lt;p&gt;Download the &lt;a href=&#34;https://docs.docker.com/get-started/overview/#images&#34;&gt;Docker image&lt;/a&gt; for the Vela worker from &lt;a href=&#34;https://hub.docker.com/&#34;&gt;DockerHub&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You can use the &lt;a href=&#34;https://docs.docker.com/engine/reference/commandline/pull/&#34;&gt;&lt;code&gt;docker pull&lt;/code&gt; command&lt;/a&gt; to download the image:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ docker pull target/vela-worker:latest
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note:&lt;/h4&gt;
+&lt;p&gt;The &lt;code&gt;latest&lt;/code&gt; tag will ensure you install the most-recent version of the Vela worker.&lt;/p&gt;
+&lt;p&gt;To see the full list of available versions, please refer to &lt;a href=&#34;https://hub.docker.com/r/target/vela-worker&#34;&gt;the official registry&lt;/a&gt;.&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;h3 id=&#34;step-2-start-the-worker&#34;&gt;Step 2: Start the Worker&lt;/h3&gt;
+&lt;p&gt;Start the Vela worker as a &lt;a href=&#34;https://docs.docker.com/get-started/overview/#containers&#34;&gt;Docker container&lt;/a&gt; that is configured via environment variables.&lt;/p&gt;
+&lt;p&gt;You can use the &lt;a href=&#34;https://docs.docker.com/engine/reference/commandline/run/&#34;&gt;&lt;code&gt;docker run&lt;/code&gt; command&lt;/a&gt; to start the worker:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ docker run &lt;span style=&#34;color:#4e9a06&#34;&gt;\
+&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&lt;/span&gt;  --detach&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#204a87&#34;&gt;true&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;\
+&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&lt;/span&gt;  --env&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;VELA_QUEUE_DRIVER&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;redis &lt;span style=&#34;color:#4e9a06&#34;&gt;\
+&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&lt;/span&gt;  --env&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;VELA_QUEUE_ADDR&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;redis://&amp;lt;password&amp;gt;@&amp;lt;hostname&amp;gt;:&amp;lt;port&amp;gt;/&amp;lt;database&amp;gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;\
+&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&lt;/span&gt;  --env&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;VELA_SERVER_ADDR&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;https://vela-server.example.com &lt;span style=&#34;color:#4e9a06&#34;&gt;\
+&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&lt;/span&gt;  --env&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;VELA_SERVER_SECRET&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&amp;lt;shared-secret&amp;gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;\
+&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&lt;/span&gt;  --env&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;VELA_WORKER_ADDR&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;https://vela-worker.example.com &lt;span style=&#34;color:#4e9a06&#34;&gt;\
+&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&lt;/span&gt;  --name&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;worker &lt;span style=&#34;color:#4e9a06&#34;&gt;\
+&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&lt;/span&gt;  --publish&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;80:80 &lt;span style=&#34;color:#4e9a06&#34;&gt;\
+&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&lt;/span&gt;  --publish&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;443:443 &lt;span style=&#34;color:#4e9a06&#34;&gt;\
+&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&lt;/span&gt;  --restart&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;always &lt;span style=&#34;color:#4e9a06&#34;&gt;\
+&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&lt;/span&gt;  --volume&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;/var/run/docker.sock:/var/run/docker.sock &lt;span style=&#34;color:#4e9a06&#34;&gt;\
+&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&lt;/span&gt;  target/vela-worker:latest
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note:&lt;/h4&gt;
+For a full list of configuration options, please see the &lt;a href=&#34;https://go-vela.github.io/docs/docs/administration/worker/reference/&#34;&gt;worker reference&lt;/a&gt;.
+&lt;/div&gt;
+
+&lt;h3 id=&#34;step-3-verify-the-worker-logs&#34;&gt;Step 3: Verify the Worker Logs&lt;/h3&gt;
+&lt;p&gt;Ensure the worker started up successfully and is running as expected by inspecting the logs.&lt;/p&gt;
+&lt;p&gt;You can use the &lt;a href=&#34;https://docs.docker.com/engine/reference/commandline/logs/&#34;&gt;&lt;code&gt;docker logs&lt;/code&gt; command&lt;/a&gt; to verify the logs:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ docker logs worker
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Administration: Kubernetes</title>
+      <link>https://go-vela.github.io/docs/administration/worker/kubernetes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://go-vela.github.io/docs/administration/worker/kubernetes/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
+&lt;p&gt;This section provides all required dependencies to install and start the worker with Kubernetes.&lt;/p&gt;
+&lt;h3 id=&#34;dependency-1-kubernetes&#34;&gt;Dependency 1: Kubernetes&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://kubernetes.io/&#34;&gt;Kubernetes&lt;/a&gt; will be used for downloading the worker and managing the lifecycle of the application.&lt;/p&gt;
+&lt;p&gt;You can refer to &lt;a href=&#34;https://kubernetes.io/docs/setup/&#34;&gt;Kubernetes&#39; official documentation&lt;/a&gt; on installing and configuring the service.&lt;/p&gt;
+&lt;h3 id=&#34;dependency-2-redis&#34;&gt;Dependency 2: Redis&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://redis.io/&#34;&gt;Redis&lt;/a&gt; will be used for storing workloads, created by the &lt;a href=&#34;https://go-vela.github.io/docs/docs/administration/server/&#34;&gt;server&lt;/a&gt;, that will be run by a worker.&lt;/p&gt;
+&lt;p&gt;You can refer to &lt;a href=&#34;https://redis.io/topics/quickstart/&#34;&gt;Redis&amp;rsquo;s official documentation&lt;/a&gt; on installing and configuring the service.&lt;/p&gt;
+&lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;
+&lt;p&gt;This section provides an example of installing the worker with Kubernetes.&lt;/p&gt;
+&lt;p&gt;This example only shows a subset of all possible configuration options.&lt;/p&gt;
+&lt;h3 id=&#34;step-1-todo&#34;&gt;Step 1: TODO&lt;/h3&gt;
+&lt;p&gt;TODO&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Administration: Reference</title>
+      <link>https://go-vela.github.io/docs/administration/worker/reference/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://go-vela.github.io/docs/administration/worker/reference/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;components&#34;&gt;Components&lt;/h2&gt;
+&lt;p&gt;The worker is made up of several components, responsible for specific tasks, necessary for the service to operate:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;executor&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;coordinates with the runtime to manage workload resources and reports results back to the &lt;a href=&#34;https://go-vela.github.io/docs/docs/administration/server/&#34;&gt;server&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;queue&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;integrates with a queue provider for pulling workloads, provided by the &lt;a href=&#34;https://go-vela.github.io/docs/docs/administration/server/&#34;&gt;server&lt;/a&gt;, that will be run&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;runtime&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;integrates with a runtime environment for executing workload resources&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;required&#34;&gt;Required&lt;/h2&gt;
+&lt;p&gt;This section contains a list of all variables that must be provided to the worker.&lt;/p&gt;
+&lt;h3 id=&#34;vela_queue_addr&#34;&gt;VELA_QUEUE_ADDR&lt;/h3&gt;
+&lt;p&gt;This configuration variable is used by the &lt;a href=&#34;https://go-vela.github.io/docs/docs/administration/worker/reference/queue/&#34;&gt;queue component&lt;/a&gt; for the worker.&lt;/p&gt;
+&lt;p&gt;Examples using this configuration variable are provided in the above reference documentation.&lt;/p&gt;
+&lt;p&gt;This variable sets a fully qualified URL to the queue instance for pulling workloads provided by the &lt;a href=&#34;https://go-vela.github.io/docs/docs/administration/server/&#34;&gt;server&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The variable should be provided as a &lt;code&gt;string&lt;/code&gt;.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note:&lt;/h4&gt;
+This variable should match &lt;a href=&#34;https://go-vela.github.io/docs/docs/administration/server/reference/#vela_queue_addr&#34;&gt;the &lt;code&gt;VELA_QUEUE_ADDR&lt;/code&gt; variable&lt;/a&gt; provided to the server.
+&lt;/div&gt;
+
+&lt;h3 id=&#34;vela_queue_driver&#34;&gt;VELA_QUEUE_DRIVER&lt;/h3&gt;
+&lt;p&gt;This configuration variable is used by the &lt;a href=&#34;https://go-vela.github.io/docs/docs/administration/worker/reference/queue/&#34;&gt;queue component&lt;/a&gt; for the worker.&lt;/p&gt;
+&lt;p&gt;Examples using this configuration variable are provided in the above reference documentation.&lt;/p&gt;
+&lt;p&gt;This variable sets the driver to use for the queue functionality for the worker.&lt;/p&gt;
+&lt;p&gt;The variable should be provided as a &lt;code&gt;string&lt;/code&gt;.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note:&lt;/h4&gt;
+&lt;p&gt;This variable should match &lt;a href=&#34;https://go-vela.github.io/docs/docs/administration/server/reference/#vela_queue_driver&#34;&gt;the &lt;code&gt;VELA_QUEUE_DRIVER&lt;/code&gt; variable&lt;/a&gt; provided to the server.&lt;/p&gt;
+&lt;p&gt;The possible options to provide for this variable are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;redis&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;h3 id=&#34;vela_server_addr&#34;&gt;VELA_SERVER_ADDR&lt;/h3&gt;
+&lt;p&gt;This variable sets a fully qualified URL to the Vela &lt;a href=&#34;https://go-vela.github.io/docs/docs/administration/server/&#34;&gt;server&lt;/a&gt; address.&lt;/p&gt;
+&lt;p&gt;The variable should be provided as a &lt;code&gt;string&lt;/code&gt;.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note:&lt;/h4&gt;
+This variable should match &lt;a href=&#34;https://go-vela.github.io/docs/docs/administration/server/reference/#vela_addr&#34;&gt;the &lt;code&gt;VELA_ADDR&lt;/code&gt; variable&lt;/a&gt; provided to the server.
+&lt;/div&gt;
+
+&lt;h3 id=&#34;vela_server_secret&#34;&gt;VELA_SERVER_SECRET&lt;/h3&gt;
+&lt;p&gt;This variable sets a shared secret for authenticating communication between workers and the server.&lt;/p&gt;
+&lt;p&gt;The variable should be provided as a &lt;code&gt;string&lt;/code&gt;.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note:&lt;/h4&gt;
+This variable should match &lt;a href=&#34;https://go-vela.github.io/docs/docs/administration/server/reference/#vela_secret&#34;&gt;the &lt;code&gt;VELA_SECRET&lt;/code&gt; variable&lt;/a&gt; provided to the server.
+&lt;/div&gt;
+
+&lt;h3 id=&#34;vela_worker_addr&#34;&gt;VELA_WORKER_ADDR&lt;/h3&gt;
+&lt;p&gt;This variable sets a fully qualified URL to the Vela &lt;a href=&#34;https://go-vela.github.io/docs/docs/administration/worker/&#34;&gt;worker&lt;/a&gt; address.&lt;/p&gt;
+&lt;p&gt;The variable should be provided as a &lt;code&gt;string&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;optional&#34;&gt;Optional&lt;/h2&gt;
+&lt;p&gt;This section contains a list of all variables that can be provided to the worker.&lt;/p&gt;
+&lt;h3 id=&#34;vela_build_limit&#34;&gt;VELA_BUILD_LIMIT&lt;/h3&gt;
+&lt;p&gt;This variable sets a number to control the maximum amount of builds that are allowed to run concurrently on the worker.&lt;/p&gt;
+&lt;p&gt;The variable can be provided as an &lt;code&gt;integer&lt;/code&gt;.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note:&lt;/h4&gt;
+This variable has a default value of &lt;code&gt;1&lt;/code&gt;.
+&lt;/div&gt;
+
+&lt;h3 id=&#34;vela_build_timeout&#34;&gt;VELA_BUILD_TIMEOUT&lt;/h3&gt;
+&lt;p&gt;This variable sets the maximum duration of time a build can run for on the worker before being terminated.&lt;/p&gt;
+&lt;p&gt;The variable can be provided as a &lt;code&gt;duration&lt;/code&gt; (i.e. &lt;code&gt;5s&lt;/code&gt;, &lt;code&gt;10m&lt;/code&gt;).&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note:&lt;/h4&gt;
+This variable has a default value of &lt;code&gt;30m&lt;/code&gt;.
+&lt;/div&gt;
+
+&lt;h3 id=&#34;vela_check_in&#34;&gt;VELA_CHECK_IN&lt;/h3&gt;
+&lt;p&gt;This variable sets the maximum duration of time a worker will wait before registering with the Vela &lt;a href=&#34;https://go-vela.github.io/docs/docs/administration/server/&#34;&gt;server&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The variable can be provided as a &lt;code&gt;duration&lt;/code&gt; (i.e. &lt;code&gt;5s&lt;/code&gt;, &lt;code&gt;10m&lt;/code&gt;).&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note:&lt;/h4&gt;
+This variable has a default value of &lt;code&gt;15m&lt;/code&gt;.
+&lt;/div&gt;
+
+&lt;h3 id=&#34;vela_executor_driver&#34;&gt;VELA_EXECUTOR_DRIVER&lt;/h3&gt;
+&lt;p&gt;This configuration variable is used by the &lt;a href=&#34;https://go-vela.github.io/docs/docs/administration/worker/reference/executor/&#34;&gt;executor component&lt;/a&gt; for the worker.&lt;/p&gt;
+&lt;p&gt;Examples using this configuration variable are provided in the above reference documentation.&lt;/p&gt;
+&lt;p&gt;This variable sets the driver to use for the executor functionality for the worker.&lt;/p&gt;
+&lt;p&gt;The variable can be provided as a &lt;code&gt;string&lt;/code&gt;.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note:&lt;/h4&gt;
+&lt;p&gt;This variable has a default value of &lt;code&gt;linux&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The possible options to provide for this variable are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;linux&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;local&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;h3 id=&#34;vela_executor_log_method&#34;&gt;VELA_EXECUTOR_LOG_METHOD&lt;/h3&gt;
+&lt;p&gt;This configuration variable is used by the &lt;a href=&#34;https://go-vela.github.io/docs/docs/administration/worker/reference/executor/&#34;&gt;executor component&lt;/a&gt; for the worker.&lt;/p&gt;
+&lt;p&gt;This variable sets the logging method used by the worker for uploading workload logs to the Vela &lt;a href=&#34;https://go-vela.github.io/docs/docs/administration/server/&#34;&gt;server&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The variable can be provided as a &lt;code&gt;string&lt;/code&gt;.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note:&lt;/h4&gt;
+&lt;p&gt;This variable has a default value of &lt;code&gt;byte-chunks&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The possible options to provide for this variable are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;byte-chunks&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;time-chunks&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;h3 id=&#34;vela_queue_cluster&#34;&gt;VELA_QUEUE_CLUSTER&lt;/h3&gt;
+&lt;p&gt;This configuration variable is used by the &lt;a href=&#34;https://go-vela.github.io/docs/docs/administration/worker/reference/queue/&#34;&gt;queue component&lt;/a&gt; for the worker.&lt;/p&gt;
+&lt;p&gt;This variable enables the worker to connect to a queue cluster rather than a standalone instance.&lt;/p&gt;
+&lt;p&gt;The variable can be provided as a &lt;code&gt;boolean&lt;/code&gt;.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note:&lt;/h4&gt;
+This variable should match &lt;a href=&#34;https://go-vela.github.io/docs/docs/administration/server/reference/#vela_queue_cluster&#34;&gt;the &lt;code&gt;VELA_QUEUE_CLUSTER&lt;/code&gt; variable&lt;/a&gt; provided to the server.
+&lt;/div&gt;
+
+&lt;h3 id=&#34;vela_queue_pop_timeout&#34;&gt;VELA_QUEUE_POP_TIMEOUT&lt;/h3&gt;
+&lt;p&gt;This configuration variable is used by the &lt;a href=&#34;https://go-vela.github.io/docs/docs/administration/worker/reference/queue/&#34;&gt;queue component&lt;/a&gt; for the worker.&lt;/p&gt;
+&lt;p&gt;This variable sets the maximum duration of time the worker will wait before timing out requests sent for pulling workloads.&lt;/p&gt;
+&lt;p&gt;The variable can be provided as a &lt;code&gt;duration&lt;/code&gt; (i.e. &lt;code&gt;5s&lt;/code&gt;, &lt;code&gt;10m&lt;/code&gt;).&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note:&lt;/h4&gt;
+This variable has a default value of &lt;code&gt;60s&lt;/code&gt;.
+&lt;/div&gt;
+
+&lt;h3 id=&#34;vela_queue_routes&#34;&gt;VELA_QUEUE_ROUTES&lt;/h3&gt;
+&lt;p&gt;This configuration variable is used by the &lt;a href=&#34;https://go-vela.github.io/docs/docs/administration/worker/reference/queue/&#34;&gt;queue component&lt;/a&gt; for the worker.&lt;/p&gt;
+&lt;p&gt;This variable sets the unique channels or topics to pull workloads from.&lt;/p&gt;
+&lt;p&gt;The variable can be provided as a comma-separated &lt;code&gt;list&lt;/code&gt; (i.e. &lt;code&gt;myRoute1,myRoute2&lt;/code&gt;).&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note:&lt;/h4&gt;
+This variable has a default value of &lt;code&gt;vela&lt;/code&gt;.
+&lt;/div&gt;
+
+&lt;h3 id=&#34;vela_runtime_config&#34;&gt;VELA_RUNTIME_CONFIG&lt;/h3&gt;
+&lt;p&gt;This configuration variable is used by the &lt;a href=&#34;https://go-vela.github.io/docs/docs/administration/worker/reference/runtime/&#34;&gt;runtime component&lt;/a&gt; for the worker.&lt;/p&gt;
+&lt;p&gt;Examples using this configuration variable are provided in the above reference documentation.&lt;/p&gt;
+&lt;p&gt;This variable sets a fully qualified system path to a configuration file for the worker.&lt;/p&gt;
+&lt;p&gt;The variable can be provided as a &lt;code&gt;string&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;vela_runtime_driver&#34;&gt;VELA_RUNTIME_DRIVER&lt;/h3&gt;
+&lt;p&gt;This configuration variable is used by the &lt;a href=&#34;https://go-vela.github.io/docs/docs/administration/worker/reference/runtime/&#34;&gt;runtime component&lt;/a&gt; for the worker.&lt;/p&gt;
+&lt;p&gt;Examples using this configuration variable are provided in the above reference documentation.&lt;/p&gt;
+&lt;p&gt;This variable sets the driver to use for the runtime functionality for the worker.&lt;/p&gt;
+&lt;p&gt;The variable can be provided as a &lt;code&gt;string&lt;/code&gt;.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note:&lt;/h4&gt;
+&lt;p&gt;This variable has a default value of &lt;code&gt;docker&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The possible options to provide for this variable are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;docker&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;kubernetes&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;h3 id=&#34;vela_runtime_namespace&#34;&gt;VELA_RUNTIME_NAMESPACE&lt;/h3&gt;
+&lt;p&gt;This configuration variable is used by the &lt;a href=&#34;https://go-vela.github.io/docs/docs/administration/worker/reference/runtime/&#34;&gt;runtime component&lt;/a&gt; for the worker.&lt;/p&gt;
+&lt;p&gt;Examples using this configuration variable are provided in the above reference documentation.&lt;/p&gt;
+&lt;p&gt;This variable sets a namespace (for Kubernetes only) to use for runtime workloads.&lt;/p&gt;
+&lt;p&gt;The variable can be provided as a &lt;code&gt;string&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;vela_runtime_privileged_images&#34;&gt;VELA_RUNTIME_PRIVILEGED_IMAGES&lt;/h3&gt;
+&lt;p&gt;This configuration variable is used by the &lt;a href=&#34;https://go-vela.github.io/docs/docs/administration/worker/reference/runtime/&#34;&gt;runtime component&lt;/a&gt; for the worker.&lt;/p&gt;
+&lt;p&gt;This variable sets the &lt;a href=&#34;https://docs.docker.com/get-started/overview/#images&#34;&gt;Docker image(s)&lt;/a&gt; that are allowed to have privileged access on the worker.&lt;/p&gt;
+&lt;p&gt;The variable can be provided as a comma-separated &lt;code&gt;list&lt;/code&gt; (i.e. &lt;code&gt;myImage1,myImage2&lt;/code&gt;).&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note:&lt;/h4&gt;
+This variable has a default value of &lt;code&gt;target/vela-docker&lt;/code&gt;.
+&lt;/div&gt;
+
+&lt;h3 id=&#34;vela_runtime_volumes&#34;&gt;VELA_RUNTIME_VOLUMES&lt;/h3&gt;
+&lt;p&gt;This configuration variable is used by the &lt;a href=&#34;https://go-vela.github.io/docs/docs/administration/worker/reference/runtime/&#34;&gt;runtime component&lt;/a&gt; for the worker.&lt;/p&gt;
+&lt;p&gt;This variable sets the fully qualified system path(s) to file(s) on the host machine that will be mounted into workloads executed on that worker.&lt;/p&gt;
+&lt;p&gt;The variable can be provided as a comma-separated &lt;code&gt;list&lt;/code&gt; (i.e. &lt;code&gt;myVolume1,myVolume2&lt;/code&gt;).&lt;/p&gt;
+&lt;h3 id=&#34;vela_server_cert&#34;&gt;VELA_SERVER_CERT&lt;/h3&gt;
+&lt;p&gt;This variable sets a fully qualified system path to the TLS certificate used for HTTPS for the worker.&lt;/p&gt;
+&lt;p&gt;The variable can be provided as a &lt;code&gt;string&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;vela_server_cert_key&#34;&gt;VELA_SERVER_CERT_KEY&lt;/h3&gt;
+&lt;p&gt;This variable sets a fully qualified system path to the TLS certificate key used for HTTPS for the worker.&lt;/p&gt;
+&lt;p&gt;The variable can be provided as a &lt;code&gt;string&lt;/code&gt;.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

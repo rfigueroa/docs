@@ -1,0 +1,28 @@
+@startuml
+
+title Vela Build Workflow
+
+participant "Server" as Server
+participant "Queue" as Queue
+participant "Worker" as Worker
+
+Queue -> Worker : pull build configuration to be executed
+Worker -> Server : PUT vela-server.example.com/api/v1/repos/:org/:repo/builds/:build to update build metadata
+Server -> Server : update build resource in the database
+Server -> Worker : return updated build object
+Worker -> Worker : (if defined) create service containers from build on host
+Worker -> Server : (if defined) PUT vela-server.example.com/api/v1/repos/:org/:repo/builds/:build/services/:service to update service metadata
+Server -> Server : (if defined) update service resources in the database
+Server -> Worker : (if defined) return updated service objects
+Worker -> Server : (if defined) PUT vela-server.example.com/api/v1/repos/:org/:repo/builds/:build/services/:service/logs to update service logs
+Worker -> Worker : create step containers from build on host
+Worker -> Server : PUT vela-server.example.com/api/v1/repos/:org/:repo/builds/:build/steps/:step to update step metadata
+Server -> Server : update step resources in the database
+Server -> Worker : return updated step objects
+Worker -> Server : PUT vela-server.example.com/api/v1/repos/:org/:repo/builds/:build/steps/:step/logs to update step logs
+Worker -> Worker : destroy service and step containers from build on host
+Worker -> Server : PUT vela-server.example.com/api/v1/repos/:org/:repo/builds/:build to update build metadata
+Server -> Server : update build resource in the database
+Server -> Worker : return updated build object
+
+@enduml

@@ -1,0 +1,376 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vela – Reference</title>
+    <link>https://go-vela.github.io/docs/administration/worker/reference/</link>
+    <description>Recent content in Reference on Vela</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="https://go-vela.github.io/docs/administration/worker/reference/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Administration: Executor</title>
+      <link>https://go-vela.github.io/docs/administration/worker/reference/executor/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://go-vela.github.io/docs/administration/worker/reference/executor/</guid>
+      <description>
+        
+        
+        &lt;p&gt;This component is responsible for coordinating with &lt;a href=&#34;https://go-vela.github.io/docs/docs/administration/worker/runtime/&#34;&gt;the runtime&lt;/a&gt; to manage workload resources.&lt;/p&gt;
+&lt;p&gt;Throughout the lifecycle of these resources, this component will track and report results back to the &lt;a href=&#34;https://go-vela.github.io/docs/docs/administration/server/&#34;&gt;server&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;configuration&#34;&gt;Configuration&lt;/h2&gt;
+&lt;p&gt;The following options are used to configure the component:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;th&gt;Required&lt;/th&gt;
+&lt;th&gt;Default&lt;/th&gt;
+&lt;th&gt;Environment Variables&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;executor.driver&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;type of client to control and operate executor&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;linux&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;EXECUTOR_DRIVER&lt;/code&gt;&lt;br&gt;&lt;code&gt;VELA_EXECUTOR_DRIVER&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;executor.log_method&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;method used to publish logs back to the server&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;byte-chunks&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;EXECUTOR_LOG_METHOD&lt;/code&gt;&lt;br&gt;&lt;code&gt;VELA_EXECUTOR_LOG_METHOD&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+&lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note:&lt;/h4&gt;
+For more information on these configuration options, please see the &lt;a href=&#34;https://go-vela.github.io/docs/docs/administration/worker/reference/&#34;&gt;worker reference&lt;/a&gt;.
+&lt;/div&gt;
+
+&lt;h2 id=&#34;drivers&#34;&gt;Drivers&lt;/h2&gt;
+&lt;p&gt;The following drivers are available to configure the component:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;th&gt;Documentation&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;linux&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;uses a Linux executor for running workloads&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://www.linux.com/&#34;&gt;https://www.linux.com/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;local&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;uses a Local executor for running workloads (CLI only)&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;linux&#34;&gt;Linux&lt;/h3&gt;
+&lt;p&gt;From the &lt;a href=&#34;https://www.linux.com/what-is-linux/&#34;&gt;Linux official website&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Linux has been around since the mid-1990s and has since reached a user-base that spans the globe. Just like Windows, iOS, and Mac OS, Linux is an operating system. In fact, one of the most popular platforms on the planet, Android, is powered by the Linux operating system.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The below configuration displays an example of starting the Vela worker that will use a Linux executor:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;$ docker run \
+  --detach=true \
+&lt;span style=&#34;color:#00a000&#34;&gt;+ --env=VELA_EXECUTOR_DRIVER=linux \
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;  --env=VELA_QUEUE_DRIVER=redis \
+  --env=VELA_QUEUE_ADDR=redis://&amp;lt;password&amp;gt;@&amp;lt;hostname&amp;gt;:&amp;lt;port&amp;gt;/&amp;lt;database&amp;gt; \
+  --env=VELA_SERVER_ADDR=https://vela-server.example.com \
+  --env=VELA_SERVER_SECRET=&amp;lt;shared-secret&amp;gt; \
+  --env=VELA_WORKER_ADDR=https://vela-worker.example.com \
+  --name=worker \
+  --publish=80:80 \
+  --publish=443:443 \
+  --restart=always \
+  --volume=/var/run/docker.sock:/var/run/docker.sock \
+  target/vela-worker:latest
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note:&lt;/h4&gt;
+This Linux configuration is enabled by default and is not necessary to provide in order for Vela to operate.
+&lt;/div&gt;
+
+&lt;h3 id=&#34;local&#34;&gt;Local&lt;/h3&gt;
+&lt;p&gt;The &lt;code&gt;local&lt;/code&gt; executor driver is only intended for use with the &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/cli/&#34;&gt;Vela CLI&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s not recommended to run any workloads on a worker configured with this driver.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Administration: Queue</title>
+      <link>https://go-vela.github.io/docs/administration/worker/reference/queue/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://go-vela.github.io/docs/administration/worker/reference/queue/</guid>
+      <description>
+        
+        
+        &lt;p&gt;This component is responsible for integrating with a queue system based off the configuration provided.&lt;/p&gt;
+&lt;p&gt;The queue system is used by Vela for pulling workloads, provided by the &lt;a href=&#34;https://go-vela.github.io/docs/docs/administration/server/&#34;&gt;server&lt;/a&gt;, that will be run.&lt;/p&gt;
+&lt;p&gt;Workloads fetched from the queue are managed with a &lt;a href=&#34;https://en.wikipedia.org/wiki/FIFO_(computing_and_electronics)&#34;&gt;first in, first out (FIFO)&lt;/a&gt; strategy.&lt;/p&gt;
+&lt;h2 id=&#34;configuration&#34;&gt;Configuration&lt;/h2&gt;
+&lt;p&gt;The following options are used to configure the component:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;th&gt;Required&lt;/th&gt;
+&lt;th&gt;Default&lt;/th&gt;
+&lt;th&gt;Environment Variables&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;queue.addr&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;full connection string to the queue&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;QUEUE_ADDR&lt;/code&gt;&lt;br&gt;&lt;code&gt;VELA_QUEUE_ADDR&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;queue.cluster&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;configures the client for a queue cluster&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;QUEUE_CLUSTER&lt;/code&gt;&lt;br&gt;&lt;code&gt;VELA_QUEUE_CLUSTER&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;queue.driver&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;type of client to control and operate queue&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;QUEUE_DRIVER&lt;/code&gt;&lt;br&gt;&lt;code&gt;VELA_QUEUE_DRIVER&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;queue.pop.timeout&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;timeout for requests that pop items off the queue&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;60s&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;QUEUE_POP_TIMEOUT&lt;/code&gt;&lt;br&gt;&lt;code&gt;VELA_QUEUE_POP_TIMEOUT&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;queue.routes&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;unique channels or topics for pulling workloads&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;[ vela ]&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;QUEUE_ROUTES&lt;/code&gt;&lt;br&gt;&lt;code&gt;VELA_QUEUE_ROUTES&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+&lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note:&lt;/h4&gt;
+For more information on these configuration options, please see the &lt;a href=&#34;https://go-vela.github.io/docs/docs/administration/worker/reference/&#34;&gt;worker reference&lt;/a&gt;.
+&lt;/div&gt;
+
+&lt;h2 id=&#34;drivers&#34;&gt;Drivers&lt;/h2&gt;
+&lt;p&gt;The following drivers are available to configure the component:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;th&gt;Documentation&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;redis&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;uses a Redis queue for managing workloads&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://redis.io/&#34;&gt;https://redis.io/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;redis&#34;&gt;Redis&lt;/h3&gt;
+&lt;p&gt;From the &lt;a href=&#34;https://redis.io/&#34;&gt;Redis official website&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Redis is an open source (BSD licensed), in-memory data structure store, used as a database, cache, and message broker. Redis provides data structures such as strings, hashes, lists, sets, sorted sets with range queries, bitmaps, hyperloglogs, geospatial indexes, and streams. Redis has built-in replication, Lua scripting, LRU eviction, transactions, and different levels of on-disk persistence, and provides high availability via Redis Sentinel and automatic partitioning with Redis Cluster.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The below configuration displays an example of starting the Vela worker that will connect to a Redis queue:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;$ docker run \
+  --detach=true \
+&lt;span style=&#34;color:#00a000&#34;&gt;+ --env=VELA_QUEUE_DRIVER=redis \
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+ --env=VELA_QUEUE_ADDR=redis://&amp;lt;password&amp;gt;@&amp;lt;hostname&amp;gt;:&amp;lt;port&amp;gt;/&amp;lt;database&amp;gt; \
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;  --env=VELA_SERVER_ADDR=https://vela-server.example.com \
+  --env=VELA_SERVER_SECRET=&amp;lt;shared-secret&amp;gt; \
+  --env=VELA_WORKER_ADDR=https://vela-worker.example.com \
+  --name=worker \
+  --publish=80:80 \
+  --publish=443:443 \
+  --restart=always \
+  --volume=/var/run/docker.sock:/var/run/docker.sock \
+  target/vela-worker:latest
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Administration: Runtime</title>
+      <link>https://go-vela.github.io/docs/administration/worker/reference/runtime/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://go-vela.github.io/docs/administration/worker/reference/runtime/</guid>
+      <description>
+        
+        
+        &lt;p&gt;This component is responsible for integrating with a runtime environment based off the configuration provided.&lt;/p&gt;
+&lt;p&gt;The runtime environment is used by Vela for executing workload resources and managing their lifecycle.&lt;/p&gt;
+&lt;h2 id=&#34;configuration&#34;&gt;Configuration&lt;/h2&gt;
+&lt;p&gt;The following options are used to configure the component:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;th&gt;Required&lt;/th&gt;
+&lt;th&gt;Default&lt;/th&gt;
+&lt;th&gt;Environment Variables&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;runtime.config&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;path to configuration file for the runtime&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;RUNTIME_CONFIG&lt;/code&gt;&lt;br&gt;&lt;code&gt;VELA_RUNTIME_CONFIG&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;runtime.driver&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;type of client to control and operate runtime&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;docker&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;RUNTIME_DRIVER&lt;/code&gt;&lt;br&gt;&lt;code&gt;VELA_RUNTIME_DRIVER&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;runtime.namespace&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;namespace to use for the runtime (only for kubernetes)&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;RUNTIME_NAMESPACE&lt;/code&gt;&lt;br&gt;&lt;code&gt;VELA_RUNTIME_NAMESPACE&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;runtime.privileged-images&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;images allowed to run in privileged mode for the runtime&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;[ target/vela-docker ]&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;RUNTIME_PRIVILEGED_IMAGES&lt;/code&gt;&lt;br&gt;&lt;code&gt;VELA_RUNTIME_PRIVILEGED_IMAGES&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;runtime.volumes&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;path to host volumes to mount into resources for the runtime&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;RUNTIME_VOLUMES&lt;/code&gt;&lt;br&gt;&lt;code&gt;VELA_RUNTIME_VOLUMES&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+&lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note:&lt;/h4&gt;
+For more information on these configuration options, please see the &lt;a href=&#34;https://go-vela.github.io/docs/docs/administration/worker/reference/&#34;&gt;worker reference&lt;/a&gt;.
+&lt;/div&gt;
+
+&lt;h2 id=&#34;drivers&#34;&gt;Drivers&lt;/h2&gt;
+&lt;p&gt;The following drivers are available to configure the component:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;th&gt;Documentation&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;docker&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;uses a Docker daemon for creating and managing runtime resources&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docker.io/&#34;&gt;https://docker.io/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;kubernetes&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;uses a Kubernetes cluster for creating and managing runtime resources&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://kubernetes.io/&#34;&gt;https://kubernetes.io/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;docker&#34;&gt;Docker&lt;/h3&gt;
+&lt;p&gt;From the &lt;a href=&#34;https://docker.io/&#34;&gt;Docker official website&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Docker takes away repetitive, mundane configuration tasks and is used throughout the development lifecycle for fast, easy and portable application development - desktop and cloud. Docker’s comprehensive end to end platform includes UIs, CLIs, APIs and security that are engineered to work together across the entire application delivery lifecycle.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The below configuration displays an example of starting the Vela worker that will use a Docker runtime:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;$ docker run \
+  --detach=true \
+  --env=VELA_QUEUE_DRIVER=redis \
+  --env=VELA_QUEUE_ADDR=redis://&amp;lt;password&amp;gt;@&amp;lt;hostname&amp;gt;:&amp;lt;port&amp;gt;/&amp;lt;database&amp;gt; \
+&lt;span style=&#34;color:#00a000&#34;&gt;+ --env=VELA_RUNTIME_DRIVER=docker \
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;  --env=VELA_SERVER_ADDR=https://vela-server.example.com \
+  --env=VELA_SERVER_SECRET=&amp;lt;shared-secret&amp;gt; \
+  --env=VELA_WORKER_ADDR=https://vela-worker.example.com \
+  --name=worker \
+  --publish=80:80 \
+  --publish=443:443 \
+  --restart=always \
+  --volume=/var/run/docker.sock:/var/run/docker.sock
+  target/vela-worker:latest
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note:&lt;/h4&gt;
+This Docker configuration is enabled by default and is not necessary to provide in order for Vela to operate.
+&lt;/div&gt;
+
+&lt;h3 id=&#34;kubernetes&#34;&gt;Kubernetes&lt;/h3&gt;
+&lt;p&gt;From the &lt;a href=&#34;https://kubernetes.io/&#34;&gt;Kubernetes official website&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Kubernetes, also known as K8s, is an open-source system for automating deployment, scaling, and management of containerized applications.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The below configuration displays an example of starting the Vela worker that will use a Kubernetes runtime:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;$ docker run \
+  --detach=true \
+  --env=VELA_QUEUE_DRIVER=redis \
+  --env=VELA_QUEUE_ADDR=redis://&amp;lt;password&amp;gt;@&amp;lt;hostname&amp;gt;:&amp;lt;port&amp;gt;/&amp;lt;database&amp;gt; \
+&lt;span style=&#34;color:#00a000&#34;&gt;+ --env=VELA_RUNTIME_DRIVER=kubernetes \
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+ --env=VELA_RUNTIME_CONFIG=/root/.kube/config \
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+ --env=VELA_RUNTIME_NAMESPACE=vela \
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;  --env=VELA_SERVER_ADDR=https://vela-server.example.com \
+  --env=VELA_SERVER_SECRET=&amp;lt;shared-secret&amp;gt; \
+  --env=VELA_WORKER_ADDR=https://vela-worker.example.com \
+  --name=worker \
+  --publish=80:80 \
+  --publish=443:443 \
+  --restart=always \
+  --volume=/var/run/docker.sock:/var/run/docker.sock \
+&lt;span style=&#34;color:#00a000&#34;&gt;+ --volume=/root/.kube/config:/root/.kube/config \
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;  target/vela-worker:latest
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+      </description>
+    </item>
+    
+  </channel>
+</rss>
