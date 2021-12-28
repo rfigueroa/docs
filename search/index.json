@@ -1054,6 +1054,27 @@
     },
 
     {
+    "url": "https://go-vela.github.io/docs/reference/api/scm/sync/",
+    "display": "Api/Scm/Sync",
+    "title": "Sync",
+    "content": "endpoint patch /api/v1/scm/repos/:org/:repo/sync parameters the following are used to configure endpoint: name description org of organization repo repository responses status code 200 indicates request has succeeded 401 user does not have proper permissions sample section assumes you already know how authenticate api. api, please review authentication documentation. curl -x -h &#34;authorization: bearer &lt;token&gt;&#34; &#34;http://127.0.0.1:8080/api/v1/scm/repos/github/octocat/sync&#34; response &#34;github/octocat&#34; synced "
+    },
+
+    {
+    "url": "https://go-vela.github.io/docs/reference/cli/repo/sync/",
+    "display": "Cli/Repo/Sync",
+    "title": "Sync",
+    "content": "command vela sync repo &lt;parameters...&gt; &lt;arguments...&gt; for more information, you can run --help. parameters the following are used to configure command: name description environment variables org of organization repository vela_org, repo_org vela_repo, repo_name all bool flag repos an vela_sync_all, sync_all also supports setting via configuration file: please review cli config documentation. samples section assumes have already installed setup cli. install cli, installation authentication request --org github --repo octocat response &#34;github/octocat&#34; synced --all &#34;github&#34; "
+    },
+
+    {
+    "url": "https://go-vela.github.io/docs/reference/api/scm/syncall/",
+    "display": "Api/Scm/Syncall",
+    "title": "SyncAll",
+    "content": "endpoint patch /api/v1/scm/orgs/:org/sync parameters the following are used to configure endpoint: name description org of organization responses status code 200 indicates request has succeeded 401 user does not have proper permissions sample section assumes you already know how authenticate api. api, please review authentication documentation. curl -x -h &#34;authorization: bearer &lt;token&gt;&#34; &#34;http://127.0.0.1:8080/api/v1/scm/orgs/github/sync&#34; response &#34;github&#34; synced "
+    },
+
+    {
     "url": "https://go-vela.github.io/docs/templates/tutorials/starlark/vars_template/",
     "display": "Tutorials/Starlark/Vars template",
     "title": "Template Vars",
