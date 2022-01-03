@@ -550,6 +550,14 @@ The variable can be provided as a `string`.
 This variable has a default value of `2`.
 {{% /alert %}}
 
+### VELA_SOURCE_WEBHOOK_ADDR
+
+This variable allows setting an alternative to the [VELA_ADDR](/docs/administration/server/reference/#vela_addr) as a fully qualified url, to be used in place of the Vela [server](/docs/administration/server/) address.
+
+Use this when the Vela server address that the source provider can send webhooks to differs from the server address the UI and oauth flows use, such as when the server is behind a Firewall or NAT.
+
+The variable should be provided as a `string`.
+
 ### VELA_WEBUI_ADDR
 
 This variable sets a fully qualified URL to the Vela [UI](/docs/administration/ui/) address.
