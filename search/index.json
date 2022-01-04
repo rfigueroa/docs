@@ -501,6 +501,13 @@
     },
 
     {
+    "url": "https://go-vela.github.io/docs/templates/tutorials/go/functions/",
+    "display": "Tutorials/Go/Functions",
+    "title": "Functions",
+    "content": "we recommend reviewing go templates documentation before attempting to create template. if you&rsquo;re new yaml also the 1.2 spec for validation on syntax. overview provides limited set of built-in template functions. vela number additional, predefined functions utilize templates. see list example function call: {{printf&#34;%q&#34;&#34;output&#34;}}a call whose final argument comes from previous command: {{&#34;output&#34;|printf&#34;%q&#34;}}custom sprig over 100 additional please refer original documentation. note, env expandenv are not available vela. toyaml intended ease working with passing rendering content .vela.yml version:&#34;1&#34;templates:- name:golangsource:github.com/&lt;org&gt;/&lt;repo&gt;/path/to/file/&lt;template&gt;.ymltype:githubsteps:- name:sampletemplate:name:golangvars:ruleset:event:[push, pull_request ]branch:[master ]github.com/&lt;org&gt;/&lt;repo&gt;/path/to/file/&lt;template&gt;.yml metadata: template: true steps: name: install commands: test image: alpine ruleset: {{-toyaml.ruleset|nindent6}}with pipeline above place, resulting would render as follows: version:&#34;1&#34;steps:- name:sample_installcommands:- testimage:alpineruleset:event:[push, ]vela convenience accessing environment variables within your its dedicated platform vars page more info. "
+    },
+
+    {
     "url": "https://go-vela.github.io/docs/templates/tutorials/starlark/functions/",
     "display": "Tutorials/Starlark/Functions",
     "title": "Functions",
