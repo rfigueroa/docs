@@ -53,6 +53,18 @@ The possible options to provide for this variable are:
 * `redis`
 {{% /alert %}}
 
+### VELA_QUEUE_ROUTES
+
+This configuration variable is used by the [queue component](/docs/administration/worker/reference/queue/) for the worker.
+
+This variable sets the unique channels or topics to pull workloads from.
+
+The variable can be provided as a comma-separated `list` (i.e. `myRoute1,myRoute2`).
+
+{{% alert title="Note:" color="primary" %}}
+This value is not defined by default. However, Vela pipelines publish to a channel/topic called `vela` by default. For a worker to process this default workload, a value of `vela` should be specified here.
+{{% /alert %}}
+
 ### VELA_SERVER_ADDR
 
 This variable sets a fully qualified URL to the Vela [server](/docs/administration/server/) address.
@@ -171,18 +183,6 @@ The variable can be provided as a `duration` (i.e. `5s`, `10m`).
 
 {{% alert title="Note:" color="primary" %}}
 This variable has a default value of `60s`.
-{{% /alert %}}
-
-### VELA_QUEUE_ROUTES
-
-This configuration variable is used by the [queue component](/docs/administration/worker/reference/queue/) for the worker.
-
-This variable sets the unique channels or topics to pull workloads from.
-
-The variable can be provided as a comma-separated `list` (i.e. `myRoute1,myRoute2`).
-
-{{% alert title="Note:" color="primary" %}}
-This variable has a default value of `vela`.
 {{% /alert %}}
 
 ### VELA_RUNTIME_CONFIG
