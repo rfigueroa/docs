@@ -549,10 +549,12 @@ steps:
   - name: check status
     image: postgres:latest
     pull: always
+    environment:
+      PGPASSWORD=password
     commands:
       # sleeping can help ensure the service adequate time to start
-&lt;span style=&#34;color:#00a000&#34;&gt;+      - sleep 15
-&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;      - psql -U admin -d vela -h tcp://postgres:5432
+      - sleep 15
+      - psql -U admin -d vela -h postgres -p 5432
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;detach&#34;&gt;Detach&lt;/h3&gt;
 &lt;p&gt;If you&amp;rsquo;re looking for more granular start time for the container you can add a detach flag within stages and steps pipelines.&lt;/p&gt;
 &lt;p&gt;The following &lt;a href=&#34;https://go-vela.github.io/docs/docs/tour/&#34;&gt;pipeline concepts&lt;/a&gt; are being used in the pipeline below:&lt;/p&gt;
@@ -589,10 +591,12 @@ steps:
   - name: check status
     image: postgres:latest
     pull: always
+    environment:
+      PGPASSWORD=password
     commands:
       # sleeping can help ensure the service adequate time to start
-&lt;span style=&#34;color:#00a000&#34;&gt;+      - sleep 15
-&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;      - psql -U admin -d vela -h tcp://postgres:5432
+      - sleep 15
+      - psql -U admin -d vela -h postgres -p 5432
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
       </description>
     </item>

@@ -44,7 +44,7 @@ It is recommended to use a semantically versioned tag instead.
 steps:- name:publish_hello-worldimage:target/vela-kaniko:latestpull:alwaysparameters:registry:index.docker.iorepo:index.docker.io/octocat/hello-worldSample of building an image without publishing:
 steps: - name: publish_hello-world image: target/vela-kaniko:latest pull: always parameters: &#43; dry_run: true  registry: index.">
 <meta itemprop="dateModified" content="2021-01-13T15:05:51-06:00" />
-<meta itemprop="wordCount" content="773">
+<meta itemprop="wordCount" content="844">
 
 
 
@@ -767,7 +767,16 @@ steps: - name: publish_hello-world image: target/vela-kaniko:latest pull: always
 <span style="color:#00a000">+     snapshot_mode: redo
 </span><span style="color:#00a000"></span>      registry: index.docker.io
       repo: index.docker.io/octocat/hello-world
-</code></pre></div><h2 id="secrets">Secrets</h2>
+</code></pre></div><p>Sample of building using a custom platform:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
+  - name: publish_hello-world
+    image: target/vela-kaniko:latest
+    pull: always
+    parameters:
+      registry: index.docker.io
+      repo: index.docker.io/octocat/hello-world
+<span style="color:#00a000">+     custom_platform: linux/arm64/v8
+</span></code></pre></div><h2 id="secrets">Secrets</h2>
 <blockquote>
 <p><strong>NOTE:</strong> Users should refrain from configuring sensitive information in your pipeline in plain text.</p>
 </blockquote>
@@ -989,6 +998,34 @@ steps: - name: publish_hello-world image: target/vela-kaniko:latest pull: always
 <td><code>true</code></td>
 <td><code>N/A</code></td>
 <td><code>PARAMETER_USERNAME</code><br><code>KANIKO_USERNAME</code><br><code>DOCKER_USERNAME</code></td>
+</tr>
+<tr>
+<td><code>custom_platform</code></td>
+<td>set the custom platform for the image</td>
+<td><code>false</code></td>
+<td><code>N/A</code></td>
+<td><code>PARAMETER_CUSTOM_PLATFORM</code><br><code>KANIKO_CUSTOM_PLATFORM</code></td>
+</tr>
+<tr>
+<td><code>insecure_registries</code></td>
+<td>insecure docker registries to push or pull to/from</td>
+<td><code>false</code></td>
+<td><code>empty slice</code></td>
+<td><code>PARAMETER_INSECURE_REGISTRIES</code><br><code>KANIKO_INSECURE_REGISTRIES</code></td>
+</tr>
+<tr>
+<td><code>insecure_pull</code></td>
+<td>enable pulling from any insecure registry</td>
+<td><code>false</code></td>
+<td><code>false</code></td>
+<td><code>PARAMETER_INSECURE_PULL</code><br><code>KANIKO_INSECURE_PULL</code></td>
+</tr>
+<tr>
+<td><code>insecure_push</code></td>
+<td>enable pushing to any insecure registry</td>
+<td><code>false</code></td>
+<td><code>false</code></td>
+<td><code>PARAMETER_INSECURE_PUSH</code><br><code>KANIKO_INSECURE_PUSH</code></td>
 </tr>
 </tbody>
 </table>

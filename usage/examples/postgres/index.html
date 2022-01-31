@@ -25,12 +25,12 @@
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://go-vela.github.io/docs/usage/examples/postgres/" />
-<meta property="article:modified_time" content="2021-12-07T21:38:17+00:00" />
+<meta property="article:modified_time" content="2022-01-31T16:37:47-06:00" />
 <meta itemprop="name" content="Postgres">
 <meta itemprop="description" content="Example Pipeline with Postgres
 ">
-<meta itemprop="dateModified" content="2021-12-07T21:38:17+00:00" />
-<meta itemprop="wordCount" content="250">
+<meta itemprop="dateModified" content="2022-01-31T16:37:47-06:00" />
+<meta itemprop="wordCount" content="256">
 
 
 
@@ -637,10 +637,12 @@ steps:
   - name: check status
     image: postgres:latest
     pull: always
+    environment:
+      PGPASSWORD=password
     commands:
       # sleeping can help ensure the service adequate time to start
-<span style="color:#00a000">+      - sleep 15
-</span><span style="color:#00a000"></span>      - psql -U admin -d vela -h tcp://postgres:5432
+      - sleep 15
+      - psql -U admin -d vela -h postgres -p 5432
 </code></pre></div><h3 id="detach">Detach</h3>
 <p>If you&rsquo;re looking for more granular start time for the container you can add a detach flag within stages and steps pipelines.</p>
 <p>The following <a href="/docs/tour/">pipeline concepts</a> are being used in the pipeline below:</p>
@@ -677,14 +679,16 @@ steps:
   - name: check status
     image: postgres:latest
     pull: always
+    environment:
+      PGPASSWORD=password
     commands:
       # sleeping can help ensure the service adequate time to start
-<span style="color:#00a000">+      - sleep 15
-</span><span style="color:#00a000"></span>      - psql -U admin -d vela -h tcp://postgres:5432
+      - sleep 15
+      - psql -U admin -d vela -h postgres -p 5432
 </code></pre></div>
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified December 7, 2021: <a  href="https://github.com/go-vela/docs/commit/54b8eb73e92b788b770e5d252d45a20065600789">fix(postgres): add password to postgres example (#260) (54b8eb73)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified January 31, 2022: <a  href="https://github.com/go-vela/docs/commit/b7806189808afb293da178b158d6e731674ba1dd">fix(postgres): make postgres example work (#278) (b7806189)</a>
 </div>
 </div>
 

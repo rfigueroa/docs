@@ -2449,7 +2449,16 @@ Users should refrain from configuring sensitive information in their pipeline in
 &lt;span style=&#34;color:#00a000&#34;&gt;+     snapshot_mode: redo
 &lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;      registry: index.docker.io
       repo: index.docker.io/octocat/hello-world
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;secrets&#34;&gt;Secrets&lt;/h2&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Sample of building using a custom platform:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
+  - name: publish_hello-world
+    image: target/vela-kaniko:latest
+    pull: always
+    parameters:
+      registry: index.docker.io
+      repo: index.docker.io/octocat/hello-world
+&lt;span style=&#34;color:#00a000&#34;&gt;+     custom_platform: linux/arm64/v8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;secrets&#34;&gt;Secrets&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; Users should refrain from configuring sensitive information in your pipeline in plain text.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -2671,6 +2680,34 @@ Users should refrain from configuring sensitive information in their pipeline in
 &lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;PARAMETER_USERNAME&lt;/code&gt;&lt;br&gt;&lt;code&gt;KANIKO_USERNAME&lt;/code&gt;&lt;br&gt;&lt;code&gt;DOCKER_USERNAME&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;custom_platform&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;set the custom platform for the image&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;N/A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_CUSTOM_PLATFORM&lt;/code&gt;&lt;br&gt;&lt;code&gt;KANIKO_CUSTOM_PLATFORM&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;insecure_registries&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;insecure docker registries to push or pull to/from&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;empty slice&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_INSECURE_REGISTRIES&lt;/code&gt;&lt;br&gt;&lt;code&gt;KANIKO_INSECURE_REGISTRIES&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;insecure_pull&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;enable pulling from any insecure registry&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_INSECURE_PULL&lt;/code&gt;&lt;br&gt;&lt;code&gt;KANIKO_INSECURE_PULL&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;insecure_push&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;enable pushing to any insecure registry&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_INSECURE_PUSH&lt;/code&gt;&lt;br&gt;&lt;code&gt;KANIKO_INSECURE_PUSH&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
