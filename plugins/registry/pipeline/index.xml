@@ -1865,7 +1865,7 @@ Users should refrain from configuring sensitive information in their pipeline in
 &lt;td&gt;&lt;code&gt;depth&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;enables fetching with a specific depth&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Not set&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;100&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;PARAMETER_DEPTH&lt;/code&gt;&lt;br&gt;&lt;code&gt;GIT_DEPTH&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
