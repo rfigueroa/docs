@@ -25,12 +25,12 @@
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://go-vela.github.io/docs/tour/stages/" />
-<meta property="article:modified_time" content="2021-06-03T11:57:15-05:00" />
+<meta property="article:modified_time" content="2022-02-08T12:15:26-07:00" />
 <meta itemprop="name" content="Stages">
 <meta itemprop="description" content="Learn about stages pipelines.
 ">
-<meta itemprop="dateModified" content="2021-06-03T11:57:15-05:00" />
-<meta itemprop="wordCount" content="200">
+<meta itemprop="dateModified" content="2022-02-08T12:15:26-07:00" />
+<meta itemprop="wordCount" content="251">
 
 
 
@@ -485,7 +485,7 @@
     <div class="row">
       <div class="col-6" >
         <p>A stages pipelines are designed to parallelize one-to-many sets of step tasks.</p>
-<p>By design all of the stages will run at the same time unless the user uses a <code>needs:</code> YAML tag to control the flow of stage executions.</p>
+<p>By design all of the stages will run at the same time unless the user uses a <code>needs:</code> YAML tag to control the flow of stage executions (see example). Note: even if every step within a stage is skipped, the stage still runs. Do not use <code>needs</code> as a stage-level equivalent to <code>rulesets</code>.</p>
 <p>These pipelines do not have a minimum defined length and will always execute steps within a stage in the order defined. Stages always run on the same host so it&rsquo;s important to take into consideration the size of the worker running your builds.</p>
 <p>In this pipeline both stages trigger at the same time and run independently of the other.</p>
 <p>Both steps are pulling a <a href="https://alpinelinux.org/">Alpine Linux</a> image from <a href="https://hub.docker.com/">Docker Hub</a> and executing echo statements.</p>
@@ -518,12 +518,23 @@
 </span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">image</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">alpine</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">commands</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">          </span>- <span style="color:#000">echo &#34;Welcome to the Vela docs&#34;</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">goodbye</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#8f5902;font-style:italic"># will wait for greeting and welcome to finish</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">needs</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">greeting, welcome]</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">steps</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span>- <span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">Goodbye</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">image</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">alpine</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">commands</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">          </span>- <span style="color:#000">echo &#34;Goodbye, World&#34;</span><span style="color:#f8f8f8;text-decoration:underline">
 </span></code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ vela <span style="color:#204a87">exec</span> pipeline
 ...
 <span style="color:#ce5c00;font-weight:bold">[</span>stage: greeting<span style="color:#ce5c00;font-weight:bold">][</span>step: Greeting<span style="color:#ce5c00;font-weight:bold">]</span> $ <span style="color:#204a87">echo</span> <span style="color:#4e9a06">&#34;Hello, World&#34;</span>
 <span style="color:#ce5c00;font-weight:bold">[</span>stage: greeting<span style="color:#ce5c00;font-weight:bold">][</span>step: Greeting<span style="color:#ce5c00;font-weight:bold">]</span> Hello, World
 <span style="color:#ce5c00;font-weight:bold">[</span>stage: welcome<span style="color:#ce5c00;font-weight:bold">][</span>step: Welcome<span style="color:#ce5c00;font-weight:bold">]</span> $ <span style="color:#204a87">echo</span> <span style="color:#4e9a06">&#34;Welcome to the Vela docs&#34;</span>
 <span style="color:#ce5c00;font-weight:bold">[</span>stage: welcome<span style="color:#ce5c00;font-weight:bold">][</span>step: Welcome<span style="color:#ce5c00;font-weight:bold">]</span> Welcome to the Vela docs
+<span style="color:#ce5c00;font-weight:bold">[</span>stage: goodbye<span style="color:#ce5c00;font-weight:bold">][</span>step: Goodbye<span style="color:#ce5c00;font-weight:bold">]</span> $ <span style="color:#204a87">echo</span> <span style="color:#4e9a06">&#34;Goodbye, World&#34;</span>
+<span style="color:#ce5c00;font-weight:bold">[</span>stage: goodbye<span style="color:#ce5c00;font-weight:bold">][</span>step: Goodbyte<span style="color:#ce5c00;font-weight:bold">]</span> Goodbye, World
 </code></pre></div>
       </div>
     </div>
