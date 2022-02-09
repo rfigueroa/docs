@@ -1900,6 +1900,11 @@ In cases where your clone needs special configuration you should add a step at t
 &lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/tour/environment/&#34;&gt;Environment&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/tour/stages/&#34;&gt;Stages&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/tour/environment/&#34;&gt;Environment&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/tour/steps/&#34;&gt;Steps&lt;/a&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://go-vela.github.io/docs/docs/tour/environment/&#34;&gt;Environment&lt;/a&gt;&lt;/li&gt;
@@ -1923,22 +1928,28 @@ In cases where your clone needs special configuration you should add a step at t
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;version: &amp;#34;1&amp;#34;
 &lt;span style=&#34;color:#00a000&#34;&gt;+ environment:
 &lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+   GLOBAL_EXAMPLE: Hello, World Globally!
-&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;services:
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;
+services:
   - name: redis
 &lt;span style=&#34;color:#00a000&#34;&gt;+   environment:
 &lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+     LOCAL_EXAMPLE: Hello, World!
 &lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;    image: redis:latest
 
-steps:
-  - name: check status
-    image: redis:latest
+stages:
+  first_stage:
 &lt;span style=&#34;color:#00a000&#34;&gt;+   environment:
-&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+     LOCAL_EXAMPLE: Hello, World!
-&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;    commands:
-      # you can use bash commands in-line to set or override variables
-      - export EXAMPLE=&amp;#34;Hello World From Vela Team&amp;#34;
-      - echo ${EXAMPLE}
-      - echo ${GLOBAL_EXAMPLE}
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+     STAGE_EXAMPLE: &amp;#34;All the World&amp;#39;s a Stage!&amp;#34;
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;    steps:
+      - name: check status
+        image: redis:latest
+&lt;span style=&#34;color:#00a000&#34;&gt;+       environment:
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+         LOCAL_EXAMPLE: Hello, World!
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;        commands:
+          # you can use bash commands in-line to set or override variables
+          - export EXAMPLE=&amp;#34;Hello World From Vela Team&amp;#34;
+          - echo ${EXAMPLE}
+          - echo ${STAGE_EXAMPLE}
+          - echo ${GLOBAL_EXAMPLE}
 
 secrets:
   - origin:
@@ -1955,7 +1966,7 @@ secrets:
           - source: secret/docker
             path: docker
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;global-usage&#34;&gt;Global Usage&lt;/h2&gt;
-&lt;p&gt;By default global injection affects all containers ran within the pipeline. However, if only want some container types to receive the configuration you can limit which types get them by adding the &lt;code&gt;environment&lt;/code&gt; declaration into the metadata.&lt;/p&gt;
+&lt;p&gt;By default global injection affects all containers ran within the pipeline. However, if you only want some container types to receive the configuration you can limit which types get them by adding the &lt;code&gt;environment&lt;/code&gt; declaration into the metadata.&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
@@ -1964,39 +1975,44 @@ Valid values for metadata &lt;code&gt;environment:&lt;/code&gt; YAML tag are &lt
 &lt;/div&gt;
 
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;version: &amp;#34;1&amp;#34;
-&lt;span style=&#34;color:#00a000&#34;&gt;+ environment:
-&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+   GLOBAL_EXAMPLE: Hello, World Globally!
-&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;
-metadata:
-  environment: [ steps ]
+  environment:
+    GLOBAL_EXAMPLE: Hello, World Globally!
 
+&lt;span style=&#34;color:#00a000&#34;&gt;+ metadata:
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+   environment: [ steps, services ]
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;
 services:
   # Global configuration is no longer available in services
   - name: redis
-&lt;span style=&#34;color:#00a000&#34;&gt;+   environment:
-&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+     LOCAL_EXAMPLE: Hello, World!
-&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;    image: redis:latest
-
-steps:
-  - name: check status
+    environment:
+      LOCAL_EXAMPLE: Hello, World!
     image: redis:latest
-&lt;span style=&#34;color:#00a000&#34;&gt;+   environment:
-&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+     LOCAL_EXAMPLE: Hello, World!
-&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;    commands:
-      # you can local shell commands in-line to set or override variables
-      - export EXAMPLE=&amp;#34;Hello World From Vela Team&amp;#34;
-      - echo ${EXAMPLE}
-      - echo ${GLOBAL_EXAMPLE}
+
+stages:
+  first_stage:
+    environment:
+      STAGE_EXAMPLE: &amp;#34;All the World&amp;#39;s a Stage!&amp;#34;
+    steps:
+      - name: check status
+        image: redis:latest
+        environment:
+          LOCAL_EXAMPLE: Hello, World!
+        commands:
+          # you can use bash commands in-line to set or override variables
+          - export EXAMPLE=&amp;#34;Hello World From Vela Team&amp;#34;
+          - echo ${EXAMPLE}
+          - echo ${STAGE_EXAMPLE}
+          - echo ${GLOBAL_EXAMPLE}
 
 secrets:
-  # Global configuration is no longer available in secrets since &amp;#34;secrets&amp;#34;
-  # was removed as a value in the metadata.environment block.
-  - origin:
+&lt;span style=&#34;color:#00a000&#34;&gt;+  # Global configuration is no longer available in secrets since &amp;#34;secrets&amp;#34;
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+  # was removed as a value in the metadata.environment block.
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;  - origin:
       name: private vault
       image: target/secret-vault:latest
-&lt;span style=&#34;color:#00a000&#34;&gt;+     environment:
-&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+       EXAMPLE: Hello, World!
-&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;      secrets: [ vault_token ]
+      environment:
+        EXAMPLE: Hello, World!
+      secrets: [ vault_token ]
       parameters:
         addr: vault.example.com
         auth_method: token
