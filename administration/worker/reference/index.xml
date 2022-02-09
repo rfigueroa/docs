@@ -51,6 +51,13 @@
 &lt;td&gt;&lt;code&gt;byte-chunks&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;EXECUTOR_LOG_METHOD&lt;/code&gt;&lt;br&gt;&lt;code&gt;VELA_EXECUTOR_LOG_METHOD&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;executor.max_log_size&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;maximum log size (in bytes)&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;0&lt;/code&gt; (no limit)&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;EXECUTOR_MAX_LOG_SIZE&lt;/code&gt;&lt;br&gt;&lt;code&gt;VELA_EXECUTOR_MAX_LOG_SIZE&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 

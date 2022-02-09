@@ -722,6 +722,7 @@
         <li><a href="#vela_check_in">VELA_CHECK_IN</a></li>
         <li><a href="#vela_executor_driver">VELA_EXECUTOR_DRIVER</a></li>
         <li><a href="#vela_executor_log_method">VELA_EXECUTOR_LOG_METHOD</a></li>
+        <li><a href="#vela_executor_max_log_size">VELA_EXECUTOR_MAX_LOG_SIZE</a></li>
         <li><a href="#vela_queue_cluster">VELA_QUEUE_CLUSTER</a></li>
         <li><a href="#vela_queue_pop_timeout">VELA_QUEUE_POP_TIMEOUT</a></li>
         <li><a href="#vela_queue_routes">VELA_QUEUE_ROUTES</a></li>
@@ -924,6 +925,17 @@ This variable has a default value of <code>15m</code>.
 
 </div>
 
+<h3 id="vela_executor_max_log_size">VELA_EXECUTOR_MAX_LOG_SIZE</h3>
+<p>This configuration variable is used by the <a href="/docs/administration/worker/reference/executor/">executor component</a> for the worker.</p>
+<p>This variable sets the maximum number of bytes for logs allowed to be uploaded per step.</p>
+<p>The variable can be provided as an <code>integer</code>.</p>
+
+
+<div class="alert alert-primary" role="alert">
+<h4 class="alert-heading">Note:</h4>
+This variable has a default value of <code>0</code>. No limit.
+</div>
+
 <h3 id="vela_queue_cluster">VELA_QUEUE_CLUSTER</h3>
 <p>This configuration variable is used by the <a href="/docs/administration/worker/reference/queue/">queue component</a> for the worker.</p>
 <p>This variable enables the worker to connect to a queue cluster rather than a standalone instance.</p>
@@ -1017,7 +1029,7 @@ This variable has a default value of <code>target/vela-docker</code>.
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified December 22, 2021: <a  href="https://github.com/go-vela/docs/commit/27bd9aa7ad6cbd81029994d43a94b915bf240143">feat: add administration and installation docs (#259) (27bd9aa7)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified February 9, 2022: <a  href="https://github.com/go-vela/docs/commit/c44e5ec4232b61891965e6df4e5b2f64b51e4645">docs(executor): document max log size (#276) (c44e5ec4)</a>
 </div>
 </div>
 

@@ -257,6 +257,17 @@ This variable has a default value of &lt;code&gt;15m&lt;/code&gt;.
 
 &lt;/div&gt;
 
+&lt;h3 id=&#34;vela_executor_max_log_size&#34;&gt;VELA_EXECUTOR_MAX_LOG_SIZE&lt;/h3&gt;
+&lt;p&gt;This configuration variable is used by the &lt;a href=&#34;https://go-vela.github.io/docs/docs/administration/worker/reference/executor/&#34;&gt;executor component&lt;/a&gt; for the worker.&lt;/p&gt;
+&lt;p&gt;This variable sets the maximum number of bytes for logs allowed to be uploaded per step.&lt;/p&gt;
+&lt;p&gt;The variable can be provided as an &lt;code&gt;integer&lt;/code&gt;.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note:&lt;/h4&gt;
+This variable has a default value of &lt;code&gt;0&lt;/code&gt;. No limit.
+&lt;/div&gt;
+
 &lt;h3 id=&#34;vela_queue_cluster&#34;&gt;VELA_QUEUE_CLUSTER&lt;/h3&gt;
 &lt;p&gt;This configuration variable is used by the &lt;a href=&#34;https://go-vela.github.io/docs/docs/administration/worker/reference/queue/&#34;&gt;queue component&lt;/a&gt; for the worker.&lt;/p&gt;
 &lt;p&gt;This variable enables the worker to connect to a queue cluster rather than a standalone instance.&lt;/p&gt;
