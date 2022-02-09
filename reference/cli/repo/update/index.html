@@ -25,12 +25,12 @@
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://go-vela.github.io/docs/reference/cli/repo/update/" />
-<meta property="article:modified_time" content="2022-02-09T13:39:09-06:00" />
+<meta property="article:modified_time" content="2022-02-09T12:48:43-07:00" />
 <meta itemprop="name" content="Update">
 <meta itemprop="description" content="Learn how to modify a repo.
 ">
-<meta itemprop="dateModified" content="2022-02-09T13:39:09-06:00" />
-<meta itemprop="wordCount" content="275">
+<meta itemprop="dateModified" content="2022-02-09T12:48:43-07:00" />
+<meta itemprop="wordCount" content="287">
 
 
 
@@ -1914,7 +1914,11 @@ For more information, you can run <code>vela update repo --help</code>.
 </div>
 
 <h4 id="request">Request</h4>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">vela update repo --org github --repo octocat --event tag
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ <span style="color:#204a87">pwd</span>
+~/github/octocat
+$ vela update repo --event tag
+</code></pre></div><h4 id="targeted-request">Targeted Request</h4>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ vela update repo --org github --repo octocat --event tag
 </code></pre></div><h4 id="response">Response</h4>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">id: <span style="color:#0000cf;font-weight:bold">1</span>
 userid: <span style="color:#0000cf;font-weight:bold">1</span>
@@ -1940,7 +1944,7 @@ pipelinetype: yaml
 </code></pre></div>
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified February 9, 2022: <a  href="https://github.com/go-vela/docs/commit/84ac711e549e1e8da0bd1f47f78619ce317401c0">feat: add docs for repo build limit (#270) (84ac711e)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified February 9, 2022: <a  href="https://github.com/go-vela/docs/commit/8e9eb4cedc97873377159d8a8dd0b1fb85bcf890">chore(CLI): add documentation for CLI repo awareness (#272) (8e9eb4ce)</a>
 </div>
 </div>
 

@@ -25,12 +25,12 @@
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://go-vela.github.io/docs/reference/cli/deployment/add/" />
-<meta property="article:modified_time" content="2021-06-03T13:53:04-05:00" />
+<meta property="article:modified_time" content="2022-02-09T12:48:43-07:00" />
 <meta itemprop="name" content="Add">
 <meta itemprop="description" content="Learn how to create a deployment.
 ">
-<meta itemprop="dateModified" content="2021-06-03T13:53:04-05:00" />
-<meta itemprop="wordCount" content="341">
+<meta itemprop="dateModified" content="2022-02-09T12:48:43-07:00" />
+<meta itemprop="wordCount" content="335">
 
 
 
@@ -1728,7 +1728,11 @@
   <ul>
     <li><a href="#command">Command</a></li>
     <li><a href="#parameters">Parameters</a></li>
-    <li><a href="#sample">Sample</a></li>
+    <li><a href="#sample">Sample</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
     <li><a href="#examples">Examples</a></li>
   </ul>
 </nav>
@@ -1872,11 +1876,14 @@ For more information, you can run <code>vela add deployment --help</code>.
 
 </div>
 
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8f5902;font-style:italic"># Request with CLI to add a deployment for the &#34;github&#34; org and &#34;octocat&#34; repo</span>
-$ vela add deployment --org github --repo octocat
-
-<span style="color:#8f5902;font-style:italic"># Response generated from successful CLI command</span>
-deployment <span style="color:#4e9a06">&#34;https://api.github.com/repos/github/octocat/deployments/1&#34;</span> was created
+<h4 id="request">Request</h4>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ <span style="color:#204a87">pwd</span>
+~/github/octocat
+$ vela add deployment
+</code></pre></div><h4 id="targeted-request">Targeted Request</h4>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ vela add deployment --org github --repo octocat
+</code></pre></div><h4 id="response-generated-from-successful-cli-command">Response generated from successful CLI command</h4>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">deployment <span style="color:#4e9a06">&#34;https://api.github.com/repos/github/octocat/deployments/1&#34;</span> was created
 </code></pre></div><h2 id="examples">Examples</h2>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">EXAMPLES:
   1. Add a deployment <span style="color:#204a87;font-weight:bold">for</span> a repository.
@@ -1896,7 +1903,7 @@ deployment <span style="color:#4e9a06">&#34;https://api.github.com/repos/github/
 </code></pre></div>
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified June 3, 2021: <a  href="https://github.com/go-vela/docs/commit/b7d29a13d7fbc8dc7489bf30d7dddf8d724846eb">feat: add additional deployment info (#228) (b7d29a13)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified February 9, 2022: <a  href="https://github.com/go-vela/docs/commit/8e9eb4cedc97873377159d8a8dd0b1fb85bcf890">chore(CLI): add documentation for CLI repo awareness (#272) (8e9eb4ce)</a>
 </div>
 </div>
 

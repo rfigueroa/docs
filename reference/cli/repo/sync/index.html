@@ -25,12 +25,12 @@
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://go-vela.github.io/docs/reference/cli/repo/sync/" />
-<meta property="article:modified_time" content="2021-12-28T11:07:35-07:00" />
+<meta property="article:modified_time" content="2022-02-09T12:48:43-07:00" />
 <meta itemprop="name" content="Sync">
 <meta itemprop="description" content="Learn how to sync repos in database with GitHub.
 ">
-<meta itemprop="dateModified" content="2021-12-28T11:07:35-07:00" />
-<meta itemprop="wordCount" content="134">
+<meta itemprop="dateModified" content="2022-02-09T12:48:43-07:00" />
+<meta itemprop="wordCount" content="155">
 
 
 
@@ -1850,16 +1850,24 @@ For more information, you can run <code>vela sync repo --help</code>.
 </div>
 
 <h4 id="request">Request</h4>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">vela sync repo --org github --repo octocat
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ <span style="color:#204a87">pwd</span>
+~/github/octocat
+$ vela sync repo
+</code></pre></div><h4 id="targeted-request">Targeted Request</h4>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ vela sync repo --org github --repo octocat
 </code></pre></div><h4 id="response">Response</h4>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">repo <span style="color:#4e9a06">&#34;github/octocat&#34;</span> synced
 </code></pre></div><h4 id="request-1">Request</h4>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">vela sync repo --org github --all
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ <span style="color:#204a87">pwd</span>
+~/github/octocat
+$ vela sync repo --all
+</code></pre></div><h4 id="targeted-request-1">Targeted Request</h4>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ vela sync repo --org github --all
 </code></pre></div><h4 id="response-1">Response</h4>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">org <span style="color:#4e9a06">&#34;github&#34;</span> synced</code></pre></div>
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified December 28, 2021: <a  href="https://github.com/go-vela/docs/commit/67c331a99fad4c1967fff9b8da92ca7b66d5eca7">feat: add documentation for sync repos in API and CLI (#261) (67c331a9)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified February 9, 2022: <a  href="https://github.com/go-vela/docs/commit/8e9eb4cedc97873377159d8a8dd0b1fb85bcf890">chore(CLI): add documentation for CLI repo awareness (#272) (8e9eb4ce)</a>
 </div>
 </div>
 

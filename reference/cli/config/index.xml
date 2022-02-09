@@ -73,6 +73,11 @@ For more information, you can run &lt;code&gt;vela generate config --help&lt;/co
 &lt;td&gt;&lt;code&gt;VELA_LOG_LEVEL&lt;/code&gt;, &lt;code&gt;CONFIG_LOG_LEVEL&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
+&lt;td&gt;&lt;code&gt;no-git&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;set whether CLI finds repo of cwd automatically&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;VELA_NO_GIT&lt;/code&gt;, &lt;code&gt;CONFIG_NO_GIT&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
 &lt;td&gt;&lt;code&gt;output&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;format the output for API results&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_OUTPUT&lt;/code&gt;, &lt;code&gt;CONFIG_OUTPUT&lt;/code&gt;&lt;/td&gt;
@@ -119,6 +124,7 @@ For more information, you can run &lt;code&gt;vela generate config --help&lt;/co
   addr: https://vela-server.localhost
 log:
   level: info
+no-git: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;false&amp;#34;&lt;/span&gt;
 secret: &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
       </description>
@@ -346,6 +352,7 @@ For more information, you can run &lt;code&gt;vela update config --help&lt;/code
   version: v1
 log:
   level: info
+no-git: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;false&amp;#34;&lt;/span&gt;
 secret: &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{}&lt;/span&gt;
 org: github
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -393,6 +400,7 @@ For more information, you can run &lt;code&gt;vela view config --help&lt;/code&g
   version: v1
 log:
   level: info
+no-git: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;false&amp;#34;&lt;/span&gt;
 secret: &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
       </description>

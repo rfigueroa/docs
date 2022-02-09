@@ -25,12 +25,12 @@
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://go-vela.github.io/docs/reference/cli/build/get/" />
-<meta property="article:modified_time" content="2022-01-04T10:48:59-06:00" />
+<meta property="article:modified_time" content="2022-02-09T12:48:43-07:00" />
 <meta itemprop="name" content="Get">
 <meta itemprop="description" content="Learn how to list builds.
 ">
-<meta itemprop="dateModified" content="2022-01-04T10:48:59-06:00" />
-<meta itemprop="wordCount" content="203">
+<meta itemprop="dateModified" content="2022-02-09T12:48:43-07:00" />
+<meta itemprop="wordCount" content="217">
 
 
 
@@ -1879,7 +1879,11 @@ For more information, you can run <code>vela get build --help</code>.
 </div>
 
 <h4 id="request">Request</h4>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">vela get build --org github --repo octocat
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ <span style="color:#204a87">pwd</span>
+~/github/octocat
+$ vela get build --build <span style="color:#0000cf;font-weight:bold">1</span>
+</code></pre></div><h4 id="targeted-request">Targeted Request</h4>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ vela get build --org github --repo octocat --build <span style="color:#0000cf;font-weight:bold">1</span>
 </code></pre></div><h4 id="response">Response</h4>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">NUMBER  STATUS  EVENT   BRANCH  DURATION
 <span style="color:#0000cf;font-weight:bold">5</span>       failure push    master  45s
@@ -1890,7 +1894,7 @@ For more information, you can run <code>vela get build --help</code>.
 </code></pre></div>
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified January 4, 2022: <a  href="https://github.com/go-vela/docs/commit/40d0976b934c56b8fad1a88b716db027cddf03cc">docs(builds): add optional filters to cli and api (#263) (40d0976b)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified February 9, 2022: <a  href="https://github.com/go-vela/docs/commit/8e9eb4cedc97873377159d8a8dd0b1fb85bcf890">chore(CLI): add documentation for CLI repo awareness (#272) (8e9eb4ce)</a>
 </div>
 </div>
 

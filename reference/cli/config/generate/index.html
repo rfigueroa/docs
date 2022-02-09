@@ -25,12 +25,12 @@
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://go-vela.github.io/docs/reference/cli/config/generate/" />
-<meta property="article:modified_time" content="2021-02-11T18:41:35-06:00" />
+<meta property="article:modified_time" content="2022-02-09T12:48:43-07:00" />
 <meta itemprop="name" content="Generate">
 <meta itemprop="description" content="Learn how to produce a config.
 ">
-<meta itemprop="dateModified" content="2021-02-11T18:41:35-06:00" />
-<meta itemprop="wordCount" content="171">
+<meta itemprop="dateModified" content="2022-02-09T12:48:43-07:00" />
+<meta itemprop="wordCount" content="184">
 
 
 
@@ -1840,6 +1840,11 @@ For more information, you can run <code>vela generate config --help</code>.
 <td><code>VELA_LOG_LEVEL</code>, <code>CONFIG_LOG_LEVEL</code></td>
 </tr>
 <tr>
+<td><code>no-git</code></td>
+<td>set whether CLI finds repo of cwd automatically</td>
+<td><code>VELA_NO_GIT</code>, <code>CONFIG_NO_GIT</code></td>
+</tr>
+<tr>
 <td><code>output</code></td>
 <td>format the output for API results</td>
 <td><code>VELA_OUTPUT</code>, <code>CONFIG_OUTPUT</code></td>
@@ -1886,11 +1891,12 @@ For more information, you can run <code>vela generate config --help</code>.
   addr: https://vela-server.localhost
 log:
   level: info
+no-git: <span style="color:#4e9a06">&#34;false&#34;</span>
 secret: <span style="color:#ce5c00;font-weight:bold">{}</span>
 </code></pre></div>
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified February 11, 2021: <a  href="https://github.com/go-vela/docs/commit/4438b576c7b309076009adf6e7e1b6b4ef6a2b3c">chore(authentication): update auth instructions and fix broken links (#203) (4438b576)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified February 9, 2022: <a  href="https://github.com/go-vela/docs/commit/8e9eb4cedc97873377159d8a8dd0b1fb85bcf890">chore(CLI): add documentation for CLI repo awareness (#272) (8e9eb4ce)</a>
 </div>
 </div>
 

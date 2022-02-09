@@ -25,12 +25,12 @@
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://go-vela.github.io/docs/reference/cli/deployment/get/" />
-<meta property="article:modified_time" content="2021-06-03T13:53:04-05:00" />
+<meta property="article:modified_time" content="2022-02-09T12:48:43-07:00" />
 <meta itemprop="name" content="Get">
 <meta itemprop="description" content="Learn how to list deployments.
 ">
-<meta itemprop="dateModified" content="2021-06-03T13:53:04-05:00" />
-<meta itemprop="wordCount" content="267">
+<meta itemprop="dateModified" content="2022-02-09T12:48:43-07:00" />
+<meta itemprop="wordCount" content="261">
 
 
 
@@ -1728,7 +1728,11 @@
   <ul>
     <li><a href="#command">Command</a></li>
     <li><a href="#parameters">Parameters</a></li>
-    <li><a href="#sample">Sample</a></li>
+    <li><a href="#sample">Sample</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
     <li><a href="#examples">Examples</a></li>
   </ul>
 </nav>
@@ -1857,11 +1861,14 @@ For more information, you can run <code>vela get deployment --help</code>.
 
 </div>
 
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8f5902;font-style:italic"># Request with CLI to view a deployment for the &#34;github&#34; org and &#34;octocat&#34; repo</span>
-$ vela get deployment --org github --repo octocat
-
-<span style="color:#8f5902;font-style:italic"># Response generated from successful CLI command</span>
-ID  TASK         USER     REF     TARGET
+<h4 id="request">Request</h4>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ <span style="color:#204a87">pwd</span>
+~/github/octocat
+$ vela get deployment
+</code></pre></div><h4 id="targeted-request">Targeted Request</h4>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ vela get deployment --org github --repo octocat
+</code></pre></div><h4 id="response-generated-from-successful-cli-command">Response generated from successful CLI command</h4>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">ID  TASK         USER     REF     TARGET
 <span style="color:#0000cf;font-weight:bold">2</span>   deploy:vela  octocat  master  production
 <span style="color:#0000cf;font-weight:bold">1</span>   deploy:vela  octocat  master  production
 </code></pre></div><h2 id="examples">Examples</h2>
@@ -1879,7 +1886,7 @@ ID  TASK         USER     REF     TARGET
 </code></pre></div>
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified June 3, 2021: <a  href="https://github.com/go-vela/docs/commit/b7d29a13d7fbc8dc7489bf30d7dddf8d724846eb">feat: add additional deployment info (#228) (b7d29a13)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified February 9, 2022: <a  href="https://github.com/go-vela/docs/commit/8e9eb4cedc97873377159d8a8dd0b1fb85bcf890">chore(CLI): add documentation for CLI repo awareness (#272) (8e9eb4ce)</a>
 </div>
 </div>
 
