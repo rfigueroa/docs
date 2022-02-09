@@ -54,7 +54,15 @@ To setup the CLI, please review the [authentication documentation](/docs/referen
 #### Request
 
 ```sh
-vela get hook --org github --repo octocat
+$ pwd
+~/github/octocat
+$ vela get hook
+```
+
+#### Targeted Request
+
+```sh
+$ vela get hook --org github --repo octocat
 ```
 
 #### Response

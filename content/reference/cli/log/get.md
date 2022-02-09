@@ -53,6 +53,14 @@ To setup the CLI, please review the [authentication documentation](/docs/referen
 #### Request
 
 ```sh
+$ pwd
+~/github/octocat
+$ vela get log --build 5
+```
+
+#### Targeted Request
+
+```sh
 $ vela get log --org github --repo octocat --build 5
 ```
 

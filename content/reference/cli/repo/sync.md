@@ -47,7 +47,15 @@ To setup the CLI, please review the [authentication documentation](/docs/referen
 #### Request
 
 ```sh
-vela sync repo --org github --repo octocat
+$ pwd
+~/github/octocat
+$ vela sync repo
+```
+
+#### Targeted Request
+
+```sh
+$ vela sync repo --org github --repo octocat
 ```
 
 #### Response
@@ -59,7 +67,15 @@ repo "github/octocat" synced
 #### Request
 
 ```sh
-vela sync repo --org github --all
+$ pwd
+~/github/octocat
+$ vela sync repo --all
+```
+
+#### Targeted Request
+
+```sh
+$ vela sync repo --org github --all
 ```
 
 #### Response

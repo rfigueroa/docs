@@ -53,7 +53,15 @@ To setup the CLI, please review the [authentication documentation](/docs/referen
 #### Request
 
 ```sh
-vela cancel build --org github --repo octocat --build 1
+$ pwd
+~/github/octocat
+$ vela cancel build --build 1
+```
+
+#### Targeted Request
+
+```sh
+$ vela cancel build --org github --repo octocat --build 1
 ```
 
 #### Response

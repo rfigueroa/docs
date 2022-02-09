@@ -46,11 +46,22 @@ To install the CLI, please review the [installation documentation](/docs/referen
 To setup the CLI, please review the [authentication documentation](/docs/reference/cli/authentication/).
 {{% /alert %}}
 
-```sh
-# Request with CLI to add a deployment for the "github" org and "octocat" repo
-$ vela view deployment --org github --repo octocat --deployment 1
+#### Request
 
-# Response generated from successful CLI command
+```sh
+$ pwd
+~/github/octocat
+$ vela view deployment --deployment 1
+```
+
+#### Targeted Request
+
+```sh
+$ vela view deployment --org github --repo octocat --deployment 1
+```
+
+#### Response generated from successful CLI command
+```sh
 id: 1
 repo_id: 1
 url: https://api.github.com/repos/github/octocat/deployments/1

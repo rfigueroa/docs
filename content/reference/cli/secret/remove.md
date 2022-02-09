@@ -58,7 +58,17 @@ To setup the CLI, please review the [authentication documentation](/docs/referen
 #### Request
 
 ```sh
-vela remove secret --secret.engine native --secret.type repo --org github --repo octocat --name foo
+$ pwd
+~/github/octocat
+$ vela remove secret --secret.engine native --secret.type repo --name foo 
+```
+
+#### Targeted Request
+
+```sh
+$ pwd
+~/github/octocat
+$ vela remove secret --secret.engine native --secret.type repo --org github --repo octocat --name foo
 ```
 
 #### Response

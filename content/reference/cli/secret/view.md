@@ -58,7 +58,17 @@ To setup the CLI, please review the [authentication documentation](/docs/referen
 #### Request
 
 ```sh
-vela view secret --secret.engine native --secret.type repo --org github --repo octocat --name foo
+$ pwd
+~/github/octocat
+$ vela view secret --secret.engine native --secret.type repo --name foo
+```
+
+#### Targeted Request
+
+```sh
+$ pwd
+~/github/octocat
+$ vela view secret --secret.engine native --secret.type repo --org github --repo octocat --name foo
 ```
 
 #### Response
@@ -69,7 +79,7 @@ org: github
 repo: octocat
 team: ""
 name: foo
-value: ""
+value: "[secure]"
 type: repo
 images: null
 events:

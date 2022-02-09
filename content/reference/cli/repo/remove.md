@@ -52,7 +52,17 @@ To setup the CLI, please review the [authentication documentation](/docs/referen
 #### Request
 
 ```sh
-vela remove repo --org github --repo octocat
+$ pwd
+~/github/octocat
+$ vela remove repo
+```
+
+#### Targeted Request
+
+```sh
+$ pwd
+~/github/octocat
+$ vela remove repo --org github --repo octocat
 ```
 
 #### Response

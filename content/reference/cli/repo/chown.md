@@ -52,7 +52,17 @@ To setup the CLI, please review the [authentication documentation](/docs/referen
 #### Request
 
 ```sh
-vela chown repo --org github --repo octocat
+$ pwd
+~/github/octocat
+$ vela chown repo
+```
+
+#### Targeted Request
+
+```sh
+$ pwd
+~/github/octocat
+$ vela chown repo --org github --repo octocat
 ```
 
 #### Response

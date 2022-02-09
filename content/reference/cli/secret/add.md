@@ -70,7 +70,15 @@ To setup the CLI, please review the [authentication documentation](/docs/referen
 #### Request
 
 ```sh
-vela add secret --secret.engine native --secret.type repo --org github --repo octocat --name foo --value bar
+$ pwd
+~/github/octocat
+$ vela add secret --secret.engine native --secret.type repo --name foo --value bar
+```
+
+#### Targeted Request
+
+```sh
+$ vela add secret --secret.engine native --secret.type repo --org github --repo octocat --name foo --value bar
 ```
 
 #### Response

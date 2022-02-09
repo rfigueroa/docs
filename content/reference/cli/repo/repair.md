@@ -52,7 +52,15 @@ To setup the CLI, please review the [authentication documentation](/docs/referen
 #### Request
 
 ```sh
-vela repair repo --org github --repo octocat
+$ pwd
+~/github/octocat
+$ vela repair repo
+```
+
+#### Targeted Request
+
+```sh
+$ vela repair repo --org github --repo octocat
 ```
 
 #### Response

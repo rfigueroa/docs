@@ -64,7 +64,15 @@ To setup the CLI, please review the [authentication documentation](/docs/referen
 #### Request
 
 ```sh
-vela add repo --org github --repo octocat
+$ pwd
+~/github/octocat
+$ vela add repo
+```
+
+#### Targeted Request
+
+```sh
+$ vela add repo --org github --repo octocat
 ```
 
 #### Response
