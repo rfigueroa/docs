@@ -266,14 +266,28 @@ The variable can be provided as a `boolean`.
 This variable has a default value of `false`.
 {{% /alert %}}
 
-### VELA_DEFAULT_BUILD_TIMEOUT
+### VELA_DEFAULT_BUILD_LIMIT
 
-This variable sets the default maximum duration of time a build is allowed to run on a worker.
+This variable sets the default amount of concurrent builds a repo is allowed to run.
+
+In this context, concurrent builds refers to any `pending` or `running` builds for that repo.
+
+If the amount of concurrent builds for a repo matches the limit, then any new builds will be blocked from being created.
 
 The variable can be provided as an `integer`.
 
 {{% alert title="Note:" color="primary" %}}
-This variable has a default value of `0`.
+This variable has a default value of `10`.
+{{% /alert %}}
+
+### VELA_DEFAULT_BUILD_TIMEOUT
+
+This variable sets the default duration of time a build is allowed to run on a worker.
+
+The variable can be provided as an `integer`.
+
+{{% alert title="Note:" color="primary" %}}
+This variable has a default value of `30`.
 {{% /alert %}}
 
 ### VELA_DISABLE_WEBHOOK_VALIDATION
@@ -298,6 +312,22 @@ The variable can be provided as a `boolean`.
 This variable should only be used for local development.
 
 This variable has a default value of `true`.
+{{% /alert %}}
+
+### VELA_MAX_BUILD_LIMIT
+
+This variable sets the maximum amount of concurrent builds a repo is allowed to run.
+
+In this context, concurrent builds refers to any `pending` or `running` builds for that repo.
+
+If the amount of concurrent builds for a repo matches the limit, then any new builds will be blocked from being created.
+
+The variable can be provided as an `integer`.
+
+{{% alert title="Note:" color="primary" %}}
+This variable has a default value of `30`.
+
+This variable should match [the `VELA_MAX_BUILD_LIMIT` variable](/docs/administration/ui/reference/#vela_max_build_limit) provided to the UI.
 {{% /alert %}}
 
 ### VELA_MODIFICATION_ADDR
