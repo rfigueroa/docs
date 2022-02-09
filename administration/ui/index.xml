@@ -146,6 +146,30 @@ This variable has a default value of &lt;code&gt;https://go-vela.github.io/docs/
 This variable has a default value of &lt;code&gt;https://github.com/go-vela/ui/issues/new/&lt;/code&gt;.
 &lt;/div&gt;
 
+&lt;h3 id=&#34;vela_log_bytes_limit&#34;&gt;VELA_LOG_BYTES_LIMIT&lt;/h3&gt;
+&lt;p&gt;This variable sets the maximum amount of bytes for logs the UI will attempt to render.&lt;/p&gt;
+&lt;p&gt;The variable can be provided as an &lt;code&gt;integer&lt;/code&gt;.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note:&lt;/h4&gt;
+This variable has a default value of &lt;code&gt;20000&lt;/code&gt; (2 MB).
+&lt;/div&gt;
+
+&lt;h3 id=&#34;vela_max_build_limit&#34;&gt;VELA_MAX_BUILD_LIMIT&lt;/h3&gt;
+&lt;p&gt;This variable sets the maximum amount of concurrent builds a repo is allowed to run.&lt;/p&gt;
+&lt;p&gt;In this context, concurrent builds refers to any &lt;code&gt;pending&lt;/code&gt; or &lt;code&gt;running&lt;/code&gt; builds for that repo.&lt;/p&gt;
+&lt;p&gt;If the amount of concurrent builds for a repo matches the limit, then any new builds will be blocked from being created.&lt;/p&gt;
+&lt;p&gt;The variable can be provided as an &lt;code&gt;integer&lt;/code&gt;.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note:&lt;/h4&gt;
+&lt;p&gt;This variable has a default value of &lt;code&gt;30&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;This variable should match &lt;a href=&#34;https://go-vela.github.io/docs/docs/administration/server/reference/#vela_max_build_limit&#34;&gt;the &lt;code&gt;VELA_MAX_BUILD_LIMIT&lt;/code&gt; variable&lt;/a&gt; provided to the server.&lt;/p&gt;
+
+&lt;/div&gt;
+
 
       </description>
     </item>

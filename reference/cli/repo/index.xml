@@ -53,14 +53,14 @@ For more information, you can run &lt;code&gt;vela add repo --help&lt;/code&gt;.
 &lt;td&gt;&lt;code&gt;VELA_REPO&lt;/code&gt;, &lt;code&gt;REPO_NAME&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;code&gt;link&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;full URL for the repository&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;VELA_LINK&lt;/code&gt;, &lt;code&gt;REPO_LINK&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
 &lt;td&gt;&lt;code&gt;branch&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;default branch for the repository&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_BRANCH&lt;/code&gt;, &lt;code&gt;REPO_BRANCH&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;link&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;full URL for the repository&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;VELA_LINK&lt;/code&gt;, &lt;code&gt;REPO_LINK&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;clone&lt;/code&gt;&lt;/td&gt;
@@ -71,6 +71,11 @@ For more information, you can run &lt;code&gt;vela add repo --help&lt;/code&gt;.
 &lt;td&gt;&lt;code&gt;visibility&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;access level required to view the repository&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_VISIBILITY&lt;/code&gt;, &lt;code&gt;REPO_VISIBILITY&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;build.limit&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;limit of concurrent builds allowed for repository&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;VELA_BUILD_LIMIT&lt;/code&gt;, &lt;code&gt;REPO_BUILD_LIMIT&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;timeout&lt;/code&gt;&lt;/td&gt;
@@ -101,6 +106,11 @@ For more information, you can run &lt;code&gt;vela add repo --help&lt;/code&gt;.
 &lt;td&gt;&lt;code&gt;event&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;events to trigger builds for the repository&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_EVENTS&lt;/code&gt;, &lt;code&gt;REPO_EVENTS&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;pipeline-type&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;type of base pipeline for the compiler to render&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;VELA_PIPELINE_TYPE&lt;/code&gt;, &lt;code&gt;PIPELINE_TYPE&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;output&lt;/code&gt;&lt;/td&gt;
@@ -147,6 +157,7 @@ fullname: github/octocat
 link: https://github.com/github/octocat
 clone: https://github.com/github/octocat.git
 branch: master
+buildlimit: &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;10&lt;/span&gt;
 timeout: &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;60&lt;/span&gt;
 timeout: &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0&lt;/span&gt;
 visibility: public
@@ -158,6 +169,7 @@ allowpush: &lt;span style=&#34;color:#204a87&#34;&gt;true&lt;/span&gt;
 allowdeploy: &lt;span style=&#34;color:#204a87&#34;&gt;false&lt;/span&gt;
 allowtag: &lt;span style=&#34;color:#204a87&#34;&gt;false&lt;/span&gt;
 allowcomment: &lt;span style=&#34;color:#204a87&#34;&gt;false&lt;/span&gt;
+pipelinetype: yaml
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
       </description>
     </item>
@@ -618,14 +630,14 @@ For more information, you can run &lt;code&gt;vela update repo --help&lt;/code&g
 &lt;td&gt;&lt;code&gt;VELA_REPO&lt;/code&gt;, &lt;code&gt;REPO_NAME&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;code&gt;link&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;full URL for the repository&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;VELA_LINK&lt;/code&gt;, &lt;code&gt;REPO_LINK&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
 &lt;td&gt;&lt;code&gt;branch&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;default branch for the repository&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_BRANCH&lt;/code&gt;, &lt;code&gt;REPO_BRANCH&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;link&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;full URL for the repository&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;VELA_LINK&lt;/code&gt;, &lt;code&gt;REPO_LINK&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;clone&lt;/code&gt;&lt;/td&gt;
@@ -636,6 +648,11 @@ For more information, you can run &lt;code&gt;vela update repo --help&lt;/code&g
 &lt;td&gt;&lt;code&gt;visibility&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;access level required to view the repository&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_VISIBILITY&lt;/code&gt;, &lt;code&gt;REPO_VISIBILITY&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;build.limit&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;limit of concurrent builds allowed for repository&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;VELA_BUILD_LIMIT&lt;/code&gt;, &lt;code&gt;REPO_BUILD_LIMIT&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;timeout&lt;/code&gt;&lt;/td&gt;
@@ -666,6 +683,11 @@ For more information, you can run &lt;code&gt;vela update repo --help&lt;/code&g
 &lt;td&gt;&lt;code&gt;event&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;events to trigger builds for the repository&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_EVENTS&lt;/code&gt;, &lt;code&gt;REPO_EVENTS&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;pipeline-type&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;type of base pipeline for the compiler to render&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;VELA_PIPELINE_TYPE&lt;/code&gt;, &lt;code&gt;PIPELINE_TYPE&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;output&lt;/code&gt;&lt;/td&gt;
@@ -712,6 +734,7 @@ fullname: github/octocat
 link: https://github.com/github/octocat
 clone: https://github.com/github/octocat.git
 branch: master
+buildlimit: &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;10&lt;/span&gt;
 timeout: &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;60&lt;/span&gt;
 counter: &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0&lt;/span&gt;
 visibility: public
@@ -723,6 +746,7 @@ allowpush: &lt;span style=&#34;color:#204a87&#34;&gt;true&lt;/span&gt;
 allowdeploy: &lt;span style=&#34;color:#204a87&#34;&gt;false&lt;/span&gt;
 allowtag: &lt;span style=&#34;color:#204a87&#34;&gt;true&lt;/span&gt;
 allowcomment: &lt;span style=&#34;color:#204a87&#34;&gt;false&lt;/span&gt;
+pipelinetype: yaml
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
       </description>
     </item>
@@ -811,6 +835,7 @@ fullname: github/octocat
 link: https://github.com/github/octocat
 clone: https://github.com/github/octocat.git
 branch: master
+buildlimit: &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;10&lt;/span&gt;
 timeout: &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;60&lt;/span&gt;
 counter: &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0&lt;/span&gt;
 visibility: public
@@ -822,6 +847,7 @@ allowpush: &lt;span style=&#34;color:#204a87&#34;&gt;true&lt;/span&gt;
 allowdeploy: &lt;span style=&#34;color:#204a87&#34;&gt;false&lt;/span&gt;
 allowtag: &lt;span style=&#34;color:#204a87&#34;&gt;false&lt;/span&gt;
 allowcomment: &lt;span style=&#34;color:#204a87&#34;&gt;false&lt;/span&gt;
+pipelinetype: yaml
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
       </description>
     </item>

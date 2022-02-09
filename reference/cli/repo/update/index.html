@@ -25,12 +25,12 @@
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://go-vela.github.io/docs/reference/cli/repo/update/" />
-<meta property="article:modified_time" content="2021-06-03T11:52:42-05:00" />
+<meta property="article:modified_time" content="2022-02-09T13:39:09-06:00" />
 <meta itemprop="name" content="Update">
 <meta itemprop="description" content="Learn how to modify a repo.
 ">
-<meta itemprop="dateModified" content="2021-06-03T11:52:42-05:00" />
-<meta itemprop="wordCount" content="249">
+<meta itemprop="dateModified" content="2022-02-09T13:39:09-06:00" />
+<meta itemprop="wordCount" content="275">
 
 
 
@@ -1820,14 +1820,14 @@ For more information, you can run <code>vela update repo --help</code>.
 <td><code>VELA_REPO</code>, <code>REPO_NAME</code></td>
 </tr>
 <tr>
-<td><code>link</code></td>
-<td>full URL for the repository</td>
-<td><code>VELA_LINK</code>, <code>REPO_LINK</code></td>
-</tr>
-<tr>
 <td><code>branch</code></td>
 <td>default branch for the repository</td>
 <td><code>VELA_BRANCH</code>, <code>REPO_BRANCH</code></td>
+</tr>
+<tr>
+<td><code>link</code></td>
+<td>full URL for the repository</td>
+<td><code>VELA_LINK</code>, <code>REPO_LINK</code></td>
 </tr>
 <tr>
 <td><code>clone</code></td>
@@ -1838,6 +1838,11 @@ For more information, you can run <code>vela update repo --help</code>.
 <td><code>visibility</code></td>
 <td>access level required to view the repository</td>
 <td><code>VELA_VISIBILITY</code>, <code>REPO_VISIBILITY</code></td>
+</tr>
+<tr>
+<td><code>build.limit</code></td>
+<td>limit of concurrent builds allowed for repository</td>
+<td><code>VELA_BUILD_LIMIT</code>, <code>REPO_BUILD_LIMIT</code></td>
 </tr>
 <tr>
 <td><code>timeout</code></td>
@@ -1868,6 +1873,11 @@ For more information, you can run <code>vela update repo --help</code>.
 <td><code>event</code></td>
 <td>events to trigger builds for the repository</td>
 <td><code>VELA_EVENTS</code>, <code>REPO_EVENTS</code></td>
+</tr>
+<tr>
+<td><code>pipeline-type</code></td>
+<td>type of base pipeline for the compiler to render</td>
+<td><code>VELA_PIPELINE_TYPE</code>, <code>PIPELINE_TYPE</code></td>
 </tr>
 <tr>
 <td><code>output</code></td>
@@ -1914,6 +1924,7 @@ fullname: github/octocat
 link: https://github.com/github/octocat
 clone: https://github.com/github/octocat.git
 branch: master
+buildlimit: <span style="color:#0000cf;font-weight:bold">10</span>
 timeout: <span style="color:#0000cf;font-weight:bold">60</span>
 counter: <span style="color:#0000cf;font-weight:bold">0</span>
 visibility: public
@@ -1925,10 +1936,11 @@ allowpush: <span style="color:#204a87">true</span>
 allowdeploy: <span style="color:#204a87">false</span>
 allowtag: <span style="color:#204a87">true</span>
 allowcomment: <span style="color:#204a87">false</span>
+pipelinetype: yaml
 </code></pre></div>
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified June 3, 2021: <a  href="https://github.com/go-vela/docs/commit/f4f52af8346e7aaf402da0c42fafe7bffe6ce1de">feat: add repo counter information (#221) (f4f52af8)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified February 9, 2022: <a  href="https://github.com/go-vela/docs/commit/84ac711e549e1e8da0bd1f47f78619ce317401c0">feat: add docs for repo build limit (#270) (84ac711e)</a>
 </div>
 </div>
 
