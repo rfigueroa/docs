@@ -25,12 +25,12 @@
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://go-vela.github.io/docs/reference/api/build/get/" />
-<meta property="article:modified_time" content="2022-01-04T10:48:59-06:00" />
+<meta property="article:modified_time" content="2022-02-11T08:30:27-07:00" />
 <meta itemprop="name" content="Get">
 <meta itemprop="description" content="Learn how to list builds.
 ">
-<meta itemprop="dateModified" content="2022-01-04T10:48:59-06:00" />
-<meta itemprop="wordCount" content="241">
+<meta itemprop="dateModified" content="2022-02-11T08:30:27-07:00" />
+<meta itemprop="wordCount" content="265">
 
 
 
@@ -1828,8 +1828,20 @@
 <td>name of branch to filter to</td>
 </tr>
 <tr>
+<td><code>commit</code></td>
+<td>commit hash to filter to</td>
+</tr>
+<tr>
 <td><code>event</code></td>
 <td>name of event to filter to</td>
+</tr>
+<tr>
+<td><code>page</code></td>
+<td>page number for results (default 1)</td>
+</tr>
+<tr>
+<td><code>per_page</code></td>
+<td>number of results in a page (default 10, max 100)</td>
 </tr>
 <tr>
 <td><code>status</code></td>
@@ -1938,7 +1950,7 @@ curl <span style="color:#4e9a06">\
 </code></pre></div>
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified January 4, 2022: <a  href="https://github.com/go-vela/docs/commit/40d0976b934c56b8fad1a88b716db027cddf03cc">docs(builds): add optional filters to cli and api (#263) (40d0976b)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified February 11, 2022: <a  href="https://github.com/go-vela/docs/commit/21766bb89a0370703ccf89f7b33a96664fc2f05d">chore(build): add documentation for pagination and missing commit hash param (#280) (21766bb8)</a>
 </div>
 </div>
 
