@@ -44,7 +44,7 @@ It is recommended to use a semantically versioned tag instead.
 steps:- name:publish_hello-worldimage:target/vela-kaniko:latestpull:alwaysparameters:registry:index.docker.iorepo:index.docker.io/octocat/hello-worldSample of building an image without publishing:
 steps: - name: publish_hello-world image: target/vela-kaniko:latest pull: always parameters: &#43; dry_run: true  registry: index.">
 <meta itemprop="dateModified" content="2021-01-13T15:05:51-06:00" />
-<meta itemprop="wordCount" content="844">
+<meta itemprop="wordCount" content="857">
 
 
 
@@ -917,6 +917,13 @@ steps: - name: publish_hello-world image: target/vela-kaniko:latest pull: always
 <td><code>true</code></td>
 <td><strong>set by Vela</strong></td>
 <td><code>PARAMETER_EVENT</code><br><code>KANIKO_EVENT</code><br><code>VELA_BUILD_EVENT</code></td>
+</tr>
+<tr>
+<td><code>force_build_metadata</code></td>
+<td>enable force adding metadata layers to build image</td>
+<td><code>false</code></td>
+<td><code>false</code></td>
+<td><code>PARAMETER_FORCE_BUILD_METADATA</code><br><code>KANIKO_FORCE_BUILD_METADATA</code></td>
 </tr>
 <tr>
 <td><code>labels</code></td>

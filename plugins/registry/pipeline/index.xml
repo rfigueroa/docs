@@ -2591,6 +2591,13 @@ Users should refrain from configuring sensitive information in their pipeline in
 &lt;td&gt;&lt;code&gt;PARAMETER_EVENT&lt;/code&gt;&lt;br&gt;&lt;code&gt;KANIKO_EVENT&lt;/code&gt;&lt;br&gt;&lt;code&gt;VELA_BUILD_EVENT&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
+&lt;td&gt;&lt;code&gt;force_build_metadata&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;enable force adding metadata layers to build image&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_FORCE_BUILD_METADATA&lt;/code&gt;&lt;br&gt;&lt;code&gt;KANIKO_FORCE_BUILD_METADATA&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
 &lt;td&gt;&lt;code&gt;labels&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;unique labels to add to the image&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
