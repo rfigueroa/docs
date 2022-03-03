@@ -1,0 +1,755 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.79.0" />
+
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+<link rel="alternate" type="application/rss&#43;xml" href="https://go-vela.github.io/docs/community/contributing_guidelines/index.xml">
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/docs/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/docs/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/docs/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/docs/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/docs/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/docs/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/docs/favicons/android-96x196.png" sizes="96x196">
+<link rel="icon" type="image/png" href="/docs/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/docs/favicons/android-192x192.png"sizes="192x192">
+
+<title>Contributing Guidelines | Vela</title><meta property="og:title" content="Contributing Guidelines" />
+<meta property="og:description" content="Contributing Guidelines for Vela.
+" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://go-vela.github.io/docs/community/contributing_guidelines/" />
+
+<meta itemprop="name" content="Contributing Guidelines">
+<meta itemprop="description" content="Contributing Guidelines for Vela.
+">
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Contributing Guidelines"/>
+<meta name="twitter:description" content="Contributing Guidelines for Vela.
+"/>
+
+
+
+
+
+
+
+<link rel="preload" href="/docs/scss/main.min.a9587066c0180698d994bba5dbdd49fa05ee0044b1678d06704a7a605676b1df.css" as="style">
+<link href="/docs/scss/main.min.a9587066c0180698d994bba5dbdd49fa05ee0044b1678d06704a7a605676b1df.css" rel="stylesheet" integrity="">
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+
+    <title>Contributing Guidelines | Vela</title>
+  </head>
+  <body class="td-section">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="/docs/">
+		<span class="navbar-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1500"><title>vela-inverse</title><polygon points="1477.22 329.54 1338.11 219.91 1349.56 43.16 1202.3 141.58 1037.73 76.07 1085.84 246.54 972.68 382.81 1149.67 389.74 1244.3 539.46 1305.58 373.27 1477.22 329.54" style="fill:#9e6bae"/><path d="M1174.75 635.12 757.57 1357.69a3.47 3.47.0 01-6 0L125.38 273.13a3.48 3.48.0 013-5.22H925.24l39.14-47.13L950.19 170.5H128.39A100.9 100.9.0 0041 321.84L667.19 1406.4a100.88 100.88.0 00174.74.0l391.61-678.27z" style="fill:#34c6f4"/><polygon points="1087.64 497.29 1038.27 495.36 754.56 986.75 395.9 365.54 288.13 365.54 754.56 1173.42 1117.58 544.66 1087.64 497.29" style="fill:#fff"/></svg></span><span class="text-uppercase font-weight-bold">Vela</span>
+	</a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link active" href="/docs/community/" ><span class="active">Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/docs/administration/" ><span>Administration</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/docs/tour/" ><span>Tour</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/docs/usage/" ><span>Usage</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/docs/plugins/" ><span>Plugins</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/docs/templates/" ><span>Templates</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/docs/faq/" ><span>F.A.Q.</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/docs/reference/" ><span>Reference</span></a>
+			</li>
+			
+			
+			
+		</ul>
+	</div>
+	<div class="navbar-nav d-none d-lg-block"><div>
+    
+
+    <div class="search -navbar" id="search1">
+        <input id="search1input" type="text" placeholder="Search site..." v-model="txt" @blur="close()" maxlength="50">
+        <div class="search-results" :style="{'display': showresult?'block':'none'}">
+            <a v-for="item in result" :href="item.url">{{ item.display }}</a>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js" integrity="sha256-mpnrJ5DpEZZkwkE1ZgkEQQJW/46CSEh/STrZKOB/qoM=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js" integrity="sha256-FtWfRI+thWlNz2sB3SJbwKx5PgMyKIVgwHCTwa3biXc=" crossorigin="anonymous"></script>
+    <script>
+        let mounted = function() {
+            
+            document.getElementById("search1input").addEventListener("keyup", e => {
+                this.txt = e.target.value;
+                this.search();
+            });
+            
+            axios.get('https:\/\/go-vela.github.io\/docs\/search\/index.json')
+                .then(function(response) {
+                    vuesearch1.bdd = response.data.results;
+                })
+                .catch(function(error) {
+                    console.log(error);
+                });
+        }
+        let close = function() {
+            
+            
+            setTimeout(function() {
+                vuesearch1.showresult = false;
+                vuesearch1.txt = '';
+            }, 300);
+        }
+        let search = function() {
+            
+            clearTimeout(this.timeoutID);
+            this.timeoutID = setTimeout(this.dosearch, 500);
+        }
+
+        let dosearch = function() {
+            
+            this.result = []; 
+            let words = this.txt.split(' '); 
+            let words2 = []; 
+            words.forEach(function(element) { 
+                if (element) {
+                    words2.push(element);
+                }
+            });
+            let r;
+            let resultmp;
+            words2.forEach(function(e) {
+                r = vuesearch1.bdd.filter(p => p.content.indexOf(e.toLowerCase()) !== -1);
+                if (vuesearch1.result.length === 0) {
+                    vuesearch1.result = r.slice();
+                    return;
+                }
+                resultmp = [];
+                vuesearch1.result.forEach(function(all1) {
+                    r.forEach(function(all2) {
+                        if (all1.url === all2.url) {
+                            resultmp.push(all1);
+                        }
+                    });
+                });
+                vuesearch1.result = resultmp.slice();
+            });
+            this.result = this.result.slice(0, 10); 
+            this.result = this.result.sort(function (a, b) {
+                return ('' + a.display).localeCompare(b.display);
+            })
+            this.showresult = (this.result.length > 0);
+        }
+        let vuesearch1 = new Vue({
+            el: '#search1',
+            data: {
+                txt: '',
+                timeoutID: 0,
+                showresult: false,
+                result: {},
+                bdd: []
+            },
+            mounted: mounted,
+            methods: {
+                close: close,
+                search: search,
+                dosearch: dosearch
+            }
+        });
+    </script>
+</div></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            
+
+
+
+
+<div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <form class="td-sidebar__search d-flex align-items-center">
+    <div>
+    <div class="search -sidebar" id="search2">
+        <input id="search2input" type="text" placeholder="Search site..." v-model="txt" @blur="close()" maxlength="50">
+        <div class="search-results" :style="{'display': showresult?'block':'none'}">
+            <a v-for="item in result" :href="item.url">{{ item.display }}</a>
+        </div>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js" integrity="sha256-mpnrJ5DpEZZkwkE1ZgkEQQJW/46CSEh/STrZKOB/qoM=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js" integrity="sha256-FtWfRI+thWlNz2sB3SJbwKx5PgMyKIVgwHCTwa3biXc=" crossorigin="anonymous"></script>
+<script>
+    let mounted_sidebar = function() {
+        document.getElementById("search2input").addEventListener("keyup", e => {
+            this.txt = e.target.value;
+            this.search();
+        });
+        axios.get('https:\/\/go-vela.github.io\/docs\/search\/index.json')
+            .then(function(response) {
+                vuesearch2.bdd = response.data.results;
+            })
+            .catch(function(error) {
+                console.log(error);
+            });
+    }
+    let close_sidebar = function() {
+        setTimeout(function() {
+            vuesearch2.showresult = false;
+            vuesearch2.txt = '';
+        }, 300);
+    }
+
+    let dosearch_sidebar = function() {
+        this.result = [];
+        var words = this.txt.split(' ');
+        var words2 = [];
+        words.forEach(function(element) {
+            if (element) {
+                words2.push(element);
+            }
+        });
+        var r;
+        var resultmp;
+        words2.forEach(function(e) {
+            r = vuesearch2.bdd.filter(p => p.content.indexOf(e.toLowerCase()) !== -1);
+            if (vuesearch2.result.length === 0) {
+                vuesearch2.result = r.slice();
+                return;
+            }
+            resultmp = [];
+            vuesearch2.result.forEach(function(all1) {
+                r.forEach(function(all2) {
+                    if (all1.url === all2.url) {
+                        resultmp.push(all1);
+                    }
+                });
+            });
+            vuesearch2.result = resultmp.slice();
+        });
+        this.result = this.result.slice(0, 10);
+        this.result = this.result.sort(function (a, b) {
+            return ('' + a.display).localeCompare(b.display);
+        })
+        this.showresult = (this.result.length > 0);
+    }
+    let vuesearch2 = new Vue({
+        el: '#search2',
+        data: {
+            txt: '',
+            timeoutID: 0,
+            showresult: false,
+            result: {},
+            bdd: []
+        },
+        mounted: mounted_sidebar,
+        methods: {
+            close: close_sidebar,
+            search: search,
+            dosearch: dosearch_sidebar
+        }
+    });
+</script>
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  
+  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
+    
+    
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/community/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Community</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="docscommunity">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/community/contributing_guidelines/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Contributing Guidelines</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="docscommunitycontributing_guidelines">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+  </nav>
+</div>
+
+
+
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+            
+
+
+
+
+<div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+
+
+
+<a href="https://github.com/go-vela/docs/edit/master/content/community/contributing_guidelines/_index.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+<a href="https://github.com/go-vela/docs/issues/new?title=Contributing%20Guidelines" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+
+</div>
+
+
+
+
+
+
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#types-of-project-repos">Types of project repos</a>
+      <ul>
+        <li><a href="#core-repos">Core Repos</a></li>
+        <li><a href="#plugin-repos">Plugin Repos</a></li>
+        <li><a href="#supporting-repos">Supporting Repos</a></li>
+      </ul>
+    </li>
+    <li><a href="#types-of-contributions">Types of Contributions</a>
+      <ul>
+        <li><a href="#issues">Issues</a></li>
+        <li><a href="#proposals">Proposals</a></li>
+      </ul>
+    </li>
+    <li><a href="#lifecycle-of-a-contribution">Lifecycle of a Contribution</a>
+      <ul>
+        <li><a href="#determining-appropriateness-for-vela">Determining appropriateness for Vela</a></li>
+        <li><a href="#project-boards">Project boards</a></li>
+        <li><a href="#categories--labels">Categories / Labels</a></li>
+        <li><a href="#backlog-grooming">Backlog Grooming</a></li>
+        <li><a href="#development-workflow">Development Workflow</a></li>
+      </ul>
+    </li>
+    <li><a href="#releases">Releases</a></li>
+    <li><a href="#style-guide">Style Guide</a></li>
+    <li><a href="#roles">Roles</a></li>
+    <li><a href="#questions-and-contact">Questions and Contact</a></li>
+  </ul>
+</nav>
+
+
+
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	<ol class="breadcrumb spb-1">
+		
+
+
+
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="https://go-vela.github.io/docs/community/">Community</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item active" aria-current="page">
+	<a href="https://go-vela.github.io/docs/community/contributing_guidelines/">Contributing Guidelines</a>
+</li>
+
+	</ol>
+</nav	>
+
+            
+<div class="td-content">
+	<h1>Contributing Guidelines</h1>
+	<div class="lead">Contributing Guidelines for Vela.</div>
+	<p>Thank you for considering contributing to <a href="https://github.com/go-vela">Vela</a>. Please read through these contributing guidelines.</p>
+<h1 id="vela-project-overview">Vela project overview</h1>
+<h2 id="types-of-project-repos">Types of project repos</h2>
+<h3 id="core-repos">Core Repos</h3>
+<ul>
+<li><a href="https://github.com/go-vela/types">types</a></li>
+<li><a href="https://github.com/go-vela/server">server</a></li>
+<li><a href="https://github.com/go-vela/sdk-go">sdk-go</a></li>
+<li><a href="https://github.com/go-vela/worker">worker</a></li>
+<li><a href="https://github.com/go-vela/cli">cli</a></li>
+<li><a href="https://github.com/go-vela/ui">ui</a></li>
+</ul>
+<h4 id="core-repos-dependency-tree">Core Repos Dependency Tree</h4>
+<p>Vela is written in a modular format which creates a dependency tree. The ui is independent.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">     ┌────────────┐   ┌────────────┐   ┌────────────┐   ┌────────────┐   ┌────────────┐
+     │            │   │            │   │            │   │            │   │            │
+     │            │   │            │   │            │   │            │   │            │
+ ────┤   types    ├──►│   server   ├──►│   sdk-go   ├──►│   worker   ├──►│    cli     │
+     │            │   │            │   │            │   │            │   │            │
+     │            │   │            │   │            │   │            │   │            │
+     └────────────┘   └────────────┘   └────────────┘   └────────────┘   └────────────┘
+
+
+     ┌────────────────────────────────────────────────────────────────────────────────┐
+     │                                                                                │
+     │                                                                                │
+ ────┤                                    ui                                          │
+     │                                                                                │
+     │                                                                                │
+     └────────────────────────────────────────────────────────────────────────────────┘
+</code></pre></div><h3 id="plugin-repos">Plugin Repos</h3>
+<ul>
+<li>Most <a href="https://github.com/go-vela">repos</a> that start with <code>vela-</code> are plugin repos. They might have a dependency on a core repo. Check out the corresponding <code>go.mod</code> file to confirm.</li>
+</ul>
+<h3 id="supporting-repos">Supporting Repos</h3>
+<ul>
+<li><a href="https://github.com/go-vela/docs">docs</a></li>
+<li><a href="https://github.com/go-vela/vela-tutorials">vela-tutorials</a></li>
+<li><a href="https://github.com/go-vela/community">community</a> (migrations, proposals, releases (release notes), <a href="/docs/communityy/contributing_guidelines/#issues">issues</a>)</li>
+<li><a href="https://github.com/go-vela/homebrew">homebrew</a> (brew tap go-vela/vela)</li>
+</ul>
+<h2 id="types-of-contributions">Types of Contributions</h2>
+<h3 id="issues">Issues</h3>
+<p><a href="https://github.com/go-vela/community/issues">Issues</a> include:</p>
+<ul>
+<li>Bugs</li>
+<li>Enhancements</li>
+<li>Feature requests</li>
+</ul>
+<h3 id="proposals">Proposals</h3>
+<p><a href="https://github.com/go-vela/community/tree/master/proposals">Proposals</a> are used to foster discussion around large or breaking feature requests, or when looking for feedback on varied implementation options. Check that an <a href="https://github.com/go-vela/community/issues">issue</a> or <a href="https://github.com/go-vela/community/tree/master/proposals">proposal</a> doesn’t exist already.</p>
+<p>Create a pull request using the <a href="https://github.com/go-vela/community/blob/master/.github/PULL_REQUEST_TEMPLATE/proposal.md">proposal template</a>.</p>
+<p>Anyone is welcome to weigh in on a proposal. If you’d like, link it in the <a href="https://gophers.slack.com/app_redirect?channel=CNRRKE8KY">public #vela Slack channel</a> for more visibility.</p>
+<p>There isn’t a clearly defined proposal process yet (we’re working on that). We do monitor and engage on proposals to reach a consensus. If the proposal is approved to move forward, as indicated within the comments of the proposal pull request, the next step is to create a Feature Request for tracking purposes.</p>
+<h2 id="lifecycle-of-a-contribution">Lifecycle of a Contribution</h2>
+
+
+<div class="alert alert-warning" role="alert">
+<h4 class="alert-heading">Note:</h4>
+Make sure an <a href="https://github.com/go-vela/community/issues">issue</a> or <a href="https://github.com/go-vela/community/tree/master/proposals">proposal</a> in the <a href="https://github.com/go-vela/community">go-vela/community</a> repository exists prior to beginning any code changes.
+</div>
+
+<h3 id="determining-appropriateness-for-vela">Determining appropriateness for Vela</h3>
+<p>Before contributing any code, make sure an <a href="/docs/community/contributing_guidelines/#issues">issue</a> exists, be sure to checkout current <a href="https://github.com/go-vela/community/issues">issues</a> and <a href="https://github.com/go-vela/community/tree/master/proposals">proposals</a> to make sure your idea isn’t already being worked on. We&rsquo;re working on a public roadmap view to link here.</p>
+<p>If an issue does not exist, make sure to create one.</p>
+<p>Vela is Target’s primary CI system. We will evaluate issues and proposals, and compare them against our roadmap, what is best for Target, and what makes sense to implement for other customers that will provide a general positive value for other users.</p>
+<h3 id="project-boards">Project boards</h3>
+<p>Our <a href="https://github.com/orgs/go-vela/projects">project boards</a> give you a detailed overview of what’s currently planned or being worked on. Each sprint reflects the stage in our roadmap we are focused on.</p>
+<p>Once your proposal or issue is approved, make sure your progress is being tracked in the current sprint.</p>
+<h3 id="categories--labels">Categories / Labels</h3>
+<p>Issues are sorted by using labels and categories (columns) in our backlog. This is to aid us in prioritization and planning.</p>
+<p>Some common labels might be:</p>
+<ul>
+<li>Bug</li>
+<li>Enhancement</li>
+<li>Feature</li>
+</ul>
+<p>Occasionally, we will use other labels to try and group similar bugs/features/enhancements into a common goal. For example, there might be a label, <code>observability</code>, that could contain bugs/features/enhancements that all pertain to observability.</p>
+<h3 id="backlog-grooming">Backlog Grooming</h3>
+<p>The Vela core team reviews issues in the community repo once a month. At this point we will determine whether issues fit into our roadmap, assess priority, and potentially close issues that will not be worked by the core team.</p>
+<h3 id="development-workflow">Development Workflow</h3>
+<p>Checkout the README.md in the repo you intend to contribute to, for instructions on how to setup your repo locally and start contributing.</p>
+<p>See <a href="/docs/community/contributing_guidelines/#style-guide">style guide</a> for guides on implementation.</p>
+<ul>
+<li>
+<p><strong>Open a pull request!</strong></p>
+<ul>
+<li>
+<p>For the title of the pull request, please use the following format:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">feat(wobble): add hat wobble
+^--^^------^  ^------------^
+|   |         |
+|   |         +---&gt; Summary in present tense.
+|   +---&gt; Scope: a noun describing a section of the codebase (optional)
++---&gt; Type: chore, docs, feat, fix, refactor, or test.
+</code></pre></div><ul>
+<li>feat: adds a new feature (equivalent to a MINOR in Semantic Versioning)</li>
+<li>fix: fixes a bug (equivalent to a PATCH in Semantic Versioning)</li>
+<li>docs: changes to the documentation</li>
+<li>refactor: refactors production code, eg. renaming a variable; doesn’t change public API</li>
+<li>test: adds missing tests, refactors tests; no production code change</li>
+<li>chore: updates something without impacting the user (ex: bump a dependency in package.json or go.mod); no production code change</li>
+</ul>
+</li>
+<li>
+<p>If a code change introduces a breaking change, place ! suffix after type, ie. feat(change)!: adds breaking change. correlates with MAJOR in semantic versioning.</p>
+</li>
+<li>
+<p>If your code crosses dependent repos, link associated PRs in PR body.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>PR review process</strong></p>
+<ul>
+<li>
+<p>Getting Reviewed: The admins and trusted committers actively watch for incoming PR’s.</p>
+</li>
+<li>
+<p>Getting Approved: For <a href="/docs/community/contributing_guidelines/#core-repos">core repos</a>, PRs need 2 approvals. At least one approval must come from an admin, the other can be from a trusted committer. For plugin repos, 1 approval from an admin or trusted committer is needed.</p>
+</li>
+<li>
+<p>Getting Merged: Once approved, your PR will be merged by an admin. If your story crosses dependent repos, PRs will be merged in the appropriate order neccessary.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="releases">Releases</h2>
+<p>Vela is working to release on a consistent schedule. Our current goal is to release a new version once a month so users can work with the latest implemented features and bug fixes. Because Vela is in major version 0, breaking changes may happen on minor version releases. Once we release with major version &gt; 0, <a href="https://semver.org/">semantic versioning</a> will be followed.
+Currently, main releases only apply to <a href="/docs/community/contributing_guidelines/#core-repos">core repos</a>. <a href="/docs/community/contributing_guidelines/#plugin-repos">Plugin repos</a> get version cuts on an as needed basis.</p>
+<ul>
+<li><strong>Patches:</strong> Patches will be released on an as needed basis for bug and security fixes. We increment the minor version.</li>
+<li><strong>RC’s (pre-releases):</strong> Prior to releasing a main version, we will have at least a week of rc releases for testing purposes.</li>
+<li><strong>Release Notes:</strong> You can find a list of release notes in the <a href="https://github.com/go-vela/community/tree/master/releases">community repository</a>.</li>
+</ul>
+<h2 id="style-guide">Style Guide</h2>
+<p>As you contribute to Vela, we ask that you follow these style guides to keep the code clean and consistent.</p>
+<ul>
+<li>
+<p><strong>Git commit messages:</strong> Ensure your commits follow our <a href="https://cbea.ms/git-commit/#seven-rules">standards</a>.</p>
+</li>
+<li>
+<p><strong>Linters:</strong> We use <a href="https://golangci-lint.run/">golangci-lint</a> to lint our code.  Make sure to run the provided style checks (make fmt, make tidy, etc.) against your code. Please address linter warnings appropriately. If you are intentionally violating a rule that triggers a linter, please annotate the respective code with nolint declarations <a href="https://golangci-lint.run/usage/false-positives/">docs</a>. We are using the following format for nolint declarations:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#8f5902;font-style:italic">// nolint:&lt;linter(s)&gt; // &lt;short reason&gt;
+</span></code></pre></div><p>Example:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#8f5902;font-style:italic">// nolint:gocyclo // legacy function is complex, needs simplification
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">func</span> <span style="color:#000">superComplexFunction</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#204a87;font-weight:bold">error</span> <span style="color:#000;font-weight:bold">{</span>
+  <span style="color:#8f5902;font-style:italic">// ..
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000;font-weight:bold">}</span>
+</code></pre></div><p>Check the <a href="https://golangci-lint.run/usage/false-positives/">documentation for more examples</a>.</p>
+</li>
+<li>
+<p><strong>Documentation:</strong> If your contribution warrants documentation within our <a href="https://github.com/go-vela/docs">doc site</a>, have a documentation PR ready and referenced in your code PR. Additionally, when contributing in a plugin repo, make sure to update the plugin’s documentation (DOCS.md) to reflect the change.</p>
+</li>
+<li>
+<p><strong>Testing:</strong> Make sure you add tests for the code you contribute. The total test coverage should never go down. Checkout the tests in the repo to get started. See <a href="https://www.cypress.io/">cypress</a>, <a href="https://package.elm-lang.org/packages/elm-explorations/test/latest/">elm</a>, and <a href="https://pkg.go.dev/testing">golang</a> testing frameworks for more details.</p>
+</li>
+<li>
+<p><strong>Folder structure:</strong> Currently, we use a modified version of the <a href="https://github.com/golang-standards/project-layout">golang project folder structure</a>. When contributing to any repo, keep the structure consistent within the repo. When creating new plugins, be sure to mirror the structure of other plugins (vela-).</p>
+</li>
+<li>
+<p><strong>Dependency management:</strong> Check out the <a href="/docs/community/contributing_guidelines/#dependency-tree-for-core-repos">core repos</a> and the <code>go.mod</code> file in a <a href="/docs/community/contributing_guidelines/#plugin-repos">plugin repo</a> to see how they are dependent on one another. We ask that you use standard libraries whenever possible. See <a href="https://go.dev/blog/using-go-modules">golang modules</a> and <a href="https://docs.npmjs.com/about-npm">npm</a> for dependency management.</p>
+</li>
+<li>
+<p><strong>Environment variables:</strong> Add environment variables whenever implementation can vary by customer installation, or can be modified outside of a release.</p>
+</li>
+<li>
+<p><strong>Commenting:</strong> Make sure to add comments to your code when necessary. Users should know what your code is doing by your comments. Check out comments in existing code to get a feel of what and how to comment.</p>
+</li>
+<li>
+<p><strong>Accessibility</strong> Vela strives to conform to <a href="https://www.w3.org/TR/WCAG21/">Web Content Accessibility Guidelines 2.1</a> AA standards for accessibility. Please ensure your contribution(s) meets or exceeds this standard.</p>
+</li>
+</ul>
+<h2 id="roles">Roles</h2>
+<p>Because Vela is an open source tool, anyone can contribute! We have our admins and trusted committers defined in <a href="https://github.com/orgs/go-vela/teams">teams</a>.</p>
+<ul>
+<li><strong>Admins:</strong> As admins of go-vela, members of this team work daily to keep Vela up and running. PRs will always need at least one admin approval.</li>
+<li><strong>Trusted committers:</strong> This is a group of trusted individuals that are responsible for ushering our contributors into the world of Vela.</li>
+<li><strong>You:</strong> Someone who wants to help make Vela the best CI tool out there!</li>
+</ul>
+<h2 id="questions-and-contact">Questions and Contact</h2>
+<p>If you have a question about contributing to Vela, the above guidelines, or Vela in general, please reach out to the Vela team!</p>
+<ul>
+<li><a href="https://gophers.slack.com/app_redirect?channel=CNRRKE8KY">#vela</a> Slack channel</li>
+<li>Email us at <a href="mailto:vela@target.com">vela@target.com</a></li>
+<li><a href="https://github.com/go-vela/ui/blob/master/.github/SUPPORT.md">Support resources</a></li>
+<li>Open an <a href="https://github.com/go-vela/community/issues/new/choose">issue</a></li>
+</ul>
+
+        <div class="section-index">
+    
+    
+    
+    
+    <hr class="panel-line">
+        
+            
+        
+            
+        
+    
+</div>
+
+	
+	
+	<div class="text-muted mt-5 pt-3 border-top">Last modified March 3, 2022: <a  href="https://github.com/go-vela/docs/commit/c6a7b7a992d05a53b7ba403381dc8cbcf9583e10">chore(guidelines): add community section with initial content (#281) (c6a7b7a9)</a>
+</div>
+</div>
+
+          </main>
+        </div>
+      </div>
+      
+<footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        
+        
+        
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="GitHub" aria-label="GitHub">
+    <a class="text-white" target="_blank" href="https://github.com/go-vela">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Slack" aria-label="Slack">
+    <a class="text-white" target="_blank" href="https://gophers.slack.com/app_redirect?channel=CNRRKE8KY">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Developer mailing list" aria-label="Developer mailing list">
+    <a class="text-white" target="_blank" href="mailto:vela@target.com">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">&copy; 2022 Target Brands All Rights Reserved</small>
+        <small class="ml-1"><a href="https://github.com/go-vela/server/blob/master/LICENSE" target="_blank">Privacy Policy</a></small>
+	
+		
+	
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    </div>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+
+
+
+
+<script src="/docs/js/main.min.249bfd804cb79020e7c423ccdbcde3013d7a34a1365fe174e162d05ba8fbbfdf.js" integrity="sha256-JJv9gEy3kCDnxCPM283jAT16NKE2X&#43;F04WLQW6j7v98=" crossorigin="anonymous"></script>
+
+
+
+  </body>
+</html>
