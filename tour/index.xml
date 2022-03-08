@@ -297,7 +297,7 @@ docker run --entrypoint&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&g
         &lt;p&gt;Sometimes you need to inject environment information into an image or plugin that you don&amp;rsquo;t want in plain text.&lt;/p&gt;
 &lt;p&gt;For this, we introduce pipeline secrets as a pattern to keep sensitive data safe. Secrets are always retrieved at the beginning of a pipeline before any services, stages, or steps are created or started.&lt;/p&gt;
 &lt;p&gt;They are the answer when you don’t want to provide that sensitive information in plain text.&lt;/p&gt;
-&lt;p&gt;Let&amp;rsquo;s go back to our Docker image used within the plugin tutorial and focus only on the repository secrets type. You can learn about all secret types in the &lt;a href=&#34;https://go-vela.github.io/docs/docs/usage/examples/secrets_internal/&#34;&gt;internal secrets example&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s go back to our Docker image used within the plugin tutorial and focus only on the repo secrets type. You can learn about all secret types in the &lt;a href=&#34;https://go-vela.github.io/docs/docs/usage/secrets/&#34;&gt;secrets usage section&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The pipeline we are looking at shows a few different patterns on how you can leverage adding and aliasing secrets in your pipeline.&lt;/p&gt;
 &lt;p&gt;However, this time we are going to remove the &lt;code&gt;username:&lt;/code&gt; and &lt;code&gt;password:&lt;/code&gt; YAML tags in the &lt;code&gt;parameter:&lt;/code&gt; block and replace them with secrets within the container environment.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;See it in action with examples!&lt;/strong&gt;&lt;/p&gt;
