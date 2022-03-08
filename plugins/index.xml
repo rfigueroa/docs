@@ -4177,6 +4177,227 @@ This has the added benefit of enabling others in the community to consume your p
     </item>
     
     <item>
+      <title>Plugins: SCP</title>
+      <link>https://go-vela.github.io/docs/plugins/registry/pipeline/scp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://go-vela.github.io/docs/plugins/registry/pipeline/scp/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;This plugin is part of the &lt;a href=&#34;https://www.openssh.com/&#34;&gt;OpenSSH&lt;/a&gt; suite of plugins which enables you to use the &lt;code&gt;scp&lt;/code&gt; binary in a Vela pipeline.&lt;/p&gt;
+&lt;p&gt;Source Code: &lt;a href=&#34;https://github.com/go-vela/vela-openssh&#34;&gt;https://github.com/go-vela/vela-openssh&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Registry: &lt;a href=&#34;https://hub.docker.com/r/target/vela-scp&#34;&gt;https://hub.docker.com/r/target/vela-scp&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;usage&#34;&gt;Usage&lt;/h2&gt;
+&lt;p&gt;Because the plugin is a thin wrapper around the &lt;a href=&#34;https://man.openbsd.org/scp&#34;&gt;&lt;code&gt;scp&lt;/code&gt;&lt;/a&gt; binary, the syntax and parameters follow from the &lt;a href=&#34;https://man.openbsd.org/scp&#34;&gt;OpenSSH manual&lt;/a&gt;. The plugin will take care of some basic secrets identity management tasks for you, most importantly is that when an identity file is provided as a secret the plugin will place the file into the filesystem and change the permissions to match what the binary expects, and then add it to the list of identity files tried as part of authentication. Additionally, if using a password or passphrase for authentication or for unlocking an identity file, the &lt;a href=&#34;https://linux.die.net/man/1/sshpass&#34;&gt;&lt;code&gt;sshpass&lt;/code&gt;&lt;/a&gt; binary will be used to provide those credentials without interactive user input.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Users should refrain from using latest as the tag for images.&lt;/p&gt;
+&lt;p&gt;It is recommended to use a semantically versioned tag instead.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;basic-usage&#34;&gt;Basic usage&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;steps&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;  &lt;/span&gt;- &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;scp basic usage&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;image&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;target/vela-scp:latest&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;pull&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;always&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;parameters&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;source&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;        &lt;/span&gt;- &lt;span style=&#34;color:#000&#34;&gt;./relative/path/to/file/in/vela/workspace&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;        &lt;/span&gt;- &lt;span style=&#34;color:#000&#34;&gt;a_user_name@some_remote_host_name:/absolute/path/on/remote/system&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;target&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;a_different_user@some_other_host:~&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;using-the-scp-schema-for-non-standard-ports&#34;&gt;Using the &lt;code&gt;scp://&lt;/code&gt; schema for non-standard ports&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
+  - name: scp to non-standard port
+    image: target/vela-scp:latest
+    pull: always
+    parameters:
+      source:
+        - ./relative/path/to/file/in/vela/workspace
+        - a_user_name@some_remote_host_name:/absolute/path/on/remote/system
+&lt;span style=&#34;color:#00a000&#34;&gt;+     target: scp://a_different_user@some_remote_host_name:12345/path
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;passing-additional-scp-flags&#34;&gt;Passing additional &lt;code&gt;scp&lt;/code&gt; flags&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
+  - name: override default scp flags
+    image: target/vela-scp:latest
+    pull: always
+    parameters:
+      source:
+        - ./relative/path/to/folder/in/vela/workspace
+      target: scp://a_different_user@some_remote_host_name:12345/path
+&lt;span style=&#34;color:#00a000&#34;&gt;+     scp_flag:
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+       - &amp;#34;-r&amp;#34;
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+       - &amp;#34;-o StrictHostKeyChecking=yes&amp;#34;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;using-a-password-for-authentication&#34;&gt;Using a password for authentication&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
+  - name: password for authentication
+    image: target/vela-scp:latest
+    pull: always
+&lt;span style=&#34;color:#00a000&#34;&gt;+   secrets:
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+     - source: my_non_user_account_password
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+       target: sshpass_password
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;    parameters:
+      source:
+        - ./relative/path/to/file/in/vela/workspace
+      target: scp://a_different_user@some_remote_host_name:12345/path
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;using-an-identity-file-without-a-passphrase-from-an-internal-secret&#34;&gt;Using an identity file (WITHOUT a passphrase) from an internal secret&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
+  - name: identity file contents from an internal secret
+    image: target/vela-scp:latest
+    pull: always
+&lt;span style=&#34;color:#00a000&#34;&gt;+   secrets:
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+     - source: my_non_user_account_id_rsa_file_contents
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+       target: identity_file_contents
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;    parameters:
+      source:
+        - ./relative/path/to/file/in/vela/workspace
+      target: scp://a_different_user@some_remote_host_name:12345/path
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;using-an-identity-file-with-a-passphrase-from-an-internal-secret&#34;&gt;Using an identity file (WITH a passphrase) from an internal secret&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
+  - name: identity file contents with passphrase from an internal secret
+    image: target/vela-scp:latest
+    pull: always
+&lt;span style=&#34;color:#00a000&#34;&gt;+   secrets:
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+     - source: my_non_user_account_id_rsa_file_contents
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+       target: identity_file_contents
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+     - source: my_non_user_account_id_rsa_passphrase
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+       target: sshpass_passphrase
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;    parameters:
+      source:
+        - ./relative/path/to/file/in/vela/workspace
+      target: scp://a_different_user@some_remote_host_name:12345/path
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;using-an-existing-identity-file-from-the-workspace&#34;&gt;Using an existing identity file from the workspace&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
+  - name: identity file from the workspace
+    image: target/vela-scp:latest
+    pull: always
+    parameters:
+      source:
+        - ./relative/path/to/file/in/vela/workspace
+      target: scp://a_different_user@some_remote_host_name:12345/path
+&lt;span style=&#34;color:#00a000&#34;&gt;+     identity_file_path: ./some/workspace/location/id_rsa
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;using-additional-secrets-in-other-parameters&#34;&gt;Using additional secrets in other parameters&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
+  - name: additional secrets in other parameters
+    image: target/vela-scp:latest
+    pull: always
+&lt;span style=&#34;color:#00a000&#34;&gt;+   secrets:
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+     - source: some_secret_user
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+       target: secret_user
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+     - source: some_secret_host
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+       target: secret_host
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+     - source: some_secret_port
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+       target: secret_port
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;    parameters:
+      source:
+        - ./relative/path/to/file/in/vela/workspace
+&lt;span style=&#34;color:#00a000&#34;&gt;+     target: scp://$SECRET_USER@$SECRET_HOST:$SECRET_PORT/path
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;using-the-container-without-the-plugin-logic&#34;&gt;Using the container without the plugin logic&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
+  - name: override plugin logic to use scp directly
+    image: target/vela-scp:latest
+    pull: always
+&lt;span style=&#34;color:#00a000&#34;&gt;+   commands:
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+     - scp -i ./some/existing/id_rsa ./relative/path/to/file/in/vela/workspace username@hostname:/path/
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;parameters--secrets&#34;&gt;Parameters &amp;amp; Secrets&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The plugin supports reading all parameters via environment variables or files.&lt;/p&gt;
+&lt;p&gt;Any values set from a file take precedence over values set from the environment.&lt;/p&gt;
+&lt;p&gt;Don&amp;rsquo;t confuse the source/target syntax of native secrets with the source and target parameters required for the scp binary.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;th&gt;Required&lt;/th&gt;
+&lt;th&gt;Accepts Multiple Values?&lt;/th&gt;
+&lt;th&gt;Default&lt;/th&gt;
+&lt;th&gt;Environment Variables&lt;/th&gt;
+&lt;th&gt;File Paths&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;source&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The source option from the &lt;a href=&#34;https://man.openbsd.org/scp&#34;&gt;&lt;code&gt;scp&lt;/code&gt; manual&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;✅&lt;/td&gt;
+&lt;td&gt;✅&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_SOURCE&lt;/code&gt;&lt;br&gt;&lt;code&gt;SOURCE&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;/vela/parameters/vela-scp/source&lt;/code&gt;&lt;br&gt;&lt;code&gt;/vela/secrets/vela-scp/source&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;target&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The target option from the &lt;a href=&#34;https://man.openbsd.org/scp&#34;&gt;&lt;code&gt;scp&lt;/code&gt; manual&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;✅&lt;/td&gt;
+&lt;td&gt;❌&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_TARGET&lt;/code&gt;&lt;br&gt;&lt;code&gt;TARGET&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;/vela/parameters/vela-scp/target&lt;/code&gt;&lt;br&gt;&lt;code&gt;/vela/secrets/vela-scp/target&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;identity_file_path&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;A path for where the &lt;a href=&#34;https://man.openbsd.org/scp&#34;&gt;&lt;code&gt;scp&lt;/code&gt;&lt;/a&gt; binary should look for existing identity files.&lt;br&gt;These are NOT auto created by the plugin as they must be created and managed by a user and only referenced here.&lt;/td&gt;
+&lt;td&gt;❌&lt;/td&gt;
+&lt;td&gt;✅&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_IDENTITY_FILE_PATH&lt;/code&gt;&lt;br&gt;&lt;code&gt;IDENTITY_FILE_PATH&lt;/code&gt;&lt;br&gt;&lt;code&gt;PARAMETER_SSH_KEY_PATH&lt;/code&gt;&lt;br&gt;&lt;code&gt;SSH_KEY_PATH&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;/vela/parameters/vela-scp/identity-file.path&lt;/code&gt;&lt;br&gt;&lt;code&gt;/vela/secrets/vela-scp/identity-file.path&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;identity_file_contents&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The raw contents of an identity file for use with &lt;a href=&#34;https://man.openbsd.org/scp&#34;&gt;&lt;code&gt;scp&lt;/code&gt;&lt;/a&gt;.&lt;br&gt;The plugin will take the raw contents and place it in a temporary location in the workspace with the correct permissions and inject it as an identity file to use during execution.&lt;/td&gt;
+&lt;td&gt;❌&lt;/td&gt;
+&lt;td&gt;❌&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_IDENTITY_FILE_CONTENTS&lt;/code&gt;&lt;br&gt;&lt;code&gt;IDENTITY_FILE_CONTENTS&lt;/code&gt;&lt;br&gt;&lt;code&gt;PARAMETER_SSH_KEY&lt;/code&gt;&lt;br&gt;&lt;code&gt;SSH_KEY&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;/vela/parameters/vela-scp/identity-file.contents&lt;/code&gt;&lt;br&gt;&lt;code&gt;/vela/secrets/vela-scp/identity-file.contents&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;scp_flag&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Any additional options from the &lt;a href=&#34;https://man.openbsd.org/scp&#34;&gt;&lt;code&gt;scp&lt;/code&gt; manual&lt;/a&gt;.&lt;br&gt;These will override the default options and be placed between the identity file options and the source/target options at the end.&lt;/td&gt;
+&lt;td&gt;❌&lt;/td&gt;
+&lt;td&gt;✅&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;-o StrictHostKeyChecking=no&lt;/code&gt;&lt;br&gt;&lt;code&gt;-o UserKnownHostsFile=/dev/null&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_SCP_FLAG&lt;/code&gt;&lt;br&gt;&lt;code&gt;SCP_FLAG&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;/vela/parameters/vela-scp/scp.flag&lt;/code&gt;&lt;br&gt;&lt;code&gt;/vela/secrets/vela-scp/scp.flag&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;sshpass_password&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;If any systems require a password for authentication it can be specified here, and the &lt;a href=&#34;https://linux.die.net/man/1/sshpass&#34;&gt;&lt;code&gt;sshpass&lt;/code&gt;&lt;/a&gt; binary will be used in conjunction with &lt;a href=&#34;https://man.openbsd.org/scp&#34;&gt;&lt;code&gt;scp&lt;/code&gt;&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;❌&lt;/td&gt;
+&lt;td&gt;❌&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_SSHPASS_PASSWORD&lt;/code&gt;&lt;br&gt;&lt;code&gt;PARAMETER_PASSWORD&lt;/code&gt;&lt;br&gt;&lt;code&gt;SSHPASS_PASSWORD&lt;/code&gt;&lt;br&gt;&lt;code&gt;PASSWORD&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;/vela/parameters/vela-scp/sshpass.password&lt;/code&gt;&lt;br&gt;&lt;code&gt;/vela/secrets/vela-scp/sshpass.password&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;sshpass_passphrase&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;If any identity files require a passphrase for authentication it can be specified here, and the &lt;a href=&#34;https://linux.die.net/man/1/sshpass&#34;&gt;&lt;code&gt;sshpass&lt;/code&gt;&lt;/a&gt; binary will be used in conjunction with &lt;a href=&#34;https://man.openbsd.org/scp&#34;&gt;&lt;code&gt;scp&lt;/code&gt;&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;❌&lt;/td&gt;
+&lt;td&gt;❌&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_SSHPASS_PASSPHRASE&lt;/code&gt;&lt;br&gt;&lt;code&gt;SSHPASS_PASSPHRASE&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;/vela/parameters/vela-scp/sshpass.passphrase&lt;/code&gt;&lt;br&gt;&lt;code&gt;/vela/secrets/vela-scp/sshpass.passphrase&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;sshpass_flag&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Any additional options from the &lt;a href=&#34;https://linux.die.net/man/1/sshpass&#34;&gt;&lt;code&gt;sshpass&lt;/code&gt; manual&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;❌&lt;/td&gt;
+&lt;td&gt;✅&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_SSHPASS_FLAG&lt;/code&gt;&lt;br&gt;&lt;code&gt;SSHPASS_FLAG&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;/vela/parameters/vela-scp/sshpass.flag&lt;/code&gt;&lt;br&gt;&lt;code&gt;/vela/secrets/vela-scp/sshpass.flag&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Plugins: Slack</title>
       <link>https://go-vela.github.io/docs/plugins/registry/pipeline/slack/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -4401,6 +4622,226 @@ This has the added benefit of enabling others in the community to consume your p
 &lt;span style=&#34;color:#00a000&#34;&gt;+     log_level: trace
 &lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;      text: &amp;#34;Hello World!&amp;#34;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Below are a list of common problems and how to solve them:&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Plugins: SSH</title>
+      <link>https://go-vela.github.io/docs/plugins/registry/pipeline/ssh/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://go-vela.github.io/docs/plugins/registry/pipeline/ssh/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;This plugin is part of the &lt;a href=&#34;https://www.openssh.com/&#34;&gt;OpenSSH&lt;/a&gt; suite of plugins which enables you to use the &lt;code&gt;ssh&lt;/code&gt; binary in a Vela pipeline.&lt;/p&gt;
+&lt;p&gt;Source Code: &lt;a href=&#34;https://github.com/go-vela/vela-openssh&#34;&gt;https://github.com/go-vela/vela-openssh&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Registry: &lt;a href=&#34;https://hub.docker.com/r/target/vela-ssh&#34;&gt;https://hub.docker.com/r/target/vela-ssh&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;usage&#34;&gt;Usage&lt;/h2&gt;
+&lt;p&gt;Because the plugin is a thin wrapper around the &lt;a href=&#34;https://man.openbsd.org/ssh&#34;&gt;&lt;code&gt;ssh&lt;/code&gt;&lt;/a&gt; binary, the syntax and parameters follow from the &lt;a href=&#34;https://man.openbsd.org/ssh&#34;&gt;OpenSSH manual&lt;/a&gt;. The plugin will take care of some basic secrets identity management tasks for you, most importantly is that when an identity file is provided as a secret the plugin will place the file into the filesystem and change the permissions to match what the binary expects, and then add it to the list of identity files tried as part of authentication. Additionally, if using a password or passphrase for authentication or for unlocking an identity file, the &lt;a href=&#34;https://linux.die.net/man/1/sshpass&#34;&gt;&lt;code&gt;sshpass&lt;/code&gt;&lt;/a&gt; binary will be used to provide those credentials without interactive user input.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Users should refrain from using latest as the tag for images.&lt;/p&gt;
+&lt;p&gt;It is recommended to use a semantically versioned tag instead.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;basic-usage-with-no-auth-methods&#34;&gt;Basic usage with no-auth methods&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;steps&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;  &lt;/span&gt;- &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;ssh using no-auth&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;image&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;target/vela-ssh:latest&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;pull&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;always&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;parameters&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;destination&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;a_different_user@some_other_host&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;command&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;        &lt;/span&gt;- &lt;span style=&#34;color:#000&#34;&gt;echo &amp;#34;Hello Vela!&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;        &lt;/span&gt;- &lt;span style=&#34;color:#000&#34;&gt;/some/path/to/a/remote/script.sh&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;using-the-ssh-schema-for-non-standard-ports&#34;&gt;Using the &lt;code&gt;ssh://&lt;/code&gt; schema for non-standard ports&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
+  - name: ssh to non-standard port
+    image: target/vela-ssh:latest
+    pull: always
+    parameters:
+&lt;span style=&#34;color:#00a000&#34;&gt;+     destination: ssh://a_different_user@some_remote_host_name:12345
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;      command:
+        - echo &amp;#34;Hello Vela!&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;passing-additional-ssh-flags&#34;&gt;Passing additional &lt;code&gt;ssh&lt;/code&gt; flags&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
+  - name: override default ssh flags
+    image: target/vela-ssh:latest
+    pull: always
+    parameters:
+      destination: ssh://a_different_user@some_remote_host_name:12345
+      command:
+        - echo &amp;#34;Hello Vela!&amp;#34;
+&lt;span style=&#34;color:#00a000&#34;&gt;+     ssh_flag:
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+       - &amp;#34;-o StrictHostKeyChecking=yes&amp;#34;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;using-a-password-for-authentication&#34;&gt;Using a password for authentication&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
+  - name: password for authentication
+    image: target/vela-ssh:latest
+    pull: always
+&lt;span style=&#34;color:#00a000&#34;&gt;+   secrets:
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+     - source: my_non_user_account_password
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+       target: sshpass_password
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;    parameters:
+      destination: ssh://a_different_user@some_remote_host_name:12345
+      command:
+        - echo &amp;#34;Hello Vela!&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;using-an-identity-file-without-a-passphrase-from-an-internal-secret&#34;&gt;Using an identity file (WITHOUT a passphrase) from an internal secret&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
+  - name: identity file contents from an internal secret
+    image: target/vela-ssh:latest
+    pull: always
+&lt;span style=&#34;color:#00a000&#34;&gt;+   secrets:
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+     - source: my_non_user_account_id_rsa_file_contents
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+       target: identity_file_contents
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;    parameters:
+      destination: ssh://a_different_user@some_remote_host_name:12345
+      command:
+        - echo &amp;#34;Hello Vela!&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;using-an-identity-file-with-a-passphrase-from-an-internal-secret&#34;&gt;Using an identity file (WITH a passphrase) from an internal secret&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
+  - name: identity file contents with passphrase from an internal secret
+    image: target/vela-ssh:latest
+    pull: always
+&lt;span style=&#34;color:#00a000&#34;&gt;+   secrets:
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+     - source: my_non_user_account_id_rsa_file_contents
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+       target: identity_file_contents
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+     - source: my_non_user_account_id_rsa_passphrase
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+       target: sshpass_passphrase
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;    parameters:
+      destination: ssh://a_different_user@some_remote_host_name:12345
+      command:
+        - echo &amp;#34;Hello Vela!&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;using-an-existing-identity-file-from-the-workspace&#34;&gt;Using an existing identity file from the workspace&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
+  - name: identity file from the workspace
+    image: target/vela-ssh:latest
+    pull: always
+    parameters:
+      destination: ssh://a_different_user@some_remote_host_name:12345
+      command:
+        - echo &amp;#34;Hello Vela!&amp;#34;
+&lt;span style=&#34;color:#00a000&#34;&gt;+     identity_file_path: ./some/workspace/location/id_rsa
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;using-additional-secrets-in-other-parameters&#34;&gt;Using additional secrets in other parameters&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
+  - name: additional secrets in other parameters
+    image: target/vela-ssh:latest
+    pull: always
+&lt;span style=&#34;color:#00a000&#34;&gt;+   secrets:
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+     - source: some_secret_user
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+       target: secret_user
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+     - source: some_secret_host
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+       target: secret_host
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+     - source: some_secret_port
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+       target: secret_port
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;    parameters:
+&lt;span style=&#34;color:#00a000&#34;&gt;+     destination: ssh://$SECRET_USER@$SECRET_HOST:$SECRET_PORT
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;&lt;/span&gt;      command:
+        - echo &amp;#34;Hello Vela!&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;using-the-container-without-the-plugin-logic&#34;&gt;Using the container without the plugin logic&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;steps:
+  - name: override plugin logic to use ssh directly
+    image: target/vela-ssh:latest
+    pull: always
+    # Note that this ISN&amp;#39;T part of the parameters section.
+&lt;span style=&#34;color:#00a000&#34;&gt;+   commands:
+&lt;/span&gt;&lt;span style=&#34;color:#00a000&#34;&gt;+     - ssh -i ./some/existing/id_rsa username@hostname some-bin
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;parameters--secrets&#34;&gt;Parameters &amp;amp; Secrets&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The plugin supports reading all parameters via environment variables or files.&lt;/p&gt;
+&lt;p&gt;Any values set from a file take precedence over values set from the environment.&lt;/p&gt;
+&lt;p&gt;Don&amp;rsquo;t confuse the &lt;code&gt;commands&lt;/code&gt; parameter in a traditional Vela step with the &lt;code&gt;command&lt;/code&gt; option required for the ssh binary.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;th&gt;Required&lt;/th&gt;
+&lt;th&gt;Accepts Multiple Values?&lt;/th&gt;
+&lt;th&gt;Default&lt;/th&gt;
+&lt;th&gt;Environment Variables&lt;/th&gt;
+&lt;th&gt;File Paths&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;destination&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The destination option from the &lt;a href=&#34;https://man.openbsd.org/ssh&#34;&gt;&lt;code&gt;ssh&lt;/code&gt; manual&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;✅&lt;/td&gt;
+&lt;td&gt;❌&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_DESTINATION&lt;/code&gt;&lt;br&gt;&lt;code&gt;DESTINATION&lt;/code&gt;&lt;br&gt;&lt;code&gt;PARAMETER_HOST&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;/vela/parameters/vela-ssh/destination&lt;/code&gt;&lt;br&gt;&lt;code&gt;/vela/secrets/vela-ssh/destination&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;command&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The command option from the &lt;a href=&#34;https://man.openbsd.org/ssh&#34;&gt;&lt;code&gt;ssh&lt;/code&gt; manual&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;✅&lt;/td&gt;
+&lt;td&gt;✅&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_COMMAND&lt;/code&gt;&lt;br&gt;&lt;code&gt;COMMAND&lt;/code&gt;&lt;br&gt;&lt;code&gt;PARAMETER_SCRIPT&lt;/code&gt;&lt;br&gt;&lt;code&gt;SCRIPT&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;/vela/parameters/vela-ssh/command&lt;/code&gt;&lt;br&gt;&lt;code&gt;/vela/secrets/vela-ssh/command&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;identity_file_path&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;A path for where the &lt;a href=&#34;https://man.openbsd.org/ssh&#34;&gt;&lt;code&gt;ssh&lt;/code&gt;&lt;/a&gt; binary should look for existing identity files.&lt;br&gt;These are NOT auto created by the plugin as they must be created and managed by a user and only referenced here.&lt;/td&gt;
+&lt;td&gt;❌&lt;/td&gt;
+&lt;td&gt;✅&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_IDENTITY_FILE_PATH&lt;/code&gt;&lt;br&gt;&lt;code&gt;IDENTITY_FILE_PATH&lt;/code&gt;&lt;br&gt;&lt;code&gt;PARAMETER_SSH_KEY_PATH&lt;/code&gt;&lt;br&gt;&lt;code&gt;SSH_KEY_PATH&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;/vela/parameters/vela-ssh/identity-file.path&lt;/code&gt;&lt;br&gt;&lt;code&gt;/vela/secrets/vela-ssh/identity-file.path&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;identity_file_contents&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The raw contents of an identity file for use with &lt;a href=&#34;https://man.openbsd.org/ssh&#34;&gt;&lt;code&gt;ssh&lt;/code&gt;&lt;/a&gt;.&lt;br&gt;The plugin will take the raw contents and place it in a temporary location in the workspace with the correct permissions and inject it as an identity file to use during execution.&lt;/td&gt;
+&lt;td&gt;❌&lt;/td&gt;
+&lt;td&gt;❌&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_IDENTITY_FILE_CONTENTS&lt;/code&gt;&lt;br&gt;&lt;code&gt;IDENTITY_FILE_CONTENTS&lt;/code&gt;&lt;br&gt;&lt;code&gt;PARAMETER_SSH_KEY&lt;/code&gt;&lt;br&gt;&lt;code&gt;SSH_KEY&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;/vela/parameters/vela-ssh/identity-file.contents&lt;/code&gt;&lt;br&gt;&lt;code&gt;/vela/secrets/vela-ssh/identity-file.contents&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;ssh_flag&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Any additional options from the &lt;a href=&#34;https://man.openbsd.org/ssh&#34;&gt;&lt;code&gt;ssh&lt;/code&gt; manual&lt;/a&gt;.&lt;br&gt;These will override the default options and be placed between the identity file options and the destination/command options at the end.&lt;/td&gt;
+&lt;td&gt;❌&lt;/td&gt;
+&lt;td&gt;✅&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;-o StrictHostKeyChecking=no&lt;/code&gt;&lt;br&gt;&lt;code&gt;-o UserKnownHostsFile=/dev/null&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_SSH_FLAG&lt;/code&gt;&lt;br&gt;&lt;code&gt;SSH_FLAG&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;/vela/parameters/vela-ssh/ssh.flag&lt;/code&gt;&lt;br&gt;&lt;code&gt;/vela/secrets/vela-ssh/ssh.flag&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;sshpass_password&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;If any systems require a password for authentication it can be specified here, and the &lt;a href=&#34;https://linux.die.net/man/1/sshpass&#34;&gt;&lt;code&gt;sshpass&lt;/code&gt;&lt;/a&gt; binary will be used in conjunction with &lt;a href=&#34;https://man.openbsd.org/ssh&#34;&gt;&lt;code&gt;ssh&lt;/code&gt;&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;❌&lt;/td&gt;
+&lt;td&gt;❌&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_SSHPASS_PASSWORD&lt;/code&gt;&lt;br&gt;&lt;code&gt;PARAMETER_PASSWORD&lt;/code&gt;&lt;br&gt;&lt;code&gt;SSHPASS_PASSWORD&lt;/code&gt;&lt;br&gt;&lt;code&gt;PASSWORD&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;/vela/parameters/vela-ssh/sshpass.password&lt;/code&gt;&lt;br&gt;&lt;code&gt;/vela/secrets/vela-ssh/sshpass.password&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;sshpass_passphrase&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;If any identity files require a passphrase for authentication it can be specified here, and the &lt;a href=&#34;https://linux.die.net/man/1/sshpass&#34;&gt;&lt;code&gt;sshpass&lt;/code&gt;&lt;/a&gt; binary will be used in conjunction with &lt;a href=&#34;https://man.openbsd.org/ssh&#34;&gt;&lt;code&gt;ssh&lt;/code&gt;&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;❌&lt;/td&gt;
+&lt;td&gt;❌&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_SSHPASS_PASSPHRASE&lt;/code&gt;&lt;br&gt;&lt;code&gt;SSHPASS_PASSPHRASE&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;/vela/parameters/vela-ssh/sshpass.passphrase&lt;/code&gt;&lt;br&gt;&lt;code&gt;/vela/secrets/vela-ssh/sshpass.passphrase&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;sshpass_flag&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Any additional options from the &lt;a href=&#34;https://linux.die.net/man/1/sshpass&#34;&gt;&lt;code&gt;sshpass&lt;/code&gt; manual&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;❌&lt;/td&gt;
+&lt;td&gt;✅&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PARAMETER_SSHPASS_FLAG&lt;/code&gt;&lt;br&gt;&lt;code&gt;SSHPASS_FLAG&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;/vela/parameters/vela-ssh/sshpass.flag&lt;/code&gt;&lt;br&gt;&lt;code&gt;/vela/secrets/vela-ssh/sshpass.flag&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 
       </description>
     </item>

@@ -33,7 +33,7 @@ steps:- name:delete_artifactsimage:target/vela-artifactory:latestpull:alwayspara
 steps:- name:set_properties_artifactsimage:target/vela-artifactory:latestpull:alwaysparameters:action:set-proppath:libs-snapshot-local/foo.txtprops:- name:singlevalue:foo- name:multiplevalues:- bar- bazurl:http://localhost:8081/artifactorySample of uploading an artifact:" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://go-vela.github.io/docs/plugins/registry/pipeline/artifactory/" />
-<meta property="article:modified_time" content="2021-01-13T15:05:51-06:00" />
+<meta property="article:modified_time" content="2022-03-08T10:43:11-08:00" />
 <meta itemprop="name" content="Artifactory">
 <meta itemprop="description" content="Description This plugin enables you to manage artifacts in Artifactory in a Vela pipeline.
 Source Code: https://github.com/go-vela/vela-artifactory
@@ -45,7 +45,7 @@ It is recommended to use a semantically versioned tag instead.
 steps:- name:copy_artifactsimage:target/vela-artifactory:latestpull:alwaysparameters:action:copypath:libs-snapshot-local/foo.txttarget:libs-snapshot-local/bar.txturl:http://localhost:8081/artifactorySample of deleting an artifact:
 steps:- name:delete_artifactsimage:target/vela-artifactory:latestpull:alwaysparameters:action:deletepath:libs-snapshot-local/foo.txturl:http://localhost:8081/artifactorySample of setting properties on an artifact:
 steps:- name:set_properties_artifactsimage:target/vela-artifactory:latestpull:alwaysparameters:action:set-proppath:libs-snapshot-local/foo.txtprops:- name:singlevalue:foo- name:multiplevalues:- bar- bazurl:http://localhost:8081/artifactorySample of uploading an artifact:">
-<meta itemprop="dateModified" content="2021-01-13T15:05:51-06:00" />
+<meta itemprop="dateModified" content="2022-03-08T10:43:11-08:00" />
 <meta itemprop="wordCount" content="776">
 
 
@@ -490,7 +490,19 @@ steps:- name:set_properties_artifactsimage:target/vela-artifactory:latestpull:al
       
       
       
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginsregistrypipelinescp" href="/docs/plugins/registry/pipeline/scp/">SCP</a>
+      
+      
+      
+      
+      
       <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginsregistrypipelineslack" href="/docs/plugins/registry/pipeline/slack/">Slack</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginsregistrypipelinessh" href="/docs/plugins/registry/pipeline/ssh/">SSH</a>
       
       
       
@@ -1166,7 +1178,7 @@ steps:- name:set_properties_artifactsimage:target/vela-artifactory:latestpull:al
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified January 13, 2021: <a  href="https://github.com/go-vela/docs/commit/8672a3955650232bed0b8d390565e9ae6d317f76">refactor: flatten plugin documentation (#193) (8672a395)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified March 8, 2022: <a  href="https://github.com/go-vela/docs/commit/fe29de8fe5e7cd72640caaeb08d7e459e22ee6bc">feat(openssh): Add SSH &amp; SCP documentation (#287) (fe29de8f)</a>
 </div>
 </div>
 

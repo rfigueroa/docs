@@ -20,46 +20,31 @@
 <link rel="icon" type="image/png" href="/docs/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/docs/favicons/android-192x192.png"sizes="192x192">
 
-<title>Build Summary | Vela</title><meta property="og:title" content="Build Summary" />
-<meta property="og:description" content="Description This plugin enables you to provide a summary of a build in a pipeline.
-Source Code: https://github.com/go-vela/vela-build-summary
-Registry: https://hub.docker.com/r/target/vela-build-summary
-Usage  NOTE:
-Users should refrain from using latest as the tag for the Docker image.
-It is recommended to use a semantically versioned tag instead.
- Sample of outputting a summary for the current build:
-steps:- name:build-summaryimage:target/vela-build-summary:latestpull:alwayssecrets:[build_summary_token ]Sample of outputting a summary for an existing build:
-steps: - name: build-summary image: target/vela-build-summary:latest pull: always secrets: [ build_summary_token ] parameters: &#43; number: 1 Sample of outputting a summary for an existing build in a different repo:" />
+<title>SCP | Vela</title><meta property="og:title" content="SCP" />
+<meta property="og:description" content="Description This plugin is part of the OpenSSH suite of plugins which enables you to use the scp binary in a Vela pipeline.
+Source Code: https://github.com/go-vela/vela-openssh
+Registry: https://hub.docker.com/r/target/vela-scp
+Usage Because the plugin is a thin wrapper around the scp binary, the syntax and parameters follow from the OpenSSH manual. The plugin will take care of some basic secrets identity management tasks for you, most importantly is that when an identity file is provided as a secret the plugin will place the file into the filesystem and change the permissions to match what the binary expects, and then add it to the list of identity files tried as part of authentication." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://go-vela.github.io/docs/plugins/registry/pipeline/build-summary/" />
+<meta property="og:url" content="https://go-vela.github.io/docs/plugins/registry/pipeline/scp/" />
 <meta property="article:modified_time" content="2022-03-08T10:43:11-08:00" />
-<meta itemprop="name" content="Build Summary">
-<meta itemprop="description" content="Description This plugin enables you to provide a summary of a build in a pipeline.
-Source Code: https://github.com/go-vela/vela-build-summary
-Registry: https://hub.docker.com/r/target/vela-build-summary
-Usage  NOTE:
-Users should refrain from using latest as the tag for the Docker image.
-It is recommended to use a semantically versioned tag instead.
- Sample of outputting a summary for the current build:
-steps:- name:build-summaryimage:target/vela-build-summary:latestpull:alwayssecrets:[build_summary_token ]Sample of outputting a summary for an existing build:
-steps: - name: build-summary image: target/vela-build-summary:latest pull: always secrets: [ build_summary_token ] parameters: &#43; number: 1 Sample of outputting a summary for an existing build in a different repo:">
+<meta itemprop="name" content="SCP">
+<meta itemprop="description" content="Description This plugin is part of the OpenSSH suite of plugins which enables you to use the scp binary in a Vela pipeline.
+Source Code: https://github.com/go-vela/vela-openssh
+Registry: https://hub.docker.com/r/target/vela-scp
+Usage Because the plugin is a thin wrapper around the scp binary, the syntax and parameters follow from the OpenSSH manual. The plugin will take care of some basic secrets identity management tasks for you, most importantly is that when an identity file is provided as a secret the plugin will place the file into the filesystem and change the permissions to match what the binary expects, and then add it to the list of identity files tried as part of authentication.">
 <meta itemprop="dateModified" content="2022-03-08T10:43:11-08:00" />
-<meta itemprop="wordCount" content="417">
+<meta itemprop="wordCount" content="752">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Build Summary"/>
-<meta name="twitter:description" content="Description This plugin enables you to provide a summary of a build in a pipeline.
-Source Code: https://github.com/go-vela/vela-build-summary
-Registry: https://hub.docker.com/r/target/vela-build-summary
-Usage  NOTE:
-Users should refrain from using latest as the tag for the Docker image.
-It is recommended to use a semantically versioned tag instead.
- Sample of outputting a summary for the current build:
-steps:- name:build-summaryimage:target/vela-build-summary:latestpull:alwayssecrets:[build_summary_token ]Sample of outputting a summary for an existing build:
-steps: - name: build-summary image: target/vela-build-summary:latest pull: always secrets: [ build_summary_token ] parameters: &#43; number: 1 Sample of outputting a summary for an existing build in a different repo:"/>
+<meta name="twitter:title" content="SCP"/>
+<meta name="twitter:description" content="Description This plugin is part of the OpenSSH suite of plugins which enables you to use the scp binary in a Vela pipeline.
+Source Code: https://github.com/go-vela/vela-openssh
+Registry: https://hub.docker.com/r/target/vela-scp
+Usage Because the plugin is a thin wrapper around the scp binary, the syntax and parameters follow from the OpenSSH manual. The plugin will take care of some basic secrets identity management tasks for you, most importantly is that when an identity file is provided as a secret the plugin will place the file into the filesystem and change the permissions to match what the binary expects, and then add it to the list of identity files tried as part of authentication."/>
 
 
 
@@ -76,7 +61,7 @@ steps: - name: build-summary image: target/vela-build-summary:latest pull: alway
   crossorigin="anonymous"></script>
 
 
-    <title>Build Summary | Vela</title>
+    <title>SCP | Vela</title>
   </head>
   <body class="td-page">
     <header>
@@ -427,7 +412,7 @@ steps: - name: build-summary image: target/vela-build-summary:latest pull: alway
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docspluginsregistrypipelinebuild-summary" href="/docs/plugins/registry/pipeline/build-summary/">Build Summary</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginsregistrypipelinebuild-summary" href="/docs/plugins/registry/pipeline/build-summary/">Build Summary</a>
       
       
       
@@ -487,7 +472,7 @@ steps: - name: build-summary image: target/vela-build-summary:latest pull: alway
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docspluginsregistrypipelinescp" href="/docs/plugins/registry/pipeline/scp/">SCP</a>
+      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docspluginsregistrypipelinescp" href="/docs/plugins/registry/pipeline/scp/">SCP</a>
       
       
       
@@ -629,8 +614,8 @@ steps: - name: build-summary image: target/vela-build-summary:latest pull: alway
 
 
 
-<a href="https://github.com/go-vela/docs/edit/master/content/plugins/registry/pipeline/build-summary.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
-<a href="https://github.com/go-vela/docs/issues/new?title=Build%20Summary" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+<a href="https://github.com/go-vela/docs/edit/master/content/plugins/registry/pipeline/scp.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+<a href="https://github.com/go-vela/docs/issues/new?title=SCP" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
 
 </div>
 
@@ -681,7 +666,7 @@ steps: - name: build-summary image: target/vela-build-summary:latest pull: alway
 
 
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="https://go-vela.github.io/docs/plugins/registry/pipeline/build-summary/">Build Summary</a>
+	<a href="https://go-vela.github.io/docs/plugins/registry/pipeline/scp/">SCP</a>
 </li>
 
 	</ol>
@@ -689,176 +674,216 @@ steps: - name: build-summary image: target/vela-build-summary:latest pull: alway
 
             
 <div class="td-content">
-	<h1>Build Summary</h1>
+	<h1>SCP</h1>
 	
 	<h2 id="description">Description</h2>
-<p>This plugin enables you to provide a summary of a build in a pipeline.</p>
-<p>Source Code: <a href="https://github.com/go-vela/vela-build-summary">https://github.com/go-vela/vela-build-summary</a></p>
-<p>Registry: <a href="https://hub.docker.com/r/target/vela-build-summary">https://hub.docker.com/r/target/vela-build-summary</a></p>
+<p>This plugin is part of the <a href="https://www.openssh.com/">OpenSSH</a> suite of plugins which enables you to use the <code>scp</code> binary in a Vela pipeline.</p>
+<p>Source Code: <a href="https://github.com/go-vela/vela-openssh">https://github.com/go-vela/vela-openssh</a></p>
+<p>Registry: <a href="https://hub.docker.com/r/target/vela-scp">https://hub.docker.com/r/target/vela-scp</a></p>
 <h2 id="usage">Usage</h2>
+<p>Because the plugin is a thin wrapper around the <a href="https://man.openbsd.org/scp"><code>scp</code></a> binary, the syntax and parameters follow from the <a href="https://man.openbsd.org/scp">OpenSSH manual</a>. The plugin will take care of some basic secrets identity management tasks for you, most importantly is that when an identity file is provided as a secret the plugin will place the file into the filesystem and change the permissions to match what the binary expects, and then add it to the list of identity files tried as part of authentication. Additionally, if using a password or passphrase for authentication or for unlocking an identity file, the <a href="https://linux.die.net/man/1/sshpass"><code>sshpass</code></a> binary will be used to provide those credentials without interactive user input.</p>
 <blockquote>
 <p><strong>NOTE:</strong></p>
-<p>Users should refrain from using latest as the tag for the Docker image.</p>
+<p>Users should refrain from using latest as the tag for images.</p>
 <p>It is recommended to use a semantically versioned tag instead.</p>
 </blockquote>
-<p>Sample of outputting a summary for the current build:</p>
+<h3 id="basic-usage">Basic usage</h3>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">steps</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span>- <span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">build-summary</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">image</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">target/vela-build-summary:latest</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span>- <span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">scp basic usage</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">image</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">target/vela-scp:latest</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">pull</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">always</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">secrets</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">[</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">build_summary_token ]</span><span style="color:#f8f8f8;text-decoration:underline">
-</span></code></pre></div><p>Sample of outputting a summary for an existing build:</p>
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">parameters</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">source</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">        </span>- <span style="color:#000">./relative/path/to/file/in/vela/workspace</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">        </span>- <span style="color:#000">a_user_name@some_remote_host_name:/absolute/path/on/remote/system</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">target</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">a_different_user@some_other_host:~</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></code></pre></div><h3 id="using-the-scp-schema-for-non-standard-ports">Using the <code>scp://</code> schema for non-standard ports</h3>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
-  - name: build-summary
-    image: target/vela-build-summary:latest
+  - name: scp to non-standard port
+    image: target/vela-scp:latest
     pull: always
-    secrets: [ build_summary_token ]
     parameters:
-<span style="color:#00a000">+     number: 1
-</span></code></pre></div><p>Sample of outputting a summary for an existing build in a different repo:</p>
+      source:
+        - ./relative/path/to/file/in/vela/workspace
+        - a_user_name@some_remote_host_name:/absolute/path/on/remote/system
+<span style="color:#00a000">+     target: scp://a_different_user@some_remote_host_name:12345/path
+</span></code></pre></div><h3 id="passing-additional-scp-flags">Passing additional <code>scp</code> flags</h3>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
-  - name: build-summary
-    image: target/vela-build-summary:latest
+  - name: override default scp flags
+    image: target/vela-scp:latest
     pull: always
-    secrets: [ build_summary_token ]
     parameters:
-      number: 1
-<span style="color:#00a000">+     org: octocat
-</span><span style="color:#00a000">+     repo: hello-world
-</span></code></pre></div><h2 id="secrets">Secrets</h2>
-<blockquote>
-<p><strong>NOTE:</strong> Users should refrain from configuring sensitive information in your pipeline in plain text.</p>
-</blockquote>
-<h3 id="internal">Internal</h3>
-<p>The plugin accepts the following <code>parameters</code> for authentication:</p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Environment Variable Configuration</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>token</code></td>
-<td><code>PARAMETER_TOKEN</code>, <code>BUILD_SUMMARY_TOKEN</code></td>
-</tr>
-</tbody>
-</table>
-<p>Users can use <a href="https://go-vela.github.io/docs/tour/secrets/">Vela internal secrets</a> to substitute these sensitive values at runtime:</p>
+      source:
+        - ./relative/path/to/folder/in/vela/workspace
+      target: scp://a_different_user@some_remote_host_name:12345/path
+<span style="color:#00a000">+     scp_flag:
+</span><span style="color:#00a000">+       - &#34;-r&#34;
+</span><span style="color:#00a000">+       - &#34;-o StrictHostKeyChecking=yes&#34;
+</span></code></pre></div><h3 id="using-a-password-for-authentication">Using a password for authentication</h3>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
-  - name: build-summary
-    image: target/vela-build-summary:latest
+  - name: password for authentication
+    image: target/vela-scp:latest
     pull: always
-<span style="color:#00a000">+   secrets: [ build_summary_token ]
-</span><span style="color:#00a000"></span><span style="color:#a40000">-   parameters:
-</span><span style="color:#a40000">-     token: superSecretToken
-</span></code></pre></div><blockquote>
-<p>This example will add the secret to the <code>build-summary</code> step as an environment variable:</p>
-<ul>
-<li><code>BUILD_SUMMARY_TOKEN=&lt;value&gt;</code></li>
-</ul>
-</blockquote>
-<h3 id="external">External</h3>
-<p>The plugin accepts the following files for authentication:</p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Volume Configuration</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>token</code></td>
-<td><code>/vela/parameters/build-summary/token</code>, <code>/vela/secrets/build-summary/token</code></td>
-</tr>
-</tbody>
-</table>
-<p>Users can use <a href="https://go-vela.github.io/docs/concepts/pipeline/secrets/origin/">Vela external secrets</a> to substitute these sensitive values at runtime:</p>
+<span style="color:#00a000">+   secrets:
+</span><span style="color:#00a000">+     - source: my_non_user_account_password
+</span><span style="color:#00a000">+       target: sshpass_password
+</span><span style="color:#00a000"></span>    parameters:
+      source:
+        - ./relative/path/to/file/in/vela/workspace
+      target: scp://a_different_user@some_remote_host_name:12345/path
+</code></pre></div><h3 id="using-an-identity-file-without-a-passphrase-from-an-internal-secret">Using an identity file (WITHOUT a passphrase) from an internal secret</h3>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
-  - name: build-summary
-    image: target/vela-build-summary:latest
+  - name: identity file contents from an internal secret
+    image: target/vela-scp:latest
     pull: always
-<span style="color:#a40000">-   parameters:
-</span><span style="color:#a40000">-     token: superSecretToken
-</span></code></pre></div><blockquote>
-<p>This example will read the secret values in the volume stored at <code>/vela/secrets/</code></p>
-</blockquote>
-<h2 id="parameters">Parameters</h2>
+<span style="color:#00a000">+   secrets:
+</span><span style="color:#00a000">+     - source: my_non_user_account_id_rsa_file_contents
+</span><span style="color:#00a000">+       target: identity_file_contents
+</span><span style="color:#00a000"></span>    parameters:
+      source:
+        - ./relative/path/to/file/in/vela/workspace
+      target: scp://a_different_user@some_remote_host_name:12345/path
+</code></pre></div><h3 id="using-an-identity-file-with-a-passphrase-from-an-internal-secret">Using an identity file (WITH a passphrase) from an internal secret</h3>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
+  - name: identity file contents with passphrase from an internal secret
+    image: target/vela-scp:latest
+    pull: always
+<span style="color:#00a000">+   secrets:
+</span><span style="color:#00a000">+     - source: my_non_user_account_id_rsa_file_contents
+</span><span style="color:#00a000">+       target: identity_file_contents
+</span><span style="color:#00a000">+     - source: my_non_user_account_id_rsa_passphrase
+</span><span style="color:#00a000">+       target: sshpass_passphrase
+</span><span style="color:#00a000"></span>    parameters:
+      source:
+        - ./relative/path/to/file/in/vela/workspace
+      target: scp://a_different_user@some_remote_host_name:12345/path
+</code></pre></div><h3 id="using-an-existing-identity-file-from-the-workspace">Using an existing identity file from the workspace</h3>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
+  - name: identity file from the workspace
+    image: target/vela-scp:latest
+    pull: always
+    parameters:
+      source:
+        - ./relative/path/to/file/in/vela/workspace
+      target: scp://a_different_user@some_remote_host_name:12345/path
+<span style="color:#00a000">+     identity_file_path: ./some/workspace/location/id_rsa
+</span></code></pre></div><h3 id="using-additional-secrets-in-other-parameters">Using additional secrets in other parameters</h3>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
+  - name: additional secrets in other parameters
+    image: target/vela-scp:latest
+    pull: always
+<span style="color:#00a000">+   secrets:
+</span><span style="color:#00a000">+     - source: some_secret_user
+</span><span style="color:#00a000">+       target: secret_user
+</span><span style="color:#00a000">+     - source: some_secret_host
+</span><span style="color:#00a000">+       target: secret_host
+</span><span style="color:#00a000">+     - source: some_secret_port
+</span><span style="color:#00a000">+       target: secret_port
+</span><span style="color:#00a000"></span>    parameters:
+      source:
+        - ./relative/path/to/file/in/vela/workspace
+<span style="color:#00a000">+     target: scp://$SECRET_USER@$SECRET_HOST:$SECRET_PORT/path
+</span></code></pre></div><h3 id="using-the-container-without-the-plugin-logic">Using the container without the plugin logic</h3>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
+  - name: override plugin logic to use scp directly
+    image: target/vela-scp:latest
+    pull: always
+<span style="color:#00a000">+   commands:
+</span><span style="color:#00a000">+     - scp -i ./some/existing/id_rsa ./relative/path/to/file/in/vela/workspace username@hostname:/path/
+</span></code></pre></div><h2 id="parameters--secrets">Parameters &amp; Secrets</h2>
 <blockquote>
 <p><strong>NOTE:</strong></p>
 <p>The plugin supports reading all parameters via environment variables or files.</p>
 <p>Any values set from a file take precedence over values set from the environment.</p>
+<p>Don&rsquo;t confuse the source/target syntax of native secrets with the source and target parameters required for the scp binary.</p>
 </blockquote>
-<p>The following parameters are used to configure the image:</p>
 <table>
 <thead>
 <tr>
 <th>Name</th>
 <th>Description</th>
 <th>Required</th>
+<th>Accepts Multiple Values?</th>
 <th>Default</th>
 <th>Environment Variables</th>
+<th>File Paths</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>log_level</code></td>
-<td>set the log level for the plugin</td>
-<td><code>true</code></td>
-<td><code>info</code></td>
-<td><code>PARAMETER_LOG_LEVEL</code><br><code>BUILD_SUMMARY_LOG_LEVEL</code></td>
+<td><code>source</code></td>
+<td>The source option from the <a href="https://man.openbsd.org/scp"><code>scp</code> manual</a>.</td>
+<td>✅</td>
+<td>✅</td>
+<td></td>
+<td><code>PARAMETER_SOURCE</code><br><code>SOURCE</code></td>
+<td><code>/vela/parameters/vela-scp/source</code><br><code>/vela/secrets/vela-scp/source</code></td>
 </tr>
 <tr>
-<td><code>number</code></td>
-<td>set the number for the build</td>
-<td><code>true</code></td>
-<td><strong>set by Vela</strong></td>
-<td><code>PARAMETER_NUMBER</code><br><code>BUILD_SUMMARY_NUMBER</code><br><code>VELA_BUILD_NUMBER</code></td>
+<td><code>target</code></td>
+<td>The target option from the <a href="https://man.openbsd.org/scp"><code>scp</code> manual</a>.</td>
+<td>✅</td>
+<td>❌</td>
+<td></td>
+<td><code>PARAMETER_TARGET</code><br><code>TARGET</code></td>
+<td><code>/vela/parameters/vela-scp/target</code><br><code>/vela/secrets/vela-scp/target</code></td>
 </tr>
 <tr>
-<td><code>org</code></td>
-<td>set the organization name for the build</td>
-<td><code>true</code></td>
-<td><strong>set by Vela</strong></td>
-<td><code>PARAMETER_ORG</code><br><code>BUILD_SUMMARY_ORG</code><br><code>VELA_REPO_ORG</code></td>
+<td><code>identity_file_path</code></td>
+<td>A path for where the <a href="https://man.openbsd.org/scp"><code>scp</code></a> binary should look for existing identity files.<br>These are NOT auto created by the plugin as they must be created and managed by a user and only referenced here.</td>
+<td>❌</td>
+<td>✅</td>
+<td></td>
+<td><code>PARAMETER_IDENTITY_FILE_PATH</code><br><code>IDENTITY_FILE_PATH</code><br><code>PARAMETER_SSH_KEY_PATH</code><br><code>SSH_KEY_PATH</code></td>
+<td><code>/vela/parameters/vela-scp/identity-file.path</code><br><code>/vela/secrets/vela-scp/identity-file.path</code></td>
 </tr>
 <tr>
-<td><code>repo</code></td>
-<td>set the repository name for the build</td>
-<td><code>true</code></td>
-<td><strong>set by Vela</strong></td>
-<td><code>PARAMETER_REPO</code><br><code>BUILD_SUMMARY_REPO</code><br><code>VELA_REPO_NAME</code></td>
+<td><code>identity_file_contents</code></td>
+<td>The raw contents of an identity file for use with <a href="https://man.openbsd.org/scp"><code>scp</code></a>.<br>The plugin will take the raw contents and place it in a temporary location in the workspace with the correct permissions and inject it as an identity file to use during execution.</td>
+<td>❌</td>
+<td>❌</td>
+<td></td>
+<td><code>PARAMETER_IDENTITY_FILE_CONTENTS</code><br><code>IDENTITY_FILE_CONTENTS</code><br><code>PARAMETER_SSH_KEY</code><br><code>SSH_KEY</code></td>
+<td><code>/vela/parameters/vela-scp/identity-file.contents</code><br><code>/vela/secrets/vela-scp/identity-file.contents</code></td>
 </tr>
 <tr>
-<td><code>server</code></td>
-<td>Vela server to communicate with</td>
-<td><code>true</code></td>
-<td><strong>set by Vela</strong></td>
-<td><code>PARAMETER_SERVER</code><br><code>BUILD_SUMMARY_SERVER</code><br><code>VELA_ADDR</code></td>
+<td><code>scp_flag</code></td>
+<td>Any additional options from the <a href="https://man.openbsd.org/scp"><code>scp</code> manual</a>.<br>These will override the default options and be placed between the identity file options and the source/target options at the end.</td>
+<td>❌</td>
+<td>✅</td>
+<td><code>-o StrictHostKeyChecking=no</code><br><code>-o UserKnownHostsFile=/dev/null</code></td>
+<td><code>PARAMETER_SCP_FLAG</code><br><code>SCP_FLAG</code></td>
+<td><code>/vela/parameters/vela-scp/scp.flag</code><br><code>/vela/secrets/vela-scp/scp.flag</code></td>
 </tr>
 <tr>
-<td><code>token</code></td>
-<td>token for communication with Vela</td>
-<td><code>true</code></td>
-<td><strong>set by Vela</strong></td>
-<td><code>PARAMETER_TOKEN</code><br><code>BUILD_SUMMARY_TOKEN</code><br><code>VELA_NETRC_PASSWORD</code></td>
+<td><code>sshpass_password</code></td>
+<td>If any systems require a password for authentication it can be specified here, and the <a href="https://linux.die.net/man/1/sshpass"><code>sshpass</code></a> binary will be used in conjunction with <a href="https://man.openbsd.org/scp"><code>scp</code></a>.</td>
+<td>❌</td>
+<td>❌</td>
+<td></td>
+<td><code>PARAMETER_SSHPASS_PASSWORD</code><br><code>PARAMETER_PASSWORD</code><br><code>SSHPASS_PASSWORD</code><br><code>PASSWORD</code></td>
+<td><code>/vela/parameters/vela-scp/sshpass.password</code><br><code>/vela/secrets/vela-scp/sshpass.password</code></td>
+</tr>
+<tr>
+<td><code>sshpass_passphrase</code></td>
+<td>If any identity files require a passphrase for authentication it can be specified here, and the <a href="https://linux.die.net/man/1/sshpass"><code>sshpass</code></a> binary will be used in conjunction with <a href="https://man.openbsd.org/scp"><code>scp</code></a>.</td>
+<td>❌</td>
+<td>❌</td>
+<td></td>
+<td><code>PARAMETER_SSHPASS_PASSPHRASE</code><br><code>SSHPASS_PASSPHRASE</code></td>
+<td><code>/vela/parameters/vela-scp/sshpass.passphrase</code><br><code>/vela/secrets/vela-scp/sshpass.passphrase</code></td>
+</tr>
+<tr>
+<td><code>sshpass_flag</code></td>
+<td>Any additional options from the <a href="https://linux.die.net/man/1/sshpass"><code>sshpass</code> manual</a>.</td>
+<td>❌</td>
+<td>✅</td>
+<td></td>
+<td><code>PARAMETER_SSHPASS_FLAG</code><br><code>SSHPASS_FLAG</code></td>
+<td><code>/vela/parameters/vela-scp/sshpass.flag</code><br><code>/vela/secrets/vela-scp/sshpass.flag</code></td>
 </tr>
 </tbody>
 </table>
-<h2 id="template">Template</h2>
-<p>COMING SOON!</p>
-<h2 id="troubleshooting">Troubleshooting</h2>
-<p>You can start troubleshooting this plugin by tuning the level of logs being displayed:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">steps:
-  - name: build-summary
-    image: target/vela-build-summary:latest
-    pull: always
-    secrets: [ build_summary_token ]
-<span style="color:#00a000">+   parameters:
-</span><span style="color:#00a000">+     log_level: trace
-</span></code></pre></div><p>Below are a list of common problems and how to solve them:</p>
 
 	
 	
