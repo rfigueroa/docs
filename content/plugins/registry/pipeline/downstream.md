@@ -2,4 +2,4 @@
 title: "Downstream"
 ---
 
-{{% plugin-docs "vela-downstream" %}}
+{{% plugin-docs "go-vela/vela-downstream" "DOCS.md" %}}

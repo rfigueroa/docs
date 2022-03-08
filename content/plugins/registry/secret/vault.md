@@ -5,4 +5,4 @@ description: >
   Learn about the Vault secret plugin.
 ---
 
-{{% plugin-docs "secret-vault" %}}
+{{% plugin-docs "go-vela/secret-vault" "DOCS.md" %}}

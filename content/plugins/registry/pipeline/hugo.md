@@ -2,4 +2,4 @@
 title: "Hugo"
 ---
 
-{{% plugin-docs "vela-hugo" %}}
+{{% plugin-docs "go-vela/vela-hugo" "DOCS.md" %}}

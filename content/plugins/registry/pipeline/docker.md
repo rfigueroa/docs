@@ -2,4 +2,4 @@
 title: "Docker"
 ---
 
-{{% plugin-docs "vela-docker" %}}
+{{% plugin-docs "go-vela/vela-docker" "DOCS.md" %}}

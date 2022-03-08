@@ -2,4 +2,4 @@
 title: "Kubernetes"
 ---
 
-{{% plugin-docs "vela-kubernetes" %}}
+{{% plugin-docs "go-vela/vela-kubernetes" "DOCS.md" %}}

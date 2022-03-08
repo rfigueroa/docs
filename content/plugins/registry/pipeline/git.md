@@ -2,4 +2,4 @@
 title: "Git"
 ---
 
-{{% plugin-docs "vela-git" %}}
+{{% plugin-docs "go-vela/vela-git" "DOCS.md" %}}

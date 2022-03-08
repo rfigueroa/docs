@@ -2,4 +2,4 @@
 title: "Build Summary"
 ---
 
-{{% plugin-docs "vela-build-summary" %}}
+{{% plugin-docs "go-vela/vela-build-summary" "DOCS.md" %}}

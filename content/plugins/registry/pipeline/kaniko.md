@@ -2,4 +2,4 @@
 title: "Kaniko"
 ---
 
-{{% plugin-docs "vela-kaniko" %}}
+{{% plugin-docs "go-vela/vela-kaniko" "DOCS.md" %}}

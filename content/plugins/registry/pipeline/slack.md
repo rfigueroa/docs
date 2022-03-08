@@ -2,4 +2,4 @@
 title: "Slack"
 ---
 
-{{% plugin-docs "vela-slack" %}}
+{{% plugin-docs "go-vela/vela-slack" "DOCS.md" %}}

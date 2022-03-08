@@ -2,4 +2,4 @@
 title: "S3 Cache"
 ---
 
-{{% plugin-docs "vela-s3-cache" %}}
+{{% plugin-docs "go-vela/vela-s3-cache" "DOCS.md" %}}

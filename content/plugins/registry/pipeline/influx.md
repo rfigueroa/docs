@@ -2,4 +2,4 @@
 title: "Influx"
 ---
 
-{{% plugin-docs "vela-influx" %}}
+{{% plugin-docs "go-vela/vela-influx" "DOCS.md" %}}

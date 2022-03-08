@@ -2,4 +2,4 @@
 title: "Artifactory"
 ---
 
-{{% plugin-docs "vela-artifactory" %}}
+{{% plugin-docs "go-vela/vela-artifactory" "DOCS.md" %}}

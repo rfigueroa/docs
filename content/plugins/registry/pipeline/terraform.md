@@ -2,4 +2,4 @@
 title: "Terraform"
 ---
 
-{{% plugin-docs "vela-terraform" %}}
+{{% plugin-docs "go-vela/vela-terraform" "DOCS.md" %}}
