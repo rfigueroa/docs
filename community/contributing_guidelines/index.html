@@ -520,9 +520,24 @@
 <h3 id="issues">Issues</h3>
 <p><a href="https://github.com/go-vela/community/issues">Issues</a> include:</p>
 <ul>
-<li>Bugs</li>
-<li>Enhancements</li>
-<li>Feature requests</li>
+<li>Bugs
+<ul>
+<li>Implementation of a feature request or enhancement causing an unexpected result</li>
+<li>Example: Action performed by an API call is incorrect</li>
+</ul>
+</li>
+<li>Enhancements
+<ul>
+<li>A tweak to an existing feature, not resulting in underlying functionality change</li>
+<li>Examples: Updating log output to be more useful</li>
+</ul>
+</li>
+<li>Feature requests
+<ul>
+<li>Net-new functionality</li>
+<li>Example: Adding an API endpoint</li>
+</ul>
+</li>
 </ul>
 <h3 id="proposals">Proposals</h3>
 <p><a href="https://github.com/go-vela/community/tree/master/proposals">Proposals</a> are used to foster discussion around large or breaking feature requests, or when looking for feedback on varied implementation options. Check that an <a href="https://github.com/go-vela/community/issues">issue</a> or <a href="https://github.com/go-vela/community/tree/master/proposals">proposal</a> doesn’t exist already.</p>
@@ -607,7 +622,18 @@ Make sure an <a href="https://github.com/go-vela/community/issues">issue</a> or 
 Currently, main releases only apply to <a href="/docs/community/contributing_guidelines/#core-repos">core repos</a>. <a href="/docs/community/contributing_guidelines/#plugin-repos">Plugin repos</a> get version cuts on an as needed basis.</p>
 <ul>
 <li><strong>Patches:</strong> Patches will be released on an as needed basis for bug and security fixes. We increment the minor version.</li>
-<li><strong>RC’s (pre-releases):</strong> Prior to releasing a main version, we will have at least a week of rc releases for testing purposes.</li>
+<li><strong>RC’s (pre-releases):</strong> Prior to releasing a main version, we will have at least a week of rc releases for testing purposes.
+<ul>
+<li>Once an RC is cut:
+<ul>
+<li>No new <a href="/docs/community/contributing_guidelines/#issues">features</a> will be included.</li>
+<li><a href="/docs/community/contributing_guidelines/#issues">Enhancements</a> will be considered on a case-by-case basis by admins.</li>
+<li><a href="/docs/community/contributing_guidelines/#issues">Bugs</a> and security fixes can be included.</li>
+<li>Non-breaking dependency updates can be included.</li>
+</ul>
+</li>
+</ul>
+</li>
 <li><strong>Release Notes:</strong> You can find a list of release notes in the <a href="https://github.com/go-vela/community/tree/master/releases">community repository</a>.</li>
 </ul>
 <h2 id="style-guide">Style Guide</h2>
@@ -680,7 +706,7 @@ Currently, main releases only apply to <a href="/docs/community/contributing_gui
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified March 3, 2022: <a  href="https://github.com/go-vela/docs/commit/c6a7b7a992d05a53b7ba403381dc8cbcf9583e10">chore(guidelines): add community section with initial content (#281) (c6a7b7a9)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified March 16, 2022: <a  href="https://github.com/go-vela/docs/commit/e5e67c4aa4963954ca045c73cfc4124b84010bc6">docs(releases): clarify allowed changes post rc (#289) (e5e67c4a)</a>
 </div>
 </div>
 
