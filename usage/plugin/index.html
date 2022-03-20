@@ -25,11 +25,11 @@
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://go-vela.github.io/docs/usage/plugin/" />
-<meta property="article:modified_time" content="2021-11-17T14:31:33-06:00" />
+<meta property="article:modified_time" content="2022-03-20T22:09:17+00:00" />
 <meta itemprop="name" content="Working with plugins">
 <meta itemprop="description" content="Walkthrough of an example using pipeline and secret plugins working together
 ">
-<meta itemprop="dateModified" content="2021-11-17T14:31:33-06:00" />
+<meta itemprop="dateModified" content="2022-03-20T22:09:17+00:00" />
 <meta itemprop="wordCount" content="157">
 
 
@@ -616,7 +616,7 @@
 </span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">steps</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">  </span>- <span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">plugin</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">image</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">target/vela-docker</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">image</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">target/vela-kaniko</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">pull</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">always</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">parameters</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">registry</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">index.docker.io</span><span style="color:#f8f8f8;text-decoration:underline">
@@ -634,7 +634,7 @@
 </span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">pull</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">always</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">secrets</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">[</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">vault_token ]</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">parameters</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">addr</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">vault.company.com</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">addr</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">vault.example.com</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">auth_method</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">token</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">items</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">          </span>- <span style="color:#204a87;font-weight:bold">source</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">secret/docker</span><span style="color:#f8f8f8;text-decoration:underline">
@@ -644,7 +644,7 @@
 
 steps:
   - name: docker
-    image: target/vela-docker
+    image: target/vela-kaniko
     pull: always
 <span style="color:#00a000">+   parameters:
 </span><span style="color:#00a000">+     registry: index.docker.io
@@ -662,7 +662,7 @@ secrets:
       pull: always
       secrets: [ vault_token ]
 <span style="color:#00a000">+     parameters:
-</span><span style="color:#00a000">+       addr: vault.company.com
+</span><span style="color:#00a000">+       addr: vault.example.com
 </span><span style="color:#00a000">+       auth_method: token
 </span><span style="color:#00a000">+       items:
 </span><span style="color:#00a000">+         - source: secret/docker
@@ -682,7 +682,7 @@ secrets:
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified November 17, 2021: <a  href="https://github.com/go-vela/docs/commit/81ea455ed358b343308f882568d2441d5c179846">docs(secrets)!:removed references to implicit secrets (#258) (81ea455e)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified March 20, 2022: <a  href="https://github.com/go-vela/docs/commit/361ea14c824295aeadd32c1bbddfc2d43e4cd8a2">docs(plugin): use kaniko image in example (#292) (361ea14c)</a>
 </div>
 </div>
 
