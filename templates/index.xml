@@ -114,8 +114,8 @@ Dot is unaffected.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 
-&lt;div class=&#34;alert alert-tip&#34; role=&#34;alert&#34;&gt;
-
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Tip:&lt;/h4&gt;
 For information on if/else statements see &lt;a href=&#34;https://golang.org/pkg/text/template/#hdr-Actions&#34;&gt;conditional docs&lt;/a&gt;
 &lt;/div&gt;
 
@@ -205,8 +205,8 @@ We recommend reviewing &lt;a href=&#34;https://github.com/bazelbuild/starlark/bl
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&amp;#34;yes&amp;#34; if enabled else &amp;#34;no&amp;#34;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;div class=&#34;alert alert-tip&#34; role=&#34;alert&#34;&gt;
-
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Tip:&lt;/h4&gt;
 For information on if/else statements see &lt;a href=&#34;https://github.com/google/starlark-go/blob/master/doc/spec.md#conditional-expressions&#34;&gt;conditional docs&lt;/a&gt;
 &lt;/div&gt;
 
@@ -485,8 +485,8 @@ visited in sorted key order.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 
-&lt;div class=&#34;alert alert-tip&#34; role=&#34;alert&#34;&gt;
-
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Tip:&lt;/h4&gt;
 For information on range/else statements see &lt;a href=&#34;https://golang.org/pkg/text/template/#hdr-Actions&#34;&gt;conditional docs&lt;/a&gt;
 &lt;/div&gt;
 
@@ -759,8 +759,8 @@ visited in sorted key order.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 
-&lt;div class=&#34;alert alert-tip&#34; role=&#34;alert&#34;&gt;
-
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Tip:&lt;/h4&gt;
 For information on range/else statements see &lt;a href=&#34;https://golang.org/pkg/text/template/#hdr-Actions&#34;&gt;conditional docs&lt;/a&gt;
 &lt;/div&gt;
 
@@ -1010,8 +1010,8 @@ We recommend reviewing &lt;a href=&#34;https://github.com/bazelbuild/starlark/bl
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;  // ||  ||__&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;  
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;div class=&#34;alert alert-tip&#34; role=&#34;alert&#34;&gt;
-
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Tip:&lt;/h4&gt;
 For information on more types of scalars read the &lt;a href=&#34;https://yaml.org/spec/1.2/spec.html#id2760844&#34;&gt;spec information&lt;/a&gt;
 &lt;/div&gt;
 
