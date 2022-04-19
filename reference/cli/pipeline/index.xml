@@ -289,6 +289,36 @@ For more information, please run &lt;code&gt;vela validate pipeline --help&lt;/c
 &lt;td&gt;path to the file for the pipeline&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;VELA_PATH&lt;/code&gt;, &lt;code&gt;PIPELINE_PATH&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;ref&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;repository reference for the pipeline&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;VELA_REF&lt;/code&gt;, &lt;code&gt;PIPELINE_REF&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;template&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;enables templates to be included in pipeline validation&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;VELA_TEMPLATE&lt;/code&gt;, &lt;code&gt;PIPELINE_TEMPLATE&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;template-file&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;enables using a local template file for expansion&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;VELA_TEMPLATE_FILE&lt;/code&gt;, &lt;code&gt;PIPELINE_TEMPLATE_FILE&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;remote&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;enables validating a pipeline on a remote server&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;VELA_REMOTE&lt;/code&gt;, &lt;code&gt;PIPELINE_REMOTE&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;compiler.github.token&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;github compiler token&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;VELA_COMPILER_GITHUB_TOKEN&lt;/code&gt;, &lt;code&gt;COMPILER_GITHUB_TOKEN&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;compiler.github.url&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;github url, used by compiler, for pulling registry templates&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;VELA_COMPILER_GITHUB_URL&lt;/code&gt;, &lt;code&gt;COMPILER_GITHUB_URL&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h2 id=&#34;permissions&#34;&gt;Permissions&lt;/h2&gt;
@@ -304,8 +334,12 @@ To setup the CLI, please review the &lt;a href=&#34;https://go-vela.github.io/do
 
 &lt;/div&gt;
 
-&lt;h4 id=&#34;request&#34;&gt;Request&lt;/h4&gt;
+&lt;h4 id=&#34;simple-request&#34;&gt;Simple Request&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;vela validate pipeline
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;expanded-template-request-github&#34;&gt;Expanded Template Request (GitHub)&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;vela validate pipeline --template --compiler.github.token &amp;lt;token&amp;gt; --compiler.github.url https://git.example.com
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;expanded-template-request-local&#34;&gt;Expanded Template Request (Local)&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;vela validate pipeline --template --template-file name:/path/to/file
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;response&#34;&gt;Response&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;.vela.yml&amp;#34;&lt;/span&gt; is valid
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Using a template in your pipeline? You can &lt;a href=&#34;https://go-vela.github.io/docs/docs/templates/working_with/#cli-pipeline-validation&#34;&gt;validate templates also&lt;/a&gt;.&lt;/p&gt;
