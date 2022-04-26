@@ -428,6 +428,7 @@
         <li><a href="#build-is-pending">Build Is Pending</a></li>
         <li><a href="#context-deadline-exceeded">Context Deadline Exceeded</a></li>
         <li><a href="#invalid-reference-format">Invalid Reference Format</a></li>
+        <li><a href="#invalid-secret-path">Invalid Secret Path</a></li>
       </ul>
     </li>
   </ul>
@@ -589,6 +590,29 @@ An access level of <code>admin</code> is required in order to change ownership o
 <p>This behavior indicates <a href="/docs/tour/image/">the <code>image</code> key</a> provided for a step in the pipeline is invalid.</p>
 <p>To resolve the issue, identify the step with the incorrect <code>image</code> and update it with a proper value.</p>
 <p>This can be accomplished by using the <a href="https://docs.docker.com/engine/reference/commandline/pull/"><code>docker pull</code> CLI command</a> with the value for the <code>image</code> as the first argument.</p>
+<h3 id="invalid-secret-path">Invalid Secret Path</h3>
+<p><img src="invalid_secret_path.png" alt="Invalid Secret Path"></p>
+<p>This behavior indicates <a href="/docs/reference/yaml/secrets/#the-key-tag">the <code>key</code> property</a> provided for a secret in the pipeline is invalid.</p>
+<p>To resolve the issue, explicitly define the secret depending on the type as outlined in the <a href="/docs/usage/secrets/">secret usage docs</a> with all of the expected fields.</p>
+<p>If you are using a secret that only defines <code>name</code> as the property and are receiving this error, you will need add the missing properties as this way of referencing a secret was deprecated in an older version of Vela.</p>
+<p>For example:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">secrets</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span>- <span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">foo</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></code></pre></div><p>would need to be changed to:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">secrets:
+  - name: foo
+<span style="color:#00a000">+   key: &lt;org&gt;/&lt;repo&gt;/foo
+</span><span style="color:#00a000">+   engine: native
+</span><span style="color:#00a000">+   type: repo
+</span></code></pre></div>
+
+<div class="alert alert-primary" role="alert">
+<h4 class="alert-heading">Tip:</h4>
+<p>Make sure to replace <code>&lt;org&gt;</code> and <code>&lt;repo&gt;</code> for the <code>key</code> property with the appropriate values from your source code provider.</p>
+<p>If you&rsquo;re using GitHub and using the secret for a pipeline at <code>https://github.com/octocat/hello</code>, your <code>org</code> would be <code>octocat</code> and <code>repo</code> would be <code>hello</code>.</p>
+
+</div>
+
 
         <div class="section-index">
     
@@ -606,7 +630,7 @@ An access level of <code>admin</code> is required in order to change ownership o
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified February 7, 2022: <a  href="https://github.com/go-vela/docs/commit/4a54d04bcadb8aaca5355a263a76d3019c033d24">feat: add FAQ section (#273) (4a54d04b)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified April 26, 2022: <a  href="https://github.com/go-vela/docs/commit/7c258a9793ea48d7d1b8f54b121a3ab3ebc692e8">chore(faq): add secret path info (#297) (7c258a97)</a>
 </div>
 </div>
 
