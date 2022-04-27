@@ -598,6 +598,12 @@ An access level of <code>admin</code> is required in order to change ownership o
 <p>For example:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">secrets</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">  </span>- <span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">foo</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></code></pre></div><p>and even</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">secrets</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span>- <span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">foo</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">key</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">foo</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">engine</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">native</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">type</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">repo</span><span style="color:#f8f8f8;text-decoration:underline">
 </span></code></pre></div><p>would need to be changed to:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">secrets:
   - name: foo
@@ -630,7 +636,7 @@ An access level of <code>admin</code> is required in order to change ownership o
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified April 26, 2022: <a  href="https://github.com/go-vela/docs/commit/7c258a9793ea48d7d1b8f54b121a3ab3ebc692e8">chore(faq): add secret path info (#297) (7c258a97)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified April 27, 2022: <a  href="https://github.com/go-vela/docs/commit/743e780e94fc8b0d487b75980d361bfbde1e3e86">docs(faq): additional implicit to explicit secret example (#298) (743e780e)</a>
 </div>
 </div>
 
