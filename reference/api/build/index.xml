@@ -253,6 +253,14 @@
 &lt;td&gt;&lt;code&gt;status&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;name of status to filter to&lt;/td&gt;
 &lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;before&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;return builds created before a certain time (UNIX Epoch, default &amp;ldquo;now&amp;rdquo;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;after&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;return builds created after a certain time (UNIX Epoch, default 0)&lt;/td&gt;
+&lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h2 id=&#34;permissions&#34;&gt;Permissions&lt;/h2&gt;

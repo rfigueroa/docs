@@ -25,12 +25,12 @@
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://go-vela.github.io/docs/reference/api/build/get/" />
-<meta property="article:modified_time" content="2022-02-11T08:30:27-07:00" />
+<meta property="article:modified_time" content="2022-05-09T13:25:48-06:00" />
 <meta itemprop="name" content="Get">
 <meta itemprop="description" content="Learn how to list builds.
 ">
-<meta itemprop="dateModified" content="2022-02-11T08:30:27-07:00" />
-<meta itemprop="wordCount" content="265">
+<meta itemprop="dateModified" content="2022-05-09T13:25:48-06:00" />
+<meta itemprop="wordCount" content="289">
 
 
 
@@ -1857,6 +1857,14 @@
 <td><code>status</code></td>
 <td>name of status to filter to</td>
 </tr>
+<tr>
+<td><code>before</code></td>
+<td>return builds created before a certain time (UNIX Epoch, default &ldquo;now&rdquo;)</td>
+</tr>
+<tr>
+<td><code>after</code></td>
+<td>return builds created after a certain time (UNIX Epoch, default 0)</td>
+</tr>
 </tbody>
 </table>
 <h2 id="permissions">Permissions</h2>
@@ -1960,7 +1968,7 @@ curl <span style="color:#4e9a06">\
 </code></pre></div>
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified February 11, 2022: <a  href="https://github.com/go-vela/docs/commit/21766bb89a0370703ccf89f7b33a96664fc2f05d">chore(build): add documentation for pagination and missing commit hash param (#280) (21766bb8)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified May 9, 2022: <a  href="https://github.com/go-vela/docs/commit/322a0e3ccf041dd8f5e4d0a16483636d2e1bd353">chore(api/build): add before and after query params (#301) (322a0e3c)</a>
 </div>
 </div>
 
