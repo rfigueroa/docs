@@ -1316,20 +1316,20 @@ These docs assume you have Vela running.
 https://&amp;lt;vela server&amp;gt;/badge/&amp;lt;org&amp;gt;/&amp;lt;repo&amp;gt;/status.svg
 
 &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# Example&lt;/span&gt;
-https://vela-server.localhost/badge/octocat/Hello-World/status.svg
+https://vela.example.com/badge/octocat/Hello-World/status.svg
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In addition you can specify which branch you want to get a badge for by supplying a &lt;code&gt;?branch=&lt;/code&gt; query parameter in the URL.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# Syntax&lt;/span&gt;
 https://&amp;lt;vela server&amp;gt;/badge/&amp;lt;org&amp;gt;/&amp;lt;repo&amp;gt;/status.svg?branch&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&amp;lt;branch name&amp;gt;
 
 &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# Example&lt;/span&gt;
-https://vela-server.localhost/badge/octocat/Hello-World/status.svg?branch&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;not_master
+https://vela.example.com/badge/octocat/Hello-World/status.svg?branch&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;not_master
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;embedding-in-markdown&#34;&gt;Embedding in Markdown&lt;/h3&gt;
 &lt;p&gt;To embed your badge in your markdown formatted file, follow this example:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# Syntax&lt;/span&gt;
 &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;[&lt;/span&gt;!&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;[&lt;/span&gt;Build Status&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;](&lt;/span&gt;https://&amp;lt;vela server&amp;gt;/badge/&amp;lt;org&amp;gt;/&amp;lt;repo&amp;gt;/status.svg&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;)](&lt;/span&gt;https://&amp;lt;vela server&amp;gt;/badge/&amp;lt;org&amp;gt;/&amp;lt;repo&amp;gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;)&lt;/span&gt;
 
 &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# Example&lt;/span&gt;
-&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;[&lt;/span&gt;!&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;[&lt;/span&gt;Build Status&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;](&lt;/span&gt;https://vela-server.localhost/badge/octocat/Hello-World/status.svg&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;)](&lt;/span&gt;https://vela-server.localhost/badge/octocat/Hello-World&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;)&lt;/span&gt;
+&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;[&lt;/span&gt;!&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;[&lt;/span&gt;Build Status&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;](&lt;/span&gt;https://vela.example.com/badge/octocat/Hello-World/status.svg&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;)](&lt;/span&gt;https://vela.example.com/badge/octocat/Hello-World&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
       </description>
     </item>

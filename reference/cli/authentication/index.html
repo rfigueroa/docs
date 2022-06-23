@@ -25,11 +25,11 @@
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://go-vela.github.io/docs/reference/cli/authentication/" />
-<meta property="article:modified_time" content="2021-02-11T18:41:35-06:00" />
+<meta property="article:modified_time" content="2022-06-23T12:11:12-05:00" />
 <meta itemprop="name" content="Authentication">
 <meta itemprop="description" content="Learn how authenticating with the Vela CLI works.
 ">
-<meta itemprop="dateModified" content="2021-02-11T18:41:35-06:00" />
+<meta itemprop="dateModified" content="2022-06-23T12:11:12-05:00" />
 <meta itemprop="wordCount" content="190">
 
 
@@ -1846,9 +1846,9 @@ The default path for this configuration file can be found @ <code>$HOME/.vela/co
 vela login --api.addr &lt;vela server url&gt;
 
 <span style="color:#8f5902;font-style:italic"># Example</span>
-vela login --api.addr https://vela-server.localhost
+vela login --api.addr https://vela.example.com
 </code></pre></div><p>Confirm authentication via browser prompt:</p>
-<pre><code>Open https://vela-server.localhost in your browser and complete authentication (Press Enter to confirm):
+<pre><code>Open https://vela.example.com in your browser and complete authentication (Press Enter to confirm):
 </code></pre><p>Confirm to generate or update the configuration file prompt:</p>
 <pre><code>Authentication complete. Continue to save configuration (existing config will be overwritten):
 </code></pre>
@@ -1860,7 +1860,7 @@ For more information, you can visit the <a href="/docs/reference/cli/config/">CL
 
 <h3 id="environment-variables">Environment Variables</h3>
 <p>Configure the environment with the <code>VELA_ADDR</code> environment variable:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#204a87">export</span> <span style="color:#000">VELA_ADDR</span><span style="color:#ce5c00;font-weight:bold">=</span>https://vela-server.localhost
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#204a87">export</span> <span style="color:#000">VELA_ADDR</span><span style="color:#ce5c00;font-weight:bold">=</span>https://vela.example.com
 </code></pre></div><p>Log in and confirm the two prompts as stated above:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">vela login
 </code></pre></div>
@@ -1876,11 +1876,11 @@ It&rsquo;s recommended to add these to your terminal profile (<code>~/.bashrc</c
 vela login --api.addr &lt;vela server url&gt;
 
 <span style="color:#8f5902;font-style:italic"># Example</span>
-vela login --api.addr https://vela-server.localhost
+vela login --api.addr https://vela.example.com
 </code></pre></div>
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified February 11, 2021: <a  href="https://github.com/go-vela/docs/commit/4438b576c7b309076009adf6e7e1b6b4ef6a2b3c">chore(authentication): update auth instructions and fix broken links (#203) (4438b576)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified June 23, 2022: <a  href="https://github.com/go-vela/docs/commit/aa4ca374d94972c528a8c63641963142ab8615b4">docs: replace vela-server.localhost with vela.example.com (#305) (aa4ca374)</a>
 </div>
 </div>
 

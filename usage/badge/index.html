@@ -25,11 +25,11 @@
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://go-vela.github.io/docs/usage/badge/" />
-<meta property="article:modified_time" content="2021-01-12T13:56:22-06:00" />
+<meta property="article:modified_time" content="2022-06-23T12:11:12-05:00" />
 <meta itemprop="name" content="Badges">
 <meta itemprop="description" content="Show off your build status.
 ">
-<meta itemprop="dateModified" content="2021-01-12T13:56:22-06:00" />
+<meta itemprop="dateModified" content="2022-06-23T12:11:12-05:00" />
 <meta itemprop="wordCount" content="94">
 
 
@@ -623,24 +623,24 @@ These docs assume you have Vela running.
 https://&lt;vela server&gt;/badge/&lt;org&gt;/&lt;repo&gt;/status.svg
 
 <span style="color:#8f5902;font-style:italic"># Example</span>
-https://vela-server.localhost/badge/octocat/Hello-World/status.svg
+https://vela.example.com/badge/octocat/Hello-World/status.svg
 </code></pre></div><p>In addition you can specify which branch you want to get a badge for by supplying a <code>?branch=</code> query parameter in the URL.</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8f5902;font-style:italic"># Syntax</span>
 https://&lt;vela server&gt;/badge/&lt;org&gt;/&lt;repo&gt;/status.svg?branch<span style="color:#ce5c00;font-weight:bold">=</span>&lt;branch name&gt;
 
 <span style="color:#8f5902;font-style:italic"># Example</span>
-https://vela-server.localhost/badge/octocat/Hello-World/status.svg?branch<span style="color:#ce5c00;font-weight:bold">=</span>not_master
+https://vela.example.com/badge/octocat/Hello-World/status.svg?branch<span style="color:#ce5c00;font-weight:bold">=</span>not_master
 </code></pre></div><h3 id="embedding-in-markdown">Embedding in Markdown</h3>
 <p>To embed your badge in your markdown formatted file, follow this example:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8f5902;font-style:italic"># Syntax</span>
 <span style="color:#ce5c00;font-weight:bold">[</span>!<span style="color:#ce5c00;font-weight:bold">[</span>Build Status<span style="color:#ce5c00;font-weight:bold">](</span>https://&lt;vela server&gt;/badge/&lt;org&gt;/&lt;repo&gt;/status.svg<span style="color:#ce5c00;font-weight:bold">)](</span>https://&lt;vela server&gt;/badge/&lt;org&gt;/&lt;repo&gt;<span style="color:#ce5c00;font-weight:bold">)</span>
 
 <span style="color:#8f5902;font-style:italic"># Example</span>
-<span style="color:#ce5c00;font-weight:bold">[</span>!<span style="color:#ce5c00;font-weight:bold">[</span>Build Status<span style="color:#ce5c00;font-weight:bold">](</span>https://vela-server.localhost/badge/octocat/Hello-World/status.svg<span style="color:#ce5c00;font-weight:bold">)](</span>https://vela-server.localhost/badge/octocat/Hello-World<span style="color:#ce5c00;font-weight:bold">)</span>
+<span style="color:#ce5c00;font-weight:bold">[</span>!<span style="color:#ce5c00;font-weight:bold">[</span>Build Status<span style="color:#ce5c00;font-weight:bold">](</span>https://vela.example.com/badge/octocat/Hello-World/status.svg<span style="color:#ce5c00;font-weight:bold">)](</span>https://vela.example.com/badge/octocat/Hello-World<span style="color:#ce5c00;font-weight:bold">)</span>
 </code></pre></div>
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified January 12, 2021: <a  href="https://github.com/go-vela/docs/commit/a65d9c9f94cddaccbdb2250f044a6d47eecb699c">refactor: flatten the usage docs (#191) (a65d9c9f)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified June 23, 2022: <a  href="https://github.com/go-vela/docs/commit/aa4ca374d94972c528a8c63641963142ab8615b4">docs: replace vela-server.localhost with vela.example.com (#305) (aa4ca374)</a>
 </div>
 </div>
 
