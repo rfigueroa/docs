@@ -25,12 +25,12 @@
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://go-vela.github.io/docs/reference/api/repo/get/" />
-<meta property="article:modified_time" content="2022-06-02T14:11:46-06:00" />
+<meta property="article:modified_time" content="2022-06-24T10:10:55-06:00" />
 <meta itemprop="name" content="Get">
 <meta itemprop="description" content="Learn how to list repos by current user or by organization.
 ">
-<meta itemprop="dateModified" content="2022-06-02T14:11:46-06:00" />
-<meta itemprop="wordCount" content="330">
+<meta itemprop="dateModified" content="2022-06-24T10:10:55-06:00" />
+<meta itemprop="wordCount" content="407">
 
 
 
@@ -1767,6 +1767,7 @@
 <nav id="TableOfContents">
   <ul>
     <li><a href="#endpoint">Endpoint</a></li>
+    <li><a href="#filters">Filters</a></li>
     <li><a href="#permissions">Permissions</a></li>
     <li><a href="#responses">Responses</a></li>
     <li><a href="#sample">Sample</a>
@@ -1776,6 +1777,7 @@
     </li>
     <li><a href="#endpoint-1">Endpoint</a></li>
     <li><a href="#parameters">Parameters</a></li>
+    <li><a href="#filters-1">Filters</a></li>
     <li><a href="#permissions-1">Permissions</a></li>
     <li><a href="#responses-1">Responses</a></li>
     <li><a href="#sample-1">Sample</a>
@@ -1841,6 +1843,26 @@
 	<h2 id="endpoint">Endpoint</h2>
 <pre><code>GET  /api/v1/repos
 </code></pre><p>This will return a list of all repos owned by the user.</p>
+<h2 id="filters">Filters</h2>
+<p>The following optional filters are available:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>page</code></td>
+<td>page number for results (default 1)</td>
+</tr>
+<tr>
+<td><code>per_page</code></td>
+<td>number of results in a page (default 10, max 100)</td>
+</tr>
+</tbody>
+</table>
 <h2 id="permissions">Permissions</h2>
 <p>COMING SOON!</p>
 <h2 id="responses">Responses</h2>
@@ -1944,6 +1966,34 @@
 </tr>
 </tbody>
 </table>
+<h2 id="filters-1">Filters</h2>
+<p>The following optional filters are available:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>active</code></td>
+<td>filter whether repos are active (default true)</td>
+</tr>
+<tr>
+<td><code>page</code></td>
+<td>page number for results (default 1)</td>
+</tr>
+<tr>
+<td><code>per_page</code></td>
+<td>number of results in a page (default 10, max 100)</td>
+</tr>
+<tr>
+<td><code>sort_by</code></td>
+<td>sort repos by <code>name</code> (default) or by <code>latest</code>, which sorts by latest build activity</td>
+</tr>
+</tbody>
+</table>
 <h2 id="permissions-1">Permissions</h2>
 <p>COMING SOON!</p>
 <h2 id="responses-1">Responses</h2>
@@ -2032,7 +2082,7 @@
 </code></pre></div>
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified June 2, 2022: <a  href="https://github.com/go-vela/docs/commit/b36bb92c62f9560fe32c9423daadec8fc679a9b6">fix(api/repo): add GetOrgRepos endpoint to documentation and clarify current GetRepos (#302) (b36bb92c)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified June 24, 2022: <a  href="https://github.com/go-vela/docs/commit/3ae8409570c1a7ced3e8e69debd5b22e62b71261">feat(api/repo): adding sort_by to get repos documentation (#303) (3ae84095)</a>
 </div>
 </div>
 
