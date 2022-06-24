@@ -12,6 +12,15 @@ GET  /api/v1/repos
 ```
 This will return a list of all repos owned by the user.
 
+## Filters
+
+The following optional filters are available:
+
+| Name       | Description                                                             | 
+| --------   | ----------------------------------------------------------------------- |
+| `page`     | page number for results (default 1)                                     |
+| `per_page` | number of results in a page (default 10, max 100)                       |
+
 ## Permissions
 
 COMING SOON!
@@ -106,6 +115,17 @@ The following parameters are used to configure the endpoint:
 | Name   | Description          |
 | ------ | -------------------- |
 | `org`  | name of organization |
+
+## Filters
+
+The following optional filters are available:
+
+| Name       | Description                                                                         | 
+| --------   | ----------------------------------------------------------------------------------- |
+| `active`   | filter whether repos are active (default true)                                      |
+| `page`     | page number for results (default 1)                                                 |
+| `per_page` | number of results in a page (default 10, max 100)                                   |
+| `sort_by`  | sort repos by `name` (default) or by `latest`, which sorts by latest build activity |
 
 ## Permissions
 
