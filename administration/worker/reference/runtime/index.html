@@ -25,12 +25,12 @@
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://go-vela.github.io/docs/administration/worker/reference/runtime/" />
-<meta property="article:modified_time" content="2021-12-22T15:07:59-06:00" />
+<meta property="article:modified_time" content="2022-06-24T11:08:00-05:00" />
 <meta itemprop="name" content="Runtime">
 <meta itemprop="description" content="This section contains information on the runtime component for the worker.
 ">
-<meta itemprop="dateModified" content="2021-12-22T15:07:59-06:00" />
-<meta itemprop="wordCount" content="369">
+<meta itemprop="dateModified" content="2022-06-24T11:08:00-05:00" />
+<meta itemprop="wordCount" content="404">
 
 
 
@@ -819,6 +819,20 @@
 <td><code>RUNTIME_NAMESPACE</code><br><code>VELA_RUNTIME_NAMESPACE</code></td>
 </tr>
 <tr>
+<td><code>runtime.pods-template-name</code></td>
+<td>name of the PipelinePodsTemplate to retrieve from the <code>runtime.namespace</code> (only for kubernetes)</td>
+<td><code>false</code></td>
+<td><code>N/A</code></td>
+<td><code>RUNTIME_PODS_TEMPLATE_NAME</code><br><code>VELA_RUNTIME_PODS_TEMPLATE_NAME</code></td>
+</tr>
+<tr>
+<td><code>runtime.pods-template-file</code></td>
+<td>path to local fallback file containing a PipelinePodsTemplate in YAML (only for kubernetes)</td>
+<td><code>false</code></td>
+<td><code>N/A</code></td>
+<td><code>RUNTIME_PODS_TEMPLATE_FILE</code><br><code>VELA_RUNTIME_PODS_TEMPLATE_FILE</code></td>
+</tr>
+<tr>
 <td><code>runtime.privileged-images</code></td>
 <td>images allowed to run in privileged mode for the runtime</td>
 <td><code>false</code></td>
@@ -917,7 +931,7 @@ This Docker configuration is enabled by default and is not necessary to provide 
 </code></pre></div>
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified December 22, 2021: <a  href="https://github.com/go-vela/docs/commit/27bd9aa7ad6cbd81029994d43a94b915bf240143">feat: add administration and installation docs (#259) (27bd9aa7)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified June 24, 2022: <a  href="https://github.com/go-vela/docs/commit/fad854eea3b36841d394d7ff332b2d4ef999455f">feat(kubernetes): document the PipelinePodsTemplate for k8s runtime (#294) (fad854ee)</a>
 </div>
 </div>
 

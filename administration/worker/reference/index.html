@@ -739,6 +739,8 @@
         <li><a href="#vela_runtime_config">VELA_RUNTIME_CONFIG</a></li>
         <li><a href="#vela_runtime_driver">VELA_RUNTIME_DRIVER</a></li>
         <li><a href="#vela_runtime_namespace">VELA_RUNTIME_NAMESPACE</a></li>
+        <li><a href="#vela_runtime_pods_template_name">VELA_RUNTIME_PODS_TEMPLATE_NAME</a></li>
+        <li><a href="#vela_runtime_pods_template_file">VELA_RUNTIME_PODS_TEMPLATE_FILE</a></li>
         <li><a href="#vela_runtime_privileged_images">VELA_RUNTIME_PRIVILEGED_IMAGES</a></li>
         <li><a href="#vela_runtime_volumes">VELA_RUNTIME_VOLUMES</a></li>
         <li><a href="#vela_server_cert">VELA_SERVER_CERT</a></li>
@@ -1007,6 +1009,19 @@ This variable has a default value of <code>vela</code>.
 <p>Examples using this configuration variable are provided in the above reference documentation.</p>
 <p>This variable sets a namespace (for Kubernetes only) to use for runtime workloads.</p>
 <p>The variable can be provided as a <code>string</code>.</p>
+<h3 id="vela_runtime_pods_template_name">VELA_RUNTIME_PODS_TEMPLATE_NAME</h3>
+<p>This configuration variable is used by the <a href="/docs/administration/worker/reference/runtime/">runtime component</a> for the worker.</p>
+<p>Examples using this configuration variable are provided in the <a href="/docs/administration/worker/kubernetes/">kubernetes runtime documentation</a>.</p>
+<p>This variable sets a <code>PipelinePodsTemplate</code> name (for Kubernetes only) to use for runtime workloads.
+The named template must be in the <code>VELA_RUNTIME_NAMESPACE</code>.</p>
+<p>The variable can be provided as a <code>string</code>.</p>
+<h3 id="vela_runtime_pods_template_file">VELA_RUNTIME_PODS_TEMPLATE_FILE</h3>
+<p>This configuration variable is used by the <a href="/docs/administration/worker/reference/runtime/">runtime component</a> for the worker.</p>
+<p>This variable sets the path to a <code>PipelinePodsTemplate</code> YAML file (for Kubernetes only) to use for runtime workloads.
+This file is only used if <code>VELA_RUNTIME_PODS_TEMPLATE_NAME</code> is empty.</p>
+<p>An example file is provided in the <a href="/docs/administration/worker/kubernetes/">kubernetes runtime documentation</a>.</p>
+<p>This is useful for Kubernetes clusters that do not allow loading CRDs. It is also used for testing Vela.</p>
+<p>The variable can be provided as a <code>string</code>.</p>
 <h3 id="vela_runtime_privileged_images">VELA_RUNTIME_PRIVILEGED_IMAGES</h3>
 <p>This configuration variable is used by the <a href="/docs/administration/worker/reference/runtime/">runtime component</a> for the worker.</p>
 <p>This variable sets the <a href="https://docs.docker.com/get-started/overview/#images">Docker image(s)</a> that are allowed to have privileged access on the worker.</p>
@@ -1039,7 +1054,7 @@ This variable has a default value of <code>target/vela-docker</code>.
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified February 9, 2022: <a  href="https://github.com/go-vela/docs/commit/c44e5ec4232b61891965e6df4e5b2f64b51e4645">docs(executor): document max log size (#276) (c44e5ec4)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified June 24, 2022: <a  href="https://github.com/go-vela/docs/commit/fad854eea3b36841d394d7ff332b2d4ef999455f">feat(kubernetes): document the PipelinePodsTemplate for k8s runtime (#294) (fad854ee)</a>
 </div>
 </div>
 
