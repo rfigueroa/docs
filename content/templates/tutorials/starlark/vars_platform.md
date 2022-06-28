@@ -20,6 +20,7 @@ Platform variables can be referenced with the following syntax:
 - `ctx["vela"]["repo"]["name"]` equates to the `VELA_REPO_NAME` environment variable
 - `ctx["vela"]["build"]["number"]` equates to the `VELA_BUILD_NUMBER` environment variable
 - `ctx["vela"]["system"]["addr"]` equates to the `VELA_ADDR` environment variable
+- `ctx["vela"]["deployment"]["<name>"]` equates to the `DEPLOYMENT_PARAMETER_<name>` environment variable
 
 ## Sample
 
@@ -58,7 +59,6 @@ steps:
   - name: build
     template:
       name: sample
-      vars:
 ```
 
 Which means the compiled pipeline for execution on a worker is:
