@@ -7,6 +7,8 @@ description: >
 
 {{% alert color="note" %}}
 We recommend reviewing [Starlark Spec](https://github.com/bazelbuild/starlark/blob/master/spec.md) before attempting to create a template.
+
+Additionally, depending on how the template is written, it may be incompatible with viewing pipelines in the UI.
 {{% /alert %}}
 
 ## Overview
