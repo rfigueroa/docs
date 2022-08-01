@@ -1,229 +1,163 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Vela – Service</title>
-    <link>https://go-vela.github.io/docs/reference/cli/service/</link>
-    <description>Recent content in Service on Vela</description>
-    <generator>Hugo -- gohugo.io</generator>
-    
-	  <atom:link href="https://go-vela.github.io/docs/reference/cli/service/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-      
-        
-      
-    
-    
-    <item>
-      <title>Reference: Get</title>
-      <link>https://go-vela.github.io/docs/reference/cli/service/get/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://go-vela.github.io/docs/reference/cli/service/get/</guid>
-      <description>
-        
-        
-        &lt;h2 id=&#34;command&#34;&gt;Command&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;$ vela get service &amp;lt;parameters...&amp;gt; &amp;lt;arguments...&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-
-For more information, you can run &lt;code&gt;vela get service --help&lt;/code&gt;.
-&lt;/div&gt;
-
-&lt;h2 id=&#34;parameters&#34;&gt;Parameters&lt;/h2&gt;
-&lt;p&gt;The following parameters are used to configure the command:&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Name&lt;/th&gt;
-&lt;th&gt;Description&lt;/th&gt;
-&lt;th&gt;Environment Variables&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;org&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;name of organization for the services&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;VELA_ORG&lt;/code&gt;, &lt;code&gt;SERVICE_ORG&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;repo&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;name of repository for the services&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;VELA_REPO&lt;/code&gt;, &lt;code&gt;SERVICE_REPO&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;build&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;number of build for the services&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;VELA_BUILD&lt;/code&gt;, &lt;code&gt;SERVICE_BUILD&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;output&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;format the output for the services&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;VELA_OUTPUT&lt;/code&gt;, &lt;code&gt;SERVICE_OUTPUT&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;page&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;prints a specific page of services&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;VELA_PAGE&lt;/code&gt;, &lt;code&gt;SERVICE_PAGE&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;per.page&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;number of services to print per page&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;VELA_PER_PAGE&lt;/code&gt;, &lt;code&gt;SERVICE_PER_PAGE&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-
-&lt;p&gt;This command also supports setting the following parameters via a configuration file:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;org&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;repo&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;output&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;For more information, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/cli/config/&#34;&gt;CLI config documentation&lt;/a&gt;.&lt;/p&gt;
-
-&lt;/div&gt;
-
-&lt;h2 id=&#34;permissions&#34;&gt;Permissions&lt;/h2&gt;
-&lt;p&gt;COMING SOON!&lt;/p&gt;
-&lt;h2 id=&#34;sample&#34;&gt;Sample&lt;/h2&gt;
-
-
-&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
-
-&lt;p&gt;This section assumes you have already installed and setup the CLI.&lt;/p&gt;
-&lt;p&gt;To install the CLI, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/cli/install/&#34;&gt;installation documentation&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;To setup the CLI, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/cli/authentication/&#34;&gt;authentication documentation&lt;/a&gt;.&lt;/p&gt;
-
-&lt;/div&gt;
-
-&lt;h4 id=&#34;request&#34;&gt;Request&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;$ &lt;span style=&#34;color:#204a87&#34;&gt;pwd&lt;/span&gt;
-~/github/octocat
-$ vela get service --build &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;targeted-request&#34;&gt;Targeted Request&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;$ vela get service --org github --repo octocat --build &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;response&#34;&gt;Response&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;NAME            STATUS  RUNTIME DURATION
-publish         failure         1s
-build           success         17s
-&lt;span style=&#34;color:#204a87&#34;&gt;test&lt;/span&gt;            success         10s
-clone           success         2s
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-      </description>
-    </item>
-    
-    <item>
-      <title>Reference: View</title>
-      <link>https://go-vela.github.io/docs/reference/cli/service/view/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://go-vela.github.io/docs/reference/cli/service/view/</guid>
-      <description>
-        
-        
-        &lt;h2 id=&#34;command&#34;&gt;Command&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;$ vela view service &amp;lt;parameters...&amp;gt; &amp;lt;arguments...&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-
-For more information, you can run &lt;code&gt;vela view service --help&lt;/code&gt;.
-&lt;/div&gt;
-
-&lt;h2 id=&#34;parameters&#34;&gt;Parameters&lt;/h2&gt;
-&lt;p&gt;The following parameters are used to configure the command:&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Name&lt;/th&gt;
-&lt;th&gt;Description&lt;/th&gt;
-&lt;th&gt;Environment Variables&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;org&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;name of organization for the service&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;VELA_ORG&lt;/code&gt;, &lt;code&gt;SERVICE_ORG&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;repo&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;name of repository for the service&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;VELA_REPO&lt;/code&gt;, &lt;code&gt;SERVICE_REPO&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;build&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;number of build for the service&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;VELA_BUILD&lt;/code&gt;, &lt;code&gt;SERVICE_BUILD&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;service&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;number of the service&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;VELA_SERVICE&lt;/code&gt;, &lt;code&gt;SERVICE_NUMBER&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;output&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;format the output for the service&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;VELA_OUTPUT&lt;/code&gt;, &lt;code&gt;SERVICE_OUTPUT&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-
-&lt;p&gt;This command also supports setting the following parameters via a configuration file:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;org&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;repo&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;output&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;For more information, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/cli/config/&#34;&gt;CLI config documentation&lt;/a&gt;.&lt;/p&gt;
-
-&lt;/div&gt;
-
-&lt;h2 id=&#34;permissions&#34;&gt;Permissions&lt;/h2&gt;
-&lt;p&gt;COMING SOON!&lt;/p&gt;
-&lt;h2 id=&#34;sample&#34;&gt;Sample&lt;/h2&gt;
-
-
-&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
-
-&lt;p&gt;This section assumes you have already installed and setup the CLI.&lt;/p&gt;
-&lt;p&gt;To install the CLI, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/cli/install/&#34;&gt;installation documentation&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;To setup the CLI, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/cli/authentication/&#34;&gt;authentication documentation&lt;/a&gt;.&lt;/p&gt;
-
-&lt;/div&gt;
-
-&lt;h4 id=&#34;request&#34;&gt;Request&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;$ &lt;span style=&#34;color:#204a87&#34;&gt;pwd&lt;/span&gt;
-~/github/octocat
-$ vela view service --build &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt; --service &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;targeted-request&#34;&gt;Targeted Request&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;$ vela get service --org github --repo octocat --build &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt; --service &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;response&#34;&gt;Response&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;id: &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;
-build_id: &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;
-repo_id: &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;
-number: &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;
-name: clone
-status: success
-error: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;
-exitcode: &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0&lt;/span&gt;
-created: &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1561748980&lt;/span&gt;
-started: &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1561748979&lt;/span&gt;
-finished: &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1561748981&lt;/span&gt;
-host: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;worker.host.com&amp;#34;&lt;/span&gt;
-runtime: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;docker&amp;#34;&lt;/span&gt;
-distribution: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;linux&amp;#34;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-      </description>
-    </item>
-    
-  </channel>
-</rss>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Vela – Service</title><link>https://go-vela.github.io/docs/reference/cli/service/</link><description>Recent content in Service on Vela</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://go-vela.github.io/docs/reference/cli/service/index.xml" rel="self" type="application/rss+xml"/><item><title>Reference: Get</title><link>https://go-vela.github.io/docs/reference/cli/service/get/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://go-vela.github.io/docs/reference/cli/service/get/</guid><description>
+&lt;h2 id="command">Command&lt;/h2>
+&lt;pre tabindex="0">&lt;code>$ vela get service &amp;lt;parameters...&amp;gt; &amp;lt;arguments...&amp;gt;
+&lt;/code>&lt;/pre>
+&lt;div class="alert alert-info" role="alert">
+For more information, you can run &lt;code>vela get service --help&lt;/code>.
+&lt;/div>
+&lt;h2 id="parameters">Parameters&lt;/h2>
+&lt;p>The following parameters are used to configure the command:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Name&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;th>Environment Variables&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>org&lt;/code>&lt;/td>
+&lt;td>name of organization for the services&lt;/td>
+&lt;td>&lt;code>VELA_ORG&lt;/code>, &lt;code>SERVICE_ORG&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>repo&lt;/code>&lt;/td>
+&lt;td>name of repository for the services&lt;/td>
+&lt;td>&lt;code>VELA_REPO&lt;/code>, &lt;code>SERVICE_REPO&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>build&lt;/code>&lt;/td>
+&lt;td>number of build for the services&lt;/td>
+&lt;td>&lt;code>VELA_BUILD&lt;/code>, &lt;code>SERVICE_BUILD&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>output&lt;/code>&lt;/td>
+&lt;td>format the output for the services&lt;/td>
+&lt;td>&lt;code>VELA_OUTPUT&lt;/code>, &lt;code>SERVICE_OUTPUT&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>page&lt;/code>&lt;/td>
+&lt;td>prints a specific page of services&lt;/td>
+&lt;td>&lt;code>VELA_PAGE&lt;/code>, &lt;code>SERVICE_PAGE&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>per.page&lt;/code>&lt;/td>
+&lt;td>number of services to print per page&lt;/td>
+&lt;td>&lt;code>VELA_PER_PAGE&lt;/code>, &lt;code>SERVICE_PER_PAGE&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="alert alert-info" role="alert">
+&lt;p>This command also supports setting the following parameters via a configuration file:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>org&lt;/code>&lt;/li>
+&lt;li>&lt;code>repo&lt;/code>&lt;/li>
+&lt;li>&lt;code>output&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>For more information, please review the &lt;a href="https://go-vela.github.io/docs/docs/reference/cli/config/">CLI config documentation&lt;/a>.&lt;/p>
+&lt;/div>
+&lt;h2 id="permissions">Permissions&lt;/h2>
+&lt;p>COMING SOON!&lt;/p>
+&lt;h2 id="sample">Sample&lt;/h2>
+&lt;div class="alert alert-warning" role="alert">
+&lt;p>This section assumes you have already installed and setup the CLI.&lt;/p>
+&lt;p>To install the CLI, please review the &lt;a href="https://go-vela.github.io/docs/docs/reference/cli/install/">installation documentation&lt;/a>.&lt;/p>
+&lt;p>To setup the CLI, please review the &lt;a href="https://go-vela.github.io/docs/docs/reference/cli/authentication/">authentication documentation&lt;/a>.&lt;/p>
+&lt;/div>
+&lt;h4 id="request">Request&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">pwd&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>~/github/octocat
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ vela get service --build &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="targeted-request">Targeted Request&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>$ vela get service --org github --repo octocat --build &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="response">Response&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>NAME STATUS RUNTIME DURATION
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>publish failure 1s
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>build success 17s
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">test&lt;/span> success 10s
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>clone success 2s
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Reference: View</title><link>https://go-vela.github.io/docs/reference/cli/service/view/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://go-vela.github.io/docs/reference/cli/service/view/</guid><description>
+&lt;h2 id="command">Command&lt;/h2>
+&lt;pre tabindex="0">&lt;code>$ vela view service &amp;lt;parameters...&amp;gt; &amp;lt;arguments...&amp;gt;
+&lt;/code>&lt;/pre>
+&lt;div class="alert alert-info" role="alert">
+For more information, you can run &lt;code>vela view service --help&lt;/code>.
+&lt;/div>
+&lt;h2 id="parameters">Parameters&lt;/h2>
+&lt;p>The following parameters are used to configure the command:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Name&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;th>Environment Variables&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>org&lt;/code>&lt;/td>
+&lt;td>name of organization for the service&lt;/td>
+&lt;td>&lt;code>VELA_ORG&lt;/code>, &lt;code>SERVICE_ORG&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>repo&lt;/code>&lt;/td>
+&lt;td>name of repository for the service&lt;/td>
+&lt;td>&lt;code>VELA_REPO&lt;/code>, &lt;code>SERVICE_REPO&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>build&lt;/code>&lt;/td>
+&lt;td>number of build for the service&lt;/td>
+&lt;td>&lt;code>VELA_BUILD&lt;/code>, &lt;code>SERVICE_BUILD&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>service&lt;/code>&lt;/td>
+&lt;td>number of the service&lt;/td>
+&lt;td>&lt;code>VELA_SERVICE&lt;/code>, &lt;code>SERVICE_NUMBER&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>output&lt;/code>&lt;/td>
+&lt;td>format the output for the service&lt;/td>
+&lt;td>&lt;code>VELA_OUTPUT&lt;/code>, &lt;code>SERVICE_OUTPUT&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="alert alert-info" role="alert">
+&lt;p>This command also supports setting the following parameters via a configuration file:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>org&lt;/code>&lt;/li>
+&lt;li>&lt;code>repo&lt;/code>&lt;/li>
+&lt;li>&lt;code>output&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>For more information, please review the &lt;a href="https://go-vela.github.io/docs/docs/reference/cli/config/">CLI config documentation&lt;/a>.&lt;/p>
+&lt;/div>
+&lt;h2 id="permissions">Permissions&lt;/h2>
+&lt;p>COMING SOON!&lt;/p>
+&lt;h2 id="sample">Sample&lt;/h2>
+&lt;div class="alert alert-warning" role="alert">
+&lt;p>This section assumes you have already installed and setup the CLI.&lt;/p>
+&lt;p>To install the CLI, please review the &lt;a href="https://go-vela.github.io/docs/docs/reference/cli/install/">installation documentation&lt;/a>.&lt;/p>
+&lt;p>To setup the CLI, please review the &lt;a href="https://go-vela.github.io/docs/docs/reference/cli/authentication/">authentication documentation&lt;/a>.&lt;/p>
+&lt;/div>
+&lt;h4 id="request">Request&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">pwd&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>~/github/octocat
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ vela view service --build &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> --service &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="targeted-request">Targeted Request&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>$ vela get service --org github --repo octocat --build &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> --service &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="response">Response&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>id: &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>build_id: &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>repo_id: &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>number: &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>name: clone
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>status: success
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>error: &lt;span style="color:#4e9a06">&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>exitcode: &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>created: &lt;span style="color:#0000cf;font-weight:bold">1561748980&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>started: &lt;span style="color:#0000cf;font-weight:bold">1561748979&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>finished: &lt;span style="color:#0000cf;font-weight:bold">1561748981&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>host: &lt;span style="color:#4e9a06">&amp;#34;worker.host.com&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>runtime: &lt;span style="color:#4e9a06">&amp;#34;docker&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>distribution: &lt;span style="color:#4e9a06">&amp;#34;linux&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

@@ -1,320 +1,88 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Vela – API</title>
-    <link>https://go-vela.github.io/docs/reference/api/</link>
-    <description>Recent content in API on Vela</description>
-    <generator>Hugo -- gohugo.io</generator>
-    
-	  <atom:link href="https://go-vela.github.io/docs/reference/api/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-      
-        
-      
-    
-    
-    <item>
-      <title>Reference: Authentication</title>
-      <link>https://go-vela.github.io/docs/reference/api/authentication/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://go-vela.github.io/docs/reference/api/authentication/</guid>
-      <description>
-        
-        
-        &lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
-&lt;p&gt;Authentication for the Vela API is the responsibility of the client initiating the request.&lt;/p&gt;
-&lt;p&gt;Each request requires a token to be provided as an &lt;code&gt;Authorization&lt;/code&gt; HTTP header.&lt;/p&gt;
-&lt;p&gt;The content of this header should be using the &lt;code&gt;Bearer &amp;lt;token&amp;gt;&lt;/code&gt; scheme.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;Authorization: Bearer &amp;lt;token&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-
-For more information, you can visit the &lt;a href=&#34;https://swagger.io/docs/specification/authentication/bearer-authentication/&#34;&gt;Swagger authentication documentation&lt;/a&gt;.
-&lt;/div&gt;
-
-&lt;h2 id=&#34;format&#34;&gt;Format&lt;/h2&gt;
-&lt;p&gt;Vela tokens are based off the format of the &lt;a href=&#34;https://jwt.io/&#34;&gt;JSON Web Token&lt;/a&gt; (a.k.a. JWT) standard.&lt;/p&gt;
-&lt;p&gt;The token can be broken down into 3 distinct sections, separated by periods (&lt;code&gt;.&lt;/code&gt;):&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Header&lt;/strong&gt; - metadata about the type of token and the signing algorithm used&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Payload&lt;/strong&gt; - data (a.k.a. claims) providing additional information&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Signature&lt;/strong&gt; - encoded string based off the header, payload and secret&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# syntax&lt;/span&gt;
-header.payload.signature
-
-&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# sample&lt;/span&gt;
-xxxxx.yyyyy.zzzzz
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-
-For more information, you can visit the &lt;a href=&#34;https://jwt.io/introduction/&#34;&gt;JWT introduction documentation&lt;/a&gt;.
-&lt;/div&gt;
-
-&lt;h2 id=&#34;sample&#34;&gt;Sample&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;curl &lt;span style=&#34;color:#4e9a06&#34;&gt;\
-&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&lt;/span&gt;  -X GET &lt;span style=&#34;color:#4e9a06&#34;&gt;\
-&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&lt;/span&gt;  -H &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Authorization: Bearer &amp;lt;token&amp;gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;\
-&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;http://127.0.0.1:8080/api/v1/users&amp;#34;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-      </description>
-    </item>
-    
-    <item>
-      <title>Reference: Admin</title>
-      <link>https://go-vela.github.io/docs/reference/api/admin/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://go-vela.github.io/docs/reference/api/admin/</guid>
-      <description>
-        
-        
-        &lt;p&gt;The below endpoints are available to operate on as an admin of the platform.&lt;/p&gt;
-
-
-&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
-
-&lt;p&gt;This section assumes you already know how to authenticate to the API.&lt;/p&gt;
-&lt;p&gt;To authenticate to the API, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/api/authentication/&#34;&gt;authentication documentation&lt;/a&gt;.&lt;/p&gt;
-
-&lt;/div&gt;
-
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Reference: Build</title>
-      <link>https://go-vela.github.io/docs/reference/api/build/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://go-vela.github.io/docs/reference/api/build/</guid>
-      <description>
-        
-        
-        &lt;p&gt;The below endpoints are available to operate on the &lt;code&gt;build&lt;/code&gt; resource.&lt;/p&gt;
-
-
-&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
-
-&lt;p&gt;This section assumes you already know how to authenticate to the API.&lt;/p&gt;
-&lt;p&gt;To authenticate to the API, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/api/authentication/&#34;&gt;authentication documentation&lt;/a&gt;.&lt;/p&gt;
-
-&lt;/div&gt;
-
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Reference: Deployment</title>
-      <link>https://go-vela.github.io/docs/reference/api/deployment/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://go-vela.github.io/docs/reference/api/deployment/</guid>
-      <description>
-        
-        
-        &lt;p&gt;The below endpoints are available to operate on the &lt;code&gt;deployment&lt;/code&gt; resource.&lt;/p&gt;
-
-
-&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
-
-&lt;p&gt;This section assumes you already know how to authenticate to the API.&lt;/p&gt;
-&lt;p&gt;To authenticate to the API, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/api/authentication/&#34;&gt;authentication documentation&lt;/a&gt;.&lt;/p&gt;
-
-&lt;/div&gt;
-
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Reference: Hook</title>
-      <link>https://go-vela.github.io/docs/reference/api/hook/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://go-vela.github.io/docs/reference/api/hook/</guid>
-      <description>
-        
-        
-        &lt;p&gt;The below endpoints are available to operate on the &lt;code&gt;hook&lt;/code&gt; resource.&lt;/p&gt;
-
-
-&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
-
-&lt;p&gt;This section assumes you already know how to authenticate to the API.&lt;/p&gt;
-&lt;p&gt;To authenticate to the API, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/api/authentication/&#34;&gt;authentication documentation&lt;/a&gt;.&lt;/p&gt;
-
-&lt;/div&gt;
-
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Reference: Pipeline</title>
-      <link>https://go-vela.github.io/docs/reference/api/pipeline/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://go-vela.github.io/docs/reference/api/pipeline/</guid>
-      <description>
-        
-        
-        &lt;p&gt;The below endpoints are available to operate on the &lt;code&gt;pipeline&lt;/code&gt; resource.&lt;/p&gt;
-
-
-&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
-
-&lt;p&gt;This section assumes you already know how to authenticate to the API.&lt;/p&gt;
-&lt;p&gt;To authenticate to the API, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/api/authentication/&#34;&gt;authentication documentation&lt;/a&gt;.&lt;/p&gt;
-
-&lt;/div&gt;
-
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Reference: Repo</title>
-      <link>https://go-vela.github.io/docs/reference/api/repo/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://go-vela.github.io/docs/reference/api/repo/</guid>
-      <description>
-        
-        
-        &lt;p&gt;The below endpoints are available to operate on the &lt;code&gt;repo&lt;/code&gt; resource.&lt;/p&gt;
-
-
-&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
-
-&lt;p&gt;This section assumes you already know how to authenticate to the API.&lt;/p&gt;
-&lt;p&gt;To authenticate to the API, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/api/authentication/&#34;&gt;authentication documentation&lt;/a&gt;.&lt;/p&gt;
-
-&lt;/div&gt;
-
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Reference: SCM</title>
-      <link>https://go-vela.github.io/docs/reference/api/scm/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://go-vela.github.io/docs/reference/api/scm/</guid>
-      <description>
-        
-        
-        &lt;p&gt;The below endpoints are available to operate on the &lt;code&gt;scm&lt;/code&gt; resource.&lt;/p&gt;
-
-
-&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
-
-&lt;p&gt;This section assumes you already know how to authenticate to the API.&lt;/p&gt;
-&lt;p&gt;To authenticate to the API, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/api/authentication/&#34;&gt;authentication documentation&lt;/a&gt;.&lt;/p&gt;
-
-&lt;/div&gt;
-
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Reference: Secret</title>
-      <link>https://go-vela.github.io/docs/reference/api/secret/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://go-vela.github.io/docs/reference/api/secret/</guid>
-      <description>
-        
-        
-        &lt;p&gt;The below endpoints are available to operate on the &lt;code&gt;secret&lt;/code&gt; resource.&lt;/p&gt;
-
-
-&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
-
-&lt;p&gt;This section assumes you already know how to authenticate to the API.&lt;/p&gt;
-&lt;p&gt;To authenticate to the API, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/api/authentication/&#34;&gt;authentication documentation&lt;/a&gt;.&lt;/p&gt;
-
-&lt;/div&gt;
-
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Reference: Service</title>
-      <link>https://go-vela.github.io/docs/reference/api/service/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://go-vela.github.io/docs/reference/api/service/</guid>
-      <description>
-        
-        
-        &lt;p&gt;The below endpoints are available to operate on the &lt;code&gt;service&lt;/code&gt; resource.&lt;/p&gt;
-
-
-&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
-
-&lt;p&gt;This section assumes you already know how to authenticate to the API.&lt;/p&gt;
-&lt;p&gt;To authenticate to the API, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/api/authentication/&#34;&gt;authentication documentation&lt;/a&gt;.&lt;/p&gt;
-
-&lt;/div&gt;
-
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Reference: Step</title>
-      <link>https://go-vela.github.io/docs/reference/api/step/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://go-vela.github.io/docs/reference/api/step/</guid>
-      <description>
-        
-        
-        &lt;p&gt;The below endpoints are available to operate on the &lt;code&gt;step&lt;/code&gt; resource.&lt;/p&gt;
-
-
-&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
-
-&lt;p&gt;This section assumes you already know how to authenticate to the API.&lt;/p&gt;
-&lt;p&gt;To authenticate to the API, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/api/authentication/&#34;&gt;authentication documentation&lt;/a&gt;.&lt;/p&gt;
-
-&lt;/div&gt;
-
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Reference: User</title>
-      <link>https://go-vela.github.io/docs/reference/api/user/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://go-vela.github.io/docs/reference/api/user/</guid>
-      <description>
-        
-        
-        &lt;p&gt;The below endpoints are available to operate on the &lt;code&gt;user&lt;/code&gt; resource.&lt;/p&gt;
-
-
-&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
-
-&lt;p&gt;This section assumes you already know how to authenticate to the API.&lt;/p&gt;
-&lt;p&gt;To authenticate to the API, please review the &lt;a href=&#34;https://go-vela.github.io/docs/docs/reference/api/authentication/&#34;&gt;authentication documentation&lt;/a&gt;.&lt;/p&gt;
-
-&lt;/div&gt;
-
-
-      </description>
-    </item>
-    
-  </channel>
-</rss>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Vela – API</title><link>https://go-vela.github.io/docs/reference/api/</link><description>Recent content in API on Vela</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://go-vela.github.io/docs/reference/api/index.xml" rel="self" type="application/rss+xml"/><item><title>Reference: Authentication</title><link>https://go-vela.github.io/docs/reference/api/authentication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://go-vela.github.io/docs/reference/api/authentication/</guid><description>
+&lt;h2 id="overview">Overview&lt;/h2>
+&lt;p>Authentication for the Vela API is the responsibility of the client initiating the request.&lt;/p>
+&lt;p>Each request requires a token to be provided as an &lt;code>Authorization&lt;/code> HTTP header.&lt;/p>
+&lt;p>The content of this header should be using the &lt;code>Bearer &amp;lt;token&amp;gt;&lt;/code> scheme.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>Authorization: Bearer &amp;lt;token&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="alert alert-info" role="alert">
+For more information, you can visit the &lt;a href="https://swagger.io/docs/specification/authentication/bearer-authentication/">Swagger authentication documentation&lt;/a>.
+&lt;/div>
+&lt;h2 id="format">Format&lt;/h2>
+&lt;p>Vela tokens are based off the format of the &lt;a href="https://jwt.io/">JSON Web Token&lt;/a> (a.k.a. JWT) standard.&lt;/p>
+&lt;p>The token can be broken down into 3 distinct sections, separated by periods (&lt;code>.&lt;/code>):&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Header&lt;/strong> - metadata about the type of token and the signing algorithm used&lt;/li>
+&lt;li>&lt;strong>Payload&lt;/strong> - data (a.k.a. claims) providing additional information&lt;/li>
+&lt;li>&lt;strong>Signature&lt;/strong> - encoded string based off the header, payload and secret&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># syntax&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>header.payload.signature
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># sample&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>xxxxx.yyyyy.zzzzz
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="alert alert-info" role="alert">
+For more information, you can visit the &lt;a href="https://jwt.io/introduction/">JWT introduction documentation&lt;/a>.
+&lt;/div>
+&lt;h2 id="sample">Sample&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>curl &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -X GET &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -H &lt;span style="color:#4e9a06">&amp;#34;Authorization: Bearer &amp;lt;token&amp;gt;&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;http://127.0.0.1:8080/api/v1/users&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Reference: Admin</title><link>https://go-vela.github.io/docs/reference/api/admin/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://go-vela.github.io/docs/reference/api/admin/</guid><description>
+&lt;p>The below endpoints are available to operate on as an admin of the platform.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;p>This section assumes you already know how to authenticate to the API.&lt;/p>
+&lt;p>To authenticate to the API, please review the &lt;a href="https://go-vela.github.io/docs/docs/reference/api/authentication/">authentication documentation&lt;/a>.&lt;/p>
+&lt;/div></description></item><item><title>Reference: Build</title><link>https://go-vela.github.io/docs/reference/api/build/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://go-vela.github.io/docs/reference/api/build/</guid><description>
+&lt;p>The below endpoints are available to operate on the &lt;code>build&lt;/code> resource.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;p>This section assumes you already know how to authenticate to the API.&lt;/p>
+&lt;p>To authenticate to the API, please review the &lt;a href="https://go-vela.github.io/docs/docs/reference/api/authentication/">authentication documentation&lt;/a>.&lt;/p>
+&lt;/div></description></item><item><title>Reference: Deployment</title><link>https://go-vela.github.io/docs/reference/api/deployment/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://go-vela.github.io/docs/reference/api/deployment/</guid><description>
+&lt;p>The below endpoints are available to operate on the &lt;code>deployment&lt;/code> resource.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;p>This section assumes you already know how to authenticate to the API.&lt;/p>
+&lt;p>To authenticate to the API, please review the &lt;a href="https://go-vela.github.io/docs/docs/reference/api/authentication/">authentication documentation&lt;/a>.&lt;/p>
+&lt;/div></description></item><item><title>Reference: Hook</title><link>https://go-vela.github.io/docs/reference/api/hook/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://go-vela.github.io/docs/reference/api/hook/</guid><description>
+&lt;p>The below endpoints are available to operate on the &lt;code>hook&lt;/code> resource.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;p>This section assumes you already know how to authenticate to the API.&lt;/p>
+&lt;p>To authenticate to the API, please review the &lt;a href="https://go-vela.github.io/docs/docs/reference/api/authentication/">authentication documentation&lt;/a>.&lt;/p>
+&lt;/div></description></item><item><title>Reference: Pipeline</title><link>https://go-vela.github.io/docs/reference/api/pipeline/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://go-vela.github.io/docs/reference/api/pipeline/</guid><description>
+&lt;p>The below endpoints are available to operate on the &lt;code>pipeline&lt;/code> resource.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;p>This section assumes you already know how to authenticate to the API.&lt;/p>
+&lt;p>To authenticate to the API, please review the &lt;a href="https://go-vela.github.io/docs/docs/reference/api/authentication/">authentication documentation&lt;/a>.&lt;/p>
+&lt;/div></description></item><item><title>Reference: Repo</title><link>https://go-vela.github.io/docs/reference/api/repo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://go-vela.github.io/docs/reference/api/repo/</guid><description>
+&lt;p>The below endpoints are available to operate on the &lt;code>repo&lt;/code> resource.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;p>This section assumes you already know how to authenticate to the API.&lt;/p>
+&lt;p>To authenticate to the API, please review the &lt;a href="https://go-vela.github.io/docs/docs/reference/api/authentication/">authentication documentation&lt;/a>.&lt;/p>
+&lt;/div></description></item><item><title>Reference: SCM</title><link>https://go-vela.github.io/docs/reference/api/scm/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://go-vela.github.io/docs/reference/api/scm/</guid><description>
+&lt;p>The below endpoints are available to operate on the &lt;code>scm&lt;/code> resource.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;p>This section assumes you already know how to authenticate to the API.&lt;/p>
+&lt;p>To authenticate to the API, please review the &lt;a href="https://go-vela.github.io/docs/docs/reference/api/authentication/">authentication documentation&lt;/a>.&lt;/p>
+&lt;/div></description></item><item><title>Reference: Secret</title><link>https://go-vela.github.io/docs/reference/api/secret/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://go-vela.github.io/docs/reference/api/secret/</guid><description>
+&lt;p>The below endpoints are available to operate on the &lt;code>secret&lt;/code> resource.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;p>This section assumes you already know how to authenticate to the API.&lt;/p>
+&lt;p>To authenticate to the API, please review the &lt;a href="https://go-vela.github.io/docs/docs/reference/api/authentication/">authentication documentation&lt;/a>.&lt;/p>
+&lt;/div></description></item><item><title>Reference: Service</title><link>https://go-vela.github.io/docs/reference/api/service/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://go-vela.github.io/docs/reference/api/service/</guid><description>
+&lt;p>The below endpoints are available to operate on the &lt;code>service&lt;/code> resource.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;p>This section assumes you already know how to authenticate to the API.&lt;/p>
+&lt;p>To authenticate to the API, please review the &lt;a href="https://go-vela.github.io/docs/docs/reference/api/authentication/">authentication documentation&lt;/a>.&lt;/p>
+&lt;/div></description></item><item><title>Reference: Step</title><link>https://go-vela.github.io/docs/reference/api/step/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://go-vela.github.io/docs/reference/api/step/</guid><description>
+&lt;p>The below endpoints are available to operate on the &lt;code>step&lt;/code> resource.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;p>This section assumes you already know how to authenticate to the API.&lt;/p>
+&lt;p>To authenticate to the API, please review the &lt;a href="https://go-vela.github.io/docs/docs/reference/api/authentication/">authentication documentation&lt;/a>.&lt;/p>
+&lt;/div></description></item><item><title>Reference: User</title><link>https://go-vela.github.io/docs/reference/api/user/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://go-vela.github.io/docs/reference/api/user/</guid><description>
+&lt;p>The below endpoints are available to operate on the &lt;code>user&lt;/code> resource.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;p>This section assumes you already know how to authenticate to the API.&lt;/p>
+&lt;p>To authenticate to the API, please review the &lt;a href="https://go-vela.github.io/docs/docs/reference/api/authentication/">authentication documentation&lt;/a>.&lt;/p>
+&lt;/div></description></item></channel></rss>
