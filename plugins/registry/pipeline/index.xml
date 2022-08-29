@@ -1570,6 +1570,563 @@ Users should refrain from configuring sensitive information in their pipeline in
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00a000">&lt;/span> repos:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - octocat/hello-world
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> server: https://vela-server.localhost
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Below are a list of common problems and how to solve them:&lt;/p></description></item><item><title>Plugins: Email</title><link>https://go-vela.github.io/docs/plugins/registry/pipeline/email/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://go-vela.github.io/docs/plugins/registry/pipeline/email/</guid><description>
+&lt;h2 id="description">Description&lt;/h2>
+&lt;p>This plugin enables you to send data to an email.&lt;/p>
+&lt;p>Source Code: &lt;a href="https://github.com/go-vela/vela-email">https://github.com/go-vela/vela-email&lt;/a>&lt;/p>
+&lt;p>Registry: &lt;a href="https://hub.docker.com/r/target/vela-email">https://hub.docker.com/r/target/vela-email&lt;/a>&lt;/p>
+&lt;h2 id="usage">Usage&lt;/h2>
+&lt;blockquote>
+&lt;p>&lt;strong>NOTE:&lt;/strong>&lt;/p>
+&lt;p>Users should refrain from using latest as the tag for the Docker image.&lt;/p>
+&lt;p>It is recommended to use a semantically versioned tag instead.&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="sample-for-velayml">Sample for .vela.yml&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">secrets&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">username&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">engine&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">native&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">key&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">vela/noreply/username&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">type&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">shared&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">password&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">engine&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">native&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">key&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">vela/noreply/password&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">type&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">shared&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">steps&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">email on success&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">image&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">target/vela-email:latest&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">pull&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">not_present&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">secrets&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#000">username, password]&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">ruleset&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">status&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">success&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">parameters&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">from&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">vela-noreply@fakemail.com&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">to&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#000">one@email.com, two@email.com]&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">sendtype&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">StartTLS&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">auth&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">LoginAuth&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">host&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">smtp.youremailserver.com&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">port&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">587&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">subject&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;{{ .VELA_BUILD_COMMIT }}&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">text&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Author: {{ .VELA_BUILD_AUTHOR }} - Branch: {{ .VELA_BUILD_BRANCH }}&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">email on failure&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">image&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">target/vela-email:latest&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">pull&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">not_present&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">secrets&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#000">username, password]&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">ruleset&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">status&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">failure&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">parameters&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">from&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">vela-noreply@fakemail.com&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">to&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#000">one@email.com, two@email.com]&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">sendtype&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">StartTLS&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">auth&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">LoginAuth&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">host&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">smtp.youremailserver.com&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">port&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">587&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">subject&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;{{ .VELA_BUILD_COMMIT }}&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">text&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Author: {{ .VELA_BUILD_AUTHOR }} - Branch: {{ .VELA_BUILD_BRANCH }}&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="sample-for-velayml-with-attachment">Sample for .vela.yml with attachment&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">secrets&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">username&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">engine&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">native&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">key&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">vela/noreply/username&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">type&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">shared&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">password&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">engine&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">native&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">key&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">vela/noreply/password&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">type&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">shared&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">steps&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">email on success&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">image&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">target/vela-email:latest&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">pull&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">not_present&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">secrets&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#000">username, password]&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">ruleset&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">status&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">success&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">parameters&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">filename&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">&amp;lt;filename&amp;gt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">sendtype&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">StartTLS&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">auth&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">LoginAuth&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">host&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">smtp.youremailserver.com&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">port&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">587&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">email on failure&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">image&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">target/vela-email:latest&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">pull&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">not_present&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">secrets&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#000">username, password]&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">ruleset&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">status&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">failure&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">parameters&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">filename&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">&amp;lt;filename&amp;gt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">sendtype&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">StartTLS&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">auth&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">LoginAuth&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">host&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">smtp.youremailserver.com&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">port&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">587&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="sample-for-email-attachment">Sample for email attachment&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>From: vela-noreply@fakemail.com
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>To: emailone@email.com, emailtwo@email.com
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Subject: Vela Pipeline for {{ .VELA_REPO_FULL_NAME }} {{ .VELA_BUILD_BRANCH }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Content-Type: text/plain
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>BuildAuthor: {{ .VELA_BUILD_AUTHOR }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>BuildAuthorEmail: {{ .VELA_BUILD_AUTHOR_EMAIL }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>BuildBranch: {{ .VELA_BUILD_BRANCH }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>BuildCommit: {{ .VELA_BUILD_COMMIT }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>BuildCreated: {{ .BuildCreated }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>BuildMessage: {{ .VELA_BUILD_MESSAGE }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>BuildNumber: {{ .VELA_BUILD_NUMBER }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>RepositoryFullName: {{ .VELA_REPO_FULL_NAME }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>RepositoryLink: {{ .VELA_REPO_LINK }}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="secrets">Secrets&lt;/h2>
+&lt;blockquote>
+&lt;p>&lt;strong>NOTE:&lt;/strong> Users should refrain from configuring sensitive information in your pipeline in plain text.&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="internal">Internal&lt;/h3>
+&lt;p>The plugin accepts the following &lt;code>parameters&lt;/code> for authentication:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Parameter&lt;/th>
+&lt;th>Environment Variable Configuration&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>username&lt;/code>&lt;/td>
+&lt;td>&lt;code>PARAMETER_USERNAME&lt;/code>, &lt;code>USERNAME&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>password&lt;/code>&lt;/td>
+&lt;td>&lt;code>PARAMETER_PASSWORD&lt;/code>, &lt;code>PASSWORD&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Users can use &lt;a href="https://go-vela.github.io/docs/tour/secrets/">Vela internal secrets&lt;/a> to substitute these sensitive values at runtime:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-diff" data-lang="diff">&lt;span style="display:flex;">&lt;span>steps:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - name: email
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> image: target/vela-email:latest
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pull: always
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00a000">+ secrets: [ username, password ]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00a000">&lt;/span> parameters:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">- username: usernameexample@email.com
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>This example will add the secret to the &lt;code>email&lt;/code> step as environment variables:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>USERNAME=&amp;lt;value&amp;gt;&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/blockquote>
+&lt;h3 id="external">External&lt;/h3>
+&lt;p>The plugin accepts the following files for authentication:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Parameter&lt;/th>
+&lt;th>Volume Configuration&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>username&lt;/code>&lt;/td>
+&lt;td>&lt;code>/vela/parameters/email/username&lt;/code>, &lt;code>/vela/secrets/email/username&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>password&lt;/code>&lt;/td>
+&lt;td>&lt;code>/vela/parameters/email/password&lt;/code>, &lt;code>/vela/secrets/email/password&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Users can use &lt;a href="https://go-vela.github.io/docs/concepts/pipeline/secrets/origin/">Vela external secrets&lt;/a> to substitute these sensitive values at runtime:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-diff" data-lang="diff">&lt;span style="display:flex;">&lt;span>steps:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - name: email
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> image: target/vela-email:latest
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pull: always
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> parameters:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">- username: usernameexample@email.com
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>This example will read the secret value in the volume stored at &lt;code>/vela/secrets/&lt;/code>&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="parameters">Parameters&lt;/h2>
+&lt;blockquote>
+&lt;p>&lt;strong>NOTE:&lt;/strong>&lt;/p>
+&lt;p>Any values set from a file take precedence over values set from the environment.&lt;/p>
+&lt;p>VELA environments can be found at &lt;a href="https://go-vela.github.io/docs/reference/environment/">VELA Environments&lt;/a>&lt;/p>
+&lt;p>All environment variables are wrapped in sprig template. More information on sprig can be found at &lt;a href="http://masterminds.github.io/sprig/">sprig docs&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>The following parameters are used to configure the image:&lt;/p>
+&lt;h3 id="logging">Logging&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Parameter&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;th>Required&lt;/th>
+&lt;th>Default&lt;/th>
+&lt;th>Environment Variables&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>log_level&lt;/code>&lt;/td>
+&lt;td>set the log level for the plugin (valid options: &lt;code>info&lt;/code>, &lt;code>debug&lt;/code>, &lt;code>trace&lt;/code>)&lt;/td>
+&lt;td>&lt;code>true&lt;/code>&lt;/td>
+&lt;td>&lt;code>info&lt;/code>&lt;/td>
+&lt;td>&lt;code>PARAMETER_LOG_LEVEL&lt;/code>&lt;br>&lt;code>EMAIL_LOG_LEVEL&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="email">Email&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Parameter&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;th>Required&lt;/th>
+&lt;th>Default&lt;/th>
+&lt;th>Environment Variables&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>from&lt;/code>&lt;/td>
+&lt;td>who the email is being sent from&lt;/td>
+&lt;td>true&lt;/td>
+&lt;td>N/A&lt;/td>
+&lt;td>&lt;code>PARAMETER_FROM&lt;/code>&lt;br>&lt;code>EMAIL_FROM&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>to&lt;/code>&lt;/td>
+&lt;td>who the email is being sent to&lt;/td>
+&lt;td>true&lt;/td>
+&lt;td>N/A&lt;/td>
+&lt;td>&lt;code>PARAMETER_TO&lt;/code>&lt;br>&lt;code>EMAIL_TO&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>cc&lt;/code>&lt;/td>
+&lt;td>carbon copy of the email to be sent to&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>N/A&lt;/td>
+&lt;td>&lt;code>PARAMETER_CC&lt;/code>&lt;br>&lt;code>EMAIL_CC&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>bcc&lt;/code>&lt;/td>
+&lt;td>blind carbon copy of the email to be sent to&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>N/A&lt;/td>
+&lt;td>&lt;code>PARAMETER_BCC&lt;/code>&lt;br>&lt;code>EMAIL_BCC&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>sender&lt;/code>&lt;/td>
+&lt;td>who the email being sent from (will overwrite from)&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>N/A&lt;/td>
+&lt;td>&lt;code>PARAMETER_SENDER&lt;/code>&lt;br>&lt;code>EMAIL_SENDER&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>replyto&lt;/code>&lt;/td>
+&lt;td>email address that will be used for replies&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>N/A&lt;/td>
+&lt;td>&lt;code>PARAMETER_REPLYTO&lt;/code>&lt;br>&lt;code>EMAIL_REPLYTO&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>subject&lt;/code>&lt;/td>
+&lt;td>subject of the email&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>default subject&lt;/td>
+&lt;td>&lt;code>PARAMETER_SUBJECT&lt;/code>&lt;br>&lt;code>EMAIL_SUBJECT&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>text&lt;/code>&lt;/td>
+&lt;td>body of the email in plain text format (HTML will overwrite TEXT)&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>N/A&lt;/td>
+&lt;td>&lt;code>PARAMETER_TEXT&lt;/code>&lt;br>&lt;code>EMAIL_TEXT&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>html&lt;/code>&lt;/td>
+&lt;td>body of the email in hmtl format (HTML will overwrite TEXT)&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>default html body&lt;/td>
+&lt;td>&lt;code>PARAMETER_HTML&lt;/code>&lt;br>&lt;code>EMAIL_HTML&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>readreceipt&lt;/code>&lt;/td>
+&lt;td>delivery confirmation&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>N/A&lt;/td>
+&lt;td>&lt;code>PARAMETER_READRECEIPT&lt;/code>&lt;br>&lt;code>EMAIL_READRECEIPT&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;blockquote>
+&lt;p>&lt;strong>NOTE:&lt;/strong>&lt;/p>
+&lt;p>The parameters To, CC, BCC and ReplyTo accepts an array of emails in the format of:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>[ one@email.com, two@email.com ] or&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>[ firstname lastname &amp;lt;one@email.com&amp;gt;, firstname lastname &amp;lt;two@email.com&amp;gt; ]&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>Subject, Text body, and HTML body will accept VELA environments with the use of {{ }} such as:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>{{ .VELA_REPO_FULL_NAME }}&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/blockquote>
+&lt;h3 id="attachment">Attachment&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Parameter&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;th>Required&lt;/th>
+&lt;th>Default&lt;/th>
+&lt;th>Environment Variables&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>attachment&lt;/code>&lt;/td>
+&lt;td>file will be attached to email&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>N/A&lt;/td>
+&lt;td>&lt;code>PARAMETER_ATTACHMENT&lt;/code>&lt;br>&lt;code>EMAIL_ATTACHMENT&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="email-filename">Email Filename&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Parameter&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;th>Required&lt;/th>
+&lt;th>Default&lt;/th>
+&lt;th>Environment Variables&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>filename&lt;/code>&lt;/td>
+&lt;td>data in attached file will be used to populate the email.&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>N/A&lt;/td>
+&lt;td>&lt;code>PARAMETER_FILENAME&lt;/code>&lt;br>&lt;code>EMAIL_FILENAME&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="smtp">SMTP&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Parameter&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;th>Required&lt;/th>
+&lt;th>Default&lt;/th>
+&lt;th>Environment Variables&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>host&lt;/code>&lt;/td>
+&lt;td>SMTP host&lt;/td>
+&lt;td>true&lt;/td>
+&lt;td>N/A&lt;/td>
+&lt;td>&lt;code>PARAMETER_HOST&lt;/code>&lt;br>&lt;code>EMAIL_HOST&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>port&lt;/code>&lt;/td>
+&lt;td>SMTP port&lt;/td>
+&lt;td>true&lt;/td>
+&lt;td>N/A&lt;/td>
+&lt;td>&lt;code>PARAMETER_PORT&lt;/code>&lt;br>&lt;code>EMAIL_PORT&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>username&lt;/code>&lt;/td>
+&lt;td>SMTP username&lt;/td>
+&lt;td>true&lt;/td>
+&lt;td>N/A&lt;/td>
+&lt;td>&lt;code>PARAMETER_USERNAME&lt;/code>&lt;br>&lt;code>EMAIL_USERNAME&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>password&lt;/code>&lt;/td>
+&lt;td>SMTP password&lt;/td>
+&lt;td>true&lt;/td>
+&lt;td>N/A&lt;/td>
+&lt;td>&lt;code>PARAMETER_PASSWORD&lt;/code>&lt;br>&lt;code>EMAIL_PASSWORD&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="tls">TLS&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Parameter&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;th>Required&lt;/th>
+&lt;th>Default&lt;/th>
+&lt;th>Environment Variables&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>servername&lt;/code>&lt;/td>
+&lt;td>default is set to host address of SMTP server&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>SMTP host&lt;/td>
+&lt;td>&lt;code>PARAMETER_SERVERNAME&lt;/code>&lt;br>&lt;code>EMAIL_SERVERNAME&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>insecureskipverify&lt;/code>&lt;/td>
+&lt;td>verification of the server&amp;rsquo;s certificate chain and host name. Only use true for testing purposes as this makes TLS susceptible to man-in-middle attacks.&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>&lt;code>PARAMETER_SKIPVERIFY&lt;/code>&lt;br>&lt;code>EMAIL_SKIPVERIFY&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="encryption">Encryption&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Parameter&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;th>Required&lt;/th>
+&lt;th>Default&lt;/th>
+&lt;th>Environment Variables&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>sendtype&lt;/code>&lt;/td>
+&lt;td>security to send email (valid option: &lt;code>Plain&lt;/code>, &lt;code>StartTLS&lt;/code>, &lt;code>TLS&lt;/code>)&lt;/td>
+&lt;td>true&lt;/td>
+&lt;td>StartTLS&lt;/td>
+&lt;td>&lt;code>PARAMETER_SENDTYPE&lt;/code>&lt;br>&lt;code>EMAIL_SENDTYPE&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="authentication">Authentication&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Parameter&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;th>Required&lt;/th>
+&lt;th>Default&lt;/th>
+&lt;th>Environment Variables&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>auth&lt;/code>&lt;/td>
+&lt;td>login authentication (valid option: &lt;code>PlainAuth&lt;/code>, &lt;code>LoginAuth&lt;/code>)&lt;/td>
+&lt;td>true&lt;/td>
+&lt;td>LoginAuth&lt;/td>
+&lt;td>&lt;code>PARAMETER_AUTH&lt;/code>&lt;br>&lt;code>EMAIL_AUTH&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;blockquote>
+&lt;p>&lt;strong>NOTE:&lt;/strong>&lt;/p>
+&lt;p>PlainAuth using smtp/auth login for SMTP server.&lt;/p>
+&lt;p>LoginAuth using a custom login for Office 365/Exchange SMTP server.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="variables">Variables&lt;/h2>
+&lt;p>The Plugin provides the following User friendly timestamp variables that can be used in a subject, text, HTML template.
+These timestamps are converted to Unix timestamps in UTC.&lt;/p>
+&lt;ul>
+&lt;li>BuildCreated&lt;/li>
+&lt;li>BuildEnqueued&lt;/li>
+&lt;li>BuildFinished&lt;/li>
+&lt;li>BuildStarted&lt;/li>
+&lt;/ul>
+&lt;h2 id="defaults">Defaults&lt;/h2>
+&lt;blockquote>
+&lt;p>&lt;strong>NOTE:&lt;/strong>
+Context-Type options are as follow:&lt;/p>
+&lt;ul>
+&lt;li>text/html for HTML based body of message.&lt;/li>
+&lt;li>text/plain for TEXT based body of message.&lt;/li>
+&lt;/ul>
+&lt;/blockquote>
+&lt;h3 id="default-subject">Default subject&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>{{ .VELA_REPO_FULL_NAME }} {{ .VELA_BUILD_BRANCH }} - {{ .VELA_BUILD_COMMIT }}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="default-body-in-html">Default body in HTML&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">table&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">tbody&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">tr&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">td&lt;/span> &lt;span style="color:#c4a000">width&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;600&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">div&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">table&lt;/span> &lt;span style="color:#c4a000">width&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;100%&amp;#34;&lt;/span> &lt;span style="color:#c4a000">cellspacing&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;0&amp;#34;&lt;/span> &lt;span style="color:#c4a000">cellpadding&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;0&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">tbody&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">tr&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">td&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">table&lt;/span> &lt;span style="color:#c4a000">width&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;100%&amp;#34;&lt;/span> &lt;span style="color:#c4a000">cellspacing&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;0&amp;#34;&lt;/span> &lt;span style="color:#c4a000">cellpadding&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;0&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">tbody&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">tr&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">td&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>Build Number:&lt;span style="color:#000;font-weight:bold">&amp;lt;/&lt;/span>&lt;span style="color:#204a87;font-weight:bold">td&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">td&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">a&lt;/span> &lt;span style="color:#c4a000">href&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;{{ .VELA_BUILD_LINK }}&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {{ .VELA_BUILD_NUMBER }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;lt;/&lt;/span>&lt;span style="color:#204a87;font-weight:bold">a&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;lt;/&lt;/span>&lt;span style="color:#204a87;font-weight:bold">td&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;lt;/&lt;/span>&lt;span style="color:#204a87;font-weight:bold">tr&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">tr&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">td&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>Repo:&lt;span style="color:#000;font-weight:bold">&amp;lt;/&lt;/span>&lt;span style="color:#204a87;font-weight:bold">td&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">td&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>{{ .VELA_REPO_FULL_NAME }}&lt;span style="color:#000;font-weight:bold">&amp;lt;/&lt;/span>&lt;span style="color:#204a87;font-weight:bold">td&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;lt;/&lt;/span>&lt;span style="color:#204a87;font-weight:bold">tr&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">tr&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">td&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>Author:&lt;span style="color:#000;font-weight:bold">&amp;lt;/&lt;/span>&lt;span style="color:#204a87;font-weight:bold">td&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">td&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {{ .VELA_BUILD_AUTHOR }} ({{ .VELA_BUILD_AUTHOR_EMAIL
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }})
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;lt;/&lt;/span>&lt;span style="color:#204a87;font-weight:bold">td&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;lt;/&lt;/span>&lt;span style="color:#204a87;font-weight:bold">tr&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">tr&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">td&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>Branch:&lt;span style="color:#000;font-weight:bold">&amp;lt;/&lt;/span>&lt;span style="color:#204a87;font-weight:bold">td&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">td&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>{{ .VELA_BUILD_BRANCH }}&lt;span style="color:#000;font-weight:bold">&amp;lt;/&lt;/span>&lt;span style="color:#204a87;font-weight:bold">td&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;lt;/&lt;/span>&lt;span style="color:#204a87;font-weight:bold">tr&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">tr&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">td&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>Commit:&lt;span style="color:#000;font-weight:bold">&amp;lt;/&lt;/span>&lt;span style="color:#204a87;font-weight:bold">td&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">td&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>{{ .VELA_BUILD_COMMIT }}&lt;span style="color:#000;font-weight:bold">&amp;lt;/&lt;/span>&lt;span style="color:#204a87;font-weight:bold">td&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;lt;/&lt;/span>&lt;span style="color:#204a87;font-weight:bold">tr&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">tr&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">td&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>Started at:&lt;span style="color:#000;font-weight:bold">&amp;lt;/&lt;/span>&lt;span style="color:#204a87;font-weight:bold">td&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">td&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>{{ .BuildCreated }}&lt;span style="color:#000;font-weight:bold">&amp;lt;/&lt;/span>&lt;span style="color:#204a87;font-weight:bold">td&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;lt;/&lt;/span>&lt;span style="color:#204a87;font-weight:bold">tr&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;lt;/&lt;/span>&lt;span style="color:#204a87;font-weight:bold">tbody&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;lt;/&lt;/span>&lt;span style="color:#204a87;font-weight:bold">table&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">hr&lt;/span> &lt;span style="color:#000;font-weight:bold">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">table&lt;/span> &lt;span style="color:#c4a000">width&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;100%&amp;#34;&lt;/span> &lt;span style="color:#c4a000">cellspacing&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;0&amp;#34;&lt;/span> &lt;span style="color:#c4a000">cellpadding&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;0&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">tbody&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">tr&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">td&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>{{ .VELA_BUILD_MESSAGE }}&lt;span style="color:#000;font-weight:bold">&amp;lt;/&lt;/span>&lt;span style="color:#204a87;font-weight:bold">td&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;lt;/&lt;/span>&lt;span style="color:#204a87;font-weight:bold">tr&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;lt;/&lt;/span>&lt;span style="color:#204a87;font-weight:bold">tbody&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;lt;/&lt;/span>&lt;span style="color:#204a87;font-weight:bold">table&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;lt;/&lt;/span>&lt;span style="color:#204a87;font-weight:bold">td&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;lt;/&lt;/span>&lt;span style="color:#204a87;font-weight:bold">tr&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;lt;/&lt;/span>&lt;span style="color:#204a87;font-weight:bold">tbody&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;lt;/&lt;/span>&lt;span style="color:#204a87;font-weight:bold">table&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;lt;/&lt;/span>&lt;span style="color:#204a87;font-weight:bold">div&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;lt;/&lt;/span>&lt;span style="color:#204a87;font-weight:bold">td&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;lt;/&lt;/span>&lt;span style="color:#204a87;font-weight:bold">tr&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;lt;/&lt;/span>&lt;span style="color:#204a87;font-weight:bold">tbody&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">&amp;lt;/&lt;/span>&lt;span style="color:#204a87;font-weight:bold">table&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="template">Template&lt;/h2>
+&lt;p>COMING SOON!&lt;/p>
+&lt;h2 id="troubleshooting">Troubleshooting&lt;/h2>
+&lt;p>You can start troubleshooting this plugin by tuning the level of logs being displayed:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-diff" data-lang="diff">&lt;span style="display:flex;">&lt;span>steps:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - name: send email
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> image: target/vela-email:latest
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pull: always
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> parameters:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00a000">+ log_level: trace
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00a000">&lt;/span> ...
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Below are a list of common problems and how to solve them:&lt;/p></description></item><item><title>Plugins: Git</title><link>https://go-vela.github.io/docs/plugins/registry/pipeline/git/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://go-vela.github.io/docs/plugins/registry/pipeline/git/</guid><description>
 &lt;h2 id="description">Description&lt;/h2>
 &lt;blockquote>
@@ -1820,7 +2377,7 @@ Users should refrain from configuring sensitive information in their pipeline in
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pull: always
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> parameters:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> theme_name: hugo-theme-learn
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00a000">+ version: 0.79.0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00a000">+ version: 0.101.0
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Sample of building a site using the extended &lt;code>hugo&lt;/code> binary:&lt;/p>
 &lt;blockquote>
 &lt;p>&lt;strong>NOTE:&lt;/strong> Some themes may require the extended binary for additional functionality.&lt;/p>
@@ -1987,7 +2544,7 @@ Users should refrain from configuring sensitive information in their pipeline in
 &lt;td>&lt;code>version&lt;/code>&lt;/td>
 &lt;td>the version of hugo the plugin should use&lt;/td>
 &lt;td>&lt;code>false&lt;/code>&lt;/td>
-&lt;td>&lt;code>0.76.5&lt;/code>&lt;/td>
+&lt;td>&lt;code>0.101.0&lt;/code>&lt;/td>
 &lt;td>&lt;code>PARAMETER_VERSION&lt;/code>&lt;br>&lt;code>HUGO_VERSION&lt;/code>&lt;/td>
 &lt;/tr>
 &lt;/tbody>
@@ -2322,7 +2879,10 @@ Users should refrain from configuring sensitive information in their pipeline in
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> registry: index.docker.io
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> repo: index.docker.io/octocat/hello-world
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00a000">+ custom_platform: linux/arm64/v8
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="secrets">Secrets&lt;/h2>
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>&lt;strong>NOTE:&lt;/strong> This option will only work if your Vela worker is configured appropriately.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="secrets">Secrets&lt;/h2>
 &lt;blockquote>
 &lt;p>&lt;strong>NOTE:&lt;/strong> Users should refrain from configuring sensitive information in your pipeline in plain text.&lt;/p>
 &lt;/blockquote>
@@ -2780,7 +3340,7 @@ Users should refrain from configuring sensitive information in their pipeline in
 &lt;td>&lt;code>version&lt;/code>&lt;/td>
 &lt;td>version of the &lt;code>kubectl&lt;/code> CLI to install&lt;/td>
 &lt;td>&lt;code>false&lt;/code>&lt;/td>
-&lt;td>&lt;code>v1.17.0&lt;/code>&lt;/td>
+&lt;td>&lt;code>v1.24.0&lt;/code>&lt;/td>
 &lt;td>&lt;code>PARAMETER_VERSION&lt;/code>&lt;br>&lt;code>KUBERNETES_VERSION&lt;/code>&lt;/td>
 &lt;/tr>
 &lt;/tbody>
@@ -4078,7 +4638,7 @@ Users should refrain from configuring sensitive information in their pipeline in
 &lt;td>&lt;code>version&lt;/code>&lt;/td>
 &lt;td>set the Terraform CLI version&lt;/td>
 &lt;td>&lt;code>true&lt;/code>&lt;/td>
-&lt;td>&lt;code>0.12.26&lt;/code>&lt;/td>
+&lt;td>&lt;code>1.2.7&lt;/code>&lt;/td>
 &lt;td>&lt;code>PARAMETER_VERSION&lt;/code>&lt;br>&lt;code>TERRAFORM_VERSION&lt;/code>&lt;/td>
 &lt;/tr>
 &lt;/tbody>
