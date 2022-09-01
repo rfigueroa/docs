@@ -3875,7 +3875,276 @@ This has the added benefit of enabling others in the community to consume your p
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">method&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">POST&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">body&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000;font-weight:bold">|&lt;/span>&lt;span style="color:#8f5902;font-style:italic">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"> &lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">This is a sample Vela plugin written with Node.js&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Plugins: Python</title><link>https://go-vela.github.io/docs/plugins/tutorials/python/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://go-vela.github.io/docs/plugins/tutorials/python/</guid><description>
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Plugins: npm</title><link>https://go-vela.github.io/docs/plugins/registry/pipeline/npm/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://go-vela.github.io/docs/plugins/registry/pipeline/npm/</guid><description>
+&lt;h2 id="description">Description&lt;/h2>
+&lt;p>This plugin enables the ability to manage artifacts in &lt;a href="https://www.npmjs.org/">npm&lt;/a> in a Vela pipeline.&lt;/p>
+&lt;p>Source Code: &lt;a href="https://github.com/go-vela/vela-npm">https://github.com/go-vela/vela-npm&lt;/a>&lt;/p>
+&lt;p>Registry: &lt;a href="https://hub.docker.com/r/target/vela-npm">https://hub.docker.com/r/target/vela-npm&lt;/a>&lt;/p>
+&lt;h2 id="usage">Usage&lt;/h2>
+&lt;blockquote>
+&lt;p>&lt;strong>NOTE:&lt;/strong>&lt;/p>
+&lt;p>Users should refrain from using latest as the tag for the Docker image.&lt;/p>
+&lt;p>It is recommended to use a semantically versioned tag instead.&lt;/p>
+&lt;/blockquote>
+&lt;p>Sample of publishing package:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">steps&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">npm_publish&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">image&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">target/vela-npm:latest&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">pull&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">not_present&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">secrets&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">npm_password ]&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">parameters&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">username&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">npmUsername&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">registry&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">https://registry.npmjs.org&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Sample of publishing if registry does not support &lt;code>npm ping&lt;/code>:&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>NOTE:&lt;/strong>&lt;/p>
+&lt;p>Recommended if you are deploying to a registry inside &lt;em>&lt;strong>Artifactory&lt;/strong>&lt;/em>&lt;/p>
+&lt;/blockquote>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-diff" data-lang="diff">&lt;span style="display:flex;">&lt;span>steps:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - name: npm_publish
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> image: target/vela-npm:latest
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pull: not_present
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> secrets: [ npm_password ]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> parameters:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> username: npmUsername
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> registry: https://registry.npmjs.org
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00a000">+ skip_ping: true
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Sample of pretending to publish package:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-diff" data-lang="diff">&lt;span style="display:flex;">&lt;span>steps:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - name: npm_publish
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> image: target/vela-npm:latest
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pull: not_present
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> secrets: [ npm_password ]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> parameters:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> username: npmUsername
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> registry: https://registry.npmjs.org
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00a000">+ dry_run: true
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Sample of first time publishing package:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-diff" data-lang="diff">&lt;span style="display:flex;">&lt;span>steps:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - name: npm_publish
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> image: target/vela-npm:latest
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pull: not_present
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> secrets: [ npm_password ]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> parameters:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> username: npmUsername
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> registry: https://registry.npmjs.org
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00a000">+ first_publish: true
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Sample of publishing with additional dist-tag:&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>NOTE:&lt;/strong>&lt;/p>
+&lt;p>Tags are used as an alias and cannot be valid semver&lt;/p>
+&lt;/blockquote>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-diff" data-lang="diff">&lt;span style="display:flex;">&lt;span>steps:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - name: npm_publish
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> image: target/vela-npm:latest
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pull: not_present
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> secrets: [ npm_password ]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> parameters:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> username: npmUsername
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> registry: https://registry.npmjs.org
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00a000">+ tag: beta
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Higher level of tolerance for npm audit:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-diff" data-lang="diff">&lt;span style="display:flex;">&lt;span>steps:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - name: npm_publish
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> image: target/vela-npm:latest
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pull: not_present
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> secrets: [ npm_password ]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> parameters:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> username: npmUsername
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> registry: https://registry.npmjs.org
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00a000">+ audit_level: critical
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="secrets">Secrets&lt;/h2>
+&lt;blockquote>
+&lt;p>&lt;strong>NOTE:&lt;/strong>&lt;/p>
+&lt;p>Users should refrain from configuring sensitive information in their pipeline in plain text.&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="internal">Internal&lt;/h3>
+&lt;p>The plugin accepts the following &lt;code>parameters&lt;/code> for authentication:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Parameter&lt;/th>
+&lt;th>Environment Variable Configuration&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>password&lt;/code>&lt;/td>
+&lt;td>&lt;code>NPM_PASSWORD&lt;/code>, &lt;code>PARAMETER_PASSWORD&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>username&lt;/code>&lt;/td>
+&lt;td>&lt;code>NPM_USERNAME&lt;/code>, &lt;code>PARAMETER_USERNAME&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>registry&lt;/code>&lt;/td>
+&lt;td>&lt;code>NPM_REGISTRY&lt;/code>, &lt;code>PARAMETER_REGISTRY&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>email&lt;/code>&lt;/td>
+&lt;td>&lt;code>NPM_EMAIL&lt;/code>, &lt;code>PARAMETER_EMAIL&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Users can use &lt;a href="https://go-vela.github.io/docs/tour/secrets/">Vela internal secrets&lt;/a> to substitute these sensitive values at runtime:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-diff" data-lang="diff">&lt;span style="display:flex;">&lt;span>steps:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - name: npm_publish
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> image: target/vela-npm:latest
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pull: not_present
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> secrets: [ npm_password ]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> parameters:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> username: npmUsername
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> registry: https://registry.npmjs.org
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">- password: superSecretPassword
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>This example will add the &lt;code>secrets&lt;/code> to the &lt;code>npm_publish&lt;/code> step as environment variables:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>NPM_PASSWORD&lt;/code>=value&lt;/li>
+&lt;/ul>
+&lt;/blockquote>
+&lt;h3 id="external">External&lt;/h3>
+&lt;p>The plugin accepts the following files for authentication:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Parameter&lt;/th>
+&lt;th>Volume Configuration&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>password&lt;/code>&lt;/td>
+&lt;td>&lt;code>/vela/parameters/npm/password&lt;/code>, &lt;code>/vela/secrets/npm/password&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>username&lt;/code>&lt;/td>
+&lt;td>&lt;code>/vela/parameters/npm/username&lt;/code>, &lt;code>/vela/secrets/npm/username&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>registry&lt;/code>&lt;/td>
+&lt;td>&lt;code>/vela/parameters/npm/registry&lt;/code>, &lt;code>/vela/secrets/npm/registry&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>email&lt;/code>&lt;/td>
+&lt;td>&lt;code>/vela/parameters/npm/email&lt;/code>, &lt;code>/vela/secrets/npm/email&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Users can use &lt;a href="https://go-vela.github.io/docs/concepts/pipeline/secrets/origin/">Vela external secrets&lt;/a> to substitute these sensitive values at runtime:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-diff" data-lang="diff">&lt;span style="display:flex;">&lt;span>steps:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - name: npm_publish
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> image: target/vela-npm:latest
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pull: not_present
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> parameters:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> registry: https://registry.npmjs.org
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">- username: npmUsername
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">- password: superSecretPassword
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="parameters">Parameters&lt;/h2>
+&lt;p>The following parameters are used to configure the image:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Name&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;th>Required&lt;/th>
+&lt;th>Default&lt;/th>
+&lt;th>Environment Variables&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>username&lt;/code>&lt;/td>
+&lt;td>username for communication with npm&lt;/td>
+&lt;td>&lt;code>true&lt;/code>&lt;/td>
+&lt;td>&lt;code>N/A&lt;/code>&lt;/td>
+&lt;td>&lt;code>PARAMETER_USERNAME&lt;/code>&lt;br>&lt;code>NPM_USERNAME&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>password&lt;/code>&lt;/td>
+&lt;td>password for communication with npm&lt;/td>
+&lt;td>&lt;code>false&lt;/code>&lt;/td>
+&lt;td>&lt;code>N/A&lt;/code>&lt;/td>
+&lt;td>&lt;code>PARAMETER_PASSWORD&lt;/code>&lt;br>&lt;code>NPM_PASSWORD&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>email&lt;/code>&lt;/td>
+&lt;td>email for communication with npm&lt;/td>
+&lt;td>&lt;code>false&lt;/code>&lt;/td>
+&lt;td>&lt;code>N/A&lt;/code>&lt;/td>
+&lt;td>&lt;code>PARAMETER_EMAIL&lt;/code>&lt;br>&lt;code>NPM_EMAIL&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>registry&lt;/code>&lt;/td>
+&lt;td>npm instance to communicate with&lt;/td>
+&lt;td>&lt;code>false&lt;/code>&lt;/td>
+&lt;td>&lt;code>https://registry.npmjs.org&lt;/code>&lt;/td>
+&lt;td>&lt;code>PARAMETER_REGISTRY&lt;/code>&lt;br>&lt;code>NPM_REGISTRY&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>audit_level&lt;/code>&lt;/td>
+&lt;td>level at which the audit check should fail (valid options: &lt;code>low&lt;/code>, &lt;code>moderate&lt;/code>, &lt;code>high&lt;/code>, &lt;code>critical&lt;/code>, &lt;code>none&lt;/code> to skip)&lt;/td>
+&lt;td>&lt;code>false&lt;/code>&lt;/td>
+&lt;td>&lt;code>low&lt;/code>&lt;/td>
+&lt;td>&lt;code>PARAMETER_AUDIT_LEVEL&lt;/code>&lt;br>&lt;code>AUDIT_LEVEL&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>strict_ssl&lt;/code>&lt;/td>
+&lt;td>whether or not to do SSL key validation during communication&lt;/td>
+&lt;td>&lt;code>false&lt;/code>&lt;/td>
+&lt;td>&lt;code>true&lt;/code>&lt;/td>
+&lt;td>&lt;code>PARAMETER_STRICT_SSL&lt;/code>&lt;br>&lt;code>STRICT_SSL&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>always_auth&lt;/code>&lt;/td>
+&lt;td>force npm to always require authentication&lt;/td>
+&lt;td>&lt;code>false&lt;/code>&lt;/td>
+&lt;td>&lt;code>false&lt;/code>&lt;/td>
+&lt;td>&lt;code>PARAMETER_ALWAYS_AUTH&lt;/code>&lt;br>&lt;code>ALWAYS_AUTH&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>skip_ping&lt;/code>&lt;/td>
+&lt;td>whether or not to skip &lt;code>npm ping&lt;/code> authentication command&lt;/td>
+&lt;td>&lt;code>false&lt;/code>&lt;/td>
+&lt;td>&lt;code>false&lt;/code>&lt;/td>
+&lt;td>&lt;code>PARAMETER_SKIP_PING&lt;/code>&lt;br>&lt;code>SKIP_PING&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>dry_run&lt;/code>&lt;/td>
+&lt;td>enables pretending to perform the action&lt;/td>
+&lt;td>&lt;code>false&lt;/code>&lt;/td>
+&lt;td>&lt;code>false&lt;/code>&lt;/td>
+&lt;td>&lt;code>PARAMETER_DRY_RUN&lt;/code>&lt;br>&lt;code>DRY_RUN&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>tag&lt;/code>&lt;/td>
+&lt;td>publish package with given alias tag&lt;/td>
+&lt;td>&lt;code>false&lt;/code>&lt;/td>
+&lt;td>&lt;code>latest&lt;/code>&lt;/td>
+&lt;td>&lt;code>PARAMETER_TAG&lt;/code>&lt;br>&lt;code>TAG&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>log_level&lt;/code>&lt;/td>
+&lt;td>set the log level for the plugin (valid options: &lt;code>info&lt;/code>, &lt;code>debug&lt;/code>, &lt;code>trace&lt;/code>)&lt;/td>
+&lt;td>&lt;code>true&lt;/code>&lt;/td>
+&lt;td>&lt;code>info&lt;/code>&lt;/td>
+&lt;td>&lt;code>PARAMETER_LOG_LEVEL&lt;/code>&lt;br>&lt;code>LOG_LEVEL&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="packagejson">package.json&lt;/h2>
+&lt;p>This is your module&amp;rsquo;s manifest. There are a few important keys that need to be set in order to publish your module&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>name&lt;/strong> - your package name that will be checked against in the registry&lt;/li>
+&lt;li>&lt;strong>version&lt;/strong> - your package version that will be used to publish, it must be valid semver and unique to the registry&lt;/li>
+&lt;li>&lt;strong>private&lt;/strong> - this needs to be set to &lt;code>false&lt;/code> even if you are publishing it internally.&lt;/li>
+&lt;li>&lt;strong>publishConfig&lt;/strong> - this should be configured to your registry location and registry parameter should match this value&lt;/li>
+&lt;/ul>
+&lt;p>For example values, see npm&amp;rsquo;s &lt;a href="https://docs.npmjs.com/files/package.json">documentation&lt;/a>&lt;/p>
+&lt;h2 id="template">Template&lt;/h2>
+&lt;p>COMING SOON!&lt;/p>
+&lt;h2 id="troubleshooting">Troubleshooting&lt;/h2>
+&lt;p>Here are the available log levels to assist in troubleshooting:
+trace, debug, info, warn, error, fatal, panic&lt;/p></description></item><item><title>Plugins: Python</title><link>https://go-vela.github.io/docs/plugins/tutorials/python/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://go-vela.github.io/docs/plugins/tutorials/python/</guid><description>
 &lt;div class="alert alert-warning" role="alert">
 &lt;p>We recommend reviewing &lt;a href="https://docs.docker.com/develop/develop-images/dockerfile_best-practices/">Docker&amp;rsquo;s best practices&lt;/a> before attempting to create a custom plugin.&lt;/p>
 &lt;p>We recommend that all plugins be placed inside a &lt;a href="https://hub.docker.com/_/scratch">scratch image&lt;/a>.&lt;/p>
