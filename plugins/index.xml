@@ -1,4 +1,512 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Vela – Plugins</title><link>https://go-vela.github.io/docs/plugins/</link><description>Recent content in Plugins on Vela</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://go-vela.github.io/docs/plugins/index.xml" rel="self" type="application/rss+xml"/><item><title>Plugins: Artifactory</title><link>https://go-vela.github.io/docs/plugins/registry/pipeline/artifactory/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://go-vela.github.io/docs/plugins/registry/pipeline/artifactory/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Vela – Plugins</title><link>https://go-vela.github.io/docs/plugins/</link><description>Recent content in Plugins on Vela</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://go-vela.github.io/docs/plugins/index.xml" rel="self" type="application/rss+xml"/><item><title>Plugins: Ansible</title><link>https://go-vela.github.io/docs/plugins/registry/pipeline/ansible/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://go-vela.github.io/docs/plugins/registry/pipeline/ansible/</guid><description>
+&lt;h2 id="description">Description&lt;/h2>
+&lt;p>This plugin is designed for using ansible-playbook and ansible-lint in a Vela pipeline.&lt;/p>
+&lt;p>Source Code: &lt;a href="https://github.com/go-vela/vela-ansible">https://github.com/go-vela/vela-ansible&lt;/a>&lt;/p>
+&lt;p>Registry: &lt;a href="https://hub.docker.com/r/target/vela-ansible">https://hub.docker.com/r/target/vela-ansible&lt;/a>&lt;/p>
+&lt;h2 id="usage">Usage&lt;/h2>
+&lt;blockquote>
+&lt;p>&lt;strong>NOTE:&lt;/strong>&lt;/p>
+&lt;p>Users should refrain from using latest as the tag for the Docker image.&lt;/p>
+&lt;p>It is recommended to use a semantically versioned tag instead.&lt;/p>
+&lt;/blockquote>
+&lt;p>More information for ansible-lint can be found at: &lt;a href="https://ansible-lint.readthedocs.io/en/latest/">ansible-lint docs&lt;/a>. &lt;br>
+More information for ansible-playbook can be found at: &lt;a href="https://ansible-lint.readthedocs.io/en/latest/">ansible-playbook docs&lt;/a>.&lt;/p>
+&lt;h3 id="sample-for-velayml">Sample for .vela.yml&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">steps&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">ansible-lint&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">image&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">target/vela-ansible:latest&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">parameters&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">action&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">lint&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">playbook&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;abox/main.yml&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">lint_skip&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#0000cf;font-weight:bold">403&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#0000cf;font-weight:bold">201&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">ansible-playbook&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">image&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">target/vela-ansible:latest&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">parameters&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">action&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">playbook&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">playbook&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;abox/main.yml&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">options_inventory&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;abox/inventory/hosts.yml&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">connection_user&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">root&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="parameters">Parameters&lt;/h2>
+&lt;p>The following parameters are used to configure the image:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Parameter&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;th>Required&lt;/th>
+&lt;th>Default&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>log_level&lt;/code>&lt;/td>
+&lt;td>set the log level for the plugin (valid options: &lt;code>info&lt;/code>, &lt;code>debug&lt;/code>, &lt;code>trace&lt;/code>)&lt;/td>
+&lt;td>true&lt;/td>
+&lt;td>info&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>action &lt;/code>&lt;/td>
+&lt;td>set plugin action (valid options: &lt;code>lint&lt;/code>, &lt;code>playbook&lt;/code>&lt;/td>
+&lt;td>true&lt;/td>
+&lt;td>lint&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;blockquote>
+&lt;p>Note: &lt;code>action&lt;/code> parameter will determine whether to run ansible-lint or ansible-playbook. The default is set to ansible-lint.&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="ansible-lint">Ansible-Lint&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Parameter&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;th>Required&lt;/th>
+&lt;th>Default&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>playbook&lt;/code>&lt;/td>
+&lt;td>playbook to be ran by ansible-lint&lt;/td>
+&lt;td>true&lt;/td>
+&lt;td>false&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>lint_version&lt;/code>&lt;/td>
+&lt;td>returns ansible-lint version and exits the program.&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>false&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>lint_list&lt;/code>&lt;/td>
+&lt;td>lists all the rules.&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>false&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>lint_format&lt;/code>&lt;/td>
+&lt;td>format used rules output {rich,plain,rst,codeclimate,quiet,pep8}&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>rich&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>lint_quieter&lt;/code>&lt;/td>
+&lt;td>quieter, although not silent output.&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>false&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>lint_parseable&lt;/code>&lt;/td>
+&lt;td>parseable output in the format of pep8.&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>false&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>lint_parseableseverity&lt;/code>&lt;/td>
+&lt;td>parseable output including severity of rule.&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>false&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>lint_progressive&lt;/code>&lt;/td>
+&lt;td>return success if it detects a reduction in number of violations compared with previous git commit. This feature works only in git repositories.&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>false&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>lint_projectdir&lt;/code>&lt;/td>
+&lt;td>location of project/repository, autodetected based on location of configuration file.&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>N/A&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>lint_rule&lt;/code>&lt;/td>
+&lt;td>specify one or more rules directories. -r flag (lint_rule) overrides the default rules in /path/to/ansible-lint/lib/ansiblelint/rules, unless -R (lint_rulesdefault) is also used.&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>N/A&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>lint_rulesdefault&lt;/code>&lt;/td>
+&lt;td>use default rules in /path/to/ansible-lint/lib/ansiblelint/rules in addition to any extra rules directories specified with -r (lint_rule). There is no need to specify this if no -r (lint_rule) flag/s is/are used.&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>false&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>lint_showrelativepath&lt;/code>&lt;/td>
+&lt;td>display path relative to CWD.&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>false&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>lint_tags&lt;/code>&lt;/td>
+&lt;td>only check rules whose id/tags match these values.&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>N/A&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>lint_tagslist&lt;/code>&lt;/td>
+&lt;td>list all the tags.&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>false&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>lint_verbose&lt;/code>&lt;/td>
+&lt;td>increase verbosity level.&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>false&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>lint_skip&lt;/code>&lt;/td>
+&lt;td>only check rules whose id/tags does not match these values.&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>N/A&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>lint_warn&lt;/code>&lt;/td>
+&lt;td>only warn about these rules, unless overridden in config file defaults to &amp;rsquo;experimental'&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>experimental&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>lint_enable&lt;/code>&lt;/td>
+&lt;td>activate optional rules by their tag name&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>N/A&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>lint_nocolor&lt;/code>&lt;/td>
+&lt;td>disable colored output.&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>false&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>lint_forcecolor&lt;/code>&lt;/td>
+&lt;td>try force colored output.&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>false&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>lint_exclude&lt;/code>&lt;/td>
+&lt;td>path to directories or files to skip.&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>N/A&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>lint_config&lt;/code>&lt;/td>
+&lt;td>specify a configuration file to use.&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>.ansible-lint&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>lint_offline&lt;/code>&lt;/td>
+&lt;td>disable installation of requirements.yml&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>false&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="ansible-playbook">Ansible-Playbook&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Parameter&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;th>Required&lt;/th>
+&lt;th>Default&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>playbook&lt;/code>&lt;/td>
+&lt;td>playbook to be ran by ansible-playbook.&lt;/td>
+&lt;td>true&lt;/td>
+&lt;td>N/A&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="ansible-playbook-options">ansible-playbook options&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Parameter&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;th>Required&lt;/th>
+&lt;th>Default&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>options_askvaultpass&lt;/code>&lt;/td>
+&lt;td>ask for vault password.&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>false&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>options_flushcache&lt;/code>&lt;/td>
+&lt;td>clear the fact cache for every host in inventory.&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>false&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>options_forcehandlers&lt;/code>&lt;/td>
+&lt;td>run handlers even if a task fails.&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>false&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>options_listhosts&lt;/code>&lt;/td>
+&lt;td>outputs a list of matching hosts and exits program.&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>false&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>options_listtags&lt;/code>&lt;/td>
+&lt;td>list all available tags&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>false&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>options_listtasks&lt;/code>&lt;/td>
+&lt;td>list all tasks to be executed.&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>false&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>options_skiptags&lt;/code>&lt;/td>
+&lt;td>only run plays and tasks whose tags does not match these values.&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>N/A&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>options_startattask&lt;/code>&lt;/td>
+&lt;td>start the playbook at the task matching this name.&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>N/A&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>options_step&lt;/code>&lt;/td>
+&lt;td>one-set-at-a-time: confirm each task before running.&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>false&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>options_syntaxcheck&lt;/code>&lt;/td>
+&lt;td>perform a syntax check on the playbook and exits program.&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>false&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>options_vaultid&lt;/code>&lt;/td>
+&lt;td>the vault identity to use.&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>N/A&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>options_vaultpasswordfile&lt;/code>&lt;/td>
+&lt;td>vault password file.&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>N/A&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>options_version&lt;/code>&lt;/td>
+&lt;td>returns ansible-playbook version number, configuration file location, configured module search path, module location, executable location and exits program.&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>false&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>options_check&lt;/code>&lt;/td>
+&lt;td>dry-run, does not make any changes; instead, tries to predict some of the changes that may occur.&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>false&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>options_difference&lt;/code>&lt;/td>
+&lt;td>when changing (small) files and template, shows the difference in those files.&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>false&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>options_modulepath&lt;/code>&lt;/td>
+&lt;td>prepend colon-separated path(s) to module library&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>~/.ansible/plugins/modules:/usr/share/ansible/plugins/modules&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>options_extravars&lt;/code>&lt;/td>
+&lt;td>set additional variables as key=value or YAML/JSON, if filename is prepend with @&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>N/A&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>options_forks&lt;/code>&lt;/td>
+&lt;td>specify number of parallel processes to use.&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>5&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>options_inventory&lt;/code>&lt;/td>
+&lt;td>specify inventory host path or comma separated host list.&lt;/td>
+&lt;td>true&lt;/td>
+&lt;td>N/A&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>options_limit&lt;/code>&lt;/td>
+&lt;td>further limit selected hosts to additional pattern.&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>false&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>options_tags&lt;/code>&lt;/td>
+&lt;td>only run plays and task whose tags matches these values.&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>N/A&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>options_verbose&lt;/code>&lt;/td>
+&lt;td>verbose mode.&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>false&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>options_verbosemore&lt;/code>&lt;/td>
+&lt;td>verbose mode: more verbose.&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>false&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>options_verbosedebug&lt;/code>&lt;/td>
+&lt;td>verbose mode: connection debugging&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>false&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="ansible-playbook-connection">ansible-playbook connection&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Parameter&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;th>Required&lt;/th>
+&lt;th>Default&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>connection_privatekey&lt;/code>&lt;/td>
+&lt;td>use this file to authenticate the connection.&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>N/A&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>connection_scpextraargs&lt;/code>&lt;/td>
+&lt;td>specify extra arguments to pass to scp only.&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>N/A&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>connection_sftpextraargs&lt;/code>&lt;/td>
+&lt;td>specify extra arguments to pass to sftp only.&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>N/A&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>connection_sshextraargs&lt;/code>&lt;/td>
+&lt;td>specify extra arguments to pass to ssh only.&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>N/A&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>connection_sshcommonargs&lt;/code>&lt;/td>
+&lt;td>specify common arguments to pass to scp/sftp/ssh.&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>N/A&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>connection_timeout&lt;/code>&lt;/td>
+&lt;td>override the connection timeout in seconds.&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>10&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>connection_connection&lt;/code>&lt;/td>
+&lt;td>connection type to use.&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>smart&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>connection_user&lt;/code>&lt;/td>
+&lt;td>connect as this user.&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>none&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>connection_passwordfile&lt;/code>&lt;/td>
+&lt;td>connection password file&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>N/A&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="ansible-playbook-privilege-escalation">ansible-playbook privilege escalation&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Parameter&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;th>Required&lt;/th>
+&lt;th>Default&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>privilege_becomemethod&lt;/code>&lt;/td>
+&lt;td>privilege escalation method to use.&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>sudo&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>privilege_becomeuser&lt;/code>&lt;/td>
+&lt;td>run operation as this user.&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>root&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>privilege_askbecomepass&lt;/code>&lt;/td>
+&lt;td>ask for privilege escalation password.&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>false&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>privilege_become&lt;/code>&lt;/td>
+&lt;td>run operations with become (does not imply password prompting)&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>false&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>privilege_becomepassfile&lt;/code>&lt;/td>
+&lt;td>become password file&lt;/td>
+&lt;td>false&lt;/td>
+&lt;td>N/A&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="template">Template&lt;/h2>
+&lt;p>COMING SOON!&lt;/p>
+&lt;h2 id="troubleshooting">Troubleshooting&lt;/h2>
+&lt;p>You can start troubleshooting this plugin by tuning the level of logs being displayed:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-diff" data-lang="diff">&lt;span style="display:flex;">&lt;span>steps:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - name: ansible-lint
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> image: target/vela-ansible:latest
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> parameters:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00a000">+ log_level: trace
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00a000">&lt;/span> action: lint
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> playbook: &amp;#34;abox/main.yml&amp;#34;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Below are a list of common problems and how to solve them:&lt;/p></description></item><item><title>Plugins: Artifactory</title><link>https://go-vela.github.io/docs/plugins/registry/pipeline/artifactory/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://go-vela.github.io/docs/plugins/registry/pipeline/artifactory/</guid><description>
 &lt;h2 id="description">Description&lt;/h2>
 &lt;p>This plugin enables you to manage artifacts in &lt;a href="https://jfrog.com/artifactory/">Artifactory&lt;/a> in a Vela pipeline.&lt;/p>
 &lt;p>Source Code: &lt;a href="https://github.com/go-vela/vela-artifactory">https://github.com/go-vela/vela-artifactory&lt;/a>&lt;/p>
